@@ -1,0 +1,1 @@
+# Database\nAdd migrations and seed data here.\n

@@ -1,0 +1,1 @@
+# Architecture\nDocument system architecture and decisions here.\n
