@@ -3,5 +3,7 @@
 import './script.js';
 import './closing-cta.js';
 import { mountFooter } from './footer.js';
+import { initMobileNavigation } from './responsive.js';
 
 mountFooter();
+initMobileNavigation();

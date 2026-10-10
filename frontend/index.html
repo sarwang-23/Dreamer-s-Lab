@@ -5,24 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Building Dreams - From Curious Minds to Confident Builders</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
 </head>
 <body id="top">
 
         <!-- New Refined Navbar -->
-    <nav class="nd-navbar">
+    <nav class="nd-navbar" aria-label="Main navigation">
         <div class="nd-logo">
             <span class="nd-logo-text">Dreamers Lab</span>
         </div>
-        <div class="nd-nav-links">
-            <a href="#">Explore</a>
-            <a href="#">How it works</a>
-            <a href="#">For Schools</a>
-            <a href="#">About</a>
+        <button class="nd-menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation primary-navigation-actions" hidden>
+            <span>Menu</span>
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </button>
+        <div class="nd-nav-links" id="primary-navigation">
+            <a href="#programs">Explore</a>
+            <a href="#how-it-works">How it works</a>
+            <a href="#dreamers-lab">For Schools</a>
+            <a href="#approach">About</a>
         </div>
-        <div class="nd-nav-actions">
-            <a href="#" class="nd-btn-primary nd-nav-cta">Start exploring</a>
+        <div class="nd-nav-actions" id="primary-navigation-actions">
+            <a href="#journey" class="nd-btn-primary nd-nav-cta">Start exploring</a>
         </div>
     </nav>
 
@@ -45,8 +50,8 @@
                     Building Dreams helps students discover entrepreneurship, turn ideas into ventures and gives schools and universities the programs, mentors and networks to build the next generation of entrepreneurs.
                 </p>
                 <div class="hl-actions">
-                    <a href="#" class="hl-btn-primary">Explore Programs</a>
-                    <a href="#" class="hl-btn-secondary">Partner With Us</a>
+                    <a href="#programs" class="hl-btn-primary">Explore Programs</a>
+                    <a href="#program-venture" class="hl-btn-secondary">Partner With Us</a>
                 </div>
             </div>
 
@@ -199,7 +204,7 @@
         </div>
     </section>
 
-    <section class="programs">
+    <section class="programs" id="programs">
         <!-- Cinematic Background Ecosystem -->
         <div class="prog-bg">
             <div class="prog-orb prog-orb-1"></div>
@@ -351,10 +356,10 @@
         Dreamers Lab is a hands-on entrepreneurship and problem-solving experience for high-school students. Through curiosity, experimentation and project building, students explore real-world challenges and create meaningful solutions.
       </p>
       <div class="dl-ctas">
-        <a href="#dl-stages" class="dl-btn-primary" aria-label="Explore the six-stage journey">
+        <a href="#how-it-works" class="dl-btn-primary" aria-label="Explore the seven-stage journey">
           Explore the journey ↗
         </a>
-        <a href="#dl-how" class="dl-btn-ghost" aria-label="How Dreamers Lab works">
+        <a href="#how-it-works" class="dl-btn-ghost" aria-label="How Dreamers Lab works">
           How it works ↓
         </a>
       </div>

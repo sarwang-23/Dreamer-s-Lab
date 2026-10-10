@@ -6639,3 +6639,319 @@ body {
         animation: none !important;
     }
 }
+
+/* ============================================================
+   GLOBAL MOBILE RESPONSIVE OVERRIDES
+   Comprehensive fixes for all sections at 768px, 640px, 480px, 375px
+   ============================================================ */
+
+/* ── Viewport meta safety ── */
+html { -webkit-text-size-adjust: 100%; }
+*, *::before, *::after { box-sizing: border-box; }
+img, svg, video { max-width: 100%; }
+
+/* ────────────────────────────────────────
+   NAVBAR
+──────────────────────────────────────── */
+@media (max-width: 768px) {
+    .nd-navbar {
+        padding: 1rem 1.25rem;
+    }
+    .nd-nav-links {
+        display: none;
+    }
+    .nd-nav-cta {
+        font-size: 0.88rem;
+        padding: 0.6rem 1.1rem;
+    }
+}
+
+/* ────────────────────────────────────────
+   HERO
+──────────────────────────────────────── */
+@media (max-width: 1024px) {
+    .nd-hero {
+        padding: 8rem 2rem 3rem;
+    }
+    .nd-hero-container {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    .nd-hero-title {
+        font-size: 4rem;
+    }
+}
+@media (max-width: 640px) {
+    .nd-hero {
+        padding: 7rem 1.25rem 2.5rem;
+        min-height: auto;
+    }
+    .nd-hero-title {
+        font-size: clamp(2.8rem, 10vw, 4rem);
+        letter-spacing: -1px;
+    }
+    .nd-hero-eyebrow {
+        font-size: 0.7rem;
+        letter-spacing: 2px;
+        margin-bottom: 1.25rem;
+    }
+    .nd-hero-desc {
+        font-size: 1rem;
+    }
+    .nd-hero-ctas {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.75rem;
+    }
+    .nd-watermark { display: none; }
+}
+
+/* ────────────────────────────────────────
+   CONFIDENT BUILDERS / JOURNEY SECTION
+──────────────────────────────────────── */
+@media (max-width: 1024px) {
+    .cb-timeline {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    .cb-connector { display: none; }
+    .cb-title {
+        font-size: clamp(2.2rem, 6vw, 3.2rem);
+    }
+}
+@media (max-width: 640px) {
+    .cb-header {
+        padding: 3rem 1.25rem 2rem;
+        text-align: center;
+    }
+    .cb-title {
+        font-size: clamp(2rem, 8.5vw, 2.8rem);
+    }
+    .cb-desc { font-size: 0.95rem; }
+    .cb-node {
+        width: 100%;
+        max-width: 100%;
+    }
+    .cb-node-inner {
+        padding: 1.5rem 1.25rem;
+    }
+}
+
+/* ────────────────────────────────────────
+   PROGRAMS SECTION (p-panel)
+──────────────────────────────────────── */
+@media (max-width: 1024px) {
+    .program-panels {
+        grid-template-columns: 1fr;
+    }
+    .p-panel {
+        min-height: auto;
+    }
+}
+@media (max-width: 640px) {
+    .p-panel-inner {
+        padding: 2rem 1.25rem;
+    }
+    .p-title {
+        font-size: clamp(1.8rem, 7vw, 2.5rem);
+    }
+}
+
+/* ────────────────────────────────────────
+   EXPERIENCE / APPROACH (exp-*)
+──────────────────────────────────────── */
+@media (max-width: 768px) {
+    .exp-container {
+        padding: 3rem 1.25rem;
+    }
+    .exp-title {
+        font-size: clamp(2.2rem, 8vw, 3.2rem) !important;
+        letter-spacing: -0.02em !important;
+    }
+    .exp-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    .exp-card {
+        padding: 1.5rem 1.25rem;
+    }
+}
+@media (max-width: 480px) {
+    .exp-title {
+        font-size: clamp(2rem, 9.5vw, 2.8rem) !important;
+    }
+    .exp-card-visual { height: 100px; }
+}
+
+/* ────────────────────────────────────────
+   TICKER STRIP
+──────────────────────────────────────── */
+@media (max-width: 640px) {
+    .cs-ticker-track span {
+        font-size: 0.8rem;
+        gap: 0.75rem;
+    }
+}
+
+/* ────────────────────────────────────────
+   MENTOR NETWORK SECTION (mn-*)
+──────────────────────────────────────── */
+@media (max-width: 1024px) {
+    .mn-section { padding: 5rem 0 6rem; }
+    .mn-container {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        padding: 0 1.5rem;
+    }
+    .mn-left {
+        text-align: center;
+        align-items: center;
+    }
+    .mn-eyebrow-row { justify-content: center; }
+    .mn-right {
+        width: 100%;
+        max-width: 480px;
+        margin: 0 auto;
+    }
+    .mn-mobile-categories { display: flex; width: 100%; text-align: left; }
+}
+@media (max-width: 640px) {
+    .mn-section { padding: 3.5rem 0 4.5rem; }
+    .mn-container { padding: 0 1.25rem; gap: 2.5rem; }
+    .mn-headline { font-size: clamp(2rem, 8vw, 2.8rem); }
+    .mn-network-wrap { max-width: 340px; }
+    .mn-network-svg { overflow: visible; }
+}
+@media (max-width: 480px) {
+    .mn-headline { font-size: clamp(1.8rem, 9vw, 2.4rem); }
+    .mn-network-wrap { max-width: 300px; }
+}
+
+/* ────────────────────────────────────────
+   OUTCOMES / WHAT WILL YOU WALK AWAY WITH (ow-*)
+──────────────────────────────────────── */
+@media (max-width: 768px) {
+    .ow-section { padding: 3rem 1.25rem; }
+    .ow-title { font-size: clamp(2.2rem, 7.5vw, 3rem); }
+    .ow-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.75rem;
+    }
+}
+@media (max-width: 480px) {
+    .ow-section { padding: 2.5rem 1rem; }
+    .ow-grid { grid-template-columns: 1fr; gap: 0.65rem; }
+    .ow-title { font-size: clamp(2rem, 9vw, 2.6rem); }
+    .ow-tile { min-height: 0; padding: 1rem 1.1rem; gap: 0.65rem; }
+    .ow-tile-title { font-size: 0.95rem; }
+    .ow-tile-visual { width: 80px; height: 80px; }
+    .ow-closing-text { font-size: clamp(1.2rem, 5vw, 1.6rem); }
+}
+
+/* ────────────────────────────────────────
+   FAQ (bd-faq-*)
+──────────────────────────────────────── */
+@media (max-width: 768px) {
+    .bd-faq { padding: 3rem 1.25rem; }
+    .bd-faq-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    .bd-faq-title { font-size: clamp(2rem, 7vw, 3rem); }
+    .bd-faq-support { max-width: 100%; }
+    .bd-faq-orbits { display: none; }
+}
+@media (max-width: 480px) {
+    .bd-faq { padding: 2.5rem 1rem; }
+    .bd-faq-title { font-size: clamp(1.8rem, 8.5vw, 2.5rem); }
+    .bd-faq-question { font-size: 1rem; }
+    .bd-faq-icon { width: 32px; height: 32px; }
+    .bd-faq-a p { padding-left: calc(1.7rem + 1rem + 0.5rem); font-size: 0.9rem; }
+}
+
+/* ────────────────────────────────────────
+   CLOSING CTA (bd-close-*)
+──────────────────────────────────────── */
+@media (max-width: 768px) {
+    .bd-close { padding: 3.5rem 1.25rem; }
+    .bd-close-title { font-size: clamp(2.2rem, 8vw, 3.2rem); letter-spacing: -0.025em; }
+    .bd-close-actions {
+        grid-template-columns: 1fr;
+        gap: 0.85rem;
+        max-width: 100%;
+    }
+    .bd-close-card {
+        grid-template-columns: auto 1fr auto;
+        grid-template-rows: auto;
+        align-items: center;
+        gap: 1rem;
+        min-height: 0;
+        padding: 1.1rem 1.25rem;
+    }
+    .bd-close-card-icon { grid-column: 1; grid-row: 1; width: 42px; height: 42px; }
+    .bd-close-card-body { grid-column: 2; grid-row: 1; align-self: center; }
+    .bd-close-card-arrow { grid-column: 3; grid-row: 1; align-self: center; }
+    .bd-close-motif { width: min(380px, 90%); }
+}
+@media (max-width: 480px) {
+    .bd-close { padding: 2.5rem 1rem; }
+    .bd-close-title { font-size: clamp(1.9rem, 9vw, 2.6rem); }
+    .bd-close-kicker { font-size: 1rem; }
+}
+
+/* ────────────────────────────────────────
+   OLD SECTIONS (nd-checklist, nd-split-info etc.)
+──────────────────────────────────────── */
+@media (max-width: 768px) {
+    .nd-container { padding: 0 1.25rem; }
+    .nd-heading { font-size: clamp(1.8rem, 7vw, 2.8rem); }
+    .split-layout {
+        grid-template-columns: 1fr !important;
+        gap: 2.5rem;
+    }
+    .nd-check-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 0.75rem;
+    }
+}
+@media (max-width: 480px) {
+    .nd-check-grid { grid-template-columns: 1fr; }
+    .nd-heading { font-size: clamp(1.6rem, 8vw, 2.2rem); }
+}
+
+/* ────────────────────────────────────────
+   DREAMERS LAB / PROGRAM SECTION
+──────────────────────────────────────── */
+@media (max-width: 768px) {
+    .dl-hero, .dl-hero-inner {
+        padding-inline: 1.25rem;
+    }
+    .dl-hero-title {
+        font-size: clamp(2rem, 8vw, 3rem);
+    }
+    .dl-stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+    .dl-modules-grid {
+        grid-template-columns: 1fr;
+    }
+}
+@media (max-width: 480px) {
+    .dl-hero-title { font-size: clamp(1.8rem, 9vw, 2.5rem); }
+    .dl-stats-grid { grid-template-columns: 1fr 1fr; }
+    .dl-cta-wrap { flex-direction: column; align-items: flex-start; }
+}
+
+/* ────────────────────────────────────────
+   GENERAL OVERFLOW SAFETY
+──────────────────────────────────────── */
+@media (max-width: 640px) {
+    body { overflow-x: hidden; }
+    section, .nd-container, .exp-container, .mn-container,
+    .ow-container, .bd-faq-container, .bd-close-inner {
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+    h1, h2, h3 { overflow-wrap: break-word; word-break: break-word; }
+}
