@@ -4,10 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Building Dreams - From Curious Minds to Confident Builders</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="responsive.css">
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="footer.css">
 </head>
 <body id="top">
 
@@ -31,63 +33,128 @@
         </div>
     </nav>
 
-    <!-- New Premium Hero -->
-        <!-- Original Orange Hero Section -->
-        <!-- Original Light Theme Hero Section -->
-    <header class="hero-light">
-        <div class="hl-grid-bg"></div>
-        <div class="hl-container">
-            <!-- Left Text Content -->
-            <div class="hl-content">
-                <div class="hl-eyebrow">
-                    <span class="hl-dot"></span> TURNING IDEAS INTO SUCCESSFUL VENTURES
+    <!-- ══ HERO — COMPLETE REDESIGN ══ -->
+    <header class="bd-hero" id="top">
+
+        <!-- Subtle grid + star accent -->
+        <div class="bd-hero-bg" aria-hidden="true">
+            <div class="bd-hero-grid"></div>
+            <svg class="bd-hero-star" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M60 4 L63.5 52 L108 60 L63.5 68 L60 116 L56.5 68 L12 60 L56.5 52 Z" fill="#ff6b00" opacity="0.12"/>
+                <path d="M60 20 L62.5 54 L92 60 L62.5 66 L60 100 L57.5 66 L28 60 L57.5 54 Z" fill="#ff6b00" opacity="0.18"/>
+                <circle cx="60" cy="60" r="5" fill="#ff6b00" opacity="0.6"/>
+                <circle cx="60" cy="60" r="10" fill="none" stroke="#ff6b00" stroke-width="1" opacity="0.25"/>
+                <circle cx="60" cy="60" r="20" fill="none" stroke="#ff6b00" stroke-width="0.5" opacity="0.15"/>
+            </svg>
+        </div>
+
+        <div class="bd-hero-container">
+
+            <!-- ── LEFT: TEXT ── -->
+            <div class="bd-hero-left">
+                <div class="bd-hero-eyebrow">
+                    <span class="bd-hero-star-dot">✦</span>
+                    FROM DREAM TO VENTURE
                 </div>
-                <h1 class="hl-title">
-                    Every Big<br>Venture Starts<br>With an Idea.<br>
-                    <span class="hl-highlight">We help build it.</span>
+
+                <h1 class="bd-hero-title">
+                    Every Dream
+                    <span class="bd-hero-accent">Deserves a Path.</span>
                 </h1>
-                <p class="hl-desc">
-                    Building Dreams helps students discover entrepreneurship, turn ideas into ventures and gives schools and universities the programs, mentors and networks to build the next generation of entrepreneurs.
+
+                <p class="bd-hero-lead">
+                    Building Dreams helps students, aspiring entrepreneurs and universities turn ideas into real-world ventures.
                 </p>
-                <div class="hl-actions">
-                    <a href="#programs" class="hl-btn-primary">Explore Programs</a>
-                    <a href="#program-venture" class="hl-btn-secondary">Partner With Us</a>
+                <p class="bd-hero-sub">
+                    From discovering an idea to validating it, building an MVP, finding customers and preparing for the next stage — we provide the guidance, mentorship and ecosystem to make it happen.
+                </p>
+
+                <div class="bd-hero-ctas">
+                    <a href="#programs" class="bd-hero-btn-primary">
+                        Explore Building Dreams
+                    </a>
+                    <a href="#journey" class="bd-hero-btn-ghost">
+                        Start Your Journey <span class="bd-hero-arrow">→</span>
+                    </a>
                 </div>
             </div>
 
-            <!-- Right Visual (Cards + Path) -->
-            <div class="hl-visual">
-                <!-- SVG Path connecting the cards -->
-                <svg class="hl-path" viewBox="0 0 500 600" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M 200 85 C 350 85, 350 250, 300 250 C 150 250, 150 415, 200 415 C 350 415, 350 585, 300 585" stroke="#ff6b00" stroke-width="1.8" stroke-dasharray="6 5" stroke-linecap="round"/>
-                </svg>
+            <!-- ── RIGHT: FLOATING CARDS + DASHED PATH ── -->
+            <div class="bd-hero-right">
+                <div class="bd-hl-visual">
+                    <!-- Dashed S-curve path connecting card edges + Moving Glowing Ball -->
+                    <svg class="bd-hl-path" viewBox="0 0 520 640" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <defs>
+                            <filter id="bdBallGlow" x="-50%" y="-50%" width="200%" height="200%">
+                                <feGaussianBlur stdDeviation="4" result="blur" />
+                                <feMerge>
+                                    <feMergeNode in="blur" />
+                                    <feMergeNode in="SourceGraphic" />
+                                </feMerge>
+                            </filter>
+                            <radialGradient id="bdBallAura" cx="50%" cy="50%" r="50%">
+                                <stop offset="0%" stop-color="#ff7a1a" stop-opacity="0.9" />
+                                <stop offset="45%" stop-color="#ff5500" stop-opacity="0.35" />
+                                <stop offset="100%" stop-color="#ff5500" stop-opacity="0" />
+                            </radialGradient>
+                        </defs>
 
-                <div class="hl-card hl-card-1">
-                    <span class="hl-c-num">01</span>
-                    <h3 class="hl-c-title">IDEA</h3>
-                    <p class="hl-c-desc">Spot a real problem</p>
-                </div>
+                        <!-- Dashed path -->
+                        <path id="bdHeroPath"
+                              d="M 175 53 C 305 53, 215 178, 345 178 C 500 178, 310 308, 175 308 C 25 308, 215 438, 345 438 C 500 438, 310 568, 175 568"
+                              stroke="#ff6b00" stroke-width="1.8" stroke-dasharray="6 4" stroke-linecap="round"/>
 
-                <div class="hl-card hl-card-2">
-                    <span class="hl-c-num">02</span>
-                    <h3 class="hl-c-title">BUILD</h3>
-                    <p class="hl-c-desc">Prototype & MVP</p>
-                </div>
+                        <!-- Animated Moving Glowing Ball traveling along path -->
+                        <g class="bd-moving-ball">
+                            <animateMotion dur="5.5s" repeatCount="indefinite">
+                                <mpath href="#bdHeroPath"/>
+                            </animateMotion>
+                            <!-- Ambient glowing aura -->
+                            <circle cx="0" cy="0" r="14" fill="url(#bdBallAura)"/>
+                            <!-- Vibrant orange ball -->
+                            <circle cx="0" cy="0" r="6.5" fill="#ff6b00" filter="url(#bdBallGlow)"/>
+                            <!-- Bright white core highlight -->
+                            <circle cx="0" cy="0" r="3" fill="#ffffff"/>
+                        </g>
+                    </svg>
 
-                <div class="hl-card hl-card-3">
-                    <span class="hl-c-num">03</span>
-                    <h3 class="hl-c-title">LAUNCH</h3>
-                    <p class="hl-c-desc">Pitch on Demo Day</p>
-                </div>
+                    <div class="bd-hl-card bd-hl-card--1">
+                        <span class="bd-hl-num">01</span>
+                        <h3 class="bd-hl-title">DREAM</h3>
+                        <p class="bd-hl-desc">Find your idea</p>
+                    </div>
 
-                <div class="hl-card hl-card-4">
-                    <span class="hl-c-num">04</span>
-                    <h3 class="hl-c-title">GROW</h3>
-                    <p class="hl-c-desc">Mentors & Investors</p>
+                    <div class="bd-hl-card bd-hl-card--2">
+                        <span class="bd-hl-num">02</span>
+                        <h3 class="bd-hl-title">DISCOVER</h3>
+                        <p class="bd-hl-desc">Validate the problem</p>
+                    </div>
+
+                    <div class="bd-hl-card bd-hl-card--3">
+                        <span class="bd-hl-num">03</span>
+                        <h3 class="bd-hl-title">BUILD</h3>
+                        <p class="bd-hl-desc">Create your MVP</p>
+                    </div>
+
+                    <div class="bd-hl-card bd-hl-card--4">
+                        <span class="bd-hl-num">04</span>
+                        <h3 class="bd-hl-title">LAUNCH</h3>
+                        <p class="bd-hl-desc">Find first customers</p>
+                    </div>
+
+                    <div class="bd-hl-card bd-hl-card--5">
+                        <span class="bd-hl-num">05</span>
+                        <h3 class="bd-hl-title">GROW</h3>
+                        <p class="bd-hl-desc">Scale your venture</p>
+                    </div>
                 </div>
             </div>
+
         </div>
     </header>
+
+
+
 
     <div class="scrolling-banner">
         <div class="scrolling-content">
@@ -124,20 +191,21 @@
             </div>
 
             <!-- The main animated pathway -->
-            <svg class="journey-path-svg" viewBox="0 0 1000 400" preserveAspectRatio="none">
+            <svg class="journey-path-svg" viewBox="0 0 1000 360" preserveAspectRatio="none">
                 <defs>
                     <linearGradient id="journeyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%" stop-color="rgba(255,107,0,0.1)" />
-                        <stop offset="50%" stop-color="rgba(255,107,0,0.6)" />
-                        <stop offset="100%" stop-color="rgba(255,107,0,0.1)" />
+                        <stop offset="0%" stop-color="rgba(255,107,0,0.15)" />
+                        <stop offset="25%" stop-color="rgba(255,107,0,0.7)" />
+                        <stop offset="75%" stop-color="rgba(255,107,0,0.7)" />
+                        <stop offset="100%" stop-color="rgba(255,107,0,0.15)" />
                     </linearGradient>
                     <filter id="jGlow" x="-20%" y="-20%" width="140%" height="140%">
-                        <feGaussianBlur stdDeviation="4" result="blur" />
+                        <feGaussianBlur stdDeviation="3.5" result="blur" />
                         <feComposite in="SourceGraphic" in2="blur" operator="over" />
                     </filter>
                 </defs>
-                <path id="jPath" d="M 0 65 C 250 65, 300 105, 500 125 C 700 145, 750 185, 1000 185" fill="none" stroke="url(#journeyGrad)" stroke-width="2" stroke-dasharray="6,6" />
-                <circle class="j-particle" r="4" fill="#ff6b00" filter="url(#jGlow)"/>
+                <path id="jPath" d="M 125 110 C 250 110, 250 145, 375 145 C 500 145, 500 180, 625 180 C 750 180, 750 215, 875 215" fill="none" stroke="url(#journeyGrad)" stroke-width="2.2" stroke-dasharray="6,6" stroke-linecap="round" />
+                <circle class="j-particle" r="4.5" fill="#ff6b00" filter="url(#jGlow)"/>
             </svg>
 
             <div class="journey-nodes">
@@ -204,132 +272,118 @@
         </div>
     </section>
 
-    <section class="programs" id="programs">
-        <!-- Cinematic Background Ecosystem -->
-        <div class="prog-bg">
-            <div class="prog-orb prog-orb-1"></div>
-            <div class="prog-orb prog-orb-2"></div>
-            <div class="prog-noise"></div>
-            <svg class="prog-grid" viewBox="0 0 1000 600" preserveAspectRatio="none">
-                <path d="M 210 80 C 300 80, 370 80, 370 130 C 370 200, 160 200, 160 280 C 160 350, 370 350, 370 420" stroke="rgba(255,255,255,0.03)" stroke-width="1" fill="none" />
-            </svg>
-        </div>
-
-        <div class="prog-container">
-            <div class="prog-header">
-                <span class="prog-eyebrow">OUR ENTREPRENEURSHIP PROGRAMS</span>
-                <h2 class="prog-title">Three Programs.<br><span class="prog-highlight">One Journey.</span></h2>
+    <!-- ==============================================
+         PROGRAMS SECTION — CLEAN EDITORIAL REDESIGN
+         ============================================== -->
+    <section class="programs-clean" id="programs" aria-label="Our Programs">
+        <div class="pc-container">
+            <!-- Simple, elegant section header -->
+            <div class="pc-header">
+                <span class="pc-eyebrow">Three journeys. One mission.</span>
+                <h2 class="pc-title">Three Programs. <span class="pc-title-accent">One Journey.</span></h2>
+                <p class="pc-subtitle">Structured entrepreneurship pathways tailored for high school students, university builders, and academic institutions.</p>
             </div>
 
-            <!-- Program Journey Indicator -->
-            <div class="prog-indicator">
-                <span class="ind-step">01 DISCOVER</span>
-                <span class="ind-line"></span>
-                <span class="ind-step active">02 BUILD</span>
-                <span class="ind-line"></span>
-                <span class="ind-step">03 ACCELERATE</span>
-            </div>
-
-            <div class="prog-journey-wrapper">
-                <!-- Ecosystem connection line -->
-                <svg class="prog-path-svg" viewBox="0 0 1200 400" preserveAspectRatio="none">
-                    <defs>
-                        <linearGradient id="progGrad" x1="0%" y1="50%" x2="100%" y2="50%">
-                            <stop offset="0%" stop-color="rgba(255,107,0,0)" />
-                            <stop offset="50%" stop-color="rgba(255,107,0,0.8)" />
-                            <stop offset="100%" stop-color="rgba(255,107,0,0)" />
-                        </linearGradient>
-                        <filter id="progGlow" x="-20%" y="-20%" width="140%" height="140%">
-                            <feGaussianBlur stdDeviation="5" result="blur" />
-                            <feComposite in="SourceGraphic" in2="blur" operator="over" />
-                        </filter>
-                    </defs>
-                    <path d="M 100 200 L 1100 200" fill="none" stroke="url(#progGrad)" stroke-width="2" stroke-dasharray="4,6" />
-                    <circle class="prog-particle" cx="200" cy="200" r="4" fill="#ff6b00" filter="url(#progGlow)"/>
-                </svg>
-
-                <div class="program-panels">
-                    <!-- 01 Dreamers Lab -->
-                    <div class="p-panel p-dreamers" id="program-dreamers">
-                        <div class="p-panel-inner">
-                            <div class="p-top">
-                                <div class="p-icon">
-                                    <!-- Spark/Idea Icon -->
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.9 1.2 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg>
-                                </div>
-                                <span class="p-num">01</span>
-                            </div>
-                            <span class="p-category">GRADES 8–12</span>
-                            <h3 class="p-name">Dreamers Lab</h3>
-                            <h4 class="p-position">Where Young Ideas Begin.</h4>
-                            
-                            <div class="p-expanded-content">
-                                <p>Students learn to identify problems, develop ideas, validate solutions, build prototypes and present their work.</p>
-                                <ul class="p-features">
-                                    <li>Discover problems.</li>
-                                    <li>Develop ideas.</li>
-                                    <li>Validate solutions.</li>
-                                </ul>
-                                <a href="#" class="p-cta">Explore Dreamers Lab <span class="arrow">&rarr;</span></a>
-                            </div>
+            <!-- Responsive 3-card equal-height grid -->
+            <div class="pc-grid">
+                <!-- Card 1: Dreamers Lab -->
+                <article class="pc-card pc-card--default" id="program-dreamers" aria-labelledby="prog-card-title-1">
+                    <div class="pc-card-header">
+                        <div class="pc-icon-box" aria-hidden="true">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.9 1.2 1.5 1.5 2.5"/>
+                                <path d="M9 18h6"/>
+                                <path d="M10 22h4"/>
+                            </svg>
                         </div>
-                        <div class="p-ambient-glow"></div>
+                        <span class="pc-badge">FOR GRADES 9–12</span>
                     </div>
 
-                    <!-- 02 FounderLab (Visual Hero) -->
-                    <div class="p-panel p-founder active" id="program-founder">
-                        <div class="p-panel-inner">
-                            <div class="p-top">
-                                <div class="p-icon">
-                                    <!-- Geometric Prototype Icon -->
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
-                                </div>
-                                <span class="p-num">02</span>
-                            </div>
-                            <span class="p-category">UNIVERSITY FOUNDERS</span>
-                            <h3 class="p-name">FounderLab</h3>
-                            <h4 class="p-position">From Idea to Startup.</h4>
-                            
-                            <div class="p-expanded-content">
-                                <p>A structured venture-building journey covering validation, MVP, GTM, traction and fundraising readiness.</p>
-                                <ul class="p-features">
-                                    <li>Rapid prototyping.</li>
-                                    <li>GTM strategy.</li>
-                                    <li>Fundraising readiness.</li>
-                                </ul>
-                                <a href="#" class="p-cta">Explore FounderLab <span class="arrow">&rarr;</span></a>
-                            </div>
-                        </div>
-                        <div class="p-ambient-glow"></div>
+                    <h3 class="pc-card-title" id="prog-card-title-1">Dreamers Lab</h3>
+                    <p class="pc-card-subtitle">Turn curiosity into your first big idea.</p>
+
+                    <div class="pc-card-desc">
+                        <p>A hands-on entrepreneurship experience where high-school students discover real-world problems, develop creative ideas, work in teams and build their first prototypes.</p>
                     </div>
 
-                    <!-- 03 VentureLab -->
-                    <div class="p-panel p-venture" id="program-venture">
-                        <div class="p-panel-inner">
-                            <div class="p-top">
-                                <div class="p-icon">
-                                    <!-- Ecosystem Nodes Icon -->
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" x2="15.42" y1="13.51" y2="17.49"/><line x1="15.41" x2="8.59" y1="6.51" y2="10.49"/></svg>
-                                </div>
-                                <span class="p-num">03</span>
-                            </div>
-                            <span class="p-category">UNIVERSITIES & INCUBATORS</span>
-                            <h3 class="p-name">VentureLab</h3>
-                            <h4 class="p-position">Build a University Venture Ecosystem.</h4>
-                            
-                            <div class="p-expanded-content">
-                                <p>We design and operate structured cohorts, mentorship programs, founder hours, investor interactions and Demo Days.</p>
-                                <ul class="p-features">
-                                    <li>Structured cohorts.</li>
-                                    <li>Investor network.</li>
-                                    <li>Demo Days.</li>
-                                </ul>
-                                <a href="#" class="p-cta">Partner With Us <span class="arrow">&rarr;</span></a>
+                    <div class="pc-card-footer">
+                        <a href="#dreamers-lab" class="pc-btn pc-btn--outline" aria-label="Explore Dreamers Lab">
+                            <span>Explore Dreamers Lab</span>
+                            <span class="pc-arrow" aria-hidden="true">&rarr;</span>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Card 2: Student Entrepreneurs (Standout Orange Card) -->
+                <article class="pc-card pc-card--featured" id="program-founder" aria-labelledby="prog-card-title-2">
+                    <div class="pc-card-header">
+                        <div class="pc-icon-box pc-icon-box--featured" aria-hidden="true">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/>
+                                <path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/>
+                                <path d="M9 12H4s.55-3.03 2-4.5c1.45-1.47 4.5-2 4.5-2"/>
+                                <path d="M15 15v5s3.03-.55 4.5-2c1.47-1.45 2-4.5 2-4.5"/>
+                            </svg>
+                        </div>
+                        <span class="pc-badge pc-badge--featured">FOR UNIVERSITY STUDENTS</span>
+                    </div>
+
+                    <h3 class="pc-card-title pc-card-title--white" id="prog-card-title-2">Student Entrepreneurs</h3>
+                    <p class="pc-card-subtitle pc-card-subtitle--featured">Turn your university years into your first venture.</p>
+
+                    <div class="pc-card-desc pc-card-desc--featured">
+                        <p>Have an idea, a problem to solve or simply the curiosity to build something? Learn to validate your idea, create an MVP, find your first users and take your first steps towards a real venture.</p>
+                        
+                        <div class="pc-journey">
+                            <div class="pc-journey-track" role="list" aria-label="Journey indicator">
+                                <span class="pc-journey-step" role="listitem">Idea</span>
+                                <span class="pc-journey-sep" aria-hidden="true">&rarr;</span>
+                                <span class="pc-journey-step" role="listitem">Validation</span>
+                                <span class="pc-journey-sep" aria-hidden="true">&rarr;</span>
+                                <span class="pc-journey-step" role="listitem">MVP</span>
+                                <span class="pc-journey-sep" aria-hidden="true">&rarr;</span>
+                                <span class="pc-journey-step" role="listitem">First Users</span>
+                                <span class="pc-journey-sep" aria-hidden="true">&rarr;</span>
+                                <span class="pc-journey-step pc-journey-step--final" role="listitem">Venture</span>
                             </div>
                         </div>
-                        <div class="p-ambient-glow"></div>
                     </div>
-                </div>
+
+                    <div class="pc-card-footer">
+                        <a href="#student-entrepreneurship" class="pc-btn pc-btn--featured" aria-label="Explore Student Entrepreneurship">
+                            <span>Explore Student Entrepreneurship</span>
+                            <span class="pc-arrow" aria-hidden="true">&rarr;</span>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Card 3: University Founders & Accelerators -->
+                <article class="pc-card pc-card--default" id="program-venture" aria-labelledby="prog-card-title-3">
+                    <div class="pc-card-header">
+                        <div class="pc-icon-box" aria-hidden="true">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M3 21h18"/>
+                                <path d="M5 21V7l8-4 8 4v14"/>
+                                <path d="M9 10a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v11H9Z"/>
+                            </svg>
+                        </div>
+                        <span class="pc-badge">FOR UNIVERSITIES & INSTITUTIONS</span>
+                    </div>
+
+                    <h3 class="pc-card-title" id="prog-card-title-3">University Founders & Accelerators</h3>
+                    <p class="pc-card-subtitle">Build an ecosystem that turns ideas into ventures.</p>
+
+                    <div class="pc-card-desc">
+                        <p>We partner with universities to design and deliver entrepreneurship programs, founder cohorts, incubators and venture-building initiatives that help students move from ideas to real-world businesses.</p>
+                    </div>
+
+                    <div class="pc-card-footer">
+                        <a href="#talk-to-us" class="pc-btn pc-btn--outline" aria-label="Partner With Us">
+                            <span>Partner With Us</span>
+                            <span class="pc-arrow" aria-hidden="true">&rarr;</span>
+                        </a>
+                    </div>
+                </article>
             </div>
         </div>
     </section>
@@ -477,44 +531,317 @@
 
 
 
-<!-- Section: Entrepreneurship Should Be Experienced. Not Just Taught. -->
-<section class="experienced-section">
-    <div class="experienced-container">
-        <h2 class="experienced-headline">
-            Entrepreneurship Should Be<br>
-            Experienced. <span class="hl-orange">Not Just Taught.</span>
-        </h2>
-        
-        <div class="experienced-grid">
-            <!-- Left: Traditional Approach -->
-            <div class="traditional-col">
-                <span class="traditional-eyebrow">TRADITIONAL APPROACH</span>
-                <ul class="traditional-list">
-                    <li>Workshops</li>
-                    <li>Competitions</li>
-                    <li>Certificates</li>
-                    <li>One-off events</li>
-                </ul>
-            </div>
-            
-            <!-- Right: Building Dreams Dark Card -->
-            <div class="building-card">
-                <span class="building-eyebrow">BUILDING DREAMS</span>
-                <div class="building-pills">
-                    <div class="building-pill"><span class="pill-num">1</span> Ideas</div>
-                    <div class="building-pill"><span class="pill-num">2</span> Validation</div>
-                    <div class="building-pill"><span class="pill-num">3</span> MVP</div>
-                    <div class="building-pill"><span class="pill-num">4</span> Mentors</div>
-                    <div class="building-pill"><span class="pill-num">5</span> Customers</div>
-                    <div class="building-pill"><span class="pill-num">6</span> Traction</div>
-                    <div class="building-pill"><span class="pill-num">7</span> Investors</div>
-                    <div class="building-pill"><span class="pill-num">8</span> Demo Day</div>
+<!-- Section: Student Entrepreneurship -->
+<section class="experienced-section se-section" id="student-entrepreneurship" aria-labelledby="se-heading">
+    <!-- Ambient Sparkles -->
+    <span class="se-sparkle se-sparkle--1" aria-hidden="true">✦</span>
+    <span class="se-sparkle se-sparkle--2" aria-hidden="true">✦</span>
+
+    <!-- Top-right handwritten campus text + arrow -->
+    <div class="se-top-right-script" aria-hidden="true">
+        <span>Same<br>Campus.<br><strong class="se-script-bigger">Bigger<br>Possibilities.</strong></span>
+        <svg class="se-top-script-arrow" viewBox="0 0 36 42" fill="none">
+            <path d="M 6 4 C 28 8, 30 26, 12 36" stroke="#1D4336" stroke-width="1.8" stroke-linecap="round"/>
+            <path d="M 20 30 L 10 36 L 15 42" stroke="#1D4336" stroke-width="1.8" stroke-linecap="round"/>
+        </svg>
+    </div>
+
+    <div class="experienced-container se-container">
+        <!-- Two-column editorial layout -->
+        <div class="se-body-grid">
+
+            <!-- LEFT: Eyebrow + Heading + Content + 4 Cards + CTA -->
+            <div class="se-left">
+                <!-- Eyebrow -->
+                <div class="se-eyebrow-wrap">
+                    <span class="se-eyebrow-star" aria-hidden="true">✳</span>
+                    <span class="se-eyebrow">STUDENT ENTREPRENEURSHIP</span>
+                </div>
+
+                <!-- Main Heading -->
+                <h2 class="experienced-headline se-heading" id="se-heading">
+                    Your first startup doesn't need to<br>
+                    <span class="se-heading-accent-wrap">
+                        <em class="se-heading-accent">start after graduation.</em>
+                        <svg class="se-heading-swoosh" viewBox="0 0 420 18" fill="none" aria-hidden="true">
+                            <path d="M 4 12 Q 210 2 416 12" stroke="#FF6835" stroke-width="2.5" stroke-linecap="round"/>
+                        </svg>
+                    </span>
+                </h2>
+
+                <p class="se-lead">University is one of the best places to experiment.</p>
+                <p class="se-body-text">You have access to people, technology, professors, communities and four years to try things. Building Dreams helps university students make the most of that opportunity.</p>
+
+                <p class="se-subheading">WHETHER YOU HAVE:</p>
+                <div class="se-where-list" role="list">
+                    <div class="se-where-item" tabindex="0">
+                        <span class="se-item-icon se-icon--idea" aria-hidden="true">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M9 18h6"></path>
+                                <path d="M10 22h4"></path>
+                                <path d="M12 2a7 7 0 0 0-7 7c0 2.6 1.4 4.5 3 5.7V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.3c1.6-1.2 3-3.1 3-5.7a7 7 0 0 0-7-7z"></path>
+                            </svg>
+                        </span>
+                        <div class="se-item-text">
+                            <span class="se-item-title">An idea</span>
+                            <span class="se-item-sub">A spark you can't stop thinking about.</span>
+                        </div>
+                        <span class="se-item-arrow" aria-hidden="true">&rarr;</span>
+                    </div>
+
+                    <div class="se-where-item" tabindex="0">
+                        <span class="se-item-icon se-icon--problem" aria-hidden="true">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                            </svg>
+                        </span>
+                        <div class="se-item-text">
+                            <span class="se-item-title">A problem you want to solve</span>
+                            <span class="se-item-sub">A real challenge you see around you.</span>
+                        </div>
+                        <span class="se-item-arrow" aria-hidden="true">&rarr;</span>
+                    </div>
+
+                    <div class="se-where-item" tabindex="0">
+                        <span class="se-item-icon se-icon--startup" aria-hidden="true">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"></path>
+                                <path d="M12 15l-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"></path>
+                                <path d="M9 12H4s.55-3.03 2-4.5c1.45-1.47 4.5-2 4.5-2"></path>
+                                <path d="M15 15v5s3.03-.55 4.5-2c1.47-1.45 2-4.5 2-4.5"></path>
+                            </svg>
+                        </span>
+                        <div class="se-item-text">
+                            <span class="se-item-title">A startup already in progress</span>
+                            <span class="se-item-sub">An early idea you want to take further.</span>
+                        </div>
+                        <span class="se-item-arrow" aria-hidden="true">&rarr;</span>
+                    </div>
+
+                    <div class="se-where-item" tabindex="0">
+                        <span class="se-item-icon se-icon--curiosity" aria-hidden="true">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                            </svg>
+                        </span>
+                        <div class="se-item-text">
+                            <span class="se-item-title">The curiosity to explore entrepreneurship</span>
+                            <span class="se-item-sub">A willingness to learn, build and experiment.</span>
+                        </div>
+                        <span class="se-item-arrow" aria-hidden="true">&rarr;</span>
+                    </div>
+                </div>
+
+                <div class="se-tagline-wrap">
+                    <p class="se-tagline">
+                        <span class="se-tagline-dash">&mdash;</span> we meet you <span class="se-tagline-underline">where you are.</span>
+                    </p>
+                </div>
+
+                <div class="se-cta-group">
+                    <a href="#program-founder" class="se-cta" aria-label="Build your venture with Building Dreams">
+                        Build Your Venture
+                        <span class="se-cta-arrow" aria-hidden="true">&rarr;</span>
+                    </a>
+                    <button class="se-video-btn" type="button" aria-label="See how it works, 2 minute overview">
+                        <span class="se-play-icon" aria-hidden="true">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="#FFFFFF"><polygon points="6 4 20 12 6 20 6 4"/></svg>
+                        </span>
+                        <span class="se-video-label">
+                            <span class="se-video-title">See how it works</span>
+                            <span class="se-video-sub">2 min overview</span>
+                        </span>
+                    </button>
                 </div>
             </div>
-        </div>
-        
-        <div class="experienced-footer">
-            We focus on <strong>what students build</strong> — not just what they attend.
+
+            <!-- RIGHT: Composite Editorial Journey Graphic -->
+            <div class="se-right">
+
+                <!-- Tilted Campus Polaroid Photo with attached lime sticky tape -->
+                <div class="se-polaroid" aria-hidden="true">
+                    <div class="se-polaroid-inner">
+                        <img src="./campus-polaroid.jpg" alt="University Campus" class="se-polaroid-img" />
+                    </div>
+                    <!-- Neon lime tape sticker on Polaroid corner -->
+                    <div class="se-tape-sticker">
+                        <span>STUDENTS</span>
+                        <span>IDEAS</span>
+                        <span>VENTURES</span>
+                    </div>
+                </div>
+
+                <!-- The Masterpiece Dark Journey Card -->
+                <div class="se-journey-card" aria-label="From a spark to something real - Venture journey">
+                    
+                    <!-- Card Background Layer with Hiker on Mountain Cliff -->
+                    <div class="se-card-bg-layer" aria-hidden="true"></div>
+
+                    <!-- Card Header -->
+                    <div class="se-journey-card-header">
+                        <div class="se-journey-eyebrow-row">
+                            <span class="se-journey-eyebrow">THE JOURNEY</span>
+                            <span class="se-eyebrow-arrow-line" aria-hidden="true"></span>
+                        </div>
+                        <h3 class="se-journey-title">
+                            From a spark<br>
+                            to something<br>
+                            <span class="se-real-glow">
+                                real.
+                                <svg class="se-real-swoosh" viewBox="0 0 72 8" fill="none" aria-hidden="true">
+                                    <path d="M 2 5 Q 36 1 70 5" stroke="#D2E86B" stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                            </span>
+                        </h3>
+                    </div>
+
+                    <!-- Dynamic Curved Trajectory Infographic -->
+                    <div class="se-journey-stage">
+
+                        <!-- SVG Trajectory Arc with glowing gradients -->
+                        <svg class="se-arc-svg" viewBox="0 0 100 100" preserveAspectRatio="none" fill="none" aria-hidden="true">
+                            <defs>
+                                <linearGradient id="arcTrailGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+                                    <stop offset="0%" stop-color="#FF7A38" stop-opacity="0.95" />
+                                    <stop offset="25%" stop-color="#FFAE42" stop-opacity="0.95" />
+                                    <stop offset="65%" stop-color="#D5ED68" stop-opacity="1" />
+                                    <stop offset="100%" stop-color="#FF7A38" stop-opacity="1" />
+                                </linearGradient>
+                                <filter id="arcGlow" x="-20%" y="-20%" width="140%" height="140%">
+                                    <feGaussianBlur stdDeviation="1.2" result="glow" />
+                                    <feComposite in="SourceGraphic" in2="glow" operator="over" />
+                                </filter>
+                            </defs>
+                            <!-- Main luminous trajectory arc connecting all 7 nodes in a smooth curve -->
+                            <path class="se-arc-path" d="M 14 83 C 17 78, 20 73, 24 69 C 27 65, 28 63, 31 60 C 34 56, 36 53, 38.5 50 C 42 46, 45 43, 49 40 C 53 37, 56 35, 60 33 C 64 30, 67 27, 70 25" stroke="url(#arcTrailGrad)" stroke-width="2.2" vector-effect="non-scaling-stroke" filter="url(#arcGlow)" fill="none" stroke-linecap="round" />
+                            <!-- Midpoint luminous dots between nodes -->
+                            <circle cx="19" cy="76" r="1.3" fill="#FFA552" />
+                            <circle cx="27.5" cy="64.5" r="1.1" fill="#D5ED68" />
+                            <circle cx="34.5" cy="55" r="1.1" fill="#D5ED68" />
+                            <circle cx="43.5" cy="45" r="1.1" fill="#D5ED68" />
+                            <circle cx="54.5" cy="36.5" r="1.1" fill="#D5ED68" />
+                            <circle cx="65" cy="29" r="1.3" fill="#FF7A38" />
+                        </svg>
+
+                        <!-- 7 Nodes along the arc -->
+                        
+                        <!-- 1. IDEA -->
+                        <div class="se-node-item se-node--1" style="left: 14%; top: 83%;">
+                            <div class="se-node-badge se-node-badge--amber">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M9 18h6"></path><path d="M10 22h4"></path><path d="M12 2a7 7 0 0 0-7 7c0 2.6 1.4 4.5 3 5.7V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.3c1.6-1.2 3-3.1 3-5.7a7 7 0 0 0-7-7z"></path>
+                                </svg>
+                            </div>
+                            <div class="se-node-info">
+                                <span class="se-node-title">IDEA</span>
+                                <span class="se-node-desc">A spark, a question,<br>what if?</span>
+                            </div>
+                        </div>
+
+                        <!-- 2. PROBLEM -->
+                        <div class="se-node-item se-node--2" style="left: 24%; top: 69%;">
+                            <div class="se-node-badge">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                                </svg>
+                            </div>
+                            <div class="se-node-info">
+                                <span class="se-node-title">PROBLEM</span>
+                                <span class="se-node-desc">A real need worth<br>solving.</span>
+                            </div>
+                        </div>
+
+                        <!-- 3. VALIDATION -->
+                        <div class="se-node-item se-node--3" style="left: 31%; top: 60%;">
+                            <div class="se-node-badge">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                    <polyline points="14 2 14 8 20 8"></polyline>
+                                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                                </svg>
+                            </div>
+                            <div class="se-node-info">
+                                <span class="se-node-title">VALIDATION</span>
+                                <span class="se-node-desc">Test, learn and find<br>real users.</span>
+                            </div>
+                        </div>
+
+                        <!-- 4. MVP -->
+                        <div class="se-node-item se-node--4" style="left: 38.5%; top: 50%;">
+                            <div class="se-node-badge">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="2" y="4" width="20" height="12" rx="2"></rect>
+                                    <line x1="2" y1="20" x2="22" y2="20"></line>
+                                </svg>
+                            </div>
+                            <div class="se-node-info">
+                                <span class="se-node-title">MVP</span>
+                                <span class="se-node-desc">Turn your idea into<br>a working prototype.</span>
+                            </div>
+                        </div>
+
+                        <!-- 5. FIRST USERS -->
+                        <div class="se-node-item se-node--5" style="left: 49%; top: 40%;">
+                            <div class="se-node-badge">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="3"></circle>
+                                    <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+                                </svg>
+                            </div>
+                            <div class="se-node-info">
+                                <span class="se-node-title">FIRST USERS</span>
+                                <span class="se-node-desc">Get early adopters<br>and real feedback.</span>
+                            </div>
+                        </div>
+
+                        <!-- 6. TRACTION -->
+                        <div class="se-node-item se-node--6" style="left: 60%; top: 33%;">
+                            <div class="se-node-badge">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="9" cy="7" r="4"></circle>
+                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                                </svg>
+                            </div>
+                            <div class="se-node-info">
+                                <span class="se-node-title">TRACTION</span>
+                                <span class="se-node-desc">Grow, iterate and<br>build momentum.</span>
+                            </div>
+                        </div>
+
+                        <!-- 7. FUNDING / SCALE -->
+                        <div class="se-node-item se-node--7" style="left: 70%; top: 25%;">
+                            <div class="se-node-badge se-node-badge--scale">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <circle cx="12" cy="12" r="6"></circle>
+                                    <circle cx="12" cy="12" r="2"></circle>
+                                </svg>
+                            </div>
+                            <div class="se-node-info">
+                                <span class="se-node-title se-node-title--scale">FUNDING / SCALE</span>
+                                <span class="se-node-desc">Explore funding and<br>what comes next.</span>
+                            </div>
+                        </div>
+
+                        <!-- Chalk Script text on the dark rock (bottom-right) -->
+                        <div class="se-rock-script" aria-hidden="true">
+                            Ideas Here &rarr;<br>
+                            <span class="se-rock-sub">
+                                Ventures Next.
+                                <svg class="se-rock-swoosh" viewBox="0 0 84 8" fill="none" aria-hidden="true">
+                                    <path d="M 2 5 Q 42 1 82 5" stroke="#D2E86B" stroke-width="1.8" stroke-linecap="round"/>
+                                </svg>
+                            </span>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
 </section>
