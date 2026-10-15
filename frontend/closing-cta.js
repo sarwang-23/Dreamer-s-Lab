@@ -51,17 +51,23 @@
     var BG_SVG =
         '<svg class="bd-close-bg-svg" viewBox="0 0 1440 760" preserveAspectRatio="xMidYMid slice" ' +
         'fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">' +
-        '<circle cx="1170" cy="150" r="360" stroke="#10483D" stroke-opacity="0.05" stroke-width="1"></circle>' +
-        '<circle cx="1170" cy="150" r="250" stroke="#10483D" stroke-opacity="0.04" stroke-width="1" stroke-dasharray="5 9"></circle>' +
-        '<circle cx="1170" cy="150" r="150" stroke="#FF6835" stroke-opacity="0.06" stroke-width="1"></circle>' +
-        '<ellipse cx="220" cy="640" rx="330" ry="185" stroke="#10483D" stroke-opacity="0.045" stroke-width="1" stroke-dasharray="6 10"></ellipse>' +
-        '<ellipse cx="220" cy="640" rx="210" ry="110" stroke="#10483D" stroke-opacity="0.03" stroke-width="1"></ellipse>' +
-        '<circle cx="180" cy="140" r="3" fill="#FF6835" opacity="0.4"></circle>' +
-        '<circle cx="1330" cy="650" r="3.5" fill="#10483D" opacity="0.2"></circle>' +
-        '<circle cx="520" cy="92" r="2.5" fill="#82988E" opacity="0.45"></circle>' +
-        '<circle cx="980" cy="690" r="2.5" fill="#FF6835" opacity="0.3"></circle>' +
-        '<circle cx="1250" cy="470" r="2.2" fill="#10483D" opacity="0.22"></circle>' +
+        '<circle cx="1200" cy="120" r="380" stroke="#FF6835" stroke-opacity="0.06" stroke-width="1" stroke-dasharray="4 10"></circle>' +
+        '<circle cx="1200" cy="120" r="240" stroke="#FF6835" stroke-opacity="0.05" stroke-width="0.8"></circle>' +
+        '<circle cx="200" cy="660" r="320" stroke="#C8F050" stroke-opacity="0.05" stroke-width="1" stroke-dasharray="3 8"></circle>' +
+        '<circle cx="720" cy="380" r="500" stroke="#ffffff" stroke-opacity="0.02" stroke-width="1"></circle>' +
+        '<circle cx="180" cy="140" r="2.5" fill="#FF6835" opacity="0.55"></circle>' +
+        '<circle cx="1330" cy="650" r="3" fill="#C8F050" opacity="0.40"></circle>' +
+        '<circle cx="520" cy="80" r="2" fill="#ffffff" opacity="0.30"></circle>' +
+        '<circle cx="980" cy="700" r="2.5" fill="#FF6835" opacity="0.35"></circle>' +
+        '<circle cx="1250" cy="460" r="2" fill="#C8F050" opacity="0.28"></circle>' +
+        '<circle cx="340" cy="280" r="1.8" fill="#ffffff" opacity="0.20"></circle>' +
+        '<circle cx="860" cy="180" r="2.2" fill="#FF6835" opacity="0.22"></circle>' +
         '</svg>';
+
+    var ORBS_HTML =
+        '<div class="bd-close-orb bd-close-orb--orange" aria-hidden="true"></div>' +
+        '<div class="bd-close-orb bd-close-orb--lime" aria-hidden="true"></div>' +
+        '<div class="bd-close-orb bd-close-orb--blue" aria-hidden="true"></div>';
 
     var MOTIF_SVG =
         '<svg class="bd-close-motif-svg" viewBox="0 0 520 150" fill="none" ' +
@@ -105,14 +111,18 @@
         section.className = 'bd-close';
         section.setAttribute('aria-labelledby', 'bd-close-title');
         section.innerHTML =
-            '<div class="bd-close-bg" aria-hidden="true">' + BG_SVG + '</div>' +
+            '<div class="bd-close-bg" aria-hidden="true">' + BG_SVG + ORBS_HTML + '</div>' +
             '<div class="bd-close-inner">' +
+            '<div class="bd-close-eyebrow" aria-hidden="true">' +
+            '<span class="bd-close-eyebrow-dot"></span>' +
+            'Start Your Journey' +
+            '</div>' +
             '<div class="bd-close-motif" aria-hidden="true">' + MOTIF_SVG + '</div>' +
             '<h2 class="bd-close-title" id="bd-close-title">' +
             '<span class="bd-close-title-main">Your dream doesn\'t<br>need to</span> ' +
             '<span class="bd-close-title-accent">wait.</span>' +
             '</h2>' +
-            '<p class="bd-close-kicker">Let\'s build it.</p>' +
+            '<p class="bd-close-kicker">Let\'s build it together.</p>' +
             '<nav class="bd-close-actions" aria-label="Choose your starting point">' +
             buildActions(primary) +
             '</nav>' +

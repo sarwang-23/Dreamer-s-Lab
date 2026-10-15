@@ -1,0 +1,302 @@
+/* ==========================================================================
+   ABOUT MISSION & VISION — Premium Brand Experience & Editorial Dual Cards
+   Palette:
+     Warm Ivory:        #FBF9F5 / #FAF7F2
+     Deep Forest Green: #073D33 / #0B4A3E / #052B24
+     Dark Espresso:     #2C1B13 / #5C4A40
+     Signature Orange:  #FF6B1A / #FFA451
+     Soft Neutral:      #E8E1D8
+     Cream Text:        #F8F3EA / #E2D9CE / #C7BDB1
+   ========================================================================== */
+
+/* ─── 1. Section Root & Container ────────────────────────────────────── */
+.mv-section {
+    position: relative;
+    background-color: #FBF9F5;
+    padding: clamp(5rem, 7.5vw, 6.5rem) 0;
+    overflow: hidden;
+    font-family: 'Outfit', system-ui, -apple-system, sans-serif;
+    isolation: isolate;
+}
+
+/* Architectural background glazes */
+.mv-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(ellipse 65% 50% at 15% 30%, rgba(7, 61, 51, 0.035) 0%, transparent 65%),
+        radial-gradient(ellipse 60% 45% at 85% 70%, rgba(255, 107, 26, 0.04) 0%, transparent 60%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.mv-container {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 clamp(1.75rem, 5vw, 3.5rem);
+}
+
+/* ─── 2. Balanced Two-Column Composition ──────────────────────────────── */
+.mv-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(1.5rem, 2.5vw, 2.25rem);
+    align-items: stretch;
+}
+
+/* ─── 3. Card Base Styling ────────────────────────────────────────────── */
+.mv-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 370px;
+    border-radius: 24px;
+    overflow: hidden;
+    transition: transform 0.3s cubic-bezier(.16, 1, .3, 1),
+                box-shadow 0.3s ease,
+                border-color 0.3s ease;
+    outline: none;
+    cursor: default;
+    user-select: text;
+}
+
+.mv-card:focus-visible {
+    outline: 2px solid #FF6B1A;
+    outline-offset: 4px;
+}
+
+/* Top Accent Bar */
+.mv-card-accent {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    z-index: 3;
+    transition: background 0.3s ease, height 0.3s ease;
+}
+
+/* Large Low-Opacity Background Number (01 / 02) */
+.mv-card-num-bg {
+    position: absolute;
+    right: clamp(1.2rem, 2.4vw, 2rem);
+    bottom: clamp(1rem, 2vw, 1.8rem);
+    font-family: 'Outfit', sans-serif;
+    font-size: clamp(6.5rem, 10vw, 8.8rem);
+    font-weight: 900;
+    line-height: 0.82;
+    letter-spacing: -0.06em;
+    pointer-events: none;
+    user-select: none;
+    z-index: 0;
+    transition: transform 0.4s cubic-bezier(.16, 1, .3, 1), opacity 0.3s ease;
+}
+
+.mv-card:hover .mv-card-num-bg {
+    transform: translateY(-6px) scale(1.02);
+}
+
+/* Inner content wrapper */
+.mv-card-inner {
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    padding: clamp(2.35rem, 3.4vw, 2.85rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1.85rem;
+}
+
+/* ─── 4. Card Header: Label & Abstract Motif ─────────────────────────── */
+.mv-card-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.mv-card-label-wrap {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.65rem;
+}
+
+.mv-card-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #FF6B1A;
+    box-shadow: 0 0 8px rgba(255, 107, 26, 0.6);
+}
+
+.mv-card-label {
+    font-size: 0.82rem;
+    font-weight: 800;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #FF6B1A;
+    line-height: 1;
+}
+
+/* ─── 5. Card Body: Headline & Supporting Copy ───────────────────────── */
+.mv-card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 1.15rem;
+    flex-grow: 1;
+}
+
+.mv-card-title {
+    font-family: 'Outfit', system-ui, -apple-system, sans-serif;
+    font-size: clamp(1.85rem, 2.3vw, 2.25rem);
+    font-weight: 800;
+    line-height: 1.18;
+    letter-spacing: -0.03em;
+    color: #2C1B13;
+    margin: 0;
+}
+
+.mv-card-text {
+    font-size: clamp(1.02rem, 1.15vw, 1.12rem);
+    line-height: 1.68;
+    color: #5C4A40;
+    margin: 0;
+}
+
+/* ─── 6. Card Footer: Closing Detail ─────────────────────────────────── */
+.mv-card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 1.35rem;
+    border-top: 1px solid rgba(232, 225, 216, 0.85);
+}
+
+.mv-card-detail {
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-style: italic;
+    font-size: clamp(1.15rem, 1.35vw, 1.28rem);
+    letter-spacing: -0.01em;
+    color: #7A665A;
+}
+
+/* ─── 7. CARD SPECIFICS — Clean White / Warm Ivory Cards ─────────────── */
+.mv-card--mission,
+.mv-card--vision {
+    background: linear-gradient(175deg, #FFFFFF 0%, #FAF7F2 100%);
+    color: #2C1B13;
+    border: 1.5px solid #E8E1D8;
+    box-shadow:
+        0 10px 32px -10px rgba(44, 27, 19, 0.06),
+        0 2px 8px rgba(44, 27, 19, 0.03);
+}
+
+.mv-card--mission .mv-card-accent,
+.mv-card--vision .mv-card-accent {
+    background: #E8E1D8;
+}
+
+.mv-card--mission .mv-card-num-bg,
+.mv-card--vision .mv-card-num-bg {
+    color: #2C1B13;
+    opacity: 0.04;
+}
+
+.mv-card--mission:hover,
+.mv-card--vision:hover {
+    transform: translateY(-5px);
+    border-color: rgba(255, 107, 26, 0.45);
+    box-shadow:
+        0 24px 54px -14px rgba(44, 27, 19, 0.12),
+        0 6px 18px rgba(255, 107, 26, 0.08);
+}
+
+.mv-card--mission:hover .mv-card-accent,
+.mv-card--vision:hover .mv-card-accent {
+    height: 4.5px;
+    background: linear-gradient(90deg, #FF6B1A 0%, #FFA451 100%);
+}
+
+.mv-card--mission:hover .mv-card-num-bg,
+.mv-card--vision:hover .mv-card-num-bg {
+    opacity: 0.07;
+}
+
+/* ─── 8. Responsive Breakdown ────────────────────────────────────────── */
+@media (max-width: 860px) {
+    .mv-grid {
+        grid-template-columns: 1fr;
+        gap: 1.75rem;
+    }
+    .mv-card {
+        min-height: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .mv-section {
+        padding: 4.2rem 0;
+    }
+    .mv-container {
+        padding: 0 1.5rem;
+    }
+    .mv-card-inner {
+        padding: 1.85rem 1.6rem;
+        gap: 1.5rem;
+    }
+    .mv-card-title {
+        font-size: clamp(1.55rem, 5.8vw, 1.85rem);
+    }
+    .mv-card-num-bg {
+        font-size: 5.5rem;
+        right: 1rem;
+        bottom: 0.8rem;
+    }
+}
+
+/* ─── 9. Entrance Transitions & Accessibility ────────────────────────── */
+.mv-card {
+    opacity: 0;
+    transform: translateY(22px);
+    transition: opacity 0.7s cubic-bezier(.16, 1, .3, 1),
+                transform 0.7s cubic-bezier(.16, 1, .3, 1),
+                box-shadow 0.3s ease,
+                border-color 0.3s ease;
+}
+
+.mv-section.is-visible .mv-card:nth-child(1) {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.08s;
+}
+
+.mv-section.is-visible .mv-card:nth-child(2) {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.22s;
+}
+
+/* Fallback if JS observer hasn't run */
+.no-js .mv-card {
+    opacity: 1;
+    transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .mv-card {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+    }
+    .mv-card:hover,
+    .mv-card-num-bg {
+        transform: none !important;
+        transition: none !important;
+    }
+}

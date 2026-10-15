@@ -4,7 +4,9 @@
    ========================================================================== */
 
 /* ── 1. ACCESSIBILITY & SCROLL OFFSETS ── */
-.nd-navbar [hidden] {
+.nd-navbar [hidden],
+.nd-navbar:not(.is-menu-open) .nd-nav-links,
+.nd-navbar:not(.is-menu-open) .nd-nav-actions {
     display: none !important;
 }
 

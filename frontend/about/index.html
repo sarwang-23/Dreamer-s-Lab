@@ -15,154 +15,740 @@
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="../responsive.css">
     <link rel="stylesheet" href="../pages.css">
+    <link rel="stylesheet" href="../about-hero.css">
+    <link rel="stylesheet" href="../about-story.css">
+    <link rel="stylesheet" href="../about-mission-vision.css">
+    <link rel="stylesheet" href="../about-philosophy-differentials.css">
 </head>
 <body id="top" class="pg-body">
 
 <main class="pg-main">
 
-    <!-- Section 1: Hero -->
-    <header class="pg-hero">
-        <div class="pg-container pg-hero-inner">
-            <span class="pg-eyebrow">&#10022; About Building Dreams</span>
-            <h1 class="pg-hero-title">We believe every dream deserves the opportunity to <em>become real.</em></h1>
-            <p class="pg-hero-lead">Building Dreams is an entrepreneurship and venture-building platform designed to help people move from ideas to action.</p>
-            <p class="pg-hero-sub">We work with school students, university students, aspiring founders and educational institutions to make entrepreneurship more practical, accessible and outcome-driven. Our work is built around a simple idea: people develop entrepreneurial capability by solving problems, experimenting with ideas and creating things that matter.</p>
-            <div class="pg-cta-row">
-                <a href="../dreamers-lab/" class="pg-btn pg-btn--primary">Explore our programs</a>
-                <a href="../get-started/" class="pg-btn pg-btn--ghost">Get in touch</a>
+    <!-- Section 1: Hero — "DREAM → REAL" Ultra-Premium Interactive Experience -->
+    <header class="ab-hero" aria-labelledby="ab-hero-title">
+        <!-- Living Background Layers -->
+        <div class="ab-bg" aria-hidden="true">
+            <div class="ab-bg-glaze"></div>
+            <div class="ab-bg-grid"></div>
+            <div class="ab-bg-watermark">VENTURE</div>
+            <div class="ab-bg-meta ab-bg-meta--tl">BUILDING DREAMS // SYS.01</div>
+            <div class="ab-bg-meta ab-bg-meta--tr">LAT 28.61&deg; N &middot; NEW DELHI</div>
+        </div>
+
+        <div class="pg-container ab-hero-inner">
+            <!-- Left Editorial Text Column (~58%) -->
+            <div class="ab-text-col">
+                <div class="ab-copy">
+                    <div class="ab-eyebrow-wrap">
+                        <span class="ab-eyebrow">
+                            <span class="ab-eyebrow-dot" aria-hidden="true"></span>
+                            <span>About Building Dreams</span>
+                            <span class="ab-eyebrow-sep" aria-hidden="true">&middot;</span>
+                            <span class="ab-eyebrow-sub">Venture Platform</span>
+                        </span>
+                    </div>
+
+                    <h1 class="ab-title" id="ab-hero-title">
+                        <span class="ab-title-line"><span class="ab-title-word">We</span> <span class="ab-title-word">believe</span> <span class="ab-title-word">every</span></span>
+                        <span class="ab-title-line"><span class="ab-title-word">dream</span> <span class="ab-title-word">deserves</span> <span class="ab-title-word">the</span></span>
+                        <span class="ab-title-line"><span class="ab-title-word">opportunity</span> <span class="ab-title-word">to</span> <span class="ab-title-accent">become real.</span></span>
+                    </h1>
+
+                    <p class="ab-statement">
+                        Building Dreams is an entrepreneurship and venture-building platform designed to help people move from <em>ideas</em> to <em>action</em>.
+                    </p>
+                </div>
+
+                <div class="ab-tail">
+                    <p class="ab-support">
+                        We work with school students, university students, aspiring founders and institutions to make entrepreneurship more practical, accessible and outcome-driven &mdash; so entrepreneurial capability is built by solving problems, experimenting and creating things that matter.
+                    </p>
+                    <div class="ab-actions">
+                        <a href="../dreamers-lab/" class="ab-btn ab-btn--primary" data-magnetic>
+                            <span class="ab-btn-content">
+                                <span>Explore our programs</span>
+                                <svg class="ab-btn-arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h13M12 5l7 7-7 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            </span>
+                            <span class="ab-btn-glow" aria-hidden="true"></span>
+                        </a>
+                        <a href="../get-started/" class="ab-btn ab-btn--ghost">
+                            <span>Get in touch</span>
+                        </a>
+                    </div>
+
+                    <!-- Micro Scroll Discovery Cue -->
+                    <div class="ab-scrollcue" aria-hidden="true">
+                        <div class="ab-scrollcue-mouse">
+                            <span class="ab-scrollcue-dot"></span>
+                        </div>
+                        <span class="ab-scrollcue-label">SCROLL TO DISCOVER</span>
+                        <span class="ab-scrollcue-line"></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Interactive "DREAM → REAL" Visual System (~42%) -->
+            <div class="ab-visual" data-ab-visual>
+                <!-- Interactive Living Particle Canvas -->
+                <canvas class="ab-visual-canvas" aria-hidden="true"></canvas>
+
+                <div class="ab-stage">
+                    <!-- Brand Luxury Signature -->
+                    <div class="ab-brand-signature" aria-hidden="true">
+                        <span class="ab-sig-tag">VENTURE ECOSYSTEM</span>
+                        <span class="ab-sig-code">01 &middot; DISCOVER &rarr; BUILD &rarr; LAUNCH</span>
+                    </div>
+
+                    <!-- Geometric Orbit Canvas & Rings -->
+                    <svg class="ab-orbit" viewBox="0 0 100 100" aria-hidden="true" focusable="false">
+                        <defs>
+                            <linearGradient id="ab-grad" x1="0" y1="0" x2="1" y2="1">
+                                <stop offset="0%" stop-color="#FF6B1A"/>
+                                <stop offset="50%" stop-color="#FFA451"/>
+                                <stop offset="100%" stop-color="#8BBF11"/>
+                            </linearGradient>
+                            <filter id="ab-glow" x="-20%" y="-20%" width="140%" height="140%">
+                                <feGaussianBlur stdDeviation="1.5" result="blur"/>
+                                <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+                            </filter>
+                        </defs>
+
+                        <!-- Concentric Blueprint Orbit Rings -->
+                        <circle class="ab-ring ab-ring--outer" cx="50" cy="50" r="44"></circle>
+                        <circle class="ab-ring ab-ring--main" cx="50" cy="50" r="38"></circle>
+                        <circle class="ab-ring ab-ring--dash" cx="50" cy="50" r="28"></circle>
+                        <circle class="ab-ring ab-ring--inner" cx="50" cy="50" r="18"></circle>
+
+                        <!-- Geometric Connecting Spokes (to 12%, 69%, 69%) -->
+                        <line class="ab-spoke ab-spoke--discover" x1="50" y1="50" x2="50" y2="12"></line>
+                        <line class="ab-spoke ab-spoke--build" x1="50" y1="50" x2="82.9" y2="69"></line>
+                        <line class="ab-spoke ab-spoke--launch" x1="50" y1="50" x2="17.1" y2="69"></line>
+
+                        <!-- Active Orbit Ring Highlight -->
+                        <circle class="ab-orbit-path" cx="50" cy="50" r="38"></circle>
+                    </svg>
+
+                    <!-- Interactive Stage Nodes (Geometrically locked to orbit radius 38%) -->
+                    <button type="button" class="ab-node ab-node--discover" data-stage="discover" style="left:50%; top:12%;" aria-label="Discover stage: Curiosity to validation">
+                        <span class="ab-node-pulse" aria-hidden="true"></span>
+                        <span class="ab-node-dot" aria-hidden="true"></span>
+                        <span class="ab-node-card">
+                            <span class="ab-node-num">01</span>
+                            <span class="ab-node-label">Discover</span>
+                        </span>
+                    </button>
+
+                    <button type="button" class="ab-node ab-node--build" data-stage="build" style="left:82.9%; top:69%;" aria-label="Build stage: Rapid MVP and mentor sprints">
+                        <span class="ab-node-pulse" aria-hidden="true"></span>
+                        <span class="ab-node-dot" aria-hidden="true"></span>
+                        <span class="ab-node-card">
+                            <span class="ab-node-num">02</span>
+                            <span class="ab-node-label">Build</span>
+                        </span>
+                    </button>
+
+                    <button type="button" class="ab-node ab-node--launch" data-stage="launch" style="left:17.1%; top:69%;" aria-label="Launch stage: Institutional backing and demo day">
+                        <span class="ab-node-pulse" aria-hidden="true"></span>
+                        <span class="ab-node-dot" aria-hidden="true"></span>
+                        <span class="ab-node-card">
+                            <span class="ab-node-num">03</span>
+                            <span class="ab-node-label">Launch</span>
+                        </span>
+                    </button>
+
+                    <!-- Center "DREAM -> Real" Glowing Sphere -->
+                    <div class="ab-core">
+                        <div class="ab-core-halo" aria-hidden="true"></div>
+                        <div class="ab-core-disc">
+                            <span class="ab-core-word">Dream</span>
+                            <span class="ab-core-arrow" aria-hidden="true">&darr;</span>
+                            <span class="ab-core-real">Real</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Interactive Stage Drawer / Popover -->
+                <div class="ab-stage-wrapper">
+                    <div class="ab-stage-hint">
+                        <span class="ab-stage-hint-dot" aria-hidden="true"></span>
+                        <span>Hover over <strong>Discover</strong>, <strong>Build</strong>, or <strong>Launch</strong> to explore &rarr;</span>
+                    </div>
+
+                    <div class="ab-stage-card" id="ab-stage-card" role="region" aria-live="polite">
+                        <div class="ab-stage-head">
+                            <span class="ab-stage-pill" id="ab-stage-pill">STAGE 01 &middot; DISCOVER</span>
+                            <span class="ab-stage-metric" id="ab-stage-metric">&bull; Validation Track</span>
+                        </div>
+                        <h4 class="ab-stage-title" id="ab-stage-title">Turn raw curiosity into validated problems</h4>
+                        <p class="ab-stage-desc" id="ab-stage-desc">Talk to real customers, test market viability, and refine problem statements before building.</p>
+                        <div class="ab-stage-tags" id="ab-stage-tags">
+                            <span class="ab-tag">Customer Discovery</span>
+                            <span class="ab-tag">Problem Framing</span>
+                            <span class="ab-tag">Market Sizing</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </header>
 
-    <!-- Section 2: Our story -->
-    <section class="pg-section pg-section--ivory">
-        <div class="pg-container">
-            <div class="pg-split">
-                <div>
-                    <span class="pg-kicker">Our story</span>
-                    <h2 class="pg-h2">Why Building Dreams <em>exists</em></h2>
-                    <p class="pg-sub">Every year, thousands of young people graduate with knowledge, qualifications and ambitions. Some have ideas they want to pursue. Some want to solve problems they see around them. Others know they want to create something meaningful but have no idea where to begin.</p>
+    <!-- Section 2: Our Story — Why Building Dreams Exists -->
+    <section class="story-section" id="our-story" aria-labelledby="story-title">
+        <div class="story-container">
+
+            <!-- 1. Editorial Storytelling Header -->
+            <div class="story-header">
+                <div class="story-eyebrow">
+                    <span class="story-eyebrow-accent" aria-hidden="true"></span>
+                    <span class="story-eyebrow-text">OUR STORY</span>
                 </div>
-                <div class="pg-panel pg-panel--forest">
-                    <p>At the same time, universities are investing in innovation and entrepreneurship, yet students often struggle to move beyond competitions, presentations and business plans to actually building ventures.</p>
-                    <p style="margin-bottom:0;"><strong>Building Dreams was created to bridge that gap.</strong></p>
+
+                <h2 class="story-title" id="story-title">
+                    Why Building Dreams <em class="story-title-accent">exists</em>
+                </h2>
+
+                <p class="story-lead">
+                    Every year, thousands of young people graduate with knowledge, qualifications and ambition. Some have ideas they want to pursue. Some want to solve problems they see around them. Others know they want to create something meaningful but have no idea where to begin.
+                </p>
+            </div>
+
+            <!-- 2. Signature Forest-Green Purpose Panel (Centerpiece Composition) -->
+            <div class="story-purpose-panel">
+                <!-- Tasteful abstract graphic: Idea point connecting to growing circular venture form -->
+                <div class="story-purpose-motif" aria-hidden="true">
+                    <svg viewBox="0 0 140 140" fill="none" class="story-motif-svg">
+                        <circle cx="70" cy="70" r="62" stroke="currentColor" stroke-width="1" stroke-dasharray="3 5" class="story-motif-ring" />
+                        <circle cx="70" cy="70" r="42" stroke="currentColor" stroke-width="1.2" stroke-opacity="0.5" />
+                        <circle cx="70" cy="70" r="22" stroke="currentColor" stroke-width="1" stroke-opacity="0.3" stroke-dasharray="2 3" />
+                        <path d="M30 110L70 70L105 35" stroke="#FF6B1A" stroke-width="2" stroke-linecap="round" />
+                        <circle cx="30" cy="110" r="4.5" fill="#FF6B1A" />
+                        <circle cx="70" cy="70" r="6" fill="#FF8C3A" />
+                        <circle cx="105" cy="35" r="8" stroke="#FF8C3A" stroke-width="2" fill="rgba(255,140,58,0.2)" />
+                    </svg>
+                </div>
+
+                <div class="story-purpose-grid">
+                    <!-- Main Narrative (~60%) -->
+                    <div class="story-purpose-main">
+                        <p class="story-purpose-text">
+                            At the same time, universities are investing in innovation and entrepreneurship, yet students often struggle to move beyond competitions, presentations and business plans to actually build ventures.
+                        </p>
+                    </div>
+
+                    <!-- Highlighted Statement Area (~40%) -->
+                    <div class="story-purpose-highlight-box">
+                        <span class="story-highlight-bar" aria-hidden="true"></span>
+                        <p class="story-purpose-highlight">
+                            Building Dreams was created to bridge that gap.
+                        </p>
+                    </div>
                 </div>
             </div>
-            <div class="pg-grid pg-grid--2" style="margin-top:2.5rem;">
-                <div class="pg-card pg-card--accent">
-                    <h3 class="pg-card-title">An environment for exploring</h3>
-                    <p class="pg-card-text">We want to create an environment where curiosity is encouraged, ideas are explored and failure becomes part of learning.</p>
+
+            <!-- 3. Two Large Balanced Interactive Feature Cards -->
+            <div class="story-cards-grid">
+                <!-- Card One: An Environment for Exploring -->
+                <a href="../dreamers-lab/" class="story-card" aria-label="Explore An Environment for Exploring in Dreamers' Lab">
+                    <div class="story-card-top-accent" aria-hidden="true"></div>
+                    <div class="story-card-inner">
+                        <div class="story-card-header">
+                            <div class="story-icon-box">
+                                <svg class="story-icon" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+                                    <circle cx="14" cy="14" r="8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M20 20l7 7" stroke="#FF6B1A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M14 10v4l3 2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <circle cx="26" cy="7" r="2" fill="#FF6B1A"/>
+                                </svg>
+                            </div>
+                        </div>
+
+                        <div class="story-card-body">
+                            <h3 class="story-card-title">An environment for exploring</h3>
+                            <p class="story-card-desc">
+                                We create an environment where curiosity is encouraged, ideas are explored, and failure becomes part of learning.
+                            </p>
+                        </div>
+
+                        <div class="story-card-footer">
+                            <span class="story-card-action">
+                                <span>Discover our sandbox</span>
+                                <svg class="story-card-arrow" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                                    <path d="M4.167 10h11.666M10.833 5l5 5-5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Card Two: Tools and Guidance for First Steps -->
+                <a href="../student-entrepreneurs/" class="story-card" aria-label="Explore Tools and Guidance for First Steps">
+                    <div class="story-card-top-accent" aria-hidden="true"></div>
+                    <div class="story-card-inner">
+                        <div class="story-card-header">
+                            <div class="story-icon-box">
+                                <svg class="story-icon" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+                                    <rect x="5" y="8" width="22" height="18" rx="3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                    <path d="M11 8V5a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v3" stroke="currentColor" stroke-width="1.8"/>
+                                    <path d="M5 14h22" stroke="currentColor" stroke-width="1.5" stroke-opacity="0.6"/>
+                                    <path d="M13 18l3 3 5-5" stroke="#FF6B1A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                        </div>
+
+                        <div class="story-card-body">
+                            <h3 class="story-card-title">Tools and guidance for first steps</h3>
+                            <p class="story-card-desc">
+                                We equip people with the tools, guidance and confidence to take their first steps, making entrepreneurship more accessible, better supported, and open to people who may never otherwise consider themselves entrepreneurs.
+                            </p>
+                        </div>
+
+                        <div class="story-card-footer">
+                            <span class="story-card-action">
+                                <span>Explore student pathways</span>
+                                <svg class="story-card-arrow" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                                    <path d="M4.167 10h11.666M10.833 5l5 5-5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- 4. Subtle Closing Moment -->
+            <div class="story-closing">
+                <span class="story-closing-quote">&ldquo;Every big idea starts with a first step.&rdquo;</span>
+                <span class="story-closing-sep" aria-hidden="true">&middot;</span>
+                <a href="../dreamers-lab/" class="story-closing-link">
+                    <span>Explore what you can build</span>
+                    <span class="story-closing-arrow" aria-hidden="true">&rarr;</span>
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Section 3 & 4: Mission & Vision — Premium Editorial Dual Brand Cards -->
+    <section class="mv-section" id="mission-vision" aria-label="Mission and Vision">
+        <div class="mv-container">
+            <div class="mv-grid">
+
+                <!-- Card One: MISSION (Clean White Card) -->
+                <article class="mv-card mv-card--mission" tabindex="0" aria-labelledby="mv-mission-title">
+                    <!-- Top Accent Line -->
+                    <div class="mv-card-accent" aria-hidden="true"></div>
+
+                    <!-- Subtle Oversized Background Number "01" -->
+                    <div class="mv-card-num-bg" aria-hidden="true">01</div>
+
+                    <div class="mv-card-inner">
+                        <!-- Top Header: Label Only -->
+                        <div class="mv-card-head">
+                            <div class="mv-card-label-wrap">
+                                <span class="mv-card-dot" aria-hidden="true"></span>
+                                <span class="mv-card-label">MISSION</span>
+                            </div>
+                        </div>
+
+                        <!-- Card Body: Headline & Supporting Text -->
+                        <div class="mv-card-body">
+                            <h2 class="mv-card-title" id="mv-mission-title">Make entrepreneurship accessible. Make building possible.</h2>
+                            <p class="mv-card-text">
+                                Our mission is to equip the next generation of thinkers, creators and founders with the mindset, skills, guidance and ecosystem they need to turn ideas into action.
+                            </p>
+                        </div>
+
+                        <!-- Card Footer: Refined Bottom Closing Detail -->
+                        <div class="mv-card-footer">
+                            <span class="mv-card-detail">&ldquo;From curiosity to capability.&rdquo;</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card Two: VISION (Clean White Card) -->
+                <article class="mv-card mv-card--vision" tabindex="0" aria-labelledby="mv-vision-title">
+                    <!-- Top Accent Line -->
+                    <div class="mv-card-accent" aria-hidden="true"></div>
+
+                    <!-- Subtle Oversized Background Number "02" -->
+                    <div class="mv-card-num-bg" aria-hidden="true">02</div>
+
+                    <div class="mv-card-inner">
+                        <!-- Top Header: Label Only -->
+                        <div class="mv-card-head">
+                            <div class="mv-card-label-wrap">
+                                <span class="mv-card-dot" aria-hidden="true"></span>
+                                <span class="mv-card-label">VISION</span>
+                            </div>
+                        </div>
+
+                        <!-- Card Body: Headline & Supporting Text -->
+                        <div class="mv-card-body">
+                            <h2 class="mv-card-title" id="mv-vision-title">A world where great ideas don&rsquo;t remain just ideas.</h2>
+                            <p class="mv-card-text">
+                                We envision a future where students confidently explore entrepreneurship, aspiring founders can access practical support, and universities become launchpads for innovation and venture creation.
+                            </p>
+                        </div>
+
+                        <!-- Card Footer: Refined Bottom Closing Detail -->
+                        <div class="mv-card-footer">
+                            <span class="mv-card-detail">&ldquo;From ideas to impact.&rdquo;</span>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 5: Our Philosophy — Premium Interactive Principles -->
+    <section class="ab-editorial-section ab-editorial-section--ivory" id="our-philosophy" aria-labelledby="phil-title">
+        <div class="ab-editorial-container">
+            <div class="phil-header">
+                <div class="ab-eyebrow">
+                    <span class="ab-eyebrow-accent" aria-hidden="true"></span>
+                    <span>OUR PHILOSOPHY</span>
                 </div>
-                <div class="pg-card pg-card--accent">
-                    <h3 class="pg-card-title">Tools and guidance for first steps</h3>
-                    <p class="pg-card-text">We give people the tools and guidance to take their first steps, so the entrepreneurial journey can begin earlier, be better supported and be open to people who may never otherwise consider themselves entrepreneurs.</p>
+                <h2 class="phil-title" id="phil-title">
+                    What we <em class="ab-headline-italic">stand for</em>
+                </h2>
+            </div>
+
+            <div class="phil-grid">
+                <!-- Principle 01: Start with curiosity -->
+                <article class="phil-card" tabindex="0">
+                    <div class="phil-card-top-accent" aria-hidden="true"></div>
+                    <div>
+                        <div class="phil-card-head">
+                            <div class="phil-card-icon-wrap" aria-hidden="true">
+                                <svg class="phil-card-icon" viewBox="0 0 24 24" fill="none">
+                                    <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/>
+                                    <path d="M12 7v5l3.5 2" stroke="#FF6B1A" stroke-width="1.8" stroke-linecap="round"/>
+                                    <circle cx="12" cy="12" r="2" fill="#FF6B1A"/>
+                                </svg>
+                            </div>
+                            <span class="phil-card-num">01</span>
+                        </div>
+                        <div class="phil-card-body">
+                            <h3 class="phil-card-title">Start with curiosity.</h3>
+                            <p class="phil-card-desc">You don&rsquo;t need to have all the answers or a perfect business idea. The willingness to ask questions and explore possibilities is enough to begin.</p>
+                        </div>
+                    </div>
+                    <div class="phil-card-footer" aria-hidden="true">
+                        <svg class="phil-card-cue" viewBox="0 0 20 20" fill="none">
+                            <path d="M4 10h12M11 5l5 5-5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                </article>
+
+                <!-- Principle 02: Build to learn -->
+                <article class="phil-card" tabindex="0">
+                    <div class="phil-card-top-accent" aria-hidden="true"></div>
+                    <div>
+                        <div class="phil-card-head">
+                            <div class="phil-card-icon-wrap" aria-hidden="true">
+                                <svg class="phil-card-icon" viewBox="0 0 24 24" fill="none">
+                                    <path d="M4 7l8-4 8 4-8 4-8-4z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M4 12l8 4 8-4" stroke="#FF6B1A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M4 17l8 4 8-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                            <span class="phil-card-num">02</span>
+                        </div>
+                        <div class="phil-card-body">
+                            <h3 class="phil-card-title">Build to learn.</h3>
+                            <p class="phil-card-desc">Real understanding comes from applying ideas, talking to people, testing assumptions and learning from what happens.</p>
+                        </div>
+                    </div>
+                    <div class="phil-card-footer" aria-hidden="true">
+                        <svg class="phil-card-cue" viewBox="0 0 20 20" fill="none">
+                            <path d="M4 10h12M11 5l5 5-5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                </article>
+
+                <!-- Principle 03: Progress over perfection -->
+                <article class="phil-card" tabindex="0">
+                    <div class="phil-card-top-accent" aria-hidden="true"></div>
+                    <div>
+                        <div class="phil-card-head">
+                            <div class="phil-card-icon-wrap" aria-hidden="true">
+                                <svg class="phil-card-icon" viewBox="0 0 24 24" fill="none">
+                                    <path d="M3 17l6-6 4 4 8-8" stroke="#FF6B1A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M14 7h7v7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <circle cx="3" cy="17" r="2" fill="#FF6B1A"/>
+                                    <circle cx="9" cy="11" r="2" fill="#2C1B13"/>
+                                    <circle cx="13" cy="15" r="2" fill="#2C1B13"/>
+                                </svg>
+                            </div>
+                            <span class="phil-card-num">03</span>
+                        </div>
+                        <div class="phil-card-body">
+                            <h3 class="phil-card-title">Progress over perfection.</h3>
+                            <p class="phil-card-desc">The goal is not to get everything right on the first attempt. It is to make meaningful progress, one experiment at a time.</p>
+                        </div>
+                    </div>
+                    <div class="phil-card-footer" aria-hidden="true">
+                        <svg class="phil-card-cue" viewBox="0 0 20 20" fill="none">
+                            <path d="M4 10h12M11 5l5 5-5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                </article>
+
+                <!-- Principle 04: No one builds alone -->
+                <article class="phil-card" tabindex="0">
+                    <div class="phil-card-top-accent" aria-hidden="true"></div>
+                    <div>
+                        <div class="phil-card-head">
+                            <div class="phil-card-icon-wrap" aria-hidden="true">
+                                <svg class="phil-card-icon" viewBox="0 0 24 24" fill="none">
+                                    <circle cx="9" cy="8" r="4" stroke="currentColor" stroke-width="1.8"/>
+                                    <circle cx="16" cy="11" r="3.5" stroke="#FF6B1A" stroke-width="1.8"/>
+                                    <path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                                    <path d="M15 17c1.7.5 3 2 3 3" stroke="#FF6B1A" stroke-width="1.8" stroke-linecap="round"/>
+                                </svg>
+                            </div>
+                            <span class="phil-card-num">04</span>
+                        </div>
+                        <div class="phil-card-body">
+                            <h3 class="phil-card-title">No one builds alone.</h3>
+                            <p class="phil-card-desc">The right mentor, peer, expert or introduction can change the course of a journey.</p>
+                        </div>
+                    </div>
+                    <div class="phil-card-footer" aria-hidden="true">
+                        <svg class="phil-card-cue" viewBox="0 0 20 20" fill="none">
+                            <path d="M4 10h12M11 5l5 5-5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 6: What Makes Us Different — 3-Part Integrated Framework -->
+    <section class="ab-editorial-section ab-editorial-section--white" id="what-makes-us-different" aria-labelledby="diff-title">
+        <div class="ab-editorial-container">
+            <div class="diff-header">
+                <div class="ab-eyebrow">
+                    <span class="ab-eyebrow-accent" aria-hidden="true"></span>
+                    <span>WHAT MAKES US DIFFERENT</span>
+                </div>
+                <h2 class="diff-title" id="diff-title">
+                    We bring three important elements <em class="ab-headline-italic">together.</em>
+                </h2>
+                <p class="diff-sub">Rather than treating entrepreneurship as a single workshop or isolated event, we design structured journeys that help people progress over time.</p>
+            </div>
+
+            <div class="diff-framework">
+                <!-- Desktop visual connector rail -->
+                <div class="diff-rail" aria-hidden="true"></div>
+
+                <div class="diff-grid">
+                    <!-- Pillar 01: Education -->
+                    <article class="diff-card" tabindex="0">
+                        <div class="diff-card-accent" aria-hidden="true"></div>
+                        <div>
+                            <div class="diff-card-head">
+                                <div class="diff-card-icon-box" aria-hidden="true">
+                                    <svg class="diff-card-icon" viewBox="0 0 28 28" fill="none">
+                                        <path d="M4 8l10-5 10 5-10 5L4 8z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+                                        <path d="M7 11.5v6.5c0 2.5 3.1 4.5 7 4.5s7-2 7-4.5v-6.5" stroke="#FF6B1A" stroke-width="1.8"/>
+                                        <path d="M24 10v7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                                    </svg>
+                                </div>
+                                <span class="diff-card-step">Pillar 01</span>
+                            </div>
+                            <div class="diff-card-body">
+                                <h3 class="diff-card-title">Education</h3>
+                                <p class="diff-card-text">Develop entrepreneurial thinking and practical skills.</p>
+                            </div>
+                        </div>
+                        <div class="diff-card-footer">
+                            <span class="diff-card-tag">Curiosity &middot; Capability</span>
+                            <svg class="diff-card-arrow" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                                <path d="M4 10h12M11 5l5 5-5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                    </article>
+
+                    <!-- Pillar 02: Execution -->
+                    <article class="diff-card" tabindex="0">
+                        <div class="diff-card-accent" aria-hidden="true"></div>
+                        <div>
+                            <div class="diff-card-head">
+                                <div class="diff-card-icon-box" aria-hidden="true">
+                                    <svg class="diff-card-icon" viewBox="0 0 28 28" fill="none">
+                                        <circle cx="14" cy="14" r="9" stroke="currentColor" stroke-width="1.8"/>
+                                        <path d="M14 8v6l4 2.5" stroke="#FF6B1A" stroke-width="2" stroke-linecap="round"/>
+                                        <path d="M9 3l2 2M19 3l-2 2" stroke="#FF6B1A" stroke-width="1.8" stroke-linecap="round"/>
+                                    </svg>
+                                </div>
+                                <span class="diff-card-step">Pillar 02</span>
+                            </div>
+                            <div class="diff-card-body">
+                                <h3 class="diff-card-title">Execution</h3>
+                                <p class="diff-card-text">Turn learning into projects, prototypes, experiments and ventures.</p>
+                            </div>
+                        </div>
+                        <div class="diff-card-footer">
+                            <span class="diff-card-tag">Action &middot; Prototypes</span>
+                            <svg class="diff-card-arrow" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                                <path d="M4 10h12M11 5l5 5-5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                    </article>
+
+                    <!-- Pillar 03: Ecosystem -->
+                    <article class="diff-card" tabindex="0">
+                        <div class="diff-card-accent" aria-hidden="true"></div>
+                        <div>
+                            <div class="diff-card-head">
+                                <div class="diff-card-icon-box" aria-hidden="true">
+                                    <svg class="diff-card-icon" viewBox="0 0 28 28" fill="none">
+                                        <circle cx="14" cy="7" r="4" stroke="currentColor" stroke-width="1.8"/>
+                                        <circle cx="6" cy="20" r="3.5" stroke="#FF6B1A" stroke-width="1.8"/>
+                                        <circle cx="22" cy="20" r="3.5" stroke="#FF6B1A" stroke-width="1.8"/>
+                                        <path d="M14 11v4M9 18l3-2M19 18l-3-2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                                    </svg>
+                                </div>
+                                <span class="diff-card-step">Pillar 03</span>
+                            </div>
+                            <div class="diff-card-body">
+                                <h3 class="diff-card-title">Ecosystem</h3>
+                                <p class="diff-card-text">Connect participants with mentors, peers, institutions and opportunities.</p>
+                            </div>
+                        </div>
+                        <div class="diff-card-footer">
+                            <span class="diff-card-tag">Network &middot; Mentorship</span>
+                            <svg class="diff-card-arrow" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                                <path d="M4 10h12M11 5l5 5-5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                    </article>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Section 3 & 4: Mission + Vision -->
-    <section class="pg-section">
-        <div class="pg-container">
-            <div class="pg-grid pg-grid--2">
-                <article class="pg-card pg-card--forest">
-                    <span class="pg-card-num">Mission</span>
-                    <h2 class="pg-h3">Make entrepreneurship accessible. Make building possible.</h2>
-                    <p class="pg-card-text">Our mission is to equip the next generation of thinkers, creators and founders with the mindset, skills, guidance and ecosystem they need to turn ideas into real-world outcomes.</p>
-                </article>
-                <article class="pg-card">
-                    <span class="pg-card-num" style="color:var(--pg-forest);">Vision</span>
-                    <h2 class="pg-h3">A world where great ideas don&rsquo;t remain just ideas.</h2>
-                    <p class="pg-card-text">We envision a future where students confidently explore entrepreneurship, aspiring founders can access practical support, and universities become launchpads for innovation and venture creation.</p>
-                    <p class="pg-card-text" style="margin-top:0.8rem;">We want Building Dreams to become a trusted platform connecting ambition with action, talent with mentorship, and ideas with opportunities.</p>
-                </article>
-            </div>
-        </div>
-    </section>
+    <!-- Section 7: Meet the Founder — Editorial Profile & Core Conviction -->
+    <section class="ab-editorial-section ab-editorial-section--ivory" id="meet-the-founder" aria-labelledby="founder-title">
+        <div class="ab-editorial-container">
+            <div class="founder-grid">
+                <!-- Left Column: Biography & Perspective -->
+                <div class="founder-info">
+                    <div class="ab-eyebrow">
+                        <span class="ab-eyebrow-accent" aria-hidden="true"></span>
+                        <span>MEET THE FOUNDER</span>
+                    </div>
 
-    <!-- Section 5: Our philosophy -->
-    <section class="pg-section pg-section--tint">
-        <div class="pg-container">
-            <div class="pg-head pg-head--center">
-                <span class="pg-eyebrow">Our philosophy</span>
-                <h2 class="pg-h2">What we <em>stand for</em></h2>
-            </div>
-            <div class="pg-principles">
-                <div class="pg-principle">
-                    <h3>Start with curiosity.</h3>
-                    <p>You don&rsquo;t need to have all the answers or a perfect business idea. The willingness to ask questions and explore possibilities is enough to begin.</p>
-                </div>
-                <div class="pg-principle">
-                    <h3>Build to learn.</h3>
-                    <p>Real understanding comes from applying ideas, talking to people, testing assumptions and learning from what happens.</p>
-                </div>
-                <div class="pg-principle">
-                    <h3>Progress over perfection.</h3>
-                    <p>The goal is not to get everything right on the first attempt. It is to make meaningful progress, one experiment at a time.</p>
-                </div>
-                <div class="pg-principle">
-                    <h3>No one builds alone.</h3>
-                    <p>The right mentor, peer, expert or introduction can change the course of a journey.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+                    <h2 class="founder-name" id="founder-title">Rachit Mathur</h2>
+                    
+                    <p class="founder-role">
+                        Entrepreneur &middot; Startup Mentor &middot; Venture Builder
+                    </p>
 
-    <!-- Section 6: What makes us different -->
-    <section class="pg-section">
-        <div class="pg-container">
-            <div class="pg-head">
-                <span class="pg-eyebrow">What makes us different</span>
-                <h2 class="pg-h2">We bring three important elements <em>together.</em></h2>
-                <p class="pg-sub">Rather than treating entrepreneurship as a single workshop or isolated event, we design structured journeys that help people progress over time.</p>
-            </div>
-            <div class="pg-grid pg-grid--3">
-                <article class="pg-card pg-card--hover">
-                    <span class="pg-card-icon" aria-hidden="true">&#9998;</span>
-                    <h3 class="pg-card-title">Education</h3>
-                    <p class="pg-card-text">Develop entrepreneurial thinking and practical skills.</p>
-                </article>
-                <article class="pg-card pg-card--hover">
-                    <span class="pg-card-icon" aria-hidden="true">&#9881;</span>
-                    <h3 class="pg-card-title">Execution</h3>
-                    <p class="pg-card-text">Turn learning into projects, prototypes, experiments and ventures.</p>
-                </article>
-                <article class="pg-card pg-card--hover">
-                    <span class="pg-card-icon" aria-hidden="true">&#9737;</span>
-                    <h3 class="pg-card-title">Ecosystem</h3>
-                    <p class="pg-card-text">Connect participants with mentors, peers, institutions and opportunities.</p>
-                </article>
-            </div>
-        </div>
-    </section>
+                    <div class="founder-bio">
+                        <p>Rachit Mathur has worked across entrepreneurship, startup building and education-focused initiatives. His work has reinforced a belief that entrepreneurial capability develops through experience, mentorship and the opportunity to experiment.</p>
+                        <p>Building Dreams brings that belief to life by creating practical pathways for students and founders at different stages of their journey.</p>
+                    </div>
 
-    <!-- Section 7: Meet the founder -->
-    <section class="pg-section pg-section--ivory">
-        <div class="pg-container">
-            <div class="pg-split">
-                <div class="pg-panel">
-                    <span class="pg-kicker">Meet the founder</span>
-                    <h2 class="pg-h2" style="font-size:clamp(1.8rem,3vw,2.4rem);">Rachit Mathur</h2>
-                    <p class="pg-h3" style="color:var(--pg-orange);">Entrepreneur. Startup Mentor. Venture Builder.</p>
-                    <p>Rachit Mathur has worked across entrepreneurship, startup building and education-focused initiatives. His work has reinforced a belief that entrepreneurial capability develops through experience, mentorship and the opportunity to experiment.</p>
-                    <p style="margin-bottom:0;">Building Dreams brings that belief to life by creating practical pathways for students and founders at different stages of their journey.</p>
+                    <div class="founder-badge-row">
+                        <span class="founder-pill">
+                            <span class="founder-pill-dot" aria-hidden="true"></span>
+                            Venture Mentorship
+                        </span>
+                        <span class="founder-pill">
+                            <span class="founder-pill-dot" aria-hidden="true"></span>
+                            Experiential Learning
+                        </span>
+                        <span class="founder-pill">
+                            <span class="founder-pill-dot" aria-hidden="true"></span>
+                            Student Pathways
+                        </span>
+                    </div>
                 </div>
-                <div>
-                    <p class="pg-note"><strong>Design note:</strong> Use an approved founder photograph and add specific achievements, company-building experience and institutional affiliations after confirming the exact credentials to publish.</p>
+
+                <!-- Right Column: Polished Typographic Architectural Panel (Replaces old isolated design note) -->
+                <div class="founder-panel" role="region" aria-label="Founder Perspective">
+                    <div class="founder-panel-grid-bg" aria-hidden="true"></div>
+
+                    <div class="founder-panel-head">
+                        <div class="founder-panel-emblem" aria-hidden="true">RM</div>
+                        <span class="founder-panel-tag">FOUNDING PERSPECTIVE</span>
+                    </div>
+
+                    <div class="founder-panel-body">
+                        <div class="founder-quote-mark" aria-hidden="true">&ldquo;</div>
+                        <blockquote class="founder-quote-text">
+                            Entrepreneurial capability develops through experience, mentorship and the opportunity to experiment.
+                        </blockquote>
+                    </div>
+
+                    <div class="founder-panel-footer">
+                        <div>
+                            <div class="founder-sign-name">Rachit Mathur</div>
+                            <div class="founder-sign-role">Founder, Building Dreams</div>
+                        </div>
+                        <div style="color:#FF6B1A; font-size:1.4rem;" aria-hidden="true">&rarr;</div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Section 8: Our promise -->
-    <section class="pg-section">
-        <div class="pg-container pg-container--narrow">
-            <div class="pg-head pg-head--center">
-                <span class="pg-eyebrow">Our promise</span>
-                <h2 class="pg-h2">We won&rsquo;t promise that every idea will become a <em>successful company.</em></h2>
+    <!-- Section 8: Our Promise -->
+    <section class="promise-section" id="our-promise" aria-labelledby="promise-title">
+
+        <div class="promise-bg" aria-hidden="true">
+            <div class="promise-bg-glow--1"></div>
+            <div class="promise-bg-glow--2"></div>
+            <div class="promise-bg-word">PROMISE</div>
+        </div>
+
+        <div class="promise-inner">
+
+            <!-- Eyebrow -->
+            <div class="promise-eyebrow">
+                <span class="promise-eyebrow-dot" aria-hidden="true"></span>
+                <span>Our Promise</span>
             </div>
-            <p class="pg-sub" style="text-align:center;max-width:60ch;margin:0 auto 1.5rem;">We will work to give participants a better understanding of the problems they want to solve, a more structured way to test their ideas and greater clarity about what to do next.</p>
-            <p class="pg-quote" style="max-width:60ch;margin:0 auto;">Because even when an idea changes, the ability to identify problems, think critically, work with others and create solutions stays with you.</p>
+
+            <!-- Split grid: quote left · content right -->
+            <div class="promise-grid">
+
+                <!-- Left: Big editorial quote -->
+                <div class="promise-quote-col">
+                    <span class="promise-open-quote" aria-hidden="true">&ldquo;</span>
+                    <blockquote class="promise-quote-body">
+                        Because even when an idea changes, the ability to identify problems, think critically,
+                        work with others and create solutions stays with you.
+                    </blockquote>
+                </div>
+
+                <!-- Right: Headline + body + CTA -->
+                <div class="promise-content-col">
+
+                    <h2 class="promise-title" id="promise-title">
+                        We won&rsquo;t promise every idea becomes a <em class="promise-title-italic">successful company.</em>
+                    </h2>
+
+                    <p class="promise-sub">
+                        We will give every participant a better understanding of the problems they want to solve, a more structured way to test their ideas, and greater clarity about what to do next.
+                    </p>
+
+                    <div class="promise-divider" aria-hidden="true"></div>
+
+                    <div class="promise-cta-row">
+                        <a href="../student-entrepreneurs/" class="promise-cta-btn">
+                            <span>Explore student pathways</span>
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                                <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </a>
+                        <span class="promise-cta-note">No experience needed &mdash; just the drive to start.</span>
+                    </div>
+
+                </div>
+            </div>
         </div>
     </section>
 
@@ -184,5 +770,9 @@
 
 <div data-site-footer></div>
 <script type="module" src="../main.js"></script>
+<script type="module" src="../about-hero.js"></script>
+<script type="module" src="../about-story.js"></script>
+<script type="module" src="../about-mission-vision.js"></script>
+<script type="module" src="../about-philosophy-differentials.js"></script>
 </body>
 </html>

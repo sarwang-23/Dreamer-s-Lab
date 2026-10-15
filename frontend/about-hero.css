@@ -1,0 +1,985 @@
+/* ============================================================
+   ABOUT HERO — Ultra-Premium Editorial & Interactive Experience
+   "We believe every dream deserves the opportunity to become real."
+   Awwwards / Apple / Stripe / Premium Venture Studio Level
+   ============================================================ */
+
+/* ─── Design Tokens ────────────────────────────────────────── */
+.ab-hero {
+    --ab-bg:        #FAF7F0;
+    --ab-bg-warm:   #F4EFE4;
+    --ab-bg-subtle: #EEE7D6;
+    --ab-tan:       #2C1A10;
+    --ab-tan-light: rgba(44, 26, 16, 0.72);
+    --ab-muted:     #5C5040;
+    --ab-orange:    #FF6B1A;
+    --ab-orange-2:  #FF8C3A;
+    --ab-orange-glow: rgba(255, 107, 26, 0.35);
+    --ab-lime:      #8BBF11;
+    --ab-border:    rgba(44, 26, 16, 0.10);
+    --ab-border-hi: rgba(255, 107, 26, 0.35);
+
+    /* Dynamic cursor parallax values set via JS */
+    --ab-px: 0;
+    --ab-py: 0;
+}
+
+/* ─── Hero Container ───────────────────────────────────────── */
+.ab-hero {
+    position: relative;
+    min-height: auto;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    isolation: isolate;
+    background: var(--ab-bg);
+    font-family: 'Outfit', system-ui, -apple-system, sans-serif;
+    color: var(--ab-tan);
+}
+
+/* ─── Living Background Layers ─────────────────────────────── */
+.ab-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+/* Soft warm radial bloom with champagne undertones */
+.ab-bg-glaze {
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(ellipse 75% 60% at 75% 40%, rgba(255, 107, 26, 0.12) 0%, transparent 68%),
+        radial-gradient(ellipse 60% 50% at 18% 75%, rgba(139, 191, 17, 0.08) 0%, transparent 60%),
+        radial-gradient(ellipse 55% 60% at 50% 0%,  rgba(255, 255, 255, 0.90) 0%, transparent 58%),
+        linear-gradient(165deg, #FAF7F0 0%, #F5EFE3 48%, #ECE4D0 100%);
+}
+
+/* Ultra-subtle luxury architectural grid */
+.ab-bg-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(to right, rgba(44, 26, 16, 0.032) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(44, 26, 16, 0.032) 1px, transparent 1px);
+    background-size: 54px 54px;
+    mask-image: radial-gradient(ellipse 80% 70% at 50% 50%, black 20%, transparent 85%);
+    -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 50%, black 20%, transparent 85%);
+}
+
+/* Barely visible oversized typographic watermark */
+.ab-bg-watermark {
+    position: absolute;
+    right: -2vw;
+    top: 50%;
+    transform: translateY(-50%) translate3d(calc(var(--ab-px) * -20px), calc(var(--ab-py) * -20px), 0);
+    font-size: clamp(7rem, 20vw, 19rem);
+    font-weight: 900;
+    letter-spacing: -0.05em;
+    color: var(--ab-tan);
+    opacity: 0.024;
+    user-select: none;
+    line-height: 0.8;
+    pointer-events: none;
+    transition: transform 0.25s cubic-bezier(.16,1,.3,1);
+}
+
+/* Tiny luxury coordinate metadata badges */
+.ab-bg-meta {
+    position: absolute;
+    font-size: 0.62rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ab-tan);
+    opacity: 0.30;
+    font-family: ui-monospace, 'SF Mono', Menlo, monospace;
+}
+.ab-bg-meta--tl {
+    top: 1.6rem;
+    left: clamp(1.5rem, 5vw, 4rem);
+}
+.ab-bg-meta--tr {
+    top: 1.6rem;
+    right: clamp(1.5rem, 5vw, 4rem);
+}
+
+/* ─── Hero Inner Grid (Asymmetric Editorial Layout) ────────── */
+.ab-hero-inner {
+    position: relative;
+    z-index: 2;
+    flex: 1;
+    display: grid;
+    grid-template-columns: minmax(0, 1.24fr) minmax(0, 0.88fr);
+    gap: clamp(2.5rem, 4.5vw, 4.8rem);
+    align-items: center;
+    padding-top: clamp(2.4rem, 5vh, 4rem);
+    padding-bottom: clamp(6.5rem, 13vh, 9.5rem);
+}
+
+/* ─── Left Editorial Column (~58%) ─────────────────────────── */
+.ab-text-col {
+    display: flex;
+    flex-direction: column;
+    gap: 1.35rem;
+    max-width: 680px;
+    z-index: 3;
+}
+
+.ab-copy {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Eyebrow Pill Badge */
+.ab-eyebrow-wrap {
+    margin-bottom: 0.95rem;
+    opacity: 0;
+    animation: abFadeUp 0.65s cubic-bezier(.16,1,.3,1) 0.08s forwards;
+}
+
+.ab-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    padding: 0.36rem 1.05rem;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 107, 26, 0.32);
+    background: rgba(255, 107, 26, 0.07);
+    font-size: 0.74rem;
+    font-weight: 700;
+    letter-spacing: 0.11em;
+    text-transform: uppercase;
+    color: var(--ab-orange);
+    box-shadow: 0 2px 10px rgba(255, 107, 26, 0.08);
+}
+.ab-eyebrow-sep {
+    color: rgba(44, 26, 16, 0.30);
+}
+.ab-eyebrow-sub {
+    color: var(--ab-tan);
+    opacity: 0.75;
+    letter-spacing: 0.08em;
+}
+.ab-eyebrow-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--ab-orange);
+    box-shadow: 0 0 9px 2px rgba(255, 107, 26, 0.55);
+    animation: abDotPulse 2.4s ease-in-out infinite;
+    flex-shrink: 0;
+}
+@keyframes abDotPulse {
+    0%, 100% { box-shadow: 0 0 8px 2px rgba(255,107,26,0.55); transform: scale(1); }
+    50%      { box-shadow: 0 0 16px 5px rgba(255,107,26,0.22); transform: scale(1.15); }
+}
+
+/* ─── Headline Editorial Line-by-Line Reveal ───────────────── */
+.ab-title {
+    font-family: 'Outfit', system-ui, -apple-system, sans-serif;
+    font-size: clamp(2.75rem, 4.3vw, 4.05rem);
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    line-height: 1.06;
+    color: var(--ab-tan);
+    margin: 0 0 1.05rem;
+    display: block;
+}
+
+.ab-title-line {
+    display: block;
+    overflow: hidden;
+}
+
+.ab-title-line:nth-child(1) .ab-title-word {
+    animation-delay: 0.18s;
+}
+.ab-title-line:nth-child(2) .ab-title-word {
+    animation-delay: 0.28s;
+}
+.ab-title-line:nth-child(3) .ab-title-word,
+.ab-title-line:nth-child(3) .ab-title-accent {
+    animation-delay: 0.38s;
+}
+
+.ab-title-word {
+    display: inline-block;
+    transform: translateY(110%);
+    opacity: 0;
+    animation: abLineReveal 0.85s cubic-bezier(.16,1,.3,1) forwards;
+}
+
+/* High-Contrast Elegant Serif Italic Accent */
+.ab-title-accent {
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-style: italic;
+    font-weight: 400;
+    color: var(--ab-orange);
+    display: inline-block;
+    transform: translateY(110%);
+    opacity: 0;
+    animation: abLineReveal 0.9s cubic-bezier(.16,1,.3,1) 0.38s forwards;
+    letter-spacing: -0.01em;
+    background: linear-gradient(135deg, var(--ab-orange) 0%, #E65A00 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 2px 14px rgba(255, 107, 26, 0.28));
+}
+
+@keyframes abLineReveal {
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* ─── Body Copy Hierarchy ──────────────────────────────────── */
+/* Primary Statement */
+.ab-statement {
+    font-size: clamp(1.08rem, 1.35vw, 1.22rem);
+    line-height: 1.62;
+    color: var(--ab-muted);
+    max-width: 52ch;
+    margin: 0;
+    opacity: 0;
+    transform: translateY(16px);
+    animation: abFadeUp 0.75s cubic-bezier(.16,1,.3,1) 0.48s forwards;
+}
+.ab-statement em {
+    font-style: normal;
+    color: var(--ab-orange);
+    font-weight: 700;
+}
+
+/* Secondary Supporting Paragraph */
+.ab-tail {
+    margin-top: 0;
+    padding-top: 1.15rem;
+    border-top: 1px solid var(--ab-border);
+    opacity: 0;
+    transform: translateY(16px);
+    animation: abFadeUp 0.75s cubic-bezier(.16,1,.3,1) 0.58s forwards;
+}
+.ab-support {
+    font-size: clamp(0.92rem, 1.05vw, 0.98rem);
+    line-height: 1.66;
+    color: var(--ab-tan-light);
+    margin: 0 0 1.45rem;
+    max-width: 55ch;
+}
+
+/* ─── Interactive CTAs ─────────────────────────────────────── */
+.ab-actions {
+    display: flex;
+    align-items: center;
+    gap: 1.1rem;
+    flex-wrap: wrap;
+}
+
+.ab-btn {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.85rem 1.85rem;
+    border-radius: 999px;
+    font-size: 0.96rem;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    text-decoration: none;
+    transition: transform 0.28s cubic-bezier(.22,.68,0,1.2),
+                box-shadow 0.28s ease,
+                background 0.28s ease,
+                border-color 0.28s ease;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* Primary Magnetic CTA */
+.ab-btn--primary {
+    background: linear-gradient(115deg, var(--ab-orange) 0%, var(--ab-orange-2) 100%);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.32);
+    box-shadow:
+        0 8px 26px -6px rgba(255, 107, 26, 0.55),
+        0 2px 6px rgba(255, 107, 26, 0.25),
+        inset 0 1px 1px rgba(255, 255, 255, 0.40);
+    overflow: hidden;
+    /* Magnetic offset variables from JS */
+    --ab-mx: 0px;
+    --ab-my: 0px;
+    transform: translate3d(var(--ab-mx), var(--ab-my), 0);
+}
+.ab-btn--primary:hover {
+    transform: translate3d(var(--ab-mx), var(--ab-my), 0) scale(1.03);
+    box-shadow:
+        0 14px 40px -8px rgba(255, 107, 26, 0.70),
+        0 4px 12px rgba(255, 107, 26, 0.35),
+        inset 0 1px 2px rgba(255, 255, 255, 0.55);
+}
+.ab-btn-content {
+    position: relative;
+    z-index: 2;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+}
+.ab-btn-arrow {
+    width: 18px;
+    height: 18px;
+    transition: transform 0.28s cubic-bezier(.22,.68,0,1.2);
+    flex-shrink: 0;
+}
+.ab-btn--primary:hover .ab-btn-arrow {
+    transform: translateX(5px);
+}
+
+/* Dynamic button glow layer */
+.ab-btn-glow {
+    position: absolute;
+    inset: -2px;
+    border-radius: 999px;
+    background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.35) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+.ab-btn--primary:hover .ab-btn-glow {
+    opacity: 1;
+}
+
+/* Secondary Editorial Ghost Button */
+.ab-btn--ghost {
+    background: transparent;
+    color: var(--ab-tan);
+    border: 1.5px solid rgba(44, 26, 16, 0.22);
+}
+.ab-btn--ghost:hover {
+    transform: translateY(-2px);
+    background: rgba(44, 26, 16, 0.05);
+    border-color: rgba(44, 26, 16, 0.45);
+    color: var(--ab-orange);
+}
+
+/* ─── Micro Scroll Discovery Cue ───────────────────────────── */
+.ab-scrollcue {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-top: 1.6rem;
+    user-select: none;
+    opacity: 0.75;
+    transition: opacity 0.3s ease;
+}
+.ab-scrollcue:hover {
+    opacity: 1;
+}
+.ab-scrollcue-mouse {
+    width: 15px;
+    height: 22px;
+    border-radius: 999px;
+    border: 1.5px solid rgba(44, 26, 16, 0.35);
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+.ab-scrollcue-dot {
+    width: 3px;
+    height: 5px;
+    border-radius: 999px;
+    background: var(--ab-orange);
+    margin-top: 3px;
+    animation: abMouseWheel 1.8s ease-in-out infinite;
+}
+@keyframes abMouseWheel {
+    0%   { transform: translateY(0); opacity: 1; }
+    50%  { transform: translateY(6px); opacity: 0.2; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+.ab-scrollcue-label {
+    font-size: 0.64rem;
+    font-weight: 800;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(44, 26, 16, 0.45);
+    font-family: ui-monospace, 'SF Mono', Menlo, monospace;
+}
+.ab-scrollcue-line {
+    display: block;
+    width: 44px;
+    height: 1px;
+    background: rgba(44, 26, 16, 0.16);
+    position: relative;
+    overflow: hidden;
+}
+.ab-scrollcue-line::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    width: 50%;
+    background: var(--ab-orange);
+    animation: abLineSweep 2.4s ease-in-out infinite;
+}
+@keyframes abLineSweep {
+    0%   { transform: translateX(-100%); }
+    50%  { transform: translateX(200%); }
+    100% { transform: translateX(200%); }
+}
+
+/* ─── Right Interactive Visual System (~42%) ───────────────── */
+.ab-visual {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+/* Particle Canvas (Spans full visual area) */
+.ab-visual-canvas {
+    position: absolute;
+    inset: -30px;
+    width: calc(100% + 60px);
+    height: calc(100% + 60px);
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* ─── The Locked 1:1 Stage Container with Parallax Tilt ───── */
+.ab-stage {
+    position: relative;
+    width: 100%;
+    max-width: 395px;
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    transform: translate3d(calc(var(--ab-px) * 16px), calc(var(--ab-py) * 16px), 0);
+    transition: transform 0.18s cubic-bezier(.16,1,.3,1);
+    will-change: transform;
+}
+
+/* Luxury Brand Signature in Stage */
+.ab-brand-signature {
+    position: absolute;
+    top: -24px;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.15rem;
+    pointer-events: none;
+    z-index: 3;
+}
+.ab-sig-tag {
+    font-size: 0.60rem;
+    font-weight: 800;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ab-orange);
+    opacity: 0.88;
+    font-family: ui-monospace, 'SF Mono', Menlo, monospace;
+}
+.ab-sig-code {
+    font-size: 0.58rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ab-tan);
+    opacity: 0.45;
+}
+
+/* ─── Blueprint Orbit SVG ──────────────────────────────────── */
+.ab-orbit {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.ab-ring {
+    fill: none;
+    stroke: rgba(44, 26, 16, 0.08);
+    stroke-width: 0.6px;
+}
+.ab-ring--main {
+    stroke: rgba(255, 107, 26, 0.28);
+    stroke-width: 0.85px;
+}
+.ab-ring--dash {
+    stroke-dasharray: 2.5 5.5;
+    stroke: rgba(255, 107, 26, 0.24);
+    animation: abSpinDash 32s linear infinite;
+    transform-origin: 50px 50px;
+}
+@keyframes abSpinDash {
+    to { transform: rotate(360deg); }
+}
+
+.ab-spoke {
+    stroke: rgba(44, 26, 16, 0.12);
+    stroke-width: 0.6px;
+    stroke-dasharray: 2 3;
+    transition: stroke 0.3s ease, stroke-width 0.3s ease;
+}
+.ab-stage.has-active-discover .ab-spoke--discover,
+.ab-stage.has-active-build .ab-spoke--build,
+.ab-stage.has-active-launch .ab-spoke--launch {
+    stroke: var(--ab-orange);
+    stroke-width: 1.2px;
+    stroke-dasharray: none;
+    filter: drop-shadow(0 0 3px rgba(255, 107, 26, 0.8));
+}
+
+.ab-orbit-path {
+    fill: none;
+    stroke: url(#ab-grad);
+    stroke-width: 1.2px;
+    stroke-dasharray: 36 210;
+    stroke-linecap: round;
+    animation: abOrbitSpinRing 12s linear infinite;
+    transform-origin: 50px 50px;
+    filter: drop-shadow(0 0 4px rgba(255, 107, 26, 0.65));
+}
+@keyframes abOrbitSpinRing {
+    to { transform: rotate(360deg); }
+}
+
+/* ─── Stage Interactive Nodes (Discover, Build, Launch) ────── */
+.ab-node {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    border: none;
+    background: transparent;
+    padding: 0;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.35rem;
+    transition: transform 0.3s cubic-bezier(.22,.68,0,1.2);
+    -webkit-tap-highlight-color: transparent;
+}
+.ab-node:hover {
+    transform: translate(-50%, -50%) scale(1.10);
+}
+.ab-node:focus-visible {
+    outline: 2px solid var(--ab-orange);
+    outline-offset: 4px;
+    border-radius: 999px;
+}
+
+.ab-node-pulse {
+    position: absolute;
+    top: 4px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: rgba(255, 107, 26, 0.25);
+    opacity: 0;
+    pointer-events: none;
+}
+.ab-node.is-active .ab-node-pulse,
+.ab-node:hover .ab-node-pulse {
+    animation: abNodePulseRing 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+@keyframes abNodePulseRing {
+    0%   { transform: scale(0.6); opacity: 0.9; }
+    100% { transform: scale(2.3); opacity: 0; }
+}
+
+.ab-node-dot {
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background: #ffffff;
+    border: 2px solid var(--ab-tan);
+    box-shadow: 0 0 0 2.5px rgba(44,26,16,0.06), 0 2px 5px rgba(44,26,16,0.18);
+    transition: all 0.3s ease;
+}
+.ab-node:hover .ab-node-dot,
+.ab-node.is-active .ab-node-dot {
+    background: var(--ab-orange);
+    border-color: #ffffff;
+    box-shadow: 0 0 0 3px rgba(255,107,26,0.30), 0 0 14px rgba(255,107,26,0.75);
+}
+
+.ab-node-card {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.32rem 0.8rem;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(44, 26, 16, 0.12);
+    box-shadow: 0 3px 12px rgba(44, 26, 16, 0.08);
+    transition: all 0.3s ease;
+}
+.ab-node-num {
+    font-size: 0.64rem;
+    font-weight: 800;
+    color: var(--ab-orange);
+    letter-spacing: 0.04em;
+}
+.ab-node-label {
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.11em;
+    text-transform: uppercase;
+    color: var(--ab-tan);
+}
+
+.ab-node:hover .ab-node-card,
+.ab-node.is-active .ab-node-card {
+    background: var(--ab-orange);
+    border-color: var(--ab-orange);
+    box-shadow: 0 6px 20px rgba(255, 107, 26, 0.42);
+}
+.ab-node:hover .ab-node-num,
+.ab-node.is-active .ab-node-num,
+.ab-node:hover .ab-node-label,
+.ab-node.is-active .ab-node-label {
+    color: #ffffff;
+}
+
+/* ─── Center Core "Dream -> Real" Glowing Sphere ───────────── */
+.ab-core {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 6;
+    pointer-events: none;
+}
+.ab-core-halo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 108px;
+    height: 108px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255,107,26,0.26) 0%, transparent 72%);
+    animation: abHaloPulse 3.5s ease-in-out infinite;
+    transition: width 0.3s ease, height 0.3s ease, background 0.3s ease;
+}
+@keyframes abHaloPulse {
+    0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.8; }
+    50%      { transform: translate(-50%, -50%) scale(1.18); opacity: 1; }
+}
+
+.ab-visual.is-hot .ab-core-halo {
+    width: 130px;
+    height: 130px;
+    background: radial-gradient(circle, rgba(255,107,26,0.38) 0%, transparent 72%);
+}
+
+.ab-core-disc {
+    position: relative;
+    width: 86px;
+    height: 86px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 36% 30%, #ffffff 0%, #FAF3E6 50%, #ECE0C6 100%);
+    box-shadow:
+        inset 0 -3px 8px rgba(44,26,16,0.06),
+        inset 0 2px 5px rgba(255,255,255,0.95),
+        0 6px 24px rgba(255,107,26,0.22),
+        0 2px 6px rgba(44,26,16,0.08),
+        0 0 0 1.2px rgba(255,107,26,0.28);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+.ab-visual.is-hot .ab-core-disc {
+    box-shadow:
+        inset 0 -3px 8px rgba(44,26,16,0.06),
+        inset 0 2px 5px rgba(255,255,255,0.95),
+        0 10px 32px rgba(255,107,26,0.38),
+        0 2px 6px rgba(44,26,16,0.08),
+        0 0 0 1.5px rgba(255,107,26,0.45);
+}
+
+.ab-core-word {
+    font-size: 0.55rem;
+    font-weight: 800;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: rgba(44, 26, 16, 0.65);
+}
+.ab-core-arrow {
+    font-size: 0.68rem;
+    line-height: 1;
+    color: var(--ab-orange);
+    margin: 1px 0;
+}
+.ab-core-real {
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-style: italic;
+    font-size: 1.22rem;
+    line-height: 1;
+    color: var(--ab-orange);
+    background: linear-gradient(135deg, var(--ab-orange) 0%, #E65A00 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* ─── Interactive Stage Hover Popover Card ─────────────────── */
+.ab-stage-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 390px;
+    margin-top: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 44px;
+    z-index: 12;
+}
+
+/* Subtle Idle Hint Pill */
+.ab-stage-hint {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    padding: 0.42rem 1.05rem;
+    border-radius: 999px;
+    background: rgba(44, 26, 16, 0.04);
+    border: 1px dashed rgba(44, 26, 16, 0.18);
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: rgba(44, 26, 16, 0.65);
+    transition: opacity 0.25s ease, transform 0.25s ease;
+    user-select: none;
+}
+.ab-stage-hint strong {
+    color: var(--ab-tan);
+    font-weight: 700;
+}
+.ab-stage-hint-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--ab-orange);
+    box-shadow: 0 0 8px rgba(255, 107, 26, 0.7);
+    animation: abDotPulse 2s infinite;
+}
+.ab-stage-wrapper.has-active .ab-stage-hint {
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(0.95);
+}
+
+/* Popover card: Hidden by default, reveals on node hover */
+.ab-stage-card {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.96);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1.5px solid rgba(255, 107, 26, 0.35);
+    border-radius: 16px;
+    padding: 1.05rem 1.35rem;
+    box-shadow:
+        0 22px 50px -10px rgba(44, 26, 16, 0.18),
+        0 6px 18px rgba(255, 107, 26, 0.10);
+    z-index: 15;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(12px) scale(0.97);
+    transition: opacity 0.28s cubic-bezier(.16,1,.3,1),
+                transform 0.28s cubic-bezier(.16,1,.3,1),
+                visibility 0.28s ease;
+    pointer-events: none;
+}
+
+.ab-stage-card.is-open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) scale(1);
+    pointer-events: auto;
+}
+
+.ab-stage-card:hover {
+    border-color: rgba(255, 107, 26, 0.60);
+    box-shadow:
+        0 26px 58px -10px rgba(44, 26, 16, 0.22),
+        0 8px 22px rgba(255, 107, 26, 0.14);
+}
+.ab-stage-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+.ab-stage-pill {
+    font-size: 0.65rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ab-orange);
+    background: rgba(255, 107, 26, 0.10);
+    padding: 0.22rem 0.70rem;
+    border-radius: 999px;
+}
+.ab-stage-metric {
+    font-size: 0.70rem;
+    font-weight: 600;
+    color: rgba(44, 26, 16, 0.55);
+}
+.ab-stage-title {
+    font-size: 1.02rem;
+    font-weight: 700;
+    color: var(--ab-tan);
+    margin: 0 0 0.38rem;
+    line-height: 1.34;
+    letter-spacing: -0.015em;
+}
+.ab-stage-desc {
+    font-size: 0.84rem;
+    line-height: 1.55;
+    color: var(--ab-muted);
+    margin: 0 0 0.85rem;
+}
+.ab-stage-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+}
+.ab-tag {
+    font-size: 0.68rem;
+    font-weight: 600;
+    color: var(--ab-tan);
+    background: rgba(44, 26, 16, 0.05);
+    border: 1px solid rgba(44, 26, 16, 0.08);
+    border-radius: 6px;
+    padding: 0.22rem 0.60rem;
+}
+
+/* ─── Generic Reveal Animation ─────────────────────────────── */
+@keyframes abFadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ─── Responsive Breakdown ─────────────────────────────────── */
+@media (max-width: 980px) {
+    .ab-hero-inner {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 3.2rem;
+        padding-top: 4.8rem;
+        padding-bottom: 5.5rem;
+    }
+    .ab-text-col {
+        align-items: center;
+        text-align: center;
+        max-width: 100%;
+    }
+    .ab-eyebrow-wrap {
+        display: flex;
+        justify-content: center;
+    }
+    .ab-statement, .ab-support {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .ab-actions {
+        justify-content: center;
+    }
+    .ab-scrollcue {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .ab-stage {
+        max-width: 360px;
+    }
+    .ab-stage-card {
+        max-width: 380px;
+        text-align: left;
+    }
+    .ab-title {
+        font-size: clamp(2.3rem, 7vw, 3.4rem);
+    }
+}
+
+@media (max-width: 540px) {
+    .ab-bg-meta {
+        display: none;
+    }
+    .ab-hero-inner {
+        padding-top: 3.8rem;
+        padding-bottom: 4.5rem;
+        gap: 2.6rem;
+    }
+    .ab-stage {
+        max-width: 300px;
+    }
+    .ab-stage-wrapper {
+        max-width: 330px;
+    }
+    .ab-stage-card {
+        padding: 0.95rem 1.15rem;
+    }
+    .ab-title {
+        font-size: clamp(2.05rem, 8.5vw, 2.75rem);
+    }
+    .ab-core-disc {
+        width: 72px;
+        height: 72px;
+    }
+    .ab-core-real {
+        font-size: 1.05rem;
+    }
+    .ab-core-halo {
+        width: 90px;
+        height: 90px;
+    }
+}
+
+/* ─── Reduced Motion Support ───────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+    .ab-title-word,
+    .ab-title-accent,
+    .ab-statement,
+    .ab-tail,
+    .ab-eyebrow-wrap {
+        animation: none !important;
+        transform: none !important;
+        opacity: 1 !important;
+    }
+    .ab-ring--dash,
+    .ab-orbit-path,
+    .ab-core-halo,
+    .ab-eyebrow-dot,
+    .ab-stage-hint-dot,
+    .ab-scrollcue-dot,
+    .ab-scrollcue-line::after {
+        animation: none !important;
+    }
+    .ab-stage {
+        transform: none !important;
+        transition: none !important;
+    }
+}
