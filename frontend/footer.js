@@ -1,27 +1,32 @@
 import './footer.css';
 
-// This checkout is a single-page site. Use its real sections until dedicated
-// pages exist. Absolute, base-aware URLs also work from future nested pages.
+// Base-aware URLs so the shared footer resolves from the homepage and from
+// every dedicated page, wherever the site is deployed.
 const HOME = import.meta.env.BASE_URL;
-const section = (id) => `${HOME}#${id}`;
+const url = (path = '') => `${HOME}${path}`;
 
 const NAVIGATION = [
   { title: 'Programs', links: [
-    ['Dreamers Lab', 'dreamers-lab'],
-    ['Student Entrepreneurs', 'program-founder'],
-    ['University Programs', 'program-venture'],
+    ['Dreamers Lab', url('dreamers-lab/')],
+    ['Student Entrepreneurs', url('student-entrepreneurs/')],
+    ['University Programs', url('universities/')],
   ] },
-  { title: 'For', links: [
-    ['Students', 'journey'],
-    ['Parents', 'faq'],
-    ['Founders', 'program-founder'],
-    ['Universities', 'program-venture'],
+  { title: 'Explore', links: [
+    ['About Us', url('about/')],
+    ['Mentors & Community', url('community/')],
+    ['Insights & Resources', url('insights/')],
+    ['For Parents', url('parents/')],
   ] },
-  { title: 'About', links: [
-    ['Our Story', 'approach'],
-    ['Mentors', 'network'],
-    ['Community', 'network'],
-    ['Contact', 'talk-to-us'],
+  { title: 'Get Involved', links: [
+    ['Apply to a Program', url('apply/')],
+    ['Become a Mentor', `${url('community/')}#become-a-mentor`],
+    ['Partner With Us', `${url('universities/')}#partnership`],
+    ['Contact', url('get-started/')],
+  ] },
+  { title: 'Information', links: [
+    ['FAQs', url('faq/')],
+    ['Privacy Policy', url('privacy-policy/')],
+    ['Terms of Use', url('terms/')],
   ] },
 ];
 
@@ -73,7 +78,7 @@ const BACKDROP = `<svg class="bd-footer__constellation" viewBox="0 0 1440 860" p
 function navigationGroup({ title, links }) {
   return `<div class="bd-footer__group">
     <h3 class="bd-footer__label">${title}</h3>
-    <ul role="list">${links.map(([label, id]) => `<li><a class="bd-footer__link" href="${section(id)}"><span>${label}</span>${ARROW}</a></li>`).join('')}</ul>
+    <ul role="list">${links.map(([label, href]) => `<li><a class="bd-footer__link" href="${href}"><span>${label}</span>${ARROW}</a></li>`).join('')}</ul>
   </div>`;
 }
 
@@ -184,7 +189,7 @@ export function mountFooter() {
       <div class="bd-footer__colophon">
         <small>&copy; ${new Date().getFullYear()} Building Dreams</small>
         <div class="bd-footer__utility">
-          <a href="${section('faq')}">FAQs</a>
+          <a href="${url('faq/')}">FAQs</a>
           <a class="bd-footer__back" href="#top">Back to top <span aria-hidden="true">&uarr;</span></a>
         </div>
       </div>

@@ -16,20 +16,32 @@
         <!-- New Refined Navbar -->
     <nav class="nd-navbar" aria-label="Main navigation">
         <div class="nd-logo">
-            <span class="nd-logo-text">Dreamers Lab</span>
+            <a class="nd-logo-link" href="./" aria-label="Building Dreams home">
+                <span class="nd-logo-mark" aria-hidden="true">&#10022;</span>
+                <span class="nd-logo-text">Building Dreams</span>
+            </a>
         </div>
         <button class="nd-menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation primary-navigation-actions" hidden>
             <span>Menu</span>
             <svg viewBox="0 0 24 24" width="20" height="20" fill="none" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
         </button>
         <div class="nd-nav-links" id="primary-navigation">
-            <a href="#programs">Explore</a>
-            <a href="#how-it-works">How it works</a>
-            <a href="#dreamers-lab">For Schools</a>
-            <a href="#approach">About</a>
+            <a href="./">Home</a>
+            <a href="about/">About</a>
+            <details class="nd-nav-dd">
+                <summary>Programs<span class="nd-nav-caret" aria-hidden="true"></span></summary>
+                <div class="nd-nav-dd-menu">
+                    <a href="dreamers-lab/">Dreamers Lab<span class="nd-nav-dd-note">Grades 9&ndash;12</span></a>
+                    <a href="student-entrepreneurs/">Student Entrepreneurs<span class="nd-nav-dd-note">University founders</span></a>
+                    <a href="universities/">Universities &amp; Accelerators<span class="nd-nav-dd-note">Institutional programs</span></a>
+                </div>
+            </details>
+            <a href="community/">Mentors &amp; Community</a>
+            <a href="insights/">Insights</a>
+            <a href="get-started/">Contact</a>
         </div>
         <div class="nd-nav-actions" id="primary-navigation-actions">
-            <a href="#journey" class="nd-btn-primary nd-nav-cta">Start exploring</a>
+            <a href="get-started/" class="nd-btn-primary nd-nav-cta">Get Started</a>
         </div>
     </nav>
 
