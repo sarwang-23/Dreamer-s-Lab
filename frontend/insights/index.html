@@ -4,254 +4,2035 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Insights &amp; Resources | Building Dreams</title>
-  <meta name="description" content="Practical entrepreneurship guides, frameworks, founder stories and downloadable resources from Building Dreams.">
+  <meta name="description" content="A world-class digital publication and venture knowledge platform. Practical entrepreneurship guides, frameworks, founder stories and downloadable resources from Building Dreams.">
   <meta property="og:title" content="Insights &amp; Resources | Building Dreams">
   <meta property="og:description" content="Ideas need inspiration. Ventures need practical knowledge.">
   <meta property="og:type" content="website">
-  <meta name="theme-color" content="#f8f6f0">
+  <meta name="theme-color" content="#fbf9f5">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@1,500;1,600;1,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../style.css">
   <link rel="stylesheet" href="../responsive.css">
   <link rel="stylesheet" href="../pages.css">
+  <link rel="stylesheet" href="../insights.css">
 </head>
 <body id="top" class="pg-body">
-<main class="pg-main">
+<main class="pg-main ins-page">
 
-  <!-- Section 1: Hero -->
-  <header class="pg-hero">
-    <div class="pg-container pg-hero-inner">
-      <span class="pg-eyebrow">Insights &amp; Resources</span>
-      <h1 class="pg-hero-title">Ideas need inspiration. Ventures need <em>practical knowledge.</em></h1>
-      <p class="pg-hero-lead">Explore guides, frameworks, founder stories and resources that help students and aspiring entrepreneurs move from thinking about an idea to testing it in the real world.</p>
-      <p class="pg-hero-sub">Whether you&rsquo;re discovering your first problem, developing an MVP or looking for your next growth opportunity, start here.</p>
-      <div class="pg-cta-row">
-        <a href="#resources" class="pg-btn pg-btn--primary">Explore the Latest Insights</a>
+  <!-- Scroll Progress Indicator -->
+  <div class="ins-progress" aria-hidden="true"></div>
+
+  <!-- Editorial Section Nav Rail (Desktop) -->
+  <nav class="ins-rail" aria-label="Page chapters">
+    <a href="#hero" class="is-active"><span class="ins-rail-label">Opening</span><span class="ins-rail-dot"></span></a>
+    <a href="#audience"><span class="ins-rail-label">Starting point</span><span class="ins-rail-dot"></span></a>
+    <a href="#journey-navigator"><span class="ins-rail-label">Venture stages</span><span class="ins-rail-dot"></span></a>
+    <a href="#knowledge-map"><span class="ins-rail-label">Knowledge map</span><span class="ins-rail-dot"></span></a>
+    <a href="#library"><span class="ins-rail-label">Resource library</span><span class="ins-rail-dot"></span></a>
+    <a href="#action-flow"><span class="ins-rail-label">Idea to action</span><span class="ins-rail-dot"></span></a>
+    <a href="#stories"><span class="ins-rail-label">Founder stories</span><span class="ins-rail-dot"></span></a>
+    <a href="#learning-outcomes"><span class="ins-rail-label">Real lessons</span><span class="ins-rail-dot"></span></a>
+    <a href="#ecosystem"><span class="ins-rail-label">Ecosystem</span><span class="ins-rail-dot"></span></a>
+  </nav>
+
+  <!-- ======================================================================
+       01 — HERO / OPENING EXPERIENCE
+       Asymmetric editorial opening + Interactive Constellation Venture Pathway
+       ====================================================================== -->
+  <header class="ins-hero-section" id="hero" aria-labelledby="ins-hero-title">
+    <div class="ins-ambient-grid" aria-hidden="true"></div>
+    <div class="ins-hero-radial-glow" aria-hidden="true"></div>
+
+    <div class="ins-wrap ins-hero-layout">
+      <!-- Left: Dramatic Editorial Typography & CTAs -->
+      <div class="ins-hero-editorial">
+        <div class="ins-eyebrow-tag">
+          <span class="ins-tag-indicator" aria-hidden="true"></span>
+          <span>01 / INSIGHTS &amp; RESOURCES</span>
+        </div>
+
+        <h1 class="ins-hero-headline" id="ins-hero-title">
+          Ideas need inspiration.<br>
+          Ventures need<br>
+          <em class="ins-serif-em">practical knowledge.</em>
+        </h1>
+
+        <p class="ins-hero-summary">
+          Explore guides, frameworks, founder stories and practical resources designed to help students and aspiring entrepreneurs move from thinking about an idea to testing it in the real world.
+        </p>
+
+        <div class="ins-hero-actions">
+          <a href="#library" class="ins-action-btn ins-action-btn--primary">
+            <span>Explore the Insights</span>
+            <svg class="ins-btn-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+          <a href="#journey-navigator" class="ins-action-btn ins-action-btn--ghost">
+            <span>Explore the Venture Journey</span>
+            <svg class="ins-btn-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M8 3v10M4 9l4 4 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </div>
+
+        <!-- Editorial Footnote / Philosophy Anchor -->
+        <div class="ins-hero-ethos">
+          <div class="ins-ethos-pulse" aria-hidden="true"></div>
+          <span>Great ventures are built through curiosity, experimentation and action.</span>
+        </div>
+      </div>
+
+      <!-- Right: Interactive Constellation Venture Pathway -->
+      <div class="ins-constellation-panel" id="ins-constellation-panel" aria-label="Interactive venture pathway">
+        <!-- Header -->
+        <div class="ins-constellation-header">
+          <div class="ins-header-left">
+            <span class="ins-live-beacon">
+              <span class="ins-live-beacon-dot" aria-hidden="true"></span>
+              <span class="ins-panel-kicker">Your Venture Journey</span>
+            </span>
+            <span class="ins-panel-sub">Seven stages from idea to impact.</span>
+          </div>
+          <span class="ins-meta-pill">7 Stages · Idea to Impact</span>
+        </div>
+
+        <!-- SVG Diagram Canvas -->
+        <div class="ins-constellation-diagram">
+          <!-- Subtle dot coordinate grid -->
+          <div class="ins-diagram-grid" aria-hidden="true"></div>
+          <!-- Ambient glowing aura tracking active node -->
+          <div class="ins-diagram-aura" id="ins-diagram-aura" aria-hidden="true"></div>
+
+          <!-- Constellation SVG connecting pathways -->
+          <svg class="ins-pathway-svg" viewBox="0 0 460 480" fill="none" aria-hidden="true">
+            <defs>
+              <linearGradient id="insTrackGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#FF6B1A" stop-opacity="0.3" />
+                <stop offset="50%" stop-color="#FF8238" stop-opacity="0.2" />
+                <stop offset="100%" stop-color="#073D33" stop-opacity="0.2" />
+              </linearGradient>
+              <linearGradient id="insActiveGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#FF641F" />
+                <stop offset="50%" stop-color="#FF8C3A" />
+                <stop offset="100%" stop-color="#FF641F" />
+              </linearGradient>
+            </defs>
+            <!-- Ambient blurred guide -->
+            <path class="ins-path-glow" d="M 80 50 Q 230 40 380 95 T 100 230 T 360 330 T 230 430" stroke="url(#insTrackGlow)" stroke-width="8" stroke-linecap="round" />
+            <!-- Base track -->
+            <path class="ins-path-track" d="M 80 50 Q 230 40 380 95 T 100 230 T 360 330 T 230 430" />
+            <!-- Active pulse trajectory -->
+            <path class="ins-path-active" id="ins-active-curve" d="M 80 50 Q 230 40 380 95 T 100 230 T 360 330 T 230 430" stroke="url(#insActiveGradient)" />
+          </svg>
+
+          <!-- Stage 01: Idea -->
+          <div class="ins-node is-active" data-stage="01" data-title="IDEA" data-tag="INCEPTION" data-desc="Start from curiosity, not certainty. Frame the opportunity before seeking solutions." data-step="Phase 01 / 07" data-index="0" style="top: 11%; left: 18%;">
+            <button type="button" class="ins-node-target" aria-label="Stage 01: Idea">
+              <span class="ins-node-core">01</span>
+            </button>
+            <div class="ins-node-tooltip" role="tooltip">
+              <span class="ins-tt-stage">STAGE 01</span>
+              <strong class="ins-tt-title">IDEA</strong>
+            </div>
+          </div>
+
+          <!-- Stage 02: Research -->
+          <div class="ins-node" data-stage="02" data-title="RESEARCH" data-tag="DISCOVERY" data-desc="Map the landscape before you commit. Study the market, the alternatives and the people already living the problem." data-step="Phase 02 / 07" data-index="1" style="top: 20%; right: 14%;">
+            <button type="button" class="ins-node-target" aria-label="Stage 02: Research">
+              <span class="ins-node-core">02</span>
+            </button>
+            <div class="ins-node-tooltip" role="tooltip">
+              <span class="ins-tt-stage">STAGE 02</span>
+              <strong class="ins-tt-title">RESEARCH</strong>
+            </div>
+          </div>
+
+          <!-- Stage 03: Validation -->
+          <div class="ins-node" data-stage="03" data-title="VALIDATION" data-tag="EVIDENCE" data-desc="Test the assumption behind the idea. Seek real evidence that people genuinely want the change you propose." data-step="Phase 03 / 07" data-index="2" style="top: 36%; left: 38%;">
+            <button type="button" class="ins-node-target" aria-label="Stage 03: Validation">
+              <span class="ins-node-core">03</span>
+            </button>
+            <div class="ins-node-tooltip" role="tooltip">
+              <span class="ins-tt-stage">STAGE 03</span>
+              <strong class="ins-tt-title">VALIDATION</strong>
+            </div>
+          </div>
+
+          <!-- Stage 04: Strategy -->
+          <div class="ins-node" data-stage="04" data-title="STRATEGY" data-tag="DIRECTION" data-desc="Choose a focused path. Define who you serve, the value you create and how you will reach them first." data-step="Phase 04 / 07" data-index="3" style="top: 48%; left: 20%;">
+            <button type="button" class="ins-node-target" aria-label="Stage 04: Strategy">
+              <span class="ins-node-core">04</span>
+            </button>
+            <div class="ins-node-tooltip" role="tooltip">
+              <span class="ins-tt-stage">STAGE 04</span>
+              <strong class="ins-tt-title">STRATEGY</strong>
+            </div>
+          </div>
+
+          <!-- Stage 05: Build -->
+          <div class="ins-node" data-stage="05" data-title="BUILD" data-tag="CREATION" data-desc="Turn the plan into the smallest real thing. Build to learn, iterate quickly and stay close to the people using it." data-step="Phase 05 / 07" data-index="4" style="top: 62%; right: 18%;">
+            <button type="button" class="ins-node-target" aria-label="Stage 05: Build">
+              <span class="ins-node-core">05</span>
+            </button>
+            <div class="ins-node-tooltip" role="tooltip">
+              <span class="ins-tt-stage">STAGE 05</span>
+              <strong class="ins-tt-title">BUILD</strong>
+            </div>
+          </div>
+
+          <!-- Stage 06: Launch -->
+          <div class="ins-node" data-stage="06" data-title="LAUNCH" data-tag="RELEASE" data-desc="Put it in front of real people. Open the doors, gather honest signal and refine in public." data-step="Phase 06 / 07" data-index="5" style="top: 76%; left: 32%;">
+            <button type="button" class="ins-node-target" aria-label="Stage 06: Launch">
+              <span class="ins-node-core">06</span>
+            </button>
+            <div class="ins-node-tooltip" role="tooltip">
+              <span class="ins-tt-stage">STAGE 06</span>
+              <strong class="ins-tt-title">LAUNCH</strong>
+            </div>
+          </div>
+
+          <!-- Stage 07: Growth -->
+          <div class="ins-node" data-stage="07" data-title="GROWTH" data-tag="SCALE" data-desc="Scale impact without losing the original soul. Expand reach with operational discipline." data-step="Phase 07 / 07" data-index="6" style="top: 88%; left: 52%;">
+            <button type="button" class="ins-node-target" aria-label="Stage 07: Growth">
+              <span class="ins-node-core">07</span>
+            </button>
+            <div class="ins-node-tooltip" role="tooltip">
+              <span class="ins-tt-stage">STAGE 07</span>
+              <strong class="ins-tt-title">GROWTH</strong>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sleek Integrated Control Deck -->
+        <div class="ins-constellation-footer">
+          <div class="ins-deck-header">
+            <div class="ins-deck-meta">
+              <span class="ins-deck-step" id="ins-deck-step">PHASE 01 / 07</span>
+              <span class="ins-deck-tag" id="ins-deck-tag">INCEPTION</span>
+            </div>
+            <div class="ins-deck-controls" aria-label="Milestone Navigation">
+              <button type="button" class="ins-deck-btn" id="ins-prev-stage" aria-label="Previous milestone" title="Previous milestone">
+                <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M10 12L6 8l4-4" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+              <span class="ins-deck-counter" id="ins-deck-counter">01 / 07</span>
+              <button type="button" class="ins-deck-btn" id="ins-next-stage" aria-label="Next milestone" title="Next milestone">
+                <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M6 12l4-4-4-4" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+            </div>
+          </div>
+
+          <div class="ins-deck-body">
+            <h4 class="ins-deck-title" id="ins-deck-title">01 / IDEA</h4>
+            <p class="ins-deck-desc" id="ins-stage-status">Start from curiosity, not certainty. Frame the opportunity before seeking solutions.</p>
+          </div>
+
+          <!-- Unified Progress Bar inside Deck -->
+          <div class="ins-deck-progress-track" aria-hidden="true">
+            <div class="ins-deck-progress-fill" id="ins-deck-progress-fill" style="width: 14.28%;"></div>
+          </div>
+        </div>
       </div>
     </div>
   </header>
 
-  <!-- Section 2: Featured content -->
-  <section class="pg-section pg-section--ivory">
-    <div class="pg-container">
-      <div class="pg-head">
-        <span class="pg-kicker">Featured content</span>
-        <h2 class="pg-h2">Start with what you <em>need to solve.</em></h2>
+  <!-- ======================================================================
+       02 — AUDIENCE STARTING POINTS
+       Asymmetric Composition: Dreamers, Student Founders (Dominant), Universities
+       ====================================================================== -->
+  <section class="ins-section ins-audience-section" id="audience" aria-labelledby="ins-aud-title">
+    <div class="ins-wrap">
+      <div class="ins-section-header">
+        <div class="ins-eyebrow-tag">
+          <span class="ins-tag-indicator" aria-hidden="true"></span>
+          <span>02 / WHO IT&rsquo;S FOR</span>
+        </div>
+        <h2 class="ins-section-title" id="ins-aud-title">
+          Start with what you <em class="ins-serif-em">need to solve.</em>
+        </h2>
+        <p class="ins-section-sub">
+          Every venture journey begins from a different perspective. Select your current focus to unfold tailored resources.
+        </p>
       </div>
-      <div class="pg-grid pg-grid--3">
-        <article class="pg-card pg-card--hover pg-card--accent">
-          <span class="pg-card-icon" aria-hidden="true">&#10022;</span>
-          <h3 class="pg-card-title">For Dreamers</h3>
-          <p class="pg-card-text">Explore problem-solving, creativity, innovation, teamwork and the basics of entrepreneurship.</p>
-        </article>
-        <article class="pg-card pg-card--hover pg-card--accent">
-          <span class="pg-card-icon" aria-hidden="true">&#9881;</span>
-          <h3 class="pg-card-title">For Student Founders</h3>
-          <p class="pg-card-text">Learn about customer discovery, MVP development, business models, sales and early traction.</p>
-        </article>
-        <article class="pg-card pg-card--hover pg-card--accent">
-          <span class="pg-card-icon" aria-hidden="true">&#9737;</span>
-          <h3 class="pg-card-title">For Universities</h3>
-          <p class="pg-card-text">Explore entrepreneurship program design, incubation, founder pipelines, mentoring and impact measurement.</p>
-        </article>
-      </div>
-    </div>
-  </section>
 
-  <!-- Section 3: Resource categories -->
-  <section class="pg-section" id="resources">
-    <div class="pg-container">
-      <div class="pg-head">
-        <span class="pg-kicker">Resource categories</span>
-        <h2 class="pg-h2">Practical guides across the <em>venture journey.</em></h2>
-      </div>
-      <div class="pg-grid pg-grid--3">
-
-        <article class="pg-card pg-card--hover">
-          <h3 class="pg-h3">Idea &amp; Problem Discovery</h3>
-          <ul class="pg-card-list">
-            <li>How to Find a Business Idea Worth Exploring.</li>
-            <li>Start With a Problem, Not an App.</li>
-            <li>Five Ways Students Can Spot Problems Around Them.</li>
-            <li>How to Tell Whether an Idea Is Worth Testing.</li>
-            <li>Turning Everyday Frustrations Into Opportunities.</li>
-          </ul>
-        </article>
-
-        <article class="pg-card pg-card--hover">
-          <h3 class="pg-h3">Customer Validation</h3>
-          <ul class="pg-card-list">
-            <li>How to Interview Your First Ten Potential Customers.</li>
-            <li>Five Questions to Ask Before Building a Product.</li>
-            <li>How to Validate a Business Idea Without Spending Much Money.</li>
-            <li>Why Your Friends Saying &ldquo;Great Idea&rdquo; Isn&rsquo;t Enough.</li>
-            <li>How to Understand What Customers Actually Need.</li>
-          </ul>
-        </article>
-
-        <article class="pg-card pg-card--hover">
-          <h3 class="pg-h3">MVP &amp; Product Building</h3>
-          <ul class="pg-card-list">
-            <li>What Is an MVP, and Why Does It Matter?</li>
-            <li>How to Build Your First Prototype on a Student Budget.</li>
-            <li>No-Code Tools for First-Time Founders.</li>
-            <li>What to Build First&mdash;and What to Leave Out.</li>
-            <li>How to Use Feedback to Improve Your Product.</li>
-          </ul>
-        </article>
-
-        <article class="pg-card pg-card--hover">
-          <h3 class="pg-h3">Business &amp; Go-to-Market</h3>
-          <ul class="pg-card-list">
-            <li>How Does a Startup Make Money?</li>
-            <li>Understanding Business Models Through Simple Examples.</li>
-            <li>How to Find Your First Customers.</li>
-            <li>Pricing Your First Product or Service.</li>
-            <li>Building a Go-to-Market Plan With Limited Resources.</li>
-          </ul>
-        </article>
-
-        <article class="pg-card pg-card--hover">
-          <h3 class="pg-h3">Founder Mindset</h3>
-          <ul class="pg-card-list">
-            <li>Learning From Failure Without Losing Momentum.</li>
-            <li>How to Balance University and Entrepreneurship.</li>
-            <li>Finding a Co-Founder: Skills, Values and Expectations.</li>
-            <li>How to Pitch an Idea Clearly.</li>
-            <li>When to Persist, Pivot or Stop.</li>
-          </ul>
-        </article>
-
-        <article class="pg-card pg-card--hover">
-          <h3 class="pg-h3">University Entrepreneurship</h3>
-          <ul class="pg-card-list">
-            <li>Designing a Student Pre-Incubation Program.</li>
-            <li>Moving Beyond Startup Competitions to Venture Building.</li>
-            <li>How Universities Can Measure Entrepreneurship Outcomes.</li>
-            <li>Building a Mentor Network That Actually Engages.</li>
-            <li>From Entrepreneurship Cell to a Connected Startup Ecosystem.</li>
-          </ul>
-        </article>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- Section 4: Downloadable resources -->
-  <section class="pg-section pg-section--ivory">
-    <div class="pg-container">
-      <div class="pg-head">
-        <span class="pg-kicker">Downloadable resources</span>
-        <h2 class="pg-h2">A resource library, <em>ready when you are.</em></h2>
-        <p class="pg-sub">Create a resource library that visitors can access through simple forms or direct downloads.</p>
-      </div>
-      <div class="pg-grid pg-grid--3">
-        <article class="pg-card pg-card--hover">
-          <h3 class="pg-card-title">Business Idea Canvas</h3>
-          <p class="pg-card-text">For dreamers exploring their very first idea.</p>
-        </article>
-        <article class="pg-card pg-card--hover">
-          <h3 class="pg-card-title">Problem Discovery Worksheet</h3>
-          <p class="pg-card-text">For students learning to spot problems worth solving.</p>
-        </article>
-        <article class="pg-card pg-card--hover">
-          <h3 class="pg-card-title">Customer Interview Guide</h3>
-          <p class="pg-card-text">For founders preparing to talk to real customers.</p>
-        </article>
-        <article class="pg-card pg-card--hover">
-          <h3 class="pg-card-title">Idea Validation Checklist</h3>
-          <p class="pg-card-text">For anyone testing whether an idea is worth pursuing.</p>
-        </article>
-        <article class="pg-card pg-card--hover">
-          <h3 class="pg-card-title">MVP Planning Template</h3>
-          <p class="pg-card-text">For student founders starting to build their first product.</p>
-        </article>
-        <article class="pg-card pg-card--hover">
-          <h3 class="pg-card-title">Basic Business Model Canvas</h3>
-          <p class="pg-card-text">For teams working out how their venture makes money.</p>
-        </article>
-        <article class="pg-card pg-card--hover">
-          <h3 class="pg-card-title">First Customer Outreach Template</h3>
-          <p class="pg-card-text">For founders going after their first customers.</p>
-        </article>
-        <article class="pg-card pg-card--hover">
-          <h3 class="pg-card-title">Startup Pitch Deck Outline</h3>
-          <p class="pg-card-text">For anyone preparing to present their idea clearly.</p>
-        </article>
-        <article class="pg-card pg-card--hover">
-          <h3 class="pg-card-title">Student Venture Progress Tracker</h3>
-          <p class="pg-card-text">For student teams keeping momentum over a semester.</p>
-        </article>
-        <article class="pg-card pg-card--hover">
-          <h3 class="pg-card-title">University Entrepreneurship Program Planning Checklist</h3>
-          <p class="pg-card-text">For universities designing and running programs.</p>
-        </article>
-      </div>
-      <p class="pg-note" style="margin-top:2rem;max-width:820px;">Each resource should explain who it is for, what it helps accomplish and how to use it.</p>
-    </div>
-  </section>
-
-  <!-- Section 5: Founder stories -->
-  <section class="pg-section pg-section--tint">
-    <div class="pg-container">
-      <div class="pg-head">
-        <span class="pg-kicker">Founder stories</span>
-        <h2 class="pg-h2">Real journeys. <em>Honest lessons.</em></h2>
-        <p class="pg-sub">As Building Dreams programs develop, publish stories about participants who have:</p>
-      </div>
-      <ul class="pg-list pg-list--check">
-        <li>Discovered a problem worth solving.</li>
-        <li>Changed their original idea after customer research.</li>
-        <li>Built their first prototype.</li>
-        <li>Run their first pilot.</li>
-        <li>Acquired their first customer.</li>
-        <li>Learned from a failed experiment.</li>
-        <li>Progressed into an incubator or accelerator.</li>
-      </ul>
-      <p class="pg-note" style="margin-top:2rem;max-width:820px;">Prioritise honest accounts of progress and learning over exaggerated success stories.</p>
-    </div>
-  </section>
-
-  <!-- Section 6: Newsletter -->
-  <section class="pg-section pg-section--ivory">
-    <div class="pg-container pg-container--narrow">
-      <div class="pg-head pg-head--center">
-        <span class="pg-kicker">Newsletter</span>
-        <h2 class="pg-h2">A little inspiration. A lot of <em>practical action.</em></h2>
-        <p class="pg-sub">Get occasional insights on entrepreneurship, student innovation, venture building and upcoming Building Dreams opportunities.</p>
-      </div>
-      <form class="pg-form" data-demo-form novalidate>
-        <div class="pg-form-fields">
-          <div class="pg-field">
-            <label class="pg-label" for="insights-email">Email address</label>
-            <input class="pg-input" type="email" id="insights-email" name="email" autocomplete="email" required>
+      <div class="ins-audience-triptych" role="tablist" aria-label="Select your focus audience">
+        <!-- 01: Dreamers -->
+        <div class="ins-aud-pillar" role="tab" id="aud-tab-dreamer" aria-controls="aud-panel-dreamer" aria-selected="false" tabindex="0">
+          <div class="ins-aud-pillar-header">
+            <span class="ins-aud-pillar-num">01</span>
+            <span class="ins-aud-pillar-badge">School &amp; Early Exploration</span>
+          </div>
+          <h3 class="ins-aud-pillar-title">Dreamers</h3>
+          <p class="ins-aud-pillar-motto">&ldquo;Explore what&rsquo;s possible.&rdquo;</p>
+          <div class="ins-aud-domains">
+            <span class="ins-domain-pill">Problem Discovery</span>
+            <span class="ins-domain-pill">Creativity</span>
+            <span class="ins-domain-pill">Idea Generation</span>
+            <span class="ins-domain-pill">Opportunity Spotting</span>
+          </div>
+          <div class="ins-aud-footer">
+            <span class="ins-aud-link-text">Open Dreamers Pathway</span>
+            <span class="ins-aud-arrow">&rarr;</span>
           </div>
         </div>
-        <div class="pg-form-actions">
-          <button type="submit" class="pg-btn pg-btn--primary">Send Me Building Dreams Insights</button>
-        </div>
-        <p class="pg-form-note">By subscribing, you agree to receive relevant updates. You can unsubscribe at any time.</p>
-        <div class="pg-form-success" role="status">Thank you &mdash; your subscription request has been noted.</div>
-      </form>
-    </div>
-  </section>
 
-  <!-- Section 7: CTA band -->
-  <section class="pg-section pg-section--tight">
-    <div class="pg-container">
-      <div class="pg-cta-band">
-        <h2 class="pg-h2">Ready to put an idea into <em style="color:var(--pg-lime);">action?</em></h2>
-        <p>Reading is a good start. Building is the next step.</p>
-        <div class="pg-cta-row">
-          <a href="../dreamers-lab/" class="pg-btn pg-btn--primary">Explore Our Programs &rarr;</a>
+        <!-- 02: Student Founders (Dominant) -->
+        <div class="ins-aud-pillar ins-aud-pillar--dominant is-selected" role="tab" id="aud-tab-founder" aria-controls="aud-panel-founder" aria-selected="true" tabindex="0">
+          <div class="ins-aud-pillar-header">
+            <span class="ins-aud-pillar-num">02</span>
+            <span class="ins-aud-pillar-badge ins-aud-pillar-badge--accent">Core Venture Focus</span>
+          </div>
+          <h3 class="ins-aud-pillar-title">Student Founders</h3>
+          <p class="ins-aud-pillar-motto">&ldquo;Turn an idea into evidence.&rdquo;</p>
+          <div class="ins-aud-domains">
+            <span class="ins-domain-pill">Customer Discovery</span>
+            <span class="ins-domain-pill">MVP Build</span>
+            <span class="ins-domain-pill">Business Model</span>
+            <span class="ins-domain-pill">Sales &amp; Outreach</span>
+            <span class="ins-domain-pill">Early Traction</span>
+          </div>
+          <div class="ins-aud-footer">
+            <span class="ins-aud-link-text">Open Founder Pathway</span>
+            <span class="ins-aud-arrow">&rarr;</span>
+          </div>
+        </div>
+
+        <!-- 03: Universities -->
+        <div class="ins-aud-pillar" role="tab" id="aud-tab-university" aria-controls="aud-panel-university" aria-selected="false" tabindex="0">
+          <div class="ins-aud-pillar-header">
+            <span class="ins-aud-pillar-num">03</span>
+            <span class="ins-aud-pillar-badge">Institutional Ecosystem</span>
+          </div>
+          <h3 class="ins-aud-pillar-title">Universities</h3>
+          <p class="ins-aud-pillar-motto">&ldquo;Build stronger entrepreneurial ecosystems.&rdquo;</p>
+          <div class="ins-aud-domains">
+            <span class="ins-domain-pill">Program Design</span>
+            <span class="ins-domain-pill">Incubation</span>
+            <span class="ins-domain-pill">Mentoring</span>
+            <span class="ins-domain-pill">Founder Pipelines</span>
+            <span class="ins-domain-pill">Impact Measurement</span>
+          </div>
+          <div class="ins-aud-footer">
+            <span class="ins-aud-link-text">Open Ecosystem Pathway</span>
+            <span class="ins-aud-arrow">&rarr;</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Live Dynamic Audience Panel -->
+      <div class="ins-aud-display-surface" id="aud-panel-founder" role="tabpanel" aria-labelledby="aud-tab-founder">
+        <div class="ins-aud-display-meta">
+          <span class="ins-meta-kicker">SELECTED TRAJECTORY</span>
+          <h4 class="ins-meta-focus" id="ins-aud-focus-title">Student Founders: From Concept to Validated Venture</h4>
+        </div>
+        <p class="ins-aud-display-narrative" id="ins-aud-focus-narrative">
+          You are building things that didn&rsquo;t exist yesterday. You don&rsquo;t need academic theory &mdash; you need frameworks that help you test user demand, ship a tight MVP without debt, and run early customer outreach conversations with total clarity.
+        </p>
+        <div class="ins-aud-display-actions">
+          <a href="#library" class="ins-link-pill">Jump to Recommended Founder Tools &darr;</a>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- ======================================================================
+       03 — HORIZONTAL JOURNEY STAGE NAVIGATOR
+       "Where are you in the journey?"
+       ====================================================================== -->
+  <section class="ins-section ins-journey-nav-section" id="journey-navigator" aria-labelledby="ins-stage-heading">
+    <div class="ins-wrap">
+      <div class="ins-section-header ins-section-header--centered">
+        <div class="ins-eyebrow-tag" style="justify-content:center;">
+          <span class="ins-tag-indicator" aria-hidden="true"></span>
+          <span>03 / VENTURE PHASES</span>
+        </div>
+        <h2 class="ins-section-title" id="ins-stage-heading">
+          Where are you <em class="ins-serif-em">in the journey?</em>
+        </h2>
+        <p class="ins-section-sub">
+          Choose your active milestone. The editorial knowledge map and guides below dynamically adapt to your stage.
+        </p>
+      </div>
+
+      <!-- Sticky Stage Navigation Strip -->
+      <div class="ins-horizontal-stage-bar" role="tablist" aria-label="Venture development phases">
+        <button class="ins-stage-node is-active" type="button" role="tab" data-stage="discover" aria-selected="true">
+          <span class="ins-stage-index">01</span>
+          <span class="ins-stage-name">DISCOVER</span>
+          <span class="ins-stage-theme">Problems &amp; Ideas</span>
+        </button>
+        <button class="ins-stage-node" type="button" role="tab" data-stage="validate" aria-selected="false">
+          <span class="ins-stage-index">02</span>
+          <span class="ins-stage-name">VALIDATE</span>
+          <span class="ins-stage-theme">Customer Evidence</span>
+        </button>
+        <button class="ins-stage-node" type="button" role="tab" data-stage="build" aria-selected="false">
+          <span class="ins-stage-index">03</span>
+          <span class="ins-stage-name">BUILD</span>
+          <span class="ins-stage-theme">MVP &amp; Prototype</span>
+        </button>
+        <button class="ins-stage-node" type="button" role="tab" data-stage="launch" aria-selected="false">
+          <span class="ins-stage-index">04</span>
+          <span class="ins-stage-name">LAUNCH</span>
+          <span class="ins-stage-theme">Go-to-Market &amp; Model</span>
+        </button>
+        <button class="ins-stage-node" type="button" role="tab" data-stage="grow" aria-selected="false">
+          <span class="ins-stage-index">05</span>
+          <span class="ins-stage-name">GROW</span>
+          <span class="ins-stage-theme">Mindset &amp; Scale</span>
+        </button>
+        <button class="ins-stage-node" type="button" role="tab" data-stage="ecosystem" aria-selected="false">
+          <span class="ins-stage-index">06</span>
+          <span class="ins-stage-name">ECOSYSTEM</span>
+          <span class="ins-stage-theme">Institutions &amp; Mentors</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       04 — EDITORIAL KNOWLEDGE MAP & EXPANDABLE GUIDES
+       Transforming 6 generic boxes into interconnected editorial knowledge domains
+       ====================================================================== -->
+  <section class="ins-section ins-map-section" id="knowledge-map" aria-labelledby="ins-map-title">
+    <div class="ins-wrap">
+      <div class="ins-map-container">
+        <!-- Stage 01: Discover Panel -->
+        <div class="ins-map-stage-block is-visible" data-stage-block="discover">
+          <div class="ins-map-stage-head">
+            <span class="ins-branch-crumb">PHASE 01 / DISCOVER</span>
+            <h3 class="ins-map-stage-title">Idea &amp; Problem Discovery</h3>
+            <p class="ins-map-stage-desc">Find the problem before building the solution. Learn how to observe friction points that people are already desperately trying to solve.</p>
+          </div>
+
+          <div class="ins-guide-table" role="list" aria-label="Idea & Problem Discovery Guides">
+            <!-- Guide 01 -->
+            <article class="ins-guide-row" role="listitem" data-resource
+              data-title="How to Find a Business Idea Worth Exploring"
+              data-cat="Idea &amp; Problem Discovery"
+              data-desc="Spot the authentic signals of a real market opportunity before committing personal time and financial resources."
+              data-what="Learn a 4-step framework to evaluate if an idea has genuine commercial or social viability."
+              data-for="Dreamers &amp; first-time builders"
+              data-time="6 min read"
+              data-format="Guide">
+              <span class="ins-guide-idx">01</span>
+              <div class="ins-guide-meta">
+                <h4 class="ins-guide-heading">How to Find a Business Idea Worth Exploring</h4>
+                <p class="ins-guide-abstract">Spot the authentic signals of a real opportunity before committing time and capital.</p>
+              </div>
+              <div class="ins-guide-badge">
+                <span class="ins-badge-read">6 MIN READ</span>
+                <span class="ins-badge-format">GUIDE</span>
+              </div>
+              <button type="button" class="ins-guide-action" data-open-resource aria-label="Read How to Find a Business Idea Worth Exploring">
+                <span>Read</span>
+                <span class="ins-guide-arrow">&rarr;</span>
+              </button>
+            </article>
+
+            <!-- Guide 02 -->
+            <article class="ins-guide-row" role="listitem" data-resource
+              data-title="Start With a Problem, Not an App"
+              data-cat="Idea &amp; Problem Discovery"
+              data-desc="Why the highest-impact ventures begin with deep empathy for an unsolved problem rather than a sudden product brainstorm."
+              data-what="Reframe any technology concept into a customer problem statement."
+              data-for="Dreamers &amp; student innovators"
+              data-time="6 min read"
+              data-format="Guide">
+              <span class="ins-guide-idx">02</span>
+              <div class="ins-guide-meta">
+                <h4 class="ins-guide-heading">Start With a Problem, Not an App</h4>
+                <p class="ins-guide-abstract">Why good ventures begin with a problem worth solving, not an impulse product idea.</p>
+              </div>
+              <div class="ins-guide-badge">
+                <span class="ins-badge-read">6 MIN READ</span>
+                <span class="ins-badge-format">GUIDE</span>
+              </div>
+              <button type="button" class="ins-guide-action" data-open-resource aria-label="Read Start With a Problem, Not an App">
+                <span>Read</span>
+                <span class="ins-guide-arrow">&rarr;</span>
+              </button>
+            </article>
+
+            <!-- Guide 03 -->
+            <article class="ins-guide-row" role="listitem" data-resource
+              data-title="Five Ways Students Can Spot Problems Around Them"
+              data-cat="Idea &amp; Problem Discovery"
+              data-desc="Practical observational prompts for noticing operational inefficiencies, campus challenges, and workflow bottlenecks in daily life."
+              data-what="Apply 5 observation lenses during campus routines to discover real venture opportunities."
+              data-for="Undergraduates &amp; university researchers"
+              data-time="5 min read"
+              data-format="Guide">
+              <span class="ins-guide-idx">03</span>
+              <div class="ins-guide-meta">
+                <h4 class="ins-guide-heading">Five Ways Students Can Spot Problems Around Them</h4>
+                <p class="ins-guide-abstract">Practical observation lenses for everyday campus routines and student workflows.</p>
+              </div>
+              <div class="ins-guide-badge">
+                <span class="ins-badge-read">5 MIN READ</span>
+                <span class="ins-badge-format">GUIDE</span>
+              </div>
+              <button type="button" class="ins-guide-action" data-open-resource aria-label="Read Five Ways Students Can Spot Problems Around Them">
+                <span>Read</span>
+                <span class="ins-guide-arrow">&rarr;</span>
+              </button>
+            </article>
+
+            <!-- Guide 04 -->
+            <article class="ins-guide-row" role="listitem" data-resource
+              data-title="How to Tell Whether an Idea Is Worth Testing"
+              data-cat="Idea &amp; Problem Discovery"
+              data-desc="A pragmatic diagnostic matrix for separating viable problem opportunities from fleeting curiosities."
+              data-what="Score your idea on customer willingness to pay, frequency, and personal founder-market fit."
+              data-for="Aspiring founders"
+              data-time="7 min read"
+              data-format="Guide">
+              <span class="ins-guide-idx">04</span>
+              <div class="ins-guide-meta">
+                <h4 class="ins-guide-heading">How to Tell Whether an Idea Is Worth Testing</h4>
+                <p class="ins-guide-abstract">A simple diagnostic filter for deciding what to pursue and what to archive.</p>
+              </div>
+              <div class="ins-guide-badge">
+                <span class="ins-badge-read">7 MIN READ</span>
+                <span class="ins-badge-format">GUIDE</span>
+              </div>
+              <button type="button" class="ins-guide-action" data-open-resource aria-label="Read How to Tell Whether an Idea Is Worth Testing">
+                <span>Read</span>
+                <span class="ins-guide-arrow">&rarr;</span>
+              </button>
+            </article>
+
+            <!-- Guide 05 -->
+            <article class="ins-guide-row" role="listitem" data-resource
+              data-title="Turning Everyday Frustrations Into Opportunities"
+              data-cat="Idea &amp; Problem Discovery"
+              data-desc="How minor daily annoyances frequently become the genesis for transformative products and services."
+              data-what="Deconstruct common friction into root causes and potential business models."
+              data-for="Dreamers &amp; builders"
+              data-time="6 min read"
+              data-format="Guide">
+              <span class="ins-guide-idx">05</span>
+              <div class="ins-guide-meta">
+                <h4 class="ins-guide-heading">Turning Everyday Frustrations Into Opportunities</h4>
+                <p class="ins-guide-abstract">How personal annoyances become the starting point for defensible ventures.</p>
+              </div>
+              <div class="ins-guide-badge">
+                <span class="ins-badge-read">6 MIN READ</span>
+                <span class="ins-badge-format">GUIDE</span>
+              </div>
+              <button type="button" class="ins-guide-action" data-open-resource aria-label="Read Turning Everyday Frustrations Into Opportunities">
+                <span>Read</span>
+                <span class="ins-guide-arrow">&rarr;</span>
+              </button>
+            </article>
+          </div>
+        </div>
+
+        <!-- Stage 02: Validate Panel -->
+        <div class="ins-map-stage-block" data-stage-block="validate">
+          <div class="ins-map-stage-head">
+            <span class="ins-branch-crumb">PHASE 02 / VALIDATE</span>
+            <h3 class="ins-map-stage-title">Customer Validation</h3>
+            <p class="ins-map-stage-desc">Talk to real people before you write a single line of code. Collect undeniable evidence of demand rather than polite compliments.</p>
+          </div>
+
+          <div class="ins-guide-table" role="list" aria-label="Customer Validation Guides">
+            <!-- Guide 06 -->
+            <article class="ins-guide-row" role="listitem" data-resource
+              data-title="How to Interview Your First 10 Customers"
+              data-cat="Customer Validation"
+              data-desc="Master unbiased conversation tactics that reveal genuine behavioral patterns, actual budgets, and deep customer pain points."
+              data-what="Execute structured customer discovery calls that prevent building unneeded features."
+              data-for="Student founders"
+              data-time="8 min read"
+              data-format="Guide">
+              <span class="ins-guide-idx">01</span>
+              <div class="ins-guide-meta">
+                <h4 class="ins-guide-heading">How to Interview Your First 10 Customers</h4>
+                <p class="ins-guide-abstract">Learn how to conduct useful customer conversations before spending time building the wrong product.</p>
+              </div>
+              <div class="ins-guide-badge">
+                <span class="ins-badge-read">8 MIN READ</span>
+                <span class="ins-badge-format">GUIDE</span>
+              </div>
+              <button type="button" class="ins-guide-action" data-open-resource aria-label="Read How to Interview Your First 10 Customers">
+                <span>Read</span>
+                <span class="ins-guide-arrow">&rarr;</span>
+              </button>
+            </article>
+
+            <!-- Guide 07 -->
+            <article class="ins-guide-row" role="listitem" data-resource
+              data-title="Five Questions to Ask Before Building a Product"
+              data-cat="Customer Validation"
+              data-desc="The foundational qualifying inquiries that protect founders from spending months on phantom demand."
+              data-what="Vet market size, existing workarounds, switching costs, and user budget."
+              data-for="Student founders"
+              data-time="6 min read"
+              data-format="Guide">
+              <span class="ins-guide-idx">02</span>
+              <div class="ins-guide-meta">
+                <h4 class="ins-guide-heading">Five Questions to Ask Before Building a Product</h4>
+                <p class="ins-guide-abstract">The crucial qualifying questions that prevent months of wasted engineering effort.</p>
+              </div>
+              <div class="ins-guide-badge">
+                <span class="ins-badge-read">6 MIN READ</span>
+                <span class="ins-badge-format">GUIDE</span>
+              </div>
+              <button type="button" class="ins-guide-action" data-open-resource aria-label="Read Five Questions to Ask Before Building a Product">
+                <span>Read</span>
+                <span class="ins-guide-arrow">&rarr;</span>
+              </button>
+            </article>
+
+            <!-- Guide 08 -->
+            <article class="ins-guide-row" role="listitem" data-resource
+              data-title="How to Validate a Business Idea Without Spending Much Money"
+              data-cat="Customer Validation"
+              data-desc="Lean, resourceful validation methods for bootstrapped student teams using smoke tests and manual prototypes."
+              data-what="Test real willingness to pay with zero initial capital."
+              data-for="Student founders"
+              data-time="8 min read"
+              data-format="Guide">
+              <span class="ins-guide-idx">03</span>
+              <div class="ins-guide-meta">
+                <h4 class="ins-guide-heading">How to Validate a Business Idea Without Spending Much Money</h4>
+                <p class="ins-guide-abstract">Lean smoke tests, concierge pilots, and landing page experiments.</p>
+              </div>
+              <div class="ins-guide-badge">
+                <span class="ins-badge-read">8 MIN READ</span>
+                <span class="ins-badge-format">GUIDE</span>
+              </div>
+              <button type="button" class="ins-guide-action" data-open-resource aria-label="Read How to Validate a Business Idea Without Spending Much Money">
+                <span>Read</span>
+                <span class="ins-guide-arrow">&rarr;</span>
+              </button>
+            </article>
+
+            <!-- Guide 09 -->
+            <article class="ins-guide-row" role="listitem" data-resource
+              data-title="Why Your Friends Saying &ldquo;Great Idea&rdquo; Isn&rsquo;t Enough"
+              data-cat="Customer Validation"
+              data-desc="Understanding the difference between social validation and commercial commitment."
+              data-what="Learn how to bypass confirmation bias and extract objective behavioral evidence."
+              data-for="Early-stage builders"
+              data-time="5 min read"
+              data-format="Guide">
+              <span class="ins-guide-idx">04</span>
+              <div class="ins-guide-meta">
+                <h4 class="ins-guide-heading">Why Your Friends Saying &ldquo;Great Idea&rdquo; Isn&rsquo;t Enough</h4>
+                <p class="ins-guide-abstract">Why social encouragement is never equivalent to customer commitment.</p>
+              </div>
+              <div class="ins-guide-badge">
+                <span class="ins-badge-read">5 MIN READ</span>
+                <span class="ins-badge-format">GUIDE</span>
+              </div>
+              <button type="button" class="ins-guide-action" data-open-resource aria-label="Read Why Your Friends Saying Great Idea Isn't Enough">
+                <span>Read</span>
+                <span class="ins-guide-arrow">&rarr;</span>
+              </button>
+            </article>
+
+            <!-- Guide 10 -->
+            <article class="ins-guide-row" role="listitem" data-resource
+              data-title="How to Understand What Customers Actually Need"
+              data-cat="Customer Validation"
+              data-desc="Techniques to distinguish expressed feature requests from the underlying operational outcomes customers need."
+              data-what="Map customer Jobs-to-be-Done and emotional drivers."
+              data-for="Student founders"
+              data-time="7 min read"
+              data-format="Guide">
+              <span class="ins-guide-idx">05</span>
+              <div class="ins-guide-meta">
+                <h4 class="ins-guide-heading">How to Understand What Customers Actually Need</h4>
+                <p class="ins-guide-abstract">Techniques to uncover core Jobs-to-be-Done behind surface-level feature requests.</p>
+              </div>
+              <div class="ins-guide-badge">
+                <span class="ins-badge-read">7 MIN READ</span>
+                <span class="ins-badge-format">GUIDE</span>
+              </div>
+              <button type="button" class="ins-guide-action" data-open-resource aria-label="Read How to Understand What Customers Actually Need">
+                <span>Read</span>
+                <span class="ins-guide-arrow">&rarr;</span>
+              </button>
+            </article>
+          </div>
+        </div>
+
+        <!-- Stage 03: Build Panel -->
+        <div class="ins-map-stage-block" data-stage-block="build">
+          <div class="ins-map-stage-head">
+            <span class="ins-branch-crumb">PHASE 03 / BUILD</span>
+            <h3 class="ins-map-stage-title">MVP &amp; Product Building</h3>
+            <p class="ins-map-stage-desc">Build the smallest version that delivers genuine value. Cut feature creep aggressively and focus exclusively on rapid learning loops.</p>
+          </div>
+
+          <div class="ins-guide-table" role="list" aria-label="MVP & Product Building Guides">
+            <!-- Guide 11 -->
+            <article class="ins-guide-row" role="listitem" data-resource
+              data-title="What Is an MVP, and Why Does It Matter?"
+              data-cat="MVP &amp; Product Building"
+              data-desc="Demystifying Minimum Viable Products: how to build the smallest tool that still produces empirical learning."
+              data-what="Define minimum scoping boundaries that accelerate product-market learning."
+              data-for="Student founders"
+              data-time="7 min read"
+              data-format="Guide">
+              <span class="ins-guide-idx">01</span>
+              <div class="ins-guide-meta">
+                <h4 class="ins-guide-heading">What Is an MVP, and Why Does It Matter?</h4>
+                <p class="ins-guide-abstract">Understand the smallest version of your product that still creates authentic customer value.</p>
+              </div>
+              <div class="ins-guide-badge">
+                <span class="ins-badge-read">7 MIN READ</span>
+                <span class="ins-badge-format">GUIDE</span>
+              </div>
+              <button type="button" class="ins-guide-action" data-open-resource aria-label="Read What Is an MVP, and Why Does It Matter?">
+                <span>Read</span>
+                <span class="ins-guide-arrow">&rarr;</span>
+              </button>
+            </article>
+
+            <!-- Guide 12 -->
+            <article class="ins-guide-row" role="listitem" data-resource
+              data-title="How to Build Your First Prototype on a Student Budget"
+              data-cat="MVP &amp; Product Building"
+              data-desc="Resourceful prototyping frameworks leveraging free tiers, open-source building blocks, and rapid wireframes."
+              data-what="Assemble an interactive click-dummy or test workflow in under 7 days."
+              data-for="Student founders &amp; engineers"
+              data-time="8 min read"
+              data-format="Guide">
+              <span class="ins-guide-idx">02</span>
+              <div class="ins-guide-meta">
+                <h4 class="ins-guide-heading">How to Build Your First Prototype on a Student Budget</h4>
+                <p class="ins-guide-abstract">Practical techniques to build and demo functional prototypes with zero outside capital.</p>
+              </div>
+              <div class="ins-guide-badge">
+                <span class="ins-badge-read">8 MIN READ</span>
+                <span class="ins-badge-format">GUIDE</span>
+              </div>
+              <button type="button" class="ins-guide-action" data-open-resource aria-label="Read How to Build Your First Prototype on a Student Budget">
+                <span>Read</span>
+                <span class="ins-guide-arrow">&rarr;</span>
+              </button>
+            </article>
+
+            <!-- Guide 13 -->
+            <article class="ins-guide-row" role="listitem" data-resource
+              data-title="No-Code Tools for First-Time Founders"
+              data-cat="MVP &amp; Product Building"
+              data-desc="Curated stack of contemporary no-code databases, automation webhooks, and interface builders."
+              data-what="Select the optimal no-code stack to validate without a technical co-founder."
+              data-for="Non-technical founders"
+              data-time="7 min read"
+              data-format="Guide">
+              <span class="ins-guide-idx">03</span>
+              <div class="ins-guide-meta">
+                <h4 class="ins-guide-heading">No-Code Tools for First-Time Founders</h4>
+                <p class="ins-guide-abstract">Ship interactive MVPs, databases, and automated workflows without writing custom code.</p>
+              </div>
+              <div class="ins-guide-badge">
+                <span class="ins-badge-read">7 MIN READ</span>
+                <span class="ins-badge-format">GUIDE</span>
+              </div>
+              <button type="button" class="ins-guide-action" data-open-resource aria-label="Read No-Code Tools for First-Time Founders">
+                <span>Read</span>
+                <span class="ins-guide-arrow">&rarr;</span>
+              </button>
+            </article>
+
+            <!-- Guide 14 -->
+            <article class="ins-guide-row" role="listitem" data-resource
+              data-title="What to Build First&mdash;and What to Leave Out"
+              data-cat="MVP &amp; Product Building"
+              data-desc="A rigorous pruning method to stop scope bloat before launch and focus strictly on the core transaction."
+              data-what="Create a ruthless feature triage matrix for Version 1.0."
+              data-for="Product leads &amp; founders"
+              data-time="6 min read"
+              data-format="Guide">
+              <span class="ins-guide-idx">04</span>
+              <div class="ins-guide-meta">
+                <h4 class="ins-guide-heading">What to Build First&mdash;and What to Leave Out</h4>
+                <p class="ins-guide-abstract">How to ruthlessly scope the first iteration with emotional discipline and clarity.</p>
+              </div>
+              <div class="ins-guide-badge">
+                <span class="ins-badge-read">6 MIN READ</span>
+                <span class="ins-badge-format">GUIDE</span>
+              </div>
+              <button type="button" class="ins-guide-action" data-open-resource aria-label="Read What to Build First and What to Leave Out">
+                <span>Read</span>
+                <span class="ins-guide-arrow">&rarr;</span>
+              </button>
+            </article>
+
+            <!-- Guide 15 -->
+            <article class="ins-guide-row" role="listitem" data-resource
+              data-title="How to Use Feedback to Improve Your Product"
+              data-cat="MVP &amp; Product Building"
+              data-desc="How to synthesize conflicting customer feedback into purposeful product decisions rather than chaotic pivots."
+              data-what="Build a simple user insight repository and iteration cadence."
+              data-for="Student founders"
+              data-time="6 min read"
+              data-format="Guide">
+              <span class="ins-guide-idx">05</span>
+              <div class="ins-guide-meta">
+                <h4 class="ins-guide-heading">How to Use Feedback to Improve Your Product</h4>
+                <p class="ins-guide-abstract">Translate raw user friction and feature requests into deliberate sprint iterations.</p>
+              </div>
+              <div class="ins-guide-badge">
+                <span class="ins-badge-read">6 MIN READ</span>
+                <span class="ins-badge-format">GUIDE</span>
+              </div>
+              <button type="button" class="ins-guide-action" data-open-resource aria-label="Read How to Use Feedback to Improve Your Product">
+                <span>Read</span>
+                <span class="ins-guide-arrow">&rarr;</span>
+              </button>
+            </article>
+          </div>
+        </div>
+
+        <!-- Stage 04: Launch Panel -->
+        <div class="ins-map-stage-block" data-stage-block="launch">
+          <div class="ins-map-stage-head">
+            <span class="ins-branch-crumb">PHASE 04 / LAUNCH</span>
+            <h3 class="ins-map-stage-title">Business &amp; Go-to-Market</h3>
+            <p class="ins-map-stage-desc">A venture is not complete until it can acquire and monetize customers sustainably. Learn business model mechanics and direct distribution.</p>
+          </div>
+
+          <div class="ins-guide-table" role="list" aria-label="Business & Go-to-Market Guides">
+            <!-- Guide 16 -->
+            <article class="ins-guide-row" role="listitem" data-resource
+              data-title="How Does a Startup Make Money?"
+              data-cat="Business &amp; Go-to-Market"
+              data-desc="A straightforward, jargon-free breakdown of early-stage revenue mechanics, pricing models, and gross margin fundamentals."
+              data-what="Understand SaaS, marketplace, transaction, and services revenue structures."
+              data-for="Anyone designing a business model"
+              data-time="9 min read"
+              data-format="Guide">
+              <span class="ins-guide-idx">01</span>
+              <div class="ins-guide-meta">
+                <h4 class="ins-guide-heading">How Does a Startup Make Money?</h4>
+                <p class="ins-guide-abstract">A plain-language look at revenue streams, unit economics, and cash sustainability.</p>
+              </div>
+              <div class="ins-guide-badge">
+                <span class="ins-badge-read">9 MIN READ</span>
+                <span class="ins-badge-format">GUIDE</span>
+              </div>
+              <button type="button" class="ins-guide-action" data-open-resource aria-label="Read How Does a Startup Make Money?">
+                <span>Read</span>
+                <span class="ins-guide-arrow">&rarr;</span>
+              </button>
+            </article>
+
+            <!-- Guide 17 -->
+            <article class="ins-guide-row" role="listitem" data-resource
+              data-title="Understanding Business Models Through Simple Examples"
+              data-cat="Business &amp; Go-to-Market"
+              data-desc="Learn foundational commercial architectures by inspecting recognizable modern companies and campus ventures."
+              data-what="Deconstruct how value is created, delivered, and captured."
+              data-for="Dreamers &amp; founders"
+              data-time="8 min read"
+              data-format="Guide">
+              <span class="ins-guide-idx">02</span>
+              <div class="ins-guide-meta">
+                <h4 class="ins-guide-heading">Understanding Business Models Through Simple Examples</h4>
+                <p class="ins-guide-abstract">Deconstruct real-world businesses to see how pricing, margins, and value capture work.</p>
+              </div>
+              <div class="ins-guide-badge">
+                <span class="ins-badge-read">8 MIN READ</span>
+                <span class="ins-badge-format">GUIDE</span>
+              </div>
+              <button type="button" class="ins-guide-action" data-open-resource aria-label="Read Understanding Business Models Through Simple Examples">
+                <span>Read</span>
+                <span class="ins-guide-arrow">&rarr;</span>
+              </button>
+            </article>
+
+            <!-- Guide 18 -->
+            <article class="ins-guide-row" role="listitem" data-resource
+              data-title="How to Find Your First Customers"
+              data-cat="Business &amp; Go-to-Market"
+              data-desc="Tactics for securing early adopters through direct cold outreach, niche communities, and localized campus activations."
+              data-what="Build a target prospect list and execute a 14-day customer acquisition sprint."
+              data-for="Student founders"
+              data-time="7 min read"
+              data-format="Guide">
+              <span class="ins-guide-idx">03</span>
+              <div class="ins-guide-meta">
+                <h4 class="ins-guide-heading">How to Find Your First Customers</h4>
+                <p class="ins-guide-abstract">Where and how to reach early users directly without a marketing budget.</p>
+              </div>
+              <div class="ins-guide-badge">
+                <span class="ins-badge-read">7 MIN READ</span>
+                <span class="ins-badge-format">GUIDE</span>
+              </div>
+              <button type="button" class="ins-guide-action" data-open-resource aria-label="Read How to Find Your First Customers">
+                <span>Read</span>
+                <span class="ins-guide-arrow">&rarr;</span>
+              </button>
+            </article>
+
+            <!-- Guide 19 -->
+            <article class="ins-guide-row" role="listitem" data-resource
+              data-title="Pricing Your First Product or Service"
+              data-cat="Business &amp; Go-to-Market"
+              data-desc="How to price based on perceived economic value rather than cost-plus or fearful underpricing."
+              data-what="Formulate an initial pricing test that validates real commercial demand."
+              data-for="Student founders"
+              data-time="6 min read"
+              data-format="Guide">
+              <span class="ins-guide-idx">04</span>
+              <div class="ins-guide-meta">
+                <h4 class="ins-guide-heading">Pricing Your First Product or Service</h4>
+                <p class="ins-guide-abstract">A simple value-based framework for setting and testing your first price points.</p>
+              </div>
+              <div class="ins-guide-badge">
+                <span class="ins-badge-read">6 MIN READ</span>
+                <span class="ins-badge-format">GUIDE</span>
+              </div>
+              <button type="button" class="ins-guide-action" data-open-resource aria-label="Read Pricing Your First Product or Service">
+                <span>Read</span>
+                <span class="ins-guide-arrow">&rarr;</span>
+              </button>
+            </article>
+
+            <!-- Guide 20 -->
+            <article class="ins-guide-row" role="listitem" data-resource
+              data-title="Building a Go-to-Market Plan With Limited Resources"
+              data-cat="Business &amp; Go-to-Market"
+              data-desc="Crafting a focused launch roadmap when founder bandwidth, engineering hours, and marketing capital are tightly constrained."
+              data-what="Design a low-overhead, high-conversion launch sequence."
+              data-for="Resource-constrained teams"
+              data-time="8 min read"
+              data-format="Guide">
+              <span class="ins-guide-idx">05</span>
+              <div class="ins-guide-meta">
+                <h4 class="ins-guide-heading">Building a Go-to-Market Plan With Limited Resources</h4>
+                <p class="ins-guide-abstract">Plan and execute targeted outreach when both time and capital are limited.</p>
+              </div>
+              <div class="ins-guide-badge">
+                <span class="ins-badge-read">8 MIN READ</span>
+                <span class="ins-badge-format">GUIDE</span>
+              </div>
+              <button type="button" class="ins-guide-action" data-open-resource aria-label="Read Building a Go-to-Market Plan With Limited Resources">
+                <span>Read</span>
+                <span class="ins-guide-arrow">&rarr;</span>
+              </button>
+            </article>
+          </div>
+        </div>
+
+        <!-- Stage 05: Grow Panel -->
+        <div class="ins-map-stage-block" data-stage-block="grow">
+          <div class="ins-map-stage-head">
+            <span class="ins-branch-crumb">PHASE 05 / GROW</span>
+            <h3 class="ins-map-stage-title">Founder Mindset &amp; Resilience</h3>
+            <p class="ins-map-stage-desc">Entrepreneurship is an emotional marathon. Master co-founder alignment, academic balance, and how to interpret failure without losing momentum.</p>
+          </div>
+
+          <div class="ins-guide-table" role="list" aria-label="Founder Mindset Guides">
+            <!-- Guide 21 -->
+            <article class="ins-guide-row" role="listitem" data-resource
+              data-title="Learning From Failure Without Losing Momentum"
+              data-cat="Founder Mindset"
+              data-desc="How to psychologically decouple personal worth from an experiment that didn't deliver the expected outcome."
+              data-what="Conduct a neutral post-mortem that yields actionable next steps."
+              data-for="Founders at any stage"
+              data-time="6 min read"
+              data-format="Guide">
+              <span class="ins-guide-idx">01</span>
+              <div class="ins-guide-meta">
+                <h4 class="ins-guide-heading">Learning From Failure Without Losing Momentum</h4>
+                <p class="ins-guide-abstract">How to extract actionable learning and keep moving forward when pilots don&rsquo;t succeed.</p>
+              </div>
+              <div class="ins-guide-badge">
+                <span class="ins-badge-read">6 MIN READ</span>
+                <span class="ins-badge-format">GUIDE</span>
+              </div>
+              <button type="button" class="ins-guide-action" data-open-resource aria-label="Read Learning From Failure Without Losing Momentum">
+                <span>Read</span>
+                <span class="ins-guide-arrow">&rarr;</span>
+              </button>
+            </article>
+
+            <!-- Guide 22 -->
+            <article class="ins-guide-row" role="listitem" data-resource
+              data-title="How to Balance University and Entrepreneurship"
+              data-cat="Founder Mindset"
+              data-desc="Practical time-blocking, academic prioritization, and energy management for students building serious ventures."
+              data-what="Design a sustainable weekly operating cadence across exams and product launches."
+              data-for="Student founders"
+              data-time="6 min read"
+              data-format="Guide">
+              <span class="ins-guide-idx">02</span>
+              <div class="ins-guide-meta">
+                <h4 class="ins-guide-heading">How to Balance University and Entrepreneurship</h4>
+                <p class="ins-guide-abstract">Managing university commitments and startup demands without burning out.</p>
+              </div>
+              <div class="ins-guide-badge">
+                <span class="ins-badge-read">6 MIN READ</span>
+                <span class="ins-badge-format">GUIDE</span>
+              </div>
+              <button type="button" class="ins-guide-action" data-open-resource aria-label="Read How to Balance University and Entrepreneurship">
+                <span>Read</span>
+                <span class="ins-guide-arrow">&rarr;</span>
+              </button>
+            </article>
+
+            <!-- Guide 23 -->
+            <article class="ins-guide-row" role="listitem" data-resource
+              data-title="Finding a Co-Founder: Skills, Values and Expectations"
+              data-cat="Founder Mindset"
+              data-desc="How to evaluate prospective founding partners across complementary skill sets, ethical values, and long-term commitment."
+              data-what="Draft a clear co-founder trial alignment document before equity distribution."
+              data-for="Solo founders"
+              data-time="7 min read"
+              data-format="Guide">
+              <span class="ins-guide-idx">03</span>
+              <div class="ins-guide-meta">
+                <h4 class="ins-guide-heading">Finding a Co-Founder: Skills, Values and Expectations</h4>
+                <p class="ins-guide-abstract">What to look for in a founding partner, trial periods, and equity expectations.</p>
+              </div>
+              <div class="ins-guide-badge">
+                <span class="ins-badge-read">7 MIN READ</span>
+                <span class="ins-badge-format">GUIDE</span>
+              </div>
+              <button type="button" class="ins-guide-action" data-open-resource aria-label="Read Finding a Co-Founder: Skills, Values and Expectations">
+                <span>Read</span>
+                <span class="ins-guide-arrow">&rarr;</span>
+              </button>
+            </article>
+
+            <!-- Guide 24 -->
+            <article class="ins-guide-row" role="listitem" data-resource
+              data-title="How to Pitch an Idea Clearly"
+              data-cat="Founder Mindset"
+              data-desc="Frameworks for communicating your problem, solution, and early traction in 90 seconds without jargon."
+              data-what="Master a 3-minute narrative structure that commands attention from mentors and investors."
+              data-for="Founders preparing to pitch"
+              data-time="5 min read"
+              data-format="Guide">
+              <span class="ins-guide-idx">04</span>
+              <div class="ins-guide-meta">
+                <h4 class="ins-guide-heading">How to Pitch an Idea Clearly</h4>
+                <p class="ins-guide-abstract">Communicate your venture so advisors, partners, and investors immediately understand and care.</p>
+              </div>
+              <div class="ins-guide-badge">
+                <span class="ins-badge-read">5 MIN READ</span>
+                <span class="ins-badge-format">GUIDE</span>
+              </div>
+              <button type="button" class="ins-guide-action" data-open-resource aria-label="Read How to Pitch an Idea Clearly">
+                <span>Read</span>
+                <span class="ins-guide-arrow">&rarr;</span>
+              </button>
+            </article>
+
+            <!-- Guide 25 -->
+            <article class="ins-guide-row" role="listitem" data-resource
+              data-title="When to Persist, Pivot or Stop"
+              data-cat="Founder Mindset"
+              data-desc="A rational, evidence-based rubric to determine whether to double down, shift strategy, or responsibly move on."
+              data-what="Audit customer engagement signals against opportunity cost."
+              data-for="Founders at an inflection point"
+              data-time="6 min read"
+              data-format="Guide">
+              <span class="ins-guide-idx">05</span>
+              <div class="ins-guide-meta">
+                <h4 class="ins-guide-heading">When to Persist, Pivot or Stop</h4>
+                <p class="ins-guide-abstract">A practical, evidence-driven way to decide what to do when an idea meets reality.</p>
+              </div>
+              <div class="ins-guide-badge">
+                <span class="ins-badge-read">6 MIN READ</span>
+                <span class="ins-badge-format">GUIDE</span>
+              </div>
+              <button type="button" class="ins-guide-action" data-open-resource aria-label="Read When to Persist, Pivot or Stop">
+                <span>Read</span>
+                <span class="ins-guide-arrow">&rarr;</span>
+              </button>
+            </article>
+          </div>
+        </div>
+
+        <!-- Stage 06: Ecosystem Panel -->
+        <div class="ins-map-stage-block" data-stage-block="ecosystem">
+          <div class="ins-map-stage-head">
+            <span class="ins-branch-crumb">PHASE 06 / ECOSYSTEM</span>
+            <h3 class="ins-map-stage-title">University Entrepreneurship</h3>
+            <p class="ins-map-stage-desc">How educators, incubators, and university leadership can transition from ceremonial pitch events to sustained, high-yield venture building.</p>
+          </div>
+
+          <div class="ins-guide-table" role="list" aria-label="University Entrepreneurship Guides">
+            <!-- Guide 26 -->
+            <article class="ins-guide-row" role="listitem" data-resource
+              data-title="Designing a Student Pre-Incubation Program"
+              data-cat="University Entrepreneurship"
+              data-desc="Architecture for a 10-week pre-incubation pathway that transforms student curiosity into repeatable venture experimentation."
+              data-what="Download a structured syllabus and milestone roadmap for student pre-incubation."
+              data-for="Incubator directors &amp; university leaders"
+              data-time="9 min read"
+              data-format="Guide">
+              <span class="ins-guide-idx">01</span>
+              <div class="ins-guide-meta">
+                <h4 class="ins-guide-heading">Designing a Student Pre-Incubation Program</h4>
+                <p class="ins-guide-abstract">How to structure an experiential program that moves students from passive ideas into action.</p>
+              </div>
+              <div class="ins-guide-badge">
+                <span class="ins-badge-read">9 MIN READ</span>
+                <span class="ins-badge-format">GUIDE</span>
+              </div>
+              <button type="button" class="ins-guide-action" data-open-resource aria-label="Read Designing a Student Pre-Incubation Program">
+                <span>Read</span>
+                <span class="ins-guide-arrow">&rarr;</span>
+              </button>
+            </article>
+
+            <!-- Guide 27 -->
+            <article class="ins-guide-row" role="listitem" data-resource
+              data-title="Moving Beyond Startup Competitions to Venture Building"
+              data-cat="University Entrepreneurship"
+              data-desc="Why one-off pitch days rarely create lasting enterprises, and how to replace them with deep venture support studios."
+              data-what="Shift institutional budgets from vanity demo events into sustained venture cohort funding."
+              data-for="University administrators"
+              data-time="8 min read"
+              data-format="Guide">
+              <span class="ins-guide-idx">02</span>
+              <div class="ins-guide-meta">
+                <h4 class="ins-guide-heading">Moving Beyond Startup Competitions to Venture Building</h4>
+                <p class="ins-guide-abstract">Transitioning from one-off hackathons to sustained, repeatable enterprise creation.</p>
+              </div>
+              <div class="ins-guide-badge">
+                <span class="ins-badge-read">8 MIN READ</span>
+                <span class="ins-badge-format">GUIDE</span>
+              </div>
+              <button type="button" class="ins-guide-action" data-open-resource aria-label="Read Moving Beyond Startup Competitions to Venture Building">
+                <span>Read</span>
+                <span class="ins-guide-arrow">&rarr;</span>
+              </button>
+            </article>
+
+            <!-- Guide 28 -->
+            <article class="ins-guide-row" role="listitem" data-resource
+              data-title="How Universities Can Measure Entrepreneurship Outcomes"
+              data-cat="University Entrepreneurship"
+              data-desc="Designing qualitative and quantitative outcome scorecards that measure founder resilience and real business traction."
+              data-what="Implement an authentic ecosystem measurement framework without vanity vanity metrics."
+              data-for="Campus innovation centers"
+              data-time="8 min read"
+              data-format="Guide">
+              <span class="ins-guide-idx">03</span>
+              <div class="ins-guide-meta">
+                <h4 class="ins-guide-heading">How Universities Can Measure Entrepreneurship Outcomes</h4>
+                <p class="ins-guide-abstract">Tracking genuine founder capability and venture progress without relying on vanity stats.</p>
+              </div>
+              <div class="ins-guide-badge">
+                <span class="ins-badge-read">8 MIN READ</span>
+                <span class="ins-badge-format">GUIDE</span>
+              </div>
+              <button type="button" class="ins-guide-action" data-open-resource aria-label="Read How Universities Can Measure Entrepreneurship Outcomes">
+                <span>Read</span>
+                <span class="ins-guide-arrow">&rarr;</span>
+              </button>
+            </article>
+
+            <!-- Guide 29 -->
+            <article class="ins-guide-row" role="listitem" data-resource
+              data-title="Building a Mentor Network That Actually Engages"
+              data-cat="University Entrepreneurship"
+              data-desc="Recruiting, onboarding, and matching industry operators with students to build enduring advisory relationships."
+              data-what="Establish a frictionless mentor matching protocol that prevents advisor burnout."
+              data-for="University ecosystem directors"
+              data-time="7 min read"
+              data-format="Guide">
+              <span class="ins-guide-idx">04</span>
+              <div class="ins-guide-meta">
+                <h4 class="ins-guide-heading">Building a Mentor Network That Actually Engages</h4>
+                <p class="ins-guide-abstract">Design meaningful mentor relationships that add genuine value to student ventures.</p>
+              </div>
+              <div class="ins-guide-badge">
+                <span class="ins-badge-read">7 MIN READ</span>
+                <span class="ins-badge-format">GUIDE</span>
+              </div>
+              <button type="button" class="ins-guide-action" data-open-resource aria-label="Read Building a Mentor Network That Actually Engages">
+                <span>Read</span>
+                <span class="ins-guide-arrow">&rarr;</span>
+              </button>
+            </article>
+
+            <!-- Guide 30 -->
+            <article class="ins-guide-row" role="listitem" data-resource
+              data-title="From Entrepreneurship Cell to a Connected Startup Ecosystem"
+              data-cat="University Entrepreneurship"
+              data-desc="How to connect isolated campus clubs into a broader venture studio, alumni investor, and industry network."
+              data-what="A blueprint for scaling university innovation beyond geographic campus borders."
+              data-for="Educators &amp; student club leaders"
+              data-time="9 min read"
+              data-format="Guide">
+              <span class="ins-guide-idx">05</span>
+              <div class="ins-guide-meta">
+                <h4 class="ins-guide-heading">From Entrepreneurship Cell to a Connected Startup Ecosystem</h4>
+                <p class="ins-guide-abstract">Evolving beyond an isolated student club into an interconnected venture engine.</p>
+              </div>
+              <div class="ins-guide-badge">
+                <span class="ins-badge-read">9 MIN READ</span>
+                <span class="ins-badge-format">GUIDE</span>
+              </div>
+              <button type="button" class="ins-guide-action" data-open-resource aria-label="Read From Entrepreneurship Cell to a Connected Startup Ecosystem">
+                <span>Read</span>
+                <span class="ins-guide-arrow">&rarr;</span>
+              </button>
+            </article>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       05 — RESOURCE LIBRARY ARCHIVE
+       Interactive Search, Real-Time Filters & Editorial Archive Index
+       ====================================================================== -->
+  <section class="ins-section ins-library-section" id="library" aria-labelledby="ins-lib-title">
+    <div class="ins-wrap">
+      <div class="ins-section-header">
+        <div class="ins-eyebrow-tag">
+          <span class="ins-tag-indicator" aria-hidden="true"></span>
+          <span>05 / DOWNLOADABLE ASSETS</span>
+        </div>
+        <h2 class="ins-section-title" id="ins-lib-title">
+          A resource library, <em class="ins-serif-em">ready when you are.</em>
+        </h2>
+        <p class="ins-section-sub">
+          Practical templates, worksheets, guides and frameworks designed to help you move from idea to action.
+        </p>
+      </div>
+
+      <!-- Controls: Interactive Search & Multi-Tag Format Filters -->
+      <div class="ins-library-toolbar">
+        <div class="ins-search-wrapper">
+          <svg class="ins-search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input type="search" id="ins-lib-search" class="ins-search-input" placeholder="Search templates, worksheets, frameworks..." aria-label="Search resources">
+        </div>
+
+        <div class="ins-filter-chips" role="group" aria-label="Filter resources by format">
+          <button class="ins-chip is-selected" type="button" data-filter="all" aria-pressed="true">All Resources</button>
+          <button class="ins-chip" type="button" data-filter="Template" aria-pressed="false">Templates</button>
+          <button class="ins-chip" type="button" data-filter="Worksheet" aria-pressed="false">Worksheets</button>
+          <button class="ins-chip" type="button" data-filter="Checklist" aria-pressed="false">Checklists</button>
+          <button class="ins-chip" type="button" data-filter="Guide" aria-pressed="false">Guides</button>
+        </div>
+      </div>
+
+      <!-- Stage Horizon Chips -->
+      <div class="ins-stage-chips" role="group" aria-label="Filter resources by phase">
+        <span class="ins-chips-label">BY PHASE:</span>
+        <button class="ins-stage-chip is-selected" type="button" data-stage-filter="all">All Phases</button>
+        <button class="ins-stage-chip" type="button" data-stage-filter="Idea">Idea</button>
+        <button class="ins-stage-chip" type="button" data-stage-filter="Validation">Validation</button>
+        <button class="ins-stage-chip" type="button" data-stage-filter="MVP">MVP</button>
+        <button class="ins-stage-chip" type="button" data-stage-filter="Business">Business</button>
+        <button class="ins-stage-chip" type="button" data-stage-filter="Founder">Founder</button>
+        <button class="ins-stage-chip" type="button" data-stage-filter="University">University</button>
+      </div>
+
+      <!-- Editorial Archive Index (10 Downloadable Resources) -->
+      <div class="ins-archive-index" id="ins-archive-grid">
+        <!-- 01: Business Idea Canvas -->
+        <article class="ins-archive-entry" data-cat="Idea" data-format="Template" data-title="Business Idea Canvas">
+          <div class="ins-archive-num">01</div>
+          <div class="ins-archive-content">
+            <div class="ins-archive-badges">
+              <span class="ins-badge-tag ins-badge-tag--stage">Idea</span>
+              <span class="ins-badge-tag ins-badge-tag--format">TEMPLATE</span>
+              <span class="ins-badge-time">20 MIN</span>
+            </div>
+            <h3 class="ins-archive-title">Business Idea Canvas</h3>
+            <p class="ins-archive-desc">A structured worksheet for unpacking your first venture idea onto a single page.</p>
+          </div>
+          <div class="ins-archive-actions">
+            <button class="ins-archive-btn" type="button" data-resource
+              data-title="Business Idea Canvas"
+              data-cat="Idea"
+              data-desc="A practical worksheet for exploring your first venture idea."
+              data-what="Map the problem, customer, unique value and operational risks on one concise page."
+              data-for="Dreamers exploring their first idea"
+              data-time="20 min"
+              data-format="Template">
+              <span>View &amp; Download</span>
+              <svg class="ins-download-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+            </button>
+          </div>
+        </article>
+
+        <!-- 02: Problem Discovery Worksheet -->
+        <article class="ins-archive-entry" data-cat="Idea" data-format="Worksheet" data-title="Problem Discovery Worksheet">
+          <div class="ins-archive-num">02</div>
+          <div class="ins-archive-content">
+            <div class="ins-archive-badges">
+              <span class="ins-badge-tag ins-badge-tag--stage">Idea</span>
+              <span class="ins-badge-tag ins-badge-tag--format">WORKSHEET</span>
+              <span class="ins-badge-time">25 MIN</span>
+            </div>
+            <h3 class="ins-archive-title">Problem Discovery Worksheet</h3>
+            <p class="ins-archive-desc">Guided exercises for students learning to identify and prioritize problems worth solving.</p>
+          </div>
+          <div class="ins-archive-actions">
+            <button class="ins-archive-btn" type="button" data-resource
+              data-title="Problem Discovery Worksheet"
+              data-cat="Idea"
+              data-desc="A guided worksheet for students learning to spot problems worth solving."
+              data-what="Identify, rank, and prioritize everyday friction points around you."
+              data-for="Dreamers &amp; students"
+              data-time="25 min"
+              data-format="Worksheet">
+              <span>View &amp; Download</span>
+              <svg class="ins-download-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+            </button>
+          </div>
+        </article>
+
+        <!-- 03: Customer Interview Guide -->
+        <article class="ins-archive-entry" data-cat="Validation" data-format="Guide" data-title="Customer Interview Guide">
+          <div class="ins-archive-num">03</div>
+          <div class="ins-archive-content">
+            <div class="ins-archive-badges">
+              <span class="ins-badge-tag ins-badge-tag--stage">Validation</span>
+              <span class="ins-badge-tag ins-badge-tag--format">GUIDE</span>
+              <span class="ins-badge-time">30 MIN</span>
+            </div>
+            <h3 class="ins-archive-title">Customer Interview Guide</h3>
+            <p class="ins-archive-desc">Structured interview scripts and note-taking templates for meaningful discovery calls.</p>
+          </div>
+          <div class="ins-archive-actions">
+            <button class="ins-archive-btn" type="button" data-resource
+              data-title="Customer Interview Guide"
+              data-cat="Validation"
+              data-desc="For founders preparing to talk to real customers without creating confirmation bias."
+              data-what="Plan, run and record actionable insights from your first 10 discovery calls."
+              data-for="Student founders"
+              data-time="30 min"
+              data-format="Guide">
+              <span>View &amp; Download</span>
+              <svg class="ins-download-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+            </button>
+          </div>
+        </article>
+
+        <!-- 04: Idea Validation Checklist -->
+        <article class="ins-archive-entry" data-cat="Validation" data-format="Checklist" data-title="Idea Validation Checklist">
+          <div class="ins-archive-num">04</div>
+          <div class="ins-archive-content">
+            <div class="ins-archive-badges">
+              <span class="ins-badge-tag ins-badge-tag--stage">Validation</span>
+              <span class="ins-badge-tag ins-badge-tag--format">CHECKLIST</span>
+              <span class="ins-badge-time">15 MIN</span>
+            </div>
+            <h3 class="ins-archive-title">Idea Validation Checklist</h3>
+            <p class="ins-archive-desc">A pragmatic checklist for evaluating whether your evidence of market demand is sufficient.</p>
+          </div>
+          <div class="ins-archive-actions">
+            <button class="ins-archive-btn" type="button" data-resource
+              data-title="Idea Validation Checklist"
+              data-cat="Validation"
+              data-desc="For anyone testing whether an early venture idea is worth committing capital and time."
+              data-what="Review demand proof, competitive alternatives, and customer urgency."
+              data-for="Anyone testing an idea"
+              data-time="15 min"
+              data-format="Checklist">
+              <span>View &amp; Download</span>
+              <svg class="ins-download-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+            </button>
+          </div>
+        </article>
+
+        <!-- 05: MVP Planning Template -->
+        <article class="ins-archive-entry" data-cat="MVP" data-format="Template" data-title="MVP Planning Template">
+          <div class="ins-archive-num">05</div>
+          <div class="ins-archive-content">
+            <div class="ins-archive-badges">
+              <span class="ins-badge-tag ins-badge-tag--stage">MVP</span>
+              <span class="ins-badge-tag ins-badge-tag--format">TEMPLATE</span>
+              <span class="ins-badge-time">30 MIN</span>
+            </div>
+            <h3 class="ins-archive-title">MVP Planning Template</h3>
+            <p class="ins-archive-desc">Scope boundaries, core user journeys, and non-essential backlog trimming for Version 1.0.</p>
+          </div>
+          <div class="ins-archive-actions">
+            <button class="ins-archive-btn" type="button" data-resource
+              data-title="MVP Planning Template"
+              data-cat="MVP"
+              data-desc="For student founders defining the smallest version that proves their value hypothesis."
+              data-what="Define essential user flows, success metrics, and what to defer to later iterations."
+              data-for="Student founders"
+              data-time="30 min"
+              data-format="Template">
+              <span>View &amp; Download</span>
+              <svg class="ins-download-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+            </button>
+          </div>
+        </article>
+
+        <!-- 06: Basic Business Model Canvas -->
+        <article class="ins-archive-entry" data-cat="Business" data-format="Template" data-title="Basic Business Model Canvas">
+          <div class="ins-archive-num">06</div>
+          <div class="ins-archive-content">
+            <div class="ins-archive-badges">
+              <span class="ins-badge-tag ins-badge-tag--stage">Business</span>
+              <span class="ins-badge-tag ins-badge-tag--format">TEMPLATE</span>
+              <span class="ins-badge-time">25 MIN</span>
+            </div>
+            <h3 class="ins-archive-title">Basic Business Model Canvas</h3>
+            <p class="ins-archive-desc">Map out revenue streams, operational costs, customer segments, and delivery channels.</p>
+          </div>
+          <div class="ins-archive-actions">
+            <button class="ins-archive-btn" type="button" data-resource
+              data-title="Basic Business Model Canvas"
+              data-cat="Business"
+              data-desc="For teams working out how their venture creates, delivers, and captures economic value."
+              data-what="Outline revenue mechanisms, primary expenses, and key customer acquisition channels."
+              data-for="Teams shaping a commercial model"
+              data-time="25 min"
+              data-format="Template">
+              <span>View &amp; Download</span>
+              <svg class="ins-download-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+            </button>
+          </div>
+        </article>
+
+        <!-- 07: First Customer Outreach Template -->
+        <article class="ins-archive-entry" data-cat="Business" data-format="Template" data-title="First Customer Outreach Template">
+          <div class="ins-archive-num">07</div>
+          <div class="ins-archive-content">
+            <div class="ins-archive-badges">
+              <span class="ins-badge-tag ins-badge-tag--stage">Business</span>
+              <span class="ins-badge-tag ins-badge-tag--format">TEMPLATE</span>
+              <span class="ins-badge-time">20 MIN</span>
+            </div>
+            <h3 class="ins-archive-title">First Customer Outreach Template</h3>
+            <p class="ins-archive-desc">Proven, non-spammy cold email, LinkedIn, and DM scripts that generate genuine conversations.</p>
+          </div>
+          <div class="ins-archive-actions">
+            <button class="ins-archive-btn" type="button" data-resource
+              data-title="First Customer Outreach Template"
+              data-cat="Business"
+              data-desc="For founders going after their very first pilot users and early commercial prospects."
+              data-what="Engage early prospects with high-relevance messaging and clear calls to action."
+              data-for="Founders finding early users"
+              data-time="20 min"
+              data-format="Template">
+              <span>View &amp; Download</span>
+              <svg class="ins-download-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+            </button>
+          </div>
+        </article>
+
+        <!-- 08: Startup Pitch Deck Outline -->
+        <article class="ins-archive-entry" data-cat="Founder" data-format="Guide" data-title="Startup Pitch Deck Outline">
+          <div class="ins-archive-num">08</div>
+          <div class="ins-archive-content">
+            <div class="ins-archive-badges">
+              <span class="ins-badge-tag ins-badge-tag--stage">Founder</span>
+              <span class="ins-badge-tag ins-badge-tag--format">GUIDE</span>
+              <span class="ins-badge-time">25 MIN</span>
+            </div>
+            <h3 class="ins-archive-title">Startup Pitch Deck Outline</h3>
+            <p class="ins-archive-desc">Slide-by-slide structure to articulate problem, market size, traction, and ask in under 10 slides.</p>
+          </div>
+          <div class="ins-archive-actions">
+            <button class="ins-archive-btn" type="button" data-resource
+              data-title="Startup Pitch Deck Outline"
+              data-cat="Founder"
+              data-desc="For founders preparing to present their vision with total clarity and confidence."
+              data-what="Build a persuasive 10-slide narrative without buzzwords or ungrounded projections."
+              data-for="Founders presenting their venture"
+              data-time="25 min"
+              data-format="Guide">
+              <span>View &amp; Download</span>
+              <svg class="ins-download-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+            </button>
+          </div>
+        </article>
+
+        <!-- 09: Student Venture Progress Tracker -->
+        <article class="ins-archive-entry" data-cat="Founder" data-format="Checklist" data-title="Student Venture Progress Tracker">
+          <div class="ins-archive-num">09</div>
+          <div class="ins-archive-content">
+            <div class="ins-archive-badges">
+              <span class="ins-badge-tag ins-badge-tag--stage">Founder</span>
+              <span class="ins-badge-tag ins-badge-tag--format">CHECKLIST</span>
+              <span class="ins-badge-time">15 MIN</span>
+            </div>
+            <h3 class="ins-archive-title">Student Venture Progress Tracker</h3>
+            <p class="ins-archive-desc">Weekly sprint sheet for balancing academic obligations while sustaining venture momentum.</p>
+          </div>
+          <div class="ins-archive-actions">
+            <button class="ins-archive-btn" type="button" data-resource
+              data-title="Student Venture Progress Tracker"
+              data-cat="Founder"
+              data-desc="For student teams keeping momentum across semesters and exam cycles."
+              data-what="Track weekly experiment outcomes, customer touches, and operational next steps."
+              data-for="Student teams"
+              data-time="15 min"
+              data-format="Checklist">
+              <span>View &amp; Download</span>
+              <svg class="ins-download-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+            </button>
+          </div>
+        </article>
+
+        <!-- 10: University Entrepreneurship Program Planning Checklist -->
+        <article class="ins-archive-entry" data-cat="University" data-format="Checklist" data-title="University Entrepreneurship Program Planning Checklist">
+          <div class="ins-archive-num">10</div>
+          <div class="ins-archive-content">
+            <div class="ins-archive-badges">
+              <span class="ins-badge-tag ins-badge-tag--stage">University</span>
+              <span class="ins-badge-tag ins-badge-tag--format">CHECKLIST</span>
+              <span class="ins-badge-time">35 MIN</span>
+            </div>
+            <h3 class="ins-archive-title">University Entrepreneurship Program Planning Checklist</h3>
+            <p class="ins-archive-desc">Comprehensive operational checklist for university leaders launching incubator programs.</p>
+          </div>
+          <div class="ins-archive-actions">
+            <button class="ins-archive-btn" type="button" data-resource
+              data-title="University Entrepreneurship Program Planning Checklist"
+              data-cat="University"
+              data-desc="For academic institutions designing cohort programs, pre-incubators, and mentor networks."
+              data-what="Plan cohort curriculum, founder screening, mentor matches, and measurable impact."
+              data-for="University leadership &amp; incubator heads"
+              data-time="35 min"
+              data-format="Checklist">
+              <span>View &amp; Download</span>
+              <svg class="ins-download-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+            </button>
+          </div>
+        </article>
+      </div>
+
+      <!-- Empty State -->
+      <div class="ins-archive-empty" id="ins-lib-empty" hidden>
+        <p>No resources found matching your current filter or keyword. Try resetting your search.</p>
+        <button type="button" class="ins-reset-filter-btn" id="ins-reset-filters">Reset All Filters</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       06 — DOWNLOAD / ACTION MOMENT
+       "Don't just save it. Use it."
+       ====================================================================== -->
+  <section class="ins-action-moment-section" aria-labelledby="ins-action-moment-title">
+    <div class="ins-wrap">
+      <div class="ins-action-moment-card">
+        <div class="ins-action-moment-copy">
+          <span class="ins-moment-tag">DIRECT APPLICATION</span>
+          <h2 class="ins-action-moment-heading" id="ins-action-moment-title">
+            Don&rsquo;t just save it. <em class="ins-serif-em">Use it.</em>
+          </h2>
+          <p class="ins-action-moment-desc">
+            A framework on your hard drive produces zero impact. Pick one worksheet, sit down with a potential customer or peer, and put it into practice today.
+          </p>
+        </div>
+        <div class="ins-action-moment-btns">
+          <a href="#library" class="ins-action-btn ins-action-btn--primary">
+            <span>Choose a Resource</span>
+            <svg class="ins-btn-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+          <a href="#hero" class="ins-action-btn ins-action-btn--ghost">
+            <span>Explore the Journey</span>
+            <svg class="ins-btn-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M8 3v10M4 9l4 4 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       07 — FROM IDEA TO ACTION (Iterative Curved Progression)
+       "Knowledge only matters when you use it."
+       ====================================================================== -->
+  <section class="ins-section ins-iterative-section" id="action-flow" aria-labelledby="ins-iter-title">
+    <div class="ins-wrap">
+      <div class="ins-section-header ins-section-header--centered">
+        <div class="ins-eyebrow-tag" style="justify-content:center;">
+          <span class="ins-tag-indicator" aria-hidden="true"></span>
+          <span>06 / THE EXPERIMENTAL LOOP</span>
+        </div>
+        <h2 class="ins-section-title" id="ins-iter-title">
+          Knowledge only matters <em class="ins-serif-em">when you use it.</em>
+        </h2>
+        <p class="ins-section-sub">
+          Venture building is non-linear. Every insight leads to an experiment, and every failure teaches you what to build next.
+        </p>
+      </div>
+
+      <div class="ins-loop-canvas">
+        <!-- Curved SVG Loop Path -->
+        <svg class="ins-loop-svg" viewBox="0 0 900 240" fill="none" aria-hidden="true">
+          <path class="ins-loop-track" d="M 50 120 C 150 20, 250 220, 380 120 C 480 30, 600 210, 720 120 C 780 70, 830 90, 850 120" />
+          <path class="ins-loop-pulse" id="ins-loop-pulse-path" d="M 50 120 C 150 20, 250 220, 380 120 C 480 30, 600 210, 720 120 C 780 70, 830 90, 850 120" />
+        </svg>
+
+        <div class="ins-loop-nodes">
+          <div class="ins-loop-node is-active" data-step="read">
+            <span class="ins-loop-dot">01</span>
+            <span class="ins-loop-title">READ</span>
+            <span class="ins-loop-hint">Study proven frameworks</span>
+          </div>
+
+          <div class="ins-loop-node" data-step="think">
+            <span class="ins-loop-dot">02</span>
+            <span class="ins-loop-title">THINK</span>
+            <span class="ins-loop-hint">Formulate testable assumptions</span>
+          </div>
+
+          <div class="ins-loop-node" data-step="test">
+            <span class="ins-loop-dot">03</span>
+            <span class="ins-loop-title">TEST</span>
+            <span class="ins-loop-hint">Put hypotheses in front of users</span>
+          </div>
+
+          <div class="ins-loop-node" data-step="learn">
+            <span class="ins-loop-dot">04</span>
+            <span class="ins-loop-title">LEARN</span>
+            <span class="ins-loop-hint">Analyze evidence objectively</span>
+          </div>
+
+          <div class="ins-loop-node" data-step="build">
+            <span class="ins-loop-dot">05</span>
+            <span class="ins-loop-title">BUILD</span>
+            <span class="ins-loop-hint">Iterate with real momentum</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       08 — FOUNDER STORIES (Editorial Magazine Panels)
+       "Real journeys. Honest lessons."
+       ====================================================================== -->
+  <section class="ins-section ins-stories-section" id="stories" aria-labelledby="ins-stories-title">
+    <div class="ins-wrap">
+      <div class="ins-section-header">
+        <div class="ins-eyebrow-tag">
+          <span class="ins-tag-indicator" aria-hidden="true"></span>
+          <span>07 / FIELD LESSONS</span>
+        </div>
+        <h2 class="ins-section-title" id="ins-stories-title">
+          Real journeys. <em class="ins-serif-em">Honest lessons.</em>
+        </h2>
+        <p class="ins-section-sub">
+          Building Dreams stories focus on progress, experimentation and learning &mdash; not exaggerated overnight success narratives.
+        </p>
+      </div>
+
+      <div class="ins-stories-grid">
+        <!-- Story 01 -->
+        <article class="ins-story-panel" data-story-index="1">
+          <div class="ins-story-backdrop ins-story-backdrop--1" aria-hidden="true"></div>
+          <div class="ins-story-inner">
+            <div class="ins-story-badge-row">
+              <span class="ins-story-index">STORY 01</span>
+              <span class="ins-story-tag">PIVOT &amp; DISCOVERY</span>
+            </div>
+            <h3 class="ins-story-headline">The first idea wasn&rsquo;t the final idea.</h3>
+            <p class="ins-story-excerpt">
+              After speaking with forty real customers over three weeks, the team realized their original software proposal was solving an imaginary problem. They discarded their initial mockups and rebuilt around the true friction point.
+            </p>
+            <div class="ins-story-meta-row">
+              <span class="ins-story-author">Student Venture Cohort</span>
+              <span class="ins-story-readtime">Editorial Case</span>
+            </div>
+            <button class="ins-story-action" type="button" data-story-open="The first idea wasn't the final idea.">
+              <span>Read Lesson</span>
+              <span class="ins-story-arrow">&rarr;</span>
+            </button>
+          </div>
+        </article>
+
+        <!-- Story 02 -->
+        <article class="ins-story-panel" data-story-index="2">
+          <div class="ins-story-backdrop ins-story-backdrop--2" aria-hidden="true"></div>
+          <div class="ins-story-inner">
+            <div class="ins-story-badge-row">
+              <span class="ins-story-index">STORY 02</span>
+              <span class="ins-story-tag">RAPID PROTOTYPING</span>
+            </div>
+            <h3 class="ins-story-headline">They built before they were ready.</h3>
+            <p class="ins-story-excerpt">
+              Instead of waiting months to learn full-stack development, two undergrad founders launched a manual concierge workflow on WhatsApp and Google Sheets. In fourteen days, they learned more about pricing than two semesters of business theory.
+            </p>
+            <div class="ins-story-meta-row">
+              <span class="ins-story-author">Campus Builders Track</span>
+              <span class="ins-story-readtime">Editorial Case</span>
+            </div>
+            <button class="ins-story-action" type="button" data-story-open="They built before they were ready.">
+              <span>Read Lesson</span>
+              <span class="ins-story-arrow">&rarr;</span>
+            </button>
+          </div>
+        </article>
+
+        <!-- Story 03 -->
+        <article class="ins-story-panel" data-story-index="3">
+          <div class="ins-story-backdrop ins-story-backdrop--3" aria-hidden="true"></div>
+          <div class="ins-story-inner">
+            <div class="ins-story-badge-row">
+              <span class="ins-story-index">STORY 03</span>
+              <span class="ins-story-tag">EXPERIMENT OUTCOME</span>
+            </div>
+            <h3 class="ins-story-headline">The experiment that failed taught the most.</h3>
+            <p class="ins-story-excerpt">
+              An ambitious pilot program failed to retain initial signups. Rather than viewing it as defeat, the founders analyzed session drop-offs and uncovered a high-value B2B enterprise service hidden inside their consumer product.
+            </p>
+            <div class="ins-story-meta-row">
+              <span class="ins-story-author">Venture Studio Track</span>
+              <span class="ins-story-readtime">Editorial Case</span>
+            </div>
+            <button class="ins-story-action" type="button" data-story-open="The experiment that failed taught the most.">
+              <span>Read Lesson</span>
+              <span class="ins-story-arrow">&rarr;</span>
+            </button>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       09 — WHAT YOU CAN LEARN (Giant Typographic Statements)
+       "The lessons are the real resource."
+       ====================================================================== -->
+  <section class="ins-section ins-learning-section" id="learning-outcomes" aria-labelledby="ins-learn-title">
+    <div class="ins-wrap">
+      <div class="ins-section-header">
+        <div class="ins-eyebrow-tag">
+          <span class="ins-tag-indicator" aria-hidden="true"></span>
+          <span>08 / CORE OUTCOMES</span>
+        </div>
+        <h2 class="ins-section-title" id="ins-learn-title">
+          The lessons are <em class="ins-serif-em">the real resource.</em>
+        </h2>
+        <p class="ins-section-sub">
+          Four foundational principles that govern every entrepreneurship program, guide, and venture sprint at Building Dreams.
+        </p>
+      </div>
+
+      <div class="ins-typo-monoliths" role="list" aria-label="Foundational learning outcomes">
+        <!-- 01: Find Problems -->
+        <div class="ins-typo-row is-active" role="listitem" tabindex="0">
+          <div class="ins-typo-head">
+            <span class="ins-typo-num">01</span>
+            <h3 class="ins-typo-word">FIND PROBLEMS</h3>
+            <span class="ins-typo-toggle">+</span>
+          </div>
+          <div class="ins-typo-body">
+            <p class="ins-typo-quote">
+              &ldquo;Before you build anything, identify a real friction point that people are already actively trying to resolve with imperfect tools.&rdquo;
+            </p>
+          </div>
+        </div>
+
+        <!-- 02: Ask Better Questions -->
+        <div class="ins-typo-row" role="listitem" tabindex="0">
+          <div class="ins-typo-head">
+            <span class="ins-typo-num">02</span>
+            <h3 class="ins-typo-word">ASK BETTER QUESTIONS</h3>
+            <span class="ins-typo-toggle">+</span>
+          </div>
+          <div class="ins-typo-body">
+            <p class="ins-typo-quote">
+              &ldquo;Good founders don&rsquo;t ask for validation or compliments. They investigate historical customer behavior, past purchases, and lived experiences.&rdquo;
+            </p>
+          </div>
+        </div>
+
+        <!-- 03: Build to Learn -->
+        <div class="ins-typo-row" role="listitem" tabindex="0">
+          <div class="ins-typo-head">
+            <span class="ins-typo-num">03</span>
+            <h3 class="ins-typo-word">BUILD TO LEARN</h3>
+            <span class="ins-typo-toggle">+</span>
+          </div>
+          <div class="ins-typo-body">
+            <p class="ins-typo-quote">
+              &ldquo;You don&rsquo;t need the perfect product. You need something that teaches you something true about the market in the real world.&rdquo;
+            </p>
+          </div>
+        </div>
+
+        <!-- 04: Keep Moving -->
+        <div class="ins-typo-row" role="listitem" tabindex="0">
+          <div class="ins-typo-head">
+            <span class="ins-typo-num">04</span>
+            <h3 class="ins-typo-word">KEEP MOVING</h3>
+            <span class="ins-typo-toggle">+</span>
+          </div>
+          <div class="ins-typo-body">
+            <p class="ins-typo-quote">
+              &ldquo;Progress is measured by how fast you test assumptions against reality, not by how long you hold onto an untested belief.&rdquo;
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       10 — UNIVERSITY / ECOSYSTEM CONTENT
+       "Entrepreneurship doesn't happen in isolation."
+       ====================================================================== -->
+  <section class="ins-section ins-ecosystem-section" id="ecosystem" aria-labelledby="ins-eco-title">
+    <div class="ins-wrap">
+      <div class="ins-section-header ins-section-header--centered">
+        <div class="ins-eyebrow-tag" style="justify-content:center;">
+          <span class="ins-tag-indicator" aria-hidden="true"></span>
+          <span>09 / CONNECTED ECOSYSTEM</span>
+        </div>
+        <h2 class="ins-section-title" id="ins-eco-title">
+          Entrepreneurship doesn&rsquo;t happen <em class="ins-serif-em">in isolation.</em>
+        </h2>
+        <p class="ins-section-sub">
+          Sustainable ventures are born when students, mentors, university programs and founders operate inside a symbiotic, collaborative loop.
+        </p>
+      </div>
+
+      <div class="ins-ecosystem-visual">
+        <div class="ins-eco-centerpiece">
+          <span class="ins-eco-pulse" aria-hidden="true"></span>
+          <span class="ins-eco-brand">BUILDING DREAMS</span>
+          <span class="ins-eco-subbrand">VENTURE ENGINE</span>
+        </div>
+
+        <!-- Connected Satellites -->
+        <div class="ins-eco-nodes-ring">
+          <div class="ins-eco-satellite" data-role="students" tabindex="0">
+            <span class="ins-eco-role">STUDENTS</span>
+            <p class="ins-eco-role-desc">&ldquo;Explore what&rsquo;s possible.&rdquo;</p>
+          </div>
+
+          <div class="ins-eco-satellite" data-role="mentors" tabindex="0">
+            <span class="ins-eco-role">MENTORS</span>
+            <p class="ins-eco-role-desc">&ldquo;Share practical experience.&rdquo;</p>
+          </div>
+
+          <div class="ins-eco-satellite" data-role="founders" tabindex="0">
+            <span class="ins-eco-role">FOUNDERS</span>
+            <p class="ins-eco-role-desc">&ldquo;Build, test and iterate.&rdquo;</p>
+          </div>
+
+          <div class="ins-eco-satellite" data-role="universities" tabindex="0">
+            <span class="ins-eco-role">UNIVERSITIES</span>
+            <p class="ins-eco-role-desc">&ldquo;Create the innovation environment.&rdquo;</p>
+          </div>
+
+          <div class="ins-eco-satellite" data-role="programs" tabindex="0">
+            <span class="ins-eco-role">PROGRAMS</span>
+            <p class="ins-eco-role-desc">&ldquo;Turn intention into structured action.&rdquo;</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       11 — EDITORIAL NEWSLETTER SUBSCRIPTION
+       "A little inspiration. A lot of practical action."
+       ====================================================================== -->
+  <section class="ins-section ins-newsletter-section" aria-labelledby="ins-news-title">
+    <div class="ins-wrap">
+      <div class="ins-newsletter-card">
+        <div class="ins-newsletter-content">
+          <span class="ins-news-kicker">CURATED DISPATCH</span>
+          <h2 class="ins-newsletter-title" id="ins-news-title">
+            A little inspiration.<br>
+            <em class="ins-serif-em">A lot of practical action.</em>
+          </h2>
+          <p class="ins-newsletter-sub">
+            Get occasional insights on entrepreneurship, student innovation, venture building and upcoming Building Dreams opportunities.
+          </p>
+
+          <form class="ins-newsletter-form" data-demo-form novalidate>
+            <div class="ins-news-input-wrap">
+              <label class="ins-visually-hidden" for="insights-sub-email">Your email address</label>
+              <input type="email" id="insights-sub-email" name="email" autocomplete="email" placeholder="Enter your email address" required class="ins-news-input">
+              <button type="submit" class="ins-news-submit-btn">
+                <span>Send me Building Dreams insights</span>
+                <span class="ins-news-arrow">&rarr;</span>
+              </button>
+            </div>
+            <p class="ins-news-disclaimer">No noise. Just useful ideas, stories and opportunities.</p>
+            <div class="ins-form-success" role="status">Thank you &mdash; your subscription request has been noted.</div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       12 — CINEMATIC FINAL CTA
+       Deep forest green full-width canvas
+       ====================================================================== -->
+  <section class="ins-final-cta-section" aria-labelledby="ins-final-cta-title">
+    <div class="ins-cta-ambient-glow" aria-hidden="true"></div>
+
+    <div class="ins-wrap ins-cta-content">
+      <div class="ins-cta-journey-constellation" aria-hidden="true">
+        <span>IDEA</span>
+        <span class="ins-cta-dash">&rarr;</span>
+        <span>TEST</span>
+        <span class="ins-cta-dash">&rarr;</span>
+        <span>BUILD</span>
+        <span class="ins-cta-dash">&rarr;</span>
+        <span>LEARN</span>
+      </div>
+
+      <h2 class="ins-final-cta-heading" id="ins-final-cta-title">
+        Have an idea?<br>
+        <em class="ins-serif-em">Let&rsquo;s help you move it forward.</em>
+      </h2>
+
+      <p class="ins-final-cta-sub">
+        Explore practical frameworks, connect with experienced mentors, or test your hypotheses inside our dedicated builder cohorts.
+      </p>
+
+      <div class="ins-final-cta-actions">
+        <a href="#library" class="ins-action-btn ins-action-btn--primary">
+          <span>Explore Resources</span>
+          <svg class="ins-btn-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+        <a href="../apply/" class="ins-action-btn ins-action-btn--light">
+          <span>Start Building</span>
+          <svg class="ins-btn-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       13 — EDITORIAL FOOTER SIGN-OFF
+       ====================================================================== -->
+  <aside class="ins-editorial-signoff">
+    <div class="ins-wrap ins-signoff-layout">
+      <div class="ins-signoff-brandmark">
+        <span class="ins-signoff-word">LEARN.</span>
+        <span class="ins-signoff-word">BUILD.</span>
+        <span class="ins-signoff-word">SHARE.</span>
+      </div>
+      <p class="ins-signoff-credo">
+        Practical knowledge for people building what comes next.
+      </p>
+    </div>
+  </aside>
+
 </main>
+
+<!-- ========================================================================
+     RESOURCE DETAIL EXPERIENCE (Slide-Over / Modal)
+     ======================================================================== -->
+<div class="ins-modal" id="ins-modal" role="dialog" aria-modal="true" aria-labelledby="ins-modal-title" hidden>
+  <div class="ins-modal-backdrop" data-modal-close></div>
+  <div class="ins-modal-card">
+    <button class="ins-modal-close" type="button" data-modal-close aria-label="Close dialog">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+    </button>
+
+    <div class="ins-modal-header">
+      <span class="ins-modal-cat-badge" id="ins-modal-cat">Resource Category</span>
+      <h2 class="ins-modal-title" id="ins-modal-title">Resource Title</h2>
+      <p class="ins-modal-desc" id="ins-modal-desc">Summary description of the tool or guide.</p>
+    </div>
+
+    <div class="ins-modal-grid">
+      <div class="ins-modal-cell">
+        <span class="ins-cell-label">WHO IS THIS FOR?</span>
+        <span class="ins-cell-value" id="ins-modal-for">&mdash;</span>
+      </div>
+      <div class="ins-modal-cell">
+        <span class="ins-cell-label">WHAT YOU&rsquo;LL ACCOMPLISH</span>
+        <span class="ins-cell-value" id="ins-modal-what">&mdash;</span>
+      </div>
+      <div class="ins-modal-cell">
+        <span class="ins-cell-label">ESTIMATED TIME</span>
+        <span class="ins-cell-value" id="ins-modal-time">&mdash;</span>
+      </div>
+      <div class="ins-modal-cell">
+        <span class="ins-cell-label">FORMAT</span>
+        <span class="ins-cell-value" id="ins-modal-format">&mdash;</span>
+      </div>
+    </div>
+
+    <div class="ins-modal-actions">
+      <button class="ins-action-btn ins-action-btn--primary" type="button" id="ins-modal-download">
+        <span>Download Resource</span>
+        <svg class="ins-btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+          <polyline points="7 10 12 15 17 10"></polyline>
+          <line x1="12" y1="15" x2="12" y2="3"></line>
+        </svg>
+      </button>
+      <button class="ins-action-btn ins-action-btn--ghost" type="button" id="ins-modal-save" aria-pressed="false">
+        <span>Save for Later</span>
+      </button>
+    </div>
+  </div>
+</div>
+
 <div data-site-footer></div>
 <script type="module" src="../main.js"></script>
+<script type="module" src="../insights.js"></script>
 </body>
 </html>

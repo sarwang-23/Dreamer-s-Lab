@@ -24,6 +24,11 @@
     background-color: #FBF9F5;
 }
 
+#our-philosophy {
+    background-color: #FFFFFF;
+    border-top: 1px solid rgba(44, 27, 19, 0.14);
+}
+
 .ab-editorial-section--white {
     background-color: #FFFFFF;
 }
@@ -59,6 +64,11 @@
     color: #FF6B1A;
     margin-bottom: 0.9rem;
     line-height: 1;
+    border: none !important;
+    background: transparent !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    padding: 0 !important;
 }
 
 .ab-eyebrow-accent {
@@ -106,8 +116,8 @@
 
 .phil-card {
     position: relative;
-    background: #FFFFFF;
-    border: 1.5px solid #E8E1D8;
+    background: #FAF7F2;
+    border: 1.5px solid #EAE2D5;
     border-radius: 20px;
     overflow: hidden;
     display: flex;
@@ -115,9 +125,10 @@
     justify-content: space-between;
     padding: clamp(2rem, 2.6vw, 2.4rem);
     min-height: 330px;
-    box-shadow: 0 8px 24px -10px rgba(44, 27, 19, 0.05);
+    box-shadow: 0 4px 16px -6px rgba(44, 27, 19, 0.03);
     transition: transform 0.3s cubic-bezier(.16, 1, .3, 1),
                 box-shadow 0.3s ease,
+                background 0.3s ease,
                 border-color 0.3s ease;
     cursor: default;
     user-select: text;
@@ -129,12 +140,13 @@
     left: 0;
     right: 0;
     height: 3.5px;
-    background: #E8E1D8;
+    background: #EAE2D5;
     transition: background 0.3s ease, height 0.3s ease;
 }
 
 .phil-card:hover {
     transform: translateY(-5px);
+    background: #FFFFFF;
     border-color: rgba(255, 107, 26, 0.45);
     box-shadow:
         0 20px 48px -12px rgba(44, 27, 19, 0.12),
@@ -634,651 +646,177 @@
 }
 
 /* ==========================================================================
-   SECTION 4 — OUR PROMISE
+   SECTION 8 — OUR PROMISE  (Compact Premium Editorial)
    ========================================================================== */
 
-/* Section wrapper — warm cream, generous vertical rhythm */
 .promise-section {
     position: relative;
-    background: #FBF9F5;
-    padding: clamp(5rem, 9vw, 8rem) 0;
+    background: #FFFFFF;
+    border-top: 1px solid rgba(44, 27, 19, 0.14);
+    padding: clamp(3.8rem, 5.5vw, 4.8rem) 0;
     overflow: hidden;
 }
 
-/* Orange top border accent */
-.promise-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 60px;
-    height: 3px;
-    background: #FF6B1A;
-    border-radius: 0 0 3px 3px;
-}
-
-/* Background grid lines for depth */
-.promise-bg {
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-}
-
-.promise-bg-glow--1 {
-    position: absolute;
-    top: -60px;
-    right: 5%;
-    width: 400px;
-    height: 400px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(255,107,26,0.06) 0%, transparent 70%);
-}
-.promise-bg-glow--2 {
-    position: absolute;
-    bottom: -80px;
-    left: 0;
-    width: 360px;
-    height: 360px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(255,107,26,0.04) 0%, transparent 70%);
-}
-.promise-bg-word {
-    position: absolute;
-    bottom: -0.1em;
-    right: -0.05em;
-    font-family: 'Outfit', sans-serif;
-    font-size: clamp(8rem, 16vw, 16rem);
-    font-weight: 800;
-    letter-spacing: -0.06em;
-    line-height: 1;
-    color: rgba(44, 27, 19, 0.028);
-    user-select: none;
-    white-space: nowrap;
-}
-
-/* ── Centered inner container ── */
+/* ── Compact centered container ── */
 .promise-inner {
     position: relative;
-    z-index: 1;
-    max-width: 1180px;
+    max-width: 940px;
     margin: 0 auto;
-    padding: 0 clamp(1.5rem, 5vw, 4rem);
-}
-
-/* ── Top: eyebrow label ── */
-.promise-eyebrow {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.55rem;
-    font-family: 'Outfit', sans-serif;
-    font-size: 0.76rem;
-    font-weight: 700;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: #FF6B1A;
-    margin-bottom: clamp(2rem, 3.5vw, 3rem);
-}
-
-.promise-eyebrow-dot {
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: #FF6B1A;
-    flex-shrink: 0;
-}
-
-/* ── Main editorial split grid ── */
-.promise-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: clamp(3rem, 6vw, 6rem);
-    align-items: start;
-}
-
-/* Left: Large italic editorial quote as hero visual */
-.promise-quote-col {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-    padding-top: 0.3rem;
-}
-
-/* Giant open-quote glyph */
-.promise-open-quote {
-    font-family: 'Instrument Serif', Georgia, serif;
-    font-size: clamp(5rem, 9vw, 8rem);
-    line-height: 0.7;
-    color: #FF6B1A;
-    opacity: 0.9;
-    margin-bottom: 0.5rem;
-    display: block;
-}
-
-/* The actual quote — the hero typography of this section */
-.promise-quote-body {
-    font-family: 'Instrument Serif', Georgia, serif;
-    font-style: italic;
-    font-size: clamp(1.6rem, 2.6vw, 2.5rem);
-    line-height: 1.38;
-    letter-spacing: -0.02em;
-    color: #2C1B13;
-    margin: 0;
-    padding-bottom: 2rem;
-    border-bottom: 1.5px solid #E8E1D8;
-}
-
-/* Right: Headline + body + CTA */
-.promise-content-col {
-    display: flex;
-    flex-direction: column;
-    gap: clamp(1.4rem, 2.2vw, 1.8rem);
-}
-
-/* Main headline */
-.promise-title {
-    font-family: 'Outfit', system-ui, sans-serif;
-    font-size: clamp(2.2rem, 3.6vw, 3.6rem);
-    font-weight: 800;
-    line-height: 1.1;
-    letter-spacing: -0.04em;
-    color: #2C1B13;
-    margin: 0;
-}
-
-/* Orange italic serif for key phrase */
-.promise-title-italic {
-    font-family: 'Instrument Serif', Georgia, serif;
-    font-style: italic;
-    font-weight: 400;
-    color: #FF6B1A;
-    letter-spacing: -0.02em;
-}
-
-/* Body supporting text */
-.promise-sub {
-    font-family: 'Outfit', sans-serif;
-    font-size: clamp(1.05rem, 1.25vw, 1.16rem);
-    line-height: 1.78;
-    color: #6B584E;
-    margin: 0;
-}
-
-/* Thin orange divider between sub and CTA */
-.promise-divider {
-    width: 40px;
-    height: 2px;
-    background: #FF6B1A;
-    border-radius: 2px;
-    opacity: 0.6;
-}
-
-/* CTA row */
-.promise-cta-row {
-    display: flex;
-    align-items: center;
-    gap: 1.4rem;
-    flex-wrap: wrap;
-    padding-top: 0.2rem;
-}
-
-/* Pill button */
-.promise-cta-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.6rem;
-    font-family: 'Outfit', sans-serif;
-    font-size: 0.95rem;
-    font-weight: 700;
-    letter-spacing: 0.01em;
-    color: #FFFFFF;
-    text-decoration: none;
-    background: #FF6B1A;
-    padding: 0.78rem 1.65rem;
-    border-radius: 100px;
-    box-shadow: 0 6px 22px -4px rgba(255, 107, 26, 0.42);
-    transition: background 0.22s ease, box-shadow 0.22s ease, transform 0.2s cubic-bezier(.16,1,.3,1);
-}
-
-.promise-cta-btn svg {
-    transition: transform 0.22s cubic-bezier(.22,.68,0,1.2);
-}
-
-.promise-cta-btn:hover {
-    background: #E65A00;
-    box-shadow: 0 12px 32px -4px rgba(255, 107, 26, 0.52);
-    transform: translateY(-2px);
-}
-
-.promise-cta-btn:hover svg {
-    transform: translateX(4px);
-}
-
-/* Muted note beside CTA */
-.promise-cta-note {
-    font-family: 'Outfit', sans-serif;
-    font-size: 0.88rem;
-    color: #A08070;
-    font-style: italic;
-}
-
-/* Responsive: stack columns on tablet */
-@media (max-width: 900px) {
-    .promise-grid {
-        grid-template-columns: 1fr;
-        gap: 2.8rem;
-    }
-    .promise-quote-body {
-        font-size: clamp(1.4rem, 3.5vw, 1.9rem);
-        border-bottom: none;
-        padding-bottom: 0;
-    }
-    .promise-quote-col {
-        padding-bottom: 2rem;
-        border-bottom: 1.5px solid #E8E1D8;
-    }
-    .promise-br { display: none; }
-}
-
-
-
-/* ── Background decorative layer ── */
-.promise-bg {
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-}
-
-/* Soft orange radial glow — top-left */
-.promise-bg-glow--1 {
-    position: absolute;
-    top: -120px;
-    left: -80px;
-    width: 520px;
-    height: 520px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(255, 107, 26, 0.14) 0%, transparent 65%);
-}
-
-/* Subtle warm glow — bottom-right */
-.promise-bg-glow--2 {
-    position: absolute;
-    bottom: -80px;
-    right: -100px;
-    width: 440px;
-    height: 440px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(255, 107, 26, 0.07) 0%, transparent 65%);
-}
-
-/* Giant watermark word in the background */
-.promise-bg-word {
-    position: absolute;
-    bottom: -0.15em;
-    right: -0.05em;
-    font-family: 'Outfit', sans-serif;
-    font-size: clamp(9rem, 18vw, 18rem);
-    font-weight: 800;
-    letter-spacing: -0.06em;
-    line-height: 1;
-    color: rgba(255, 255, 255, 0.024);
-    user-select: none;
-    white-space: nowrap;
-}
-
-/* ── Inner centered content ── */
-.promise-inner {
-    position: relative;
-    z-index: 1;
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 0 clamp(1.5rem, 5vw, 3rem);
+    padding: 0 28px;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    gap: clamp(1.6rem, 2.8vw, 2.4rem);
+    gap: 20px;
 }
 
-/* Eyebrow */
+/* ── Eyebrow label ── */
 .promise-eyebrow {
     display: inline-flex;
     align-items: center;
     gap: 0.6rem;
     font-family: 'Outfit', sans-serif;
-    font-size: 0.78rem;
+    font-size: 0.72rem;
     font-weight: 700;
-    letter-spacing: 0.14em;
-    color: #FF6B1A;
+    letter-spacing: 0.2em;
     text-transform: uppercase;
+    color: #FF6B1A;
 }
 
-.promise-eyebrow-dot {
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: #FF6B1A;
-    box-shadow: 0 0 8px rgba(255, 107, 26, 0.7);
-    flex-shrink: 0;
+.promise-eyebrow::before {
+    content: "";
+    display: block;
+    width: 22px;
+    height: 1.5px;
+    border-radius: 2px;
+    background: rgba(255, 107, 26, 0.5);
 }
 
-/* Headline */
+/* ── Compact headline ── */
 .promise-title {
     font-family: 'Outfit', system-ui, sans-serif;
-    font-size: clamp(2.8rem, 5.5vw, 5.2rem);
     font-weight: 800;
-    line-height: 1.06;
-    letter-spacing: -0.045em;
-    color: #F8F3EA;
+    font-size: clamp(2.125rem, 3.4vw, 2.5rem);
+    line-height: 1.16;
+    letter-spacing: -0.025em;
+    color: #2C1B13;
+    max-width: 780px;
     margin: 0;
+    text-wrap: balance;
 }
 
-/* Orange italic serif em */
 .promise-title-italic {
     font-family: 'Instrument Serif', Georgia, serif;
     font-style: italic;
     font-weight: 400;
+    letter-spacing: -0.01em;
     color: #FF6B1A;
-    letter-spacing: -0.02em;
 }
 
-/* Supporting body text */
+/* ── Supporting paragraph ── */
 .promise-sub {
     font-family: 'Outfit', sans-serif;
-    font-size: clamp(1.05rem, 1.3vw, 1.2rem);
-    line-height: 1.76;
-    color: rgba(248, 243, 234, 0.62);
+    font-size: 1.02rem;
+    line-height: 1.72;
+    color: #6B5B4E;
+    max-width: 640px;
     margin: 0;
-    max-width: 68ch;
 }
 
-.promise-br { display: block; }
-
-/* Thin decorative divider */
-.promise-divider {
-    width: 56px;
-    height: 2px;
-    background: linear-gradient(90deg, transparent, #FF6B1A, transparent);
-    border-radius: 2px;
-    opacity: 0.7;
-    margin: 0.4rem 0;
-}
-
-/* ── Quote card — warm cream on dark ── */
-.promise-quote-card {
-    position: relative;
-    background: rgba(251, 249, 245, 0.07);
-    border: 1px solid rgba(248, 243, 234, 0.12);
-    border-radius: 22px;
-    padding: clamp(2rem, 3.5vw, 3rem) clamp(2rem, 4vw, 3.5rem);
-    display: flex;
-    align-items: flex-start;
-    gap: 1.2rem;
-    text-align: left;
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
+/* ── Compact quotation card ── */
+.promise-quote {
     width: 100%;
-    max-width: 760px;
+    max-width: 720px;
+    margin: 0;
+    padding: 22px 24px 22px 26px;
+    background: #FAF7F2;
+    border: 1px solid #EAE3D9;
+    border-left: 3px solid #FF6B1A;
+    border-radius: 12px;
+    text-align: left;
+    display: flex;
+    gap: 0.9rem;
+    align-items: flex-start;
 }
 
-/* Large decorative open-quote */
 .promise-quote-mark {
     font-family: 'Instrument Serif', Georgia, serif;
-    font-size: 5rem;
+    font-size: 2rem;
     line-height: 0.8;
-    color: #FF6B1A;
+    color: rgba(255, 107, 26, 0.5);
     flex-shrink: 0;
-    margin-top: -0.1em;
-    opacity: 0.85;
+    margin-top: 0.12rem;
+    user-select: none;
 }
 
-/* Quote body text */
-.promise-quote-text {
+.promise-quote-body {
     font-family: 'Instrument Serif', Georgia, serif;
     font-style: italic;
-    font-size: clamp(1.2rem, 1.7vw, 1.52rem);
-    line-height: 1.52;
-    color: #F0EAE1;
-    margin: 0;
-    padding-top: 0.3em;
-    letter-spacing: -0.01em;
-}
-
-/* ── CTA row ── */
-.promise-cta-row {
-    display: flex;
-    align-items: center;
-    gap: 1.8rem;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding-top: 0.5rem;
-}
-
-/* Premium solid pill CTA */
-.promise-cta-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.65rem;
-    font-family: 'Outfit', sans-serif;
-    font-size: 1rem;
-    font-weight: 700;
-    letter-spacing: 0.01em;
-    color: #1A0C07;
-    text-decoration: none;
-    background: #FF6B1A;
-    padding: 0.85rem 1.8rem;
-    border-radius: 100px;
-    box-shadow:
-        0 8px 24px -4px rgba(255, 107, 26, 0.5),
-        0 2px 6px rgba(255, 107, 26, 0.3);
-    transition:
-        background 0.22s ease,
-        box-shadow 0.22s ease,
-        transform 0.2s cubic-bezier(.16, 1, .3, 1);
-}
-
-.promise-cta-btn svg {
-    transition: transform 0.22s cubic-bezier(.22, .68, 0, 1.2);
-}
-
-.promise-cta-btn:hover {
-    background: #FF8040;
-    box-shadow:
-        0 14px 36px -4px rgba(255, 107, 26, 0.6),
-        0 4px 12px rgba(255, 107, 26, 0.35);
-    transform: translateY(-2px);
-}
-
-.promise-cta-btn:hover svg {
-    transform: translateX(4px);
-}
-
-/* Subtle note beside button */
-.promise-cta-note {
-    font-family: 'Outfit', sans-serif;
-    font-size: 0.92rem;
-    color: rgba(248, 243, 234, 0.4);
-    font-style: italic;
-}
-
-
-
-/* Full-width two-column layout */
-.promise-layout {
-    position: relative;
-    display: grid;
-    grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
-    gap: clamp(3.5rem, 6vw, 6.5rem);
-    align-items: center;
-    padding: clamp(1rem, 3vw, 2.5rem) 0;
-}
-
-/* Giant decorative background numeral */
-.promise-layout::before {
-    content: '"';
-    position: absolute;
-    top: -0.3em;
-    left: -0.08em;
-    font-family: 'Instrument Serif', Georgia, serif;
-    font-size: clamp(14rem, 22vw, 22rem);
-    font-style: italic;
-    line-height: 1;
-    color: rgba(255, 107, 26, 0.055);
-    pointer-events: none;
-    user-select: none;
-    z-index: 0;
-}
-
-/* Left column: eyebrow + headline */
-.promise-headline-col {
-    position: relative;
-    z-index: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 1.8rem;
-}
-
-/* Decorative arc motif sits bottom-right of headline col */
-.promise-motif {
-    position: absolute;
-    bottom: -50px;
-    right: -10px;
-    width: 180px;
-    height: 180px;
-    color: rgba(255, 107, 26, 0.1);
-    pointer-events: none;
-    user-select: none;
-    z-index: 0;
-}
-
-/* Right column: body + quote panel + link */
-.promise-body-col {
-    position: relative;
-    z-index: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-}
-
-/* Headline — large, tight, editorial */
-.promise-title {
-    font-family: 'Outfit', system-ui, -apple-system, sans-serif;
-    font-size: clamp(2.8rem, 4.8vw, 4.4rem);
-    font-weight: 800;
-    line-height: 1.06;
-    letter-spacing: -0.045em;
+    font-size: 1.12rem;
+    line-height: 1.6;
+    letter-spacing: -0.005em;
     color: #2C1B13;
     margin: 0;
-    position: relative;
-    z-index: 1;
 }
 
-/* Supporting paragraph */
-.promise-sub {
-    font-family: 'Outfit', sans-serif;
-    font-size: clamp(1.08rem, 1.3vw, 1.22rem);
-    line-height: 1.78;
-    color: #6B584E;
-    margin: 0;
-}
-
-/* ── Deep-green editorial quote panel ── */
-.promise-statement-box {
-    position: relative;
-    padding: clamp(2rem, 2.8vw, 2.6rem) clamp(1.8rem, 2.4vw, 2.4rem);
-    background: linear-gradient(140deg, #073D33 0%, #0A473C 55%, #052F27 100%);
-    border-radius: 22px;
-    display: flex;
-    gap: 1.4rem;
-    align-items: flex-start;
-    overflow: hidden;
-    box-shadow:
-        0 20px 50px -12px rgba(7, 61, 51, 0.38),
-        0 4px 16px rgba(7, 61, 51, 0.18);
-}
-
-/* Subtle noise/grid overlay inside quote panel */
-.promise-statement-box::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background-image:
-        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
-    background-size: 28px 28px;
-    pointer-events: none;
-}
-
-/* Orange glowing vertical bar */
-.promise-statement-bar {
-    position: relative;
-    z-index: 1;
-    width: 4px;
-    min-height: 100%;
-    border-radius: 4px;
-    background: linear-gradient(180deg, #FF6B1A 0%, #FFA451 100%);
-    align-self: stretch;
-    flex-shrink: 0;
-    box-shadow: 0 0 16px rgba(255, 107, 26, 0.55);
-}
-
-/* Quote text inside green panel */
-.promise-statement-text {
-    position: relative;
-    z-index: 1;
-    font-family: 'Instrument Serif', Georgia, serif;
-    font-style: italic;
-    font-size: clamp(1.22rem, 1.7vw, 1.55rem);
-    line-height: 1.48;
-    color: #F8F3EA;
-    margin: 0;
-    letter-spacing: -0.01em;
-}
-
-/* Footer row: pill CTA button */
-.promise-footer-row {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    padding-top: 0.25rem;
-}
-
-/* Premium pill CTA */
-.promise-link {
+/* ── Compact text-link CTA ── */
+.promise-cta {
     display: inline-flex;
     align-items: center;
-    gap: 0.7rem;
+    gap: 0.45rem;
     font-family: 'Outfit', sans-serif;
-    font-size: 1rem;
-    font-weight: 700;
-    letter-spacing: 0.01em;
-    color: #FFFFFF;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #FF6B1A;
     text-decoration: none;
-    background: #FF6B1A;
-    padding: 0.75rem 1.5rem;
-    border-radius: 100px;
-    box-shadow: 0 6px 20px -4px rgba(255, 107, 26, 0.45);
-    transition:
-        background 0.25s ease,
-        box-shadow 0.25s ease,
-        transform 0.2s cubic-bezier(.16, 1, .3, 1);
+    padding-bottom: 3px;
+    border-bottom: 1px solid transparent;
+    transition: color 0.25s ease, border-color 0.25s ease;
 }
 
-.promise-link:hover {
-    background: #E65A00;
-    box-shadow: 0 10px 28px -4px rgba(255, 107, 26, 0.55);
-    transform: translateY(-2px);
-}
-
-/* Animated arrow inside CTA */
-.promise-arrow {
-    display: inline-block;
+.promise-cta svg {
     transition: transform 0.25s cubic-bezier(.22, .68, 0, 1.2);
 }
 
-.promise-link:hover .promise-arrow {
-    transform: translateX(5px);
+.promise-cta:hover {
+    color: #E65A00;
+    border-bottom-color: rgba(255, 107, 26, 0.5);
 }
+
+.promise-cta:hover svg {
+    transform: translateX(4px);
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+    .promise-section {
+        padding: 42px 0;
+    }
+    .promise-inner {
+        padding: 0 22px;
+        gap: 18px;
+    }
+    .promise-title {
+        font-size: clamp(1.75rem, 6.5vw, 2rem);
+    }
+    .promise-sub {
+        font-size: 0.98rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .promise-quote {
+        padding: 20px 20px 20px 22px;
+        gap: 0.7rem;
+    }
+    .promise-quote-body {
+        font-size: 1.06rem;
+    }
+}
+
+
+
+
 
 
 /* ==========================================================================
@@ -1303,10 +841,6 @@
         grid-template-columns: 1fr;
         gap: 2.5rem;
     }
-    .promise-layout {
-        grid-template-columns: 1fr;
-        gap: 2.5rem;
-    }
 }
 
 @media (max-width: 768px) {
@@ -1328,13 +862,6 @@
         padding: 2rem 1.6rem;
         min-height: auto;
     }
-    .promise-statement-box {
-        padding: 1.5rem 1.25rem;
-        gap: 1rem;
-    }
-    .promise-motif {
-        display: none;
-    }
 }
 
 /* ==========================================================================
@@ -1343,9 +870,7 @@
 .ab-editorial-section .phil-card,
 .ab-editorial-section .diff-card,
 .ab-editorial-section .founder-info,
-.ab-editorial-section .founder-panel,
-.ab-editorial-section .promise-headline-col,
-.ab-editorial-section .promise-body-col {
+.ab-editorial-section .founder-panel {
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.7s cubic-bezier(.16, 1, .3, 1),
@@ -1357,9 +882,7 @@
 .ab-editorial-section.is-visible .phil-card,
 .ab-editorial-section.is-visible .diff-card,
 .ab-editorial-section.is-visible .founder-info,
-.ab-editorial-section.is-visible .founder-panel,
-.ab-editorial-section.is-visible .promise-headline-col,
-.ab-editorial-section.is-visible .promise-body-col {
+.ab-editorial-section.is-visible .founder-panel {
     opacity: 1;
     transform: translateY(0);
 }
@@ -1376,15 +899,10 @@
 .ab-editorial-section.is-visible .founder-info { transition-delay: 0.08s; }
 .ab-editorial-section.is-visible .founder-panel { transition-delay: 0.22s; }
 
-.ab-editorial-section.is-visible .promise-headline-col { transition-delay: 0.08s; }
-.ab-editorial-section.is-visible .promise-body-col { transition-delay: 0.22s; }
-
 .no-js .phil-card,
 .no-js .diff-card,
 .no-js .founder-info,
-.no-js .founder-panel,
-.no-js .promise-headline-col,
-.no-js .promise-body-col {
+.no-js .founder-panel {
     opacity: 1;
     transform: none;
 }
@@ -1393,11 +911,163 @@
     .ab-editorial-section .phil-card,
     .ab-editorial-section .diff-card,
     .ab-editorial-section .founder-info,
-    .ab-editorial-section .founder-panel,
-    .ab-editorial-section .promise-headline-col,
-    .ab-editorial-section .promise-body-col {
+    .ab-editorial-section .founder-panel {
         opacity: 1 !important;
         transform: none !important;
         transition: none !important;
+    }
+}
+
+/* ==========================================================================
+   SECTION 9 — ABOUT CLOSING CTA (Full-Width)
+   ========================================================================== */
+
+.about-cta-band {
+    position: relative;
+    width: 100%;
+    padding: clamp(5rem, 9vw, 8.5rem) 0;
+    background:
+        radial-gradient(ellipse 75% 65% at 10% 30%, rgba(255, 107, 26, 0.14) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 55% at 88% 70%, rgba(200, 240, 80, 0.08) 0%, transparent 55%),
+        linear-gradient(155deg, #062f29 0%, #073D33 45%, #084038 100%);
+    overflow: hidden;
+    isolation: isolate;
+    text-align: center;
+}
+
+.about-cta-bg {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.about-cta-glow-1 {
+    position: absolute;
+    top: -80px;
+    left: -60px;
+    width: 520px;
+    height: 520px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 107, 26, 0.18) 0%, transparent 65%);
+}
+
+.about-cta-glow-2 {
+    position: absolute;
+    bottom: -100px;
+    right: -60px;
+    width: 460px;
+    height: 460px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(200, 240, 80, 0.10) 0%, transparent 65%);
+}
+
+.about-cta-container {
+    position: relative;
+    z-index: 1;
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 0 clamp(1.5rem, 5vw, 3.5rem);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: clamp(1.4rem, 2.5vw, 2rem);
+}
+
+.about-cta-title {
+    font-family: 'Outfit', system-ui, sans-serif;
+    font-weight: 800;
+    font-size: clamp(2.4rem, 5.5vw, 4.2rem);
+    line-height: 1.08;
+    letter-spacing: -0.035em;
+    color: #F2EFDF;
+    margin: 0;
+}
+
+.about-cta-serif {
+    font-family: 'Playfair Display', 'Georgia', serif;
+    font-style: italic;
+    font-weight: 600;
+    background: linear-gradient(110deg, #C8F050 0%, #e2f97a 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.about-cta-desc {
+    font-size: clamp(1rem, 1.5vw, 1.18rem);
+    line-height: 1.75;
+    color: rgba(242, 239, 223, 0.72);
+    max-width: 56ch;
+    margin: 0;
+}
+
+.about-cta-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 0.6rem;
+}
+
+.about-cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-family: 'Outfit', system-ui, sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 0.9rem 2rem;
+    border-radius: 100px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: transform 0.22s ease, box-shadow 0.22s ease, background 0.22s ease;
+}
+
+.about-cta-btn svg {
+    transition: transform 0.22s ease;
+    flex-shrink: 0;
+}
+
+.about-cta-btn:hover svg {
+    transform: translateX(4px);
+}
+
+.about-cta-btn--primary {
+    background: #FF6B1A;
+    color: #fff;
+    border: none;
+    box-shadow: 0 10px 32px -10px rgba(255, 107, 26, 0.65);
+}
+
+.about-cta-btn--primary:hover {
+    background: #ff7e36;
+    transform: translateY(-2px);
+    box-shadow: 0 18px 42px -10px rgba(255, 107, 26, 0.75);
+}
+
+.about-cta-btn--secondary {
+    background: rgba(255, 255, 255, 0.10);
+    color: #F2EFDF;
+    border: 1px solid rgba(242, 239, 223, 0.28);
+    backdrop-filter: blur(6px);
+}
+
+.about-cta-btn--secondary:hover {
+    background: rgba(255, 255, 255, 0.18);
+    border-color: rgba(242, 239, 223, 0.50);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 28px -8px rgba(0, 0, 0, 0.30);
+}
+
+@media (max-width: 640px) {
+    .about-cta-actions {
+        flex-direction: column;
+        width: 100%;
+    }
+    .about-cta-btn {
+        width: 100%;
+        justify-content: center;
     }
 }

@@ -15,131 +15,751 @@
   <link rel="stylesheet" href="../style.css">
   <link rel="stylesheet" href="../responsive.css">
   <link rel="stylesheet" href="../pages.css">
+  <link rel="stylesheet" href="../community.css">
 </head>
 <body id="top" class="pg-body">
 <main class="pg-main">
 
-  <!-- Section 1: Hero -->
-  <header class="pg-hero">
-    <div class="pg-container pg-hero-inner">
-      <span class="pg-eyebrow">&#10022; Mentors &amp; Community</span>
-      <h1 class="pg-hero-title">Great ideas grow faster with the <em>right people around them.</em></h1>
-      <p class="pg-hero-lead">Building Dreams brings together students, aspiring founders, experienced entrepreneurs, operators, educators and industry experts to create an ecosystem where ideas can move forward.</p>
-      <p class="pg-hero-sub">Whether you are looking for guidance, sharing your experience or building alongside others, there is a place for you in the Building Dreams community.</p>
-      <div class="pg-cta-row">
-        <a href="#join" class="pg-btn pg-btn--primary">Find Your Community</a>
-        <a href="#become-a-mentor" class="pg-btn pg-btn--ghost">Become a Mentor</a>
+  <!-- Section 1: Hero — Premium 2-Column Ecosystem Experience -->
+  <header class="comm-hero" id="community-hero" aria-labelledby="comm-hero-title">
+    <div class="comm-hero-bg" aria-hidden="true">
+      <div class="comm-hero-grid"></div>
+      <div class="comm-hero-glow"></div>
+    </div>
+
+    <div class="comm-container comm-hero-inner">
+      <!-- Left Column: Editorial Headline, Story & Polished CTAs -->
+      <div class="comm-hero-copy">
+        <div class="comm-eyebrow">
+          <span class="comm-eyebrow-accent" aria-hidden="true"></span>
+          <span>MENTORS &amp; COMMUNITY</span>
+        </div>
+
+        <h1 class="comm-hero-title" id="comm-hero-title">
+          Great ideas grow faster with the <em class="comm-italic">right people around them.</em>
+        </h1>
+
+        <p class="comm-hero-lead">
+          Building Dreams brings together students, aspiring founders, experienced entrepreneurs, operators, educators and industry experts to create an ecosystem where ideas can move forward.
+        </p>
+
+        <p class="comm-hero-sub">
+          Whether you are looking for guidance, sharing your experience or building alongside others, there is a place for you in the Building Dreams community.
+        </p>
+
+        <div class="comm-cta-row">
+          <a href="#join" class="comm-btn comm-btn--primary">
+            <span>Find Your Community</span>
+            <svg class="comm-btn-arrow" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+          <a href="#become-a-mentor" class="comm-btn comm-btn--ghost">
+            <span>Become a Mentor</span>
+          </a>
+        </div>
+
+        <!-- Micro Trust / Ecosystem Indicator -->
+        <div class="comm-hero-trust" aria-label="Ecosystem connections">
+          <div class="comm-trust-avatars" aria-hidden="true">
+            <span class="comm-trust-avatar comm-trust-avatar--1">S</span>
+            <span class="comm-trust-avatar comm-trust-avatar--2">F</span>
+            <span class="comm-trust-avatar comm-trust-avatar--3">M</span>
+            <span class="comm-trust-avatar comm-trust-avatar--4">U</span>
+          </div>
+          <span>Connecting across schools, campuses &amp; ventures</span>
+        </div>
+      </div>
+
+      <!-- Right Column: Interactive Connected Ecosystem Network Graphic -->
+      <div class="comm-hero-visual" aria-label="Building Dreams Community Network">
+        <div class="comm-network-card">
+          <div class="comm-network-badge">
+            <span class="comm-network-badge-dot"></span>
+            <span>Active Ecosystem</span>
+          </div>
+
+          <svg class="comm-network-svg" viewBox="0 0 440 310" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Interactive community network diagram">
+            <defs>
+              <linearGradient id="comm-hub-grad" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#FF6B1A"/>
+                <stop offset="100%" stop-color="#073D33"/>
+              </linearGradient>
+              <radialGradient id="comm-pulse-glow" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#FF6B1A" stop-opacity="0.25"/>
+                <stop offset="100%" stop-color="#FF6B1A" stop-opacity="0"/>
+              </radialGradient>
+            </defs>
+
+            <!-- Outer Concentric Blueprint Rings -->
+            <circle cx="220" cy="155" r="130" stroke="#073D33" stroke-opacity="0.08" stroke-dasharray="4 6"/>
+            <circle cx="220" cy="155" r="85" stroke="#073D33" stroke-opacity="0.12"/>
+            <circle cx="220" cy="155" r="42" fill="url(#comm-pulse-glow)"/>
+
+            <!-- Connecting Ecosystem Pathways (Curved Beziers) -->
+            <!-- Link: Hub to Dreamers (Node 1) -->
+            <path id="link-dreamers" data-link="comm-hub comm-node-dreamers" d="M220 155 Q145 120 95 85" stroke="#073D33" stroke-opacity="0.35" stroke-width="1.5" class="comm-link-pulse"/>
+            
+            <!-- Link: Hub to Builders (Node 2) -->
+            <path id="link-builders" data-link="comm-hub comm-node-builders" d="M220 155 Q295 115 345 85" stroke="#073D33" stroke-opacity="0.35" stroke-width="1.5" class="comm-link-pulse"/>
+            
+            <!-- Link: Hub to Institutions (Node 3) -->
+            <path id="link-institutions" data-link="comm-hub comm-node-institutions" d="M220 155 Q220 95 220 50" stroke="#073D33" stroke-opacity="0.35" stroke-width="1.5" class="comm-link-pulse"/>
+            
+            <!-- Link: Hub to Mentors (Node 4) -->
+            <path id="link-mentors" data-link="comm-hub comm-node-mentors" d="M220 155 Q145 195 95 230" stroke="#073D33" stroke-opacity="0.35" stroke-width="1.5" class="comm-link-pulse"/>
+            
+            <!-- Link: Hub to Founders (Node 5) -->
+            <path id="link-founders" data-link="comm-hub comm-node-founders" d="M220 155 Q295 200 345 230" stroke="#073D33" stroke-opacity="0.35" stroke-width="1.5" class="comm-link-pulse"/>
+
+            <!-- Peripheral Cross-Connections (Peer Collaboration) -->
+            <path data-link="comm-node-dreamers comm-node-builders" d="M95 85 Q220 30 345 85" stroke="#FF6B1A" stroke-opacity="0.22" stroke-width="1.2" stroke-dasharray="3 4"/>
+            <path data-link="comm-node-mentors comm-node-founders" d="M95 230 Q220 280 345 230" stroke="#FF6B1A" stroke-opacity="0.22" stroke-width="1.2" stroke-dasharray="3 4"/>
+            <path data-link="comm-node-dreamers comm-node-mentors" d="M95 85 Q65 155 95 230" stroke="#073D33" stroke-opacity="0.15" stroke-width="1" stroke-dasharray="2 4"/>
+            <path data-link="comm-node-builders comm-node-founders" d="M345 85 Q375 155 345 230" stroke="#073D33" stroke-opacity="0.15" stroke-width="1" stroke-dasharray="2 4"/>
+
+            <!-- Central Hub Node -->
+            <g id="comm-hub" class="comm-node" data-role="hub" tabindex="0" role="button" aria-label="Building Dreams Core Community Hub">
+              <circle cx="220" cy="155" r="28" fill="#FFFFFF" stroke="#FF6B1A" stroke-width="2.5"/>
+              <circle cx="220" cy="155" r="20" fill="#073D33"/>
+              <!-- BD Sparkle / Logo symbol in Center -->
+              <path d="M220 144 L222.5 151.5 L230 155 L222.5 158.5 L220 166 L217.5 158.5 L210 155 L217.5 151.5 Z" fill="#FF6B1A"/>
+              <text x="220" y="196" text-anchor="middle" font-family="'Outfit', sans-serif" font-size="10.5" font-weight="800" fill="#2C1B13" letter-spacing="0.04em">COMMUNITY HUB</text>
+            </g>
+
+            <!-- Node 1: Dreamers (Top Left) -->
+            <g id="comm-node-dreamers" class="comm-node" data-role="dreamers" tabindex="0" role="button" aria-label="Dreamers: School students discovering problems">
+              <circle cx="95" cy="85" r="20" fill="#FAF7F2" stroke="#E7DFD5" stroke-width="1.8"/>
+              <circle cx="95" cy="85" r="14" fill="#FFFFFF"/>
+              <!-- Compass / Discovery Icon -->
+              <circle cx="95" cy="85" r="6" stroke="#FF6B1A" stroke-width="1.5" fill="none"/>
+              <path d="M93 87L97 83" stroke="#FF6B1A" stroke-width="1.5" stroke-linecap="round"/>
+              <text x="95" y="117" text-anchor="middle" font-family="'Outfit', sans-serif" font-size="9.5" font-weight="700" fill="#2C1B13">Dreamers</text>
+              <text x="95" y="128" text-anchor="middle" font-family="'Outfit', sans-serif" font-size="7.5" font-weight="600" fill="#8C7D73">Schools</text>
+            </g>
+
+            <!-- Node 2: Student Builders (Top Right) -->
+            <g id="comm-node-builders" class="comm-node" data-role="builders" tabindex="0" role="button" aria-label="Student Builders: University cohorts developing ventures">
+              <circle cx="345" cy="85" r="20" fill="#FAF7F2" stroke="#E7DFD5" stroke-width="1.8"/>
+              <circle cx="345" cy="85" r="14" fill="#FFFFFF"/>
+              <!-- Prototype / Tool Icon -->
+              <path d="M341 81L349 89M343 79L339 83L347 91L351 87Z" stroke="#073D33" stroke-width="1.3" stroke-linejoin="round"/>
+              <text x="345" y="117" text-anchor="middle" font-family="'Outfit', sans-serif" font-size="9.5" font-weight="700" fill="#2C1B13">Builders</text>
+              <text x="345" y="128" text-anchor="middle" font-family="'Outfit', sans-serif" font-size="7.5" font-weight="600" fill="#8C7D73">Universities</text>
+            </g>
+
+            <!-- Node 3: Institutional Partners (Top Center) -->
+            <g id="comm-node-institutions" class="comm-node" data-role="institutions" tabindex="0" role="button" aria-label="Institutions: Campuses and incubators">
+              <circle cx="220" cy="50" r="18" fill="#FAF7F2" stroke="#E7DFD5" stroke-width="1.8"/>
+              <circle cx="220" cy="50" r="12" fill="#FFFFFF"/>
+              <!-- Campus / Pillars Icon -->
+              <path d="M214 54V48M220 54V48M226 54V48M212 48L220 44L228 48M211 55H229" stroke="#FF6B1A" stroke-width="1.2" stroke-linecap="round"/>
+              <text x="220" y="24" text-anchor="middle" font-family="'Outfit', sans-serif" font-size="9" font-weight="700" fill="#073D33">Institutions</text>
+            </g>
+
+            <!-- Node 4: Mentors (Bottom Left) -->
+            <g id="comm-node-mentors" class="comm-node" data-role="mentors" tabindex="0" role="button" aria-label="Mentors: Industry advisors and guides">
+              <circle cx="95" cy="230" r="20" fill="#FAF7F2" stroke="#E7DFD5" stroke-width="1.8"/>
+              <circle cx="95" cy="230" r="14" fill="#FFFFFF"/>
+              <!-- Lightbulb / Guidance Icon -->
+              <circle cx="95" cy="228" r="4.5" stroke="#FF6B1A" stroke-width="1.3" fill="none"/>
+              <path d="M93.5 234H96.5" stroke="#FF6B1A" stroke-width="1.3" stroke-linecap="round"/>
+              <text x="95" y="262" text-anchor="middle" font-family="'Outfit', sans-serif" font-size="9.5" font-weight="700" fill="#2C1B13">Mentors</text>
+              <text x="95" y="273" text-anchor="middle" font-family="'Outfit', sans-serif" font-size="7.5" font-weight="600" fill="#8C7D73">Advisors</text>
+            </g>
+
+            <!-- Node 5: Founders (Bottom Right) -->
+            <g id="comm-node-founders" class="comm-node" data-role="founders" tabindex="0" role="button" aria-label="Founders: Early-stage venture builders">
+              <circle cx="345" cy="230" r="20" fill="#FAF7F2" stroke="#E7DFD5" stroke-width="1.8"/>
+              <circle cx="345" cy="230" r="14" fill="#FFFFFF"/>
+              <!-- Rocket / Growth Icon -->
+              <path d="M345 224L349 228C349 232 346 235 342 235L341 234L341 231L345 224Z" stroke="#073D33" stroke-width="1.3" stroke-linejoin="round"/>
+              <text x="345" y="262" text-anchor="middle" font-family="'Outfit', sans-serif" font-size="9.5" font-weight="700" fill="#2C1B13">Founders</text>
+              <text x="345" y="273" text-anchor="middle" font-family="'Outfit', sans-serif" font-size="7.5" font-weight="600" fill="#8C7D73">Ventures</text>
+            </g>
+          </svg>
+
+          <div class="comm-network-footer">
+            <span id="comm-network-stat-text">Hover nodes to explore connections</span>
+            <span class="comm-stat-accent">5 Collaborative Roles</span>
+          </div>
+        </div>
       </div>
     </div>
   </header>
 
-  <!-- Section 2: Meet the community -->
-  <section class="pg-section pg-section--ivory">
-    <div class="pg-container">
-      <div class="pg-head pg-head--center">
-        <span class="pg-eyebrow">Meet the community</span>
-        <h2 class="pg-h2">Different experiences. One shared belief in <em>building.</em></h2>
+  <!-- Section 2: Meet the community — Balanced 3+2 Editorial Grid -->
+  <section class="comm-community-section" id="meet-the-community" aria-labelledby="comm-community-title">
+    <div class="comm-container">
+      <div class="comm-section-head">
+        <div class="comm-eyebrow">
+          <span class="comm-eyebrow-accent" aria-hidden="true"></span>
+          <span>MEET THE COMMUNITY</span>
+        </div>
+        <h2 class="comm-section-title" id="comm-community-title">
+          Different experiences. One shared belief in <em class="comm-italic">building.</em>
+        </h2>
       </div>
-      <div class="pg-grid pg-grid--3">
-        <article class="pg-card pg-card--hover">
-          <span class="pg-card-icon" aria-hidden="true">&#9737;</span>
-          <h3 class="pg-card-title">Dreamers</h3>
-          <p class="pg-card-text">School students discovering problems, exploring ideas and learning how to create solutions.</p>
-        </article>
-        <article class="pg-card pg-card--hover">
-          <span class="pg-card-icon" aria-hidden="true">&#9998;</span>
-          <h3 class="pg-card-title">Student Builders</h3>
-          <p class="pg-card-text">University students experimenting, collaborating and developing early ventures.</p>
-        </article>
-        <article class="pg-card pg-card--hover">
-          <span class="pg-card-icon" aria-hidden="true">&#9881;</span>
-          <h3 class="pg-card-title">Founders</h3>
-          <p class="pg-card-text">Entrepreneurs working through the challenges of building products, finding customers and growing businesses.</p>
-        </article>
-        <article class="pg-card pg-card--hover">
-          <span class="pg-card-icon" aria-hidden="true">&#10022;</span>
-          <h3 class="pg-card-title">Mentors</h3>
-          <p class="pg-card-text">People who share practical knowledge, challenge assumptions and help others navigate their journey.</p>
-        </article>
-        <article class="pg-card pg-card--hover">
-          <span class="pg-card-icon" aria-hidden="true">&#9873;</span>
-          <h3 class="pg-card-title">Institutional Partners</h3>
-          <p class="pg-card-text">Schools, universities, incubators and organisations building opportunities for the next generation.</p>
-        </article>
-      </div>
-    </div>
-  </section>
 
-  <!-- Section 3: The mentor network -->
-  <section class="pg-section">
-    <div class="pg-container">
-      <div class="pg-head">
-        <span class="pg-eyebrow">The mentor network</span>
-        <h2 class="pg-h2">Experience that makes a <em>difference.</em></h2>
-        <p class="pg-sub">Entrepreneurship often requires knowledge that goes beyond a textbook. A mentor can help a founder understand a market, question a business model, improve a product or avoid an unnecessary detour. We aim to bring together mentors across:</p>
-      </div>
-      <ul class="pg-list">
-        <li>Startup founding and leadership.</li>
-        <li>Product management and technology.</li>
-        <li>Marketing, branding and customer acquisition.</li>
-        <li>Sales, partnerships and distribution.</li>
-        <li>Finance, accounting and business operations.</li>
-        <li>Legal and compliance fundamentals.</li>
-        <li>Fundraising and investor readiness.</li>
-        <li>Industry-specific knowledge.</li>
-        <li>Career and entrepreneurial development.</li>
-      </ul>
-      <p class="pg-sub" style="margin-top:1.8rem;">Mentors are matched to the needs and stage of a program wherever possible.</p>
-    </div>
-  </section>
-
-  <!-- Section 4: Become a mentor -->
-  <section class="pg-section pg-section--tint" id="become-a-mentor">
-    <div class="pg-container">
-      <div class="pg-head">
-        <span class="pg-eyebrow">Become a mentor</span>
-        <h2 class="pg-h2">Your experience could change someone&rsquo;s <em>trajectory.</em></h2>
-        <p class="pg-sub">You don&rsquo;t need to commit to running an entire program to make a difference. You might lead a workshop, offer a focused mentoring session, review a pitch, share an industry perspective or help a founder think through a specific challenge. As a Building Dreams mentor, you may contribute through:</p>
-      </div>
-      <ul class="pg-list">
-        <li>Guest sessions and masterclasses.</li>
-        <li>Founder office hours.</li>
-        <li>Product and business reviews.</li>
-        <li>Pitch feedback.</li>
-        <li>Industry introductions where appropriate.</li>
-        <li>Student project reviews.</li>
-        <li>Demo days and showcase events.</li>
-      </ul>
-      <p class="pg-sub" style="margin:1.8rem 0 2rem;">We value mentors who are practical, constructive, respectful and willing to share lessons from both successes and setbacks.</p>
-      <div class="pg-cta-row">
-        <a href="../apply/" class="pg-btn pg-btn--primary">Apply to Become a Mentor</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Section 5: Join the community -->
-  <section class="pg-section pg-section--ivory" id="join">
-    <div class="pg-container">
-      <div class="pg-head">
-        <span class="pg-eyebrow">Join the community</span>
-        <h2 class="pg-h2">Your next breakthrough could start with a <em>conversation.</em></h2>
-        <p class="pg-sub">Join a growing community of people who believe in curiosity, initiative and the power of building. Receive updates on new cohorts, events, founder opportunities, workshops and community initiatives.</p>
-      </div>
-      <form class="pg-form" data-demo-form novalidate>
-        <div class="pg-form-fields">
-          <div class="pg-form-grid">
-            <div class="pg-field">
-              <label class="pg-label" for="community-name">Name</label>
-              <input class="pg-input" type="text" id="community-name" name="name" autocomplete="name">
+      <div class="comm-cards-grid">
+        <!-- Card 01: Dreamers -->
+        <a href="../dreamers-lab/" class="comm-card" aria-label="Dreamers — School students discovering problems and exploring ideas">
+          <div class="comm-card-accent" aria-hidden="true"></div>
+          <div>
+            <div class="comm-card-head">
+              <div class="comm-card-icon-box" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
+                </svg>
+              </div>
+              <span class="comm-card-step">Pillar 01</span>
             </div>
-            <div class="pg-field">
-              <label class="pg-label" for="community-email">Email</label>
-              <input class="pg-input" type="email" id="community-email" name="email" autocomplete="email">
+            <div class="comm-card-body">
+              <h3 class="comm-card-title">Dreamers</h3>
+              <p class="comm-card-desc">School students discovering problems, exploring ideas and learning how to create solutions.</p>
             </div>
+          </div>
+          <div class="comm-card-footer">
+            <span class="comm-card-link-text">Explore Dreamers Lab</span>
+            <svg class="comm-card-arrow" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+        </a>
+
+        <!-- Card 02: Student Builders -->
+        <a href="../student-entrepreneurs/" class="comm-card" aria-label="Student Builders — University students experimenting and developing ventures">
+          <div class="comm-card-accent" aria-hidden="true"></div>
+          <div>
+            <div class="comm-card-head">
+              <div class="comm-card-icon-box" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                  <polyline points="2 17 12 22 22 17"></polyline>
+                  <polyline points="2 12 12 17 22 12"></polyline>
+                </svg>
+              </div>
+              <span class="comm-card-step">Pillar 02</span>
+            </div>
+            <div class="comm-card-body">
+              <h3 class="comm-card-title">Student Builders</h3>
+              <p class="comm-card-desc">University students experimenting, collaborating and developing early ventures.</p>
+            </div>
+          </div>
+          <div class="comm-card-footer">
+            <span class="comm-card-link-text">Explore Student Pathways</span>
+            <svg class="comm-card-arrow" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+        </a>
+
+        <!-- Card 03: Founders -->
+        <a href="../apply/" class="comm-card" aria-label="Founders — Entrepreneurs building products and growing businesses">
+          <div class="comm-card-accent" aria-hidden="true"></div>
+          <div>
+            <div class="comm-card-head">
+              <div class="comm-card-icon-box" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"></path>
+                  <path d="M12 15l-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"></path>
+                  <path d="M9 12H4s.55-3.03 2-4.5c1.62-1.63 5-2 5-2"></path>
+                  <path d="M15 15v5s3.03-.55 4.5-2c1.63-1.62 2-5 2-5"></path>
+                </svg>
+              </div>
+              <span class="comm-card-step">Pillar 03</span>
+            </div>
+            <div class="comm-card-body">
+              <h3 class="comm-card-title">Founders</h3>
+              <p class="comm-card-desc">Entrepreneurs working through the challenges of building products, finding customers and growing businesses.</p>
+            </div>
+          </div>
+          <div class="comm-card-footer">
+            <span class="comm-card-link-text">Build Your Venture</span>
+            <svg class="comm-card-arrow" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+        </a>
+
+        <!-- Row 2: 2 Centered Balanced Cards -->
+        <div class="comm-cards-row-2">
+          <!-- Card 04: Mentors -->
+          <a href="#become-a-mentor" class="comm-card" aria-label="Mentors — People who share practical knowledge and challenge assumptions">
+            <div class="comm-card-accent" aria-hidden="true"></div>
+            <div>
+              <div class="comm-card-head">
+                <div class="comm-card-icon-box" aria-hidden="true">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M9 18h6"></path>
+                    <path d="M10 22h4"></path>
+                    <path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"></path>
+                  </svg>
+                </div>
+                <span class="comm-card-step">Pillar 04</span>
+              </div>
+              <div class="comm-card-body">
+                <h3 class="comm-card-title">Mentors</h3>
+                <p class="comm-card-desc">People who share practical knowledge, challenge assumptions and help others navigate their journey.</p>
+              </div>
+            </div>
+            <div class="comm-card-footer">
+              <span class="comm-card-link-text">Share Your Experience</span>
+              <svg class="comm-card-arrow" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+          </a>
+
+          <!-- Card 05: Institutional Partners -->
+          <a href="../universities/" class="comm-card" aria-label="Institutional Partners — Schools, universities, incubators and organisations">
+            <div class="comm-card-accent" aria-hidden="true"></div>
+            <div>
+              <div class="comm-card-head">
+                <div class="comm-card-icon-box" aria-hidden="true">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M3 21h18"></path>
+                    <path d="M5 21V7l8-4 8 4v14"></path>
+                    <path d="M9 10a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v11H9V10z"></path>
+                  </svg>
+                </div>
+                <span class="comm-card-step">Pillar 05</span>
+              </div>
+              <div class="comm-card-body">
+                <h3 class="comm-card-title">Institutional Partners</h3>
+                <p class="comm-card-desc">Schools, universities, incubators and organisations building opportunities for the next generation.</p>
+              </div>
+            </div>
+            <div class="comm-card-footer">
+              <span class="comm-card-link-text">Partner With Us</span>
+              <svg class="comm-card-arrow" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3: The mentor network — Two-Column Directory Layout -->
+  <section class="comm-mentor-section" id="mentor-network" aria-labelledby="comm-mentor-title">
+    <div class="comm-container comm-mentor-inner">
+      <!-- Left Column: Editorial Headline, Context & Matching Note -->
+      <div class="comm-mentor-left">
+        <div class="comm-eyebrow">
+          <span class="comm-eyebrow-accent" aria-hidden="true"></span>
+          <span>THE MENTOR NETWORK</span>
+        </div>
+
+        <h2 class="comm-mentor-title" id="comm-mentor-title">
+          Experience that makes a <em class="comm-italic">difference.</em>
+        </h2>
+
+        <p class="comm-mentor-intro">
+          Entrepreneurship often requires knowledge that goes beyond a textbook. A mentor can help a founder understand a market, question a business model, improve a product or avoid an unnecessary detour. We aim to bring together mentors across:
+        </p>
+
+        <!-- Matching Note Callout -->
+        <div class="comm-matching-box">
+          <div class="comm-matching-icon" aria-hidden="true">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 6L9 17l-5-5"></path>
+            </svg>
+          </div>
+          <div class="comm-matching-text">
+            <strong>Stage-Aligned Match:</strong> Mentors are matched to the needs and stage of a program wherever possible.
+          </div>
+        </div>
+
+        <!-- Contextual CTA to Become a Mentor -->
+        <a href="#become-a-mentor" class="comm-mentor-cta">
+          <span>Become a Mentor</span>
+          <svg class="comm-mentor-cta-arrow" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+
+      <!-- Right Column: 9 Expertise Tiles in Refined 2-Col Grid -->
+      <div class="comm-expertise-directory" role="region" aria-label="Mentor Areas of Expertise">
+        <div class="comm-expertise-grid">
+          <!-- 1 -->
+          <div class="comm-expertise-tile">
+            <div class="comm-expertise-icon-box" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+              </svg>
+            </div>
+            <span class="comm-expertise-label">Startup founding and leadership</span>
+          </div>
+
+          <!-- 2 -->
+          <div class="comm-expertise-tile">
+            <div class="comm-expertise-icon-box" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                <line x1="8" y1="21" x2="16" y2="21"></line>
+                <line x1="12" y1="17" x2="12" y2="21"></line>
+              </svg>
+            </div>
+            <span class="comm-expertise-label">Product management and technology</span>
+          </div>
+
+          <!-- 3 -->
+          <div class="comm-expertise-tile">
+            <div class="comm-expertise-icon-box" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+              </svg>
+            </div>
+            <span class="comm-expertise-label">Marketing, branding and customer acquisition</span>
+          </div>
+
+          <!-- 4 -->
+          <div class="comm-expertise-tile">
+            <div class="comm-expertise-icon-box" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="9" cy="21" r="1"></circle>
+                <circle cx="20" cy="21" r="1"></circle>
+                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+              </svg>
+            </div>
+            <span class="comm-expertise-label">Sales, partnerships and distribution</span>
+          </div>
+
+          <!-- 5 -->
+          <div class="comm-expertise-tile">
+            <div class="comm-expertise-icon-box" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="12" y1="1" x2="12" y2="23"></line>
+                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+              </svg>
+            </div>
+            <span class="comm-expertise-label">Finance, accounting and business operations</span>
+          </div>
+
+          <!-- 6 -->
+          <div class="comm-expertise-tile">
+            <div class="comm-expertise-icon-box" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              </svg>
+            </div>
+            <span class="comm-expertise-label">Legal and compliance fundamentals</span>
+          </div>
+
+          <!-- 7 -->
+          <div class="comm-expertise-tile">
+            <div class="comm-expertise-icon-box" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 20V10M12 20V4M6 20v-6"></path>
+              </svg>
+            </div>
+            <span class="comm-expertise-label">Fundraising and investor readiness</span>
+          </div>
+
+          <!-- 8 -->
+          <div class="comm-expertise-tile">
+            <div class="comm-expertise-icon-box" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="2" y1="12" x2="22" y2="12"></line>
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+              </svg>
+            </div>
+            <span class="comm-expertise-label">Industry-specific knowledge</span>
+          </div>
+
+          <!-- 9 -->
+          <div class="comm-expertise-tile comm-expertise-tile--full">
+            <div class="comm-expertise-icon-box" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                <circle cx="8.5" cy="7" r="4"></circle>
+                <polyline points="17 11 19 13 23 9"></polyline>
+              </svg>
+            </div>
+            <span class="comm-expertise-label">Career and entrepreneurial development</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 4: Become a mentor — Sophisticated 2-Column Experience -->
+  <section class="comm-mentor-apply-section" id="become-a-mentor" aria-labelledby="mentor-apply-title">
+    <div class="comm-container comm-mentor-apply-grid">
+      <!-- Left Column: Editorial Content, 7 Opportunities & Ethos -->
+      <div class="comm-mentor-apply-left">
+        <div class="comm-eyebrow">
+          <span class="comm-eyebrow-accent" aria-hidden="true"></span>
+          <span>BECOME A MENTOR</span>
+        </div>
+
+        <h2 class="comm-mentor-apply-title" id="mentor-apply-title">
+          Your experience could change someone&rsquo;s <em class="comm-italic">trajectory.</em>
+        </h2>
+
+        <p class="comm-mentor-apply-desc">
+          You don&rsquo;t need to commit to running an entire program to make a difference. You might lead a workshop, offer a focused mentoring session, review a pitch, share an industry perspective or help a founder think through a specific challenge. As a Building Dreams mentor, you may contribute through:
+        </p>
+
+        <!-- 7 Opportunities in 2-Column Desktop Grid -->
+        <div class="comm-opp-grid" role="list" aria-label="Mentoring contribution pathways">
+          <div class="comm-opp-item" role="listitem">
+            <span class="comm-opp-icon" aria-hidden="true">
+              <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            <span>Guest sessions &amp; masterclasses</span>
+          </div>
+          <div class="comm-opp-item" role="listitem">
+            <span class="comm-opp-icon" aria-hidden="true">
+              <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            <span>Founder office hours</span>
+          </div>
+          <div class="comm-opp-item" role="listitem">
+            <span class="comm-opp-icon" aria-hidden="true">
+              <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            <span>Product &amp; business reviews</span>
+          </div>
+          <div class="comm-opp-item" role="listitem">
+            <span class="comm-opp-icon" aria-hidden="true">
+              <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            <span>Pitch feedback &amp; refinement</span>
+          </div>
+          <div class="comm-opp-item" role="listitem">
+            <span class="comm-opp-icon" aria-hidden="true">
+              <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            <span>Industry introductions</span>
+          </div>
+          <div class="comm-opp-item" role="listitem">
+            <span class="comm-opp-icon" aria-hidden="true">
+              <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            <span>Student project reviews</span>
+          </div>
+          <div class="comm-opp-item" role="listitem" style="grid-column: 1 / -1;">
+            <span class="comm-opp-icon" aria-hidden="true">
+              <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            <span>Demo days &amp; cohort showcase events</span>
+          </div>
+        </div>
+
+        <p class="comm-mentor-ethos">
+          We value mentors who are practical, constructive, respectful and willing to share lessons from both successes and setbacks.
+        </p>
+
+        <div class="comm-cta-row" style="margin-bottom:0;">
+          <a href="../apply/" class="comm-btn comm-btn--primary">
+            <span>Apply to Become a Mentor</span>
+            <svg class="comm-btn-arrow" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Right Column: Premium Visual Frame & Supporting Panel -->
+      <div class="comm-mentor-visual-frame" aria-label="Mentorship in action">
+        <div class="comm-mentor-img-wrap">
+          <img src="../assets/mentor-collaboration.jpg" alt="Experienced mentor collaborating with startup founders in a workshop studio" class="comm-mentor-img" loading="lazy" width="600" height="450">
+        </div>
+        <div class="comm-mentor-panel">
+          <div class="comm-mentor-panel-top">
+            <p class="comm-mentor-panel-text">&ldquo;Share what you know. Shape what comes next.&rdquo;</p>
+            <span class="comm-mentor-panel-badge">Ecosystem</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 5: Community guidelines — Full-Width Editorial Section -->
+  <section class="comm-guidelines-section" id="community-guidelines" aria-labelledby="comm-guidelines-title">
+    <div class="comm-container">
+      <div class="comm-guidelines-head">
+        <div class="comm-eyebrow" style="justify-content:center;">
+          <span class="comm-eyebrow-accent" aria-hidden="true"></span>
+          <span>COMMUNITY GUIDELINES</span>
+        </div>
+
+        <h2 class="comm-guidelines-title" id="comm-guidelines-title">
+          Building Dreams is a place to <em class="comm-italic">build together.</em>
+        </h2>
+
+        <p class="comm-guidelines-intro">
+          Building Dreams is intended to be a constructive environment where people can ask questions, exchange ideas, share feedback and learn from one another. We expect community members to:
+        </p>
+      </div>
+
+      <div class="comm-guidelines-grid" role="list" aria-label="Community principles and expectations">
+        <!-- 1 -->
+        <div class="comm-guideline-item" role="listitem">
+          <span class="comm-guideline-check" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+          </span>
+          <span>Treat others with respect.</span>
+        </div>
+
+        <!-- 2 -->
+        <div class="comm-guideline-item" role="listitem">
+          <span class="comm-guideline-check" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+          </span>
+          <span>Give honest, constructive feedback.</span>
+        </div>
+
+        <!-- 3 -->
+        <div class="comm-guideline-item" role="listitem">
+          <span class="comm-guideline-check" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+          </span>
+          <span>Respect confidential business information.</span>
+        </div>
+
+        <!-- 4 -->
+        <div class="comm-guideline-item" role="listitem">
+          <span class="comm-guideline-check" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+          </span>
+          <span>Credit original work and ideas.</span>
+        </div>
+
+        <!-- 5 -->
+        <div class="comm-guideline-item" role="listitem">
+          <span class="comm-guideline-check" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+          </span>
+          <span>Avoid misleading claims &amp; unsolicited promotions.</span>
+        </div>
+
+        <!-- 6 -->
+        <div class="comm-guideline-item" role="listitem">
+          <span class="comm-guideline-check" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+          </span>
+          <span>Honour agreed commitments.</span>
+        </div>
+
+        <!-- 7 -->
+        <div class="comm-guideline-item comm-guideline-item--full" role="listitem">
+          <span class="comm-guideline-check" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+          </span>
+          <span>Respect student privacy and safeguarding requirements.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 6: Join the community — Conversion-Focused 2-Column Experience -->
+  <section class="comm-join-section" id="join" aria-labelledby="comm-join-title">
+    <div class="comm-container comm-join-grid">
+      <!-- Left Column: Value Proposition & 3 Benefits -->
+      <div class="comm-join-left">
+        <div class="comm-eyebrow">
+          <span class="comm-eyebrow-accent" aria-hidden="true"></span>
+          <span>JOIN THE COMMUNITY</span>
+        </div>
+
+        <h2 class="comm-join-title" id="comm-join-title">
+          Your next breakthrough could start with a <em class="comm-italic">conversation.</em>
+        </h2>
+
+        <p class="comm-join-lead">
+          Join a growing community of people who believe in curiosity, initiative and the power of building. Receive updates on new cohorts, events, founder opportunities, workshops and community initiatives.
+        </p>
+
+        <!-- 3 Benefit Pillars -->
+        <div class="comm-benefits" role="list" aria-label="Community membership benefits">
+          <div class="comm-benefit-item" role="listitem">
+            <div class="comm-benefit-icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+              </svg>
+            </div>
+            <div class="comm-benefit-content">
+              <h4>Founder &amp; Peer Networks</h4>
+              <p>Connect directly with fellow student builders, early founders, and collaborative innovators across campuses.</p>
+            </div>
+          </div>
+
+          <div class="comm-benefit-item" role="listitem">
+            <div class="comm-benefit-icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="16" y1="2" x2="16" y2="6"></line>
+                <line x1="8" y1="2" x2="8" y2="6"></line>
+                <line x1="3" y1="10" x2="21" y2="10"></line>
+              </svg>
+            </div>
+            <div class="comm-benefit-content">
+              <h4>Events &amp; Masterclasses</h4>
+              <p>Gain access to practical mentor workshops, founder masterclasses, and hands-on venture-building sprints.</p>
+            </div>
+          </div>
+
+          <div class="comm-benefit-item" role="listitem">
+            <div class="comm-benefit-icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+              </svg>
+            </div>
+            <div class="comm-benefit-content">
+              <h4>Opportunities &amp; Cohorts</h4>
+              <p>Stay notified of upcoming incubator intakes, challenge tracks, showcase events, and partner programs.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Elevated Application Form Card -->
+      <div class="comm-form-card">
+        <div class="comm-form-head">
+          <span class="comm-form-badge">Open Membership</span>
+          <h3 class="comm-form-title">Join the Ecosystem</h3>
+        </div>
+
+        <form class="pg-form comm-form" data-demo-form novalidate>
+          <div class="pg-form-fields comm-form-fields-grid">
             <div class="pg-field">
-              <label class="pg-label" for="community-role">I am a</label>
-              <select class="pg-select" id="community-role" name="role">
-                <option value="">Select one</option>
+              <label class="comm-form-label" for="community-name">Name</label>
+              <input class="pg-input comm-form-input" type="text" id="community-name" name="name" autocomplete="name" required placeholder="Your full name">
+            </div>
+
+            <div class="pg-field">
+              <label class="comm-form-label" for="community-email">Email</label>
+              <input class="pg-input comm-form-input" type="email" id="community-email" name="email" autocomplete="email" required placeholder="you@domain.com">
+            </div>
+
+            <div class="pg-field">
+              <label class="comm-form-label" for="community-role">I am a</label>
+              <select class="pg-select comm-form-select" id="community-role" name="role" required>
+                <option value="">Select your role</option>
                 <option value="student">Student</option>
                 <option value="founder">Founder</option>
                 <option value="mentor">Mentor</option>
@@ -148,57 +768,61 @@
                 <option value="other">Other</option>
               </select>
             </div>
+
             <div class="pg-field">
-              <label class="pg-label" for="community-interest">Area of interest</label>
-              <input class="pg-input" type="text" id="community-interest" name="interest">
+              <label class="comm-form-label" for="community-interest">Area of interest</label>
+              <input class="pg-input comm-form-input" type="text" id="community-interest" name="interest" placeholder="e.g. EdTech, Product, AI">
             </div>
-            <div class="pg-field">
-              <label class="pg-label" for="community-linkedin">LinkedIn profile <span>(optional)</span></label>
-              <input class="pg-input" type="url" id="community-linkedin" name="linkedin" autocomplete="url">
+
+            <div class="pg-field comm-field-full">
+              <label class="comm-form-label" for="community-linkedin">LinkedIn profile <small>(optional)</small></label>
+              <input class="pg-input comm-form-input" type="url" id="community-linkedin" name="linkedin" autocomplete="url" placeholder="https://linkedin.com/in/username">
             </div>
-            <div class="pg-field pg-field--full">
-              <label class="pg-label" for="community-message">What would you like to contribute or explore?</label>
-              <textarea class="pg-textarea" id="community-message" name="message"></textarea>
+
+            <div class="pg-field comm-field-full">
+              <label class="comm-form-label" for="community-message">What would you like to contribute or explore?</label>
+              <textarea class="pg-textarea comm-form-textarea" id="community-message" name="message" placeholder="Tell us about your interests, ideas, or what you hope to experience..."></textarea>
             </div>
           </div>
-        </div>
-        <div class="pg-form-actions">
-          <button type="submit" class="pg-btn pg-btn--primary">Join the Building Dreams Community</button>
-        </div>
-        <p class="pg-form-note">This demo form prepares your enquiry on the page. The published site should connect it to a monitored inbox before launch.</p>
-        <div class="pg-form-success">Thank you. We&rsquo;ve noted your interest and will be in touch about community opportunities.</div>
-      </form>
-    </div>
-  </section>
 
-  <!-- Section 6: Community guidelines -->
-  <section class="pg-section">
-    <div class="pg-container pg-container--narrow">
-      <div class="pg-head">
-        <span class="pg-eyebrow">Community guidelines</span>
-        <h2 class="pg-h2">Building Dreams is intended to be a constructive environment&hellip;</h2>
-        <p class="pg-sub">&hellip;where people can ask questions, exchange ideas, share feedback and learn from one another. We expect community members to:</p>
+          <div class="pg-form-actions" style="margin-top:1.25rem;">
+            <button type="submit" class="comm-btn comm-btn--primary comm-form-btn">
+              <span>Join the Building Dreams Community</span>
+              <svg class="comm-btn-arrow" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+          </div>
+
+          <p class="comm-form-note">
+            This demo form prepares your enquiry on the page. The published site should connect it to a monitored inbox before launch.
+          </p>
+
+          <div class="pg-form-success comm-form-success" role="status" tabindex="-1" style="margin-top:1.2rem;">
+            Thank you. We&rsquo;ve noted your interest and will be in touch about community opportunities.
+          </div>
+        </form>
       </div>
-      <ul class="pg-list pg-list--check">
-        <li>Treat others with respect.</li>
-        <li>Give honest, constructive feedback.</li>
-        <li>Respect confidential business information.</li>
-        <li>Credit original work and ideas.</li>
-        <li>Avoid misleading claims and unsolicited promotions.</li>
-        <li>Honour agreed commitments.</li>
-        <li>Respect student privacy and safeguarding requirements.</li>
-      </ul>
     </div>
   </section>
 
-  <!-- Section 7: CTA band -->
-  <section class="pg-section pg-section--tight">
-    <div class="pg-container">
-      <div class="pg-cta-band">
-        <p>Build something meaningful. Help someone else do the same.</p>
-        <div class="pg-cta-row">
-          <a href="#become-a-mentor" class="pg-btn pg-btn--primary">Become a Mentor</a>
-          <a href="#join" class="pg-btn pg-btn--light">Join the Community</a>
+  <!-- Section 7: CTA band — Full-Width Deep Forest Banner -->
+  <section class="comm-cta-banner-section" aria-label="Call to action">
+    <div class="comm-container">
+      <div class="comm-cta-banner">
+        <h2 class="comm-cta-banner-text">
+          Build something meaningful. Help someone else do the same.
+        </h2>
+        <div class="comm-cta-banner-actions">
+          <a href="#become-a-mentor" class="comm-btn comm-btn--primary">
+            <span>Become a Mentor</span>
+            <svg class="comm-btn-arrow" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+          <a href="#join" class="comm-btn comm-btn--ghost">
+            <span>Join the Community</span>
+          </a>
         </div>
       </div>
     </div>
@@ -207,5 +831,6 @@
 </main>
 <div data-site-footer></div>
 <script type="module" src="../main.js"></script>
+<script type="module" src="../community.js"></script>
 </body>
 </html>

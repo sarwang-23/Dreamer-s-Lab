@@ -13,7 +13,7 @@
 /* ─── 1. Section Root & Container ────────────────────────────────────── */
 .story-section {
     position: relative;
-    background-color: #FBF9F5;
+    background-color: #FFFFFF;
     color: #2C1B13;
     padding: clamp(5.5rem, 8.5vw, 7.5rem) 0;
     overflow: hidden;

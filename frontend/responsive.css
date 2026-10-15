@@ -4,9 +4,7 @@
    ========================================================================== */
 
 /* ── 1. ACCESSIBILITY & SCROLL OFFSETS ── */
-.nd-navbar [hidden],
-.nd-navbar:not(.is-menu-open) .nd-nav-links,
-.nd-navbar:not(.is-menu-open) .nd-nav-actions {
+.nd-navbar [hidden] {
     display: none !important;
 }
 
@@ -42,6 +40,11 @@
 }
 
 @media (max-width: 960px) {
+    .nd-navbar:not(.is-menu-open) .nd-nav-links,
+    .nd-navbar:not(.is-menu-open) .nd-nav-actions {
+        display: none !important;
+    }
+
     .nd-navbar {
         display: grid !important;
         grid-template-columns: minmax(0, 1fr) auto !important;
