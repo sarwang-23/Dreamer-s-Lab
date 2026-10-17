@@ -1,0 +1,912 @@
+/* ==========================================================================
+   Universities & Accelerators — Premium Editorial Hero & Interactive Workspace
+   Brand: Building Dreams for Higher Education (Campus Ecosystems)
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800;900&display=swap');
+
+/* ── Custom Theme Tokens for Universities ───────────────────────── */
+:root {
+  --univ-bg-ivory: #FAF7F2;
+  --univ-bg-card: #FFFFFF;
+  --univ-espresso: #1F1610;
+  --univ-espresso-muted: #5C5040;
+  --univ-espresso-light: #8A7B6B;
+  --univ-orange: #FF6B1A;
+  --univ-orange-hover: #E85A00;
+  --univ-orange-glow: rgba(255, 107, 26, 0.22);
+  --univ-forest: #073D33;
+  --univ-forest-dark: #052B24;
+  --univ-lime: #D5F078;
+  --univ-yellow-note: #FFF9D9;
+  --univ-mint-note: #E8F5EB;
+  --univ-border-subtle: rgba(44, 26, 16, 0.08);
+  --univ-border-editorial: rgba(44, 26, 16, 0.12);
+  --univ-shadow-soft: 0 8px 24px -6px rgba(31, 22, 16, 0.06), 0 2px 6px rgba(31, 22, 16, 0.03);
+  --univ-shadow-elevated: 0 18px 40px -10px rgba(31, 22, 16, 0.12), 0 4px 12px rgba(31, 22, 16, 0.04);
+  --univ-shadow-deep: 0 28px 56px -14px rgba(31, 22, 16, 0.18), 0 8px 20px rgba(31, 22, 16, 0.06);
+  --univ-ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --univ-container-max: 1280px;
+}
+
+/* ── Minimalist Glassmorphic Navigation Bar ─────────────────────── */
+.univ-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.85rem clamp(1.25rem, 4vw, 3rem);
+  background: rgba(250, 247, 242, 0.88);
+  backdrop-filter: blur(16px) saturate(160%);
+  -webkit-backdrop-filter: blur(16px) saturate(160%);
+  border-bottom: 1px solid rgba(44, 26, 16, 0.07);
+  transition: all 0.3s var(--univ-ease);
+}
+
+.univ-navbar.is-scrolled {
+  padding-top: 0.65rem;
+  padding-bottom: 0.65rem;
+  background: rgba(255, 255, 255, 0.94);
+  border-bottom-color: rgba(44, 26, 16, 0.12);
+  box-shadow: 0 6px 20px -6px rgba(31, 22, 16, 0.08);
+}
+
+.univ-nav-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
+  color: var(--univ-espresso);
+}
+
+.univ-brand-mark {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background: var(--univ-forest);
+  color: #FAF7F2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  font-weight: 800;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.univ-nav-brand:hover .univ-brand-mark {
+  background: var(--univ-orange);
+  transform: rotate(10deg) scale(1.06);
+}
+
+.univ-brand-name {
+  font-family: 'Outfit', system-ui, sans-serif;
+  font-size: 1.12rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--univ-espresso);
+}
+
+.univ-brand-name em {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+  color: var(--univ-orange);
+  margin-left: 0.15rem;
+}
+
+.univ-nav-links {
+  display: flex;
+  align-items: center;
+  gap: clamp(1rem, 2vw, 2rem);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.univ-nav-link {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: var(--univ-espresso-muted);
+  text-decoration: none;
+  position: relative;
+  transition: color 0.25s ease;
+  padding: 0.25rem 0;
+}
+
+.univ-nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0%;
+  height: 1.5px;
+  background: var(--univ-orange);
+  transition: width 0.25s var(--univ-ease);
+}
+
+.univ-nav-link:hover {
+  color: var(--univ-espresso);
+}
+
+.univ-nav-link:hover::after {
+  width: 100%;
+}
+
+.univ-nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.univ-nav-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.5rem 1.15rem;
+  border-radius: 999px;
+  font-family: 'Outfit', system-ui, sans-serif;
+  font-size: 0.84rem;
+  font-weight: 700;
+  text-decoration: none;
+  background: var(--univ-forest);
+  color: #FAF7F2;
+  transition: all 0.28s var(--univ-ease);
+  box-shadow: 0 4px 12px rgba(7, 61, 51, 0.15);
+}
+
+.univ-nav-btn:hover {
+  background: var(--univ-orange);
+  color: #FFFFFF;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px var(--univ-orange-glow);
+}
+
+.univ-nav-btn svg {
+  transition: transform 0.25s ease;
+}
+
+.univ-nav-btn:hover svg {
+  transform: translateX(3px);
+}
+
+/* ── Hero Master Section (Full Page Viewport Experience) ────────── */
+.univ-hero-section {
+  position: relative;
+  background-color: var(--univ-bg-ivory);
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(5rem, 8vh, 6.25rem) 0 clamp(2rem, 3.5vh, 3rem);
+  box-sizing: border-box;
+  overflow: hidden;
+  border-bottom: 1px solid var(--univ-border-editorial);
+  isolation: isolate;
+}
+
+/* Subtle blueprint background grid */
+.univ-hero-grid-bg {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(to right, rgba(44, 26, 16, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(44, 26, 16, 0.04) 1px, transparent 1px);
+  background-size: 54px 54px;
+  mask-image: radial-gradient(circle at 65% 35%, #000 0%, transparent 80%);
+  -webkit-mask-image: radial-gradient(circle at 65% 35%, #000 0%, transparent 80%);
+  pointer-events: none;
+}
+
+/* Warm ambient glowing accent */
+.univ-hero-glow-accent {
+  position: absolute;
+  top: 5%;
+  right: 15%;
+  width: 520px;
+  height: 520px;
+  background: radial-gradient(circle, rgba(255, 107, 26, 0.12) 0%, rgba(7, 61, 51, 0.05) 55%, transparent 75%);
+  filter: blur(60px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.univ-hero-container {
+  width: 100%;
+  max-width: var(--univ-container-max);
+  margin: 0 auto;
+  padding: 0 clamp(1.5rem, 4vw, 3rem);
+  position: relative;
+  z-index: 1;
+}
+
+.univ-hero-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1.15fr);
+  gap: clamp(1.75rem, 4vw, 3.75rem);
+  align-items: center;
+}
+
+/* ── Left Column: Editorial Typography & CTAs ───────────────────── */
+.univ-hero-content {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 2;
+}
+
+.univ-editorial-stamp {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--univ-espresso-light);
+  margin-bottom: 0.65rem;
+}
+
+.univ-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: fit-content;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--univ-forest);
+  background: rgba(7, 61, 51, 0.08);
+  border: 1px solid rgba(7, 61, 51, 0.2);
+  padding: 0.3rem 0.85rem;
+  border-radius: 999px;
+  margin-bottom: 0.95rem;
+}
+
+.univ-badge-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--univ-orange);
+  box-shadow: 0 0 8px var(--univ-orange);
+  animation: pulseDot 2.2s infinite ease-in-out;
+}
+
+@keyframes pulseDot {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.4); opacity: 0.7; }
+}
+
+.univ-hero-title {
+  font-family: 'Outfit', system-ui, sans-serif;
+  font-size: clamp(2.1rem, 3.4vw, 3.35rem);
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: -0.035em;
+  color: var(--univ-espresso);
+  margin: 0 0 1rem;
+}
+
+.univ-hero-title em {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-style: italic;
+  font-weight: 500;
+  color: var(--univ-orange);
+  letter-spacing: 0.01em;
+}
+
+.univ-hero-headline {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: clamp(1rem, 1.25vw, 1.18rem);
+  font-weight: 600;
+  line-height: 1.5;
+  color: var(--univ-espresso);
+  margin: 0 0 0.75rem;
+}
+
+.univ-hero-description {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: clamp(0.9rem, 1vw, 0.98rem);
+  font-weight: 400;
+  line-height: 1.65;
+  color: var(--univ-espresso-muted);
+  max-width: 52ch;
+  margin: 0 0 1.5rem;
+}
+
+/* Action Buttons */
+.univ-hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.65rem;
+}
+
+.univ-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: linear-gradient(135deg, var(--univ-orange) 0%, var(--univ-orange-hover) 100%);
+  color: #FFFFFF;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  padding: 0.78rem 1.65rem;
+  border-radius: 999px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.28s var(--univ-ease);
+  box-shadow: 0 6px 20px rgba(255, 107, 26, 0.28);
+}
+
+.univ-btn-primary:hover {
+  background: linear-gradient(135deg, #FF7D2E 0%, var(--univ-orange) 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(255, 107, 26, 0.38);
+  color: #FFFFFF;
+}
+
+.univ-btn-arrow {
+  transition: transform 0.25s ease;
+  font-size: 1.05rem;
+}
+
+.univ-btn-primary:hover .univ-btn-arrow {
+  transform: translateX(4px);
+}
+
+.univ-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #FFFFFF;
+  color: var(--univ-espresso);
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  padding: 0.78rem 1.45rem;
+  border-radius: 999px;
+  border: 1.5px solid var(--univ-border-editorial);
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.25s var(--univ-ease);
+  box-shadow: var(--univ-shadow-soft);
+}
+
+.univ-btn-secondary:hover {
+  background: var(--univ-bg-ivory);
+  border-color: var(--univ-orange);
+  color: var(--univ-orange);
+  transform: translateY(-2px);
+  box-shadow: var(--univ-shadow-elevated);
+}
+
+/* Trust Metadata Strip */
+.univ-trust-strip {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  padding-top: 1rem;
+  border-top: 1px dashed var(--univ-border-editorial);
+}
+
+.univ-trust-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: var(--univ-espresso-muted);
+}
+
+.univ-trust-icon {
+  color: var(--univ-orange);
+  font-size: 0.72rem;
+}
+
+.univ-trust-sep {
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: var(--univ-espresso-light);
+  opacity: 0.5;
+}
+
+/* ==========================================================================
+   Right Column: The Interactive 3D Campus Workspace
+   ========================================================================== */
+.univ-workspace-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+/* Stage Switcher Pills */
+.univ-stage-pills {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--univ-border-editorial);
+  padding: 0.35rem;
+  border-radius: 999px;
+  box-shadow: var(--univ-shadow-soft);
+  width: fit-content;
+  margin: 0 auto;
+  z-index: 10;
+}
+
+.univ-stage-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: transparent;
+  border: none;
+  padding: 0.4rem 0.85rem;
+  border-radius: 999px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: var(--univ-espresso-muted);
+  cursor: pointer;
+  transition: all 0.22s var(--univ-ease);
+}
+
+.univ-stage-pill .pill-num {
+  font-size: 0.68rem;
+  opacity: 0.65;
+  font-weight: 800;
+}
+
+.univ-stage-pill:hover {
+  color: var(--univ-espresso);
+  background: rgba(44, 26, 16, 0.04);
+}
+
+.univ-stage-pill.is-active {
+  background: var(--univ-forest);
+  color: #FFFFFF;
+  box-shadow: 0 4px 12px rgba(7, 61, 51, 0.25);
+}
+
+.univ-stage-pill.is-active .pill-num {
+  color: var(--univ-lime);
+  opacity: 1;
+}
+
+/* 3D Layered Workspace Canvas */
+.univ-workspace-canvas {
+  position: relative;
+  height: clamp(420px, 52vh, 480px);
+  background: radial-gradient(circle at 60% 40%, #FFFFFF 0%, #FAF6EE 100%);
+  border: 1.5px solid var(--univ-border-editorial);
+  border-radius: 22px;
+  box-shadow: var(--univ-shadow-deep);
+  overflow: hidden;
+  perspective: 1200px;
+  transition: box-shadow 0.4s ease;
+}
+
+.univ-canvas-tag-tl {
+  position: absolute;
+  top: 12px;
+  left: 16px;
+  font-family: 'Outfit', monospace;
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  color: var(--univ-espresso-light);
+  opacity: 0.8;
+  z-index: 5;
+}
+
+.univ-canvas-tag-tr {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  color: var(--univ-forest);
+  background: rgba(7, 61, 51, 0.08);
+  border: 1px solid rgba(7, 61, 51, 0.2);
+  padding: 0.16rem 0.5rem;
+  border-radius: 4px;
+  z-index: 5;
+}
+
+/* Central Photo Element */
+.univ-element {
+  position: absolute;
+  transition: all 0.35s var(--univ-ease);
+  will-change: transform, box-shadow;
+}
+
+.univ-element-photo {
+  top: 42px;
+  left: 30px;
+  width: clamp(340px, 30vw, 395px);
+  border-radius: 14px;
+  background: #FFFFFF;
+  padding: 8px;
+  box-shadow: 0 14px 32px -8px rgba(31, 22, 16, 0.15);
+  border: 1px solid rgba(44, 26, 16, 0.08);
+  z-index: 2;
+  transform: rotate(-1.5deg);
+}
+
+.univ-element-photo img {
+  width: 100%;
+  height: clamp(190px, 24vh, 225px);
+  object-fit: cover;
+  border-radius: 9px;
+  display: block;
+}
+
+.univ-photo-caption {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 6px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--univ-espresso);
+}
+
+.univ-photo-caption .badge-live {
+  font-size: 0.62rem;
+  font-weight: 800;
+  color: var(--univ-forest);
+  background: rgba(7, 61, 51, 0.1);
+  padding: 0.12rem 0.42rem;
+  border-radius: 4px;
+}
+
+/* Sticky Note (Stage 01: Discovery) */
+.univ-element-sticky-discovery {
+  top: 30px;
+  right: 20px;
+  width: 195px;
+  background: var(--univ-yellow-note);
+  padding: 14px 14px 12px;
+  border-radius: 2px;
+  box-shadow: 0 10px 22px -5px rgba(44, 26, 16, 0.15);
+  z-index: 4;
+  transform: rotate(3deg);
+  border-bottom: 2px solid rgba(44, 26, 16, 0.08);
+}
+
+.univ-sticky-tape {
+  position: absolute;
+  top: -9px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 65px;
+  height: 18px;
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(2px);
+  border: 1px dashed rgba(44, 26, 16, 0.15);
+}
+
+.univ-sticky-tag {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.64rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  color: #9E6B00;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.univ-sticky-text {
+  font-family: 'Caveat', cursive;
+  font-size: 1.05rem;
+  line-height: 1.35;
+  color: #2E2010;
+  margin: 0 0 6px;
+}
+
+.univ-sticky-author {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.62rem;
+  font-weight: 700;
+  color: #7A5818;
+  margin: 0;
+}
+
+/* Problem Audit Card (Stage 02) */
+.univ-element-audit-card {
+  bottom: 95px;
+  left: 18px;
+  width: 235px;
+  background: #FFFFFF;
+  border: 1.5px solid rgba(44, 26, 16, 0.1);
+  border-radius: 12px;
+  padding: 11px 14px;
+  box-shadow: var(--univ-shadow-elevated);
+  z-index: 5;
+  transform: rotate(-2deg);
+}
+
+.univ-audit-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.62rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  color: var(--univ-orange);
+  margin-bottom: 4px;
+}
+
+.univ-audit-text {
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.74rem;
+  font-weight: 700;
+  line-height: 1.35;
+  color: var(--univ-espresso);
+  margin: 0 0 6px;
+}
+
+.univ-audit-metric {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: var(--univ-forest);
+}
+
+/* Pre-Incubation Glass Card (Stage 03: Build) */
+.univ-element-pipeline-card {
+  bottom: 16px;
+  right: 18px;
+  width: 290px;
+  background: linear-gradient(145deg, #073D33 0%, #052B24 100%);
+  color: #FFFFFF;
+  border-radius: 14px;
+  padding: 13px 15px;
+  box-shadow: 0 16px 36px -8px rgba(7, 61, 51, 0.38);
+  z-index: 6;
+  transform: rotate(1deg);
+  border: 1px solid rgba(213, 240, 120, 0.2);
+}
+
+.univ-pipe-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+.univ-pipe-pill {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.62rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  color: var(--univ-lime);
+  background: rgba(213, 240, 120, 0.15);
+  padding: 0.16rem 0.5rem;
+  border-radius: 4px;
+}
+
+.univ-pipe-step {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.6rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.univ-pipe-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  margin: 0 0 3px;
+}
+
+.univ-pipe-desc {
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.72rem;
+  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0 0 8px;
+}
+
+.univ-pipe-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.univ-pipe-progress {
+  flex: 1;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.univ-pipe-fill {
+  width: 84%;
+  height: 100%;
+  background: var(--univ-lime);
+  border-radius: 999px;
+}
+
+.univ-pipe-stat {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.62rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  color: var(--univ-lime);
+}
+
+/* Floating Launch / Demo Day Badge (Stage 04) */
+.univ-element-launch-badge {
+  top: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #FFFFFF;
+  border: 1.5px solid var(--univ-orange);
+  padding: 0.38rem 0.85rem;
+  border-radius: 999px;
+  box-shadow: 0 6px 20px rgba(255, 107, 26, 0.2);
+  z-index: 7;
+}
+
+.univ-launch-label {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.74rem;
+  font-weight: 800;
+  color: var(--univ-espresso);
+}
+
+.univ-launch-tag {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.62rem;
+  font-weight: 900;
+  color: var(--univ-orange);
+  background: rgba(255, 107, 26, 0.1);
+  padding: 0.15rem 0.45rem;
+  border-radius: 4px;
+}
+
+/* Mentor Sticky Note */
+.univ-element-mentor-note {
+  bottom: 25px;
+  left: 28px;
+  width: 210px;
+  background: var(--univ-mint-note);
+  padding: 14px 14px 12px;
+  border-radius: 2px;
+  box-shadow: 0 10px 20px -5px rgba(7, 61, 51, 0.14);
+  z-index: 5;
+  transform: rotate(2deg);
+}
+
+.univ-mentor-tape {
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 55px;
+  height: 16px;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px dashed rgba(7, 61, 51, 0.2);
+}
+
+.univ-mentor-tag {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.62rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  color: var(--univ-forest);
+  margin-bottom: 4px;
+}
+
+.univ-mentor-text {
+  font-family: 'Caveat', cursive;
+  font-size: 0.98rem;
+  line-height: 1.35;
+  color: #0E291F;
+  margin: 0 0 4px;
+}
+
+.univ-mentor-author {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.6rem;
+  font-weight: 700;
+  color: #386150;
+  margin: 0;
+}
+
+/* Active Highlight Filter */
+.univ-element.is-highlighted {
+  filter: drop-shadow(0 0 14px rgba(255, 107, 26, 0.35));
+  z-index: 10 !important;
+  transform: scale(1.04) rotate(0deg) !important;
+}
+
+/* Floating Animations */
+.univ-float-a {
+  animation: floatA 5s ease-in-out infinite alternate;
+}
+.univ-float-b {
+  animation: floatB 6s ease-in-out infinite alternate;
+}
+
+@keyframes floatA {
+  0% { transform: translate3d(0, 0, 0) rotate(3deg); }
+  100% { transform: translate3d(0, -8px, 0) rotate(1.5deg); }
+}
+
+@keyframes floatB {
+  0% { transform: translate3d(0, 0, 0) rotate(-1deg); }
+  100% { transform: translate3d(0, 8px, 0) rotate(1deg); }
+}
+
+/* Responsive */
+@media (max-width: 1080px) {
+  .univ-hero-layout {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .univ-workspace-canvas {
+    height: 480px;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .univ-hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .univ-workspace-canvas {
+    height: 430px;
+  }
+  .univ-element-photo {
+    width: 290px;
+    left: 15px;
+  }
+  .univ-element-pipeline-card {
+    width: 270px;
+    right: 15px;
+  }
+  .univ-element-sticky-discovery,
+  .univ-element-mentor-note {
+    display: none;
+  }
+}
+
+@media (max-width: 900px) {
+  .univ-nav-links {
+    display: none;
+  }
+}
+
+

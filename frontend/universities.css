@@ -1,0 +1,778 @@
+/* ==========================================================================
+   Universities & Accelerators — Complete Page Styles
+   Matching the high-end Dreamers Lab design language:
+   Vibrant typography, layered cards, interactive milestones, polished form.
+   ========================================================================== */
+
+/* ── Section Structure ─────────────────────────────────────────── */
+.univ-section {
+  position: relative;
+  padding: clamp(2.75rem, 4.5vw, 4.25rem) 0;
+  border-top: 1px solid rgba(44, 26, 16, 0.08);
+}
+
+.univ-section--tint {
+  background-color: #F5EFE6;
+}
+
+.univ-section--white {
+  background-color: #FFFFFF;
+}
+
+.univ-section--forest {
+  background: linear-gradient(150deg, #073D33 0%, #052B24 100%);
+  color: #FFFFFF;
+}
+
+.univ-container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 clamp(1.5rem, 4vw, 3rem);
+  box-sizing: border-box;
+}
+
+.univ-container--narrow {
+  max-width: 840px;
+}
+
+/* ── Section Headers ────────────────────────────────────────────── */
+.univ-head {
+  margin-bottom: clamp(1.5rem, 3vw, 2.25rem);
+  max-width: 760px;
+}
+
+.univ-head--center {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.univ-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--univ-orange);
+  background: rgba(255, 107, 26, 0.08);
+  border: 1px solid rgba(255, 107, 26, 0.2);
+  padding: 0.28rem 0.8rem;
+  border-radius: 999px;
+  margin-bottom: 0.75rem;
+}
+
+.univ-h2 {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(1.75rem, 2.8vw, 2.5rem);
+  font-weight: 900;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  color: var(--univ-espresso);
+  margin: 0 0 0.65rem;
+}
+
+.univ-h2 em {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-style: italic;
+  font-weight: 500;
+  color: var(--univ-orange);
+}
+
+.univ-sub {
+  font-family: 'Manrope', sans-serif;
+  font-size: clamp(0.92rem, 1vw, 1.02rem);
+  line-height: 1.65;
+  color: var(--univ-espresso-muted);
+  margin: 0;
+  max-width: 60ch;
+}
+
+.univ-head--center .univ-sub {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ==========================================================================
+   Section 3: Our Institutional Offering (Cards Grid)
+   ========================================================================== */
+.univ-offering-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(1rem, 2vw, 1.5rem);
+}
+
+.univ-offering-card {
+  position: relative;
+  background: #FFFFFF;
+  border: 1.5px solid rgba(44, 26, 16, 0.1);
+  border-radius: 18px;
+  padding: clamp(1.35rem, 2.2vw, 1.75rem);
+  box-shadow: 0 6px 20px -6px rgba(31, 22, 16, 0.05);
+  transition: all 0.28s var(--univ-ease);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.univ-offering-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(255, 107, 26, 0.4);
+  box-shadow: 0 14px 32px -8px rgba(255, 107, 26, 0.14);
+}
+
+.univ-offering-card--featured {
+  grid-column: span 2;
+  background: linear-gradient(145deg, #FFFFFF 0%, #FFFDF9 100%);
+  border-color: rgba(255, 107, 26, 0.3);
+}
+
+.univ-offering-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.univ-offering-num {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: rgba(255, 107, 26, 0.1);
+  color: var(--univ-orange);
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.univ-offering-tag {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--univ-forest);
+  background: rgba(7, 61, 51, 0.08);
+  padding: 0.22rem 0.6rem;
+  border-radius: 999px;
+}
+
+.univ-offering-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(1.12rem, 1.6vw, 1.35rem);
+  font-weight: 800;
+  color: var(--univ-espresso);
+  margin: 0 0 0.5rem;
+  line-height: 1.25;
+}
+
+.univ-offering-desc {
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: var(--univ-espresso-muted);
+  margin: 0;
+  flex: 1;
+}
+
+/* ==========================================================================
+   Section 4: The Campus Venture Pipeline (Visual Connected Roadmap)
+   ========================================================================== */
+.univ-pipeline-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(1rem, 2vw, 1.4rem);
+  position: relative;
+}
+
+.univ-pipeline-step {
+  position: relative;
+  background: #FFFFFF;
+  border: 1.5px solid rgba(44, 26, 16, 0.1);
+  border-radius: 16px;
+  padding: 1.35rem 1.35rem;
+  box-shadow: 0 4px 12px rgba(31, 22, 16, 0.04);
+  transition: all 0.28s var(--univ-ease);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.univ-pipeline-step:hover {
+  transform: translateY(-3px);
+  border-color: var(--univ-orange);
+  box-shadow: 0 10px 24px rgba(255, 107, 26, 0.12);
+}
+
+.univ-pipeline-num {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  color: var(--univ-orange);
+  margin-bottom: 0.5rem;
+}
+
+.univ-pipeline-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--univ-espresso);
+  margin: 0 0 0.35rem;
+  line-height: 1.25;
+}
+
+.univ-pipeline-desc {
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.84rem;
+  line-height: 1.55;
+  color: var(--univ-espresso-muted);
+  margin: 0;
+}
+
+.univ-pipeline-note {
+  margin-top: 1.5rem;
+  padding: 1rem 1.25rem;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px dashed rgba(44, 26, 16, 0.15);
+  border-radius: 12px;
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.84rem;
+  line-height: 1.55;
+  color: var(--univ-espresso-muted);
+}
+
+/* ==========================================================================
+   Section 5: How We Work with Universities (Structured Operational Phases)
+   ========================================================================== */
+.univ-phases-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(1rem, 2vw, 1.4rem);
+}
+
+.univ-phase-card {
+  background: #FFFFFF;
+  border: 1.5px solid rgba(44, 26, 16, 0.1);
+  border-radius: 16px;
+  padding: 1.4rem 1.4rem;
+  box-shadow: 0 4px 14px rgba(31, 22, 16, 0.04);
+  transition: all 0.28s var(--univ-ease);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.univ-phase-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(7, 61, 51, 0.35);
+  box-shadow: 0 12px 28px rgba(7, 61, 51, 0.1);
+}
+
+.univ-phase-when {
+  display: inline-flex;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--univ-forest);
+  background: rgba(7, 61, 51, 0.08);
+  padding: 0.2rem 0.55rem;
+  border-radius: 6px;
+  margin-bottom: 0.75rem;
+  width: fit-content;
+}
+
+.univ-phase-name {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--univ-espresso);
+  margin: 0 0 0.45rem;
+}
+
+.univ-phase-desc {
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.86rem;
+  line-height: 1.6;
+  color: var(--univ-espresso-muted);
+  margin: 0;
+  flex: 1;
+}
+
+/* ==========================================================================
+   Section 6: Tailored Partnership Models (Matrix Cards)
+   ========================================================================== */
+.univ-models-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(1rem, 2vw, 1.4rem);
+}
+
+.univ-model-card {
+  background: #FFFFFF;
+  border: 1.5px solid rgba(44, 26, 16, 0.1);
+  border-radius: 16px;
+  padding: 1.4rem 1.35rem;
+  box-shadow: 0 4px 14px rgba(31, 22, 16, 0.04);
+  transition: all 0.28s var(--univ-ease);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.univ-model-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--univ-orange);
+  box-shadow: 0 12px 28px -6px rgba(255, 107, 26, 0.15);
+}
+
+.univ-model-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--univ-espresso);
+  margin: 0 0 0.45rem;
+}
+
+.univ-model-desc {
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.86rem;
+  line-height: 1.55;
+  color: var(--univ-espresso-muted);
+  margin: 0;
+  flex: 1;
+}
+
+.univ-model-deliverable {
+  margin-top: 0.85rem;
+  padding-top: 0.75rem;
+  border-top: 1px dashed rgba(44, 26, 16, 0.1);
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 800;
+  color: var(--univ-orange);
+}
+
+/* ==========================================================================
+   Section 7: Measuring Impact (Split Metrics & Outcomes)
+   ========================================================================== */
+.univ-impact-split {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  gap: clamp(1.75rem, 3.5vw, 3.5rem);
+  align-items: center;
+}
+
+.univ-impact-kpis {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.85rem;
+  margin-top: 1.25rem;
+}
+
+.univ-kpi-card {
+  background: #FFFFFF;
+  border: 1.5px solid rgba(44, 26, 16, 0.1);
+  border-radius: 14px;
+  padding: 1.15rem;
+  box-shadow: 0 4px 12px rgba(31, 22, 16, 0.04);
+}
+
+.univ-kpi-num {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.75rem;
+  font-weight: 900;
+  color: var(--univ-forest);
+  margin-bottom: 0.2rem;
+}
+
+.univ-kpi-label {
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: var(--univ-espresso-muted);
+  line-height: 1.35;
+}
+
+.univ-outcomes-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.65rem;
+}
+
+.univ-outcome-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  background: #FFFFFF;
+  border: 1px solid rgba(44, 26, 16, 0.08);
+  border-radius: 10px;
+  padding: 0.7rem 0.85rem;
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 600;
+  line-height: 1.45;
+  color: var(--univ-espresso);
+  box-shadow: 0 2px 6px rgba(31, 22, 16, 0.02);
+}
+
+.univ-outcome-icon {
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  background: rgba(7, 61, 51, 0.1);
+  color: var(--univ-forest);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  font-weight: 800;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* ==========================================================================
+   Section 8: Who We Partner With (Interactive Matrix)
+   ========================================================================== */
+.univ-partners-matrix {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  justify-content: center;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.univ-partner-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #FFFFFF;
+  border: 1.5px solid rgba(44, 26, 16, 0.1);
+  border-radius: 999px;
+  padding: 0.55rem 1.15rem;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.86rem;
+  font-weight: 700;
+  color: var(--univ-espresso);
+  box-shadow: 0 2px 8px rgba(31, 22, 16, 0.03);
+  transition: all 0.22s var(--univ-ease);
+}
+
+.univ-partner-pill:hover {
+  background: #FAF7F2;
+  border-color: var(--univ-orange);
+  color: var(--univ-orange);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(255, 107, 26, 0.14);
+}
+
+/* ==========================================================================
+   Section 9: Frequently Asked Questions (Custom Accordions)
+   ========================================================================== */
+.univ-faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.univ-faq-item {
+  background: #FFFFFF;
+  border: 1.5px solid rgba(44, 26, 16, 0.1);
+  border-radius: 14px;
+  overflow: hidden;
+  transition: all 0.25s var(--univ-ease);
+}
+
+.univ-faq-item[open] {
+  border-color: var(--univ-orange);
+  box-shadow: 0 6px 20px rgba(255, 107, 26, 0.08);
+}
+
+.univ-faq-summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.05rem 1.35rem;
+  cursor: pointer;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.98rem;
+  font-weight: 800;
+  color: var(--univ-espresso);
+  user-select: none;
+}
+
+.univ-faq-summary::-webkit-details-marker {
+  display: none;
+}
+
+.univ-faq-chevron {
+  width: 18px;
+  height: 18px;
+  transition: transform 0.25s ease;
+  color: var(--univ-orange);
+}
+
+.univ-faq-item[open] .univ-faq-chevron {
+  transform: rotate(180deg);
+}
+
+.univ-faq-body {
+  padding: 0 1.35rem 1.15rem;
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: var(--univ-espresso-muted);
+}
+
+/* ==========================================================================
+   Section 10: Partnership CTA & Interactive Campus Inquiry Form
+   ========================================================================== */
+.univ-form-card {
+  position: relative;
+  max-width: 960px;
+  margin: 0 auto;
+  background: linear-gradient(180deg, #FFFFFF 0%, #FCFBF9 100%);
+  border: 1.5px solid rgba(44, 26, 16, 0.12);
+  border-radius: 22px;
+  padding: clamp(1.6rem, 3.5vw, 2.75rem);
+  box-shadow: 0 10px 36px -10px rgba(44, 26, 16, 0.1);
+  overflow: hidden;
+}
+
+.univ-form-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--univ-orange), #FF853D);
+}
+
+.univ-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.35rem;
+}
+
+.univ-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.univ-field--full {
+  grid-column: 1 / -1;
+}
+
+.univ-label {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: var(--univ-espresso);
+}
+
+.univ-req {
+  color: var(--univ-orange);
+}
+
+.univ-input-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  background: #FAF9F6;
+  border: 1.5px solid rgba(44, 26, 16, 0.12);
+  border-radius: 12px;
+  padding: 0.72rem 1rem;
+  transition: all 0.2s ease;
+}
+
+.univ-input-wrap:focus-within {
+  border-color: var(--univ-orange);
+  background: #FFFFFF;
+  box-shadow: 0 0 0 3.5px rgba(255, 107, 26, 0.14);
+}
+
+.univ-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.94rem;
+  color: var(--univ-espresso);
+  outline: none;
+}
+
+.univ-input::placeholder {
+  color: #9E9086;
+}
+
+.univ-select {
+  width: 100%;
+  background: #FAF9F6;
+  border: 1.5px solid rgba(44, 26, 16, 0.12);
+  border-radius: 12px;
+  padding: 0.75rem 1rem;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.94rem;
+  color: var(--univ-espresso);
+  outline: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.univ-select:focus {
+  border-color: var(--univ-orange);
+  background: #FFFFFF;
+  box-shadow: 0 0 0 3.5px rgba(255, 107, 26, 0.14);
+}
+
+.univ-textarea-wrap {
+  background: #FAF9F6;
+  border: 1.5px solid rgba(44, 26, 16, 0.12);
+  border-radius: 12px;
+  padding: 0.75rem 1rem;
+  transition: all 0.2s ease;
+}
+
+.univ-textarea-wrap:focus-within {
+  border-color: var(--univ-orange);
+  background: #FFFFFF;
+  box-shadow: 0 0 0 3.5px rgba(255, 107, 26, 0.14);
+}
+
+.univ-textarea {
+  width: 100%;
+  min-height: 110px;
+  background: transparent;
+  border: none;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.94rem;
+  color: var(--univ-espresso);
+  outline: none;
+  resize: vertical;
+  line-height: 1.6;
+}
+
+.univ-submit-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  width: 100%;
+  background: linear-gradient(135deg, var(--univ-orange) 0%, #E85A00 100%);
+  color: #FFFFFF;
+  font-family: 'Outfit', sans-serif;
+  font-size: 1rem;
+  font-weight: 800;
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.25s var(--univ-ease);
+  box-shadow: 0 6px 20px rgba(255, 107, 26, 0.3);
+}
+
+.univ-submit-btn:hover {
+  background: linear-gradient(135deg, #FF7D2E 0%, var(--univ-orange) 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(255, 107, 26, 0.4);
+}
+
+.univ-form-note-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1.25rem;
+  text-align: center;
+}
+
+.univ-form-note {
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: var(--univ-espresso-muted);
+  margin: 0;
+}
+
+.univ-form-success {
+  display: none;
+  background: rgba(7, 61, 51, 0.08);
+  border: 1px solid rgba(7, 61, 51, 0.2);
+  border-radius: 14px;
+  padding: 1.35rem 1.65rem;
+  color: var(--univ-forest);
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.94rem;
+  line-height: 1.65;
+  text-align: center;
+  margin-top: 1.35rem;
+}
+
+.univ-form-card.is-submitted .univ-form-success {
+  display: block;
+}
+
+.univ-form-card.is-submitted .univ-form-grid,
+.univ-form-card.is-submitted .univ-submit-btn,
+.univ-form-card.is-submitted .univ-form-note-box {
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+/* ==========================================================================
+   Responsive Breakpoints
+   ========================================================================== */
+@media (max-width: 1080px) {
+  .univ-offering-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .univ-offering-card--featured {
+    grid-column: span 1;
+  }
+  .univ-pipeline-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .univ-phases-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .univ-models-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .univ-impact-split {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .univ-offering-grid,
+  .univ-pipeline-grid,
+  .univ-phases-grid,
+  .univ-models-grid,
+  .univ-form-grid,
+  .univ-outcomes-list {
+    grid-template-columns: 1fr;
+  }
+  .univ-impact-kpis {
+    grid-template-columns: 1fr;
+  }
+}
+
