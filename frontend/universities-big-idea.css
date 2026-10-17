@@ -1,55 +1,63 @@
 /* ==========================================================================
-   Universities & Accelerators — "The Campus Challenge" Interactive Editorial Section
-   Design System matching Dreamers Lab "The Big Idea"
+   Universities & Accelerators — "The Campus Challenge" Premium Editorial Experience
+   Matching Dreamers Lab "The Big Idea" compact & punchy architecture:
+   • Centered Editorial Header with Eyebrow Pill, Dim/Accent Title & Flow Rail
+   • 3-Column Transformation Stages Grid (01 Awareness → 02 Pipeline → 03 Mentorship)
+   • Seamless Climax Quote Block
    ========================================================================== */
 
+/* ── Section Master Container (Optimized Vertical Height) ───────── */
 .univ-idea-section {
   position: relative;
-  background-color: #FAF7F2;
-  padding: clamp(3rem, 4.5vw, 4.5rem) 0;
+  background: #ffffff;
+  padding: clamp(3.2rem, 5.5vh, 4.5rem) 0 clamp(3rem, 4.8vh, 4rem);
   overflow: hidden;
-  border-bottom: 1px solid rgba(44, 26, 16, 0.1);
+  border-top: 1px solid rgba(44, 26, 16, 0.08);
+  border-bottom: 1px solid rgba(44, 26, 16, 0.08);
+}
+
+/* Subtle Architectural Grid Background */
+.univ-idea-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(to right, rgba(44, 26, 16, 0.025) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(44, 26, 16, 0.025) 1px, transparent 1px);
+  background-size: 80px 80px;
+  pointer-events: none;
+  z-index: 0;
 }
 
 .univ-idea-container {
-  width: 100%;
-  max-width: 1280px;
+  width: min(1360px, 92vw);
   margin: 0 auto;
-  padding: 0 clamp(1.5rem, 4vw, 3rem);
   position: relative;
-  z-index: 2;
+  z-index: 1;
 }
 
-.univ-idea-layout {
-  display: grid;
-  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
-  gap: clamp(2rem, 4vw, 3.75rem);
-  align-items: start;
-}
-
-/* ── Left Column: Sticky Narrative Anchor ───────────────────────── */
-.univ-idea-narrative {
-  position: sticky;
-  top: 5.5rem;
-  display: flex;
-  flex-direction: column;
+/* ── 1. Editorial Header Block (Compact & Focused) ───────────────── */
+.univ-idea-header {
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto clamp(2rem, 3.5vh, 2.8rem);
 }
 
 .univ-idea-eyebrow-pill {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  width: fit-content;
-  font-family: 'Outfit', sans-serif;
-  font-size: 0.74rem;
+  font-family: 'Manrope', monospace, sans-serif;
+  font-size: 0.7rem;
   font-weight: 800;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--univ-orange);
-  background: rgba(255, 107, 26, 0.08);
-  border: 1px solid rgba(255, 107, 26, 0.22);
-  padding: 0.28rem 0.85rem;
+  color: #8A7B6B;
+  background: #FAF7F2;
+  padding: 0.3rem 0.85rem;
   border-radius: 999px;
+  border: 1px solid rgba(44, 26, 16, 0.09);
+  box-shadow: 0 2px 6px rgba(44, 26, 16, 0.03);
   margin-bottom: 1rem;
 }
 
@@ -58,66 +66,97 @@
   height: 6px;
   border-radius: 50%;
   background: var(--univ-orange);
+  box-shadow: 0 0 0 2px rgba(255, 90, 36, 0.25);
 }
 
+/* Proportional Editorial Headline */
 .univ-idea-headline {
   font-family: 'Outfit', system-ui, sans-serif;
-  font-size: clamp(1.85rem, 2.8vw, 2.6rem);
+  font-size: clamp(2rem, 3.4vw, 2.85rem);
   font-weight: 800;
-  line-height: 1.15;
-  letter-spacing: -0.03em;
-  color: var(--univ-espresso);
-  margin: 0 0 1rem;
+  line-height: 1.16;
+  letter-spacing: -0.025em;
+  color: #1F1610;
+  margin: 0 0 0.95rem;
 }
 
-.univ-idea-headline .headline-dim {
-  display: block;
-  color: var(--univ-espresso-muted);
+.univ-idea-headline span.headline-dim {
+  color: #7A6D5E;
   font-weight: 600;
-  margin-bottom: 0.2rem;
+  display: block;
+  margin-bottom: 0.25rem;
 }
 
-.univ-idea-headline .headline-accent {
+.univ-idea-headline em.headline-accent {
   font-family: 'Instrument Serif', Georgia, serif;
   font-style: italic;
-  font-weight: 500;
+  font-weight: 400;
   color: var(--univ-orange);
+  letter-spacing: normal;
+  display: inline-block;
+  position: relative;
+  padding-bottom: 1px;
 }
 
+.univ-idea-headline em.headline-accent::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 1px;
+  width: 100%;
+  height: 2.5px;
+  background: rgba(255, 90, 36, 0.35);
+  border-radius: 2px;
+}
+
+/* Supporting Narrative Lead */
 .univ-idea-lead {
   font-family: 'Manrope', system-ui, sans-serif;
-  font-size: clamp(0.92rem, 1vw, 1.02rem);
-  font-weight: 400;
-  line-height: 1.7;
-  color: var(--univ-espresso-muted);
-  margin: 0 0 1.5rem;
-  max-width: 46ch;
+  font-size: clamp(0.96rem, 1.15vw, 1.06rem);
+  line-height: 1.62;
+  color: #5C5040;
+  margin: 0 auto 1.4rem;
+  max-width: 68ch;
 }
 
-/* Timeline Flow Strip */
+/* Timeline Flow Indicator Rail */
 .univ-idea-flow-strip {
   display: inline-flex;
   align-items: center;
-  gap: 0.65rem;
-  background: #FFFFFF;
-  border: 1px solid rgba(44, 26, 16, 0.1);
-  padding: 0.38rem 0.85rem;
+  gap: 0.75rem;
+  background: #FAF7F2;
+  padding: 0.35rem 1.05rem;
   border-radius: 999px;
-  width: fit-content;
-  box-shadow: 0 4px 12px rgba(31, 22, 16, 0.04);
+  border: 1px solid rgba(44, 26, 16, 0.08);
+  box-shadow: 0 3px 10px rgba(44, 26, 16, 0.03);
 }
 
 .univ-flow-node {
-  font-family: 'Outfit', sans-serif;
-  font-size: 0.72rem;
-  font-weight: 700;
-  color: var(--univ-espresso-light);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: 'Manrope', monospace;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #8C7E70;
   transition: all 0.25s ease;
+  cursor: pointer;
+}
+
+.univ-flow-node span.flow-num {
+  font-size: 0.62rem;
+  opacity: 0.7;
 }
 
 .univ-flow-node.is-active {
   color: var(--univ-orange);
-  font-weight: 900;
+}
+
+.univ-flow-node.is-active span.flow-num {
+  color: var(--univ-orange);
+  opacity: 1;
 }
 
 .univ-flow-arrow {
@@ -125,156 +164,112 @@
   font-size: 0.8rem;
 }
 
-/* ── Right Column: Interactive Stage Cards ──────────────────────── */
-.univ-idea-canvas {
-  display: flex;
-  flex-direction: column;
-  gap: 1.15rem;
+/* ── 2. The 3-Stage Transformation Journey (Compact 3-Column Grid) ── */
+.univ-idea-stages-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(1.2rem, 1.8vw, 1.8rem);
+  margin-bottom: 0;
 }
 
+/* Compact Base Stage Card Styles */
 .univ-stage-card {
   position: relative;
-  background: #FFFFFF;
-  border: 1.5px solid rgba(44, 26, 16, 0.1);
-  border-radius: 18px;
-  padding: clamp(1.35rem, 2.5vw, 1.85rem);
-  box-shadow: var(--univ-shadow-soft);
-  transition: all 0.32s var(--univ-ease);
+  background: #ffffff;
+  border: 1px solid rgba(44, 26, 16, 0.1);
+  border-radius: 20px;
+  padding: clamp(1.35rem, 1.8vw, 1.7rem);
+  box-shadow:
+    0 12px 30px -8px rgba(31, 22, 16, 0.08),
+    0 2px 6px rgba(31, 22, 16, 0.03);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 380px;
+  transition: all 0.32s cubic-bezier(0.16, 1, 0.3, 1);
   cursor: pointer;
   overflow: hidden;
 }
 
 .univ-stage-card:hover {
-  transform: translateY(-3px);
-  border-color: rgba(255, 107, 26, 0.4);
-  box-shadow: var(--univ-shadow-elevated);
+  transform: translateY(-4px);
+  border-color: rgba(255, 90, 36, 0.4);
+  box-shadow: 0 16px 36px -8px rgba(255, 90, 36, 0.16);
 }
 
-.univ-stage-card.is-expanded {
-  border-color: var(--univ-orange);
-  box-shadow: 0 16px 36px -10px rgba(255, 107, 26, 0.2);
+/* Top Header in Card */
+.univ-stage-card-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 0.95rem;
 }
 
-.univ-stage-num {
-  position: absolute;
-  top: 1rem;
-  right: 1.5rem;
+.univ-stage-badge-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.univ-stage-pill {
+  display: inline-flex;
+  align-items: center;
+  font-family: 'Manrope', monospace;
+  font-size: 0.64rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.55rem;
+  border-radius: 5px;
+  background: #FAF7F2;
+  color: #7A6D5E;
+  border: 1px solid rgba(44, 26, 16, 0.08);
+  width: fit-content;
+}
+
+.univ-stage-subtag {
   font-family: 'Outfit', sans-serif;
-  font-size: 3.5rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #8C7E70;
+}
+
+.univ-stage-card-num {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.8rem;
   font-weight: 900;
   line-height: 1;
-  color: rgba(44, 26, 16, 0.04);
-  pointer-events: none;
-  transition: color 0.3s ease;
-}
-
-.univ-stage-card:hover .univ-stage-num,
-.univ-stage-card.is-expanded .univ-stage-num {
-  color: rgba(255, 107, 26, 0.12);
-}
-
-.univ-stage-header {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  margin-bottom: 1rem;
-}
-
-.univ-stage-badge {
-  font-family: 'Outfit', sans-serif;
-  font-size: 0.68rem;
-  font-weight: 800;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--univ-orange);
-  background: rgba(255, 107, 26, 0.08);
-  padding: 0.25rem 0.65rem;
-  border-radius: 6px;
-}
-
-.univ-stage-title-tag {
-  font-family: 'Outfit', sans-serif;
-  font-size: 0.78rem;
-  font-weight: 700;
-  color: var(--univ-espresso-muted);
+  color: rgba(44, 26, 16, 0.12);
 }
 
 .univ-stage-question {
-  font-family: 'Outfit', sans-serif;
-  font-size: clamp(1.1rem, 1.6vw, 1.35rem);
-  font-weight: 700;
-  line-height: 1.4;
-  color: var(--univ-espresso);
-  margin: 0 0 1.25rem;
-  letter-spacing: -0.015em;
-}
-
-/* Editorial slice image */
-.univ-explore-slice {
-  position: relative;
-  border-radius: 12px;
-  overflow: hidden;
-  margin-bottom: 1.25rem;
-  border: 1px solid rgba(44, 26, 16, 0.08);
-}
-
-.univ-explore-slice img {
-  width: 100%;
-  height: 120px;
-  object-fit: cover;
-  display: block;
-}
-
-.univ-explore-slice-badge {
-  position: absolute;
-  bottom: 8px;
-  left: 10px;
-  font-family: 'Outfit', sans-serif;
-  font-size: 0.65rem;
-  font-weight: 800;
-  color: #FFFFFF;
-  background: rgba(7, 61, 51, 0.85);
-  backdrop-filter: blur(4px);
-  padding: 0.2rem 0.6rem;
-  border-radius: 4px;
-}
-
-/* Drawer Detail */
-.univ-stage-drawer {
-  display: grid;
-  grid-template-rows: 0fr;
-  transition: grid-template-rows 0.35s var(--univ-ease);
-}
-
-.univ-stage-card.is-expanded .univ-stage-drawer {
-  grid-template-rows: 1fr;
-}
-
-.univ-stage-drawer-inner {
-  overflow: hidden;
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-style: italic;
+  font-size: clamp(1.15rem, 1.45vw, 1.35rem);
+  line-height: 1.3;
+  color: #1F1610;
+  margin: 0 0 1rem;
 }
 
 .univ-stage-detail {
-  padding-top: 1rem;
-  border-top: 1px dashed rgba(44, 26, 16, 0.12);
-  margin-bottom: 0.75rem;
+  margin-bottom: 1.25rem;
 }
 
 .univ-stage-insight {
   font-family: 'Manrope', sans-serif;
-  font-size: 0.88rem;
-  line-height: 1.65;
-  color: var(--univ-espresso-muted);
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: #5C5040;
   margin: 0 0 0.85rem;
 }
 
 .univ-stage-pill-tag {
   display: inline-flex;
   align-items: center;
-  gap: 0.4rem;
-  font-family: 'Outfit', sans-serif;
-  font-size: 0.7rem;
-  font-weight: 800;
+  gap: 0.35rem;
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
   color: var(--univ-forest);
   background: rgba(7, 61, 51, 0.08);
   padding: 0.25rem 0.65rem;
@@ -282,10 +277,9 @@
 }
 
 .univ-stage-footer {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  padding-top: 0.75rem;
+  margin-top: auto;
+  padding-top: 0.85rem;
+  border-top: 1px dashed rgba(44, 26, 16, 0.1);
 }
 
 .univ-stage-action {
@@ -293,7 +287,7 @@
   align-items: center;
   gap: 0.45rem;
   font-family: 'Outfit', sans-serif;
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   font-weight: 800;
   color: var(--univ-orange);
 }
@@ -302,17 +296,16 @@
   transition: transform 0.2s ease;
 }
 
-.univ-stage-card:hover .univ-stage-arrow,
-.univ-stage-card.is-expanded .univ-stage-arrow {
+.univ-stage-card:hover .univ-stage-arrow {
   transform: translateX(4px);
 }
 
-/* ── Emotional Quote Climax Statement ───────────────────────────── */
+/* ── 3. Emotional Quote Climax Statement ───────────────────────────── */
 .univ-idea-quote-block {
-  margin-top: clamp(2rem, 3.5vw, 2.75rem);
+  margin-top: clamp(2rem, 3.5vw, 2.8rem);
   text-align: center;
-  padding: clamp(1.75rem, 3vw, 2.5rem) 1.5rem;
-  background: radial-gradient(circle at 50% 50%, #FFFFFF 0%, rgba(255, 255, 255, 0.4) 100%);
+  padding: clamp(1.8rem, 3vw, 2.5rem) 1.5rem;
+  background: radial-gradient(circle at 50% 50%, #FFFFFF 0%, rgba(255, 255, 255, 0.5) 100%);
   border: 1.5px solid rgba(44, 26, 16, 0.08);
   border-radius: 20px;
   box-shadow: var(--univ-shadow-soft);
@@ -321,10 +314,10 @@
 
 .univ-quote-preamble {
   font-family: 'Manrope', sans-serif;
-  font-size: clamp(0.92rem, 1.2vw, 1.1rem);
+  font-size: clamp(0.92rem, 1.2vw, 1.08rem);
   font-weight: 600;
   color: var(--univ-espresso-muted);
-  margin: 0 0 0.75rem;
+  margin: 0 0 0.65rem;
 }
 
 .univ-quote-triad {
@@ -332,7 +325,7 @@
   align-items: center;
   justify-content: center;
   gap: clamp(0.6rem, 1.5vw, 1.25rem);
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.65rem;
 }
 
 .univ-triad-word {
@@ -363,29 +356,10 @@
   margin: 0;
 }
 
-/* Reveal classes */
-.univ-reveal {
-  opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 0.6s var(--univ-ease), transform 0.6s var(--univ-ease);
-}
-
-.univ-reveal.is-revealed {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.univ-stagger-1 { transition-delay: 0.1s; }
-.univ-stagger-2 { transition-delay: 0.2s; }
-.univ-stagger-3 { transition-delay: 0.3s; }
-.univ-stagger-4 { transition-delay: 0.4s; }
-
 /* Responsive */
 @media (max-width: 960px) {
-  .univ-idea-layout {
+  .univ-idea-stages-grid {
     grid-template-columns: 1fr;
-  }
-  .univ-idea-narrative {
-    position: static;
+    gap: 1.25rem;
   }
 }

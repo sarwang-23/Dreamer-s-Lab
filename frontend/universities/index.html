@@ -117,71 +117,85 @@
                     </div>
                 </div>
 
-                <!-- Right Column: The Interactive Campus Ecosystem Canvas -->
+                <!-- Right Column: The Interactive Campus Innovation Hub Workspace -->
                 <div class="univ-workspace-wrapper">
-                    <!-- Stage Switcher Tabs -->
-                    <div class="univ-stage-pills" role="tablist" aria-label="Campus Ecosystem Stages">
-                        <button class="univ-stage-pill is-active" data-stage="discovery" role="tab" aria-selected="true">
-                            <span class="pill-num">01</span>
-                            <span>Discovery</span>
-                        </button>
-                        <button class="univ-stage-pill" data-stage="preincubation" role="tab" aria-selected="false">
-                            <span class="pill-num">02</span>
-                            <span>Pre-Incubation</span>
-                        </button>
-                        <button class="univ-stage-pill" data-stage="incubation" role="tab" aria-selected="false">
-                            <span class="pill-num">03</span>
-                            <span>Incubation</span>
-                        </button>
-                        <button class="univ-stage-pill" data-stage="acceleration" role="tab" aria-selected="false">
-                            <span class="pill-num">04</span>
-                            <span>Acceleration</span>
-                        </button>
+                    <!-- Top Navigation: Horizontal Selector -->
+                    <div class="univ-stage-nav-container">
+                        <div class="univ-stage-pills" role="tablist" aria-label="Campus Pipeline Stages">
+                            <button class="univ-stage-pill is-active" data-stage="discovery" role="tab" id="tab-discovery" aria-selected="true" tabindex="0">
+                                <span class="pill-num">01</span>
+                                <span class="pill-title">Discovery</span>
+                            </button>
+                            <span class="univ-stage-sep" aria-hidden="true"></span>
+                            <button class="univ-stage-pill" data-stage="preincubation" role="tab" id="tab-preincubation" aria-selected="false" tabindex="-1">
+                                <span class="pill-num">02</span>
+                                <span class="pill-title">Pre-Incubation</span>
+                            </button>
+                            <span class="univ-stage-sep" aria-hidden="true"></span>
+                            <button class="univ-stage-pill" data-stage="incubation" role="tab" id="tab-incubation" aria-selected="false" tabindex="-1">
+                                <span class="pill-num">03</span>
+                                <span class="pill-title">Incubation</span>
+                            </button>
+                            <span class="univ-stage-sep" aria-hidden="true"></span>
+                            <button class="univ-stage-pill" data-stage="acceleration" role="tab" id="tab-acceleration" aria-selected="false" tabindex="-1">
+                                <span class="pill-num">04</span>
+                                <span class="pill-title">Acceleration</span>
+                            </button>
+                        </div>
                     </div>
 
-                    <!-- 3D Layered Workspace Canvas -->
-                    <div class="univ-workspace-canvas" aria-label="Interactive Campus Innovation Hub Canvas">
-                        <span class="univ-canvas-tag-tl">ECOSYSTEM CANVAS // REF. UNIV-2026</span>
-                        <span class="univ-canvas-tag-tr">PIPELINE ACTIVE</span>
-
-                        <!-- Floating Launch / Demo Day Showcase Badge -->
-                        <div class="univ-element univ-element-launch-badge univ-float-b" data-stage="acceleration">
-                            <span aria-hidden="true">&#128640;</span>
-                            <span class="univ-launch-label">Campus Demo Day Showcase</span>
-                            <span class="univ-launch-tag">120+ ANGEL &amp; VC NETWORK</span>
+                    <!-- Main Showcase: Editorial Ivory Canvas -->
+                    <div class="univ-workspace-canvas" aria-label="Universities Campus Hub Showcase Canvas">
+                        <div class="univ-canvas-meta-bar" aria-hidden="true">
+                            <span class="univ-canvas-tag-tl">CAMPUS VENTURE // REF. UNIV-2026</span>
+                            <span class="univ-canvas-tag-tr">
+                                <span class="univ-live-beacon"></span>
+                                <span class="univ-canvas-phase-indicator">ACTIVE STAGE: 01 DISCOVERY</span>
+                            </span>
                         </div>
 
                         <!-- Central Editorial Photo Element -->
                         <div class="univ-element univ-element-photo" data-stage="incubation">
                             <img src="../assets/university-incubator.jpg" alt="University student founders collaborating around prototypes and wireframes in a campus innovation incubator lab" width="600" height="450" loading="eager">
-                            <div class="univ-photo-caption">
+                            <div class="univ-photo-overlay-tag">
+                                <span class="pulse-dot" aria-hidden="true"></span>
                                 <span>Campus Innovation Hub &middot; Venture Lab</span>
-                                <span class="badge-live">Active Pipeline</span>
                             </div>
                         </div>
 
-                        <!-- Discovery Sticky Note (Stage 01) -->
+                        <!-- A. Demo Day Badge (Top-Left Perimeter) -->
+                        <div class="univ-element univ-element-launch-badge univ-float-b" data-stage="acceleration">
+                            <div class="univ-launch-icon-wrapper" aria-hidden="true">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"></path><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"></path><path d="M9 12H4s.55-3.03 2-4.5c1.2-1.2 3-1.5 3-1.5"></path><path d="M12 9v5s3.03-.55 4.5-2c1.2-1.2 1.5-3 1.5-3"></path></svg>
+                            </div>
+                            <div class="univ-launch-content">
+                                <span class="univ-launch-label">CAMPUS DEMO DAY</span>
+                                <span class="univ-launch-tag">120+ VC NETWORK</span>
+                            </div>
+                        </div>
+
+                        <!-- B. Discovery Sticky Note: Butter-Yellow (Top-Right Perimeter) -->
                         <div class="univ-element univ-element-sticky-discovery univ-float-a is-highlighted" data-stage="discovery">
                             <div class="univ-sticky-tape" aria-hidden="true"></div>
                             <span class="univ-sticky-tag">[01. DISCOVERY]</span>
-                            <p class="univ-sticky-text">&ldquo;Moving from theoretical lectures to real problem validation across engineering &amp; management departments.&rdquo;</p>
+                            <p class="univ-sticky-text">&ldquo;Moving from theoretical lectures to real problem validation across departments.&rdquo;</p>
                             <p class="univ-sticky-author">&mdash; Dean of Innovation &amp; E-Cell</p>
                         </div>
 
-                        <!-- Problem / Campus Audit Card (Stage 02) -->
+                        <!-- C. Campus Problem Audit Card (Bottom-Left Perimeter) -->
                         <div class="univ-element univ-element-audit-card" data-stage="preincubation">
-                            <div class="univ-audit-badge">
-                                <span aria-hidden="true">&#9679;</span>
-                                <span>02. CAMPUS AUDIT</span>
+                            <div class="univ-audit-badge">02. CAMPUS AUDIT</div>
+                            <div class="univ-audit-claim">
+                                <span class="univ-audit-stat-num">74%</span>
+                                <span class="univ-audit-stat-text">of ambitious students seek hands-on venture support.</span>
                             </div>
-                            <p class="univ-audit-text">&ldquo;74% of ambitious students seek hands-on venture-building support before graduating.&rdquo;</p>
                             <div class="univ-audit-metric">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
                                 <span>Survey of 1,200+ campus students</span>
                             </div>
                         </div>
 
-                        <!-- Pre-Incubation Glass Card (Stage 03) -->
+                        <!-- D. Pre-Incubation Prototype Card: Deep Forest-Green Panel (Bottom-Right Perimeter) -->
                         <div class="univ-element univ-element-pipeline-card univ-float-b" data-stage="incubation">
                             <div class="univ-pipe-header">
                                 <span class="univ-pipe-pill">03. PRE-INCUBATION V2.4</span>
@@ -196,16 +210,6 @@
                                 <span class="univ-pipe-stat">84% TESTED</span>
                             </div>
                         </div>
-
-                        <!-- Mentor Sticky Note (Stage 02) -->
-                        <div class="univ-element univ-element-mentor-note univ-float-a" data-stage="preincubation">
-                            <div class="univ-mentor-tape" aria-hidden="true"></div>
-                            <div class="univ-mentor-tag">
-                                <span>OPERATOR NETWORK</span>
-                            </div>
-                            <p class="univ-mentor-text">&ldquo;Connect student founders with alumni operators and real pilot customers by Week 4!&rdquo;</p>
-                            <p class="univ-mentor-author">&mdash; Venture Partner in Residence</p>
-                        </div>
                     </div>
                 </div>
 
@@ -215,138 +219,125 @@
 
     <!-- ======================================================================
          SECTION 2: THE CHALLENGE ("THE BIG IDEA / CAMPUS CHALLENGE")
-         Interactive sticky narrative layout matching Dreamers Lab
+         Compact & Punchy Editorial Layout matching Dreamers Lab
          ====================================================================== -->
     <section class="univ-idea-section" id="challenge">
         <div class="univ-idea-container">
-            <div class="univ-idea-layout">
-
-                <!-- Left Column: Sticky Narrative Anchor -->
-                <div class="univ-idea-narrative univ-reveal">
-                    <div class="univ-idea-eyebrow-pill">
-                        <span class="univ-idea-eyebrow-dot" aria-hidden="true"></span>
-                        <span>The Campus Challenge</span>
-                    </div>
-
-                    <h2 class="univ-idea-headline">
-                        <span class="headline-dim">Turning entrepreneurial ambition</span>
-                        into entrepreneurial <em class="headline-accent">outcomes.</em>
-                    </h2>
-
-                    <p class="univ-idea-lead">
-                        Universities are uniquely positioned to nurture innovation. They bring together students, faculty, research, facilities, alumni and industry connections. Yet moving from entrepreneurship awareness to sustainable venture creation requires a structured approach.
-                    </p>
-
-                    <!-- Interactive Timeline Flow Indicator -->
-                    <div class="univ-idea-flow-strip" aria-label="Progression Flow">
-                        <span class="univ-flow-node is-active" data-index="0">01 Awareness</span>
-                        <span class="univ-flow-arrow">&rarr;</span>
-                        <span class="univ-flow-node" data-index="1">02 Pipeline</span>
-                        <span class="univ-flow-arrow">&rarr;</span>
-                        <span class="univ-flow-node" data-index="2">03 Mentorship</span>
-                    </div>
+            <!-- 1. Editorial Header Block -->
+            <div class="univ-idea-header">
+                <div class="univ-idea-eyebrow-pill">
+                    <span class="univ-idea-eyebrow-dot" aria-hidden="true"></span>
+                    <span>The Campus Challenge</span>
                 </div>
 
-                <!-- Right Column: Interactive Stage Cards -->
-                <div class="univ-idea-canvas">
+                <h2 class="univ-idea-headline">
+                    <span class="headline-dim">Turning entrepreneurial ambition</span>
+                    into entrepreneurial <em class="headline-accent">outcomes.</em>
+                </h2>
 
-                    <!-- Stage 01: Awareness Gap -->
-                    <article class="univ-stage-card univ-reveal univ-stagger-1 is-expanded" data-stage-index="0">
-                        <span class="univ-stage-num" aria-hidden="true">01</span>
-                        <div class="univ-stage-header">
-                            <span class="univ-stage-badge">CHALLENGE 01 // AWARENESS GAP</span>
-                            <span class="univ-stage-title-tag">Event Buzz vs Practical Execution</span>
+                <p class="univ-idea-lead">
+                    Universities are uniquely positioned to nurture innovation. They bring together students, faculty, research, facilities, alumni and industry connections. Yet moving from entrepreneurship awareness to sustainable venture creation requires a structured approach.
+                </p>
+
+                <!-- Timeline Flow Indicator Rail -->
+                <div class="univ-idea-flow-strip" aria-label="Progression Flow">
+                    <span class="univ-flow-node is-active"><span class="flow-num">01</span> Awareness</span>
+                    <span class="univ-flow-arrow">&rarr;</span>
+                    <span class="univ-flow-node"><span class="flow-num">02</span> Pipeline</span>
+                    <span class="univ-flow-arrow">&rarr;</span>
+                    <span class="univ-flow-node"><span class="flow-num">03</span> Mentorship</span>
+                </div>
+            </div>
+
+            <!-- 2. The 3 Transformation Stages (Compact 3-Column Grid) -->
+            <div class="univ-idea-stages-grid">
+                <!-- Stage 01: Awareness Gap -->
+                <article class="univ-stage-card">
+                    <div>
+                        <div class="univ-stage-card-top">
+                            <div class="univ-stage-badge-wrap">
+                                <span class="univ-stage-pill">Challenge 01</span>
+                                <span class="univ-stage-subtag">Awareness Gap</span>
+                            </div>
+                            <span class="univ-stage-card-num">01</span>
                         </div>
                         <h3 class="univ-stage-question">
                             &ldquo;Students may attend startup events, guest speaker talks, and hackathons &mdash; but remain unsure how to validate their ideas.&rdquo;
                         </h3>
-                        <div class="univ-stage-drawer">
-                            <div class="univ-stage-drawer-inner">
-                                <div class="univ-stage-detail">
-                                    <p class="univ-stage-insight">
-                                        Moving from passive inspiration to systematic validation. Building Dreams introduces customer discovery frameworks that help students test real user demand before writing code or pitching.
-                                    </p>
-                                    <span class="univ-stage-pill-tag">&#10022; Problem Discovery &amp; Validation</span>
-                                </div>
-                            </div>
+                        <div class="univ-stage-detail">
+                            <p class="univ-stage-insight">
+                                Moving from passive inspiration to systematic validation. Building Dreams introduces customer discovery frameworks that help students test real user demand before writing code or pitching.
+                            </p>
+                            <span class="univ-stage-pill-tag">&#10022; Problem Discovery &amp; Validation</span>
                         </div>
-                        <div class="univ-stage-footer">
-                            <span class="univ-stage-action">
-                                <span>Explore Validation Pathway</span>
-                                <span class="univ-stage-arrow" aria-hidden="true">&rarr;</span>
-                            </span>
-                        </div>
-                    </article>
+                    </div>
+                    <div class="univ-stage-footer">
+                        <span class="univ-stage-action">
+                            <span>Explore Validation Pathway</span>
+                            <span class="univ-stage-arrow" aria-hidden="true">&rarr;</span>
+                        </span>
+                    </div>
+                </article>
 
-                    <!-- Stage 02: Pipeline Disconnect -->
-                    <article class="univ-stage-card univ-reveal univ-stagger-2" data-stage-index="1">
-                        <span class="univ-stage-num" aria-hidden="true">02</span>
-                        <div class="univ-stage-header">
-                            <span class="univ-stage-badge">CHALLENGE 02 // PIPELINE DISCONNECT</span>
-                            <span class="univ-stage-title-tag">Fragmented Campus Initiatives</span>
+                <!-- Stage 02: Pipeline Disconnect -->
+                <article class="univ-stage-card">
+                    <div>
+                        <div class="univ-stage-card-top">
+                            <div class="univ-stage-badge-wrap">
+                                <span class="univ-stage-pill">Challenge 02</span>
+                                <span class="univ-stage-subtag">Pipeline Disconnect</span>
+                            </div>
+                            <span class="univ-stage-card-num">02</span>
                         </div>
                         <h3 class="univ-stage-question">
                             &ldquo;Entrepreneurship cells generate initial enthusiasm without having a clear progression into institutional incubation.&rdquo;
                         </h3>
-
-                        <!-- Editorial Slice Visual -->
-                        <div class="univ-explore-slice">
-                            <img src="../assets/story-experiment.jpg" alt="University student founders conducting user tests and hypothesis testing" width="540" height="120" loading="lazy">
-                            <span class="univ-explore-slice-badge">Campus Pipeline &middot; Seamless Progression</span>
+                        <div class="univ-stage-detail">
+                            <p class="univ-stage-insight">
+                                Building Dreams helps institutions create the missing connective tissue between awareness, pre-incubation, prototyping, and formal incubation so that no promising venture gets lost.
+                            </p>
+                            <span class="univ-stage-pill-tag">&#10022; Connective Institutional Tissue</span>
                         </div>
+                    </div>
+                    <div class="univ-stage-footer">
+                        <span class="univ-stage-action">
+                            <span>Explore Pipeline Design</span>
+                            <span class="univ-stage-arrow" aria-hidden="true">&rarr;</span>
+                        </span>
+                    </div>
+                </article>
 
-                        <div class="univ-stage-drawer">
-                            <div class="univ-stage-drawer-inner">
-                                <div class="univ-stage-detail">
-                                    <p class="univ-stage-insight">
-                                        Building Dreams helps institutions create the missing connective tissue between awareness, pre-incubation, prototyping, and formal incubation so that no promising venture gets lost.
-                                    </p>
-                                    <span class="univ-stage-pill-tag">&#10022; Connective Institutional Tissue</span>
-                                </div>
+                <!-- Stage 03: Execution Mentorship -->
+                <article class="univ-stage-card">
+                    <div>
+                        <div class="univ-stage-card-top">
+                            <div class="univ-stage-badge-wrap">
+                                <span class="univ-stage-pill">Challenge 03</span>
+                                <span class="univ-stage-subtag">Operator Access</span>
                             </div>
-                        </div>
-                        <div class="univ-stage-footer">
-                            <span class="univ-stage-action">
-                                <span>Explore Pipeline Design</span>
-                                <span class="univ-stage-arrow" aria-hidden="true">&rarr;</span>
-                            </span>
-                        </div>
-                    </article>
-
-                    <!-- Stage 03: Execution Mentorship -->
-                    <article class="univ-stage-card univ-reveal univ-stagger-3" data-stage-index="2">
-                        <span class="univ-stage-num" aria-hidden="true">03</span>
-                        <div class="univ-stage-header">
-                            <span class="univ-stage-badge">CHALLENGE 03 // OPERATOR ACCESS</span>
-                            <span class="univ-stage-title-tag">Mentorship &amp; Industry Alignment</span>
+                            <span class="univ-stage-card-num">03</span>
                         </div>
                         <h3 class="univ-stage-question">
                             &ldquo;Promising founders need practical, hands-on guidance and direct access to relevant startup operators, alumni, and domain experts.&rdquo;
                         </h3>
-                        <div class="univ-stage-drawer">
-                            <div class="univ-stage-drawer-inner">
-                                <div class="univ-stage-detail">
-                                    <p class="univ-stage-insight">
-                                        We bring vetted founder mentors, domain specialists, and alumni networks directly to campus teams, providing milestone reviews, pilot testing, and investor readiness.
-                                    </p>
-                                    <span class="univ-stage-pill-tag">&#10022; Specialist Operator Networks</span>
-                                </div>
-                            </div>
+                        <div class="univ-stage-detail">
+                            <p class="univ-stage-insight">
+                                We bring vetted founder mentors, domain specialists, and alumni networks directly to campus teams, providing milestone reviews, pilot testing, and investor readiness.
+                            </p>
+                            <span class="univ-stage-pill-tag">&#10022; Specialist Operator Networks</span>
                         </div>
-                        <div class="univ-stage-footer">
-                            <span class="univ-stage-action">
-                                <span>Explore Mentor Network</span>
-                                <span class="univ-stage-arrow" aria-hidden="true">&rarr;</span>
-                            </span>
-                        </div>
-                    </article>
-
-                </div>
-
+                    </div>
+                    <div class="univ-stage-footer">
+                        <span class="univ-stage-action">
+                            <span>Explore Mentor Network</span>
+                            <span class="univ-stage-arrow" aria-hidden="true">&rarr;</span>
+                        </span>
+                    </div>
+                </article>
             </div>
 
-            <!-- Emotional Quote Climax Statement -->
-            <div class="univ-idea-quote-block univ-reveal univ-stagger-4">
+            <!-- 3. Emotional Quote Climax Statement -->
+            <div class="univ-idea-quote-block">
                 <p class="univ-quote-preamble">
                     &ldquo;The mission is to establish sustainable campus pathways from day one.&rdquo;
                 </p>
@@ -361,7 +352,6 @@
                     with dedicated institutional backing.
                 </p>
             </div>
-
         </div>
     </section>
 
