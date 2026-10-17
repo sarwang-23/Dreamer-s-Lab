@@ -162,7 +162,6 @@ export function initDreamersLabSkills() {
   const explorerCardImpact = section.querySelector('.dl-explorer-card-impact');
   const explorerCardDesc = section.querySelector('.dl-explorer-card-desc');
   const explorerPracticeExample = section.querySelector('.dl-practice-example');
-  const explorerHabitsRow = section.querySelector('.dl-practice-habits-row');
   const explorerExploreBtn = section.querySelector('.dl-explorer-explore-btn');
 
   let currentExplorerSkillId = '01';
@@ -180,6 +179,13 @@ export function initDreamersLabSkills() {
       pill.setAttribute('aria-selected', isTarget ? 'true' : 'false');
     });
 
+    // Synchronize active card in grid
+    const allCards = section.querySelectorAll('.dl-skill-card');
+    allCards.forEach(card => {
+      const isTarget = card.getAttribute('data-skill') === skillId;
+      card.classList.toggle('is-active', isTarget);
+    });
+
     // Update card content with smooth animation
     const explorerCard = section.querySelector('.dl-explorer-card');
     if (explorerCard) {
@@ -195,14 +201,8 @@ export function initDreamersLabSkills() {
     if (explorerCardDesc) explorerCardDesc.textContent = skill.journeyConnection;
     if (explorerPracticeExample) explorerPracticeExample.textContent = skill.practiceExample;
 
-    if (explorerHabitsRow) {
-      explorerHabitsRow.innerHTML = skill.habits
-        .slice(0, 3)
-        .map(h => `<span class="dl-practice-habit-pill">${h}</span>`)
-        .join('');
-    }
-
-    if (shouldScroll && explorer) {
+    // Only scroll into view if on mobile/narrow viewports where explorer is stacked below
+    if (shouldScroll && window.innerWidth < 1180 && explorer) {
       explorer.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     }
   }
@@ -216,14 +216,8 @@ export function initDreamersLabSkills() {
     card.setAttribute('aria-haspopup', 'dialog');
     card.setAttribute('aria-label', `Explore ${SKILLS_DATA[skillId]?.title || 'skill'} details`);
 
-    card.addEventListener('click', (e) => {
-      // If clicking footer arrow/action directly, open modal; otherwise update explorer and sync
-      const isFooterClick = e.target.closest('.dl-card-footer');
-      if (isFooterClick) {
-        openSkillModal(skillId, card);
-      } else {
-        updateExplorerDisplay(skillId, true);
-      }
+    card.addEventListener('click', () => {
+      openSkillModal(skillId, card);
     });
 
     card.addEventListener('keydown', (e) => {

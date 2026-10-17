@@ -1,97 +1,103 @@
 /* ==========================================================================
    Dreamers Lab — What Students Learn: "Skills that go beyond the classroom."
-   Art-Directed Editorial Skills Ecosystem & Interactive Discovery Experience
+   Horizontally Composed Editorial Experience (Desktop: ~1440px wide, ~650–800px high)
    Design System:
    • Warm ivory: #F7F5EF
-   • Deep charcoal: #241B16
+   • Deep forest green: #14271C
+   • Charcoal: #241B16
    • Burnt orange: #FF5A24
-   • Forest green: #173B2B
    • Soft sage: #DCE8DA
+   • Lime accent: #C9F36A
    • Warm white: #FFFEFB
-   • Pale butter yellow: #FFF2C6
    ========================================================================== */
 
 :root {
   --dls-ivory: #F7F5EF;
   --dls-charcoal: #241B16;
   --dls-orange: #FF5A24;
-  --dls-forest: #173B2B;
-  --dls-forest-dark: #0F261C;
+  --dls-forest: #14271C;
+  --dls-forest-light: #1A3626;
   --dls-sage: #DCE8DA;
+  --dls-lime: #C9F36A;
   --dls-white: #FFFEFB;
-  --dls-yellow: #FFF2C6;
   --dls-text-muted: #665B52;
   --dls-border: rgba(36, 27, 22, 0.08);
-  --dls-border-hover: rgba(36, 27, 22, 0.22);
-  --dls-radius-xl: 26px;
-  --dls-radius-lg: 20px;
-  --dls-radius-md: 14px;
+  --dls-border-hover: rgba(36, 27, 22, 0.2);
+  --dls-radius-xl: 22px;
+  --dls-radius-lg: 16px;
+  --dls-radius-md: 12px;
   --dls-radius-sm: 8px;
-  --dls-shadow-subtle: 0 4px 18px -4px rgba(36, 27, 22, 0.04);
-  --dls-shadow-card: 0 16px 38px -10px rgba(36, 27, 22, 0.06), 0 2px 8px rgba(36, 27, 22, 0.02);
-  --dls-shadow-hover: 0 24px 50px -12px rgba(36, 27, 22, 0.12), 0 4px 14px rgba(36, 27, 22, 0.04);
+  --dls-shadow-sm: 0 4px 14px -4px rgba(36, 27, 22, 0.04);
+  --dls-shadow-card: 0 10px 24px -8px rgba(36, 27, 22, 0.06), 0 2px 6px rgba(36, 27, 22, 0.02);
+  --dls-shadow-hover: 0 16px 36px -10px rgba(36, 27, 22, 0.12), 0 3px 10px rgba(36, 27, 22, 0.03);
 }
 
 .dl-skills-section {
   position: relative;
   background: var(--dls-ivory);
   color: var(--dls-charcoal);
-  padding: clamp(5rem, 8vw, 7.5rem) clamp(1.2rem, 3.8vw, 3.5rem);
+  padding: clamp(3rem, 4.5vw, 4.2rem) clamp(1.2rem, 3.5vw, 3.5rem);
   overflow: hidden;
   border-top: 1px solid rgba(36, 27, 22, 0.07);
 }
 
-/* Subtle architectural radial warmth */
+/* Subtle background aura */
 .dl-skills-bg-glow {
   position: absolute;
-  top: 8%;
+  top: 10%;
   left: 50%;
   transform: translateX(-50%);
-  width: 1100px;
-  height: 700px;
-  background: radial-gradient(ellipse at center, rgba(255, 90, 36, 0.038) 0%, rgba(23, 59, 43, 0.025) 45%, transparent 72%);
+  width: 1200px;
+  height: 600px;
+  background: radial-gradient(ellipse at center, rgba(255, 90, 36, 0.035) 0%, rgba(20, 39, 28, 0.025) 50%, transparent 75%);
   pointer-events: none;
   z-index: 0;
 }
 
 .dl-skills-container {
-  max-width: 1220px;
+  max-width: 1440px;
   margin: 0 auto;
   position: relative;
   z-index: 1;
 }
 
-/* ── 1. Hero Editorial Introduction ──────────────────────────────── */
+/* ── ZONE A: TOP ROW INTRODUCTION (Horizontal & Compact) ─────────── */
 .dl-skills-header {
-  max-width: 900px;
-  margin: 0 auto clamp(3rem, 5vw, 4.2rem);
-  text-align: center;
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: clamp(1.6rem, 2.8vw, 2.4rem);
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid rgba(36, 27, 22, 0.07);
+}
+
+.dl-skills-header-main {
+  max-width: 860px;
+  padding-left: clamp(0.85rem, 2.2vw, 2.2rem); /* Halka sa right-side shift */
 }
 
 .dl-skills-badge-row {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  justify-content: center;
-  gap: 0.75rem;
-  margin-bottom: 1.35rem;
+  gap: 0.55rem;
+  margin-bottom: 0.75rem;
   flex-wrap: wrap;
 }
 
 .dl-skills-eyebrow-pill {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.45rem;
   background: var(--dls-white);
   border: 1px solid var(--dls-border);
-  padding: 0.38rem 0.95rem;
+  padding: 0.28rem 0.8rem;
   border-radius: 999px;
   font-family: 'Manrope', monospace;
-  font-size: 0.68rem;
+  font-size: 0.65rem;
   font-weight: 800;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.09em;
   color: var(--dls-charcoal);
   text-transform: uppercase;
-  box-shadow: var(--dls-shadow-subtle);
+  box-shadow: var(--dls-shadow-sm);
 }
 
 .dl-skills-eyebrow-dot {
@@ -105,13 +111,13 @@
 .dl-skills-secondary-pill {
   display: inline-flex;
   align-items: center;
-  gap: 0.45rem;
-  background: rgba(23, 59, 43, 0.07);
-  border: 1px solid rgba(23, 59, 43, 0.14);
-  padding: 0.38rem 0.9rem;
+  gap: 0.4rem;
+  background: rgba(20, 39, 28, 0.06);
+  border: 1px solid rgba(20, 39, 28, 0.12);
+  padding: 0.25rem 0.72rem;
   border-radius: 999px;
   font-family: 'Manrope', monospace;
-  font-size: 0.66rem;
+  font-size: 0.63rem;
   font-weight: 800;
   letter-spacing: 0.08em;
   color: var(--dls-forest);
@@ -120,13 +126,12 @@
 
 .dl-skills-headline {
   font-family: 'Outfit', -apple-system, sans-serif;
-  font-size: clamp(2.4rem, 5.2vw, 4.2rem);
+  font-size: clamp(2rem, 3.6vw, 3rem);
   font-weight: 800;
-  line-height: 1.08;
+  line-height: 1.15;
   color: var(--dls-charcoal);
-  letter-spacing: -0.03em;
-  margin: 0 auto 1.35rem;
-  max-width: 22ch;
+  letter-spacing: -0.025em;
+  margin: 0 0 0.65rem;
 }
 
 .dl-skills-headline em.skills-accent {
@@ -134,89 +139,40 @@
   font-style: italic;
   font-weight: 400;
   color: var(--dls-orange);
-  letter-spacing: -0.015em;
+  letter-spacing: -0.01em;
 }
 
 .dl-skills-lead {
   font-family: 'Manrope', -apple-system, sans-serif;
-  font-size: clamp(1rem, 1.8vw, 1.18rem);
+  font-size: clamp(0.92rem, 1.25vw, 1.02rem);
   font-weight: 500;
-  line-height: 1.62;
+  line-height: 1.55;
   color: var(--dls-text-muted);
-  margin: 0 auto clamp(2rem, 3.5vw, 2.6rem);
-  max-width: 64ch;
+  margin: 0;
+  max-width: 680px;
 }
 
-/* Sleek Minimalist Connecting Motif */
-.dl-skills-motif-bar {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1.25rem;
-  padding: 0.65rem 1.35rem;
-  background: rgba(255, 254, 251, 0.9);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid var(--dls-border);
-  border-radius: 999px;
-  box-shadow: var(--dls-shadow-subtle);
-  flex-wrap: wrap;
-}
-
-.dl-skills-motif-text {
-  font-family: 'Instrument Serif', Georgia, serif;
-  font-style: italic;
-  font-size: 1.15rem;
-  color: var(--dls-charcoal);
-  letter-spacing: -0.01em;
-}
-
-.dl-skills-motif-divider {
-  width: 4px;
-  height: 4px;
-  border-radius: 50%;
-  background: var(--dls-orange);
-  opacity: 0.7;
-}
-
-.dl-skills-motif-tags {
-  display: flex;
-  align-items: center;
-  gap: 0.45rem;
-}
-
-.dl-motif-tag {
-  font-family: 'Manrope', monospace;
-  font-size: 0.63rem;
-  font-weight: 800;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--dls-forest);
-  background: rgba(23, 59, 43, 0.08);
-  padding: 0.2rem 0.55rem;
-  border-radius: 6px;
-}
-
-/* ── 2. Art-Directed Asymmetric Skills Grid ──────────────────────── */
+/* ── FULL-WIDTH BALANCED 8 SKILL CARDS GRID (4x2 Layout) ────────── */
 .dl-skills-grid {
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  gap: 1.35rem;
-  margin-bottom: clamp(3rem, 5vw, 4.5rem);
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(0.85rem, 1.4vw, 1.25rem);
+  width: 100%;
 }
 
-/* Card Base Structure */
+/* Base Skill Card */
 .dl-skill-card {
   position: relative;
   background: var(--dls-white);
   border: 1px solid var(--dls-border);
-  border-radius: var(--dls-radius-xl);
-  padding: clamp(1.8rem, 2.6vw, 2.4rem);
+  border-radius: var(--dls-radius-lg);
+  padding: 1.15rem 1.25rem 1.05rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  min-height: 190px;
   box-shadow: var(--dls-shadow-card);
-  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
   overflow: hidden;
   cursor: pointer;
   user-select: none;
@@ -229,21 +185,23 @@
   top: 0;
   left: 0;
   right: 0;
-  height: 3.5px;
+  height: 3px;
   background: var(--dls-orange);
   opacity: 0;
   transform: scaleX(0.2);
   transform-origin: left;
-  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.dl-skill-card:hover {
-  transform: translateY(-6px);
+.dl-skill-card:hover,
+.dl-skill-card.is-active {
+  transform: translateY(-3px);
   border-color: var(--dls-border-hover);
   box-shadow: var(--dls-shadow-hover);
 }
 
-.dl-skill-card:hover::before {
+.dl-skill-card:hover::before,
+.dl-skill-card.is-active::before {
   opacity: 1;
   transform: scaleX(1);
 }
@@ -253,280 +211,125 @@
   outline-offset: 3px;
 }
 
-/* ── CARD 01: SIGNATURE FEATURED FLAGSHIP (7 Columns) ───────────── */
+/* CARD 01: Uses clean white card styling consistent with grid */
 .dl-skill-card[data-skill="01"] {
-  grid-column: span 7;
-  background: linear-gradient(145deg, #163627 0%, var(--dls-forest-dark) 100%);
-  color: #FFFFFF;
-  border-color: rgba(220, 232, 218, 0.18);
-  box-shadow: 0 24px 54px -14px rgba(15, 38, 28, 0.45), 0 3px 8px rgba(15, 38, 28, 0.2);
-  min-height: 360px;
-}
-
-.dl-skill-card[data-skill="01"]::before {
-  background: linear-gradient(90deg, #DCE8DA, var(--dls-orange));
-}
-
-/* Subtle oversized background numeral */
-.dl-card-bg-ghost-num {
-  position: absolute;
-  top: -10px;
-  right: 20px;
-  font-family: 'Outfit', sans-serif;
-  font-size: clamp(5.5rem, 8vw, 7.8rem);
-  font-weight: 900;
-  line-height: 1;
-  color: rgba(255, 255, 255, 0.04);
-  pointer-events: none;
-  user-select: none;
-  letter-spacing: -0.04em;
-  transition: color 0.3s ease;
-}
-
-.dl-skill-card[data-skill="01"]:hover .dl-card-bg-ghost-num {
-  color: rgba(220, 232, 218, 0.08);
-}
-
-.dl-skill-card[data-skill="01"] .dl-card-num-badge {
-  background: rgba(255, 255, 255, 0.12);
-  color: #FFFFFF;
-  border-color: rgba(255, 255, 255, 0.2);
-}
-
-.dl-skill-card[data-skill="01"] .dl-card-category {
-  color: #DCE8DA;
-  background: rgba(220, 232, 218, 0.15);
-}
-
-.dl-skill-card[data-skill="01"] .dl-card-title {
-  color: #FFFFFF;
-  font-size: clamp(1.75rem, 2.8vw, 2.25rem);
-  letter-spacing: -0.025em;
-}
-
-.dl-skill-card[data-skill="01"] .dl-card-quote {
-  color: #DCE8DA;
-  font-size: 1.2rem;
-}
-
-.dl-skill-card[data-skill="01"] .dl-card-desc {
-  color: rgba(255, 255, 255, 0.82);
-  font-size: 1rem;
-  line-height: 1.62;
-  max-width: 50ch;
-}
-
-.dl-skill-card[data-skill="01"] .dl-card-footer {
-  border-color: rgba(255, 255, 255, 0.12);
-}
-
-.dl-skill-card[data-skill="01"] .dl-card-action-text {
-  color: rgba(255, 255, 255, 0.75);
-}
-
-.dl-skill-card[data-skill="01"] .dl-card-arrow-circle {
-  background: rgba(255, 255, 255, 0.12);
-  color: #FFFFFF;
-  border-color: rgba(255, 255, 255, 0.22);
-}
-
-.dl-skill-card[data-skill="01"]:hover .dl-card-arrow-circle {
-  background: var(--dls-orange);
-  border-color: var(--dls-orange);
-}
-
-/* ── GRID COLUMN ALLOCATIONS ─────────────────────────────────────── */
-/* 02. Problem-Solving (Span 5) */
-.dl-skill-card[data-skill="02"] {
-  grid-column: span 5;
   background: var(--dls-white);
+  color: var(--dls-charcoal);
+  border-color: var(--dls-border);
 }
 
-/* 03. Creativity and Innovation (Span 5) */
-.dl-skill-card[data-skill="03"] {
-  grid-column: span 5;
-  background: linear-gradient(135deg, #FAF7F0 0%, #FFFFFF 100%);
-}
 
-.dl-skill-card[data-skill="03"]::before {
-  background: var(--dls-forest);
-}
-
-/* 04. Communication (Span 7) */
-.dl-skill-card[data-skill="04"] {
-  grid-column: span 7;
-  background: var(--dls-white);
-}
-
-/* Row 3: 05, 06, 07 (Span 4 each) */
-.dl-skill-card[data-skill="05"] {
-  grid-column: span 4;
-}
-
-.dl-skill-card[data-skill="06"] {
-  grid-column: span 4;
-}
-
-.dl-skill-card[data-skill="07"] {
-  grid-column: span 4;
-}
-
-/* Row 4: 08 Digital Confidence (Span 12 Horizontal Synthesis) */
-.dl-skill-card[data-skill="08"] {
-  grid-column: span 12;
-  background: linear-gradient(135deg, #FFFDF8 0%, #F5F1E8 100%);
-  display: grid;
-  grid-template-columns: 1fr auto;
-  align-items: center;
-  gap: 2.5rem;
-  padding: clamp(1.8rem, 2.5vw, 2.4rem) clamp(2.2rem, 3.8vw, 3.2rem);
-}
-
-.dl-skill-card[data-skill="08"] .dl-card-content-block {
-  max-width: 68ch;
-}
-
-.dl-skill-card[data-skill="08"] .dl-card-footer {
-  border-top: none;
-  padding-top: 0;
-  margin-top: 0;
-}
-
-/* ── CARD INTERNAL COMPONENTS ────────────────────────────────────── */
+/* Card Header */
 .dl-card-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 1.25rem;
-  gap: 0.5rem;
+  margin-bottom: 0.55rem;
+  gap: 0.4rem;
 }
 
 .dl-card-header-left {
   display: flex;
   align-items: center;
-  gap: 0.55rem;
+  gap: 0.45rem;
 }
 
 .dl-card-num-badge {
   display: inline-flex;
   align-items: center;
   font-family: 'Outfit', sans-serif;
-  font-size: 0.84rem;
+  font-size: 0.76rem;
   font-weight: 800;
   color: var(--dls-charcoal);
   background: rgba(36, 27, 22, 0.05);
   border: 1px solid var(--dls-border);
-  padding: 0.22rem 0.55rem;
+  padding: 0.16rem 0.46rem;
   border-radius: var(--dls-radius-sm);
   letter-spacing: -0.01em;
 }
 
 .dl-card-category {
   font-family: 'Manrope', monospace;
-  font-size: 0.65rem;
+  font-size: 0.58rem;
   font-weight: 800;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.07em;
   text-transform: uppercase;
   color: var(--dls-forest);
-  background: rgba(23, 59, 43, 0.08);
-  padding: 0.22rem 0.55rem;
-  border-radius: 6px;
+  background: rgba(20, 39, 28, 0.07);
+  padding: 0.16rem 0.46rem;
+  border-radius: 4px;
 }
 
-/* Visual Illustration Icon Canvas */
+/* Mini Visual Icon */
 .dl-card-visual-icon {
-  width: 42px;
-  height: 42px;
-  border-radius: 12px;
+  width: 26px;
+  height: 26px;
+  border-radius: 7px;
   background: rgba(36, 27, 22, 0.04);
   color: var(--dls-charcoal);
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.25s ease;
   flex-shrink: 0;
-  border: 1px solid rgba(36, 27, 22, 0.06);
 }
 
-.dl-skill-card[data-skill="01"] .dl-card-visual-icon {
-  background: rgba(255, 255, 255, 0.12);
-  color: #DCE8DA;
-  border-color: rgba(255, 255, 255, 0.18);
-}
-
-.dl-skill-card:hover .dl-card-visual-icon {
+.dl-skill-card:hover .dl-card-visual-icon,
+.dl-skill-card.is-active .dl-card-visual-icon {
   background: var(--dls-charcoal);
   color: #FFFFFF;
-  border-color: var(--dls-charcoal);
-  transform: scale(1.08) rotate(3deg);
-}
-
-.dl-skill-card[data-skill="01"]:hover .dl-card-visual-icon {
-  background: var(--dls-orange);
-  color: #FFFFFF;
-  border-color: var(--dls-orange);
 }
 
 /* Card Body */
 .dl-card-body {
   flex: 1;
-  margin-bottom: 1.35rem;
+  margin-bottom: 0.55rem;
 }
 
 .dl-card-title {
   font-family: 'Outfit', sans-serif;
-  font-size: clamp(1.24rem, 1.8vw, 1.48rem);
+  font-size: 1.02rem;
   font-weight: 800;
   color: var(--dls-charcoal);
-  letter-spacing: -0.02em;
+  letter-spacing: -0.015em;
   line-height: 1.2;
-  margin: 0 0 0.4rem;
-}
-
-.dl-card-quote {
-  font-family: 'Instrument Serif', Georgia, serif;
-  font-style: italic;
-  font-size: 1.08rem;
-  line-height: 1.35;
-  color: var(--dls-orange);
-  margin: 0 0 0.75rem;
-  display: block;
+  margin: 0 0 0.25rem;
 }
 
 .dl-card-desc {
   font-family: 'Manrope', sans-serif;
-  font-size: 0.88rem;
-  line-height: 1.6;
+  font-size: 0.77rem;
+  line-height: 1.48;
   color: var(--dls-text-muted);
   margin: 0;
 }
 
 /* Card Footer */
 .dl-card-footer {
-  padding-top: 1.05rem;
-  border-top: 1px solid var(--dls-border);
+  padding-top: 0.5rem;
+  border-top: 1px solid rgba(36, 27, 22, 0.06);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: auto;
 }
 
 .dl-card-action-text {
   font-family: 'Manrope', sans-serif;
-  font-size: 0.75rem;
+  font-size: 0.68rem;
   font-weight: 700;
-  color: #85786C;
+  color: #8A8177;
   letter-spacing: 0.02em;
   transition: color 0.2s ease;
 }
 
-.dl-skill-card:hover .dl-card-action-text {
+.dl-skill-card:hover .dl-card-action-text,
+.dl-skill-card.is-active .dl-card-action-text {
   color: var(--dls-orange);
 }
 
 .dl-card-arrow-circle {
-  width: 32px;
-  height: 32px;
+  width: 22px;
+  height: 22px;
   border-radius: 50%;
   border: 1px solid var(--dls-border);
   background: var(--dls-white);
@@ -534,115 +337,126 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.84rem;
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 2px 6px rgba(36, 27, 22, 0.04);
+  font-size: 0.68rem;
+  transition: all 0.22s ease;
 }
 
-.dl-skill-card:hover .dl-card-arrow-circle {
+.dl-skill-card:hover .dl-card-arrow-circle,
+.dl-skill-card.is-active .dl-card-arrow-circle {
   background: var(--dls-orange);
   border-color: var(--dls-orange);
   color: #FFFFFF;
-  transform: translateX(4px);
-  box-shadow: 0 4px 12px rgba(255, 90, 36, 0.3);
+  transform: translateX(2px);
 }
 
-/* ── 3. Interactive Skill Discovery Explorer ─────────────────────── */
+/* ── ZONE C: INTEGRATED INTERACTIVE EXPLORER (~41% WIDTH) ────────── */
+.dl-skills-explorer-col {
+  display: flex;
+  flex-direction: column;
+}
+
 .dl-skills-explorer {
   background: var(--dls-white);
   border: 1px solid var(--dls-border);
-  border-radius: 28px;
-  padding: clamp(2.2rem, 4vw, 3.2rem) clamp(1.8rem, 3.8vw, 3rem);
+  border-radius: var(--dls-radius-xl);
+  padding: clamp(1.4rem, 2.2vw, 1.8rem);
   box-shadow: var(--dls-shadow-card);
-  margin-bottom: clamp(2.5rem, 4vw, 3.5rem);
-  scroll-margin-top: 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
 }
 
 .dl-explorer-header {
-  text-align: center;
-  max-width: 700px;
-  margin: 0 auto clamp(1.6rem, 2.8vw, 2.2rem);
+  margin-bottom: 1.15rem;
 }
 
 .dl-explorer-badge {
   display: inline-flex;
   align-items: center;
-  gap: 0.45rem;
+  gap: 0.4rem;
   font-family: 'Manrope', monospace;
-  font-size: 0.65rem;
+  font-size: 0.63rem;
   font-weight: 800;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--dls-orange);
   background: rgba(255, 90, 36, 0.08);
-  padding: 0.28rem 0.72rem;
+  padding: 0.22rem 0.6rem;
   border-radius: 999px;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.dl-explorer-badge-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--dls-orange);
 }
 
 .dl-explorer-title {
   font-family: 'Outfit', sans-serif;
-  font-size: clamp(1.75rem, 3vw, 2.35rem);
+  font-size: clamp(1.35rem, 2vw, 1.65rem);
   font-weight: 800;
   color: var(--dls-charcoal);
-  letter-spacing: -0.025em;
-  margin: 0 0 0.5rem;
+  letter-spacing: -0.02em;
+  margin: 0 0 0.25rem;
+  line-height: 1.15;
 }
 
 .dl-explorer-subtitle {
   font-family: 'Manrope', sans-serif;
-  font-size: 0.94rem;
+  font-size: 0.82rem;
   color: var(--dls-text-muted);
-  line-height: 1.58;
+  line-height: 1.45;
   margin: 0;
 }
 
-/* Horizontal Selector Pills */
+/* Compact 8-Pill Selector Row */
 .dl-explorer-pills {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  gap: 0.6rem;
-  margin-bottom: 2.2rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.4rem;
+  margin-bottom: 1.15rem;
 }
 
 .dl-explorer-pill {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
+  justify-content: center;
+  gap: 0.35rem;
   background: var(--dls-ivory);
   border: 1px solid var(--dls-border);
-  padding: 0.45rem 1rem;
-  border-radius: 999px;
+  padding: 0.35rem 0.45rem;
+  border-radius: 8px;
   font-family: 'Manrope', sans-serif;
-  font-size: 0.78rem;
+  font-size: 0.68rem;
   font-weight: 700;
   color: var(--dls-charcoal);
   cursor: pointer;
-  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.18s ease;
   user-select: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .dl-explorer-pill .pill-num {
   font-family: 'Outfit', sans-serif;
   font-weight: 800;
-  font-size: 0.74rem;
-  opacity: 0.6;
+  font-size: 0.68rem;
+  opacity: 0.65;
 }
 
 .dl-explorer-pill:hover {
   background: var(--dls-white);
   border-color: var(--dls-border-hover);
-  transform: translateY(-2px);
 }
 
 .dl-explorer-pill.is-active {
   background: var(--dls-charcoal);
   border-color: var(--dls-charcoal);
   color: #FFFFFF;
-  box-shadow: 0 6px 18px rgba(36, 27, 22, 0.18);
-  transform: translateY(-2px);
 }
 
 .dl-explorer-pill.is-active .pill-num {
@@ -650,159 +464,148 @@
   opacity: 1;
 }
 
-/* Explorer Dynamic Result Card: Sophisticated Two-Column Layout */
+/* Detail Display Card */
 .dl-explorer-stage {
-  position: relative;
-  min-height: 240px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .dl-explorer-card {
-  display: grid;
-  grid-template-columns: 1.25fr 1fr;
-  gap: clamp(1.8rem, 3.2vw, 2.8rem);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   background: linear-gradient(135deg, #FAF7F2 0%, #FFFFFF 100%);
   border: 1px solid var(--dls-border);
-  border-radius: 20px;
-  padding: clamp(1.8rem, 3.2vw, 2.4rem);
-  align-items: center;
-  animation: dlFadeScaleIn 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: var(--dls-shadow-subtle);
+  border-left: 3.5px solid var(--dls-orange);
+  border-radius: var(--dls-radius-lg);
+  padding: clamp(1.15rem, 1.8vw, 1.35rem);
+  animation: dlFadeIn 0.28s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .dl-explorer-card-meta {
   display: flex;
   align-items: center;
-  gap: 0.65rem;
-  margin-bottom: 0.85rem;
-  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.45rem;
 }
 
 .dl-explorer-card-tag {
   font-family: 'Manrope', monospace;
-  font-size: 0.68rem;
+  font-size: 0.62rem;
   font-weight: 800;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.07em;
   text-transform: uppercase;
   color: var(--dls-forest);
-  background: rgba(23, 59, 43, 0.09);
-  padding: 0.24rem 0.6rem;
-  border-radius: 6px;
+  background: rgba(20, 39, 28, 0.08);
+  padding: 0.18rem 0.48rem;
+  border-radius: 4px;
 }
 
 .dl-explorer-card-timing {
   font-family: 'Manrope', sans-serif;
-  font-size: 0.74rem;
+  font-size: 0.68rem;
   font-weight: 700;
-  color: #85786C;
+  color: #8A8177;
 }
 
 .dl-explorer-card-title {
   font-family: 'Outfit', sans-serif;
-  font-size: clamp(1.5rem, 2.4vw, 1.95rem);
+  font-size: 1.22rem;
   font-weight: 800;
   color: var(--dls-charcoal);
-  letter-spacing: -0.025em;
-  margin: 0 0 0.5rem;
-  line-height: 1.15;
+  letter-spacing: -0.015em;
+  margin: 0 0 0.25rem;
+  line-height: 1.2;
 }
 
 .dl-explorer-card-impact {
   font-family: 'Instrument Serif', Georgia, serif;
   font-style: italic;
-  font-size: 1.2rem;
-  line-height: 1.35;
+  font-size: 1.02rem;
+  line-height: 1.3;
   color: var(--dls-orange);
-  margin: 0 0 0.85rem;
+  margin: 0 0 0.55rem;
 }
 
 .dl-explorer-card-desc {
   font-family: 'Manrope', sans-serif;
-  font-size: 0.92rem;
-  line-height: 1.62;
+  font-size: 0.8rem;
+  line-height: 1.5;
   color: var(--dls-text-muted);
-  margin: 0 0 1.25rem;
+  margin: 0 0 0.85rem;
+}
+
+/* Illustrative Student Activity Box */
+.dl-explorer-practice-box {
+  background: var(--dls-white);
+  border: 1px solid var(--dls-border);
+  border-radius: 10px;
+  padding: 0.85rem 0.95rem;
+  margin-bottom: 0.85rem;
+}
+
+.dl-practice-label {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: 'Manrope', monospace;
+  font-size: 0.6rem;
+  font-weight: 800;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--dls-forest);
+  margin-bottom: 0.3rem;
+}
+
+.dl-practice-example {
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.77rem;
+  line-height: 1.48;
+  color: var(--dls-charcoal);
+  margin: 0;
+}
+
+.dl-explorer-action-row {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.8rem;
+  padding-top: 0.65rem;
+  border-top: 1px solid rgba(36, 27, 22, 0.06);
 }
 
 .dl-explorer-explore-btn {
   display: inline-flex;
   align-items: center;
-  gap: 0.45rem;
+  gap: 0.35rem;
   background: var(--dls-charcoal);
   color: #FFFFFF;
   border: none;
   border-radius: 999px;
-  padding: 0.55rem 1.2rem;
+  padding: 0.42rem 0.95rem;
   font-family: 'Manrope', sans-serif;
-  font-size: 0.78rem;
+  font-size: 0.72rem;
   font-weight: 800;
   cursor: pointer;
+  white-space: nowrap;
   transition: all 0.2s ease;
 }
 
 .dl-explorer-explore-btn:hover {
   background: var(--dls-orange);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 14px rgba(255, 90, 36, 0.35);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(255, 90, 36, 0.3);
 }
 
-/* Practice Card Box (Right Column) */
-.dl-explorer-practice-box {
-  background: var(--dls-white);
-  border: 1px solid var(--dls-border);
-  border-left: 4px solid var(--dls-orange);
-  border-radius: 16px;
-  padding: 1.5rem 1.6rem;
-  box-shadow: var(--dls-shadow-subtle);
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-}
-
-.dl-practice-label {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.45rem;
-  font-family: 'Manrope', monospace;
-  font-size: 0.65rem;
-  font-weight: 800;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--dls-orange);
-}
-
-.dl-practice-example {
-  font-family: 'Manrope', sans-serif;
-  font-size: 0.88rem;
-  line-height: 1.6;
-  color: var(--dls-charcoal);
-  margin: 0;
-}
-
-.dl-practice-habits-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.4rem;
-  margin-top: 0.25rem;
-}
-
-.dl-practice-habit-pill {
-  font-family: 'Manrope', sans-serif;
-  font-size: 0.7rem;
-  font-weight: 700;
-  color: var(--dls-forest);
-  background: rgba(23, 59, 43, 0.06);
-  border: 1px solid rgba(23, 59, 43, 0.1);
-  padding: 0.2rem 0.55rem;
-  border-radius: 999px;
-}
-
-/* ── 4. Dedicated Detail Modal / Drawer ───────────────────────────── */
+/* ── DETAIL MODAL DRAWER ─────────────────────────────────────────── */
 .dl-skill-modal-backdrop {
   position: fixed;
   inset: 0;
   background: rgba(36, 27, 22, 0.6);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
   z-index: 9999;
   display: flex;
   align-items: center;
@@ -822,14 +625,14 @@
   position: relative;
   background: var(--dls-white);
   border: 1px solid var(--dls-border);
-  border-radius: 28px;
+  border-radius: 24px;
   width: 100%;
-  max-width: 680px;
+  max-width: 640px;
   max-height: 90vh;
   overflow-y: auto;
-  box-shadow: 0 32px 72px -16px rgba(36, 27, 22, 0.38);
-  padding: clamp(2rem, 4vw, 2.8rem);
-  transform: translateY(20px) scale(0.97);
+  box-shadow: 0 28px 64px -16px rgba(36, 27, 22, 0.35);
+  padding: clamp(1.8rem, 3.5vw, 2.5rem);
+  transform: translateY(16px) scale(0.98);
   transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -839,10 +642,10 @@
 
 .dl-modal-close-btn {
   position: absolute;
-  top: 1.4rem;
-  right: 1.4rem;
-  width: 38px;
-  height: 38px;
+  top: 1.25rem;
+  right: 1.25rem;
+  width: 34px;
+  height: 34px;
   border-radius: 50%;
   background: var(--dls-ivory);
   border: 1px solid var(--dls-border);
@@ -851,7 +654,7 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  font-size: 1.35rem;
+  font-size: 1.25rem;
   line-height: 1;
   transition: all 0.2s ease;
 }
@@ -865,76 +668,76 @@
 .dl-modal-badge-row {
   display: flex;
   align-items: center;
-  gap: 0.6rem;
-  margin-bottom: 0.85rem;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
 }
 
 .dl-modal-badge {
   font-family: 'Outfit', sans-serif;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   font-weight: 800;
   color: var(--dls-orange);
   background: rgba(255, 90, 36, 0.09);
-  padding: 0.22rem 0.6rem;
+  padding: 0.2rem 0.55rem;
   border-radius: 6px;
 }
 
 .dl-modal-category {
   font-family: 'Manrope', monospace;
-  font-size: 0.66rem;
+  font-size: 0.64rem;
   font-weight: 800;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--dls-forest);
-  background: rgba(23, 59, 43, 0.08);
-  padding: 0.22rem 0.55rem;
+  background: rgba(20, 39, 28, 0.08);
+  padding: 0.2rem 0.52rem;
   border-radius: 6px;
 }
 
 .dl-modal-title {
   font-family: 'Outfit', sans-serif;
-  font-size: clamp(1.8rem, 3.2vw, 2.3rem);
+  font-size: clamp(1.6rem, 2.6vw, 2.1rem);
   font-weight: 800;
   color: var(--dls-charcoal);
   letter-spacing: -0.025em;
-  margin: 0 0 0.4rem;
+  margin: 0 0 0.35rem;
   line-height: 1.15;
 }
 
 .dl-modal-quote {
   font-family: 'Instrument Serif', Georgia, serif;
   font-style: italic;
-  font-size: 1.2rem;
+  font-size: 1.12rem;
   line-height: 1.35;
   color: var(--dls-orange);
-  margin: 0 0 1.25rem;
+  margin: 0 0 1.15rem;
 }
 
 .dl-modal-section-title {
   font-family: 'Manrope', monospace;
-  font-size: 0.68rem;
+  font-size: 0.65rem;
   font-weight: 800;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.09em;
   text-transform: uppercase;
-  color: #85786C;
-  margin-bottom: 0.5rem;
+  color: #8A8177;
+  margin-bottom: 0.45rem;
   display: flex;
   align-items: center;
-  gap: 0.45rem;
+  gap: 0.4rem;
 }
 
 .dl-modal-connection-box {
   background: var(--dls-ivory);
   border: 1px solid var(--dls-border);
-  border-radius: 16px;
-  padding: 1.25rem 1.4rem;
-  margin-bottom: 1.25rem;
+  border-radius: 14px;
+  padding: 1.1rem 1.25rem;
+  margin-bottom: 1rem;
 }
 
 .dl-modal-connection-text {
   font-family: 'Manrope', sans-serif;
-  font-size: 0.9rem;
-  line-height: 1.6;
+  font-size: 0.86rem;
+  line-height: 1.55;
   color: var(--dls-charcoal);
   margin: 0;
 }
@@ -942,27 +745,27 @@
 .dl-modal-example-box {
   background: #FFFDF9;
   border: 1px solid rgba(255, 90, 36, 0.2);
-  border-left: 4px solid var(--dls-orange);
-  border-radius: 12px;
-  padding: 1.15rem 1.35rem;
-  margin-bottom: 1.25rem;
+  border-left: 3.5px solid var(--dls-orange);
+  border-radius: 10px;
+  padding: 1rem 1.2rem;
+  margin-bottom: 1rem;
 }
 
 .dl-modal-example-tag {
   font-family: 'Manrope', monospace;
-  font-size: 0.65rem;
+  font-size: 0.62rem;
   font-weight: 800;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--dls-orange);
-  margin-bottom: 0.35rem;
+  margin-bottom: 0.25rem;
   display: block;
 }
 
 .dl-modal-example-text {
   font-family: 'Manrope', sans-serif;
-  font-size: 0.88rem;
-  line-height: 1.55;
+  font-size: 0.84rem;
+  line-height: 1.5;
   color: var(--dls-charcoal);
   margin: 0;
 }
@@ -970,20 +773,19 @@
 .dl-modal-habits-tray {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-top: 0.4rem;
+  gap: 0.45rem;
 }
 
 .dl-modal-habit-chip {
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
-  background: rgba(23, 59, 43, 0.06);
-  border: 1px solid rgba(23, 59, 43, 0.12);
-  padding: 0.28rem 0.7rem;
+  background: rgba(20, 39, 28, 0.06);
+  border: 1px solid rgba(20, 39, 28, 0.12);
+  padding: 0.24rem 0.65rem;
   border-radius: 999px;
   font-family: 'Manrope', sans-serif;
-  font-size: 0.74rem;
+  font-size: 0.72rem;
   font-weight: 700;
   color: var(--dls-forest);
 }
@@ -996,76 +798,39 @@
 }
 
 /* Animations */
-@keyframes dlFadeScaleIn {
+@keyframes dlFadeIn {
   from {
     opacity: 0;
-    transform: translateY(8px) scale(0.99);
+    transform: translateY(5px);
   }
   to {
     opacity: 1;
-    transform: translateY(0) scale(1);
+    transform: translateY(0);
   }
 }
 
-/* ── 5. Responsive Adaptations ───────────────────────────────────── */
-@media (max-width: 1040px) {
-  .dl-skill-card[data-skill="01"] {
-    grid-column: span 12;
+/* ── RESPONSIVE ADAPTATIONS ──────────────────────────────────────── */
+@media (max-width: 1100px) {
+  .dl-skills-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
   }
-  .dl-skill-card[data-skill="02"],
-  .dl-skill-card[data-skill="03"] {
-    grid-column: span 6;
+  .dl-skills-header-right {
+    align-items: flex-start;
+    text-align: left;
   }
-  .dl-skill-card[data-skill="04"] {
-    grid-column: span 12;
-  }
-  .dl-skill-card[data-skill="05"],
-  .dl-skill-card[data-skill="06"],
-  .dl-skill-card[data-skill="07"] {
-    grid-column: span 4;
-  }
-  .dl-explorer-card {
-    grid-template-columns: 1fr;
+  .dl-skills-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 640px) {
+  .dl-skills-section {
+    padding: 2.5rem 1.15rem;
+  }
   .dl-skills-grid {
     grid-template-columns: 1fr;
-    gap: 1.15rem;
-  }
-  .dl-skill-card[data-skill="01"],
-  .dl-skill-card[data-skill="02"],
-  .dl-skill-card[data-skill="03"],
-  .dl-skill-card[data-skill="04"],
-  .dl-skill-card[data-skill="05"],
-  .dl-skill-card[data-skill="06"],
-  .dl-skill-card[data-skill="07"],
-  .dl-skill-card[data-skill="08"] {
-    grid-column: span 1;
-  }
-  .dl-skill-card[data-skill="08"] {
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    gap: 1.25rem;
-  }
-  .dl-skills-motif-bar {
-    border-radius: 20px;
-    padding: 0.85rem 1rem;
-    flex-direction: column;
-    gap: 0.65rem;
-    text-align: center;
-  }
-  .dl-explorer-pills {
-    justify-content: flex-start;
-    overflow-x: auto;
-    padding-bottom: 0.5rem;
-    flex-wrap: nowrap;
-    -webkit-overflow-scrolling: touch;
-  }
-  .dl-explorer-pill {
-    flex-shrink: 0;
   }
 }
 

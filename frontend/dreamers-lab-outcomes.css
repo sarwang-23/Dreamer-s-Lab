@@ -1,0 +1,385 @@
+/* ==========================================================================
+   Dreamers Lab — What Students Create Section
+   4 Horizontal Milestone Columns (Discover → Validate → Build → Present)
+   With All 8 Learning Outcomes Naturally Distributed (2 per phase)
+   Palette:
+   • Warm ivory: #F7F5EF
+   • Deep forest green: #14271C
+   • Charcoal: #241B16
+   • Burnt orange: #FF5A24
+   • Soft sage: #DCE8DA
+   • Lime accent: #C9F36A
+   • Warm white: #FFFEFB
+   ========================================================================== */
+
+:root {
+  --dlo-ivory: #F7F5EF;
+  --dlo-charcoal: #241B16;
+  --dlo-forest: #14271C;
+  --dlo-forest-light: #1A3626;
+  --dlo-orange: #FF5A24;
+  --dlo-sage: #DCE8DA;
+  --dlo-lime: #C9F36A;
+  --dlo-white: #FFFEFB;
+  --dlo-text-muted: #665B52;
+  --dlo-border: rgba(36, 27, 22, 0.08);
+  --dlo-border-hover: rgba(36, 27, 22, 0.2);
+  --dlo-radius-xl: 20px;
+  --dlo-radius-lg: 14px;
+  --dlo-radius-md: 10px;
+  --dlo-shadow-sm: 0 4px 14px -4px rgba(36, 27, 22, 0.04);
+  --dlo-shadow-card: 0 10px 24px -8px rgba(36, 27, 22, 0.06), 0 2px 6px rgba(36, 27, 22, 0.02);
+  --dlo-shadow-hover: 0 16px 36px -10px rgba(36, 27, 22, 0.12), 0 3px 10px rgba(36, 27, 22, 0.03);
+}
+
+.dl-outcomes-section {
+  position: relative;
+  background: #FFFFFF;
+  color: var(--dlo-charcoal);
+  padding: clamp(3rem, 4.8vw, 4.5rem) clamp(1.2rem, 3.5vw, 3.5rem);
+  overflow: hidden;
+  border-top: 1px solid rgba(36, 27, 22, 0.07);
+}
+
+/* Subtle background aura */
+.dl-outcomes-bg-glow {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1200px;
+  height: 550px;
+  background: radial-gradient(ellipse at top center, rgba(255, 90, 36, 0.035) 0%, rgba(20, 39, 28, 0.025) 55%, transparent 75%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.dl-outcomes-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── 1. CENTERED HERO HEADER ─────────────────────────────────────── */
+.dl-outcomes-header {
+  text-align: center;
+  max-width: 860px;
+  margin: 0 auto clamp(2rem, 3.2vw, 2.75rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.dl-outcomes-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: var(--dlo-ivory);
+  border: 1px solid var(--dlo-border);
+  padding: 0.28rem 0.85rem;
+  border-radius: 999px;
+  font-family: 'Manrope', monospace;
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.09em;
+  color: var(--dlo-charcoal);
+  text-transform: uppercase;
+  margin-bottom: 0.85rem;
+  box-shadow: var(--dlo-shadow-sm);
+}
+
+.dl-outcomes-eyebrow-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--dlo-orange);
+  box-shadow: 0 0 0 2px rgba(255, 90, 36, 0.25);
+}
+
+.dl-outcomes-headline {
+  font-family: 'Outfit', -apple-system, sans-serif;
+  font-size: clamp(2.1rem, 3.6vw, 3.1rem);
+  font-weight: 800;
+  line-height: 1.15;
+  color: var(--dlo-charcoal);
+  letter-spacing: -0.025em;
+  margin: 0 0 0.8rem;
+  text-wrap: balance;
+}
+
+.dl-outcomes-headline em.outcomes-accent {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+  color: var(--dlo-orange);
+  letter-spacing: -0.01em;
+}
+
+.dl-outcomes-lead {
+  font-family: 'Manrope', -apple-system, sans-serif;
+  font-size: clamp(0.92rem, 1.3vw, 1.05rem);
+  font-weight: 500;
+  line-height: 1.55;
+  color: var(--dlo-text-muted);
+  max-width: 680px;
+  margin: 0;
+  text-wrap: balance;
+}
+
+/* ── 2. FOUR HORIZONTAL MILESTONE COLUMNS GRID ───────────────────── */
+.dl-milestones-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(0.85rem, 1.4vw, 1.25rem);
+  margin-bottom: clamp(1.4rem, 2.2vw, 1.85rem);
+  align-items: stretch;
+}
+
+/* Base Milestone Column Card */
+.dl-milestone-card {
+  position: relative;
+  background: var(--dlo-white);
+  border: 1px solid var(--dlo-border);
+  border-radius: var(--dlo-radius-xl);
+  padding: 1.35rem 1.25rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: var(--dlo-shadow-card);
+  transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+}
+
+/* Top Accent Line on Hover */
+.dl-milestone-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--dlo-orange);
+  opacity: 0;
+  transform: scaleX(0.2);
+  transform-origin: left;
+  transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.dl-milestone-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--dlo-border-hover);
+  box-shadow: var(--dlo-shadow-hover);
+}
+
+.dl-milestone-card:hover::before {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+/* Card Header */
+.dl-card-phase-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.9rem;
+}
+
+.dl-card-phase-left {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.dl-card-phase-num {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.76rem;
+  font-weight: 800;
+  color: var(--dlo-charcoal);
+  background: rgba(36, 27, 22, 0.05);
+  border: 1px solid var(--dlo-border);
+  padding: 0.16rem 0.45rem;
+  border-radius: var(--dlo-radius-md);
+}
+
+.dl-card-phase-name {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--dlo-charcoal);
+  letter-spacing: -0.015em;
+  margin: 0;
+}
+
+.dl-card-phase-timing {
+  font-family: 'Manrope', monospace;
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--dlo-forest);
+  background: rgba(20, 39, 28, 0.06);
+  padding: 0.18rem 0.5rem;
+  border-radius: 999px;
+}
+
+.dl-card-focus-text {
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.78rem;
+  line-height: 1.48;
+  color: var(--dlo-text-muted);
+  margin: 0 0 1.05rem;
+  min-height: 2.2rem;
+}
+
+/* The 2 Outcomes Inside This Column */
+.dl-card-outcomes-tray {
+  background: var(--dlo-ivory);
+  border: 1px solid var(--dlo-border);
+  border-radius: var(--dlo-radius-lg);
+  padding: 0.75rem 0.85rem;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.dl-column-outcome-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.55rem;
+}
+
+.dl-column-check {
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  background: var(--dlo-forest);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+}
+
+.dl-column-outcome-num {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 800;
+  color: #8A8177;
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+}
+
+.dl-column-outcome-text {
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.79rem;
+  font-weight: 600;
+  line-height: 1.42;
+  color: var(--dlo-charcoal);
+  margin: 0;
+}
+
+/* Card Bottom Deliverable Badge */
+.dl-card-deliverable-box {
+  background: #FFFFFF;
+  border: 1px solid var(--dlo-border);
+  border-left: 3px solid var(--dlo-orange);
+  border-radius: var(--dlo-radius-md);
+  padding: 0.65rem 0.8rem;
+}
+
+.dl-deliverable-tag {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: 'Manrope', monospace;
+  font-size: 0.58rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--dlo-forest);
+  margin-bottom: 0.2rem;
+}
+
+.dl-deliverable-name {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--dlo-charcoal);
+  margin: 0;
+  line-height: 1.25;
+}
+
+/* Card 04 Finale Highlight (Slight forest green accent) */
+.dl-milestone-card[data-phase="04"] .dl-card-phase-timing {
+  background: var(--dlo-forest);
+  color: #FFFFFF;
+}
+
+.dl-milestone-card[data-phase="04"] .dl-card-deliverable-box {
+  border-left-color: var(--dlo-forest);
+}
+
+/* ── 3. BOTTOM DISCLAIMER INFORMATION BAR ────────────────────────── */
+.dl-outcomes-disclaimer {
+  background: var(--dlo-ivory);
+  border: 1px solid var(--dlo-border);
+  border-radius: var(--dlo-radius-md);
+  padding: 0.75rem 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  box-shadow: var(--dlo-shadow-sm);
+}
+
+.dl-disclaimer-icon {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: rgba(255, 90, 36, 0.1);
+  color: var(--dlo-orange);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.dl-disclaimer-text {
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.78rem;
+  line-height: 1.5;
+  color: var(--dlo-text-muted);
+  margin: 0;
+}
+
+/* ── RESPONSIVE ADAPTATIONS ──────────────────────────────────────── */
+@media (max-width: 1100px) {
+  .dl-milestones-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .dl-outcomes-section {
+    padding: 2.75rem 1.15rem;
+  }
+  .dl-outcomes-headline {
+    font-size: 1.85rem;
+  }
+  .dl-milestones-grid {
+    grid-template-columns: 1fr;
+  }
+  .dl-outcomes-disclaimer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dl-milestone-card {
+    transition: none !important;
+  }
+}
