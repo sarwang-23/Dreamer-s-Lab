@@ -960,15 +960,41 @@
   }
 
   /* --------------------------------------------------------------------------
-     08 — TYPOGRAPHIC STATEMENTS ACCORDION
+     08 — CORE OUTCOMES FAQ ACCORDION (Split Editorial Layout)
      -------------------------------------------------------------------------- */
-  var typoRows = page.querySelectorAll('.ins-typo-row');
-  if (typoRows.length) {
-    typoRows.forEach(function (row) {
-      row.addEventListener('click', function () {
-        var wasActive = row.classList.contains('is-active');
-        typoRows.forEach(function (r) { r.classList.remove('is-active'); });
-        if (!wasActive) row.classList.add('is-active');
+  var faqItems = page.querySelectorAll('.bd-faq-item');
+  var faqButtons = page.querySelectorAll('.bd-faq-q');
+  if (faqItems.length && faqButtons.length) {
+    function setFaqOpen(item, open) {
+      var btn = item.querySelector('.bd-faq-q');
+      var panel = item.querySelector('.bd-faq-a');
+      item.classList.toggle('is-open', open);
+      if (btn) btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      if (panel) panel.setAttribute('aria-hidden', open ? 'false' : 'true');
+    }
+
+    function toggleFaq(item) {
+      if (!item) return;
+      var willOpen = !item.classList.contains('is-open');
+      faqItems.forEach(function (it) { setFaqOpen(it, false); });
+      if (willOpen) setFaqOpen(item, true);
+    }
+
+    faqItems.forEach(function (it) { setFaqOpen(it, it.classList.contains('is-open')); });
+
+    faqButtons.forEach(function (btn, i) {
+      btn.addEventListener('click', function () {
+        toggleFaq(btn.closest('.bd-faq-item'));
+      });
+      btn.addEventListener('keydown', function (e) {
+        var idx = null;
+        if (e.key === 'ArrowDown') idx = (i + 1) % faqButtons.length;
+        else if (e.key === 'ArrowUp') idx = (i - 1 + faqButtons.length) % faqButtons.length;
+        else if (e.key === 'Home') idx = 0;
+        else if (e.key === 'End') idx = faqButtons.length - 1;
+        if (idx === null) return;
+        e.preventDefault();
+        faqButtons[idx].focus();
       });
     });
   }
