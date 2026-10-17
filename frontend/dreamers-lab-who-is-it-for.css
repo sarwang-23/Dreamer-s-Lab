@@ -1,0 +1,540 @@
+/* ==========================================================================
+   Dreamers Lab — Who Is It For: "For the Next Generation of Thinkers & Builders"
+   Premium Editorial Persona & Eligibility Showcase
+   ========================================================================== */
+
+.dl-who-section {
+  position: relative;
+  padding: clamp(3rem, 5vw, 4.5rem) clamp(1.2rem, 4vw, 3.5rem);
+  background: var(--dl-bg-ivory);
+  border-top: 1px solid rgba(33, 31, 27, 0.07);
+  overflow: hidden;
+}
+
+/* Background subtle ambient geometry */
+.dl-who-bg-glow {
+  position: absolute;
+  top: 15%;
+  right: -5%;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 90, 36, 0.04) 0%, rgba(201, 243, 106, 0.03) 60%, transparent 80%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.dl-who-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── 1. Editorial Header Block ───────────────────────────────────── */
+.dl-who-header {
+  max-width: 820px;
+  margin-bottom: clamp(1.8rem, 3.2vw, 2.5rem);
+}
+
+.dl-who-eyebrow-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #FFFFFF;
+  border: 1px solid rgba(33, 31, 27, 0.08);
+  padding: 0.36rem 0.95rem;
+  border-radius: 999px;
+  font-family: 'Manrope', monospace;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: #211F1B;
+  text-transform: uppercase;
+  margin-bottom: 1.25rem;
+  box-shadow: 0 2px 6px rgba(33, 31, 27, 0.03);
+}
+
+.dl-who-eyebrow-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #FF5A24;
+  box-shadow: 0 0 0 2px rgba(255, 90, 36, 0.25);
+}
+
+.dl-who-headline {
+  font-family: 'Outfit', -apple-system, sans-serif;
+  font-size: clamp(2.3rem, 5vw, 3.6rem);
+  font-weight: 800;
+  line-height: 1.1;
+  color: #211F1B;
+  letter-spacing: -0.025em;
+  margin: 0 0 1.2rem;
+}
+
+.dl-who-headline em.dl-who-accent {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+  color: #FF5A24;
+  letter-spacing: -0.01em;
+}
+
+.dl-who-lead {
+  font-family: 'Manrope', -apple-system, sans-serif;
+  font-size: clamp(0.95rem, 1.6vw, 1.1rem);
+  font-weight: 500;
+  line-height: 1.55;
+  color: #5C554E;
+  margin: 0 0 1.25rem;
+  max-width: 68ch;
+}
+
+/* Grade Cohort Badges */
+.dl-grade-pills {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.dl-grade-label {
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: #8A8177;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-right: 0.35rem;
+}
+
+.dl-grade-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: #FFFFFF;
+  border: 1px solid rgba(33, 31, 27, 0.08);
+  padding: 0.32rem 0.8rem;
+  border-radius: 999px;
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: #211F1B;
+  transition: all 0.2s ease;
+}
+
+.dl-grade-pill span.grade-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #2D6B3C;
+}
+
+.dl-grade-pill:hover {
+  background: #211F1B;
+  color: #FFFFFF;
+  border-color: #211F1B;
+}
+
+.dl-grade-pill:hover span.grade-dot {
+  background: #C9F36A;
+}
+
+/* ── 2. The 5 Archetype Cards Grid ───────────────────────────────── */
+.dl-who-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.1rem;
+  margin-bottom: 1.75rem;
+}
+
+/* For 5 cards, make the first two cards slightly wider or arrange with balanced editorial rhythm */
+@media (min-width: 992px) {
+  .dl-who-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .dl-who-card:nth-child(4) {
+    grid-column: span 1;
+  }
+  .dl-who-card:nth-child(5) {
+    grid-column: span 2;
+  }
+}
+
+.dl-who-card {
+  position: relative;
+  background: #FFFFFF;
+  border: 1px solid rgba(33, 31, 27, 0.08);
+  border-radius: 18px;
+  padding: 1.35rem 1.35rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 4px 18px -4px rgba(33, 31, 27, 0.04);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+}
+
+/* Subtle top accent line per card on hover */
+.dl-who-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: #FF5A24;
+  opacity: 0;
+  transform: scaleX(0.3);
+  transition: all 0.3s ease;
+  transform-origin: left;
+}
+
+.dl-who-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(33, 31, 27, 0.14);
+  box-shadow: 0 20px 42px -10px rgba(33, 31, 27, 0.1);
+}
+
+.dl-who-card:hover::before {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+.dl-who-card:focus-visible {
+  outline: 2px solid #FF5A24;
+  outline-offset: 3px;
+}
+
+/* Card Header */
+.dl-who-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.85rem;
+}
+
+.dl-who-card-num-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: 'Manrope', monospace;
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #8A8177;
+  background: #F7F4ED;
+  padding: 0.22rem 0.55rem;
+  border-radius: 6px;
+}
+
+.dl-who-card-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: #F7F4ED;
+  color: #211F1B;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.25s ease;
+}
+
+.dl-who-card:hover .dl-who-card-icon {
+  background: #211F1B;
+  color: #C9F36A;
+  transform: scale(1.05);
+}
+
+/* Card Content */
+.dl-who-card-body {
+  flex: 1;
+  margin-bottom: 0.85rem;
+}
+
+.dl-who-card-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.18rem;
+  font-weight: 800;
+  color: #211F1B;
+  letter-spacing: -0.015em;
+  line-height: 1.22;
+  margin: 0 0 0.35rem;
+}
+
+.dl-who-card-quote {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-style: italic;
+  font-size: 1rem;
+  line-height: 1.3;
+  color: #FF5A24;
+  margin: 0 0 0.55rem;
+  display: block;
+}
+
+.dl-who-card-desc {
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.84rem;
+  line-height: 1.5;
+  color: #5C554E;
+  margin: 0;
+}
+
+/* Card Footer Tag */
+.dl-who-card-footer {
+  padding-top: 1rem;
+  border-top: 1px solid rgba(33, 31, 27, 0.06);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.dl-who-card-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #2D6B3C;
+  background: #EEF5ED;
+  padding: 0.22rem 0.55rem;
+  border-radius: 6px;
+}
+
+.dl-who-card-arrow {
+  color: #8A8177;
+  font-size: 0.95rem;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.dl-who-card:hover .dl-who-card-arrow {
+  transform: translateX(3px);
+  color: #FF5A24;
+}
+
+/* Card 5 Special Highlight Layout */
+.dl-who-card.is-featured-seeker {
+  background: linear-gradient(135deg, #FAF7F2 0%, #FFFFFF 100%);
+  border-color: rgba(33, 31, 27, 0.12);
+}
+
+@media (min-width: 992px) {
+  .dl-who-card.is-featured-seeker {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: center;
+  }
+  .dl-who-card.is-featured-seeker .dl-who-card-body {
+    margin-bottom: 0;
+  }
+  .dl-who-card.is-featured-seeker .dl-who-card-footer {
+    border-top: none;
+    border-left: 1px solid rgba(33, 31, 27, 0.08);
+    padding-top: 0;
+    padding-left: 1.5rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.8rem;
+  }
+}
+
+/* ── 3. Zero-Prerequisites Reassurance Manifesto Banner ───────────── */
+.dl-who-manifesto {
+  background: #14271C;
+  color: #F7F4ED;
+  border-radius: 20px;
+  padding: clamp(1.5rem, 3vw, 2.2rem) clamp(1.5rem, 3.5vw, 2.5rem);
+  box-shadow: 0 20px 48px -12px rgba(20, 39, 28, 0.32);
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  gap: clamp(1.5rem, 3vw, 2.5rem);
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.dl-who-manifesto::after {
+  content: '';
+  position: absolute;
+  top: -40%;
+  right: -20%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(201, 243, 106, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.dl-manifesto-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: 'Manrope', monospace;
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #C9F36A;
+  background: rgba(201, 243, 106, 0.14);
+  padding: 0.25rem 0.65rem;
+  border-radius: 999px;
+  margin-bottom: 1.1rem;
+}
+
+.dl-manifesto-quote {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-style: italic;
+  font-size: clamp(1.4rem, 2.5vw, 1.9rem);
+  line-height: 1.25;
+  color: #FFFFFF;
+  margin: 0 0 1rem;
+}
+
+.dl-manifesto-sub {
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.88rem;
+  line-height: 1.55;
+  color: rgba(247, 244, 237, 0.75);
+  margin: 0;
+}
+
+/* Right Column Commitments */
+.dl-manifesto-commitments {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1.5rem 1.6rem;
+  border-radius: 18px;
+  backdrop-filter: blur(10px);
+}
+
+.dl-manifesto-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.dl-manifesto-check {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: rgba(201, 243, 106, 0.18);
+  color: #C9F36A;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  font-weight: 800;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.dl-manifesto-item-text strong {
+  display: block;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.92rem;
+  color: #FFFFFF;
+  font-weight: 700;
+  margin-bottom: 0.15rem;
+}
+
+.dl-manifesto-item-text span {
+  display: block;
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.78rem;
+  line-height: 1.4;
+  color: rgba(247, 244, 237, 0.68);
+}
+
+.dl-manifesto-cta-row {
+  margin-top: 0.6rem;
+  padding-top: 0.8rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.dl-manifesto-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: #C9F36A;
+  color: #14271C;
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 800;
+  padding: 0.55rem 1.15rem;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.dl-manifesto-btn:hover {
+  background: #FFFFFF;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(201, 243, 106, 0.35);
+}
+
+.dl-manifesto-link {
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: rgba(247, 244, 237, 0.85);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.dl-manifesto-link:hover {
+  color: #C9F36A;
+}
+
+/* ── Responsive Behavior ─────────────────────────────────────────── */
+@media (max-width: 960px) {
+  .dl-who-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .dl-who-card:nth-child(5) {
+    grid-column: span 2;
+  }
+  .dl-who-manifesto {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .dl-who-section {
+    padding: 2.75rem 1.15rem;
+  }
+  .dl-who-grid {
+    grid-template-columns: 1fr;
+    gap: 1.15rem;
+  }
+  .dl-who-card:nth-child(5) {
+    grid-column: span 1;
+  }
+  .dl-who-card.is-featured-seeker {
+    display: flex;
+    flex-direction: column;
+  }
+  .dl-who-card.is-featured-seeker .dl-who-card-footer {
+    border-left: none;
+    border-top: 1px solid rgba(33, 31, 27, 0.08);
+    padding-left: 0;
+    padding-top: 0.85rem;
+  }
+  .dl-manifesto-cta-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .dl-manifesto-btn {
+    justify-content: center;
+  }
+}

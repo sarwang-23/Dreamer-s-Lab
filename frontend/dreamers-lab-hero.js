@@ -68,7 +68,6 @@
       curiosity: document.querySelector('.dl-element-sticky-curiosity'),
       problem: document.querySelector('.dl-element-problem-card'),
       prototype: document.querySelector('.dl-element-prototype-card'),
-      feedback: document.querySelector('.dl-element-feedback-note'),
       launch: document.querySelector('.dl-element-launch-badge'),
     };
 
@@ -113,22 +112,19 @@
 
         // Parallax depth translations
         if (elements.photo) {
-          elements.photo.style.transform = `translate3d(${(currentX * 10).toFixed(1)}px, ${(currentY * 8).toFixed(1)}px, 0) rotate(-1.5deg)`;
+          elements.photo.style.transform = `translate3d(${(currentX * 8).toFixed(1)}px, ${(currentY * 6).toFixed(1)}px, 0) rotate(-1.5deg)`;
         }
         if (elements.curiosity) {
-          elements.curiosity.style.transform = `translate3d(${(currentX * -18).toFixed(1)}px, ${(currentY * -14).toFixed(1)}px, 0) rotate(3.8deg)`;
+          elements.curiosity.style.transform = `translate3d(${(currentX * -16).toFixed(1)}px, ${(currentY * -12).toFixed(1)}px, 0) rotate(3deg)`;
         }
         if (elements.problem) {
-          elements.problem.style.transform = `translate3d(${(currentX * 16).toFixed(1)}px, ${(currentY * -12).toFixed(1)}px, 0) rotate(-4.5deg)`;
+          elements.problem.style.transform = `translate3d(${(currentX * 14).toFixed(1)}px, ${(currentY * -10).toFixed(1)}px, 0) rotate(-2.5deg)`;
         }
         if (elements.prototype) {
-          elements.prototype.style.transform = `translate3d(${(currentX * -22).toFixed(1)}px, ${(currentY * 20).toFixed(1)}px, 0) rotate(2.2deg)`;
-        }
-        if (elements.feedback) {
-          elements.feedback.style.transform = `translate3d(${(currentX * 14).toFixed(1)}px, ${(currentY * -16).toFixed(1)}px, 0) rotate(-3deg)`;
+          elements.prototype.style.transform = `translate3d(${(currentX * -18).toFixed(1)}px, ${(currentY * 16).toFixed(1)}px, 0) rotate(2deg)`;
         }
         if (elements.launch) {
-          elements.launch.style.transform = `translate3d(${(currentX * -12).toFixed(1)}px, ${(currentY * -10).toFixed(1)}px, 0) rotate(-1deg)`;
+          elements.launch.style.transform = `translate3d(${(currentX * -10).toFixed(1)}px, ${(currentY * -8).toFixed(1)}px, 0) rotate(-1.5deg)`;
         }
 
         animationFrameId = requestAnimationFrame(renderParallax);
@@ -138,17 +134,56 @@
     }
 
     /* ── 4. Interactive Stage Switcher & Storytelling ───────────── */
-    const stagePills = document.querySelectorAll('.dl-stage-pill');
-    const stageMap = {
-      'curiosity': elements.curiosity,
-      'problem': elements.problem,
-      'prototype': elements.prototype,
-      'launch': elements.launch
+    const stagePills = Array.from(document.querySelectorAll('.dl-stage-pill'));
+    const phaseIndicator = document.querySelector('.dl-canvas-phase-indicator');
+    const stageCaption = document.querySelector('.dl-photo-stage-caption');
+    const bottomCaption = document.querySelector('#dl-caption-text');
+    const photoImg = document.querySelector('.dl-element-photo img');
+
+    const stageData = {
+      'curiosity': {
+        name: '01 Curiosity',
+        phaseTag: 'Stage 01 · Problem Hunting & Inquiry',
+        phaseMeta: 'ACTIVE STAGE: 01 CURIOSITY',
+        caption: 'Interactive Showcase — Team EcoLoop framed the core inquiry: converting canteen bio-waste into rich community garden soil.',
+        image: '../assets/dreamers-students.jpg',
+        element: elements.curiosity
+      },
+      'problem': {
+        name: '02 Problem & Idea',
+        phaseTag: 'Stage 02 · Field Audit & Community Data',
+        phaseMeta: 'ACTIVE STAGE: 02 PROBLEM & IDEA',
+        caption: 'Interactive Showcase — 28 field interviews validated that 84% of residents experience irregular waste pickup.',
+        image: '../assets/story-experiment.jpg',
+        element: elements.problem
+      },
+      'prototype': {
+        name: '03 Prototype & Build',
+        phaseTag: 'Stage 03 · Prototyping V1.2 & Build',
+        phaseMeta: 'ACTIVE STAGE: 03 PROTOTYPE & BUILD',
+        caption: 'Interactive Showcase — Students construct physical bio-loop prototypes, testing sensor mechanics and learning by doing.',
+        image: '../assets/story-prototype.jpg',
+        element: elements.prototype
+      },
+      'launch': {
+        name: '04 Launch',
+        phaseTag: 'Stage 04 · 12-Week Demo Day Showcase',
+        phaseMeta: 'ACTIVE STAGE: 04 DEMO DAY SHOWCASE',
+        caption: 'Interactive Showcase — Culmination at Demo Day: pitching the validated prototype to school mentors and ecosystem partners.',
+        image: '../assets/dreamers-students.jpg',
+        element: elements.launch
+      }
     };
 
     function setActiveStage(stageKey) {
+      if (!stageData[stageKey]) return;
+
+      // Update pills state and ARIA
       stagePills.forEach(pill => {
-        pill.classList.toggle('is-active', pill.dataset.stage === stageKey);
+        const isSelected = pill.dataset.stage === stageKey;
+        pill.classList.toggle('is-active', isSelected);
+        pill.setAttribute('aria-selected', isSelected ? 'true' : 'false');
+        pill.setAttribute('tabindex', isSelected ? '0' : '-1');
       });
 
       // Clear previous card highlights
@@ -157,13 +192,49 @@
       });
 
       // Highlight target card
-      const targetCard = stageMap[stageKey];
-      if (targetCard) {
-        targetCard.classList.add('is-highlighted');
+      const activeData = stageData[stageKey];
+      if (activeData.element) {
+        activeData.element.classList.add('is-highlighted');
+      }
+
+      // Update captions and indicators with smooth fade
+      if (phaseIndicator) {
+        phaseIndicator.style.opacity = '0.4';
+        setTimeout(() => {
+          phaseIndicator.textContent = activeData.phaseMeta;
+          phaseIndicator.style.opacity = '1';
+        }, 120);
+      }
+
+      if (stageCaption) {
+        stageCaption.style.opacity = '0.4';
+        setTimeout(() => {
+          stageCaption.textContent = activeData.phaseTag;
+          stageCaption.style.opacity = '1';
+        }, 120);
+      }
+
+      if (bottomCaption) {
+        bottomCaption.style.opacity = '0.4';
+        setTimeout(() => {
+          bottomCaption.textContent = activeData.caption;
+          bottomCaption.style.opacity = '1';
+        }, 120);
+      }
+
+      // Smooth documentary image transition
+      if (photoImg && activeData.image && photoImg.getAttribute('src') !== activeData.image) {
+        photoImg.style.transition = 'opacity 0.25s ease, transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)';
+        photoImg.style.opacity = '0.7';
+        setTimeout(() => {
+          photoImg.src = activeData.image;
+          photoImg.style.opacity = '1';
+        }, 180);
       }
     }
 
-    stagePills.forEach(pill => {
+    // Attach click and hover events to pills
+    stagePills.forEach((pill, index) => {
       pill.addEventListener('click', (e) => {
         e.preventDefault();
         const stage = pill.dataset.stage;
@@ -174,43 +245,57 @@
         const stage = pill.dataset.stage;
         setActiveStage(stage);
       });
+
+      // Accessible Arrow Navigation
+      pill.addEventListener('keydown', (e) => {
+        let targetIndex = null;
+        if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+          targetIndex = (index + 1) % stagePills.length;
+        } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+          targetIndex = (index - 1 + stagePills.length) % stagePills.length;
+        }
+
+        if (targetIndex !== null) {
+          e.preventDefault();
+          const targetPill = stagePills[targetIndex];
+          targetPill.focus();
+          setActiveStage(targetPill.dataset.stage);
+        }
+      });
     });
 
     // Inverse linkage: Clicking or hovering directly on cards updates the pill
     if (elements.curiosity) {
+      elements.curiosity.addEventListener('click', () => setActiveStage('curiosity'));
       elements.curiosity.addEventListener('mouseenter', () => setActiveStage('curiosity'));
+      elements.curiosity.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setActiveStage('curiosity'); }
+      });
     }
     if (elements.problem) {
+      elements.problem.addEventListener('click', () => setActiveStage('problem'));
       elements.problem.addEventListener('mouseenter', () => setActiveStage('problem'));
+      elements.problem.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setActiveStage('problem'); }
+      });
     }
     if (elements.prototype) {
+      elements.prototype.addEventListener('click', () => setActiveStage('prototype'));
       elements.prototype.addEventListener('mouseenter', () => setActiveStage('prototype'));
+      elements.prototype.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setActiveStage('prototype'); }
+      });
     }
     if (elements.launch) {
+      elements.launch.addEventListener('click', () => setActiveStage('launch'));
       elements.launch.addEventListener('mouseenter', () => setActiveStage('launch'));
+      elements.launch.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setActiveStage('launch'); }
+      });
     }
 
-    /* ── 5. Dynamic Prototype Progress Simulation ────────────────── */
-    const protoFill = document.querySelector('.dl-proto-fill');
-    const protoStat = document.querySelector('.dl-proto-stat');
-    if (protoFill && protoStat) {
-      let isSimulating = false;
-      function simulateTest() {
-        if (isSimulating) return;
-        isSimulating = true;
-        protoFill.style.width = '35%';
-        protoStat.textContent = '35%';
-        setTimeout(() => {
-          protoFill.style.width = '94%';
-          protoStat.textContent = '94% TESTED';
-          setTimeout(() => { isSimulating = false; }, 1200);
-        }, 300);
-      }
-
-      if (elements.prototype) {
-        elements.prototype.addEventListener('mouseenter', simulateTest);
-      }
-    }
+    // Set initial active state (Stage 01 Curiosity)
+    setActiveStage('curiosity');
   }
 
   if (document.readyState === 'loading') {

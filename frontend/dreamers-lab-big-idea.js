@@ -64,13 +64,18 @@
         setActiveFlowNode(index);
       });
 
-      card.addEventListener('click', () => {
-        const isAlreadyExpanded = card.classList.contains('is-expanded');
-        stageCards.forEach(c => c.classList.remove('is-expanded'));
-        if (!isAlreadyExpanded) {
-          card.classList.add('is-expanded');
-        }
+      card.addEventListener('focus', () => {
         setActiveFlowNode(index);
+      });
+    });
+
+    flowNodes.forEach((node, index) => {
+      node.addEventListener('click', () => {
+        setActiveFlowNode(index);
+        const targetCard = stageCards[index];
+        if (targetCard) {
+          targetCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
       });
     });
   }

@@ -1,0 +1,805 @@
+/* ==========================================================================
+   Dreamers Lab — The 12-Week Journey: "Curiosity to Creation"
+   Horizontally Connected Timeline & Phase Frames Architecture
+   Design System:
+   • Warm ivory: #F5F0E6
+   • Deep charcoal: #241B16
+   • Burnt orange: #FF5A24
+   • Forest green: #153B2B
+   • Muted sage: #B7C9B1
+   • Warm white: #FFFEFB
+   ========================================================================== */
+
+.dl-journey-section {
+  position: relative;
+  padding: clamp(5rem, 8vw, 7.5rem) clamp(1rem, 3vw, 2.5rem);
+  background: #FFFFFF;
+  color: #241B16;
+  overflow: hidden;
+  border-top: 1px solid rgba(36, 27, 22, 0.07);
+}
+
+/* Ambient glow in background */
+.dl-journey-bg-accent {
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1000px;
+  height: 600px;
+  background: radial-gradient(ellipse at center, rgba(255, 90, 36, 0.04) 0%, rgba(21, 59, 43, 0.03) 50%, transparent 75%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.dl-journey-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── 1. Editorial Hero Introduction ──────────────────────────────── */
+.dl-journey-hero {
+  max-width: 860px;
+  margin: 0 auto clamp(2.5rem, 5vw, 3.8rem);
+  text-align: center;
+}
+
+.dl-journey-badge-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.dl-journey-eyebrow-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #FFFEFB;
+  border: 1px solid rgba(36, 27, 22, 0.1);
+  padding: 0.38rem 0.95rem;
+  border-radius: 999px;
+  font-family: 'Manrope', monospace;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  color: #241B16;
+  text-transform: uppercase;
+  box-shadow: 0 2px 8px rgba(36, 27, 22, 0.04);
+}
+
+.dl-journey-eyebrow-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #FF5A24;
+  box-shadow: 0 0 0 2px rgba(255, 90, 36, 0.25);
+}
+
+.dl-journey-metric-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: rgba(21, 59, 43, 0.08);
+  border: 1px solid rgba(21, 59, 43, 0.15);
+  padding: 0.38rem 0.85rem;
+  border-radius: 999px;
+  font-family: 'Manrope', monospace;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: #153B2B;
+  text-transform: uppercase;
+}
+
+.dl-journey-headline {
+  font-family: 'Outfit', -apple-system, sans-serif;
+  font-size: clamp(2.3rem, 5vw, 3.8rem);
+  font-weight: 800;
+  line-height: 1.12;
+  color: #241B16;
+  letter-spacing: -0.025em;
+  margin: 0 auto 1.25rem;
+  max-width: 22ch;
+}
+
+.dl-journey-headline em.journey-accent {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+  color: #FF5A24;
+  letter-spacing: -0.01em;
+}
+
+.dl-journey-lead {
+  font-family: 'Manrope', -apple-system, sans-serif;
+  font-size: clamp(1rem, 1.8vw, 1.15rem);
+  font-weight: 500;
+  line-height: 1.62;
+  color: #594D44;
+  margin: 0 auto;
+  max-width: 64ch;
+}
+
+/* ── 2. Horizontally Connected Milestone Header Rail ─────────────── */
+.dl-horizontal-rail-wrap {
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.dl-horizontal-rail {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  align-items: center;
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 1.25rem 0;
+}
+
+/* The continuous connecting line across all 5 nodes */
+.dl-rail-line-bg {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  right: 10%;
+  height: 3px;
+  background: rgba(36, 27, 22, 0.12);
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+.dl-rail-line-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 20%;
+  background: linear-gradient(90deg, #FF5A24 0%, #153B2B 100%);
+  transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  border-radius: 999px;
+  box-shadow: 0 0 10px rgba(255, 90, 36, 0.45);
+}
+
+/* Milestone Node Buttons */
+.dl-rail-node {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem 0.2rem;
+  transition: all 0.25s ease;
+}
+
+.dl-rail-node-circle {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #FFFEFB;
+  border: 2px solid rgba(36, 27, 22, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #241B16;
+  box-shadow: 0 4px 12px rgba(36, 27, 22, 0.08);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.dl-rail-node-label {
+  margin-top: 0.55rem;
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #6B5E55;
+  white-space: nowrap;
+  transition: color 0.2s ease;
+}
+
+.dl-rail-node:hover .dl-rail-node-circle {
+  transform: scale(1.1);
+  border-color: #FF5A24;
+}
+
+.dl-rail-node.is-active .dl-rail-node-circle {
+  background: #241B16;
+  border-color: #FF5A24;
+  color: #FFFEFB;
+  transform: scale(1.15);
+  box-shadow: 0 6px 18px rgba(255, 90, 36, 0.35);
+}
+
+.dl-rail-node.is-active .dl-rail-node-label {
+  color: #FF5A24;
+  font-weight: 800;
+}
+
+/* ── 3. Navigation Controls Bar ──────────────────────────────────── */
+.dl-journey-nav-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto 1.5rem;
+  padding: 0 0.5rem;
+}
+
+.dl-journey-progress-counter {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Manrope', monospace;
+  font-size: 0.76rem;
+  font-weight: 800;
+  color: #241B16;
+  background: #FFFEFB;
+  padding: 0.35rem 0.85rem;
+  border-radius: 999px;
+  border: 1px solid rgba(36, 27, 22, 0.09);
+}
+
+.dl-progress-bar-mini {
+  width: 60px;
+  height: 5px;
+  background: rgba(36, 27, 22, 0.1);
+  border-radius: 999px;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.dl-progress-bar-fill-mini {
+  height: 100%;
+  width: 20%;
+  background: #FF5A24;
+  border-radius: 999px;
+  transition: width 0.35s ease;
+}
+
+.dl-journey-arrows {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.dl-journey-arrow-btn {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1px solid rgba(36, 27, 22, 0.12);
+  background: #FFFEFB;
+  color: #241B16;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 2px 6px rgba(36, 27, 22, 0.05);
+}
+
+.dl-journey-arrow-btn:hover:not(:disabled) {
+  background: #241B16;
+  color: #FFFEFB;
+  transform: scale(1.05);
+  box-shadow: 0 6px 14px rgba(36, 27, 22, 0.15);
+}
+
+.dl-journey-arrow-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+/* ── 4. The Horizontally Connected Cards Track ───────────────────── */
+.dl-h-track-wrapper {
+  position: relative;
+  width: 100%;
+  padding: 0.5rem 0 2rem;
+  overflow: hidden;
+}
+
+.dl-h-track {
+  display: flex;
+  align-items: stretch;
+  gap: 1.5rem;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  padding: 1rem 0.5rem 2rem;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(36, 27, 22, 0.2) transparent;
+  cursor: grab;
+  user-select: none;
+}
+
+.dl-h-track:active {
+  cursor: grabbing;
+}
+
+.dl-h-track::-webkit-scrollbar {
+  height: 6px;
+}
+
+.dl-h-track::-webkit-scrollbar-track {
+  background: rgba(36, 27, 22, 0.05);
+  border-radius: 999px;
+}
+
+.dl-h-track::-webkit-scrollbar-thumb {
+  background: rgba(36, 27, 22, 0.25);
+  border-radius: 999px;
+}
+
+.dl-h-track::-webkit-scrollbar-thumb:hover {
+  background: #FF5A24;
+}
+
+/* Single Horizontally Connected Frame */
+.dl-h-frame {
+  position: relative;
+  flex: 0 0 clamp(340px, 31vw, 410px);
+  scroll-snap-align: center;
+  background: #FFFEFB;
+  border: 1px solid rgba(36, 27, 22, 0.09);
+  border-radius: 24px;
+  padding: clamp(1.8rem, 3vw, 2.3rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow:
+    0 14px 34px -8px rgba(36, 27, 22, 0.06),
+    0 2px 6px rgba(36, 27, 22, 0.03);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+}
+
+/* Ghost background number */
+.dl-h-ghost-num {
+  position: absolute;
+  top: 0.5rem;
+  right: 1.25rem;
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(4.5rem, 7vw, 6.5rem);
+  font-weight: 900;
+  line-height: 0.85;
+  color: rgba(36, 27, 22, 0.035);
+  pointer-events: none;
+  user-select: none;
+  letter-spacing: -0.04em;
+  transition: color 0.3s ease;
+}
+
+/* Top Accent Line */
+.dl-h-frame::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: #FF5A24;
+  opacity: 0;
+  transform: scaleX(0.2);
+  transform-origin: left;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.dl-h-frame:hover,
+.dl-h-frame.is-active {
+  transform: translateY(-6px);
+  border-color: rgba(36, 27, 22, 0.16);
+  box-shadow:
+    0 24px 54px -12px rgba(36, 27, 22, 0.12),
+    0 4px 14px rgba(36, 27, 22, 0.05);
+}
+
+.dl-h-frame:hover::before,
+.dl-h-frame.is-active::before {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+.dl-h-frame:hover .dl-h-ghost-num,
+.dl-h-frame.is-active .dl-h-ghost-num {
+  color: rgba(255, 90, 36, 0.08);
+}
+
+/* Frame Header */
+.dl-h-frame-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.9rem;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.dl-h-timing-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: #F5F0E6;
+  border: 1px solid rgba(36, 27, 22, 0.08);
+  padding: 0.28rem 0.75rem;
+  border-radius: 999px;
+  font-family: 'Manrope', monospace;
+  font-size: 0.7rem;
+  font-weight: 800;
+  color: #241B16;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.dl-h-timing-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #FF5A24;
+}
+
+.dl-h-milestone-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: #153B2B;
+  background: rgba(21, 59, 43, 0.08);
+  padding: 0.22rem 0.55rem;
+  border-radius: 6px;
+}
+
+/* Titles & Narrative */
+.dl-h-phase-name {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: #241B16;
+  letter-spacing: -0.02em;
+  margin: 0 0 0.35rem;
+  line-height: 1.2;
+}
+
+.dl-h-phase-quote {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-style: italic;
+  font-size: 1.15rem;
+  line-height: 1.35;
+  color: #FF5A24;
+  margin: 0 0 0.85rem;
+  display: block;
+}
+
+.dl-h-phase-description {
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: #594D44;
+  margin: 0 0 1.35rem;
+  flex: 1;
+}
+
+/* Deliverables Tray */
+.dl-h-deliverables-tray {
+  background: #F5F0E6;
+  border: 1px solid rgba(36, 27, 22, 0.08);
+  border-radius: 16px;
+  padding: 1rem 1.15rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  margin-top: auto;
+}
+
+.dl-h-deliverables-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: 'Manrope', monospace;
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #8A7B6B;
+}
+
+.dl-h-deliverables-label svg {
+  color: #FF5A24;
+}
+
+.dl-h-deliverables-chips {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.dl-h-deliverable-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: #FFFEFB;
+  border: 1px solid rgba(36, 27, 22, 0.08);
+  padding: 0.28rem 0.65rem;
+  border-radius: 6px;
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: #241B16;
+}
+
+.dl-h-deliverable-chip span.chip-check {
+  color: #2D6B3C;
+  font-weight: 800;
+}
+
+/* ── Frame 4 (Build) Styling ─────────────────────────────────────── */
+.dl-h-frame[data-phase="4"]::before {
+  background: #153B2B;
+}
+
+.dl-h-frame[data-phase="4"] .dl-h-phase-quote {
+  color: #153B2B;
+}
+
+.dl-h-frame[data-phase="4"] .dl-h-timing-dot {
+  background: #153B2B;
+}
+
+/* ── Frame 5 (Pitch & Present - Grand Finale) White Theme ────────── */
+.dl-h-frame[data-phase="5"] {
+  background: #FFFFFF;
+  color: #241B16;
+  border-color: rgba(36, 27, 22, 0.12);
+  box-shadow:
+    0 14px 34px -8px rgba(36, 27, 22, 0.07),
+    0 2px 6px rgba(36, 27, 22, 0.03);
+}
+
+.dl-h-frame[data-phase="5"] .dl-h-ghost-num {
+  color: rgba(36, 27, 22, 0.04);
+}
+
+.dl-h-frame[data-phase="5"]::before {
+  background: linear-gradient(90deg, #153B2B 0%, #FF5A24 100%);
+}
+
+.dl-h-frame[data-phase="5"]:hover,
+.dl-h-frame[data-phase="5"].is-active {
+  border-color: rgba(21, 59, 43, 0.28);
+  box-shadow:
+    0 24px 54px -12px rgba(21, 59, 43, 0.12),
+    0 4px 14px rgba(36, 27, 22, 0.05);
+}
+
+.dl-h-frame[data-phase="5"]:hover .dl-h-ghost-num,
+.dl-h-frame[data-phase="5"].is-active .dl-h-ghost-num {
+  color: rgba(21, 59, 43, 0.08);
+}
+
+.dl-h-frame[data-phase="5"] .dl-h-phase-name {
+  color: #241B16;
+}
+
+.dl-h-frame[data-phase="5"] .dl-h-phase-quote {
+  color: #153B2B;
+}
+
+.dl-h-frame[data-phase="5"] .dl-h-phase-description {
+  color: #594D44;
+}
+
+.dl-h-frame[data-phase="5"] .dl-h-timing-badge {
+  background: #F5F0E6;
+  border-color: rgba(36, 27, 22, 0.08);
+  color: #241B16;
+}
+
+.dl-h-frame[data-phase="5"] .dl-h-timing-dot {
+  background: #153B2B;
+}
+
+.dl-h-frame[data-phase="5"] .dl-h-milestone-pill {
+  background: rgba(21, 59, 43, 0.1);
+  color: #153B2B;
+}
+
+.dl-h-frame[data-phase="5"] .dl-h-deliverables-tray {
+  background: #F5F0E6;
+  border-color: rgba(36, 27, 22, 0.08);
+}
+
+.dl-h-frame[data-phase="5"] .dl-h-deliverables-label {
+  color: #8A7B6B;
+}
+
+.dl-h-frame[data-phase="5"] .dl-h-deliverables-label svg {
+  color: #153B2B;
+}
+
+.dl-h-frame[data-phase="5"] .dl-h-deliverable-chip {
+  background: #FFFFFF;
+  border-color: rgba(36, 27, 22, 0.08);
+  color: #241B16;
+}
+
+.dl-h-frame[data-phase="5"] .dl-h-deliverable-chip span.chip-check {
+  color: #153B2B;
+}
+
+/* ── 5. Horizontal Connector Bridges Between Frames ──────────────── */
+.dl-h-bridge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 48px;
+  position: relative;
+  z-index: 2;
+}
+
+.dl-bridge-line {
+  width: 100%;
+  height: 2px;
+  background: rgba(36, 27, 22, 0.15);
+  position: relative;
+}
+
+.dl-bridge-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #FFFEFB;
+  border: 1px solid rgba(36, 27, 22, 0.12);
+  color: #FF5A24;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  box-shadow: 0 2px 6px rgba(36, 27, 22, 0.06);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* ── 6. Timeline Footer Callout ──────────────────────────────────── */
+.dl-journey-footer-bar {
+  margin-top: 1.5rem;
+  background: #FFFEFB;
+  border: 1px solid rgba(36, 27, 22, 0.1);
+  border-radius: 20px;
+  padding: 1.5rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  box-shadow: 0 10px 28px -6px rgba(36, 27, 22, 0.05);
+}
+
+.dl-journey-footer-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.dl-journey-footer-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: #F5F0E6;
+  color: #FF5A24;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.dl-journey-footer-text strong {
+  display: block;
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.05rem;
+  color: #241B16;
+  font-weight: 800;
+  margin-bottom: 0.15rem;
+}
+
+.dl-journey-footer-text span {
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.82rem;
+  color: #594D44;
+}
+
+.dl-journey-footer-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.dl-journey-apply-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: #241B16;
+  color: #FFFEFB;
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 800;
+  padding: 0.65rem 1.35rem;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  min-height: 44px;
+}
+
+.dl-journey-apply-btn:hover {
+  background: #FF5A24;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(255, 90, 36, 0.3);
+}
+
+/* ── 7. Responsive Adaptations ───────────────────────────────────── */
+@media (max-width: 992px) {
+  .dl-horizontal-rail {
+    padding: 1rem 0;
+  }
+  .dl-rail-node-circle {
+    width: 38px;
+    height: 38px;
+    font-size: 0.85rem;
+  }
+  .dl-rail-node-label {
+    font-size: 0.65rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .dl-horizontal-rail-wrap {
+    overflow-x: auto;
+    scrollbar-width: none;
+    padding-bottom: 0.5rem;
+  }
+  .dl-horizontal-rail-wrap::-webkit-scrollbar {
+    display: none;
+  }
+  .dl-horizontal-rail {
+    min-width: 580px;
+  }
+  .dl-h-frame {
+    flex: 0 0 310px;
+    padding: 1.5rem 1.35rem;
+  }
+  .dl-h-bridge {
+    flex: 0 0 32px;
+  }
+}
+
+@media (max-width: 600px) {
+  .dl-journey-section {
+    padding: 4rem 1rem;
+  }
+  .dl-journey-nav-bar {
+    margin-bottom: 1rem;
+  }
+  .dl-h-frame {
+    flex: 0 0 88vw;
+    padding: 1.4rem 1.25rem;
+  }
+  .dl-journey-footer-bar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .dl-journey-apply-btn {
+    justify-content: center;
+    width: 100%;
+  }
+}

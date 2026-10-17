@@ -1,93 +1,86 @@
 /* ==========================================================================
-   Dreamers Lab — "The Big Idea" Premium Editorial Experience
-   Theme: The Idea → The Experiment → The Build
+   Dreamers Lab — "The Big Idea" Premium Editorial Experience (Compact & Punchy)
+   A 3-Stage Transformation Journey: 01 Question → 02 Explore → 03 Build
    ========================================================================== */
 
-/* ── Section Master Container ───────────────────────────────────── */
+/* ── Section Master Container (Optimized Vertical Height) ───────── */
 .dl-idea-section {
   position: relative;
-  background: #FAF7F2;
-  padding: clamp(5rem, 9vh, 8.5rem) 0 clamp(4rem, 7vh, 6.5rem);
+  background: #ffffff;
+  padding: clamp(3.2rem, 5.5vh, 4.5rem) 0 clamp(3rem, 4.8vh, 4rem);
   overflow: hidden;
   border-top: 1px solid rgba(44, 26, 16, 0.08);
 }
 
-/* Subtle Architectural Grid Lines & Blueprint Background */
+/* Subtle Architectural Grid Background */
 .dl-idea-section::before {
   content: '';
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(to right, rgba(44, 26, 16, 0.03) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(44, 26, 16, 0.03) 1px, transparent 1px);
+    linear-gradient(to right, rgba(44, 26, 16, 0.025) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(44, 26, 16, 0.025) 1px, transparent 1px);
   background-size: 80px 80px;
   pointer-events: none;
   z-index: 0;
 }
 
 .dl-idea-container {
-  width: min(1520px, 92vw);
+  width: min(1360px, 92vw);
   margin: 0 auto;
   position: relative;
   z-index: 1;
 }
 
-/* ── Asymmetric Layout: Left Sticky Narrative / Right Interactive Stages ── */
-.dl-idea-layout {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1.22fr);
-  gap: clamp(3rem, 6vw, 6.5rem);
-  align-items: start;
-}
-
-/* ── Left Column: Sticky Narrative Anchor ───────────────────────── */
-.dl-idea-narrative {
-  position: sticky;
-  top: 6.5rem;
-  padding-right: clamp(0rem, 2vw, 2.5rem);
+/* ── 1. Editorial Header Block (Compact & Focused) ───────────────── */
+.dl-idea-header {
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto clamp(2rem, 3.5vh, 2.8rem);
 }
 
 .dl-idea-eyebrow-pill {
   display: inline-flex;
   align-items: center;
-  gap: 0.55rem;
+  gap: 0.5rem;
   font-family: 'Manrope', monospace, sans-serif;
-  font-size: 0.74rem;
+  font-size: 0.7rem;
   font-weight: 800;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   color: #8A7B6B;
-  background: #ffffff;
-  padding: 0.35rem 0.95rem;
+  background: #FAF7F2;
+  padding: 0.3rem 0.85rem;
   border-radius: 999px;
   border: 1px solid rgba(44, 26, 16, 0.09);
   box-shadow: 0 2px 6px rgba(44, 26, 16, 0.03);
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .dl-idea-eyebrow-dot {
-  width: 7px;
-  height: 7px;
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
   background: #FF6B1A;
+  box-shadow: 0 0 0 2px rgba(255, 107, 26, 0.25);
 }
 
-/* Dominant Editorial Headline */
+/* Proportional Editorial Headline */
 .dl-idea-headline {
   font-family: 'Outfit', system-ui, sans-serif;
-  font-size: clamp(2.3rem, 3.8vw, 3.6rem);
+  font-size: clamp(2rem, 3.4vw, 2.85rem);
   font-weight: 800;
-  line-height: 1.12;
-  letter-spacing: -0.03em;
+  line-height: 1.16;
+  letter-spacing: -0.025em;
   color: #1F1610;
-  margin: 0 0 1.6rem;
+  margin: 0 0 0.95rem;
 }
 
 .dl-idea-headline span.headline-dim {
   color: #7A6D5E;
   font-weight: 600;
   display: block;
-  margin-bottom: 0.35rem;
+  margin-bottom: 0.25rem;
 }
 
 .dl-idea-headline em.headline-accent {
@@ -98,37 +91,40 @@
   letter-spacing: normal;
   display: inline-block;
   position: relative;
-  padding-bottom: 2px;
+  padding-bottom: 1px;
 }
 
 .dl-idea-headline em.headline-accent::after {
   content: '';
   position: absolute;
   left: 0;
-  bottom: 0;
+  bottom: 1px;
   width: 100%;
-  height: 3px;
+  height: 2.5px;
   background: rgba(255, 107, 26, 0.35);
   border-radius: 2px;
 }
 
-/* Supporting Narrative Paragraph */
+/* Supporting Narrative Lead */
 .dl-idea-lead {
   font-family: 'Manrope', system-ui, sans-serif;
-  font-size: clamp(1.02rem, 1.25vw, 1.15rem);
-  line-height: 1.72;
+  font-size: clamp(0.96rem, 1.15vw, 1.06rem);
+  line-height: 1.62;
   color: #5C5040;
-  margin: 0 0 2.2rem;
-  max-width: 48ch;
+  margin: 0 auto 1.4rem;
+  max-width: 60ch;
 }
 
-/* Timeline Flow Indicator */
+/* Timeline Flow Indicator Rail */
 .dl-idea-flow-strip {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 0.75rem;
-  padding-top: 1.6rem;
-  border-top: 1px solid rgba(44, 26, 16, 0.09);
+  background: #FAF7F2;
+  padding: 0.35rem 1.05rem;
+  border-radius: 999px;
+  border: 1px solid rgba(44, 26, 16, 0.08);
+  box-shadow: 0 3px 10px rgba(44, 26, 16, 0.03);
 }
 
 .dl-flow-node {
@@ -136,368 +132,431 @@
   align-items: center;
   gap: 0.4rem;
   font-family: 'Manrope', monospace;
-  font-size: 0.72rem;
+  font-size: 0.68rem;
   font-weight: 800;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: #7A6D5E;
+  color: #8C7E70;
   transition: all 0.25s ease;
+  cursor: pointer;
+}
+
+.dl-flow-node span.flow-num {
+  font-size: 0.62rem;
+  opacity: 0.7;
 }
 
 .dl-flow-node.is-active {
   color: #FF6B1A;
 }
 
-.dl-flow-node.is-active::before {
-  content: '';
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: #FF6B1A;
+.dl-flow-node.is-active span.flow-num {
+  color: #FF6B1A;
+  opacity: 1;
 }
 
 .dl-flow-arrow {
   color: rgba(44, 26, 16, 0.25);
-  font-size: 0.85rem;
+  font-size: 0.8rem;
 }
 
-/* ── Right Column: Interactive Idea Canvas & Distinct Stages ─────── */
-.dl-idea-canvas {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  gap: 1.6rem;
+/* ── 2. The 3-Stage Transformation Journey (Compact 3-Column Grid) ── */
+.dl-idea-stages-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(1.2rem, 1.8vw, 1.8rem);
+  margin-bottom: 0;
 }
 
-/* Timeline Connecting Line Running Vertically */
-.dl-idea-canvas::before {
-  content: '';
-  position: absolute;
-  top: 2.5rem;
-  bottom: 2.5rem;
-  left: 2.5rem;
-  width: 2px;
-  background: linear-gradient(to bottom,
-    rgba(255, 107, 26, 0.3) 0%,
-    rgba(44, 26, 16, 0.12) 50%,
-    rgba(22, 38, 27, 0.3) 100%);
-  pointer-events: none;
-  z-index: 0;
-}
-
-/* ── Interactive Idea Stage Cards ───────────────────────────────── */
+/* Compact Base Stage Card Styles */
 .dl-stage-card {
   position: relative;
-  z-index: 1;
   background: #ffffff;
   border: 1px solid rgba(44, 26, 16, 0.1);
-  border-radius: 22px;
-  padding: clamp(1.6rem, 2.8vw, 2.4rem);
+  border-radius: 20px;
+  padding: clamp(1.35rem, 1.8vw, 1.7rem);
   box-shadow:
-    0 12px 32px -8px rgba(31, 22, 16, 0.06),
+    0 12px 30px -8px rgba(31, 22, 16, 0.08),
     0 2px 6px rgba(31, 22, 16, 0.03);
-  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 405px;
+  transition: all 0.32s cubic-bezier(0.16, 1, 0.3, 1);
   cursor: pointer;
   overflow: hidden;
 }
 
-/* Large Watermark Number */
-.dl-stage-num {
-  position: absolute;
-  top: 1rem;
-  right: 1.5rem;
-  font-family: 'Outfit', sans-serif;
-  font-size: clamp(3.2rem, 5vw, 4.4rem);
-  font-weight: 900;
-  line-height: 1;
-  letter-spacing: -0.05em;
-  color: rgba(44, 26, 16, 0.05);
-  pointer-events: none;
-  transition: all 0.35s ease;
-}
-
-.dl-stage-card:hover .dl-stage-num {
-  color: rgba(255, 107, 26, 0.14);
-  transform: translateY(-4px) scale(1.05);
-}
-
-/* Stage Card Header */
-.dl-stage-header {
+/* Top Header in Card */
+.dl-stage-card-top {
   display: flex;
-  align-items: center;
-  gap: 0.85rem;
-  margin-bottom: 1.1rem;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 0.95rem;
 }
 
-.dl-stage-badge {
+.dl-stage-badge-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.dl-stage-pill {
   display: inline-flex;
   align-items: center;
-  gap: 0.45rem;
   font-family: 'Manrope', monospace;
-  font-size: 0.72rem;
+  font-size: 0.64rem;
   font-weight: 800;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  padding: 0.3rem 0.75rem;
-  border-radius: 6px;
+  padding: 0.2rem 0.55rem;
+  border-radius: 5px;
   background: #FAF7F2;
   color: #7A6D5E;
   border: 1px solid rgba(44, 26, 16, 0.08);
-  transition: all 0.25s ease;
+  width: fit-content;
 }
 
-.dl-stage-card:hover .dl-stage-badge {
-  background: rgba(255, 107, 26, 0.1);
-  color: #FF6B1A;
-  border-color: rgba(255, 107, 26, 0.2);
+.dl-stage-subtag {
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: #8C7E70;
 }
 
-.dl-stage-title-tag {
+/* Giant Watermark Number */
+.dl-stage-giant-num {
   font-family: 'Outfit', sans-serif;
-  font-size: 1.15rem;
+  font-size: 2.8rem;
+  font-weight: 900;
+  line-height: 0.8;
+  letter-spacing: -0.05em;
+  color: rgba(44, 26, 16, 0.06);
+  pointer-events: none;
+  transition: all 0.32s ease;
+}
+
+.dl-stage-card:hover .dl-stage-giant-num {
+  transform: translateY(-2px) scale(1.05);
+}
+
+/* Stage Main Heading */
+.dl-stage-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.12rem;
   font-weight: 800;
   color: #1F1610;
   letter-spacing: -0.01em;
+  margin: 0 0 0.65rem;
 }
 
-/* The Core "What If" Question (Typography Focus) */
-.dl-stage-question {
+/* The Core "What If" Quote */
+.dl-stage-quote {
   font-family: 'Outfit', system-ui, sans-serif;
-  font-size: clamp(1.22rem, 1.8vw, 1.5rem);
-  font-weight: 700;
-  line-height: 1.36;
-  color: #1F1610;
-  margin: 0 0 1.25rem;
-  letter-spacing: -0.015em;
-  max-width: 44ch;
-  transition: color 0.25s ease;
+  font-size: 0.94rem;
+  font-weight: 600;
+  line-height: 1.42;
+  color: #3C3026;
+  margin: 0 0 1rem;
+  letter-spacing: -0.01em;
 }
 
-.dl-stage-card:hover .dl-stage-question {
-  color: #000000;
+/* ── Custom Stage Artefacts (Compact Layout) ─────────────────────── */
+
+/* Card 1: The Inquiry Note Artefact */
+.dl-stage-card--question {
+  border-top: 3.5px solid #FF6B1A;
 }
 
-/* Expandable Discovery Content */
-.dl-stage-drawer {
-  display: grid;
-  grid-template-rows: 0fr;
-  transition: grid-template-rows 0.38s cubic-bezier(0.16, 1, 0.3, 1);
+.dl-stage-card--question .dl-stage-pill {
+  color: #FF6B1A;
+  background: rgba(255, 107, 26, 0.08);
+  border-color: rgba(255, 107, 26, 0.2);
 }
 
-.dl-stage-drawer-inner {
-  overflow: hidden;
+.dl-stage-card--question:hover .dl-stage-giant-num {
+  color: rgba(255, 107, 26, 0.15);
 }
 
-.dl-stage-detail {
-  padding-top: 1.1rem;
-  margin-top: 0.85rem;
-  border-top: 1px dashed rgba(44, 26, 16, 0.12);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 1rem;
+.dl-artefact-note {
+  background: #FFFDF7;
+  border: 1px dashed rgba(255, 107, 26, 0.3);
+  border-radius: 10px;
+  padding: 0.75rem 0.85rem;
+  margin-bottom: 0.95rem;
 }
 
-.dl-stage-insight {
+.dl-artefact-tag {
+  font-family: 'Manrope', monospace;
+  font-size: 0.58rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #8C7820;
+  margin-bottom: 0.2rem;
+}
+
+.dl-artefact-text {
   font-family: 'Manrope', sans-serif;
-  font-size: 0.86rem;
+  font-size: 0.76rem;
+  line-height: 1.38;
   font-weight: 600;
   color: #5C5040;
-  line-height: 1.55;
-  max-width: 48ch;
+  margin: 0 0 0.45rem;
 }
 
-.dl-stage-pill-tag {
-  font-family: 'Manrope', monospace;
-  font-size: 0.72rem;
-  font-weight: 800;
-  padding: 0.3rem 0.7rem;
-  border-radius: 999px;
-  background: #FAF7F2;
-  color: #7A6D5E;
+.dl-artefact-pill {
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.68rem;
+  color: #5C5040;
+  background: rgba(255, 107, 26, 0.08);
+  padding: 0.2rem 0.5rem;
+  border-radius: 5px;
 }
 
-/* Footer / Interactive Trigger Bar */
-.dl-stage-footer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-top: 0.95rem;
-  padding-top: 0.85rem;
+.dl-artefact-pill span.pill-arrow {
+  color: #FF6B1A;
+  font-weight: 700;
 }
 
-.dl-stage-action {
+.dl-artefact-pill span.pill-bold {
+  color: #FF6B1A;
+  font-weight: 800;
+}
+
+/* Card 2: The Fieldwork Visual Artefact */
+.dl-stage-card--explore {
+  border-top: 3.5px solid #2F6B3E;
+}
+
+.dl-stage-card--explore .dl-stage-pill {
+  color: #2F6B3E;
+  background: #EAF4EC;
+  border-color: rgba(47, 107, 62, 0.2);
+}
+
+.dl-stage-card--explore:hover .dl-stage-giant-num {
+  color: rgba(47, 107, 62, 0.15);
+}
+
+/* Consistent Visual Image Window in All 3 Cards */
+.dl-artefact-visual {
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  height: 105px;
+  margin-bottom: 0.95rem;
+  border: 1px solid rgba(44, 26, 16, 0.08);
+  background: #201812;
+}
+
+.dl-artefact-visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: contrast(104%) saturate(104%);
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.dl-stage-card:hover .dl-artefact-visual img {
+  transform: scale(1.06);
+}
+
+.dl-visual-badge {
+  position: absolute;
+  bottom: 6px;
+  left: 6px;
+  right: 6px;
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.35rem;
+  font-family: 'Manrope', monospace;
+  font-size: 0.58rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #ffffff;
+  background: rgba(18, 14, 11, 0.82);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: 0.25rem 0.55rem;
+  border-radius: 5px;
+}
+
+.dl-visual-badge span.orange-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #FF6B1A;
+}
+
+.dl-visual-badge span.green-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #73E6A0;
+}
+
+.dl-visual-badge span.emerald-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #4ADE80;
+}
+
+/* Card 3: The Rapid Build Card (Clean White Editorial Card) */
+.dl-stage-card--build {
+  background: #ffffff;
+  color: #1F1610;
+  border: 1px solid rgba(44, 26, 16, 0.09);
+  border-top: 3.5px solid #2F6B3E;
+}
+
+.dl-stage-card--build .dl-stage-giant-num {
+  color: rgba(44, 26, 16, 0.06);
+}
+
+.dl-stage-card--build:hover .dl-stage-giant-num {
+  color: rgba(47, 107, 62, 0.15);
+}
+
+.dl-stage-card--build .dl-stage-pill {
+  color: #2F6B3E;
+  background: #EAF4EC;
+  border-color: rgba(47, 107, 62, 0.2);
+}
+
+.dl-stage-card--build .dl-stage-subtag {
+  color: #8C7E70;
+}
+
+.dl-stage-card--build .dl-stage-title {
+  color: #1F1610;
+}
+
+.dl-stage-card--build .dl-stage-quote {
+  color: #3C3026;
+}
+
+/* ── Card Footers & Call to Action ──────────────────────────────── */
+.dl-stage-card-footer {
+  padding-top: 0.85rem;
+  border-top: 1px solid rgba(44, 26, 16, 0.08);
+}
+
+.dl-stage-card--build .dl-stage-card-footer {
+  border-top-color: rgba(44, 26, 16, 0.08);
+}
+
+.dl-stage-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
   font-family: 'Outfit', sans-serif;
-  font-size: 0.86rem;
+  font-size: 0.82rem;
   font-weight: 700;
-  color: #7A6D5E;
+  color: #5C5040;
   transition: all 0.25s ease;
 }
 
-.dl-stage-arrow {
-  display: inline-block;
+.dl-stage-cta svg {
   transition: transform 0.25s ease;
   color: #FF6B1A;
 }
 
-/* Card Hover States */
-.dl-stage-card:hover {
-  transform: translateY(-6px);
-  border-color: rgba(255, 107, 26, 0.35);
-  box-shadow:
-    0 24px 50px -12px rgba(31, 22, 16, 0.12),
-    0 4px 14px rgba(31, 22, 16, 0.05);
-}
-
-.dl-stage-card:hover .dl-stage-drawer,
-.dl-stage-card.is-expanded .dl-stage-drawer {
-  grid-template-rows: 1fr;
-}
-
-.dl-stage-card:hover .dl-stage-action {
+.dl-stage-card--question:hover .dl-stage-cta {
   color: #FF6B1A;
 }
 
-.dl-stage-card:hover .dl-stage-arrow {
-  transform: translateX(5px);
+.dl-stage-card--explore:hover .dl-stage-cta {
+  color: #2F6B3E;
 }
 
-/* ── Individual Stage Card Accents (01 Question, 02 Explore, 03 Build) ── */
-
-/* Stage 01: Warm Inquiry Accent */
-.dl-stage-card--question {
-  border-left: 4px solid #FF6B1A;
+.dl-stage-card--explore .dl-stage-cta svg {
+  color: #2F6B3E;
 }
 
-/* Stage 02: Exploration With Editorial Visual Slice */
-.dl-stage-card--explore {
-  border-left: 4px solid #386B45;
+.dl-stage-card--build:hover .dl-stage-cta {
+  color: #2F6B3E;
 }
 
-.dl-explore-slice {
-  margin-top: 1rem;
-  border-radius: 12px;
-  overflow: hidden;
-  height: 90px;
-  position: relative;
+.dl-stage-card--build .dl-stage-cta svg {
+  color: #2F6B3E;
 }
 
-.dl-explore-slice img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: contrast(105%) brightness(95%);
-  transition: transform 0.4s ease;
+.dl-stage-card:hover .dl-stage-cta svg {
+  transform: translateX(4px);
 }
 
-.dl-stage-card:hover .dl-explore-slice img {
-  transform: scale(1.04);
-}
-
-.dl-explore-slice-badge {
-  position: absolute;
-  bottom: 8px;
-  right: 12px;
-  font-family: 'Manrope', monospace;
-  font-size: 0.65rem;
-  font-weight: 800;
-  background: rgba(22, 38, 27, 0.85);
-  backdrop-filter: blur(8px);
-  color: #D5F078;
-  padding: 0.2rem 0.55rem;
-  border-radius: 4px;
-  text-transform: uppercase;
-}
-
-/* Stage 03: Forest Green Build Card */
-.dl-stage-card--build {
-  background: #16261B;
-  color: #FAF7F2;
-  border: 1px solid rgba(213, 240, 120, 0.18);
-  border-left: 4px solid #D5F078;
-}
-
-.dl-stage-card--build .dl-stage-num {
-  color: rgba(255, 255, 255, 0.06);
-}
-
-.dl-stage-card--build:hover .dl-stage-num {
-  color: rgba(213, 240, 120, 0.18);
-}
-
-.dl-stage-card--build .dl-stage-title-tag {
-  color: #ffffff;
-}
-
-.dl-stage-card--build .dl-stage-question {
-  color: #ffffff;
-}
-
-.dl-stage-card--build .dl-stage-badge {
-  background: rgba(213, 240, 120, 0.12);
-  color: #D5F078;
-  border-color: rgba(213, 240, 120, 0.25);
-}
-
-.dl-stage-card--build .dl-stage-insight {
-  color: rgba(255, 255, 255, 0.82);
-}
-
-.dl-stage-card--build .dl-stage-detail {
-  border-top-color: rgba(255, 255, 255, 0.12);
-}
-
-.dl-stage-card--build .dl-stage-action {
-  color: #D5F078;
-}
-
-.dl-stage-card--build .dl-stage-arrow {
-  color: #D5F078;
+/* Card Elevation on Hover */
+.dl-stage-card:hover {
+  transform: translateY(-6px);
+  box-shadow:
+    0 18px 40px -8px rgba(31, 22, 16, 0.10),
+    0 3px 10px rgba(31, 22, 16, 0.03);
 }
 
 .dl-stage-card--build:hover {
   box-shadow:
-    0 24px 50px -12px rgba(13, 26, 17, 0.5),
-    0 4px 14px rgba(13, 26, 17, 0.2);
-  border-color: rgba(213, 240, 120, 0.4);
+    0 18px 40px -8px rgba(31, 22, 16, 0.10),
+    0 3px 10px rgba(31, 22, 16, 0.03);
+  border-color: rgba(47, 107, 62, 0.3);
 }
 
-/* ── Emotional Quote Centerpiece (Grand Editorial Climax) ───────── */
+/* ── 3. Emotional Climax Manifesto (Sleek Compact Ribbon) ────────── */
 .dl-idea-quote-block {
-  margin-top: clamp(4.5rem, 8vh, 7rem);
-  padding: clamp(3rem, 5vw, 4.5rem) clamp(2rem, 4vw, 4rem);
-  background: #ffffff;
-  border: 1px solid rgba(44, 26, 16, 0.1);
-  border-radius: 28px;
-  box-shadow: 0 16px 40px -10px rgba(31, 22, 16, 0.08);
+  background: linear-gradient(165deg, #17110C 0%, #0D0906 100%);
+  color: #FAF7F2;
+  border-radius: 20px;
+  padding: clamp(1.3rem, 2.2vw, 1.85rem) clamp(1.5rem, 3vw, 2.8rem);
   text-align: center;
   position: relative;
   overflow: hidden;
+  border: 1px solid rgba(255, 107, 26, 0.2);
+  box-shadow:
+    0 18px 40px -10px rgba(20, 14, 8, 0.35),
+    0 0 0 1px rgba(255, 255, 255, 0.05) inset;
 }
 
+/* Ambient Radial Orange Lighting */
 .dl-idea-quote-block::before {
   content: '';
   position: absolute;
   top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: linear-gradient(90deg, #FF6B1A 0%, #D5F078 100%);
+  left: 50%;
+  transform: translateX(-50%);
+  width: 45%;
+  height: 120px;
+  background: radial-gradient(ellipse at 50% 0%, rgba(255, 107, 26, 0.18) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.dl-quote-badge {
+  display: inline-flex;
+  align-items: center;
+  font-family: 'Manrope', monospace;
+  font-size: 0.58rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #FF6B1A;
+  background: rgba(255, 107, 26, 0.12);
+  border: 1px solid rgba(255, 107, 26, 0.25);
+  padding: 0.2rem 0.65rem;
+  border-radius: 999px;
+  margin-bottom: 0.65rem;
 }
 
 .dl-quote-preamble {
   font-family: 'Outfit', sans-serif;
-  font-size: clamp(1.15rem, 1.8vw, 1.45rem);
-  font-weight: 600;
-  color: #7A6D5E;
-  margin-bottom: 1.25rem;
+  font-size: clamp(0.96rem, 1.2vw, 1.12rem);
+  font-weight: 500;
+  color: #C4B5A5;
+  margin: 0 0 0.45rem;
+  letter-spacing: -0.01em;
 }
 
 .dl-quote-triad {
@@ -505,13 +564,13 @@
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 0.85rem clamp(1rem, 2.5vw, 2.2rem);
+  gap: 0.45rem clamp(0.65rem, 1.6vw, 1.4rem);
   font-family: 'Instrument Serif', Georgia, serif;
   font-style: italic;
-  font-size: clamp(2.8rem, 6.2vw, 5.2rem);
+  font-size: clamp(2rem, 3.6vw, 3rem);
   line-height: 1;
-  color: #1F1610;
-  margin: 0.5rem 0 1.25rem;
+  color: #FAF7F2;
+  margin: 0.2rem 0 0.5rem;
 }
 
 .dl-triad-word {
@@ -520,48 +579,50 @@
 }
 
 .dl-triad-word:hover {
-  color: #FF6B1A;
-  transform: translateY(-3px) scale(1.04);
+  color: #FF7A29;
+  transform: translateY(-2px) scale(1.03);
 }
 
 .dl-triad-dot {
   font-family: 'Outfit', sans-serif;
   font-style: normal;
-  font-size: 0.45em;
+  font-size: 0.4em;
   color: #FF6B1A;
   opacity: 0.7;
 }
 
 .dl-triad-highlight {
-  color: #FF6B1A;
+  color: #FF7A29;
+  text-shadow: 0 0 25px rgba(255, 107, 26, 0.35);
 }
 
 .dl-quote-postscript {
   font-family: 'Outfit', sans-serif;
-  font-size: clamp(1.2rem, 1.9vw, 1.5rem);
+  font-size: clamp(0.96rem, 1.2vw, 1.12rem);
   font-weight: 700;
-  color: #5C5040;
+  color: #E6D8C8;
   letter-spacing: -0.01em;
+  margin: 0;
 }
 
 /* Self-Drawing Animated Stroke Line */
 .dl-quote-line {
   width: 0%;
   height: 2px;
-  background: #FF6B1A;
-  margin: 1.8rem auto 0;
+  background: linear-gradient(90deg, transparent, #FF6B1A, #D5F078, transparent);
+  margin: 0.85rem auto 0;
   border-radius: 2px;
   transition: width 1.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .dl-idea-quote-block.is-visible .dl-quote-line {
-  width: 140px;
+  width: 120px;
 }
 
 /* ── Scroll Animation Helpers ───────────────────────────────────── */
 .dl-reveal {
   opacity: 0;
-  transform: translateY(28px);
+  transform: translateY(22px);
   transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -571,48 +632,46 @@
 }
 
 .dl-stagger-1 { transition-delay: 0.08s; }
-.dl-stagger-2 { transition-delay: 0.18s; }
-.dl-stagger-3 { transition-delay: 0.28s; }
-.dl-stagger-4 { transition-delay: 0.38s; }
+.dl-stagger-2 { transition-delay: 0.16s; }
+.dl-stagger-3 { transition-delay: 0.24s; }
+.dl-stagger-4 { transition-delay: 0.32s; }
 
-/* ── Responsive Refinements ─────────────────────────────────────── */
+/* ── Responsive Adaptations ─────────────────────────────────────── */
 @media (max-width: 1040px) {
-  .dl-idea-layout {
+  .dl-idea-stages-grid {
     grid-template-columns: 1fr;
-    gap: 3.5rem;
+    max-width: 580px;
+    margin-left: auto;
+    margin-right: auto;
+    gap: 1.4rem;
   }
 
-  .dl-idea-narrative {
-    position: static;
-    max-width: 680px;
-    padding-right: 0;
-  }
-
-  .dl-idea-canvas::before {
-    display: none;
+  .dl-stage-card {
+    min-height: auto;
   }
 }
 
 @media (max-width: 640px) {
   .dl-idea-headline {
-    font-size: 2.2rem;
+    font-size: 1.85rem;
   }
 
   .dl-idea-quote-block {
-    padding: 2.2rem 1.4rem;
-    border-radius: 20px;
+    padding: 1.8rem 1.2rem;
+    border-radius: 18px;
   }
 
   .dl-quote-triad {
-    font-size: 2.6rem;
-    gap: 0.5rem 1rem;
+    font-size: 2.3rem;
+    gap: 0.4rem 0.75rem;
   }
 
   .dl-stage-card {
-    padding: 1.4rem;
+    padding: 1.25rem;
+    border-radius: 16px;
   }
 
-  .dl-stage-question {
-    font-size: 1.15rem;
+  .dl-stage-quote {
+    font-size: 0.92rem;
   }
 }
