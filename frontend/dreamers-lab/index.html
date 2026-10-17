@@ -11,60 +11,365 @@
     <meta name="theme-color" content="#f8f6f0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="../responsive.css">
     <link rel="stylesheet" href="../pages.css">
+    <link rel="stylesheet" href="../dreamers-lab-hero.css">
+    <link rel="stylesheet" href="../dreamers-lab-big-idea.css">
 </head>
 <body id="top" class="pg-body">
 
+<!-- Minimal Premium Dreamers Lab Navigation -->
+<nav class="dl-navbar nd-navbar" aria-label="Dreamers Lab navigation">
+  <a href="../" class="dl-nav-brand">
+    <span class="dl-brand-mark" aria-hidden="true">&#10022;</span>
+    <span class="dl-brand-name">Dreamers<em>Lab.</em></span>
+  </a>
+  <ul class="dl-nav-links">
+    <li><a href="#journey" class="dl-nav-link">Program</a></li>
+    <li><a href="#the-big-idea" class="dl-nav-link">How It Works</a></li>
+    <li><a href="#schools" class="dl-nav-link">For Schools</a></li>
+    <li><a href="#journey" class="dl-nav-link">Student Journey</a></li>
+    <li><a href="../about/" class="dl-nav-link">About</a></li>
+  </ul>
+  <div class="dl-nav-actions">
+    <a href="../apply/" class="dl-nav-btn">
+      <span>Explore Program</span>
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+    </a>
+    <button class="dl-nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="7" x2="20" y2="7"></line><line x1="4" y1="12" x2="20" y2="12"></line><line x1="4" y1="17" x2="20" y2="17"></line></svg>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile Navigation Drawer -->
+<div class="dl-mobile-menu" aria-label="Mobile navigation menu">
+  <ul class="dl-mobile-links">
+    <li><a href="#journey" class="dl-mobile-link">Program</a></li>
+    <li><a href="#the-big-idea" class="dl-mobile-link">How It Works</a></li>
+    <li><a href="#schools" class="dl-mobile-link">For Schools</a></li>
+    <li><a href="#journey" class="dl-mobile-link">Student Journey</a></li>
+    <li><a href="../about/" class="dl-mobile-link">About</a></li>
+    <li><a href="../apply/" class="dl-mobile-link" style="color:var(--dl-orange);">Explore Program &rarr;</a></li>
+  </ul>
+</div>
+
 <main class="pg-main">
 
-    <!-- Section 1: Hero -->
-    <header class="pg-hero pg-hero--split">
-        <div class="pg-container pg-hero-inner">
-            <div>
-                <span class="pg-eyebrow">Building Dreams for Schools</span>
-                <h1 class="pg-hero-title">Dreamers <em>Lab.</em></h1>
-                <p class="pg-hero-lead">Where young minds learn to turn problems into possibilities.</p>
-                <p class="pg-hero-sub">A hands-on entrepreneurship experience for students in Grades 9&ndash;12 who want to explore ideas, solve real problems and discover what they&rsquo;re capable of building.</p>
-                <div class="pg-cta-row">
-                    <a href="#journey" class="pg-btn pg-btn--primary">Explore the Program &rarr;</a>
-                    <a href="#schools" class="pg-btn pg-btn--ghost">For Schools &rarr;</a>
+    <!-- Section 1: Premium Interactive Dreamers Lab Hero -->
+    <header class="dl-hero-section">
+        <div class="dl-hero-grid-bg" aria-hidden="true"></div>
+        <div class="dl-hero-glow-accent" aria-hidden="true"></div>
+
+        <div class="dl-hero-container">
+            <div class="dl-hero-layout">
+
+                <!-- Left Column: Editorial Typography & CTAs -->
+                <div class="dl-hero-content">
+                    <div class="dl-editorial-stamp">
+                        <span>EDITION 2026 // COHORT 01</span>
+                        <span>&bull;</span>
+                        <span>GRADES 9&ndash;12</span>
+                    </div>
+
+                    <div class="dl-badge">
+                        <span class="dl-badge-dot" aria-hidden="true"></span>
+                        <span>BUILDING DREAMS FOR SCHOOLS</span>
+                    </div>
+
+                    <h1 class="dl-hero-title">
+                        Dreamers <span class="dl-hero-title-accent">Lab.</span>
+                    </h1>
+
+                    <p class="dl-hero-headline">
+                        Where young minds learn to turn problems into possibilities.
+                    </p>
+
+                    <p class="dl-hero-description">
+                        A hands-on entrepreneurship experience for students in Grades 9&ndash;12 who want to explore ideas, solve real problems and discover what they&rsquo;re capable of building.
+                    </p>
+
+                    <div class="dl-hero-actions">
+                        <a href="#journey" class="dl-btn-primary">
+                            <span>Explore the Program</span>
+                            <span class="dl-btn-arrow" aria-hidden="true">&rarr;</span>
+                        </a>
+                        <a href="#schools" class="dl-btn-secondary">
+                            <span>For Schools</span>
+                            <span class="dl-btn-arrow" aria-hidden="true">&rarr;</span>
+                        </a>
+                    </div>
+
+                    <!-- Social Proof / Trust Metadata Strip -->
+                    <div class="dl-trust-strip">
+                        <div class="dl-trust-item">
+                            <span class="dl-trust-icon" aria-hidden="true">&#10022;</span>
+                            <span>Built for curious minds.</span>
+                        </div>
+                        <span class="dl-trust-sep" aria-hidden="true"></span>
+                        <div class="dl-trust-item">
+                            <span class="dl-trust-icon" aria-hidden="true">&#10022;</span>
+                            <span>Grades 9&ndash;12</span>
+                        </div>
+                        <span class="dl-trust-sep" aria-hidden="true"></span>
+                        <div class="dl-trust-item">
+                            <span class="dl-trust-icon" aria-hidden="true">&#10022;</span>
+                            <span>12-Week Experience</span>
+                        </div>
+                        <span class="dl-trust-sep" aria-hidden="true"></span>
+                        <div class="dl-trust-item">
+                            <span class="dl-trust-icon" aria-hidden="true">&#10022;</span>
+                            <span>No Experience Required</span>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="pg-panel pg-panel--forest">
-                <div class="pg-tags" style="margin-bottom:1.2rem;">
-                    <span class="pg-tag" style="color:#eef4f0;background:rgba(213,240,120,0.14);border-color:rgba(213,240,120,0.3);">Grades 9&ndash;12</span>
-                    <span class="pg-tag" style="color:#eef4f0;background:rgba(213,240,120,0.14);border-color:rgba(213,240,120,0.3);">12 Weeks</span>
-                    <span class="pg-tag" style="color:#eef4f0;background:rgba(213,240,120,0.14);border-color:rgba(213,240,120,0.3);">No experience required</span>
+
+                <!-- Right Column: The Interactive Dreamer's Workspace -->
+                <div class="dl-workspace-wrapper">
+                    <!-- Stage Switcher Tabs -->
+                    <div class="dl-stage-pills" role="tablist" aria-label="Venture Lifecycle Stages">
+                        <button class="dl-stage-pill is-active" data-stage="curiosity" role="tab" aria-selected="true">
+                            <span class="pill-num">01</span>
+                            <span>Curiosity</span>
+                        </button>
+                        <button class="dl-stage-pill" data-stage="problem" role="tab" aria-selected="false">
+                            <span class="pill-num">02</span>
+                            <span>Problem &amp; Idea</span>
+                        </button>
+                        <button class="dl-stage-pill" data-stage="prototype" role="tab" aria-selected="false">
+                            <span class="pill-num">03</span>
+                            <span>Prototype &amp; Build</span>
+                        </button>
+                        <button class="dl-stage-pill" data-stage="launch" role="tab" aria-selected="false">
+                            <span class="pill-num">04</span>
+                            <span>Launch</span>
+                        </button>
+                    </div>
+
+                    <!-- 3D Layered Workspace Canvas -->
+                    <div class="dl-workspace-canvas" aria-label="Interactive Dreamer's Workspace">
+                        <span class="dl-canvas-tag-tl">STUDIO CANVAS // REF. DL-2026</span>
+                        <span class="dl-canvas-tag-tr">WORKSPACE ACTIVE</span>
+
+                        <!-- Launch Badge / Demo Day -->
+                        <div class="dl-element dl-element-launch-badge dl-float-b" data-stage="launch">
+                            <span class="dl-launch-icon" aria-hidden="true">&#128640;</span>
+                            <span class="dl-launch-label">Demo Day Showcase</span>
+                            <span class="dl-launch-tag">12 WEEKS</span>
+                        </div>
+
+                        <!-- Central Editorial Photo Element -->
+                        <div class="dl-element dl-element-photo" data-stage="prototype">
+                            <img src="../assets/dreamers-students.jpg" alt="Students in Grades 9-12 collaborating enthusiastically in a workshop prototyping their venture" width="600" height="450" loading="eager">
+                            <div class="dl-photo-caption">
+                                <span>Studio 04 &middot; Prototyping Session</span>
+                                <span class="badge-live">Hands-on Learning</span>
+                            </div>
+                        </div>
+
+                        <!-- Curiosity Sticky Note (Yellow Paper) -->
+                        <div class="dl-element dl-element-sticky-curiosity dl-float-a is-highlighted" data-stage="curiosity">
+                            <div class="dl-sticky-tape" aria-hidden="true"></div>
+                            <span class="dl-sticky-tag">[01. CURIOSITY]</span>
+                            <p class="dl-sticky-text">&ldquo;What if school canteen bio-waste could power local community gardens?&rdquo;</p>
+                            <p class="dl-sticky-author">&mdash; Team EcoLoop (Grades 10 &amp; 11)</p>
+                        </div>
+
+                        <!-- Problem / Observation Audit Card -->
+                        <div class="dl-element dl-element-problem-card" data-stage="problem">
+                            <div class="dl-problem-badge">
+                                <span aria-hidden="true">&#9679;</span>
+                                <span>02. PROBLEM AUDIT</span>
+                            </div>
+                            <p class="dl-problem-text">&ldquo;84% of local residents face irregular waste pickup schedules.&rdquo;</p>
+                            <div class="dl-problem-metric">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                <span>Validated with 28 interviews</span>
+                            </div>
+                        </div>
+
+                        <!-- Prototype & Build Glass Card (Forest Green) -->
+                        <div class="dl-element dl-element-prototype-card dl-float-b" data-stage="prototype">
+                            <div class="dl-proto-header">
+                                <span class="dl-proto-pill">03. PROTOTYPE V1.2</span>
+                                <span class="dl-proto-step">BUILD PHASE</span>
+                            </div>
+                            <h3 class="dl-proto-title">A journey from curiosity to creation.</h3>
+                            <p class="dl-proto-desc">Students learn by doing &mdash; questioning assumptions, making mistakes and improving ideas with feedback.</p>
+                            <div class="dl-proto-bar">
+                                <div class="dl-proto-progress">
+                                    <div class="dl-proto-fill"></div>
+                                </div>
+                                <span class="dl-proto-stat">78% TESTED</span>
+                            </div>
+                        </div>
+
+                        <!-- Mentor Feedback Sticky Note (Mint Paper) -->
+                        <div class="dl-element dl-element-feedback-note dl-float-a" data-stage="problem">
+                            <div class="dl-feedback-tape" aria-hidden="true"></div>
+                            <div class="dl-feedback-tag">
+                                <span>MENTOR FEEDBACK</span>
+                            </div>
+                            <p class="dl-feedback-text">&ldquo;Focus on the 3 core steps first. Test it with 5 users before building more!&rdquo;</p>
+                            <p class="dl-feedback-author">&mdash; Mentor in Residence</p>
+                        </div>
+                    </div>
+
                 </div>
-                <h2 class="pg-h3" style="color:#fff;">A journey from curiosity to creation.</h2>
-                <p>Students learn by doing &mdash; collaborating, questioning assumptions, making mistakes and improving their ideas with feedback.</p>
+
             </div>
         </div>
     </header>
 
-    <!-- Section 2: The big idea -->
-    <section class="pg-section pg-section--ivory">
-        <div class="pg-container">
-            <div class="pg-head">
-                <span class="pg-eyebrow">The big idea</span>
-                <h2 class="pg-h2">School teaches you to understand the world. Dreamers Lab challenges you to <em>improve it.</em></h2>
+    <!-- Section 2: The Big Idea (Premium Editorial Experience) -->
+    <section class="dl-idea-section" id="the-big-idea">
+        <div class="dl-idea-container">
+            <div class="dl-idea-layout">
+
+                <!-- Left Column: Sticky Narrative Anchor -->
+                <div class="dl-idea-narrative dl-reveal">
+                    <div class="dl-idea-eyebrow-pill">
+                        <span class="dl-idea-eyebrow-dot" aria-hidden="true"></span>
+                        <span>The Big Idea</span>
+                    </div>
+
+                    <h2 class="dl-idea-headline">
+                        <span class="headline-dim">School teaches you to understand the world.</span>
+                        Dreamers Lab challenges you to <em class="headline-accent">improve it.</em>
+                    </h2>
+
+                    <p class="dl-idea-lead">
+                        Dreamers Lab makes that possible through a structured, guided entrepreneurship journey. Students learn by doing. They collaborate, question assumptions, make mistakes and improve their ideas with feedback.
+                    </p>
+
+                    <!-- Interactive Timeline Flow Indicator -->
+                    <div class="dl-idea-flow-strip" aria-label="Progression Flow">
+                        <span class="dl-flow-node is-active" data-index="0">01 Question</span>
+                        <span class="dl-flow-arrow">&rarr;</span>
+                        <span class="dl-flow-node" data-index="1">02 Explore</span>
+                        <span class="dl-flow-arrow">&rarr;</span>
+                        <span class="dl-flow-node" data-index="2">03 Build</span>
+                    </div>
+                </div>
+
+                <!-- Right Column: Interactive Idea Canvas & 3 Distinct Stage Cards -->
+                <div class="dl-idea-canvas">
+
+                    <!-- Stage 01: QUESTION -->
+                    <article class="dl-stage-card dl-stage-card--question dl-reveal dl-stagger-1" data-stage-index="0">
+                        <span class="dl-stage-num" aria-hidden="true">01</span>
+                        <div class="dl-stage-header">
+                            <span class="dl-stage-badge">STAGE 01 // QUESTION</span>
+                            <span class="dl-stage-title-tag">Question the Status Quo</span>
+                        </div>
+                        <h3 class="dl-stage-question">
+                            &ldquo;What if students didn&rsquo;t just study business concepts but tried building a business of their own?&rdquo;
+                        </h3>
+                        <div class="dl-stage-drawer">
+                            <div class="dl-stage-drawer-inner">
+                                <div class="dl-stage-detail">
+                                    <p class="dl-stage-insight">
+                                        Shifting from passive theory to active ownership. Students learn to observe inefficiencies in their immediate environment and frame them as entrepreneurial hypotheses.
+                                    </p>
+                                    <span class="dl-stage-pill-tag">&#10022; Inquiry &amp; Mindset Shift</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dl-stage-footer">
+                            <span class="dl-stage-action">
+                                <span>Explore Question Phase</span>
+                                <span class="dl-stage-arrow" aria-hidden="true">&rarr;</span>
+                            </span>
+                        </div>
+                    </article>
+
+                    <!-- Stage 02: EXPLORE -->
+                    <article class="dl-stage-card dl-stage-card--explore dl-reveal dl-stagger-2" data-stage-index="1">
+                        <span class="dl-stage-num" aria-hidden="true">02</span>
+                        <div class="dl-stage-header">
+                            <span class="dl-stage-badge">STAGE 02 // EXPLORE</span>
+                            <span class="dl-stage-title-tag">Explore Real Frustrations</span>
+                        </div>
+                        <h3 class="dl-stage-question">
+                            &ldquo;What if a classroom project began with a problem in the neighbourhood, a frustration at home or an idea to make everyday life better?&rdquo;
+                        </h3>
+
+                        <!-- Editorial Slice Visual -->
+                        <div class="dl-explore-slice">
+                            <img src="../assets/story-experiment.jpg" alt="Students conducting hands-on user research in their community" width="540" height="90" loading="lazy">
+                            <span class="dl-explore-slice-badge">Field Exploration &middot; Real Problems</span>
+                        </div>
+
+                        <div class="dl-stage-drawer">
+                            <div class="dl-stage-drawer-inner">
+                                <div class="dl-stage-detail">
+                                    <p class="dl-stage-insight">
+                                        Rooted in real human empathy. Students step into their communities, interview affected people, and uncover genuine demand before designing any solution.
+                                    </p>
+                                    <span class="dl-stage-pill-tag">&#10022; Problem Discovery &amp; Empathy</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dl-stage-footer">
+                            <span class="dl-stage-action">
+                                <span>Explore Validation Phase</span>
+                                <span class="dl-stage-arrow" aria-hidden="true">&rarr;</span>
+                            </span>
+                        </div>
+                    </article>
+
+                    <!-- Stage 03: BUILD -->
+                    <article class="dl-stage-card dl-stage-card--build dl-reveal dl-stagger-3" data-stage-index="2">
+                        <span class="dl-stage-num" aria-hidden="true">03</span>
+                        <div class="dl-stage-header">
+                            <span class="dl-stage-badge">STAGE 03 // BUILD</span>
+                            <span class="dl-stage-title-tag">Build Real Solutions</span>
+                        </div>
+                        <h3 class="dl-stage-question">
+                            &ldquo;What if students learned to interview people, test assumptions, create prototypes and pitch solutions?&rdquo;
+                        </h3>
+                        <div class="dl-stage-drawer">
+                            <div class="dl-stage-drawer-inner">
+                                <div class="dl-stage-detail">
+                                    <p class="dl-stage-insight">
+                                        From sketches to tangible working prototypes. Guided mentorship helps students turn feedback into iterated mockups, service flows, and real demo showcases.
+                                    </p>
+                                    <span class="dl-stage-pill-tag">&#10022; Rapid Prototyping &amp; Demo</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dl-stage-footer">
+                            <span class="dl-stage-action">
+                                <span>Explore Prototype Phase</span>
+                                <span class="dl-stage-arrow" aria-hidden="true">&rarr;</span>
+                            </span>
+                        </div>
+                    </article>
+
+                </div>
+
             </div>
-            <div class="pg-grid pg-grid--3">
-                <div class="pg-card pg-card--hover">
-                    <p class="pg-card-text">What if students didn&rsquo;t just study business concepts but tried building a business of their own?</p>
+
+            <!-- Emotional Quote Climax Statement -->
+            <div class="dl-idea-quote-block dl-reveal dl-stagger-4">
+                <p class="dl-quote-preamble">
+                    &ldquo;The objective isn&rsquo;t to turn every student into a founder.&rdquo;
+                </p>
+                <div class="dl-quote-triad">
+                    <span class="dl-triad-word">Think.</span>
+                    <span class="dl-triad-dot" aria-hidden="true">&bull;</span>
+                    <span class="dl-triad-word">Create.</span>
+                    <span class="dl-triad-dot" aria-hidden="true">&bull;</span>
+                    <span class="dl-triad-word dl-triad-highlight">Act.</span>
                 </div>
-                <div class="pg-card pg-card--hover">
-                    <p class="pg-card-text">What if a classroom project began with a problem in the neighbourhood, a frustration at home or an idea to make everyday life better?</p>
-                </div>
-                <div class="pg-card pg-card--hover">
-                    <p class="pg-card-text">What if students learned to interview people, test assumptions, create prototypes and pitch solutions?</p>
-                </div>
+                <p class="dl-quote-postscript">
+                    with greater confidence.
+                </p>
+                <div class="dl-quote-line" aria-hidden="true"></div>
             </div>
-            <p class="pg-sub" style="margin-top:2rem;max-width:70ch;">Dreamers Lab makes that possible through a structured, guided entrepreneurship journey. Students learn by doing. They collaborate, question assumptions, make mistakes and improve their ideas with feedback.</p>
-            <p class="pg-quote" style="margin-top:1.5rem;">The objective isn&rsquo;t to turn every student into a founder. It&rsquo;s to help every participant think, create and act with greater confidence.</p>
+
         </div>
     </section>
 
@@ -289,5 +594,7 @@
 
 <div data-site-footer></div>
 <script type="module" src="../main.js"></script>
+<script type="module" src="../dreamers-lab-hero.js"></script>
+<script type="module" src="../dreamers-lab-big-idea.js"></script>
 </body>
 </html>

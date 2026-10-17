@@ -1,0 +1,1285 @@
+/* ==========================================================================
+   Dreamers Lab — Premium Editorial Hero & Interactive Workspace
+   Brand: Building Dreams for Schools (Grades 9–12)
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800;900&display=swap');
+
+/* ── Custom Theme Tokens for Dreamers Lab ───────────────────────── */
+:root {
+  --dl-bg-ivory: #FAF7F2;
+  --dl-bg-card: #FFFFFF;
+  --dl-espresso: #1F1610;
+  --dl-espresso-muted: #5C5040;
+  --dl-espresso-light: #8A7B6B;
+  --dl-orange: #FF6B1A;
+  --dl-orange-glow: rgba(255, 107, 26, 0.22);
+  --dl-forest: #16261B;
+  --dl-forest-dark: #0D1A11;
+  --dl-lime: #D5F078;
+  --dl-yellow-note: #FFF9D9;
+  --dl-mint-note: #E8F5EB;
+  --dl-border-subtle: rgba(44, 26, 16, 0.08);
+  --dl-border-editorial: rgba(44, 26, 16, 0.12);
+  --dl-shadow-soft: 0 10px 30px -8px rgba(31, 22, 16, 0.08), 0 2px 8px rgba(31, 22, 16, 0.04);
+  --dl-shadow-elevated: 0 24px 50px -12px rgba(31, 22, 16, 0.14), 0 6px 16px rgba(31, 22, 16, 0.05);
+  --dl-shadow-deep: 0 32px 64px -16px rgba(31, 22, 16, 0.2), 0 12px 24px rgba(31, 22, 16, 0.08);
+}
+
+/* ── Minimalist Glassmorphic Navigation Bar ─────────────────────── */
+.dl-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.95rem clamp(1.2rem, 4vw, 3.5rem);
+  background: rgba(250, 247, 242, 0.82);
+  backdrop-filter: blur(18px) saturate(160%);
+  -webkit-backdrop-filter: blur(18px) saturate(160%);
+  border-bottom: 1px solid rgba(44, 26, 16, 0.06);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.dl-navbar.is-scrolled {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  background: rgba(255, 255, 255, 0.92);
+  border-bottom-color: rgba(44, 26, 16, 0.10);
+  box-shadow: 0 8px 24px -6px rgba(31, 22, 16, 0.06);
+}
+
+.dl-nav-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  text-decoration: none;
+  color: var(--dl-espresso);
+}
+
+.dl-brand-mark {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background: var(--dl-espresso);
+  color: #FAF7F2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  font-weight: 800;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.dl-nav-brand:hover .dl-brand-mark {
+  background: var(--dl-orange);
+  transform: rotate(10deg) scale(1.06);
+}
+
+.dl-brand-name {
+  font-family: 'Outfit', system-ui, sans-serif;
+  font-size: 1.15rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--dl-espresso);
+}
+
+.dl-brand-name em {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+  color: var(--dl-orange);
+  letter-spacing: normal;
+  margin-left: 0.15rem;
+}
+
+.dl-nav-links {
+  display: flex;
+  align-items: center;
+  gap: clamp(1.2rem, 2.2vw, 2.4rem);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.dl-nav-link {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--dl-espresso-muted);
+  text-decoration: none;
+  position: relative;
+  transition: color 0.25s ease;
+  padding: 0.25rem 0;
+}
+
+.dl-nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0%;
+  height: 1.5px;
+  background: var(--dl-orange);
+  transition: width 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.dl-nav-link:hover {
+  color: var(--dl-espresso);
+}
+
+.dl-nav-link:hover::after {
+  width: 100%;
+}
+
+.dl-nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.dl-nav-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.52rem 1.15rem;
+  border-radius: 999px;
+  font-family: 'Outfit', system-ui, sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-decoration: none;
+  background: var(--dl-espresso);
+  color: #FAF7F2;
+  transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 12px rgba(31, 22, 16, 0.1);
+}
+
+.dl-nav-btn svg {
+  transition: transform 0.25s ease;
+}
+
+.dl-nav-btn:hover {
+  background: var(--dl-orange);
+  color: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px var(--dl-orange-glow);
+}
+
+.dl-nav-btn:hover svg {
+  transform: translateX(3px);
+}
+
+.dl-nav-toggle {
+  display: none;
+  background: transparent;
+  border: 1px solid var(--dl-border-editorial);
+  border-radius: 8px;
+  padding: 0.45rem;
+  color: var(--dl-espresso);
+  cursor: pointer;
+}
+
+/* ── Hero Master Section (Full Page Viewport Experience) ────────── */
+.dl-hero-section {
+  position: relative;
+  background: var(--dl-bg-ivory);
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(5.2rem, 8.5vh, 6.5rem) 0 clamp(2.5rem, 4vh, 3.5rem);
+  box-sizing: border-box;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+/* Subtle Architectural Grid Background & Grain */
+.dl-hero-grid-bg {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(to right, rgba(44, 26, 16, 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(44, 26, 16, 0.035) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: radial-gradient(circle at 60% 40%, black 20%, transparent 80%);
+  -webkit-mask-image: radial-gradient(circle at 60% 40%, black 20%, transparent 80%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+.dl-hero-glow-accent {
+  position: absolute;
+  top: 10%;
+  right: 12%;
+  width: 480px;
+  height: 480px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 107, 26, 0.09) 0%, rgba(213, 240, 120, 0.05) 45%, transparent 70%);
+  filter: blur(50px);
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* ── Asymmetric Layout Grid (Full Width Expansive) ─────────────── */
+.dl-hero-container {
+  width: min(1560px, 94vw);
+  margin: 0 auto;
+}
+
+.dl-hero-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+  gap: clamp(2.5rem, 5vw, 5.5rem);
+  align-items: center;
+  position: relative;
+  width: 100%;
+}
+
+/* ── Left Column: Editorial Typography & CTAs ───────────────────── */
+.dl-hero-content {
+  position: relative;
+  z-index: 2;
+  padding-right: clamp(0rem, 1.5vw, 1.5rem);
+}
+
+/* Editorial Annotation Stamp */
+.dl-editorial-stamp {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-family: 'Manrope', monospace, sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--dl-espresso-light);
+  margin-bottom: 0.85rem;
+}
+
+.dl-editorial-stamp::before {
+  content: '';
+  display: inline-block;
+  width: 24px;
+  height: 1px;
+  background: var(--dl-orange);
+}
+
+/* Kicker Badge */
+.dl-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: #ffffff;
+  border: 1px solid rgba(44, 26, 16, 0.09);
+  padding: 0.38rem 0.95rem 0.38rem 0.55rem;
+  border-radius: 999px;
+  font-family: 'Outfit', system-ui, sans-serif;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--dl-espresso);
+  box-shadow: 0 2px 6px rgba(44, 26, 16, 0.04);
+  margin-bottom: 1.25rem;
+}
+
+.dl-badge-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--dl-orange);
+  box-shadow: 0 0 0 3px rgba(255, 107, 26, 0.2);
+  animation: dlPulse 2.4s infinite ease-in-out;
+}
+
+@keyframes dlPulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.25); opacity: 0.75; }
+}
+
+/* Main Signature Title */
+.dl-hero-title {
+  font-family: 'Outfit', system-ui, sans-serif;
+  font-size: clamp(3rem, 5.6vw, 5.2rem);
+  font-weight: 900;
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+  color: var(--dl-espresso);
+  margin: 0 0 1.1rem;
+}
+
+.dl-hero-title-accent {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+  color: var(--dl-orange);
+  letter-spacing: -0.01em;
+  display: inline-block;
+  transform: translateY(-0.04em);
+  position: relative;
+}
+
+.dl-hero-title-accent::after {
+  content: '';
+  position: absolute;
+  left: 0.1em;
+  bottom: 0.1em;
+  width: 90%;
+  height: 4px;
+  background: var(--dl-orange-glow);
+  border-radius: 4px;
+  z-index: -1;
+}
+
+/* Headline */
+.dl-hero-headline {
+  font-family: 'Outfit', system-ui, sans-serif;
+  font-size: clamp(1.22rem, 1.95vw, 1.58rem);
+  font-weight: 600;
+  line-height: 1.32;
+  letter-spacing: -0.015em;
+  color: var(--dl-espresso);
+  margin: 0 0 1rem;
+  max-width: 48ch;
+}
+
+/* Description */
+.dl-hero-description {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: clamp(0.96rem, 1.15vw, 1.05rem);
+  line-height: 1.65;
+  color: var(--dl-espresso-muted);
+  margin: 0 0 1.85rem;
+  max-width: 52ch;
+}
+
+/* Tactile CTAs */
+.dl-hero-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2.2rem;
+}
+
+.dl-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: var(--dl-orange);
+  color: #ffffff;
+  padding: 0.9rem 1.8rem;
+  border-radius: 999px;
+  font-family: 'Outfit', system-ui, sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 8px 24px -4px var(--dl-orange-glow), 0 3px 8px rgba(31, 22, 16, 0.08);
+  transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.dl-btn-primary::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.22) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.dl-btn-arrow {
+  display: inline-flex;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.dl-btn-primary:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 14px 32px -4px var(--dl-orange-glow), 0 6px 14px rgba(31, 22, 16, 0.12);
+  background: #ff5e07;
+}
+
+.dl-btn-primary:hover .dl-btn-arrow {
+  transform: translateX(4px);
+}
+
+.dl-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  background: transparent;
+  color: var(--dl-espresso);
+  padding: 0.88rem 1.65rem;
+  border-radius: 999px;
+  border: 1.5px solid rgba(31, 22, 16, 0.16);
+  font-family: 'Outfit', system-ui, sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.dl-btn-secondary:hover {
+  background: #ffffff;
+  border-color: var(--dl-espresso);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(31, 22, 16, 0.06);
+}
+
+.dl-btn-secondary:hover .dl-btn-arrow {
+  transform: translateX(3px);
+}
+
+/* ── Editorial Social Proof & Trust Strip ───────────────────────── */
+.dl-trust-strip {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem clamp(1rem, 1.8vw, 1.8rem);
+  padding-top: 1.4rem;
+  border-top: 1px solid rgba(44, 26, 16, 0.08);
+}
+
+.dl-trust-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--dl-espresso-muted);
+}
+
+.dl-trust-icon {
+  color: var(--dl-orange);
+  font-size: 0.9rem;
+  line-height: 1;
+}
+
+.dl-trust-sep {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: rgba(44, 26, 16, 0.18);
+}
+
+/* ── RIGHT COLUMN: The Interactive Dreamer's Workspace ──────────── */
+.dl-workspace-wrapper {
+  position: relative;
+  z-index: 1;
+}
+
+/* Stage Navigation Tabs / Filter Pills */
+.dl-stage-pills {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: #ffffff;
+  border: 1px solid rgba(44, 26, 16, 0.1);
+  padding: 0.35rem;
+  border-radius: 999px;
+  box-shadow: 0 4px 14px rgba(31, 22, 16, 0.04);
+  margin-bottom: 0.95rem;
+}
+
+.dl-stage-pill {
+  border: none;
+  background: transparent;
+  font-family: 'Outfit', system-ui, sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--dl-espresso-muted);
+  padding: 0.42rem 0.9rem;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.dl-stage-pill span.pill-num {
+  font-size: 0.68rem;
+  font-family: 'Manrope', monospace;
+  opacity: 0.65;
+}
+
+.dl-stage-pill:hover {
+  color: var(--dl-espresso);
+  background: rgba(44, 26, 16, 0.04);
+}
+
+.dl-stage-pill.is-active {
+  background: var(--dl-espresso);
+  color: #ffffff;
+  box-shadow: 0 2px 8px rgba(31, 22, 16, 0.15);
+}
+
+.dl-stage-pill.is-active span.pill-num {
+  color: var(--dl-lime);
+  opacity: 1;
+}
+
+/* Canvas Viewport (Proportionally elevated to fill full-page hero) */
+.dl-workspace-canvas {
+  position: relative;
+  width: 100%;
+  height: clamp(520px, 64vh, 640px);
+  border-radius: 26px;
+  background: linear-gradient(145deg, #FFFFFF 0%, #F5F0E6 100%);
+  border: 1px solid rgba(44, 26, 16, 0.1);
+  box-shadow: var(--dl-shadow-deep);
+  perspective: 1200px;
+  overflow: visible;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s cubic-bezier(0.2, 0, 0.2, 1);
+}
+
+/* Subtle Desk Mat Background inside Canvas */
+.dl-workspace-canvas::before {
+  content: '';
+  position: absolute;
+  inset: 12px;
+  border-radius: 20px;
+  border: 1px dashed rgba(44, 26, 16, 0.09);
+  pointer-events: none;
+}
+
+/* Architectural Desk Corner Labels */
+.dl-canvas-tag-tl {
+  position: absolute;
+  top: 1.15rem;
+  left: 1.35rem;
+  font-family: 'Manrope', monospace;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--dl-espresso-light);
+  text-transform: uppercase;
+}
+
+.dl-canvas-tag-tr {
+  position: absolute;
+  top: 1.15rem;
+  right: 1.35rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: 'Manrope', monospace;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: #2F6B3E;
+  text-transform: uppercase;
+}
+
+.dl-canvas-tag-tr::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #2F6B3E;
+  box-shadow: 0 0 0 2px rgba(47, 107, 62, 0.2);
+}
+
+/* ── Interactive Workspace Elements (Layered Composition) ────────── */
+
+/* 1. Central Hero Editorial Photo Card */
+.dl-element-photo {
+  position: absolute;
+  top: 12%;
+  left: 16%;
+  width: 58%;
+  aspect-ratio: 4 / 3;
+  background: #ffffff;
+  padding: 10px 10px 30px 10px;
+  border-radius: 14px;
+  box-shadow: var(--dl-shadow-elevated);
+  border: 1px solid rgba(44, 26, 16, 0.08);
+  transform: rotate(-1.5deg);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+  z-index: 2;
+}
+
+.dl-element-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+  display: block;
+  filter: contrast(102%) saturate(104%);
+}
+
+.dl-photo-caption {
+  position: absolute;
+  bottom: 9px;
+  left: 14px;
+  right: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--dl-espresso-light);
+  text-transform: uppercase;
+}
+
+.dl-photo-caption span.badge-live {
+  color: var(--dl-orange);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.dl-photo-caption span.badge-live::before {
+  content: '';
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--dl-orange);
+}
+
+.dl-element-photo:hover {
+  transform: rotate(0deg) scale(1.025) translateY(-4px);
+  box-shadow: var(--dl-shadow-deep);
+  z-index: 10;
+}
+
+/* 2. Curiosity Sticky Note (Tilted Canary Yellow) */
+.dl-element-sticky-curiosity {
+  position: absolute;
+  top: 5%;
+  right: 4%;
+  width: 215px;
+  background: var(--dl-yellow-note);
+  padding: 1.1rem 1.15rem 1.25rem;
+  border-radius: 4px;
+  box-shadow:
+    0 12px 28px -6px rgba(44, 26, 16, 0.12),
+    0 2px 6px rgba(44, 26, 16, 0.05);
+  transform: rotate(3.8deg);
+  transition: all 0.32s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+  z-index: 4;
+  border-top: 5px solid rgba(230, 204, 82, 0.6);
+}
+
+.dl-sticky-tape {
+  position: absolute;
+  top: -10px;
+  left: 36%;
+  width: 55px;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.65);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  border: 1px dashed rgba(44, 26, 16, 0.12);
+  transform: rotate(-2deg);
+  pointer-events: none;
+}
+
+.dl-sticky-tag {
+  font-family: 'Manrope', monospace;
+  font-size: 0.64rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #8C7820;
+  margin-bottom: 0.35rem;
+  display: block;
+}
+
+.dl-sticky-text {
+  font-family: 'Caveat', cursive;
+  font-size: 1.2rem;
+  line-height: 1.28;
+  font-weight: 700;
+  color: #2D240E;
+  margin: 0 0 0.5rem;
+}
+
+.dl-sticky-author {
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: #8C7820;
+  margin: 0;
+}
+
+.dl-element-sticky-curiosity:hover {
+  transform: rotate(1deg) scale(1.06) translateY(-6px);
+  box-shadow: 0 20px 36px -8px rgba(44, 26, 16, 0.2);
+  z-index: 10;
+}
+
+/* 3. Problem Statement / Discovery Card */
+.dl-element-problem-card {
+  position: absolute;
+  bottom: 20%;
+  left: 3%;
+  width: 245px;
+  background: #ffffff;
+  padding: 1.05rem 1.2rem;
+  border-radius: 16px;
+  border: 1px solid rgba(44, 26, 16, 0.1);
+  box-shadow: var(--dl-shadow-elevated);
+  transform: rotate(-4.5deg);
+  transition: all 0.32s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+  z-index: 3;
+}
+
+.dl-problem-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: 'Manrope', monospace;
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--dl-orange);
+  margin-bottom: 0.45rem;
+}
+
+.dl-problem-text {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.92rem;
+  font-weight: 700;
+  line-height: 1.35;
+  color: var(--dl-espresso);
+  margin: 0 0 0.65rem;
+}
+
+.dl-problem-metric {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #387346;
+  background: #EAF4EC;
+  padding: 0.3rem 0.65rem;
+  border-radius: 6px;
+}
+
+.dl-element-problem-card:hover {
+  transform: rotate(0deg) scale(1.05) translateY(-5px);
+  box-shadow: var(--dl-shadow-deep);
+  z-index: 10;
+}
+
+/* 4. The "BUILD" Prototype Glassmorphic Card */
+.dl-element-prototype-card {
+  position: absolute;
+  bottom: 5%;
+  right: 8%;
+  width: 285px;
+  background: var(--dl-forest);
+  color: #FAF7F2;
+  padding: 1.2rem 1.3rem;
+  border-radius: 20px;
+  box-shadow:
+    0 24px 48px -12px rgba(13, 26, 17, 0.45),
+    0 4px 12px rgba(13, 26, 17, 0.15);
+  border: 1px solid rgba(213, 240, 120, 0.2);
+  transform: rotate(2.2deg);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+  z-index: 5;
+}
+
+.dl-proto-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.7rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.dl-proto-pill {
+  font-family: 'Manrope', monospace;
+  font-size: 0.66rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--dl-lime);
+  background: rgba(213, 240, 120, 0.14);
+  padding: 0.25rem 0.55rem;
+  border-radius: 4px;
+}
+
+.dl-proto-step {
+  font-family: 'Manrope', monospace;
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.dl-proto-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.02rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0 0 0.35rem;
+  letter-spacing: -0.01em;
+}
+
+.dl-proto-desc {
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.75rem;
+  line-height: 1.42;
+  color: rgba(255, 255, 255, 0.75);
+  margin: 0 0 0.8rem;
+}
+
+.dl-proto-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 0.42rem 0.72rem;
+  border-radius: 8px;
+}
+
+.dl-proto-progress {
+  flex: 1;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 999px;
+  overflow: hidden;
+  position: relative;
+}
+
+.dl-proto-fill {
+  width: 78%;
+  height: 100%;
+  background: linear-gradient(90deg, var(--dl-lime), #73E6A0);
+  border-radius: 999px;
+  transition: width 1s ease;
+}
+
+.dl-proto-stat {
+  font-family: 'Manrope', monospace;
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: var(--dl-lime);
+}
+
+.dl-element-prototype-card:hover {
+  transform: rotate(0deg) scale(1.05) translateY(-6px);
+  box-shadow:
+    0 32px 64px -14px rgba(13, 26, 17, 0.6),
+    0 8px 20px rgba(13, 26, 17, 0.2);
+  z-index: 10;
+}
+
+/* 5. Mentor Feedback Sticky Note (Soft Mint Green) */
+.dl-element-feedback-note {
+  position: absolute;
+  top: 46%;
+  right: 2%;
+  width: 190px;
+  background: var(--dl-mint-note);
+  padding: 0.95rem 1rem;
+  border-radius: 6px;
+  box-shadow:
+    0 10px 24px -6px rgba(44, 26, 16, 0.10),
+    0 2px 6px rgba(44, 26, 16, 0.04);
+  transform: rotate(-3deg);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+  z-index: 4;
+  border-top: 4px solid rgba(132, 189, 147, 0.6);
+}
+
+.dl-feedback-tape {
+  position: absolute;
+  top: -8px;
+  left: 28%;
+  width: 44px;
+  height: 16px;
+  background: rgba(255, 255, 255, 0.7);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
+  border: 1px dashed rgba(44, 26, 16, 0.1);
+  transform: rotate(2deg);
+}
+
+.dl-feedback-tag {
+  font-family: 'Manrope', monospace;
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #386B45;
+  margin-bottom: 0.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.dl-feedback-text {
+  font-family: 'Caveat', cursive;
+  font-size: 1.12rem;
+  line-height: 1.25;
+  font-weight: 700;
+  color: #173820;
+  margin: 0 0 0.35rem;
+}
+
+.dl-feedback-author {
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: #4C7B58;
+  margin: 0;
+}
+
+.dl-element-feedback-note:hover {
+  transform: rotate(0deg) scale(1.06) translateY(-5px);
+  box-shadow: 0 18px 32px -8px rgba(44, 26, 16, 0.18);
+  z-index: 10;
+}
+
+/* 6. Launch Ticker / Demo Day Badge */
+.dl-element-launch-badge {
+  position: absolute;
+  top: 4%;
+  left: 8%;
+  background: #ffffff;
+  border: 1px solid rgba(44, 26, 16, 0.12);
+  border-radius: 999px;
+  padding: 0.42rem 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  box-shadow: 0 8px 20px -4px rgba(44, 26, 16, 0.1);
+  transform: rotate(-1deg);
+  transition: all 0.3s ease;
+  z-index: 6;
+  cursor: pointer;
+}
+
+.dl-launch-icon {
+  font-size: 0.95rem;
+}
+
+.dl-launch-label {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.76rem;
+  font-weight: 800;
+  color: var(--dl-espresso);
+  letter-spacing: 0.02em;
+}
+
+.dl-launch-tag {
+  font-family: 'Manrope', monospace;
+  font-size: 0.66rem;
+  font-weight: 800;
+  color: var(--dl-orange);
+  background: rgba(255, 107, 26, 0.1);
+  padding: 0.18rem 0.5rem;
+  border-radius: 999px;
+}
+
+.dl-element-launch-badge:hover {
+  transform: scale(1.05) translateY(-3px);
+  box-shadow: 0 12px 28px -6px rgba(44, 26, 16, 0.16);
+  border-color: var(--dl-orange);
+}
+
+/* ── Interactive Highlight State (Linked to Stage Pills) ────────── */
+.dl-element.is-highlighted {
+  z-index: 20 !important;
+  transform: scale(1.08) translateY(-8px) !important;
+  box-shadow: 0 30px 60px -12px rgba(255, 107, 26, 0.32), 0 0 0 2px var(--dl-orange) !important;
+}
+
+/* ── Ambient Floating Motion (Subtle & Elegant) ─────────────────── */
+@keyframes dlFloatGentle {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-7px) rotate(0.4deg); }
+}
+
+@keyframes dlFloatOpposite {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(6px) rotate(-0.5deg); }
+}
+
+.dl-float-a {
+  animation: dlFloatGentle 6.5s ease-in-out infinite;
+}
+
+.dl-float-b {
+  animation: dlFloatOpposite 7.5s ease-in-out infinite;
+}
+
+/* ── Interactive Stage Legend (Below Canvas) ────────────────────── */
+.dl-workspace-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1rem;
+  padding: 0 0.5rem;
+}
+
+.dl-workspace-caption {
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--dl-espresso-light);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.dl-workspace-caption span.sparkle {
+  color: var(--dl-orange);
+}
+
+.dl-workspace-flow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: 'Manrope', monospace;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--dl-espresso-muted);
+  letter-spacing: 0.04em;
+}
+
+.dl-workspace-flow span.flow-arrow {
+  color: var(--dl-orange);
+  opacity: 0.7;
+}
+
+/* ── Mobile Navigation Drawer ───────────────────────────────────── */
+.dl-mobile-menu {
+  position: fixed;
+  inset: 0;
+  background: rgba(250, 247, 242, 0.98);
+  backdrop-filter: blur(24px);
+  z-index: 99;
+  display: flex;
+  flex-direction: column;
+  padding: 5.5rem 2rem 3rem;
+  transform: translateY(-100%);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+}
+
+.dl-mobile-menu.is-open {
+  transform: translateY(0%);
+  pointer-events: auto;
+}
+
+.dl-mobile-links {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.dl-mobile-link {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--dl-espresso);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.dl-mobile-link:hover {
+  color: var(--dl-orange);
+}
+
+/* ── Responsive Adaptations ─────────────────────────────────────── */
+@media (max-width: 1080px) {
+  .dl-hero-layout {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .dl-hero-content {
+    padding-right: 0;
+    max-width: 680px;
+  }
+
+  .dl-workspace-wrapper {
+    max-width: 720px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .dl-workspace-canvas {
+    height: 500px;
+  }
+
+  .dl-element-photo {
+    width: 64%;
+    left: 12%;
+  }
+}
+
+@media (max-width: 820px) {
+  .dl-nav-links {
+    display: none;
+  }
+
+  .dl-nav-toggle {
+    display: inline-flex;
+  }
+
+  .dl-hero-section {
+    padding-top: 4.8rem;
+  }
+
+  .dl-hero-title {
+    font-size: clamp(2.8rem, 9vw, 3.8rem);
+  }
+
+  .dl-workspace-canvas {
+    height: 440px;
+  }
+
+  .dl-element-photo {
+    width: 72%;
+    left: 8%;
+    top: 14%;
+  }
+
+  .dl-element-sticky-curiosity {
+    width: 175px;
+    right: 2%;
+    top: 4%;
+  }
+
+  .dl-sticky-text {
+    font-size: 1.05rem;
+  }
+
+  .dl-element-problem-card {
+    width: 200px;
+    bottom: 12%;
+    left: 2%;
+  }
+
+  .dl-element-prototype-card {
+    width: 240px;
+    right: 4%;
+    bottom: 4%;
+  }
+
+  .dl-element-feedback-note {
+    display: none; /* Simplify on tablet/mobile */
+  }
+
+  .dl-stage-pills {
+    overflow-x: auto;
+    max-width: 100%;
+    scrollbar-width: none;
+  }
+
+  .dl-stage-pills::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@media (max-width: 540px) {
+  .dl-hero-title {
+    font-size: 2.65rem;
+    line-height: 1.02;
+  }
+
+  .dl-hero-headline {
+    font-size: 1.25rem;
+  }
+
+  .dl-hero-description {
+    font-size: 0.95rem;
+  }
+
+  .dl-hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .dl-btn-primary, .dl-btn-secondary {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .dl-trust-strip {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .dl-trust-sep {
+    display: none;
+  }
+
+  .dl-workspace-canvas {
+    height: 380px;
+    border-radius: 20px;
+  }
+
+  .dl-element-photo {
+    width: 82%;
+    left: 9%;
+    top: 12%;
+    padding: 6px 6px 24px;
+  }
+
+  .dl-photo-caption {
+    font-size: 0.58rem;
+    bottom: 6px;
+  }
+
+  .dl-element-sticky-curiosity {
+    width: 145px;
+    right: 2%;
+    top: 2%;
+    padding: 0.75rem;
+  }
+
+  .dl-sticky-text {
+    font-size: 0.95rem;
+  }
+
+  .dl-element-problem-card {
+    display: none; /* Prevent clutter on small screens */
+  }
+
+  .dl-element-prototype-card {
+    width: 210px;
+    right: 2%;
+    bottom: 3%;
+    padding: 0.9rem;
+  }
+
+  .dl-proto-title {
+    font-size: 0.92rem;
+  }
+
+  .dl-proto-desc {
+    display: none;
+  }
+
+  .dl-workspace-flow {
+    display: none;
+  }
+}
