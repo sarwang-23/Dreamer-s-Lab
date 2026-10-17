@@ -7,7 +7,7 @@
 /* ── Section Structure ─────────────────────────────────────────── */
 .univ-section {
   position: relative;
-  padding: clamp(2.75rem, 4.5vw, 4.25rem) 0;
+  padding: clamp(3.2rem, 5vh, 4.8rem) 0;
   border-top: 1px solid rgba(44, 26, 16, 0.08);
 }
 
@@ -26,7 +26,7 @@
 
 .univ-container {
   width: 100%;
-  max-width: 1280px;
+  max-width: 1360px;
   margin: 0 auto;
   padding: 0 clamp(1.5rem, 4vw, 3rem);
   box-sizing: border-box;
