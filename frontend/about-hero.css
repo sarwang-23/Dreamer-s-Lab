@@ -27,9 +27,11 @@
 /* ─── Hero Container ───────────────────────────────────────── */
 .ab-hero {
     position: relative;
-    min-height: auto;
+    min-height: calc(100vh - 5rem);
+    min-height: calc(100dvh - 5rem);
     display: flex;
     flex-direction: column;
+    justify-content: center;
     overflow: hidden;
     isolation: isolate;
     background: var(--ab-bg);
@@ -112,20 +114,22 @@
     z-index: 2;
     flex: 1;
     display: grid;
-    grid-template-columns: minmax(0, 1.24fr) minmax(0, 0.88fr);
+    grid-template-columns: minmax(0, 1.22fr) minmax(0, 0.95fr);
     gap: clamp(2.5rem, 4.5vw, 4.8rem);
     align-items: center;
-    padding-top: clamp(2.4rem, 5vh, 4rem);
-    padding-bottom: clamp(6.5rem, 13vh, 9.5rem);
+    max-width: 1360px;
+    padding-top: clamp(1.4rem, 3.2vh, 2.6rem);
+    padding-bottom: clamp(1.8rem, 3.8vh, 3.2rem);
 }
 
 /* ─── Left Editorial Column (~58%) ─────────────────────────── */
 .ab-text-col {
     display: flex;
     flex-direction: column;
-    gap: 1.35rem;
-    max-width: 680px;
+    gap: clamp(0.9rem, 1.5vh, 1.3rem);
+    max-width: 720px;
     z-index: 3;
+    padding-top: clamp(0.5rem, 1.2vh, 1.2rem);
 }
 
 .ab-copy {
@@ -135,7 +139,7 @@
 
 /* Eyebrow Editorial Line */
 .ab-eyebrow-wrap {
-    margin-bottom: 0.95rem;
+    margin-bottom: clamp(0.6rem, 1vh, 0.9rem);
     opacity: 0;
     animation: abFadeUp 0.65s cubic-bezier(.16,1,.3,1) 0.08s forwards;
 }
@@ -180,12 +184,12 @@
 /* ─── Headline Editorial Line-by-Line Reveal ───────────────── */
 .ab-title {
     font-family: 'Outfit', system-ui, -apple-system, sans-serif;
-    font-size: clamp(2.75rem, 4.3vw, 4.05rem);
+    font-size: clamp(2.75rem, 4.2vw, 4.05rem);
     font-weight: 800;
     letter-spacing: -0.04em;
     line-height: 1.06;
     color: var(--ab-tan);
-    margin: 0 0 1.05rem;
+    margin: 0 0 clamp(0.75rem, 1.4vh, 1.15rem);
     display: block;
 }
 
@@ -239,10 +243,10 @@
 /* ─── Body Copy Hierarchy ──────────────────────────────────── */
 /* Primary Statement */
 .ab-statement {
-    font-size: clamp(1.08rem, 1.35vw, 1.22rem);
+    font-size: clamp(1.1rem, 1.35vw, 1.25rem);
     line-height: 1.62;
     color: var(--ab-muted);
-    max-width: 52ch;
+    max-width: 54ch;
     margin: 0;
     opacity: 0;
     transform: translateY(16px);
@@ -257,25 +261,25 @@
 /* Secondary Supporting Paragraph */
 .ab-tail {
     margin-top: 0;
-    padding-top: 1.15rem;
+    padding-top: clamp(0.95rem, 1.6vh, 1.3rem);
     border-top: 1px solid var(--ab-border);
     opacity: 0;
     transform: translateY(16px);
     animation: abFadeUp 0.75s cubic-bezier(.16,1,.3,1) 0.58s forwards;
 }
 .ab-support {
-    font-size: clamp(0.92rem, 1.05vw, 0.98rem);
+    font-size: clamp(0.94rem, 1.05vw, 1rem);
     line-height: 1.66;
     color: var(--ab-tan-light);
-    margin: 0 0 1.45rem;
-    max-width: 55ch;
+    margin: 0 0 clamp(1.1rem, 2vh, 1.55rem);
+    max-width: 56ch;
 }
 
 /* ─── Interactive CTAs ─────────────────────────────────────── */
 .ab-actions {
     display: flex;
     align-items: center;
-    gap: 1.1rem;
+    gap: 1.2rem;
     flex-wrap: wrap;
 }
 
@@ -284,9 +288,9 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 0.85rem 1.85rem;
+    padding: 0.9rem 2.05rem;
     border-radius: 999px;
-    font-size: 0.96rem;
+    font-size: 1rem;
     font-weight: 700;
     letter-spacing: 0.01em;
     text-decoration: none;
@@ -369,7 +373,7 @@
     display: inline-flex;
     align-items: center;
     gap: 0.75rem;
-    margin-top: 1.6rem;
+    margin-top: clamp(0.5rem, 1vh, 0.9rem);
     user-select: none;
     opacity: 0.75;
     transition: opacity 0.3s ease;
@@ -453,7 +457,7 @@
 .ab-stage {
     position: relative;
     width: 100%;
-    max-width: 395px;
+    max-width: 440px;
     aspect-ratio: 1;
     display: flex;
     align-items: center;
@@ -740,12 +744,12 @@
 .ab-stage-wrapper {
     position: relative;
     width: 100%;
-    max-width: 390px;
-    margin-top: 1.25rem;
+    max-width: 440px;
+    margin-top: clamp(0.6rem, 1.2vh, 1rem);
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-height: 44px;
+    min-height: 38px;
     z-index: 12;
 }
 
@@ -896,6 +900,7 @@
         align-items: center;
         text-align: center;
         max-width: 100%;
+        padding-top: 0;
     }
     .ab-eyebrow-wrap {
         display: flex;
