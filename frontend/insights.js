@@ -1002,12 +1002,112 @@
   /* --------------------------------------------------------------------------
      09 — ITERATIVE LOOP STAGE ACTIVATION
      -------------------------------------------------------------------------- */
-  var loopNodes = page.querySelectorAll('.ins-loop-node');
-  if (loopNodes.length) {
-    loopNodes.forEach(function (node) {
-      node.addEventListener('mouseenter', function () {
-        loopNodes.forEach(function (n) { n.classList.remove('is-active'); });
-        node.classList.add('is-active');
+  /* 09 — ITERATIVE EXPERIMENTAL LOOP INTERACTIVE ENGINE */
+  var loopStudio = page.querySelector('.ins-loop-studio');
+  if (loopStudio) {
+    var stageCards = Array.prototype.slice.call(loopStudio.querySelectorAll('.ins-loop-card'));
+    var consolePhase = loopStudio.querySelector('#ins-console-phase');
+    var consoleTitle = loopStudio.querySelector('#ins-console-title');
+    var consoleDesc = loopStudio.querySelector('#ins-console-desc');
+    var consolePill = loopStudio.querySelector('#ins-console-action-label');
+    var consoleChecklist = loopStudio.querySelector('#ins-console-checklist');
+
+    var stageData = {
+      read: {
+        phase: 'PHASE 01 EXECUTION',
+        title: 'READ: Ground your venture in verified frameworks',
+        desc: 'Absorb market playbooks, user discovery methods, and founder post-mortems before writing a single line of code. Don’t reinvent solutions to problems that have already been mapped.',
+        pill: 'Focus: Foundation',
+        checks: [
+          'Study existing competitive alternatives & customer workarounds',
+          'Identify verified customer problem patterns before building',
+          'Map distribution advantages to avoid building in a vacuum'
+        ]
+      },
+      think: {
+        phase: 'PHASE 02 EXECUTION',
+        title: 'THINK: Isolate your single riskiest hypothesis',
+        desc: 'What assumption must be true for this venture to survive? Strip away vanity metrics and pinpoint the exact friction point that people will genuinely sacrifice time or money to solve.',
+        pill: 'Focus: Hypothesis',
+        checks: [
+          'Frame hypothesis: If we do X, customer Y will do Z',
+          'Separate customer curiosity from authentic buying intent',
+          'Establish quantifiable falsification thresholds'
+        ]
+      },
+      test: {
+        phase: 'PHASE 03 EXECUTION',
+        title: 'TEST: Put minimal artifacts in front of real users',
+        desc: 'Take an unpolished landing page, paper prototype, or concierge service directly to your target audience. Never rely on friends or compliments—only measure concrete user actions.',
+        pill: 'Focus: Evidence',
+        checks: [
+          'Run discovery interviews with open-ended, non-leading questions',
+          'Measure genuine commitment: prepayments, letters of intent, or deposits',
+          'Capture real behavioral friction without defending your idea'
+        ]
+      },
+      learn: {
+        phase: 'PHASE 04 EXECUTION',
+        title: 'LEARN: Extract unfiltered truth from feedback',
+        desc: 'Analyze user behavior objectively without emotional defensiveness. Bad news received early is a superpower—it saves months of wasted engineering effort.',
+        pill: 'Focus: Signal',
+        checks: [
+          'Synthesize patterns across 10+ user discovery touchpoints',
+          'Distinguish stated user wants from actual revealed behaviors',
+          'Decide with conviction: persevere, pivot hypothesis, or terminate'
+        ]
+      },
+      build: {
+        phase: 'PHASE 05 EXECUTION',
+        title: 'BUILD: Ship the next iteration with real velocity',
+        desc: 'Turn validated evidence into the smallest working release. Ship focused iterations in days rather than months, then loop immediately back to test and refine.',
+        pill: 'Focus: Momentum',
+        checks: [
+          'Ruthlessly cut non-essential features from your sprint scope',
+          'Deploy working iterations directly into real customer hands',
+          'Feed empirical results directly back into Phase 01 & 02'
+        ]
+      }
+    };
+
+    function activateLoopStage(stepKey) {
+      var data = stageData[stepKey];
+      if (!data) return;
+
+      stageCards.forEach(function (card) {
+        var isThis = card.getAttribute('data-step') === stepKey;
+        card.classList.toggle('is-active', isThis);
+        card.setAttribute('aria-selected', isThis ? 'true' : 'false');
+      });
+
+      if (consolePhase) consolePhase.textContent = data.phase;
+      if (consoleTitle) consoleTitle.textContent = data.title;
+      if (consoleDesc) consoleDesc.textContent = data.desc;
+      if (consolePill) consolePill.textContent = data.pill;
+
+      if (consoleChecklist) {
+        consoleChecklist.innerHTML = data.checks.map(function (c) {
+          return '<div class="ins-check-item">' +
+            '<span class="ins-check-bullet">&check;</span>' +
+            '<span>' + c + '</span>' +
+            '</div>';
+        }).join('');
+      }
+    }
+
+    stageCards.forEach(function (card) {
+      var step = card.getAttribute('data-step');
+      card.addEventListener('mouseenter', function () {
+        activateLoopStage(step);
+      });
+      card.addEventListener('click', function () {
+        activateLoopStage(step);
+      });
+      card.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          activateLoopStage(step);
+        }
       });
     });
   }
