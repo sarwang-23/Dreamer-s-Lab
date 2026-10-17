@@ -4,185 +4,314 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Program Applications | Building Dreams</title>
-  <meta name="description" content="Apply to Dreamers Lab or a Building Dreams university founder program. Tell us what interests you and what you would like to explore.">
+  <meta name="description" content="Take the first step towards building something real. Apply to Dreamers Lab or the Building Dreams University Founder Program.">
   <meta property="og:title" content="Program Applications | Building Dreams">
-  <meta property="og:description" content="Take the first step towards building something real.">
+  <meta property="og:description" content="Tell us about yourself, what interests you and what you'd like to explore. You don't need a perfect idea or an impressive pitch to begin.">
   <meta property="og:type" content="website">
-  <meta name="theme-color" content="#f8f6f0">
+  <meta name="theme-color" content="#FAF7F0">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../style.css">
   <link rel="stylesheet" href="../responsive.css">
   <link rel="stylesheet" href="../pages.css">
+  <link rel="stylesheet" href="../apply.css">
 </head>
 <body id="top" class="pg-body">
 
 <main class="pg-main">
 
-  <!-- Section 1: Hero -->
-  <header class="pg-hero">
-    <div class="pg-container pg-hero-inner">
-      <span class="pg-eyebrow">Program Applications</span>
-      <h1 class="pg-hero-title">Take the first step towards building something <em>real.</em></h1>
-      <p class="pg-hero-lead">Tell us about yourself, what interests you and what you&rsquo;d like to explore. You don&rsquo;t need a perfect idea or an impressive pitch to begin.</p>
+  <!-- ── Hero Section ───────────────────────────────────────────── -->
+  <header class="app-hero">
+    <div class="pg-container app-hero-inner">
+      <div class="app-eyebrow">
+        <span class="app-eyebrow-dot" aria-hidden="true"></span>
+        <span>Program Applications &middot; Cohort Enrolments</span>
+      </div>
+      <h1 class="app-title">Take the first step towards building something <em>real.</em></h1>
+      <p class="app-lead">Tell us about yourself, what interests you and what you&rsquo;d like to explore. You don&rsquo;t need a perfect idea or an impressive pitch to begin.</p>
     </div>
   </header>
 
-  <!-- Section 2: Dreamers Lab application -->
-  <section class="pg-section pg-section--ivory">
-    <div class="pg-container">
-      <div class="pg-head">
-        <span class="pg-kicker">Dreamers Lab</span>
-        <h2 class="pg-h2">Dreamers Lab application</h2>
-        <p class="pg-sub">For students in Grades 9&ndash;12.</p>
-      </div>
-      <form class="pg-form" data-demo-form novalidate>
-        <div class="pg-form-fields">
+  <!-- ── Track Switcher Tabs ──────────────────────────────────── -->
+  <div class="app-switcher-wrap">
+    <div class="app-switcher" role="tablist" aria-label="Program track selector">
+      <button type="button" class="app-tab-btn is-active" data-track-tab="dreamers-lab" role="tab" aria-selected="true" aria-controls="panel-dreamers-lab" id="tab-dreamers-lab">
+        <span>For Dreamers Lab</span>
+        <span class="app-tab-badge">Grades 9&ndash;12</span>
+      </button>
+      <button type="button" class="app-tab-btn" data-track-tab="university" role="tab" aria-selected="false" aria-controls="panel-university" id="tab-university">
+        <span>For University Founders</span>
+        <span class="app-tab-badge">Higher Ed &middot; Startups</span>
+      </button>
+    </div>
+  </div>
+
+  <div class="pg-container" style="padding-bottom: clamp(3rem, 6vh, 5rem);">
+
+    <!-- =========================================================
+         TRACK 1: DREAMERS LAB APPLICATION
+         ========================================================= -->
+    <div class="app-track-panel is-active" data-track-panel="dreamers-lab" id="panel-dreamers-lab" role="tabpanel" aria-labelledby="tab-dreamers-lab">
+      <div class="app-card app-form-wrap">
+
+        <!-- Form Node -->
+        <form class="app-form-node pg-form" style="max-width:100%; padding:0; background:transparent; border:none;" novalidate>
+          <div class="app-card-head">
+            <span class="app-card-eyebrow">&#10022; School Student Cohort</span>
+            <h2 class="app-card-title">Dreamers Lab Application</h2>
+            <p class="app-card-sub">Designed for high school students (Grades 9&ndash;12) and their parents or guardians to learn venture-building through hands-on experimentation.</p>
+          </div>
+
           <div class="pg-form-grid">
+            <!-- Student Information -->
+            <div class="app-fieldset-title">Student Information</div>
+
             <div class="pg-field">
-              <label class="pg-label" for="dl-name">Student&rsquo;s name</label>
-              <input class="pg-input" type="text" id="dl-name" name="student-name" required>
+              <label class="pg-label" for="dl-name">Student&rsquo;s Name <span style="color:var(--pg-orange);">*</span></label>
+              <input class="pg-input" type="text" id="dl-name" name="student_name" placeholder="e.g. Aarav Sharma" required>
             </div>
+
             <div class="pg-field">
-              <label class="pg-label" for="dl-grade">Grade</label>
-              <select class="pg-select" id="dl-grade" name="grade">
-                <option value="9">9</option>
-                <option value="10">10</option>
-                <option value="11">11</option>
-                <option value="12">12</option>
+              <label class="pg-label" for="dl-grade">Grade <span style="color:var(--pg-orange);">*</span></label>
+              <select class="pg-select" id="dl-grade" name="grade" required>
+                <option value="" disabled selected>Select current grade</option>
+                <option value="Grade 9">Grade 9</option>
+                <option value="Grade 10">Grade 10</option>
+                <option value="Grade 11">Grade 11</option>
+                <option value="Grade 12">Grade 12</option>
+                <option value="Gap Year / Recent Graduate">Gap Year / Recent High School</option>
               </select>
             </div>
-            <div class="pg-field">
-              <label class="pg-label" for="dl-school">School</label>
-              <input class="pg-input" type="text" id="dl-school" name="school">
-            </div>
-            <div class="pg-field">
-              <label class="pg-label" for="dl-parent-name">Parent/guardian name</label>
-              <input class="pg-input" type="text" id="dl-parent-name" name="parent-name">
-            </div>
-            <div class="pg-field">
-              <label class="pg-label" for="dl-parent-email">Parent/guardian email</label>
-              <input class="pg-input" type="email" id="dl-parent-email" name="parent-email">
-            </div>
-            <div class="pg-field">
-              <label class="pg-label" for="dl-parent-phone">Parent/guardian phone</label>
-              <input class="pg-input" type="tel" id="dl-parent-phone" name="parent-phone">
-            </div>
+
             <div class="pg-field pg-field--full">
-              <label class="pg-label" for="dl-interests">What interests the student?</label>
-              <textarea class="pg-textarea" id="dl-interests" name="interests"></textarea>
+              <label class="pg-label" for="dl-school">School <span style="color:var(--pg-orange);">*</span></label>
+              <input class="pg-input" type="text" id="dl-school" name="school" placeholder="Current school or institution name" required>
             </div>
+
+            <!-- Parent / Guardian Information -->
+            <div class="app-fieldset-title">Parent / Guardian Details</div>
+
+            <div class="pg-field">
+              <label class="pg-label" for="dl-parent-name">Parent/Guardian Name <span style="color:var(--pg-orange);">*</span></label>
+              <input class="pg-input" type="text" id="dl-parent-name" name="parent_name" placeholder="e.g. Priya Sharma" required>
+            </div>
+
+            <div class="pg-field">
+              <label class="pg-label" for="dl-parent-email">Parent/Guardian Email <span style="color:var(--pg-orange);">*</span></label>
+              <input class="pg-input" type="email" id="dl-parent-email" name="parent_email" placeholder="parent@example.com" required>
+            </div>
+
+            <div class="pg-field pg-field--full">
+              <label class="pg-label" for="dl-parent-phone">Parent/Guardian Phone <span style="color:var(--pg-orange);">*</span></label>
+              <input class="pg-input" type="tel" id="dl-parent-phone" name="parent_phone" placeholder="+91 98765 43210" required>
+            </div>
+
+            <!-- Goals & Interests -->
+            <div class="app-fieldset-title">Application Questions</div>
+
+            <div class="pg-field pg-field--full">
+              <label class="pg-label" for="dl-interests">What interests the student? <span style="color:var(--pg-orange);">*</span></label>
+              <textarea class="pg-textarea" id="dl-interests" name="interests" placeholder="Tell us about the hobbies, tech, creative pursuits, or topics that excite you..." required></textarea>
+            </div>
+
             <div class="pg-field pg-field--full">
               <label class="pg-label" for="dl-idea">Is there a problem or idea they&rsquo;d like to explore?</label>
-              <textarea class="pg-textarea" id="dl-idea" name="idea"></textarea>
+              <textarea class="pg-textarea" id="dl-idea" name="idea" placeholder="Share a problem in your school, neighbourhood, or the world you want to solve (rough ideas are totally welcome!)..."></textarea>
             </div>
+
             <div class="pg-field pg-field--full">
-              <label class="pg-label" for="dl-why">Why would they like to join?</label>
-              <textarea class="pg-textarea" id="dl-why" name="why"></textarea>
+              <label class="pg-label" for="dl-why">Why would they like to join? <span style="color:var(--pg-orange);">*</span></label>
+              <textarea class="pg-textarea" id="dl-why" name="why" placeholder="What are you hoping to learn or achieve through Building Dreams?" required></textarea>
             </div>
+
             <div class="pg-field pg-field--full">
               <label class="pg-label" for="dl-accessibility">Availability and relevant accessibility needs</label>
-              <textarea class="pg-textarea" id="dl-accessibility" name="accessibility"></textarea>
+              <textarea class="pg-textarea" id="dl-accessibility" name="accessibility" placeholder="Weekend/evening preferences, schedule constraints, or specific accessibility accommodations..."></textarea>
             </div>
           </div>
-          <div class="pg-form-actions">
-            <button type="submit" class="pg-btn pg-btn--primary">Submit Dreamers Lab Application</button>
-          </div>
-          <p class="pg-form-note">Submitting this form is a demo only. The live application will be saved to the Building Dreams application database once it is connected.</p>
-        </div>
-        <div class="pg-form-success" role="status">Thank you for applying to Dreamers Lab. Your application has been recorded and the team will be in touch about the next steps.</div>
-      </form>
-    </div>
-  </section>
 
-  <!-- Section 3: University founder application -->
-  <section class="pg-section">
-    <div class="pg-container">
-      <div class="pg-head">
-        <span class="pg-kicker">University founders</span>
-        <h2 class="pg-h2">University founder application</h2>
-        <p class="pg-sub">For university students exploring or building a venture.</p>
+          <div class="pg-form-actions" style="margin-top: 1.75rem;">
+            <button type="submit" class="pg-btn pg-btn--primary" style="padding: 0.95rem 2.2rem; font-size: 1.02rem;">
+              <span>Submit Dreamers Lab Application &rarr;</span>
+            </button>
+            <span class="pg-form-note">Takes ~3 minutes &middot; Cohort admissions on rolling review</span>
+          </div>
+        </form>
+
+        <!-- Application Confirmation Copy Screen -->
+        <div class="app-confirmation-card" tabindex="-1">
+          <div class="app-confirm-badge" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+          </div>
+          <span class="app-confirm-pill">&#10003; Application Recorded &middot; Dreamers Lab</span>
+          <h3 class="app-confirm-title">Thank you for applying to Building Dreams.</h3>
+          <p class="app-confirm-text">Your application has been recorded by the website, and the team will review it according to the published cohort process. Please check your email for any further communication.</p>
+          <div class="app-confirm-actions">
+            <a href="../dreamers-lab/" class="pg-btn pg-btn--primary">Explore Dreamers Lab &rarr;</a>
+            <button type="button" class="pg-btn pg-btn--ghost" data-reset-application>Submit Another Application</button>
+          </div>
+        </div>
+
       </div>
-      <form class="pg-form" data-demo-form novalidate>
-        <div class="pg-form-fields">
+    </div>
+
+    <!-- =========================================================
+         TRACK 2: UNIVERSITY FOUNDERS APPLICATION
+         ========================================================= -->
+    <div class="app-track-panel" data-track-panel="university" id="panel-university" role="tabpanel" aria-labelledby="tab-university">
+      <div class="app-card app-form-wrap">
+
+        <!-- Form Node -->
+        <form class="app-form-node pg-form" style="max-width:100%; padding:0; background:transparent; border:none;" novalidate>
+          <div class="app-card-head">
+            <span class="app-card-eyebrow">&#10022; Higher Ed &amp; Early-Stage Ventures</span>
+            <h2 class="app-card-title">University Founder Application</h2>
+            <p class="app-card-sub">For undergraduate, postgraduate students, and early-stage academic founders building prototypes, testing business models, or seeking pre-seed venture guidance.</p>
+          </div>
+
           <div class="pg-form-grid">
+            <!-- Founder & Campus Details -->
+            <div class="app-fieldset-title">Founder &amp; University Profile</div>
+
             <div class="pg-field">
-              <label class="pg-label" for="uf-name">Name</label>
-              <input class="pg-input" type="text" id="uf-name" name="name" required>
+              <label class="pg-label" for="uf-name">Full Name <span style="color:var(--pg-orange);">*</span></label>
+              <input class="pg-input" type="text" id="uf-name" name="founder_name" placeholder="e.g. Ananya Sen" required>
             </div>
+
             <div class="pg-field">
-              <label class="pg-label" for="uf-university">University</label>
-              <input class="pg-input" type="text" id="uf-university" name="university">
+              <label class="pg-label" for="uf-email">Email Address <span style="color:var(--pg-orange);">*</span></label>
+              <input class="pg-input" type="email" id="uf-email" name="founder_email" placeholder="ananya@university.edu" required>
             </div>
+
             <div class="pg-field">
-              <label class="pg-label" for="uf-course">Course and year of study</label>
-              <input class="pg-input" type="text" id="uf-course" name="course">
+              <label class="pg-label" for="uf-university">University / College <span style="color:var(--pg-orange);">*</span></label>
+              <input class="pg-input" type="text" id="uf-university" name="university" placeholder="e.g. Delhi University / IIT / BITS" required>
             </div>
+
             <div class="pg-field">
-              <label class="pg-label" for="uf-startup">Startup or idea name, if applicable</label>
-              <input class="pg-input" type="text" id="uf-startup" name="startup">
+              <label class="pg-label" for="uf-course">Course and Year of Study <span style="color:var(--pg-orange);">*</span></label>
+              <input class="pg-input" type="text" id="uf-course" name="course_year" placeholder="e.g. B.Tech Computer Science, 3rd Year" required>
             </div>
-            <div class="pg-field pg-field--full">
-              <label class="pg-label" for="uf-problem">Problem being explored</label>
-              <textarea class="pg-textarea" id="uf-problem" name="problem"></textarea>
-            </div>
+
+            <!-- Venture & Problem -->
+            <div class="app-fieldset-title">Venture &amp; Problem Explored</div>
+
             <div class="pg-field">
-              <label class="pg-label" for="uf-stage">Current stage</label>
-              <select class="pg-select" id="uf-stage" name="stage">
-                <option value="Exploring">Exploring</option>
-                <option value="Validating">Validating</option>
-                <option value="Prototype">Prototype</option>
-                <option value="MVP">MVP</option>
-                <option value="Early customers">Early customers</option>
+              <label class="pg-label" for="uf-startup">Startup or Idea Name <span>(if applicable)</span></label>
+              <input class="pg-input" type="text" id="uf-startup" name="startup_name" placeholder="Project codename or company name">
+            </div>
+
+            <div class="pg-field">
+              <label class="pg-label" for="uf-stage">Current Stage <span style="color:var(--pg-orange);">*</span></label>
+              <select class="pg-select" id="uf-stage" name="current_stage" required>
+                <option value="" disabled selected>Select current venture milestone</option>
+                <option value="Exploring">Exploring (Problem identification &amp; user research)</option>
+                <option value="Validating">Validating (Surveys, landing page, customer interviews)</option>
+                <option value="Prototype">Prototype (Figma mockups or working wireframes)</option>
+                <option value="MVP">MVP (Functional product with test users)</option>
+                <option value="Early customers">Early customers (Initial revenue or active retention)</option>
               </select>
             </div>
-            <div class="pg-field">
-              <label class="pg-label" for="uf-help">What help is needed?</label>
-              <textarea class="pg-textarea" id="uf-help" name="help"></textarea>
-            </div>
-            <div class="pg-field">
-              <label class="pg-label" for="uf-team">Team members, if any</label>
-              <input class="pg-input" type="text" id="uf-team" name="team">
-            </div>
-            <div class="pg-field">
-              <label class="pg-label" for="uf-commitment">Time commitment</label>
-              <input class="pg-input" type="text" id="uf-commitment" name="commitment">
-            </div>
+
             <div class="pg-field pg-field--full">
-              <label class="pg-label" for="uf-links">Relevant links <span>(optional)</span></label>
-              <input class="pg-input" type="url" id="uf-links" name="links">
+              <label class="pg-label" for="uf-problem">Problem Being Explored <span style="color:var(--pg-orange);">*</span></label>
+              <textarea class="pg-textarea" id="uf-problem" name="problem_statement" placeholder="What specific user friction, inefficiency, or pain point does your venture address?" required></textarea>
+            </div>
+
+            <div class="pg-field pg-field--full">
+              <label class="pg-label" for="uf-help">What help is needed? <span style="color:var(--pg-orange);">*</span></label>
+              <textarea class="pg-textarea" id="uf-help" name="help_needed" placeholder="e.g. Technical mentorship, business model validation, pilot testing, team building, or pitch feedback..." required></textarea>
+            </div>
+
+            <!-- Team & Commitment -->
+            <div class="app-fieldset-title">Team &amp; Commitment</div>
+
+            <div class="pg-field">
+              <label class="pg-label" for="uf-team">Team Members <span>(if any)</span></label>
+              <input class="pg-input" type="text" id="uf-team" name="team_members" placeholder="Solo founder or names &amp; roles of co-founders">
+            </div>
+
+            <div class="pg-field">
+              <label class="pg-label" for="uf-commitment">Time Commitment <span style="color:var(--pg-orange);">*</span></label>
+              <input class="pg-input" type="text" id="uf-commitment" name="time_commitment" placeholder="e.g. 10&ndash;15 hrs/week alongside college" required>
+            </div>
+
+            <div class="pg-field pg-field--full">
+              <label class="pg-label" for="uf-links">Relevant Links <span>(optional)</span></label>
+              <input class="pg-input" type="url" id="uf-links" name="links" placeholder="Pitch deck, GitHub repo, LinkedIn, demo link, or portfolio">
             </div>
           </div>
-          <div class="pg-form-actions">
-            <button type="submit" class="pg-btn pg-btn--primary">Submit Founder Application</button>
+
+          <div class="pg-form-actions" style="margin-top: 1.75rem;">
+            <button type="submit" class="pg-btn pg-btn--primary" style="padding: 0.95rem 2.2rem; font-size: 1.02rem;">
+              <span>Submit Founder Application &rarr;</span>
+            </button>
+            <span class="pg-form-note">Rolling cohort review &middot; Direct mentor evaluation</span>
           </div>
-          <p class="pg-form-note">Submitting this form is a demo only. The live application will be saved to the Building Dreams application database once it is connected.</p>
+        </form>
+
+        <!-- Application Confirmation Copy Screen -->
+        <div class="app-confirmation-card" tabindex="-1">
+          <div class="app-confirm-badge" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+          </div>
+          <span class="app-confirm-pill">&#10003; Application Recorded &middot; University Founders</span>
+          <h3 class="app-confirm-title">Thank you for applying to Building Dreams.</h3>
+          <p class="app-confirm-text">Your application has been recorded by the website, and the team will review it according to the published cohort process. Please check your email for any further communication.</p>
+          <div class="app-confirm-actions">
+            <a href="../student-entrepreneurs/" class="pg-btn pg-btn--primary">Explore Founder Programs &rarr;</a>
+            <button type="button" class="pg-btn pg-btn--ghost" data-reset-application>Submit Another Application</button>
+          </div>
         </div>
-        <div class="pg-form-success" role="status">Thank you for applying to the university founder program. Your application has been recorded and the team will review it according to the published cohort process.</div>
-      </form>
-    </div>
-  </section>
 
-  <!-- Section 4: Application confirmation copy -->
-  <section class="pg-section pg-section--tint">
-    <div class="pg-container pg-container--narrow">
-      <div class="pg-card">
-        <h2 class="pg-card-title">Application confirmation copy</h2>
-        <p class="pg-card-text">Thank you for applying to Building Dreams. Your application has been recorded by the website, and the team will review it according to the published cohort process. Please check your email for any further communication.</p>
       </div>
-      <p class="pg-note" style="margin-top:1.25rem;">Only display this confirmation after the website has successfully saved the application. The production site must be connected to a functioning application database or submission service.</p>
+    </div>
+
+  </div>
+
+  <!-- ── Section: What Happens Next Process ─────────────────────── -->
+  <section class="app-process-section">
+    <div class="pg-container">
+      <div class="pg-head" style="text-align:center;">
+        <span class="pg-kicker">&#10022; Application Roadmap</span>
+        <h2 class="pg-h2">What happens <em>next?</em></h2>
+        <p class="pg-sub" style="margin:0 auto; max-width:54ch;">Here is how our cohort review and onboarding process works from application to launch.</p>
+      </div>
+
+      <div class="app-step-grid">
+        <div class="app-step-card">
+          <span class="app-step-num">STEP 01</span>
+          <h3 class="app-step-title">Application Review</h3>
+          <p class="app-step-desc">Our mentorship team reviews your background, curiosity, and starting point against the upcoming cohort milestones.</p>
+        </div>
+        <div class="app-step-card">
+          <span class="app-step-num">STEP 02</span>
+          <h3 class="app-step-title">Exploratory Conversation</h3>
+          <p class="app-step-desc">A brief, informal 15-minute conversation with a mentor to align on goals, schedule, and team fit.</p>
+        </div>
+        <div class="app-step-card">
+          <span class="app-step-num">STEP 03</span>
+          <h3 class="app-step-title">Cohort Invitation</h3>
+          <p class="app-step-desc">Accepted founders receive their cohort calendar, sprint access, and orientation toolkit to start building.</p>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- Section 5: CTA -->
+  <!-- ── Section: Questions CTA ───────────────────────────────── -->
   <section class="pg-section pg-section--tight">
     <div class="pg-container">
       <div class="pg-cta-band">
         <h2 class="pg-h2">Questions before you <em style="color:var(--pg-lime);">apply?</em></h2>
-        <p>Talk to us about the right program for your stage.</p>
+        <p style="margin: 0 auto 1.5rem; max-width: 50ch;">Not sure which track fits your current stage? We&rsquo;re here to guide you to the right starting point.</p>
         <div class="pg-cta-row">
-          <a href="../get-started/" class="pg-btn pg-btn--primary">Contact Building Dreams &rarr;</a>
+          <a href="../faq/" class="pg-btn pg-btn--primary">Read Common Questions &rarr;</a>
+          <a href="../about/" class="pg-btn pg-btn--light">About Building Dreams</a>
         </div>
       </div>
     </div>
@@ -191,6 +320,8 @@
 </main>
 
 <div data-site-footer></div>
+
 <script type="module" src="../main.js"></script>
+<script type="module" src="../apply.js"></script>
 </body>
 </html>
