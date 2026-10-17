@@ -192,7 +192,16 @@
       });
 
       // Highlight target card
-      const activeData = stageData[stageKey];
+      const targetPill = stagePills.find(pill => pill.dataset.stage === stageKey);
+      const defaultData = stageData[stageKey] || {};
+      const activeData = {
+        name: (targetPill && targetPill.dataset.name) || defaultData.name,
+        phaseTag: (targetPill && targetPill.dataset.phaseTag) || defaultData.phaseTag,
+        phaseMeta: (targetPill && targetPill.dataset.phaseMeta) || defaultData.phaseMeta,
+        caption: (targetPill && targetPill.dataset.caption) || defaultData.caption,
+        image: (targetPill && targetPill.dataset.image) || defaultData.image,
+        element: elements[stageKey]
+      };
       if (activeData.element) {
         activeData.element.classList.add('is-highlighted');
       }

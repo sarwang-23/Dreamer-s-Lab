@@ -737,7 +737,10 @@ html {
 .pg-cta-band {
   position: relative;
   overflow: hidden;
-  background: linear-gradient(160deg, #0c3d33, #073a32 58%, #062f29);
+  background:
+    radial-gradient(ellipse 75% 65% at 10% 30%, rgba(255, 107, 26, 0.14) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 55% at 88% 70%, rgba(200, 240, 80, 0.08) 0%, transparent 55%),
+    linear-gradient(155deg, #062f29 0%, #073D33 45%, #084038 100%);
   color: #fff;
   border-radius: 26px;
   padding: clamp(2.25rem, 5vw, 4rem);
@@ -878,3 +881,13 @@ html {
   .pg-btn,
   .nd-nav-caret { transition: none !important; }
 }
+
+/* ── Sprints, Success, Mentors & Formats Section Styles Import ──── */
+@import './student-entrepreneurs-sprints.css';
+@import './student-entrepreneurs-success.css';
+@import './student-entrepreneurs-mentors.css';
+@import './student-entrepreneurs-formats.css';
+
+
+
+

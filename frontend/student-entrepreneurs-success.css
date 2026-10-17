@@ -1,0 +1,422 @@
+/* ==========================================================================
+   Student Entrepreneurs — "What Success Looks Like" Redesign
+   High-end editorial architecture, centered header with ambient glow,
+   balanced 8-milestone cards with bespoke icons, and closing highlight.
+   ========================================================================== */
+
+:root {
+  --suc-cream: #FCFAF6;
+  --suc-cream-glow: rgba(255, 107, 44, 0.08);
+  --suc-white: #FFFFFF;
+  --suc-ink: #1A1817;
+  --suc-ink-soft: #2D2825;
+  --suc-body: #615750;
+  --suc-muted: #8E847C;
+  --suc-border: #ECE4DA;
+  --suc-border-hover: rgba(255, 107, 44, 0.38);
+  --suc-accent: #FF6B2C;
+  --suc-accent-soft: rgba(255, 107, 44, 0.08);
+  --suc-accent-border: rgba(255, 107, 44, 0.18);
+  --suc-shadow-card: 0 4px 18px -2px rgba(33, 26, 23, 0.04), 0 1px 3px rgba(33, 26, 23, 0.02);
+  --suc-shadow-hover: 0 18px 38px -6px rgba(33, 26, 23, 0.09), 0 4px 14px rgba(255, 107, 44, 0.07);
+  --suc-radius: 20px;
+  --suc-transition: 0.32s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ── Section Container ───────────────────────────────────────────── */
+.pg-success-section {
+  position: relative;
+  background-color: var(--suc-cream);
+  background-image:
+    radial-gradient(900px 520px at 50% 0%, var(--suc-cream-glow), transparent 70%),
+    radial-gradient(700px 450px at 85% 90%, rgba(255, 166, 0, 0.025), transparent 60%);
+  padding: clamp(5.2rem, 8.5vw, 7.8rem) 0;
+  border-top: 1px solid var(--suc-border);
+  border-bottom: 1px solid var(--suc-border);
+  overflow: hidden;
+}
+
+/* Ambient glow orb behind heading */
+.pg-success-glow {
+  position: absolute;
+  top: -40px;
+  left: 5%;
+  transform: none;
+  width: min(680px, 95vw);
+  height: 380px;
+  background: radial-gradient(circle, rgba(255, 107, 44, 0.08) 0%, rgba(255, 107, 44, 0.015) 50%, transparent 72%);
+  pointer-events: none;
+  filter: blur(40px);
+  z-index: 0;
+}
+
+.pg-success-container {
+  width: min(1320px, 94vw);
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Left-Aligned Header ─────────────────────────────────────────── */
+.pg-success-header {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 0 clamp(2.75rem, 5vw, 3.8rem);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+/* Left-Aligned Eyebrow Badge */
+.pg-success-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.55rem;
+  font-family: 'Manrope', -apple-system, sans-serif;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #71665F;
+  background: var(--suc-white);
+  border: 1px solid var(--suc-border);
+  padding: 0.38rem 1.05rem;
+  border-radius: 999px;
+  box-shadow: 0 2px 6px rgba(33, 26, 23, 0.03);
+  margin-bottom: 1.35rem;
+}
+
+.pg-success-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--suc-accent);
+  box-shadow: 0 0 0 2.5px rgba(255, 107, 44, 0.22);
+}
+
+/* Left-Aligned Headline */
+.pg-success-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(2.25rem, 5vw, 3.55rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.035em;
+  color: var(--suc-ink);
+  margin: 0 0 1rem;
+  text-wrap: balance;
+  text-align: left;
+}
+
+.pg-success-title em {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.05em;
+  letter-spacing: -0.01em;
+  color: var(--suc-accent);
+}
+
+/* Left-Aligned Subtitle */
+.pg-success-sub {
+  font-family: 'Manrope', sans-serif;
+  font-size: clamp(1.05rem, 1.8vw, 1.2rem);
+  font-weight: 500;
+  line-height: 1.6;
+  color: var(--suc-body);
+  max-width: 760px;
+  margin: 0;
+  text-align: left;
+}
+
+/* ── 8-Card Responsive 4-Column Grid ─────────────────────────────── */
+.pg-success-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.pg-success-card {
+  min-width: 0;
+  background: var(--suc-white);
+  border: 1px solid var(--suc-border);
+  border-radius: var(--suc-radius);
+  padding: clamp(1.45rem, 2vw, 1.85rem) clamp(1.2rem, 1.6vw, 1.5rem);
+  box-shadow: var(--suc-shadow-card);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+  transition:
+    transform var(--suc-transition),
+    box-shadow var(--suc-transition),
+    border-color var(--suc-transition);
+}
+
+/* Subtle top accent edge on hover */
+.pg-success-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #FF6B2C, #FFA066);
+  opacity: 0;
+  transform: scaleX(0.4);
+  transform-origin: center;
+  transition: opacity var(--suc-transition), transform var(--suc-transition);
+}
+
+.pg-success-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--suc-border-hover);
+  box-shadow: var(--suc-shadow-hover);
+}
+
+.pg-success-card:hover::before {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+/* Card Header: Icon & Milestone Number */
+.pg-success-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.35rem;
+}
+
+.pg-success-icon-badge {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: #FFF7F2;
+  border: 1px solid var(--suc-accent-border);
+  color: var(--suc-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    background-color var(--suc-transition),
+    color var(--suc-transition),
+    transform var(--suc-transition);
+}
+
+.pg-success-card:hover .pg-success-icon-badge {
+  background: var(--suc-accent);
+  color: #FFFFFF;
+  transform: scale(1.04);
+}
+
+.pg-success-icon-badge svg {
+  width: 22px;
+  height: 22px;
+}
+
+.pg-success-num {
+  font-family: 'Manrope', monospace, sans-serif;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: var(--suc-muted);
+  background: #F7F4EF;
+  border: 1px solid #ECE4DA;
+  padding: 0.22rem 0.65rem;
+  border-radius: 6px;
+  transition: color var(--suc-transition), background-color var(--suc-transition);
+}
+
+.pg-success-card:hover .pg-success-num {
+  color: var(--suc-accent);
+  background: #FFF4ED;
+  border-color: rgba(255, 107, 44, 0.2);
+}
+
+/* Card Text */
+.pg-success-card-text {
+  font-family: 'Outfit', -apple-system, sans-serif;
+  font-size: 1.04rem;
+  font-weight: 700;
+  line-height: 1.44;
+  color: var(--suc-ink-soft);
+  margin: 0;
+  letter-spacing: -0.015em;
+  transition: color var(--suc-transition);
+}
+
+.pg-success-card:hover .pg-success-card-text {
+  color: var(--suc-ink);
+}
+
+/* Subtle Card Bottom Milestone Track */
+.pg-success-card-bottom {
+  margin-top: 1.6rem;
+  padding-top: 0.95rem;
+  border-top: 1px solid #F3EDE6;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.pg-success-tag {
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #8C8077;
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.pg-success-tag-dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--suc-accent);
+  opacity: 0.7;
+}
+
+.pg-success-card:hover .pg-success-tag {
+  color: var(--suc-accent);
+}
+
+.pg-success-check {
+  color: #B5ACA4;
+  transition: color var(--suc-transition), transform var(--suc-transition);
+}
+
+.pg-success-card:hover .pg-success-check {
+  color: var(--suc-accent);
+  transform: translateX(2px);
+}
+
+/* ── 4. Highlighted Closing Statement ────────────────────────────── */
+.pg-success-closing {
+  max-width: 840px;
+  margin: clamp(3rem, 5vw, 4.2rem) auto 0;
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px dashed #D8CDC2;
+  border-radius: 20px;
+  padding: clamp(1.85rem, 3.2vw, 2.5rem) clamp(1.75rem, 4vw, 3.25rem);
+  text-align: center;
+  position: relative;
+  box-shadow: 0 4px 20px rgba(33, 26, 23, 0.03);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.pg-success-closing-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--suc-accent);
+  background: #FFF5EE;
+  border: 1px solid rgba(255, 107, 44, 0.2);
+  padding: 0.3rem 0.95rem;
+  border-radius: 999px;
+  margin-bottom: 1.15rem;
+}
+
+.pg-success-closing-sparkle {
+  font-size: 0.85rem;
+  line-height: 1;
+}
+
+.pg-success-closing-text {
+  font-family: 'Manrope', -apple-system, sans-serif;
+  font-size: clamp(1.02rem, 1.6vw, 1.16rem);
+  font-weight: 500;
+  line-height: 1.68;
+  color: var(--suc-body);
+  margin: 0;
+}
+
+.pg-success-closing-text strong {
+  font-weight: 750;
+  color: var(--suc-ink);
+}
+
+/* ── 6. Animation & Interaction ──────────────────────────────────── */
+.pg-success-section .pg-success-reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 0.7s cubic-bezier(0.2, 0.8, 0.2, 1) var(--suc-delay, 0ms),
+    transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1) var(--suc-delay, 0ms);
+  will-change: opacity, transform;
+}
+
+.pg-success-section .pg-success-reveal.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Responsive Breakpoints ──────────────────────────────────────── */
+@media (max-width: 1080px) {
+  .pg-success-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .pg-success-section {
+    padding: clamp(3.8rem, 8vw, 4.8rem) 0;
+  }
+
+  .pg-success-title {
+    font-size: clamp(2rem, 8.5vw, 2.5rem);
+  }
+
+  .pg-success-grid {
+    grid-template-columns: 1fr;
+    gap: 1.15rem;
+  }
+
+  .pg-success-card {
+    padding: 1.5rem 1.35rem;
+    border-radius: 16px;
+  }
+
+  .pg-success-card-text {
+    font-size: 1.05rem;
+  }
+
+  .pg-success-closing {
+    padding: 1.5rem 1.25rem;
+    border-radius: 16px;
+  }
+
+  .pg-success-closing-text {
+    font-size: 0.98rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pg-success-section .pg-success-reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .pg-success-card,
+  .pg-success-card::before,
+  .pg-success-icon-badge,
+  .pg-success-num,
+  .pg-success-check {
+    transition: none !important;
+  }
+}

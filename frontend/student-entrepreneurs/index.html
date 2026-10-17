@@ -15,227 +15,1331 @@
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="../responsive.css">
     <link rel="stylesheet" href="../pages.css">
+    <link rel="stylesheet" href="../dreamers-lab-hero.css">
+    <link rel="stylesheet" href="../student-entrepreneurs-opportunity.css">
+    <link rel="stylesheet" href="../dreamers-lab-big-idea.css">
+    <link rel="stylesheet" href="../student-entrepreneurs-pathway.css">
+    <link rel="stylesheet" href="../student-entrepreneurs-services.css">
+    <link rel="stylesheet" href="../student-entrepreneurs-sprints.css">
+    <link rel="stylesheet" href="../student-entrepreneurs-success.css">
+    <link rel="stylesheet" href="../student-entrepreneurs-mentors.css">
+    <link rel="stylesheet" href="../student-entrepreneurs-formats.css">
+    <link rel="stylesheet" href="../student-entrepreneurs-cta.css">
 </head>
 <body id="top" class="pg-body">
 
 <main class="pg-main">
 
-    <!-- Section 1: Hero -->
-    <header class="pg-hero">
-        <div class="pg-container pg-hero-inner">
-            <span class="pg-eyebrow">Student Entrepreneurs</span>
-            <h1 class="pg-hero-title">Your first startup doesn&rsquo;t need to start <em>after graduation.</em></h1>
-            <p class="pg-hero-lead">Building Dreams helps university students turn their ideas, interests and observations into ventures through structured guidance, hands-on execution and mentorship.</p>
-            <p class="pg-hero-sub">Whether you are starting with a blank page or already building something, we&rsquo;ll help you identify the right next step.</p>
-            <div class="pg-cta-row">
-                <a href="../apply/" class="pg-btn pg-btn--primary">Build Your Venture</a>
-                <a href="#pathway" class="pg-btn pg-btn--ghost">Explore the Journey &rarr;</a>
+    <!-- Section 1: Premium Interactive Student Entrepreneurs Hero -->
+    <header class="dl-hero-section">
+        <div class="dl-hero-grid-bg" aria-hidden="true"></div>
+        <div class="dl-hero-glow-accent" aria-hidden="true"></div>
+
+        <div class="dl-hero-container">
+            <div class="dl-hero-layout">
+
+                <!-- Left Column: Editorial Typography & CTAs -->
+                <div class="dl-hero-content">
+                    <div class="dl-editorial-stamp">
+                        <span>EDITION 2026 // UNIVERSITY FOUNDERS</span>
+                        <span>&bull;</span>
+                        <span>CAMPUS TO VENTURE</span>
+                    </div>
+
+                    <div class="dl-badge">
+                        <span class="dl-badge-dot" aria-hidden="true"></span>
+                        <span>BUILDING DREAMS FOR UNIVERSITY FOUNDERS</span>
+                    </div>
+
+                    <h1 class="dl-hero-title">
+                        Student <span class="dl-hero-title-accent">Entrepreneurs.</span>
+                    </h1>
+
+                    <p class="dl-hero-headline">
+                        Your first startup doesn&rsquo;t need to start <em style="font-family:'Instrument Serif',serif;font-style:italic;color:var(--dl-orange,#FF6B1A);">after graduation.</em>
+                    </p>
+
+                    <p class="dl-hero-description">
+                        Building Dreams helps university students turn their ideas, interests and observations into ventures through structured guidance, hands-on execution and mentorship. Whether you are starting with a blank page or already building something, we&rsquo;ll help you identify the right next step.
+                    </p>
+
+                    <div class="dl-hero-actions">
+                        <a href="../apply/" class="dl-btn-primary">
+                            <span>Build Your Venture</span>
+                            <span class="dl-btn-arrow" aria-hidden="true">&rarr;</span>
+                        </a>
+                        <a href="#pathway" class="dl-btn-secondary">
+                            <span>Explore the Journey</span>
+                            <span class="dl-btn-arrow" aria-hidden="true">&rarr;</span>
+                        </a>
+                    </div>
+
+                    <!-- Social Proof / Trust Metadata Strip -->
+                    <div class="dl-trust-strip">
+                        <div class="dl-trust-item">
+                            <span class="dl-trust-icon" aria-hidden="true">&#10022;</span>
+                            <span>Turn Ideas Into Ventures</span>
+                        </div>
+                        <span class="dl-trust-sep" aria-hidden="true"></span>
+                        <div class="dl-trust-item">
+                            <span class="dl-trust-icon" aria-hidden="true">&#10022;</span>
+                            <span>Campus-to-Market Pathway</span>
+                        </div>
+                        <span class="dl-trust-sep" aria-hidden="true"></span>
+                        <div class="dl-trust-item">
+                            <span class="dl-trust-icon" aria-hidden="true">&#10022;</span>
+                            <span>Hands-on Founder Guidance</span>
+                        </div>
+                        <span class="dl-trust-sep" aria-hidden="true"></span>
+                        <div class="dl-trust-item">
+                            <span class="dl-trust-icon" aria-hidden="true">&#10022;</span>
+                            <span>Early MVP &amp; Mentorship</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: The Interactive Founder's Workspace -->
+                <div class="dl-workspace-wrapper">
+                    <!-- Top Navigation: Horizontal Stage Selector -->
+                    <div class="dl-stage-nav-container">
+                        <div class="dl-stage-pills" role="tablist" aria-label="Founder Venture Pathway">
+                            <button class="dl-stage-pill is-active" data-stage="curiosity" 
+                                data-name="01 Idea Validation"
+                                data-phase-tag="Stage 01 &middot; Opportunity Discovery &amp; Validation"
+                                data-phase-meta="ACTIVE STAGE: 01 IDEA VALIDATION"
+                                data-caption="Interactive Showcase &mdash; Validating the initial thesis: identifying real market pain points on campus and beyond."
+                                data-image="../assets/dreamers-students.jpg"
+                                role="tab" id="tab-curiosity" aria-selected="true" aria-controls="stage-curiosity" tabindex="0">
+                                <span class="pill-num">01</span>
+                                <span class="pill-title">Validation</span>
+                            </button>
+                            <span class="dl-stage-sep" aria-hidden="true"></span>
+                            <button class="dl-stage-pill" data-stage="problem"
+                                data-name="02 Customer Discovery"
+                                data-phase-tag="Stage 02 &middot; Customer Discovery &amp; Interviews"
+                                data-phase-meta="ACTIVE STAGE: 02 CUSTOMER RESEARCH"
+                                data-caption="Interactive Showcase &mdash; 34 user interviews confirmed that 88% of campus lab managers need automated equipment scheduling."
+                                data-image="../assets/story-experiment.jpg"
+                                role="tab" id="tab-problem" aria-selected="false" aria-controls="stage-problem" tabindex="-1">
+                                <span class="pill-num">02</span>
+                                <span class="pill-title">Customers</span>
+                            </button>
+                            <span class="dl-stage-sep" aria-hidden="true"></span>
+                            <button class="dl-stage-pill" data-stage="prototype"
+                                data-name="03 MVP Build"
+                                data-phase-tag="Stage 03 &middot; Rapid MVP Prototyping &amp; Testing"
+                                data-phase-meta="ACTIVE STAGE: 03 MVP BUILD &amp; TESTING"
+                                data-caption="Interactive Showcase &mdash; Students build lightweight functional MVPs, test with early adopters, and iterate based on real feedback."
+                                data-image="../assets/story-prototype.jpg"
+                                role="tab" id="tab-prototype" aria-selected="false" aria-controls="stage-prototype" tabindex="-1">
+                                <span class="pill-num">03</span>
+                                <span class="pill-title">MVP Build</span>
+                            </button>
+                            <span class="dl-stage-sep" aria-hidden="true"></span>
+                            <button class="dl-stage-pill" data-stage="launch"
+                                data-name="04 Early Traction"
+                                data-phase-tag="Stage 04 &middot; Demo Day &amp; First Customers"
+                                data-phase-meta="ACTIVE STAGE: 04 EARLY TRACTION &amp; LAUNCH"
+                                data-caption="Interactive Showcase &mdash; Moving from prototype to initial traction: pitching to investors, onboarding beta users, and securing first contracts."
+                                data-image="../assets/dreamers-students.jpg"
+                                role="tab" id="tab-launch" aria-selected="false" aria-controls="stage-launch" tabindex="-1">
+                                <span class="pill-num">04</span>
+                                <span class="pill-title">Traction</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Main Showcase: Editorial Ivory Canvas -->
+                    <div class="dl-workspace-canvas" aria-label="Student Entrepreneurs Venture Showcase Canvas">
+                        <div class="dl-canvas-meta-bar" aria-hidden="true">
+                            <span class="dl-canvas-tag-tl">CAMPUS FOUNDER LAB // REF. BD-CAMPUS</span>
+                            <span class="dl-canvas-tag-tr">
+                                <span class="dl-live-beacon"></span>
+                                <span class="dl-canvas-phase-indicator">ACTIVE STAGE: 01 IDEA VALIDATION</span>
+                            </span>
+                        </div>
+
+                        <!-- A. Launch Badge (Top-Left Perimeter) -->
+                        <div class="dl-element dl-element-launch-badge" data-stage="launch" role="region" aria-label="Demo Day Showcase Stage" tabindex="0">
+                            <div class="dl-launch-icon-wrapper" aria-hidden="true">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"></path><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"></path><path d="M9 12H4s.55-3.03 2-4.5c1.2-1.2 3-1.5 3-1.5"></path><path d="M12 9v5s3.03-.55 4.5-2c1.2-1.2 1.5-3 1.5-3"></path></svg>
+                            </div>
+                            <div class="dl-launch-content">
+                                <span class="dl-launch-label">DEMO &amp; SEED SHOWCASE</span>
+                                <span class="dl-launch-tag">CAMPUS TRACK</span>
+                            </div>
+                        </div>
+
+                        <!-- Main Photograph: The Central Hero Piece (~65% width) -->
+                        <div class="dl-element dl-element-photo" data-stage="central" tabindex="0" role="img" aria-label="Student entrepreneurs collaborating on campus startup prototyping">
+                            <img src="../assets/dreamers-students.jpg" alt="Student entrepreneurs collaborating on campus startup prototyping" width="700" height="490" loading="eager">
+                            <div class="dl-photo-overlay-tag">
+                                <span class="pulse-dot" aria-hidden="true"></span>
+                                <span class="dl-photo-stage-caption">Stage 01 &middot; Opportunity Discovery &amp; Validation</span>
+                            </div>
+                        </div>
+
+                        <!-- B. Thesis Note: Butter-Yellow Editorial Note (Top-Right Perimeter) -->
+                        <div class="dl-element dl-element-sticky-curiosity dl-float-a" data-stage="curiosity" role="region" aria-label="01. Founder Thesis Note" tabindex="0">
+                            <div class="dl-sticky-tape" aria-hidden="true"></div>
+                            <span class="dl-sticky-tag">01. FOUNDER THESIS</span>
+                            <blockquote class="dl-sticky-text">&ldquo;What if campus research equipment could be booked on-demand via an automated API?&rdquo;</blockquote>
+                            <p class="dl-sticky-author">&mdash; Team PolyMetric (Campus Founders)</p>
+                        </div>
+
+                        <!-- C. Problem Audit Card: Crisp White with Orange Accent Border (Bottom-Left Perimeter) -->
+                        <div class="dl-element dl-element-problem-card" data-stage="problem" role="region" aria-label="02. Customer Discovery" tabindex="0">
+                            <div class="dl-problem-header">
+                                <span class="dl-problem-badge">02. MARKET AUDIT</span>
+                            </div>
+                            <p class="dl-problem-claim">
+                                <strong class="dl-problem-stat-num">88%</strong>
+                                <span class="dl-problem-stat-text">of department labs report underutilized testing rigs during semester breaks.</span>
+                            </p>
+                            <div class="dl-problem-metric">
+                                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                <span>Validated with 34 user interviews</span>
+                            </div>
+                        </div>
+
+                        <!-- D. Prototype Card: Forest-Green Panel with Lime Accents (Bottom-Right Perimeter) -->
+                        <div class="dl-element dl-element-prototype-card dl-float-b" data-stage="prototype" role="region" aria-label="03. MVP Pilot" tabindex="0">
+                            <div class="dl-proto-header">
+                                <span class="dl-proto-pill">03. MVP PILOT V1.0</span>
+                                <span class="dl-proto-step">STAGE 3 OF 4</span>
+                            </div>
+                            <h3 class="dl-proto-title">From campus concept to working venture.</h3>
+                            <p class="dl-proto-desc">Turn ideas into tested products &mdash; talking to users, validating unit economics, and gaining initial traction.</p>
+                            <div class="dl-proto-bar" aria-label="Progress: Stage 3 of 4">
+                                <div class="dl-proto-progress">
+                                    <div class="dl-proto-fill" style="width: 75%;"></div>
+                                </div>
+                                <span class="dl-proto-stat">PHASE 03 / 04</span>
+                            </div>
+                            <div class="dl-proto-action-row">
+                                <a href="#pathway" class="dl-proto-explore-link">
+                                    <span>Explore the pathway</span>
+                                    <span class="dl-proto-arrow" aria-hidden="true">&nearr;</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </header>
 
-    <!-- Section 2: The opportunity -->
-    <section class="pg-section pg-section--ivory">
-        <div class="pg-container">
-            <div class="pg-split">
-                <div>
-                    <span class="pg-kicker">The opportunity</span>
-                    <h2 class="pg-h2">Your university years are a chance to <em>experiment.</em></h2>
-                    <p class="pg-sub">You have access to classmates, faculty, campus communities, emerging technologies and new perspectives. You can explore problems in the real world, build with a small team and test an idea before making a major commitment.</p>
-                </div>
-                <div class="pg-panel">
-                    <h3 class="pg-h3">But many students face the same questions:</h3>
-                    <ul class="pg-list">
-                        <li>How do I know if my idea is worth pursuing?</li>
-                        <li>How do I find people who have this problem?</li>
-                        <li>How do I build an MVP without a large budget?</li>
-                        <li>How do I find a technical or business co-founder?</li>
-                        <li>How do I get my first users or customers?</li>
-                        <li>How do I balance a startup with my studies?</li>
-                    </ul>
-                    <p class="pg-sub" style="margin-top:1rem;margin-bottom:0;">Building Dreams provides a structured process to help you work through these questions.</p>
-                </div>
+    <!-- Section 2: The Opportunity -->
+    <section class="pg-opportunity" aria-labelledby="opp-title">
+        <div class="pg-opp-container">
+
+            <!-- Centered editorial header -->
+            <header class="pg-opp-head pg-opp-reveal">
+                <span class="pg-opp-eyebrow">The Opportunity</span>
+                <h2 class="pg-opp-title" id="opp-title">
+                    Your university years are a chance to <em>experiment.</em>
+                </h2>
+                <p class="pg-opp-lead">You have access to classmates, faculty, campus communities, emerging technologies and new perspectives. Explore real-world problems, build with a small team, and test your ideas before making a major commitment.</p>
+            </header>
+
+            <!-- Question cards -->
+            <div class="pg-opp-questions">
+                <h3 class="pg-opp-subhead pg-opp-reveal">Big ideas start with the right questions.</h3>
+
+                <ul class="pg-opp-grid" role="list">
+                    <li class="pg-opp-cell pg-opp-reveal">
+                        <article class="pg-opp-card">
+                            <span class="pg-opp-card-idx" aria-hidden="true">01</span>
+                            <p class="pg-opp-card-q">How do I know if my idea is worth pursuing?</p>
+                        </article>
+                    </li>
+                    <li class="pg-opp-cell pg-opp-reveal">
+                        <article class="pg-opp-card">
+                            <span class="pg-opp-card-idx" aria-hidden="true">02</span>
+                            <p class="pg-opp-card-q">How do I find people who have this problem?</p>
+                        </article>
+                    </li>
+                    <li class="pg-opp-cell pg-opp-reveal">
+                        <article class="pg-opp-card">
+                            <span class="pg-opp-card-idx" aria-hidden="true">03</span>
+                            <p class="pg-opp-card-q">How do I build an MVP without a large budget?</p>
+                        </article>
+                    </li>
+                    <li class="pg-opp-cell pg-opp-reveal">
+                        <article class="pg-opp-card">
+                            <span class="pg-opp-card-idx" aria-hidden="true">04</span>
+                            <p class="pg-opp-card-q">How do I find a technical or business co-founder?</p>
+                        </article>
+                    </li>
+                    <li class="pg-opp-cell pg-opp-reveal">
+                        <article class="pg-opp-card">
+                            <span class="pg-opp-card-idx" aria-hidden="true">05</span>
+                            <p class="pg-opp-card-q">How do I get my first users or customers?</p>
+                        </article>
+                    </li>
+                    <li class="pg-opp-cell pg-opp-reveal">
+                        <article class="pg-opp-card">
+                            <span class="pg-opp-card-idx" aria-hidden="true">06</span>
+                            <p class="pg-opp-card-q">How do I balance a startup with my studies?</p>
+                        </article>
+                    </li>
+                </ul>
             </div>
+
+            <!-- Closing statement -->
+            <p class="pg-opp-closing pg-opp-reveal">
+                <span class="pg-opp-closing-mark" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                </span>
+                <span>Building Dreams gives you a structured process to turn uncertainty into action.</span>
+            </p>
+
         </div>
     </section>
 
-    <!-- Section 3: Choose your starting point -->
-    <section class="pg-section">
-        <div class="pg-container">
-            <div class="pg-head">
-                <span class="pg-eyebrow">Choose your starting point</span>
-                <h2 class="pg-h2">Meet us <em>where you are.</em></h2>
+    <!-- Section 3: Choose your starting point (Dreamers Lab Premium Editorial Cards) -->
+
+    <section class="dl-idea-section" id="starting-point">
+
+        <div class="dl-idea-container">
+
+            <!-- Editorial Header Block -->
+
+            <div class="dl-idea-header dl-idea-header--left dl-reveal">
+
+                <div class="dl-idea-eyebrow-pill">
+
+                    <span class="dl-idea-eyebrow-dot" aria-hidden="true"></span>
+
+                    <span>Choose your starting point &bull; Founder Pathways</span>
+
+                </div>
+
+                <h2 class="dl-idea-headline">
+
+                    <span class="headline-dim">Every founder starts at a different stage.</span>
+
+                    Meet us <em class="headline-accent">where you are.</em>
+
+                </h2>
+
+                <p class="dl-idea-lead">
+
+                    Whether you have an unvalidated concept, the drive to solve a problem, or an active prototype, select the pathway designed for your exact milestone.
+
+                </p>
+
+                <!-- Progression Timeline Rail -->
+
+                <div class="dl-idea-flow-strip" aria-label="Founder Progression Flow">
+
+                    <div class="dl-flow-node is-active" data-index="0">
+
+                        <span class="flow-num">01</span>
+
+                        <span>Idea</span>
+
+                    </div>
+
+                    <span class="dl-flow-arrow" aria-hidden="true">&rarr;</span>
+
+                    <div class="dl-flow-node" data-index="1">
+
+                        <span class="flow-num">02</span>
+
+                        <span>Explore</span>
+
+                    </div>
+
+                    <span class="dl-flow-arrow" aria-hidden="true">&rarr;</span>
+
+                    <div class="dl-flow-node" data-index="2">
+
+                        <span class="flow-num">03</span>
+
+                        <span>Build</span>
+
+                    </div>
+
+                </div>
+
             </div>
-            <div class="pg-grid pg-grid--3">
-                <article class="pg-card pg-card--hover">
-                    <span class="pg-card-num">01</span>
-                    <h3 class="pg-card-title">I have an idea</h3>
-                    <p class="pg-card-text">You see an opportunity but haven&rsquo;t yet established whether people need your solution.</p>
-                    <p class="pg-card-text" style="margin-top:0.8rem;"><strong>Focus:</strong> Problem discovery, customer research and idea validation.</p>
-                    <div style="margin-top:1.1rem;"><a href="#pathway" class="pg-link">Explore Idea Validation &rarr;</a></div>
+
+            <!-- 3-Stage Cards Grid (Matching Dreamers Lab Editorial Design) -->
+
+            <div class="dl-idea-stages-grid">
+
+                <!-- Stage 01: I have an idea -->
+
+                <article class="dl-stage-card dl-stage-card--question dl-reveal dl-stagger-1" data-stage-index="0">
+
+                    <div class="dl-stage-card-top">
+
+                        <div class="dl-stage-badge-wrap">
+
+                            <span class="dl-stage-pill">01 &middot; VALIDATION</span>
+
+                            <span class="dl-stage-subtag">Problem Discovery</span>
+
+                        </div>
+
+                        <span class="dl-stage-giant-num" aria-hidden="true">01</span>
+
+                    </div>
+
+                    <h3 class="dl-stage-title">I have an idea</h3>
+
+                    <blockquote class="dl-stage-quote">
+
+                        &ldquo;You see an opportunity but haven&rsquo;t yet established whether people need your solution.&rdquo;
+
+                    </blockquote>
+
+                    <p class="dl-stage-focus">
+
+                        <strong>Focus:</strong> Problem discovery, customer research and idea validation.
+
+                    </p>
+
+                    <!-- Visual Window: Idea Validation & Mentorship -->
+
+                    <div class="dl-stage-artefact dl-artefact-visual">
+
+                        <img src="../assets/mentor-collaboration.jpg" alt="Idea validation and customer research" width="400" height="120" loading="lazy">
+
+                        <div class="dl-visual-badge">
+
+                            <span class="orange-dot" aria-hidden="true"></span>
+
+                            <span>Problem Discovery &middot; Customer Research</span>
+
+                        </div>
+
+                    </div>
+
+                    <div class="dl-stage-card-footer">
+
+                        <a href="#pathway" class="dl-stage-cta">
+
+                            <span>Explore Idea Validation</span>
+
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+
+                        </a>
+
+                    </div>
+
                 </article>
-                <article class="pg-card pg-card--forest">
-                    <span class="pg-card-num" style="color:var(--pg-lime);">02</span>
-                    <h3 class="pg-card-title">I want to build something</h3>
-                    <p class="pg-card-text">You are motivated to start but need help identifying the right problem and approach.</p>
-                    <p class="pg-card-text" style="margin-top:0.8rem;"><strong style="color:#fff;">Focus:</strong> Opportunity discovery, ideation, team formation and early experiments.</p>
-                    <div style="margin-top:1.1rem;"><a href="#pathway" class="pg-link" style="color:var(--pg-lime);border-color:rgba(213,240,120,0.4);">Start Exploring &rarr;</a></div>
+
+                <!-- Stage 02: I want to build something -->
+
+                <article class="dl-stage-card dl-stage-card--explore dl-reveal dl-stagger-2" data-stage-index="1">
+
+                    <div class="dl-stage-card-top">
+
+                        <div class="dl-stage-badge-wrap">
+
+                            <span class="dl-stage-pill">02 &middot; FIELDWORK</span>
+
+                            <span class="dl-stage-subtag">Ideation &amp; Team</span>
+
+                        </div>
+
+                        <span class="dl-stage-giant-num" aria-hidden="true">02</span>
+
+                    </div>
+
+                    <h3 class="dl-stage-title">I want to build something</h3>
+
+                    <blockquote class="dl-stage-quote">
+
+                        &ldquo;You are motivated to start but need help identifying the right problem and approach.&rdquo;
+
+                    </blockquote>
+
+                    <p class="dl-stage-focus">
+
+                        <strong>Focus:</strong> Opportunity discovery, ideation, team formation and early experiments.
+
+                    </p>
+
+                    <!-- Visual Window: Opportunity Discovery & Experiments -->
+
+                    <div class="dl-stage-artefact dl-artefact-visual">
+
+                        <img src="../assets/story-experiment.jpg" alt="Opportunity discovery and team formation" width="400" height="120" loading="lazy">
+
+                        <div class="dl-visual-badge">
+
+                            <span class="green-dot" aria-hidden="true"></span>
+
+                            <span>Opportunity Discovery &middot; Ideation</span>
+
+                        </div>
+
+                    </div>
+
+                    <div class="dl-stage-card-footer">
+
+                        <a href="#pathway" class="dl-stage-cta">
+
+                            <span>Start Exploring</span>
+
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+
+                        </a>
+
+                    </div>
+
                 </article>
-                <article class="pg-card pg-card--hover">
-                    <span class="pg-card-num">03</span>
-                    <h3 class="pg-card-title">I&rsquo;m already building</h3>
-                    <p class="pg-card-text">You have a product, prototype or early venture and need to move forward.</p>
-                    <p class="pg-card-text" style="margin-top:0.8rem;"><strong>Focus:</strong> User feedback, product development, go-to-market and early traction.</p>
-                    <div style="margin-top:1.1rem;"><a href="#pathway" class="pg-link">Move Your Venture Forward &rarr;</a></div>
+
+                <!-- Stage 03: I'm already building -->
+
+                <article class="dl-stage-card dl-stage-card--build dl-reveal dl-stagger-3" data-stage-index="2">
+
+                    <div class="dl-stage-card-top">
+
+                        <div class="dl-stage-badge-wrap">
+
+                            <span class="dl-stage-pill">03 &middot; PROTOTYPE</span>
+
+                            <span class="dl-stage-subtag">Product &amp; Traction</span>
+
+                        </div>
+
+                        <span class="dl-stage-giant-num" aria-hidden="true">03</span>
+
+                    </div>
+
+                    <h3 class="dl-stage-title">I&rsquo;m already building</h3>
+
+                    <blockquote class="dl-stage-quote">
+
+                        &ldquo;You have a product, prototype or early venture and need to move forward.&rdquo;
+
+                    </blockquote>
+
+                    <p class="dl-stage-focus">
+
+                        <strong>Focus:</strong> User feedback, product development, go-to-market and early traction.
+
+                    </p>
+
+                    <!-- Visual Window: Prototyping & Early Traction -->
+
+                    <div class="dl-stage-artefact dl-artefact-visual">
+
+                        <img src="../assets/story-prototype.jpg" alt="Product feedback and early traction" width="400" height="120" loading="lazy">
+
+                        <div class="dl-visual-badge">
+
+                            <span class="emerald-dot" aria-hidden="true"></span>
+
+                            <span>Product Feedback &middot; Early Traction</span>
+
+                        </div>
+
+                    </div>
+
+                    <div class="dl-stage-card-footer">
+
+                        <a href="#pathway" class="dl-stage-cta">
+
+                            <span>Move Your Venture Forward</span>
+
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+
+                        </a>
+
+                    </div>
+
                 </article>
+
             </div>
+
         </div>
+
     </section>
 
     <!-- Section 4: Venture-building pathway -->
-    <section class="pg-section pg-section--tint" id="pathway">
-        <div class="pg-container">
-            <div class="pg-head">
-                <span class="pg-eyebrow">Our venture-building pathway</span>
-                <h2 class="pg-h2">From an idea to your first <em>real customers.</em></h2>
-            </div>
-            <div class="pg-steps">
-                <div class="pg-step"><span class="pg-step-num">01</span><h3>Discover</h3><p>Understand your interests, identify problems and select a promising opportunity.</p></div>
-                <div class="pg-step"><span class="pg-step-num">02</span><h3>Validate</h3><p>Talk to prospective customers, examine alternatives and test whether the problem matters.</p></div>
-                <div class="pg-step"><span class="pg-step-num">03</span><h3>Design</h3><p>Define the solution, user experience, business model and minimum set of features.</p></div>
-                <div class="pg-step"><span class="pg-step-num">04</span><h3>Build</h3><p>Develop a prototype or MVP that allows you to test your key assumptions.</p></div>
-                <div class="pg-step"><span class="pg-step-num">05</span><h3>Launch</h3><p>Find your first users through outreach, partnerships, communities and targeted experiments.</p></div>
-                <div class="pg-step"><span class="pg-step-num">06</span><h3>Grow</h3><p>Use feedback and early evidence to improve the product, sales process and business model.</p></div>
-                <div class="pg-step"><span class="pg-step-num">07</span><h3>Prepare for the next stage</h3><p>Decide whether to continue experimenting, pursue revenue, join an incubator or explore fundraising.</p></div>
-            </div>
+    <section class="pg-pathway" id="pathway" aria-labelledby="pathway-title">
+        <div class="pg-pathway-container">
+
+            <!-- Centered editorial heading -->
+            <header class="pg-pathway-head pg-pathway-reveal">
+                <span class="pg-pathway-eyebrow">Our Venture-Building Pathway</span>
+                <h2 class="pg-pathway-title" id="pathway-title">From an idea to your first <em>real customers.</em></h2>
+            </header>
+
+            <!-- Seven premium step cards -->
+            <ul class="pg-pathway-grid" role="list">
+                <li class="pg-pathway-cell pg-pathway-reveal">
+                    <article class="pg-pathway-card">
+                        <span class="pg-pathway-num" aria-hidden="true">01</span>
+                        <h3 class="pg-pathway-name">Discover</h3>
+                        <p class="pg-pathway-desc">Understand your interests, identify problems and select a promising opportunity.</p>
+                    </article>
+                </li>
+                <li class="pg-pathway-cell pg-pathway-reveal">
+                    <article class="pg-pathway-card">
+                        <span class="pg-pathway-num" aria-hidden="true">02</span>
+                        <h3 class="pg-pathway-name">Validate</h3>
+                        <p class="pg-pathway-desc">Talk to prospective customers, examine alternatives and test whether the problem matters.</p>
+                    </article>
+                </li>
+                <li class="pg-pathway-cell pg-pathway-reveal">
+                    <article class="pg-pathway-card">
+                        <span class="pg-pathway-num" aria-hidden="true">03</span>
+                        <h3 class="pg-pathway-name">Design</h3>
+                        <p class="pg-pathway-desc">Define the solution, user experience, business model and minimum set of features.</p>
+                    </article>
+                </li>
+                <li class="pg-pathway-cell pg-pathway-reveal">
+                    <article class="pg-pathway-card">
+                        <span class="pg-pathway-num" aria-hidden="true">04</span>
+                        <h3 class="pg-pathway-name">Build</h3>
+                        <p class="pg-pathway-desc">Develop a prototype or MVP that allows you to test your key assumptions.</p>
+                    </article>
+                </li>
+                <li class="pg-pathway-cell pg-pathway-reveal">
+                    <article class="pg-pathway-card">
+                        <span class="pg-pathway-num" aria-hidden="true">05</span>
+                        <h3 class="pg-pathway-name">Launch</h3>
+                        <p class="pg-pathway-desc">Find your first users through outreach, partnerships, communities and targeted experiments.</p>
+                    </article>
+                </li>
+                <li class="pg-pathway-cell pg-pathway-reveal">
+                    <article class="pg-pathway-card">
+                        <span class="pg-pathway-num" aria-hidden="true">06</span>
+                        <h3 class="pg-pathway-name">Grow</h3>
+                        <p class="pg-pathway-desc">Use feedback and early evidence to improve the product, sales process and business model.</p>
+                    </article>
+                </li>
+                <li class="pg-pathway-cell pg-pathway-reveal">
+                    <article class="pg-pathway-card">
+                        <span class="pg-pathway-num" aria-hidden="true">07</span>
+                        <h3 class="pg-pathway-name">Prepare for the next stage</h3>
+                        <p class="pg-pathway-desc">Decide whether to continue experimenting, pursue revenue, join an incubator or explore fundraising.</p>
+                    </article>
+                </li>
+            </ul>
+
         </div>
     </section>
 
     <!-- Section 5: What we help you with -->
-    <section class="pg-section">
-        <div class="pg-container">
-            <div class="pg-head">
-                <span class="pg-eyebrow">What we help you with</span>
-                <h2 class="pg-h2">The practical building blocks of a <em>startup.</em></h2>
+    <section class="pg-services" id="services">
+        <div class="pg-services-container">
+            <div class="pg-services-head pg-svc-reveal">
+                <span class="pg-services-eyebrow">What we help you with</span>
+                <h2 class="pg-services-title">The practical building blocks of a <em>startup.</em></h2>
             </div>
-            <div class="pg-grid pg-grid--2">
-                <div class="pg-card pg-card--accent"><h3 class="pg-card-title">Idea validation</h3><p class="pg-card-text">Determine whether the problem is real and worth solving.</p></div>
-                <div class="pg-card pg-card--accent"><h3 class="pg-card-title">Customer discovery</h3><p class="pg-card-text">Understand users, buyers and existing alternatives.</p></div>
-                <div class="pg-card pg-card--accent"><h3 class="pg-card-title">MVP development</h3><p class="pg-card-text">Decide what to build first and what can wait.</p></div>
-                <div class="pg-card pg-card--accent"><h3 class="pg-card-title">Business model</h3><p class="pg-card-text">Explore customers, pricing, costs and revenue.</p></div>
-                <div class="pg-card pg-card--accent"><h3 class="pg-card-title">Go-to-market</h3><p class="pg-card-text">Identify channels to reach initial customers.</p></div>
-                <div class="pg-card pg-card--accent"><h3 class="pg-card-title">Sales and growth</h3><p class="pg-card-text">Develop practical ways to generate early demand.</p></div>
-                <div class="pg-card pg-card--accent"><h3 class="pg-card-title">Pitch preparation</h3><p class="pg-card-text">Communicate the problem, solution, market and progress.</p></div>
-                <div class="pg-card pg-card--accent"><h3 class="pg-card-title">Fundraising readiness</h3><p class="pg-card-text">Understand investor expectations and prepare for relevant conversations when appropriate.</p></div>
-            </div>
-            <p class="pg-note" style="margin-top:1.5rem;">The support offered depends on the stage of the venture, the cohort and the specific needs of the founder.</p>
-        </div>
-    </section>
-
-    <!-- Section 6: How you will work -->
-    <section class="pg-section pg-section--ivory">
-        <div class="pg-container">
-            <div class="pg-split">
-                <div>
-                    <span class="pg-eyebrow">How you will work</span>
-                    <h2 class="pg-h2">Build in focused <em>sprints.</em></h2>
-                    <p class="pg-sub">Rather than spending months discussing an idea without testing it, participants work through structured milestones. Each sprint has:</p>
-                    <ul class="pg-list">
-                        <li>A clear objective.</li>
-                        <li>A practical task or experiment.</li>
-                        <li>A measurable output.</li>
-                        <li>Mentor or peer feedback.</li>
-                        <li>A decision about what to do next.</li>
-                    </ul>
+            <ul class="pg-services-grid">
+                <li class="pg-services-cell pg-svc-reveal">
+                    <article class="pg-services-card">
+                        <div class="pg-services-card-header">
+                            <div class="pg-services-icon" aria-hidden="true">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg>
+                            </div>
+                            <span class="pg-services-num">01</span>
+                        </div>
+                        <h3 class="pg-services-title-sm">Idea validation</h3>
+                        <p class="pg-services-desc">Determine whether the problem is real and worth solving.</p>
+                    </article>
+                </li>
+                <li class="pg-services-cell pg-svc-reveal">
+                    <article class="pg-services-card">
+                        <div class="pg-services-card-header">
+                            <div class="pg-services-icon" aria-hidden="true">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+                            </div>
+                            <span class="pg-services-num">02</span>
+                        </div>
+                        <h3 class="pg-services-title-sm">Customer discovery</h3>
+                        <p class="pg-services-desc">Understand users, buyers and existing alternatives.</p>
+                    </article>
+                </li>
+                <li class="pg-services-cell pg-svc-reveal">
+                    <article class="pg-services-card">
+                        <div class="pg-services-card-header">
+                            <div class="pg-services-icon" aria-hidden="true">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg>
+                            </div>
+                            <span class="pg-services-num">03</span>
+                        </div>
+                        <h3 class="pg-services-title-sm">MVP development</h3>
+                        <p class="pg-services-desc">Decide what to build first and what can wait.</p>
+                    </article>
+                </li>
+                <li class="pg-services-cell pg-svc-reveal">
+                    <article class="pg-services-card">
+                        <div class="pg-services-card-header">
+                            <div class="pg-services-icon" aria-hidden="true">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 01-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09a1.65 1.65 0 00-1-1.51 1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09a1.65 1.65 0 001.51-1 1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06a1.65 1.65 0 001.82.33H9a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9c0 .66.26 1.3.73 1.77.47.47 1.11.73 1.77.73H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
+                            </div>
+                            <span class="pg-services-num">04</span>
+                        </div>
+                        <h3 class="pg-services-title-sm">Business model</h3>
+                        <p class="pg-services-desc">Explore customers, pricing, costs and revenue.</p>
+                    </article>
+                </li>
+                <li class="pg-services-cell pg-svc-reveal">
+                    <article class="pg-services-card">
+                        <div class="pg-services-card-header">
+                            <div class="pg-services-icon" aria-hidden="true">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.59 13.51l6.83 3.98M15.41 6.51l-6.82 3.98"/></svg>
+                            </div>
+                            <span class="pg-services-num">05</span>
+                        </div>
+                        <h3 class="pg-services-title-sm">Go-to-market</h3>
+                        <p class="pg-services-desc">Identify channels to reach initial customers.</p>
+                    </article>
+                </li>
+                <li class="pg-services-cell pg-svc-reveal">
+                    <article class="pg-services-card">
+                        <div class="pg-services-card-header">
+                            <div class="pg-services-icon" aria-hidden="true">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+                            </div>
+                            <span class="pg-services-num">06</span>
+                        </div>
+                        <h3 class="pg-services-title-sm">Sales and growth</h3>
+                        <p class="pg-services-desc">Develop practical ways to generate early demand.</p>
+                    </article>
+                </li>
+                <li class="pg-services-cell pg-svc-reveal">
+                    <article class="pg-services-card">
+                        <div class="pg-services-card-header">
+                            <div class="pg-services-icon" aria-hidden="true">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+                            </div>
+                            <span class="pg-services-num">07</span>
+                        </div>
+                        <h3 class="pg-services-title-sm">Pitch preparation</h3>
+                        <p class="pg-services-desc">Communicate the problem, solution, market and progress.</p>
+                    </article>
+                </li>
+                <li class="pg-services-cell pg-svc-reveal">
+                    <article class="pg-services-card">
+                        <div class="pg-services-card-header">
+                            <div class="pg-services-icon" aria-hidden="true">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg>
+                            </div>
+                            <span class="pg-services-num">08</span>
+                        </div>
+                        <h3 class="pg-services-title-sm">Fundraising readiness</h3>
+                        <p class="pg-services-desc">Understand investor expectations and prepare for relevant conversations when appropriate.</p>
+                    </article>
+                </li>
+            </ul>
+            <div class="pg-services-footer pg-svc-reveal">
+                <div class="pg-services-note">
+                    <div class="pg-services-note-icon" aria-hidden="true">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                    </div>
+                    <p class="pg-services-note-text">The support offered depends on the stage of the venture, the cohort and the specific needs of the founder.</p>
                 </div>
-                <div class="pg-panel">
-                    <h3 class="pg-h3">Example: a customer-discovery sprint</h3>
-                    <p>A customer-discovery sprint may focus on interviewing ten relevant potential users, identifying recurring problems and deciding whether to continue, refine or change the idea.</p>
-                    <p class="pg-sub" style="margin-bottom:0;">The numbers and milestones will be tailored to each venture rather than treated as universal success criteria.</p>
+            </div>
+        </div>
+    </section>
+
+        <!-- Section 6: How you will work (Premium Sprints Experience) -->
+    <section class="pg-sprints-section" id="how-you-will-work" aria-labelledby="sprints-title">
+        <div class="pg-sprints-container">
+
+            <!-- 1. Dedicated Perfectly Centered Editorial Header -->
+            <header class="pg-sprints-header pg-sprints-reveal">
+                <div class="pg-sprints-eyebrow">
+                    <span class="pg-sprints-dot" aria-hidden="true"></span>
+                    <span>HOW YOU WILL WORK</span>
+                </div>
+                <h2 class="pg-sprints-title" id="sprints-title">
+                    Build in focused <em class="pg-sprints-accent">sprints.</em>
+                </h2>
+                <p class="pg-sprints-intro pg-sprints-reveal" style="text-align:center; margin-top:1rem;">Rather than spending months discussing an idea without testing it, participants work through structured milestones. Each sprint has:</p>
+            </header>
+
+            <!-- 2. Two-Column Layout: Process Timeline (Left) & Sprint Example Card (Right) -->
+            <div class="pg-sprints-grid">
+
+                <!-- Left Column: The Sprint Process -->
+                <div class="pg-sprints-process pg-sprints-reveal pg-sprints-stagger-1">
+                    <ol class="pg-sprints-list" role="list">
+                            <div class="pg-sprints-step-badge">
+                                <span class="pg-sprints-num" aria-hidden="true">01</span>
+                            </div>
+                            <div class="pg-sprints-item-content">
+                                <h3 class="pg-sprints-item-text">A clear objective.</h3>
+                            </div>
+                        </li>
+                        <li class="pg-sprints-item">
+                            <div class="pg-sprints-step-badge">
+                                <span class="pg-sprints-num" aria-hidden="true">02</span>
+                            </div>
+                            <div class="pg-sprints-item-content">
+                                <h3 class="pg-sprints-item-text">A practical task or experiment.</h3>
+                            </div>
+                        </li>
+                        <li class="pg-sprints-item">
+                            <div class="pg-sprints-step-badge">
+                                <span class="pg-sprints-num" aria-hidden="true">03</span>
+                            </div>
+                            <div class="pg-sprints-item-content">
+                                <h3 class="pg-sprints-item-text">A measurable output.</h3>
+                            </div>
+                        </li>
+                        <li class="pg-sprints-item">
+                            <div class="pg-sprints-step-badge">
+                                <span class="pg-sprints-num" aria-hidden="true">04</span>
+                            </div>
+                            <div class="pg-sprints-item-content">
+                                <h3 class="pg-sprints-item-text">Mentor or peer feedback.</h3>
+                            </div>
+                        </li>
+                        <li class="pg-sprints-item">
+                            <div class="pg-sprints-step-badge">
+                                <span class="pg-sprints-num" aria-hidden="true">05</span>
+                            </div>
+                            <div class="pg-sprints-item-content">
+                                <h3 class="pg-sprints-item-text">A decision about what to do next.</h3>
+                            </div>
+                        </li>
+                    </ol>
+                </div>
+
+                <!-- Right Column: Sprint Example Card -->
+                <div class="pg-sprints-card-col pg-sprints-reveal pg-sprints-stagger-2">
+                    <article class="pg-sprints-example-card">
+                        <!-- Top Accent Line -->
+                        <div class="pg-sprints-card-accent" aria-hidden="true"></div>
+
+                        <!-- Card Header Meta -->
+                        <div class="pg-sprints-card-meta">
+                            <div class="pg-sprints-card-label">
+                                <span class="pg-sprints-card-label-dot" aria-hidden="true"></span>
+                                <span>SPRINT EXAMPLE</span>
+                            </div>
+                            <div class="pg-sprints-card-icon" aria-hidden="true">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="11" cy="11" r="8"></circle>
+                                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                                </svg>
+                            </div>
+                        </div>
+
+                        <!-- Card Heading -->
+                        <h3 class="pg-sprints-card-title">
+                            Example: a customer-discovery sprint
+                        </h3>
+
+                        <!-- Body Copy -->
+                        <div class="pg-sprints-card-body">
+                            <p class="pg-sprints-card-lead">
+                                A customer-discovery sprint may focus on interviewing ten relevant potential users, identifying recurring problems and deciding whether to continue, refine or change the idea.
+                            </p>
+                            <p class="pg-sprints-card-sub">
+                                The numbers and milestones will be tailored to each venture rather than treated as universal success criteria.
+                            </p>
+                        </div>
+
+                        <!-- Decorative Minimal Sprint Flow Roadmap -->
+                        <div class="pg-sprints-roadmap" aria-label="Sprint Phases">
+                            <div class="pg-sprints-phase">
+                                <span class="pg-sprints-phase-num">STAGE 1</span>
+                                <span class="pg-sprints-phase-name">Discover</span>
+                            </div>
+                            <span class="pg-sprints-phase-sep" aria-hidden="true">&rarr;</span>
+                            <div class="pg-sprints-phase">
+                                <span class="pg-sprints-phase-num">STAGE 2</span>
+                                <span class="pg-sprints-phase-name">Validate</span>
+                            </div>
+                            <span class="pg-sprints-phase-sep" aria-hidden="true">&rarr;</span>
+                            <div class="pg-sprints-phase">
+                                <span class="pg-sprints-phase-num">STAGE 3</span>
+                                <span class="pg-sprints-phase-name">Decide</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Section 7: What success looks like -->
+    <section class="pg-success-section" id="success" aria-labelledby="success-title">
+        <div class="pg-success-glow" aria-hidden="true"></div>
+        <div class="pg-success-container">
+
+            <!-- 1. Centered Title & Header Area -->
+            <header class="pg-success-header pg-success-reveal" style="--suc-delay: 0ms;">
+                <div class="pg-success-eyebrow">
+                    <span class="pg-success-dot" aria-hidden="true"></span>
+                    <span>What success looks like</span>
+                </div>
+                <h2 class="pg-success-title" id="success-title">
+                    Progress is more important than a <em>perfect pitch.</em>
+                </h2>
+                <p class="pg-success-sub">
+                    Depending on your starting point, success could mean:
+                </p>
+            </header>
+
+            <!-- 3. Redesigned 8 Milestone Cards -->
+            <ul class="pg-success-grid" role="list">
+
+                <!-- Milestone 01 -->
+                <li class="pg-success-card pg-success-reveal" style="--suc-delay: 60ms;">
+                    <div class="pg-success-card-top">
+                        <div class="pg-success-icon-badge" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><line x1="9.5" y1="9.5" x2="14.5" y2="14.5"/><line x1="14.5" y1="9.5" x2="9.5" y2="14.5"/></svg>
+                        </div>
+                        <span class="pg-success-num">01</span>
+                    </div>
+                    <p class="pg-success-card-text">Rejecting an idea before spending heavily on it.</p>
+                    <div class="pg-success-card-bottom">
+                        <span class="pg-success-tag"><span class="pg-success-tag-dot" aria-hidden="true"></span>Validation &amp; Clarity</span>
+                        <svg class="pg-success-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+                    </div>
+                </li>
+
+                <!-- Milestone 02 -->
+                <li class="pg-success-card pg-success-reveal" style="--suc-delay: 110ms;">
+                    <div class="pg-success-card-top">
+                        <div class="pg-success-icon-badge" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><path d="M11 7v8"/><path d="M7 11h8"/></svg>
+                        </div>
+                        <span class="pg-success-num">02</span>
+                    </div>
+                    <p class="pg-success-card-text">Discovering a customer problem that matters.</p>
+                    <div class="pg-success-card-bottom">
+                        <span class="pg-success-tag"><span class="pg-success-tag-dot" aria-hidden="true"></span>Problem Space</span>
+                        <svg class="pg-success-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+                    </div>
+                </li>
+
+                <!-- Milestone 03 -->
+                <li class="pg-success-card pg-success-reveal" style="--suc-delay: 160ms;">
+                    <div class="pg-success-card-top">
+                        <div class="pg-success-icon-badge" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+                        </div>
+                        <span class="pg-success-num">03</span>
+                    </div>
+                    <p class="pg-success-card-text">Building a prototype.</p>
+                    <div class="pg-success-card-bottom">
+                        <span class="pg-success-tag"><span class="pg-success-tag-dot" aria-hidden="true"></span>Tangible Proof</span>
+                        <svg class="pg-success-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+                    </div>
+                </li>
+
+                <!-- Milestone 04 -->
+                <li class="pg-success-card pg-success-reveal" style="--suc-delay: 210ms;">
+                    <div class="pg-success-card-top">
+                        <div class="pg-success-icon-badge" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                        </div>
+                        <span class="pg-success-num">04</span>
+                    </div>
+                    <p class="pg-success-card-text">Getting your first ten active users.</p>
+                    <div class="pg-success-card-bottom">
+                        <span class="pg-success-tag"><span class="pg-success-tag-dot" aria-hidden="true"></span>Early Traction</span>
+                        <svg class="pg-success-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+                    </div>
+                </li>
+
+                <!-- Milestone 05 -->
+                <li class="pg-success-card pg-success-reveal" style="--suc-delay: 260ms;">
+                    <div class="pg-success-card-top">
+                        <div class="pg-success-icon-badge" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 9V4s3.03.55 4 2c1.08 1.62 0 5 0 5"/></svg>
+                        </div>
+                        <span class="pg-success-num">05</span>
+                    </div>
+                    <p class="pg-success-card-text">Running a successful pilot.</p>
+                    <div class="pg-success-card-bottom">
+                        <span class="pg-success-tag"><span class="pg-success-tag-dot" aria-hidden="true"></span>Live Testing</span>
+                        <svg class="pg-success-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+                    </div>
+                </li>
+
+                <!-- Milestone 06 -->
+                <li class="pg-success-card pg-success-reveal" style="--suc-delay: 310ms;">
+                    <div class="pg-success-card-top">
+                        <div class="pg-success-icon-badge" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/><path d="m7 15 2 2 4-4"/></svg>
+                        </div>
+                        <span class="pg-success-num">06</span>
+                    </div>
+                    <p class="pg-success-card-text">Making your first sale.</p>
+                    <div class="pg-success-card-bottom">
+                        <span class="pg-success-tag"><span class="pg-success-tag-dot" aria-hidden="true"></span>Commercial Proof</span>
+                        <svg class="pg-success-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+                    </div>
+                </li>
+
+                <!-- Milestone 07 -->
+                <li class="pg-success-card pg-success-reveal" style="--suc-delay: 360ms;">
+                    <div class="pg-success-card-top">
+                        <div class="pg-success-icon-badge" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m11 17 2 2a1 1 0 0 0 1.4 0l6.6-6.6a2 2 0 0 0 0-2.8l-3.6-3.6a2 2 0 0 0-2.8 0L13 7.6"/><path d="m13 13-3-3a1 1 0 0 0-1.4 0L2 16.6a2 2 0 0 0 0 2.8l3.6 3.6a2 2 0 0 0 2.8 0L11 20.4"/><path d="M8.5 8.5 12 5l3.5 3.5"/></svg>
+                        </div>
+                        <span class="pg-success-num">07</span>
+                    </div>
+                    <p class="pg-success-card-text">Finding a complementary co-founder.</p>
+                    <div class="pg-success-card-bottom">
+                        <span class="pg-success-tag"><span class="pg-success-tag-dot" aria-hidden="true"></span>Team Foundation</span>
+                        <svg class="pg-success-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+                    </div>
+                </li>
+
+                <!-- Milestone 08 -->
+                <li class="pg-success-card pg-success-reveal" style="--suc-delay: 410ms;">
+                    <div class="pg-success-card-top">
+                        <div class="pg-success-icon-badge" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
+                        </div>
+                        <span class="pg-success-num">08</span>
+                    </div>
+                    <p class="pg-success-card-text">Becoming ready for an incubator or accelerator.</p>
+                    <div class="pg-success-card-bottom">
+                        <span class="pg-success-tag"><span class="pg-success-tag-dot" aria-hidden="true"></span>Ecosystem Scale</span>
+                        <svg class="pg-success-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+                    </div>
+                </li>
+
+            </ul>
+        </div>
+    </section>
+
+    <!-- Section 8: The mentor advantage -->
+    <section class="pg-mentor-section" id="mentors" aria-labelledby="mentors-title">
+        <div class="pg-mentor-glow" aria-hidden="true"></div>
+        <div class="pg-mentor-watermark" aria-hidden="true">&ldquo;</div>
+
+        <div class="pg-mentor-container">
+
+            <!-- 1. Perfectly Centered Header Area -->
+            <header class="pg-mentor-header pg-mentor-reveal" style="--men-delay: 0ms;">
+                <div class="pg-mentor-eyebrow">
+                    <span class="pg-mentor-dot" aria-hidden="true"></span>
+                    <span>The Mentor Advantage</span>
+                </div>
+                <h2 class="pg-mentor-title" id="mentors-title">
+                    Learn from people who&rsquo;ve <em>built, launched and operated.</em>
+                </h2>
+                <p class="pg-mentor-desc">
+                    Building Dreams aims to connect student founders with <strong>experienced entrepreneurs</strong>, functional experts and practitioners who can help them navigate <strong>real-world challenges</strong>. Mentorship can cover product, technology, marketing, sales, finance, operations, hiring and fundraising.
+                </p>
+
+                <!-- Functional Mentorship Domain Chips -->
+                <ul class="pg-mentor-chips" role="list">
+                    <li class="pg-mentor-chip">Product &amp; Tech</li>
+                    <li class="pg-mentor-chip">Customer Discovery</li>
+                    <li class="pg-mentor-chip">Early Sales</li>
+                    <li class="pg-mentor-chip">Marketing &amp; Growth</li>
+                    <li class="pg-mentor-chip">Finance &amp; Ops</li>
+                    <li class="pg-mentor-chip">Hiring &amp; Team</li>
+                    <li class="pg-mentor-chip">Fundraising</li>
+                </ul>
+            </header>
+
+            <!-- 4. Distinctive Editorial Quote Card -->
+            <div class="pg-mentor-quote-panel pg-mentor-reveal" style="--men-delay: 180ms;">
+                <div class="pg-mentor-quote-icon" aria-hidden="true">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
+                    </svg>
+                </div>
+                <blockquote class="pg-mentor-quote-text">
+                    &ldquo;The objective is not to provide answers to every question. It is to help founders ask better questions and make better-informed decisions.&rdquo;
+                </blockquote>
+                <div class="pg-mentor-quote-footer">
+                    <span class="pg-mentor-quote-line" aria-hidden="true"></span>
+                    <span class="pg-mentor-quote-caption">The Mentorship Philosophy &middot; Building Dreams</span>
+                    <span class="pg-mentor-quote-line" aria-hidden="true"></span>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Section 7: The mentor advantage -->
-    <section class="pg-section">
-        <div class="pg-container">
-            <div class="pg-head">
-                <span class="pg-eyebrow">The mentor advantage</span>
-                <h2 class="pg-h2">Learn from people who&rsquo;ve <em>built, launched and operated.</em></h2>
-                <p class="pg-sub">Building Dreams aims to connect student founders with experienced entrepreneurs, functional experts and practitioners who can help them navigate real-world challenges. Mentorship can cover product, technology, marketing, sales, finance, operations, hiring and fundraising.</p>
+            <!-- 5. Upgraded Interactive Call-to-Action -->
+            <div class="pg-mentor-cta-row pg-mentor-reveal" style="--men-delay: 280ms;">
+                <a href="../community/" class="pg-mentor-btn">
+                    <span>Explore the mentor network</span>
+                    <span class="pg-mentor-btn-arrow" aria-hidden="true">&rarr;</span>
+                </a>
             </div>
-            <p class="pg-quote">The objective is not to provide answers to every question. It is to help founders ask better questions and make better-informed decisions.</p>
-            <div class="pg-cta-row" style="margin-top:2rem;">
-                <a href="../community/" class="pg-btn pg-btn--ghost">Explore the mentor network &rarr;</a>
-            </div>
-        </div>
-    </section>
 
-    <!-- Section 8: What success looks like -->
-    <section class="pg-section pg-section--tint">
-        <div class="pg-container">
-            <div class="pg-head">
-                <span class="pg-eyebrow">What success looks like</span>
-                <h2 class="pg-h2">Progress is more important than a <em>perfect pitch.</em></h2>
-                <p class="pg-sub">Depending on your starting point, success could mean:</p>
-            </div>
-            <div class="pg-grid pg-grid--3">
-                <div class="pg-card"><p class="pg-card-text">Rejecting an idea before spending heavily on it.</p></div>
-                <div class="pg-card"><p class="pg-card-text">Discovering a customer problem that matters.</p></div>
-                <div class="pg-card"><p class="pg-card-text">Building a prototype.</p></div>
-                <div class="pg-card"><p class="pg-card-text">Getting your first ten active users.</p></div>
-                <div class="pg-card"><p class="pg-card-text">Running a successful pilot.</p></div>
-                <div class="pg-card"><p class="pg-card-text">Making your first sale.</p></div>
-                <div class="pg-card"><p class="pg-card-text">Finding a complementary co-founder.</p></div>
-                <div class="pg-card"><p class="pg-card-text">Becoming ready for an incubator or accelerator.</p></div>
-            </div>
-            <p class="pg-note" style="margin-top:1.5rem;">Not every venture needs funding, and not every idea should become a company. The goal is to make evidence-based decisions and build with greater clarity.</p>
         </div>
     </section>
 
     <!-- Section 9: Program formats -->
-    <section class="pg-section">
-        <div class="pg-container">
-            <div class="pg-head">
-                <span class="pg-eyebrow">Program formats</span>
-                <h2 class="pg-h2">Different ways to <em>work with us.</em></h2>
-            </div>
-            <div class="pg-grid pg-grid--3">
-                <div class="pg-card pg-card--hover"><h3 class="pg-card-title">Founder Cohorts</h3><p class="pg-card-text">A structured group journey for students at similar stages.</p></div>
-                <div class="pg-card pg-card--hover"><h3 class="pg-card-title">Venture-Building Sprints</h3><p class="pg-card-text">Focused execution support for a specific challenge.</p></div>
-                <div class="pg-card pg-card--hover"><h3 class="pg-card-title">Mentor Sessions</h3><p class="pg-card-text">Expert guidance around product, business and growth.</p></div>
-                <div class="pg-card pg-card--hover"><h3 class="pg-card-title">University Entrepreneurship Programs</h3><p class="pg-card-text">Structured initiatives delivered in partnership with universities.</p></div>
-                <div class="pg-card pg-card--hover"><h3 class="pg-card-title">Pitch &amp; Demo Days</h3><p class="pg-card-text">Opportunities to present work, gather feedback and meet relevant ecosystem participants.</p></div>
-            </div>
-        </div>
-    </section>
+    <section class="pg-formats-section" id="formats" aria-labelledby="formats-title">
+        <div class="pg-formats-glow" aria-hidden="true"></div>
+        <div class="pg-formats-container">
 
-    <!-- Section 10: FAQs -->
-    <section class="pg-section pg-section--ivory">
-        <div class="pg-container pg-container--narrow">
-            <div class="pg-head pg-head--center">
-                <span class="pg-eyebrow">FAQs</span>
-                <h2 class="pg-h2">Before you <em>begin.</em></h2>
-            </div>
-            <details class="pg-acc"><summary>Do I need a co-founder?</summary><div class="pg-acc-body"><p>Not to begin. You can start by validating the problem and identify the skills you need as the idea develops.</p></div></details>
-            <details class="pg-acc"><summary>Does Building Dreams provide funding?</summary><div class="pg-acc-body"><p>Building Dreams focuses on venture development and guidance. Investor introductions or funding opportunities may be possible where relevant, but funding is not guaranteed.</p></div></details>
-            <details class="pg-acc"><summary>Do I need a registered company?</summary><div class="pg-acc-body"><p>No. Early exploration and validation can happen before company registration.</p></div></details>
-            <details class="pg-acc"><summary>Can I join if I have already launched my product?</summary><div class="pg-acc-body"><p>Yes. Support can be tailored to your stage, subject to the program&rsquo;s scope.</p></div></details>
-            <details class="pg-acc"><summary>Can I participate while studying full-time?</summary><div class="pg-acc-body"><p>The program should be structured around manageable execution milestones. The final time commitment will be communicated before enrolment.</p></div></details>
-        </div>
-    </section>
-
-    <!-- Section 11: Final CTA -->
-    <section class="pg-section pg-section--tight">
-        <div class="pg-container">
-            <div class="pg-cta-band">
-                <h2 class="pg-h2">You don&rsquo;t need to have it all <em style="color:var(--pg-lime);">figured out.</em></h2>
-                <p>You just need a place to start, a problem to explore and the willingness to build.</p>
-                <div class="pg-cta-row">
-                    <a href="../apply/" class="pg-btn pg-btn--primary">Start Your Venture Journey &rarr;</a>
-                    <a href="../get-started/" class="pg-btn pg-btn--light">Talk to Us</a>
+            <!-- 1. Centered Premium Header -->
+            <header class="pg-formats-header pg-formats-reveal" style="--fmt-delay: 0ms;">
+                <div class="pg-formats-eyebrow">
+                    <span class="pg-formats-dot" aria-hidden="true"></span>
+                    <span>Program Formats</span>
                 </div>
+                <h2 class="pg-formats-title" id="formats-title">
+                    Different ways to <em>work with us.</em>
+                </h2>
+                <p class="pg-formats-sub">
+                    Flexible pathways to turn ambitious ideas into real-world ventures.
+                </p>
+            </header>
+
+            <!-- 3. Balanced 5-Card Responsive Grid -->
+            <ul class="pg-formats-grid" role="list">
+
+                <!-- Card 1 — Founder Cohorts -->
+                <li class="pg-formats-card pg-formats-reveal" style="--fmt-delay: 60ms;">
+                    <div>
+                        <div class="pg-formats-card-top">
+                            <div class="pg-formats-icon-badge" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                            </div>
+                            <span class="pg-formats-num">01</span>
+                        </div>
+                        <div class="pg-formats-card-body">
+                            <h3 class="pg-formats-card-title">Founder Cohorts</h3>
+                            <p class="pg-formats-card-desc">A structured group journey for students at similar stages.</p>
+                        </div>
+                    </div>
+                    <div class="pg-formats-card-bottom">
+                        <span class="pg-formats-tag"><span class="pg-formats-tag-dot" aria-hidden="true"></span>Collaborative Cohort</span>
+                        <span class="pg-formats-arrow" aria-hidden="true">&rarr;</span>
+                    </div>
+                </li>
+
+                <!-- Card 2 — Venture-Building Sprints -->
+                <li class="pg-formats-card pg-formats-reveal" style="--fmt-delay: 110ms;">
+                    <div>
+                        <div class="pg-formats-card-top">
+                            <div class="pg-formats-icon-badge" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                            </div>
+                            <span class="pg-formats-num">02</span>
+                        </div>
+                        <div class="pg-formats-card-body">
+                            <h3 class="pg-formats-card-title">Venture-Building Sprints</h3>
+                            <p class="pg-formats-card-desc">Focused execution support for a specific challenge.</p>
+                        </div>
+                    </div>
+                    <div class="pg-formats-card-bottom">
+                        <span class="pg-formats-tag"><span class="pg-formats-tag-dot" aria-hidden="true"></span>Rapid Execution</span>
+                        <span class="pg-formats-arrow" aria-hidden="true">&rarr;</span>
+                    </div>
+                </li>
+
+                <!-- Card 3 — Mentor Sessions -->
+                <li class="pg-formats-card pg-formats-reveal" style="--fmt-delay: 160ms;">
+                    <div>
+                        <div class="pg-formats-card-top">
+                            <div class="pg-formats-icon-badge" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><line x1="9" y1="10" x2="15" y2="10"/><line x1="12" y1="7" x2="12" y2="13"/></svg>
+                            </div>
+                            <span class="pg-formats-num">03</span>
+                        </div>
+                        <div class="pg-formats-card-body">
+                            <h3 class="pg-formats-card-title">Mentor Sessions</h3>
+                            <p class="pg-formats-card-desc">Expert guidance around product, business and growth.</p>
+                        </div>
+                    </div>
+                    <div class="pg-formats-card-bottom">
+                        <span class="pg-formats-tag"><span class="pg-formats-tag-dot" aria-hidden="true"></span>1:1 Advisory</span>
+                        <span class="pg-formats-arrow" aria-hidden="true">&rarr;</span>
+                    </div>
+                </li>
+
+                <!-- Card 4 — University Entrepreneurship Programs -->
+                <li class="pg-formats-card pg-formats-reveal" style="--fmt-delay: 210ms;">
+                    <div>
+                        <div class="pg-formats-card-top">
+                            <div class="pg-formats-icon-badge" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+                            </div>
+                            <span class="pg-formats-num">04</span>
+                        </div>
+                        <div class="pg-formats-card-body">
+                            <h3 class="pg-formats-card-title">University Entrepreneurship Programs</h3>
+                            <p class="pg-formats-card-desc">Structured initiatives delivered in partnership with universities.</p>
+                        </div>
+                    </div>
+                    <div class="pg-formats-card-bottom">
+                        <span class="pg-formats-tag"><span class="pg-formats-tag-dot" aria-hidden="true"></span>Campus Ecosystem</span>
+                        <span class="pg-formats-arrow" aria-hidden="true">&rarr;</span>
+                    </div>
+                </li>
+
+                <!-- Card 5 — Pitch & Demo Days -->
+                <li class="pg-formats-card pg-formats-reveal" style="--fmt-delay: 260ms;">
+                    <div>
+                        <div class="pg-formats-card-top">
+                            <div class="pg-formats-icon-badge" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                            </div>
+                            <span class="pg-formats-num">05</span>
+                        </div>
+                        <div class="pg-formats-card-body">
+                            <h3 class="pg-formats-card-title">Pitch &amp; Demo Days</h3>
+                            <p class="pg-formats-card-desc">Opportunities to present work, gather feedback and meet relevant ecosystem participants.</p>
+                        </div>
+                    </div>
+                    <div class="pg-formats-card-bottom">
+                        <span class="pg-formats-tag"><span class="pg-formats-tag-dot" aria-hidden="true"></span>Showcase &amp; Network</span>
+                        <span class="pg-formats-arrow" aria-hidden="true">&rarr;</span>
+                    </div>
+                </li>
+
+            </ul>
+
+        </div>
+    </section>
+
+    <!-- Section 10: FAQs — Premium Editorial Accordion -->
+    <section class="bd-faq bd-faq--white bd-faq--compact" id="faq" style="background: #ffffff !important; background-color: #ffffff !important;" aria-labelledby="se-faq-title">
+        <div class="bd-faq-container">
+
+            <!-- LEFT: Editorial column -->
+            <div class="bd-faq-left">
+                <svg class="bd-faq-orbits" viewBox="0 0 520 460" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+                    <ellipse cx="250" cy="230" rx="230" ry="120" stroke="#10483D" stroke-opacity="0.06" stroke-width="1" stroke-dasharray="5 8"/>
+                    <ellipse cx="250" cy="230" rx="160" ry="230" stroke="#FF6835" stroke-opacity="0.06" stroke-width="1" stroke-dasharray="4 7" transform="rotate(24 250 230)"/>
+                    <circle cx="250" cy="230" r="62" stroke="#10483D" stroke-opacity="0.05" stroke-width="1"/>
+                    <circle cx="250" cy="230" r="3.5" fill="#10483D" opacity="0.30"/>
+                    <circle cx="90" cy="120" r="3" fill="#FF6835" opacity="0.35"/>
+                    <circle cx="420" cy="152" r="2.5" fill="#10483D" opacity="0.25"/>
+                    <circle cx="148" cy="360" r="2.5" fill="#82988E" opacity="0.45"/>
+                    <circle cx="384" cy="332" r="3" fill="#FF6835" opacity="0.28"/>
+                </svg>
+
+                <div class="bd-faq-left-inner">
+                    <div class="bd-faq-eyebrow-row">
+                        <span class="bd-faq-rule" aria-hidden="true"></span>
+                        <span class="bd-faq-eyebrow">A LITTLE MORE CLARITY</span>
+                    </div>
+
+                    <h2 class="bd-faq-title" id="se-faq-title">
+                        <span class="bd-faq-title-green">Good questions.</span><br>
+                        <span class="bd-faq-title-orange">Honest answers.</span>
+                    </h2>
+
+                    <p class="bd-faq-support">Still curious? Let's find your starting point.</p>
+
+                    <a href="../apply/" class="bd-faq-cta">
+                        <span class="bd-faq-cta-text">Start Your Venture Journey</span>
+                        <span class="bd-faq-cta-arrow" aria-hidden="true">&#8599;</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- RIGHT: Premium FAQ accordion -->
+            <div class="bd-faq-right">
+                <ul class="bd-faq-list" role="list">
+
+                    <li class="bd-faq-item is-open">
+                        <button type="button" class="bd-faq-q" id="se-faq-q1" aria-expanded="true" aria-controls="se-faq-a1">
+                            <span class="bd-faq-num" aria-hidden="true">01</span>
+                            <span class="bd-faq-question">Do I need a co-founder?</span>
+                            <span class="bd-faq-icon" aria-hidden="true"></span>
+                        </button>
+                        <div class="bd-faq-a" id="se-faq-a1" role="region" aria-labelledby="se-faq-q1" aria-hidden="false">
+                            <div class="bd-faq-a-inner">
+                                <p>Not to begin. You can start by validating the problem and identify the skills you need as the idea develops.</p>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="bd-faq-item">
+                        <button type="button" class="bd-faq-q" id="se-faq-q2" aria-expanded="false" aria-controls="se-faq-a2">
+                            <span class="bd-faq-num" aria-hidden="true">02</span>
+                            <span class="bd-faq-question">Does Building Dreams provide funding?</span>
+                            <span class="bd-faq-icon" aria-hidden="true"></span>
+                        </button>
+                        <div class="bd-faq-a" id="se-faq-a2" role="region" aria-labelledby="se-faq-q2" aria-hidden="true">
+                            <div class="bd-faq-a-inner">
+                                <p>Building Dreams focuses on venture development and guidance. Investor introductions or funding opportunities may be possible where relevant, but funding is not guaranteed.</p>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="bd-faq-item">
+                        <button type="button" class="bd-faq-q" id="se-faq-q3" aria-expanded="false" aria-controls="se-faq-a3">
+                            <span class="bd-faq-num" aria-hidden="true">03</span>
+                            <span class="bd-faq-question">Do I need a registered company?</span>
+                            <span class="bd-faq-icon" aria-hidden="true"></span>
+                        </button>
+                        <div class="bd-faq-a" id="se-faq-a3" role="region" aria-labelledby="se-faq-q3" aria-hidden="true">
+                            <div class="bd-faq-a-inner">
+                                <p>No. Early exploration and validation can happen before company registration.</p>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="bd-faq-item">
+                        <button type="button" class="bd-faq-q" id="se-faq-q4" aria-expanded="false" aria-controls="se-faq-a4">
+                            <span class="bd-faq-num" aria-hidden="true">04</span>
+                            <span class="bd-faq-question">Can I join if I have already launched my product?</span>
+                            <span class="bd-faq-icon" aria-hidden="true"></span>
+                        </button>
+                        <div class="bd-faq-a" id="se-faq-a4" role="region" aria-labelledby="se-faq-q4" aria-hidden="true">
+                            <div class="bd-faq-a-inner">
+                                <p>Yes. Support can be tailored to your stage, subject to the program&rsquo;s scope.</p>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="bd-faq-item">
+                        <button type="button" class="bd-faq-q" id="se-faq-q5" aria-expanded="false" aria-controls="se-faq-a5">
+                            <span class="bd-faq-num" aria-hidden="true">05</span>
+                            <span class="bd-faq-question">Can I participate while studying full-time?</span>
+                            <span class="bd-faq-icon" aria-hidden="true"></span>
+                        </button>
+                        <div class="bd-faq-a" id="se-faq-a5" role="region" aria-labelledby="se-faq-q5" aria-hidden="true">
+                            <div class="bd-faq-a-inner">
+                                <p>The program should be structured around manageable execution milestones. The final time commitment will be communicated before enrolment.</p>
+                            </div>
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 11: Final CTA (Matched with Every great builder starts somewhere) -->
+    <section class="dl-cta-band" aria-labelledby="se-cta-title">
+        <div class="dl-cta-bg" aria-hidden="true">
+            <div class="dl-cta-glow-1"></div>
+            <div class="dl-cta-glow-2"></div>
+        </div>
+        <div class="dl-cta-container">
+            <h2 class="dl-cta-title" id="se-cta-title">
+                You don&rsquo;t need to have it all <em class="dl-cta-serif">figured out.</em>
+            </h2>
+            <p class="dl-cta-desc">
+                You just need a place to start, a problem to explore and the willingness to build.
+            </p>
+            <div class="dl-cta-actions">
+                <a href="../apply/" class="dl-cta-btn dl-cta-btn--primary">
+                    <span>Start Your Venture Journey</span>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                </a>
+                <a href="../get-started/" class="dl-cta-btn dl-cta-btn--secondary">
+                    <span>Talk to Us</span>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                </a>
             </div>
         </div>
     </section>
@@ -244,5 +1348,14 @@
 
 <div data-site-footer></div>
 <script type="module" src="../main.js"></script>
+<script type="module" src="../dreamers-lab-hero.js"></script>
+<script type="module" src="../student-entrepreneurs-opportunity.js"></script>
+<script type="module" src="../dreamers-lab-big-idea.js"></script>
+<script type="module" src="../student-entrepreneurs-pathway.js"></script>
+<script type="module" src="../student-entrepreneurs-sprints.js"></script>
+<script type="module" src="../student-entrepreneurs-services.js"></script>
+<script type="module" src="../student-entrepreneurs-success.js"></script>
+<script type="module" src="../student-entrepreneurs-mentors.js"></script>
+<script type="module" src="../student-entrepreneurs-formats.js"></script>
 </body>
 </html>

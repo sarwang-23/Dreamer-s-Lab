@@ -313,17 +313,27 @@
   justify-content: space-between;
 }
 
+.dl-card-action-btn,
 .dl-card-action-text {
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
   font-family: 'Manrope', sans-serif;
-  font-size: 0.68rem;
+  font-size: 0.72rem;
   font-weight: 700;
   color: #8A8177;
   letter-spacing: 0.02em;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
   transition: color 0.2s ease;
+  text-decoration: none;
 }
 
+.dl-skill-card:hover .dl-card-action-btn,
 .dl-skill-card:hover .dl-card-action-text,
-.dl-skill-card.is-active .dl-card-action-text {
+.dl-card-action-btn:hover {
   color: var(--dls-orange);
 }
 
@@ -795,6 +805,56 @@
   height: 5px;
   border-radius: 50%;
   background: var(--dls-forest);
+}
+
+.dl-modal-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.85rem;
+  margin-top: 1.35rem;
+  padding-top: 1.15rem;
+  border-top: 1px solid rgba(36, 27, 22, 0.08);
+}
+
+.dl-modal-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: var(--dls-forest);
+  color: #FFFFFF;
+  text-decoration: none;
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 800;
+  padding: 0.65rem 1.25rem;
+  border-radius: 999px;
+  transition: all 0.25s ease;
+}
+
+.dl-modal-cta-btn:hover {
+  background: var(--dls-orange);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(255, 90, 36, 0.25);
+  color: #FFFFFF;
+}
+
+.dl-modal-dismiss-btn {
+  background: transparent;
+  border: 1px solid rgba(36, 27, 22, 0.12);
+  color: #5C554E;
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 0.62rem 1.15rem;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.dl-modal-dismiss-btn:hover {
+  background: rgba(36, 27, 22, 0.05);
+  color: var(--dls-charcoal);
 }
 
 /* Animations */

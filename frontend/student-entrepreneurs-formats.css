@@ -1,0 +1,382 @@
+/* ==========================================================================
+   Student Entrepreneurs — "Program Formats" Redesign
+   High-end editorial architecture, perfectly centered header with ambient glow,
+   balanced 5-format cards with bespoke SVG icons, and polished hover states.
+   ========================================================================== */
+
+:root {
+  --fmt-cream: #FCFAF6;
+  --fmt-white: #FFFFFF;
+  --fmt-ink: #1A1817;
+  --fmt-ink-soft: #2D2825;
+  --fmt-body: #615750;
+  --fmt-muted: #8E847C;
+  --fmt-border: #ECE4DA;
+  --fmt-border-hover: rgba(255, 107, 44, 0.38);
+  --fmt-accent: #FF6B2C;
+  --fmt-accent-soft: rgba(255, 107, 44, 0.08);
+  --fmt-accent-border: rgba(255, 107, 44, 0.18);
+  --fmt-shadow-card: 0 4px 18px -2px rgba(33, 26, 23, 0.04), 0 1px 3px rgba(33, 26, 23, 0.02);
+  --fmt-shadow-hover: 0 18px 38px -6px rgba(33, 26, 23, 0.09), 0 4px 14px rgba(255, 107, 44, 0.07);
+  --fmt-radius: 20px;
+  --fmt-transition: 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+/* ── Section Container ───────────────────────────────────────────── */
+.pg-formats-section {
+  position: relative;
+  background-color: var(--fmt-cream);
+  background-image:
+    radial-gradient(900px 520px at 50% 0%, rgba(255, 107, 44, 0.075), transparent 72%),
+    radial-gradient(700px 400px at 80% 90%, rgba(255, 166, 0, 0.025), transparent 65%);
+  padding: clamp(4.8rem, 7.5vw, 6.8rem) 0;
+  border-top: 1px solid var(--fmt-border);
+  border-bottom: 1px solid var(--fmt-border);
+  overflow: hidden;
+}
+
+/* Ambient Radial Glow Behind Header */
+.pg-formats-glow {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(760px, 95vw);
+  height: 380px;
+  background: radial-gradient(circle, rgba(255, 107, 44, 0.09) 0%, rgba(255, 107, 44, 0.02) 50%, transparent 72%);
+  pointer-events: none;
+  filter: blur(45px);
+  z-index: 0;
+}
+
+.pg-formats-container {
+  width: min(1220px, 92vw);
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── 1. Perfectly Centered Header ────────────────────────────────── */
+.pg-formats-header {
+  width: 100%;
+  max-width: 860px;
+  margin: 0 auto clamp(2.8rem, 4.5vw, 3.8rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Centered Eyebrow Pill Badge */
+.pg-formats-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  font-family: 'Manrope', -apple-system, sans-serif;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #71665F;
+  background: var(--fmt-white);
+  border: 1px solid var(--fmt-border);
+  padding: 0.38rem 1.05rem;
+  border-radius: 999px;
+  box-shadow: 0 2px 6px rgba(33, 26, 23, 0.03);
+  margin-bottom: 1.35rem;
+}
+
+.pg-formats-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--fmt-accent);
+  box-shadow: 0 0 0 2.5px rgba(255, 107, 44, 0.22);
+}
+
+/* Centered Headline with Bold + Italic Contrast */
+.pg-formats-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(2.3rem, 5.1vw, 3.6rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.035em;
+  color: var(--fmt-ink);
+  margin: 0 0 1rem;
+  text-wrap: balance;
+  text-align: center;
+}
+
+.pg-formats-title em {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.05em;
+  letter-spacing: -0.01em;
+  color: var(--fmt-accent);
+}
+
+/* Centered Subtitle */
+.pg-formats-sub {
+  font-family: 'Manrope', sans-serif;
+  font-size: clamp(1.05rem, 1.8vw, 1.2rem);
+  font-weight: 500;
+  line-height: 1.6;
+  color: var(--fmt-body);
+  max-width: 620px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* ── 3. Balanced 5-Card Responsive Grid ──────────────────────────── */
+.pg-formats-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.pg-formats-card {
+  flex: 0 1 calc((100% - 3rem) / 3);
+  min-width: 290px;
+  background: var(--fmt-white);
+  border: 1px solid var(--fmt-border);
+  border-radius: var(--fmt-radius);
+  padding: clamp(1.6rem, 2.4vw, 2.1rem) clamp(1.5rem, 2.2vw, 1.9rem);
+  box-shadow: var(--fmt-shadow-card);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+  transition:
+    transform var(--fmt-transition),
+    box-shadow var(--fmt-transition),
+    border-color var(--fmt-transition);
+}
+
+/* Subtle top terracotta accent line on hover */
+.pg-formats-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #FF6B2C, #FFA066);
+  opacity: 0;
+  transform: scaleX(0.4);
+  transform-origin: center;
+  transition: opacity var(--fmt-transition), transform var(--fmt-transition);
+}
+
+.pg-formats-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--fmt-border-hover);
+  box-shadow: var(--fmt-shadow-hover);
+}
+
+.pg-formats-card:hover::before {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+/* Card Top Bar: Icon Badge & Numeral */
+.pg-formats-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.35rem;
+}
+
+.pg-formats-icon-badge {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: #FFF7F2;
+  border: 1px solid var(--fmt-accent-border);
+  color: var(--fmt-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    background-color var(--fmt-transition),
+    color var(--fmt-transition),
+    transform var(--fmt-transition);
+}
+
+.pg-formats-card:hover .pg-formats-icon-badge {
+  background: var(--fmt-accent);
+  color: #FFFFFF;
+  transform: scale(1.05);
+}
+
+.pg-formats-icon-badge svg {
+  width: 22px;
+  height: 22px;
+}
+
+.pg-formats-num {
+  font-family: 'Manrope', monospace, sans-serif;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: var(--fmt-muted);
+  background: #F7F4EF;
+  border: 1px solid #ECE4DA;
+  padding: 0.22rem 0.65rem;
+  border-radius: 6px;
+  transition: color var(--fmt-transition), background-color var(--fmt-transition);
+}
+
+.pg-formats-card:hover .pg-formats-num {
+  color: var(--fmt-accent);
+  background: #FFF4ED;
+  border-color: rgba(255, 107, 44, 0.2);
+}
+
+/* Card Content Area */
+.pg-formats-card-body {
+  margin-bottom: 1.5rem;
+}
+
+.pg-formats-card-title {
+  font-family: 'Outfit', -apple-system, sans-serif;
+  font-size: 1.26rem;
+  font-weight: 750;
+  line-height: 1.32;
+  letter-spacing: -0.02em;
+  color: var(--fmt-ink);
+  margin: 0 0 0.6rem;
+  transition: color var(--fmt-transition);
+}
+
+.pg-formats-card:hover .pg-formats-card-title {
+  color: #1A1817;
+}
+
+.pg-formats-card-desc {
+  font-family: 'Manrope', -apple-system, sans-serif;
+  font-size: 0.98rem;
+  font-weight: 450;
+  line-height: 1.62;
+  color: var(--fmt-body);
+  margin: 0;
+}
+
+/* Card Bottom Track */
+.pg-formats-card-bottom {
+  padding-top: 1.05rem;
+  border-top: 1px solid #F3EDE6;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.pg-formats-tag {
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #8C8077;
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.pg-formats-tag-dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--fmt-accent);
+  opacity: 0.7;
+}
+
+.pg-formats-card:hover .pg-formats-tag {
+  color: var(--fmt-accent);
+}
+
+.pg-formats-arrow {
+  color: #B5ACA4;
+  font-size: 1.15rem;
+  line-height: 1;
+  transition: color var(--fmt-transition), transform var(--fmt-transition);
+}
+
+.pg-formats-card:hover .pg-formats-arrow {
+  color: var(--fmt-accent);
+  transform: translateX(3px);
+}
+
+/* ── 4. Scroll Reveal Animations ─────────────────────────────────── */
+.pg-formats-section .pg-formats-reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 0.7s cubic-bezier(0.2, 0.8, 0.2, 1) var(--fmt-delay, 0ms),
+    transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1) var(--fmt-delay, 0ms);
+  will-change: opacity, transform;
+}
+
+.pg-formats-section .pg-formats-reveal.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── 5. Responsive Breakpoints ───────────────────────────────────── */
+@media (max-width: 1040px) {
+  .pg-formats-card {
+    flex: 0 1 calc((100% - 1.5rem) / 2);
+    min-width: 270px;
+  }
+}
+
+@media (max-width: 640px) {
+  .pg-formats-section {
+    padding: clamp(3.8rem, 8vw, 4.8rem) 0;
+  }
+
+  .pg-formats-title {
+    font-size: clamp(2rem, 8.5vw, 2.5rem);
+  }
+
+  .pg-formats-grid {
+    gap: 1.15rem;
+  }
+
+  .pg-formats-card {
+    flex: 0 1 100%;
+    min-width: 100%;
+    padding: 1.5rem 1.35rem;
+    border-radius: 16px;
+  }
+
+  .pg-formats-card-title {
+    font-size: 1.18rem;
+  }
+
+  .pg-formats-card-desc {
+    font-size: 0.95rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pg-formats-section .pg-formats-reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .pg-formats-card,
+  .pg-formats-card::before,
+  .pg-formats-icon-badge,
+  .pg-formats-num,
+  .pg-formats-arrow {
+    transition: none !important;
+  }
+}

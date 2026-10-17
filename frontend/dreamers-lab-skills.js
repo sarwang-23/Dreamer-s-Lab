@@ -96,18 +96,22 @@ export const SKILLS_DATA = {
 };
 
 export function initDreamersLabSkills() {
-  const section = document.querySelector('.dl-skills-section');
-  if (!section) return;
-
   const modalBackdrop = document.querySelector('.dl-skill-modal-backdrop');
-  const modalCloseBtn = document.querySelector('.dl-modal-close-btn');
-  const modalNumber = document.querySelector('.dl-modal-badge');
-  const modalCategory = document.querySelector('.dl-modal-category');
-  const modalTitle = document.querySelector('.dl-modal-title');
-  const modalQuote = document.querySelector('.dl-modal-quote');
-  const modalConnectionText = document.querySelector('.dl-modal-connection-text');
-  const modalExampleText = document.querySelector('.dl-modal-example-text');
-  const modalHabitsContainer = document.querySelector('.dl-modal-habits-tray');
+  if (!modalBackdrop) return;
+
+  // Mount modal backdrop directly to <body> so overflow:hidden on parent sections never clips it
+  if (modalBackdrop.parentElement && modalBackdrop.parentElement !== document.body) {
+    document.body.appendChild(modalBackdrop);
+  }
+
+  const modalCloseBtn = modalBackdrop.querySelector('.dl-modal-close-btn');
+  const modalNumber = modalBackdrop.querySelector('.dl-modal-badge');
+  const modalCategory = modalBackdrop.querySelector('.dl-modal-category');
+  const modalTitle = modalBackdrop.querySelector('.dl-modal-title');
+  const modalQuote = modalBackdrop.querySelector('.dl-modal-quote');
+  const modalConnectionText = modalBackdrop.querySelector('.dl-modal-connection-text');
+  const modalExampleText = modalBackdrop.querySelector('.dl-modal-example-text');
+  const modalHabitsContainer = modalBackdrop.querySelector('.dl-modal-habits-tray');
 
   let activeTriggerElement = null;
 
@@ -153,72 +157,16 @@ export function initDreamersLabSkills() {
     }
   }
 
-  // ── Skill Exploration Interaction Controller ──────────────────
-  const explorer = section.querySelector('.dl-skills-explorer');
-  const explorerPills = section.querySelectorAll('.dl-explorer-pill');
-  const explorerCardTag = section.querySelector('.dl-explorer-card-tag');
-  const explorerCardTiming = section.querySelector('.dl-explorer-card-timing');
-  const explorerCardTitle = section.querySelector('.dl-explorer-card-title');
-  const explorerCardImpact = section.querySelector('.dl-explorer-card-impact');
-  const explorerCardDesc = section.querySelector('.dl-explorer-card-desc');
-  const explorerPracticeExample = section.querySelector('.dl-practice-example');
-  const explorerExploreBtn = section.querySelector('.dl-explorer-explore-btn');
-
-  let currentExplorerSkillId = '01';
-
-  function updateExplorerDisplay(skillId, shouldScroll = false) {
-    const skill = SKILLS_DATA[skillId];
-    if (!skill) return;
-
-    currentExplorerSkillId = skillId;
-
-    // Update active pill
-    explorerPills.forEach(pill => {
-      const isTarget = pill.getAttribute('data-skill') === skillId;
-      pill.classList.toggle('is-active', isTarget);
-      pill.setAttribute('aria-selected', isTarget ? 'true' : 'false');
-    });
-
-    // Synchronize active card in grid
-    const allCards = section.querySelectorAll('.dl-skill-card');
-    allCards.forEach(card => {
-      const isTarget = card.getAttribute('data-skill') === skillId;
-      card.classList.toggle('is-active', isTarget);
-    });
-
-    // Update card content with smooth animation
-    const explorerCard = section.querySelector('.dl-explorer-card');
-    if (explorerCard) {
-      explorerCard.style.animation = 'none';
-      void explorerCard.offsetWidth; // Trigger reflow
-      explorerCard.style.animation = 'dlFadeScaleIn 0.35s cubic-bezier(0.16, 1, 0.3, 1)';
-    }
-
-    if (explorerCardTag) explorerCardTag.textContent = `${skill.id} · ${skill.category}`;
-    if (explorerCardTiming) explorerCardTiming.textContent = skill.timing;
-    if (explorerCardTitle) explorerCardTitle.textContent = skill.title;
-    if (explorerCardImpact) explorerCardImpact.textContent = `“${skill.quote}”`;
-    if (explorerCardDesc) explorerCardDesc.textContent = skill.journeyConnection;
-    if (explorerPracticeExample) explorerPracticeExample.textContent = skill.practiceExample;
-
-    // Only scroll into view if on mobile/narrow viewports where explorer is stacked below
-    if (shouldScroll && window.innerWidth < 1180 && explorer) {
-      explorer.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-    }
-  }
-
-  // Bind Skill Cards in the Grid
-  const skillCards = section.querySelectorAll('.dl-skill-card');
+  // Bind accessibility attributes and keyboard events to cards
+  const skillCards = document.querySelectorAll('.dl-skill-card');
   skillCards.forEach(card => {
     const skillId = card.getAttribute('data-skill');
+    if (!skillId) return;
+
     card.setAttribute('role', 'button');
     card.setAttribute('tabindex', '0');
     card.setAttribute('aria-haspopup', 'dialog');
     card.setAttribute('aria-label', `Explore ${SKILLS_DATA[skillId]?.title || 'skill'} details`);
-
-    card.addEventListener('click', () => {
-      openSkillModal(skillId, card);
-    });
 
     card.addEventListener('keydown', (e) => {
       if (e.key === 'Enter' || e.key === ' ') {
@@ -228,46 +176,42 @@ export function initDreamersLabSkills() {
     });
   });
 
-  // Modal Close Events
-  if (modalCloseBtn) {
-    modalCloseBtn.addEventListener('click', closeSkillModal);
-  }
+  // Global document delegation for click events (guarantees click works anywhere on card or Explore button)
+  document.addEventListener('click', (e) => {
+    // 1. Close button or dismiss button
+    if (e.target.closest('.dl-modal-close-btn') || e.target.closest('.dl-modal-dismiss-btn')) {
+      e.preventDefault();
+      closeSkillModal();
+      return;
+    }
 
-  if (modalBackdrop) {
-    modalBackdrop.addEventListener('click', (e) => {
-      if (e.target === modalBackdrop) {
-        closeSkillModal();
+    // 2. Backdrop click (outside modal window)
+    if (e.target === modalBackdrop) {
+      closeSkillModal();
+      return;
+    }
+
+    // 3. Skill card or Explore skill button / arrow
+    const card = e.target.closest('.dl-skill-card');
+    if (card) {
+      const skillId = card.getAttribute('data-skill');
+      if (skillId) {
+        e.preventDefault();
+        openSkillModal(skillId, card);
       }
-    });
-  }
+    }
+  });
 
+  // Keyboard escape
   window.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && modalBackdrop?.classList.contains('is-open')) {
       closeSkillModal();
     }
   });
 
-  // Explorer Pill Buttons
-  explorerPills.forEach(pill => {
-    pill.addEventListener('click', () => {
-      const skillId = pill.getAttribute('data-skill');
-      updateExplorerDisplay(skillId, false);
-    });
-
-    pill.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        const skillId = pill.getAttribute('data-skill');
-        updateExplorerDisplay(skillId, false);
-      }
-    });
-  });
-
-  if (explorerExploreBtn) {
-    explorerExploreBtn.addEventListener('click', () => {
-      openSkillModal(currentExplorerSkillId, explorerExploreBtn);
-    });
-  }
+  // Expose helpers globally
+  window.openSkillModal = openSkillModal;
+  window.closeSkillModal = closeSkillModal;
 }
 
 // Auto-init on DOMContentLoaded

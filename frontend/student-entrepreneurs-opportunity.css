@@ -1,0 +1,296 @@
+/* ==========================================================================
+   Student Entrepreneurs — "The Opportunity" section
+   Centered editorial header · 3x2 question card grid · closing statement
+   Reuses the page's fonts (Outfit, Instrument Serif) and pg-* motion idioms.
+   ========================================================================== */
+
+.pg-opportunity {
+    --opp-bg: #FFFFFF;
+    --opp-surface: #FCFAF6;
+    --opp-ink: #201914;
+    --opp-body: rgba(32, 25, 20, 0.68);
+    --opp-orange: #FF6535;
+    --opp-orange-ink: #C1440E;
+    --opp-orange-soft: rgba(255, 101, 53, 0.09);
+    --opp-orange-line: rgba(255, 101, 53, 0.26);
+    --opp-border: rgba(32, 25, 20, 0.09);
+    --opp-border-hover: rgba(255, 101, 53, 0.38);
+    --opp-shadow: 0 16px 36px -28px rgba(32, 25, 20, 0.4);
+    --opp-shadow-hover: 0 30px 54px -26px rgba(32, 25, 20, 0.42);
+    --opp-radius: 22px;
+    --opp-ease: cubic-bezier(0.22, 1, 0.36, 1);
+
+    position: relative;
+    background: var(--opp-bg);
+    padding: clamp(3rem, 6vw, 5.25rem) 0;
+}
+
+.pg-opp-container {
+    width: 100%;
+    max-width: 1160px;
+    margin: 0 auto;
+    padding-inline: clamp(1.25rem, 5vw, 3rem);
+}
+
+/* ── Centered header ─────────────────────────────────────────────── */
+.pg-opp-head {
+    max-width: 840px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.pg-opp-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    font-family: var(--pg-sans);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--opp-orange-ink);
+    background: var(--opp-orange-soft);
+    border: 1px solid var(--opp-orange-line);
+    border-radius: 100px;
+    padding: 0.4rem 1rem;
+    margin-bottom: 1.35rem;
+}
+
+.pg-opp-eyebrow::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--opp-orange);
+}
+
+.pg-opp-title {
+    font-family: var(--pg-sans);
+    font-size: clamp(2.1rem, 5.2vw, 3.9rem);
+    font-weight: 800;
+    letter-spacing: -0.035em;
+    line-height: 1.06;
+    color: var(--opp-ink);
+    margin: 0 0 1.2rem;
+    text-wrap: balance;
+}
+
+.pg-opp-title em {
+    font-family: var(--pg-serif);
+    font-style: italic;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+    color: var(--opp-orange);
+}
+
+.pg-opp-lead {
+    font-family: var(--pg-sans);
+    font-size: clamp(1rem, 1.5vw, 1.15rem);
+    line-height: 1.8;
+    color: var(--opp-body);
+    max-width: 66ch;
+    margin: 0 auto;
+}
+
+/* ── Questions block ─────────────────────────────────────────────── */
+.pg-opp-questions {
+    margin-top: clamp(2.25rem, 4.5vw, 3.5rem);
+}
+
+.pg-opp-subhead {
+    font-family: var(--pg-sans);
+    font-size: clamp(1.3rem, 2.4vw, 1.75rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.25;
+    color: var(--opp-ink);
+    text-align: center;
+    text-wrap: balance;
+    margin: 0 auto clamp(1.5rem, 3vw, 2.25rem);
+    max-width: 32ch;
+}
+
+.pg-opp-grid {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: clamp(1rem, 1.8vw, 1.5rem);
+}
+
+.pg-opp-cell {
+    display: flex;
+}
+
+.pg-opp-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    flex: 1 1 auto;
+    width: 100%;
+    min-height: clamp(140px, 14vw, 162px);
+    background: var(--opp-surface);
+    border: 1px solid var(--opp-border);
+    border-radius: var(--opp-radius);
+    padding: clamp(1.35rem, 2vw, 1.6rem);
+    box-shadow: var(--opp-shadow);
+    overflow: hidden;
+    transition: transform 0.35s var(--opp-ease),
+                box-shadow 0.35s var(--opp-ease),
+                border-color 0.35s ease;
+}
+
+.pg-opp-card::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 3px;
+    background: var(--opp-orange);
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform 0.45s var(--opp-ease);
+}
+
+.pg-opp-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--opp-shadow-hover);
+    border-color: var(--opp-border-hover);
+}
+
+.pg-opp-card:hover::after {
+    transform: scaleX(1);
+}
+
+.pg-opp-card-idx {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 11px;
+    font-family: var(--pg-sans);
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    color: var(--opp-orange-ink);
+    background: var(--opp-orange-soft);
+    border: 1px solid var(--opp-orange-line);
+    transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.pg-opp-card:hover .pg-opp-card-idx {
+    background: var(--opp-orange);
+    border-color: var(--opp-orange);
+    color: #fff;
+}
+
+.pg-opp-card-q {
+    font-family: var(--pg-sans);
+    font-size: clamp(1rem, 1.25vw, 1.12rem);
+    font-weight: 600;
+    line-height: 1.5;
+    letter-spacing: -0.01em;
+    color: var(--opp-ink);
+    margin: 0;
+}
+
+/* ── Closing statement ───────────────────────────────────────────── */
+.pg-opp-closing {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.95rem;
+    max-width: 760px;
+    margin: clamp(2.25rem, 4.5vw, 3.5rem) auto 0;
+    text-align: center;
+    font-family: var(--pg-sans);
+    font-size: clamp(1.05rem, 1.6vw, 1.25rem);
+    font-weight: 600;
+    line-height: 1.6;
+    color: var(--opp-ink);
+}
+
+.pg-opp-closing-mark {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--opp-orange-soft);
+    border: 1px solid var(--opp-orange-line);
+    color: var(--opp-orange);
+    transition: transform 0.35s var(--opp-ease),
+                background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.pg-opp-closing-mark svg {
+    width: 18px;
+    height: 18px;
+}
+
+.pg-opp-closing:hover .pg-opp-closing-mark {
+    background: var(--opp-orange);
+    border-color: var(--opp-orange);
+    color: #fff;
+    transform: translateX(4px);
+}
+
+/* ── Scroll reveal (JS gated; visible when JS is absent) ─────────── */
+.pg-opp-ready .pg-opp-reveal {
+    opacity: 0;
+    transform: translateY(26px);
+    transition: opacity 0.7s var(--opp-ease), transform 0.7s var(--opp-ease);
+}
+
+.pg-opp-ready .pg-opp-reveal.is-revealed {
+    opacity: 1;
+    transform: none;
+}
+
+.pg-opp-ready .pg-opp-cell:nth-child(1) { transition-delay: 0.05s; }
+.pg-opp-ready .pg-opp-cell:nth-child(2) { transition-delay: 0.10s; }
+.pg-opp-ready .pg-opp-cell:nth-child(3) { transition-delay: 0.15s; }
+.pg-opp-ready .pg-opp-cell:nth-child(4) { transition-delay: 0.20s; }
+.pg-opp-ready .pg-opp-cell:nth-child(5) { transition-delay: 0.25s; }
+.pg-opp-ready .pg-opp-cell:nth-child(6) { transition-delay: 0.30s; }
+
+/* ── Responsive ──────────────────────────────────────────────────── */
+@media (max-width: 900px) {
+    .pg-opp-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    .pg-opp-grid {
+        grid-template-columns: 1fr;
+    }
+    .pg-opp-card {
+        min-height: 0;
+    }
+    .pg-opp-closing {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+
+/* ── Reduced motion ──────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+    .pg-opp-ready .pg-opp-reveal {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+    }
+    .pg-opp-card,
+    .pg-opp-card::after,
+    .pg-opp-card-idx,
+    .pg-opp-closing-mark {
+        transition: none !important;
+    }
+}

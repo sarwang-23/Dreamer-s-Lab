@@ -57,17 +57,21 @@ export const AUDIENCE_DATA = {
 };
 
 export function initWhoIsItFor() {
-  const section = document.querySelector('.dl-who-section');
-  if (!section) return;
-
   const modalBackdrop = document.querySelector('.dl-who-modal-backdrop');
-  const modalCloseBtn = document.querySelector('.dl-who-modal-close');
-  const modalBadge = document.querySelector('.dl-who-modal-badge');
-  const modalTitle = document.querySelector('.dl-who-modal-title');
-  const modalQuote = document.querySelector('.dl-who-modal-quote');
-  const modalSupportText = document.querySelector('.dl-who-modal-support');
-  const modalExperienceText = document.querySelector('.dl-who-modal-experience');
-  const modalTakeawayText = document.querySelector('.dl-who-modal-takeaway');
+  if (!modalBackdrop) return;
+
+  // Ensure modal backdrop is attached directly to <body> so overflow:hidden on parent sections never clips it
+  if (modalBackdrop.parentElement && modalBackdrop.parentElement !== document.body) {
+    document.body.appendChild(modalBackdrop);
+  }
+
+  const modalCloseBtn = modalBackdrop.querySelector('.dl-who-modal-close');
+  const modalBadge = modalBackdrop.querySelector('.dl-who-modal-badge');
+  const modalTitle = modalBackdrop.querySelector('.dl-who-modal-title');
+  const modalQuote = modalBackdrop.querySelector('.dl-who-modal-quote');
+  const modalSupportText = modalBackdrop.querySelector('.dl-who-modal-support');
+  const modalExperienceText = modalBackdrop.querySelector('.dl-who-modal-experience');
+  const modalTakeawayText = modalBackdrop.querySelector('.dl-who-modal-takeaway');
 
   let activeTriggerElement = null;
 
@@ -104,8 +108,8 @@ export function initWhoIsItFor() {
     }
   }
 
-  // Bind audience cards
-  const cards = section.querySelectorAll('.dl-who-card');
+  // Bind accessibility attributes and keyboard events to cards
+  const cards = document.querySelectorAll('.dl-who-card');
   cards.forEach(card => {
     const profileId = card.getAttribute('data-profile');
     if (!profileId) return;
@@ -115,10 +119,6 @@ export function initWhoIsItFor() {
     card.setAttribute('aria-haspopup', 'dialog');
     card.setAttribute('aria-label', `Explore ${AUDIENCE_DATA[profileId]?.title || 'profile'} details`);
 
-    card.addEventListener('click', () => {
-      openProfileModal(profileId, card);
-    });
-
     card.addEventListener('keydown', (e) => {
       if (e.key === 'Enter' || e.key === ' ') {
         e.preventDefault();
@@ -127,23 +127,42 @@ export function initWhoIsItFor() {
     });
   });
 
-  if (modalCloseBtn) {
-    modalCloseBtn.addEventListener('click', closeProfileModal);
-  }
+  // Global document delegation for click events (guarantees click works anywhere on card or Explore button)
+  document.addEventListener('click', (e) => {
+    // 1. Close button or dismiss button
+    if (e.target.closest('.dl-who-modal-close') || e.target.closest('.dl-who-modal-dismiss-btn')) {
+      e.preventDefault();
+      closeProfileModal();
+      return;
+    }
 
-  if (modalBackdrop) {
-    modalBackdrop.addEventListener('click', (e) => {
-      if (e.target === modalBackdrop) {
-        closeProfileModal();
+    // 2. Backdrop click (outside modal window)
+    if (e.target === modalBackdrop) {
+      closeProfileModal();
+      return;
+    }
+
+    // 3. Card or Explore button click
+    const card = e.target.closest('.dl-who-card');
+    if (card) {
+      const profileId = card.getAttribute('data-profile');
+      if (profileId) {
+        e.preventDefault();
+        openProfileModal(profileId, card);
       }
-    });
-  }
+    }
+  });
 
+  // Keyboard escape
   window.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && modalBackdrop?.classList.contains('is-open')) {
       closeProfileModal();
     }
   });
+
+  // Expose helpers globally
+  window.openProfileModal = openProfileModal;
+  window.closeProfileModal = closeProfileModal;
 }
 
 // Auto initialize

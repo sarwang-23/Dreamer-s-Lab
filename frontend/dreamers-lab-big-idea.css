@@ -12,6 +12,48 @@
   border-top: 1px solid rgba(44, 26, 16, 0.08);
 }
 
+/* Cream / Ivory Background Variant with Generous Vertical Height */
+.dl-idea-section--cream,
+#starting-point.dl-idea-section {
+  background: #F7F4ED;
+  padding: clamp(5.5rem, 9.5vh, 7.8rem) 0 clamp(5.5rem, 9.5vh, 7.8rem);
+  border-top: 1px solid rgba(44, 26, 16, 0.08);
+  border-bottom: 1px solid rgba(44, 26, 16, 0.08);
+}
+
+.dl-idea-section--cream::before,
+#starting-point.dl-idea-section::before {
+  display: none;
+  background: none;
+}
+
+.dl-idea-section--cream .dl-idea-eyebrow-pill,
+#starting-point .dl-idea-eyebrow-pill {
+  background: #FFFFFF;
+  border-color: rgba(44, 26, 16, 0.12);
+  box-shadow: 0 2px 8px rgba(44, 26, 16, 0.04);
+}
+
+.dl-idea-section--cream .dl-idea-flow-strip,
+#starting-point .dl-idea-flow-strip {
+  background: #FFFFFF;
+  border-color: rgba(44, 26, 16, 0.1);
+  box-shadow: 0 3px 12px rgba(44, 26, 16, 0.04);
+}
+
+.dl-idea-section--cream .dl-stage-card,
+#starting-point .dl-stage-card {
+  min-height: 440px;
+  box-shadow:
+    0 16px 36px -8px rgba(31, 22, 16, 0.09),
+    0 2px 8px rgba(31, 22, 16, 0.04);
+}
+
+.dl-idea-section--cream .dl-idea-header--left,
+#starting-point .dl-idea-header--left {
+  margin-bottom: clamp(2.5rem, 4.5vh, 3.5rem);
+}
+
 /* Subtle Architectural Grid Background */
 .dl-idea-section::before {
   content: '';
@@ -37,6 +79,22 @@
   text-align: center;
   max-width: 900px;
   margin: 0 auto clamp(2rem, 3.5vh, 2.8rem);
+}
+
+.dl-idea-header--left {
+  text-align: left;
+  margin-left: 0;
+  margin-right: auto;
+  max-width: 820px;
+}
+
+.dl-idea-header--left .dl-idea-lead {
+  margin-left: 0;
+  margin-right: auto;
+}
+
+.dl-idea-header--left .dl-idea-flow-strip {
+  margin-left: 0;
 }
 
 .dl-idea-eyebrow-pill {
@@ -451,6 +509,19 @@
   border-top-color: rgba(44, 26, 16, 0.08);
 }
 
+.dl-stage-focus {
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.76rem;
+  line-height: 1.45;
+  color: #5C5040;
+  margin: 0 0 0.85rem;
+}
+
+.dl-stage-focus strong {
+  color: #1F1610;
+  font-weight: 700;
+}
+
 .dl-stage-cta {
   display: inline-flex;
   align-items: center;
@@ -459,6 +530,7 @@
   font-size: 0.82rem;
   font-weight: 700;
   color: #5C5040;
+  text-decoration: none;
   transition: all 0.25s ease;
 }
 

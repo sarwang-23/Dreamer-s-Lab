@@ -7872,6 +7872,11 @@ body {
     isolation: isolate;
 }
 
+.bd-faq--white {
+    --bd-ivory: #FFFFFF;
+    background: #FFFFFF !important;
+}
+
 .bd-faq-container {
     position: relative;
     z-index: 1;
@@ -10438,8 +10443,15 @@ h1, h2, h3, h4 {
 /* ── 12. FAQ SECTION (#faq) ── */
 .bd-faq {
     padding: 96px 0 !important;
-    background: #F7F4EA !important;
+    background: var(--bd-ivory, #F7F4EA) !important;
     position: relative !important;
+}
+.bd-faq.bd-faq--white,
+#faq.bd-faq--white,
+.bd-faq--white {
+    --bd-ivory: #FFFFFF !important;
+    background: #FFFFFF !important;
+    background-color: #FFFFFF !important;
 }
 
 .bd-faq-container {

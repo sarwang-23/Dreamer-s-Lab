@@ -1,0 +1,282 @@
+/* ==========================================================================
+   Student Entrepreneurs — "Our Venture-Building Pathway" section
+   Premium editorial redesign: centered kicker + headline, a balanced
+   4 + 3 pathway grid, refined experience cards, and restrained motion.
+   Reuses the page fonts (Outfit sans · Instrument Serif editorial).
+   ========================================================================== */
+
+.pg-pathway {
+    /* ── Warm-neutral editorial palette ───────────────────────────── */
+    --path-bg: #FFFFFF;
+    --path-surface: #FFFFFF;
+    --path-ink: #211A16;
+    --path-body: #6B5B52;
+    --path-accent: #FF6338;          /* decorative accents / rules        */
+    --path-accent-mid: #D24A1C;      /* large display text (AA large)     */
+    --path-accent-deep: #A63A14;     /* small text (AA)                   */
+    --path-border: #E8E2D8;
+    --path-border-hover: rgba(255, 99, 56, 0.45);
+
+    /* ── Geometry & motion ────────────────────────────────────────── */
+    --path-radius: 18px;
+    --path-pad: clamp(22px, 1.7vw, 26px);
+    --path-gap-x: clamp(16px, 1.5vw, 22px);
+    --path-gap-y: clamp(20px, 1.9vw, 26px);
+    --path-cols: 4;
+    --path-ease: cubic-bezier(0.22, 1, 0.36, 1);
+
+    --path-shadow:
+        0 1px 3px rgba(33, 26, 22, 0.04),
+        0 14px 28px -18px rgba(33, 26, 22, 0.16);
+    --path-shadow-hover:
+        0 4px 10px rgba(33, 26, 22, 0.06),
+        0 24px 44px -20px rgba(33, 26, 22, 0.22);
+
+    position: relative;
+    background: var(--path-bg);
+    padding: clamp(4rem, 7.5vw, 7rem) 0;
+    border-top: 1px solid rgba(44, 26, 16, 0.08);
+}
+
+.pg-pathway-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-inline: clamp(1.25rem, 5vw, 3rem);
+}
+
+/* ── 1. Centered editorial heading ───────────────────────────────── */
+.pg-pathway-head {
+    max-width: 820px;
+    margin: 0 auto clamp(2.75rem, 5vw, 4.25rem);
+    text-align: center;
+}
+
+.pg-pathway-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.7rem;
+    font-family: var(--pg-sans);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--path-accent-deep);
+    margin: 0 0 1.4rem;
+}
+
+.pg-pathway-eyebrow::before,
+.pg-pathway-eyebrow::after {
+    content: '';
+    width: 26px;
+    height: 1.5px;
+    border-radius: 2px;
+    background: var(--path-accent);
+    opacity: 0.85;
+}
+
+.pg-pathway-title {
+    font-family: var(--pg-sans);
+    font-size: clamp(2.25rem, 5.1vw, 3.5rem);
+    font-weight: 800;
+    line-height: 1.06;
+    letter-spacing: -0.035em;
+    color: var(--path-ink);
+    margin: 0;
+    text-wrap: balance;
+}
+
+.pg-pathway-title em {
+    font-family: var(--pg-serif);
+    font-style: italic;
+    font-weight: 400;
+    font-size: 1.03em;
+    letter-spacing: -0.005em;
+    color: var(--path-accent-mid);
+}
+
+/* ── 2. Balanced 4 + 3 pathway grid ──────────────────────────────── */
+.pg-pathway-grid {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    column-gap: var(--path-gap-x);
+    row-gap: var(--path-gap-y);
+}
+
+.pg-pathway-cell {
+    position: relative;
+    flex: 0 0 calc((100% - (var(--path-cols) - 1) * var(--path-gap-x)) / var(--path-cols));
+    display: flex;
+}
+
+/* ── 3. Premium experience cards ─────────────────────────────────── */
+.pg-pathway-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    width: 100%;
+    background: var(--path-surface);
+    border: 1px solid var(--path-border);
+    border-radius: var(--path-radius);
+    padding: var(--path-pad);
+    box-shadow: var(--path-shadow);
+    transition:
+        transform 0.4s var(--path-ease),
+        box-shadow 0.4s var(--path-ease),
+        border-color 0.4s ease;
+}
+
+/* short, restrained orange accent rule above each number */
+.pg-pathway-card::before {
+    content: '';
+    display: block;
+    width: 30px;
+    height: 3px;
+    border-radius: 999px;
+    background: var(--path-accent);
+    margin-bottom: 1.15rem;
+    transition: width 0.4s var(--path-ease);
+}
+
+.pg-pathway-num {
+    display: block;
+    font-family: var(--pg-serif);
+    font-weight: 400;
+    font-size: clamp(1.55rem, 1.9vw, 1.8rem);
+    line-height: 1;
+    letter-spacing: 0.01em;
+    color: var(--path-accent-mid);
+    margin: 0 0 0.5rem;
+    transition: transform 0.4s var(--path-ease), color 0.4s ease;
+}
+
+.pg-pathway-name {
+    font-family: var(--pg-sans);
+    font-size: 1.03rem;
+    font-weight: 600;
+    line-height: 1.3;
+    letter-spacing: -0.01em;
+    color: var(--path-ink);
+    margin: 0 0 0.55rem;
+}
+
+.pg-pathway-desc {
+    font-family: var(--pg-sans);
+    font-size: 0.91rem;
+    line-height: 1.64;
+    color: var(--path-body);
+    margin: 0;
+}
+
+/* ── Card hover micro-interactions ───────────────────────────────── */
+.pg-pathway-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--path-border-hover);
+    box-shadow: var(--path-shadow-hover);
+}
+
+.pg-pathway-card:hover::before {
+    width: 46px;
+}
+
+.pg-pathway-card:hover .pg-pathway-num {
+    transform: translateX(3px);
+    color: var(--path-accent-deep);
+}
+
+/* ── 6. Delicate journey connector (desktop 4 + 3 only) ──────────── */
+@media (min-width: 1025px) {
+    .pg-pathway-cell::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        right: calc(-1 * var(--path-gap-x) + 4px);
+        width: calc(var(--path-gap-x) - 8px);
+        height: 1px;
+        transform: translateY(-50%);
+        background-image: repeating-linear-gradient(
+            90deg,
+            rgba(33, 26, 22, 0.22) 0 4px,
+            transparent 4px 9px
+        );
+        pointer-events: none;
+    }
+
+    /* no connector after the last card of each desktop row */
+    .pg-pathway-cell:nth-child(4)::after,
+    .pg-pathway-cell:nth-child(7)::after {
+        display: none;
+    }
+}
+
+/* ── 5. Scroll reveal (JS gated · visible with no-JS) ────────────── */
+.pg-pathway-ready .pg-pathway-reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition:
+        opacity 0.65s var(--path-ease) var(--path-delay, 0ms),
+        transform 0.65s var(--path-ease) var(--path-delay, 0ms);
+}
+
+.pg-pathway-ready .pg-pathway-reveal.is-revealed {
+    opacity: 1;
+    transform: none;
+}
+
+/* ── 4. Responsive grid configuration ────────────────────────────── */
+@media (max-width: 1024px) {
+    .pg-pathway {
+        --path-cols: 3;
+    }
+}
+
+@media (max-width: 760px) {
+    .pg-pathway {
+        --path-cols: 2;
+    }
+}
+
+@media (max-width: 520px) {
+    .pg-pathway {
+        --path-cols: 1;
+        --path-pad: 22px;
+    }
+
+    .pg-pathway-head {
+        margin-bottom: 2.25rem;
+    }
+
+    .pg-pathway-title {
+        font-size: clamp(1.9rem, 8.5vw, 2.4rem);
+    }
+
+    .pg-pathway-eyebrow {
+        letter-spacing: 0.18em;
+    }
+
+    .pg-pathway-eyebrow::before,
+    .pg-pathway-eyebrow::after {
+        width: 18px;
+    }
+}
+
+/* ── Motion & contrast preferences ───────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+    .pg-pathway-ready .pg-pathway-reveal {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+    }
+
+    .pg-pathway-card,
+    .pg-pathway-card::before,
+    .pg-pathway-num {
+        transition: none !important;
+    }
+}

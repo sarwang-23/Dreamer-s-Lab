@@ -314,15 +314,22 @@
   border-radius: 6px;
 }
 
+.dl-who-card-action-btn,
 .dl-who-card-action-text {
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
   font-family: 'Manrope', sans-serif;
-  font-size: 0.72rem;
+  font-size: 0.74rem;
   font-weight: 700;
   color: #8A8177;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 0.35rem;
-  transition: color 0.2s ease;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
 }
 
 .dl-who-card-arrow {
@@ -330,12 +337,16 @@
   transition: transform 0.2s ease;
 }
 
-.dl-who-card:hover .dl-who-card-action-text {
+.dl-who-card:hover .dl-who-card-action-btn,
+.dl-who-card:hover .dl-who-card-action-text,
+.dl-who-card-action-btn:hover {
   color: #FF5A24;
 }
 
-.dl-who-card:hover .dl-who-card-arrow {
-  transform: translateX(3px);
+.dl-who-card:hover .dl-who-card-arrow,
+.dl-who-card-action-btn:hover .dl-who-card-arrow {
+  transform: translateX(4px);
+  color: #FF5A24;
 }
 
 /* Card 5 Special Highlight Horizontal Layout */
@@ -681,6 +692,56 @@
   line-height: 1.5;
   color: #241B16;
   margin: 0;
+}
+
+.dl-who-modal-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.85rem;
+  margin-top: 1.35rem;
+  padding-top: 1.15rem;
+  border-top: 1px solid rgba(36, 27, 22, 0.08);
+}
+
+.dl-who-modal-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: #173B2B;
+  color: #FFFFFF;
+  text-decoration: none;
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 800;
+  padding: 0.65rem 1.25rem;
+  border-radius: 999px;
+  transition: all 0.25s ease;
+}
+
+.dl-who-modal-cta-btn:hover {
+  background: #FF5A24;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(255, 90, 36, 0.25);
+  color: #FFFFFF;
+}
+
+.dl-who-modal-dismiss-btn {
+  background: transparent;
+  border: 1px solid rgba(36, 27, 22, 0.12);
+  color: #5C554E;
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 0.62rem 1.15rem;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.dl-who-modal-dismiss-btn:hover {
+  background: rgba(36, 27, 22, 0.05);
+  color: #241B16;
 }
 
 /* ── 5. Responsive Behavior ──────────────────────────────────────── */

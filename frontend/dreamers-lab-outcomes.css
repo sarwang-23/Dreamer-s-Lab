@@ -383,3 +383,143 @@
     transition: none !important;
   }
 }
+
+/* ── FULL WIDTH FINAL CTA BANNER (MATCHED WITH 'READY TO BEGIN YOUR JOURNEY') ── */
+.dl-cta-band {
+  position: relative;
+  width: 100%;
+  padding: clamp(5rem, 8vw, 7.5rem) 0;
+  background:
+    radial-gradient(ellipse 75% 65% at 10% 30%, rgba(255, 107, 26, 0.14) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 55% at 88% 70%, rgba(200, 240, 80, 0.08) 0%, transparent 55%),
+    linear-gradient(155deg, #062f29 0%, #073D33 45%, #084038 100%);
+  overflow: hidden;
+  isolation: isolate;
+  text-align: center;
+}
+
+.dl-cta-bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.dl-cta-glow-1 {
+  position: absolute;
+  top: -80px;
+  left: -60px;
+  width: 520px;
+  height: 520px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 107, 26, 0.18) 0%, transparent 65%);
+}
+
+.dl-cta-glow-2 {
+  position: absolute;
+  bottom: -100px;
+  right: -60px;
+  width: 460px;
+  height: 460px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(200, 240, 80, 0.10) 0%, transparent 65%);
+}
+
+.dl-cta-container {
+  position: relative;
+  z-index: 1;
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 0 clamp(1.5rem, 5vw, 3.5rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(1.4rem, 2.5vw, 2rem);
+}
+
+.dl-cta-title {
+  font-family: 'Outfit', system-ui, sans-serif;
+  font-weight: 800;
+  font-size: clamp(2.4rem, 5.5vw, 4.2rem);
+  line-height: 1.08;
+  letter-spacing: -0.035em;
+  color: #F2EFDF;
+  margin: 0;
+}
+
+.dl-cta-serif {
+  font-family: 'Playfair Display', 'Instrument Serif', Georgia, serif;
+  font-style: italic;
+  font-weight: 600;
+  background: linear-gradient(110deg, #C8F050 0%, #e2f97a 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.dl-cta-desc {
+  font-size: clamp(1rem, 1.5vw, 1.18rem);
+  line-height: 1.75;
+  color: rgba(242, 239, 223, 0.72);
+  max-width: 56ch;
+  margin: 0;
+}
+
+.dl-cta-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 0.6rem;
+}
+
+.dl-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: 'Outfit', system-ui, sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 0.9rem 2rem;
+  border-radius: 100px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.22s ease, box-shadow 0.22s ease, background 0.22s ease;
+}
+
+.dl-cta-btn svg {
+  transition: transform 0.22s ease;
+  flex-shrink: 0;
+}
+
+.dl-cta-btn:hover svg {
+  transform: translateX(4px);
+}
+
+.dl-cta-btn--primary {
+  background: #FF6B1A;
+  color: #fff;
+  border: none;
+  box-shadow: 0 8px 24px -4px rgba(255, 107, 26, 0.45);
+}
+
+.dl-cta-btn--primary:hover {
+  background: #e55a0f;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px -4px rgba(255, 107, 26, 0.6);
+}
+
+.dl-cta-btn--secondary {
+  background: rgba(242, 239, 223, 0.08);
+  color: #F2EFDF;
+  border: 1px solid rgba(242, 239, 223, 0.2);
+  backdrop-filter: blur(8px);
+}
+
+.dl-cta-btn--secondary:hover {
+  background: rgba(242, 239, 223, 0.16);
+  border-color: rgba(242, 239, 223, 0.35);
+  transform: translateY(-2px);
+}
+

@@ -529,72 +529,74 @@ document.addEventListener("DOMContentLoaded", () => {
    ========================================================================== */
 (function initFaq() {
     function setupFaq() {
-        const root = document.querySelector('.bd-faq');
-        if (!root) return;
+        const roots = Array.from(document.querySelectorAll('.bd-faq'));
+        if (!roots.length) return;
 
-        const items = Array.from(root.querySelectorAll('.bd-faq-item'));
-        const buttons = Array.from(root.querySelectorAll('.bd-faq-q'));
-        if (!items.length || !buttons.length) return;
+        roots.forEach(root => {
+            const items = Array.from(root.querySelectorAll('.bd-faq-item'));
+            const buttons = Array.from(root.querySelectorAll('.bd-faq-q'));
+            if (!items.length || !buttons.length) return;
 
-        const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-        function setOpen(item, open) {
-            const btn = item.querySelector('.bd-faq-q');
-            const panel = item.querySelector('.bd-faq-a');
-            item.classList.toggle('is-open', open);
-            if (btn) btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-            if (panel) panel.setAttribute('aria-hidden', open ? 'false' : 'true');
-        }
+            function setOpen(item, open) {
+                const btn = item.querySelector('.bd-faq-q');
+                const panel = item.querySelector('.bd-faq-a');
+                item.classList.toggle('is-open', open);
+                if (btn) btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+                if (panel) panel.setAttribute('aria-hidden', open ? 'false' : 'true');
+            }
 
-        function toggle(item) {
-            if (!item) return;
-            const willOpen = !item.classList.contains('is-open');
-            items.forEach(it => setOpen(it, false));
-            if (willOpen) setOpen(item, true);
-        }
+            function toggle(item) {
+                if (!item) return;
+                const willOpen = !item.classList.contains('is-open');
+                items.forEach(it => setOpen(it, false));
+                if (willOpen) setOpen(item, true);
+            }
 
-        // Make the DOM state the single source of truth on load.
-        items.forEach(it => setOpen(it, it.classList.contains('is-open')));
+            // Make the DOM state the single source of truth on load.
+            items.forEach(it => setOpen(it, it.classList.contains('is-open')));
 
-        buttons.forEach((btn, i) => {
-            btn.addEventListener('click', () => toggle(btn.closest('.bd-faq-item')));
+            buttons.forEach((btn, i) => {
+                btn.addEventListener('click', () => toggle(btn.closest('.bd-faq-item')));
 
-            btn.addEventListener('keydown', e => {
-                let idx = null;
-                if (e.key === 'ArrowDown') idx = (i + 1) % buttons.length;
-                else if (e.key === 'ArrowUp') idx = (i - 1 + buttons.length) % buttons.length;
-                else if (e.key === 'Home') idx = 0;
-                else if (e.key === 'End') idx = buttons.length - 1;
-                if (idx === null) return;
-                e.preventDefault();
-                buttons[idx].focus();
+                btn.addEventListener('keydown', e => {
+                    let idx = null;
+                    if (e.key === 'ArrowDown') idx = (i + 1) % buttons.length;
+                    else if (e.key === 'ArrowUp') idx = (i - 1 + buttons.length) % buttons.length;
+                    else if (e.key === 'Home') idx = 0;
+                    else if (e.key === 'End') idx = buttons.length - 1;
+                    if (idx === null) return;
+                    e.preventDefault();
+                    buttons[idx].focus();
+                });
             });
+
+            /* Entrance animation (skipped when reduced motion is preferred) */
+            if (!reduce) {
+                root.classList.add('bd-faq--animate');
+                const io = new IntersectionObserver(([entry]) => {
+                    if (entry.isIntersecting) {
+                        root.classList.add('is-visible');
+                        io.disconnect();
+                    }
+                }, { threshold: 0.12 });
+                io.observe(root);
+            }
+
+            /* Functional CTA — smooth scroll to the existing contact CTA section */
+            const cta = root.querySelector('.bd-faq-cta');
+            if (cta) {
+                cta.addEventListener('click', e => {
+                    const href = cta.getAttribute('href') || '';
+                    if (!href.startsWith('#')) return;
+                    const target = document.getElementById(href.slice(1));
+                    if (!target) return;
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+                });
+            }
         });
-
-        /* Entrance animation (skipped when reduced motion is preferred) */
-        if (!reduce) {
-            root.classList.add('bd-faq--animate');
-            const io = new IntersectionObserver(([entry]) => {
-                if (entry.isIntersecting) {
-                    root.classList.add('is-visible');
-                    io.disconnect();
-                }
-            }, { threshold: 0.12 });
-            io.observe(root);
-        }
-
-        /* Functional CTA — smooth scroll to the existing contact CTA section */
-        const cta = root.querySelector('.bd-faq-cta');
-        if (cta) {
-            cta.addEventListener('click', e => {
-                const href = cta.getAttribute('href') || '';
-                if (!href.startsWith('#')) return;
-                const target = document.getElementById(href.slice(1));
-                if (!target) return;
-                e.preventDefault();
-                target.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
-            });
-        }
     }
 
     // script.js is loaded before the FAQ markup, so defer until the DOM exists.

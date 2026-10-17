@@ -1,0 +1,404 @@
+/* ==========================================================================
+   Student Entrepreneurs — "The Mentor Advantage" Redesign
+   High-end editorial architecture, perfectly centered header with ambient glow,
+   refined mentorship typography, elegant editorial quote card, and upgraded CTA.
+   ========================================================================== */
+
+:root {
+  --men-cream: #FAF7F2;
+  --men-white: #FFFFFF;
+  --men-ink: #1A1817;
+  --men-ink-soft: #2D2825;
+  --men-body: #5C534C;
+  --men-muted: #8A7E75;
+  --men-border: #ECE3D9;
+  --men-border-card: #E8DFD4;
+  --men-accent: #FF6B2C;
+  --men-accent-soft: rgba(255, 107, 44, 0.08);
+  --men-accent-glow: rgba(255, 107, 44, 0.09);
+  --men-shadow-quote: 0 12px 36px -4px rgba(33, 26, 23, 0.05), 0 2px 8px rgba(33, 26, 23, 0.02);
+  --men-transition: 0.28s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+/* ── Section Container ───────────────────────────────────────────── */
+.pg-mentor-section {
+  position: relative;
+  background-color: #FFFFFF;
+  background-image: none;
+  padding: clamp(3.8rem, 6vw, 5.2rem) 0;
+  border-top: 1px solid var(--men-border);
+  border-bottom: 1px solid var(--men-border);
+  overflow: hidden;
+}
+
+/* Ambient Radial Glow */
+.pg-mentor-glow {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(720px, 95vw);
+  height: 320px;
+  background: radial-gradient(circle, rgba(255, 107, 44, 0.08) 0%, rgba(255, 107, 44, 0.015) 50%, transparent 72%);
+  pointer-events: none;
+  filter: blur(45px);
+  z-index: 0;
+}
+
+/* Faint Abstract Editorial Quotation Watermark */
+.pg-mentor-watermark {
+  position: absolute;
+  top: 42%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-size: clamp(11rem, 18vw, 18rem);
+  font-style: italic;
+  line-height: 1;
+  color: #1A1817;
+  opacity: 0.02;
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+}
+
+.pg-mentor-container {
+  width: min(1140px, 92vw);
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* ── 1. Perfectly Centered Header ────────────────────────────────── */
+.pg-mentor-header {
+  width: 100%;
+  max-width: 920px;
+  margin: 0 auto clamp(1.8rem, 3vw, 2.4rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Centered Badge */
+.pg-mentor-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  font-family: 'Manrope', -apple-system, sans-serif;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #71665F;
+  background: #FAF7F2;
+  border: 1px solid var(--men-border);
+  padding: 0.35rem 1rem;
+  border-radius: 999px;
+  box-shadow: 0 2px 6px rgba(33, 26, 23, 0.03);
+  margin-bottom: 1.15rem;
+}
+
+.pg-mentor-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--men-accent);
+  box-shadow: 0 0 0 2.5px rgba(255, 107, 44, 0.22);
+}
+
+/* Centered Main Headline */
+.pg-mentor-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(2.1rem, 4.4vw, 3.25rem);
+  font-weight: 800;
+  line-height: 1.12;
+  letter-spacing: -0.035em;
+  color: var(--men-ink);
+  margin: 0 0 1.15rem;
+  max-width: 880px;
+  text-wrap: balance;
+  text-align: center;
+}
+
+.pg-mentor-title em {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.05em;
+  letter-spacing: -0.01em;
+  color: var(--men-accent);
+}
+
+/* Centered Description */
+.pg-mentor-desc {
+  font-family: 'Manrope', -apple-system, sans-serif;
+  font-size: clamp(1.02rem, 1.5vw, 1.14rem);
+  font-weight: 450;
+  line-height: 1.64;
+  color: var(--men-body);
+  max-width: 820px;
+  margin: 0 auto;
+  text-align: center;
+  text-wrap: pretty;
+}
+
+.pg-mentor-desc strong {
+  font-weight: 750;
+  color: var(--men-ink);
+}
+
+/* Mentorship Scope Chips */
+.pg-mentor-chips {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin: 1.25rem auto 0;
+  padding: 0;
+  list-style: none;
+  max-width: 820px;
+}
+
+.pg-mentor-chip {
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #6E645C;
+  background: #FAF7F2;
+  border: 1px solid var(--men-border);
+  padding: 0.28rem 0.82rem;
+  border-radius: 999px;
+  box-shadow: 0 1px 3px rgba(33, 26, 23, 0.02);
+  transition: all var(--men-transition);
+}
+
+.pg-mentor-chip:hover {
+  background: var(--men-white);
+  border-color: rgba(255, 107, 44, 0.35);
+  color: var(--men-accent);
+  transform: translateY(-1px);
+}
+
+/* ── 4. Elegant Editorial Quote Card ─────────────────────────────── */
+.pg-mentor-quote-panel {
+  max-width: 800px;
+  width: 100%;
+  margin: clamp(1.8rem, 3vw, 2.5rem) auto 0;
+  background: #FAF7F2;
+  border: 1px solid var(--men-border-card);
+  border-radius: 20px;
+  padding: clamp(1.6rem, 2.8vw, 2.25rem) clamp(1.6rem, 3.8vw, 2.85rem);
+  box-shadow: var(--men-shadow-quote);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform var(--men-transition), box-shadow var(--men-transition), border-color var(--men-transition);
+}
+
+/* Top Subtle Terracotta Accent Line */
+.pg-mentor-quote-panel::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #FF6B2C, transparent);
+  opacity: 0.85;
+}
+
+.pg-mentor-quote-panel:hover {
+  transform: translateY(-3px);
+  border-color: rgba(255, 107, 44, 0.32);
+  box-shadow: 0 14px 34px -6px rgba(33, 26, 23, 0.07), 0 3px 10px rgba(255, 107, 44, 0.04);
+}
+
+.pg-mentor-quote-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #FFF5EE;
+  border: 1px solid rgba(255, 107, 44, 0.2);
+  color: var(--men-accent);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.95rem;
+  transition: transform var(--men-transition), background-color var(--men-transition), color var(--men-transition);
+}
+
+.pg-mentor-quote-panel:hover .pg-mentor-quote-icon {
+  background: var(--men-accent);
+  color: #FFFFFF;
+  transform: scale(1.05);
+}
+
+.pg-mentor-quote-text {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-size: clamp(1.35rem, 2.4vw, 1.75rem);
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.42;
+  color: #211D1A;
+  margin: 0 0 1rem;
+  text-wrap: balance;
+  max-width: 700px;
+}
+
+.pg-mentor-quote-footer {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.85rem;
+  width: 100%;
+}
+
+.pg-mentor-quote-line {
+  flex: 1;
+  max-width: 50px;
+  height: 1px;
+  background: #E5DDD3;
+}
+
+.pg-mentor-quote-caption {
+  font-family: 'Manrope', -apple-system, sans-serif;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--men-muted);
+}
+
+/* ── 5. Upgraded Interactive Call-to-Action ──────────────────────── */
+.pg-mentor-cta-row {
+  margin-top: clamp(1.8rem, 3vw, 2.5rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pg-mentor-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  background: var(--men-ink);
+  color: #FFFFFF;
+  font-family: 'Manrope', -apple-system, sans-serif;
+  font-size: 0.94rem;
+  font-weight: 750;
+  letter-spacing: 0.02em;
+  padding: 0.88rem 2.15rem;
+  border-radius: 999px;
+  border: 1px solid var(--men-ink);
+  text-decoration: none;
+  box-shadow: 0 4px 16px rgba(26, 24, 23, 0.12);
+  transition:
+    background-color var(--men-transition),
+    border-color var(--men-transition),
+    box-shadow var(--men-transition),
+    transform var(--men-transition);
+  cursor: pointer;
+}
+
+.pg-mentor-btn-arrow {
+  display: inline-block;
+  font-size: 1.15rem;
+  line-height: 1;
+  transition: transform var(--men-transition);
+}
+
+.pg-mentor-btn:hover {
+  background: #2B2521;
+  border-color: var(--men-accent);
+  box-shadow: 0 10px 26px -2px rgba(26, 24, 23, 0.18), 0 0 0 3.5px rgba(255, 107, 44, 0.2);
+  transform: translateY(-2px);
+  color: #FFFFFF;
+}
+
+.pg-mentor-btn:hover .pg-mentor-btn-arrow {
+  transform: translateX(4px);
+}
+
+.pg-mentor-btn:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255, 107, 44, 0.45);
+}
+
+/* ── 6. Scroll Reveal Animations ─────────────────────────────────── */
+.pg-mentor-section .pg-mentor-reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 0.7s cubic-bezier(0.2, 0.8, 0.2, 1) var(--men-delay, 0ms),
+    transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1) var(--men-delay, 0ms);
+  will-change: opacity, transform;
+}
+
+.pg-mentor-section .pg-mentor-reveal.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Responsive Rules ────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .pg-mentor-section {
+    padding: clamp(4rem, 8.5vw, 5.5rem) 0;
+  }
+
+  .pg-mentor-title {
+    font-size: clamp(2rem, 8vw, 2.6rem);
+  }
+
+  .pg-mentor-desc {
+    font-size: 1.04rem;
+    line-height: 1.68;
+  }
+
+  .pg-mentor-quote-panel {
+    padding: 2rem 1.45rem;
+    border-radius: 20px;
+  }
+
+  .pg-mentor-quote-text {
+    font-size: clamp(1.35rem, 5.5vw, 1.65rem);
+  }
+
+  .pg-mentor-quote-line {
+    max-width: 32px;
+  }
+
+  .pg-mentor-btn {
+    width: 100%;
+    max-width: 360px;
+    padding: 0.92rem 1.8rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pg-mentor-section .pg-mentor-reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .pg-mentor-quote-panel,
+  .pg-mentor-quote-icon,
+  .pg-mentor-chip,
+  .pg-mentor-btn,
+  .pg-mentor-btn-arrow {
+    transition: none !important;
+  }
+}
