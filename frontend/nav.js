@@ -32,7 +32,7 @@ function navMarkup() {
       </details>
       <a href="${url('community/')}">Mentors &amp; Community</a>
       <a href="${url('insights/')}">Insights</a>
-      <a href="${url('get-started/')}">Contact</a>
+      <a href="${url('contact/')}">Contact</a>
     </div>
     <div class="nd-nav-actions" id="primary-navigation-actions">
       <a href="${url('get-started/')}" class="nd-btn-primary nd-nav-cta">Get Started</a>

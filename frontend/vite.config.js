@@ -15,6 +15,7 @@ const pages = [
   'insights',
   'parents',
   'get-started',
+  'contact',
   'apply',
   'faq',
   'privacy-policy',
