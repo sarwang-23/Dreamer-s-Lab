@@ -77,6 +77,12 @@
       n.classList.toggle('is-active', idx === currentStageIndex);
     });
 
+    // Sync visible stage track items
+    var trackItems = document.querySelectorAll('.ins-track-item');
+    trackItems.forEach(function (t, idx) {
+      t.classList.toggle('is-active', idx === currentStageIndex);
+    });
+
     if (activeNode) {
       var stage = activeNode.getAttribute('data-stage') || '01';
       var title = activeNode.getAttribute('data-title') || 'STAGE';
