@@ -189,6 +189,8 @@ export function mountFooter() {
       <div class="bd-footer__colophon">
         <small>&copy; ${new Date().getFullYear()} Building Dreams</small>
         <div class="bd-footer__utility">
+          <a href="${url('privacy-policy/')}">Privacy Policy</a>
+          <a href="${url('terms/')}">Terms of Use</a>
           <a href="${url('faq/')}">FAQs</a>
           <a class="bd-footer__back" href="#top">Back to top <span aria-hidden="true">&uarr;</span></a>
         </div>
