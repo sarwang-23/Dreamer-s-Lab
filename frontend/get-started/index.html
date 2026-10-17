@@ -3,334 +3,370 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Program Applications | Building Dreams</title>
-  <meta name="description" content="Take the first step towards building something real. Apply to Dreamers Lab or the Building Dreams University Founder Program.">
-  <meta property="og:title" content="Program Applications | Building Dreams">
-  <meta property="og:description" content="Tell us about yourself, what interests you and what you'd like to explore. You don't need a perfect idea or an impressive pitch to begin.">
+  <title>Get Started / Contact | Building Dreams</title>
+  <meta name="description" content="Tell us what you want to build, explore or create. Building Dreams will help you find the most relevant program or partnership pathway.">
+  <meta property="og:title" content="Get Started / Contact | Building Dreams">
+  <meta property="og:description" content="Every journey starts with a conversation.">
   <meta property="og:type" content="website">
-  <meta name="theme-color" content="#FAF7F0">
+  <meta name="theme-color" content="#f8f6f0">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../style.css">
   <link rel="stylesheet" href="../responsive.css">
   <link rel="stylesheet" href="../pages.css">
-  <link rel="stylesheet" href="../apply.css">
+  <link rel="stylesheet" href="./contact.css">
 </head>
-<body id="top" class="pg-body">
-
+<body id="top" class="pg-body ct-page">
 <main class="pg-main">
 
-  <!-- ── Hero Section ───────────────────────────────────────────── -->
-  <header class="app-hero">
-    <div class="pg-container app-hero-inner">
-      <div class="app-eyebrow">
-        <span class="app-eyebrow-dot" aria-hidden="true"></span>
-        <span>Program Applications &middot; Cohort Enrolments</span>
+  <!-- ======================================================================
+       SECTION 1: HERO
+       "Every journey starts with a conversation."
+       Full viewport height so Section 2 is pushed below the fold.
+       ====================================================================== -->
+  <header class="ct-hero-section" id="hero">
+    <div class="ct-hero-grid-bg" aria-hidden="true"></div>
+    <div class="ct-hero-glow" aria-hidden="true"></div>
+
+    <div class="ct-container">
+      <div class="ct-hero-content">
+        <span class="ct-eyebrow">
+          <span>&#10022;</span>
+          <span>01 / GET STARTED &amp; CONTACT</span>
+        </span>
+        <h1 class="ct-hero-title">
+          Every journey starts with a <em class="ct-serif-em">conversation.</em>
+        </h1>
+        <p class="ct-hero-lead">
+          Tell us a little about what you want to build, explore or create. We&rsquo;ll help you identify the most relevant Building Dreams program or partnership pathway.
+        </p>
+
+        <!-- Trust Badges Strip -->
+        <div class="ct-hero-badges">
+          <div class="ct-badge-pill">
+            <span class="ct-badge-dot" aria-hidden="true"></span>
+            <span>1&ndash;2 Business Day Response</span>
+          </div>
+          <div class="ct-badge-pill">
+            <span class="ct-badge-dot" aria-hidden="true"></span>
+            <span>Tailored Program Pathways</span>
+          </div>
+          <div class="ct-badge-pill">
+            <span class="ct-badge-dot" aria-hidden="true"></span>
+            <span>Direct Ecosystem Access</span>
+          </div>
+        </div>
+
+        <!-- Scroll down indicator prompt -->
+        <div class="ct-hero-scroll-prompt">
+          <a href="#inquiry-form" class="ct-scroll-btn">
+            <span>Choose your pathway</span>
+            <span class="ct-scroll-arrow" aria-hidden="true">&darr;</span>
+          </a>
+        </div>
       </div>
-      <h1 class="app-title">Take the first step towards building something <em>real.</em></h1>
-      <p class="app-lead">Tell us about yourself, what interests you and what you&rsquo;d like to explore. You don&rsquo;t need a perfect idea or an impressive pitch to begin.</p>
     </div>
   </header>
 
-  <!-- ── Track Switcher Tabs ──────────────────────────────────── -->
-  <div class="app-switcher-wrap">
-    <div class="app-switcher" role="tablist" aria-label="Program track selector">
-      <button type="button" class="app-tab-btn is-active" data-track-tab="dreamers-lab" role="tab" aria-selected="true" aria-controls="panel-dreamers-lab" id="tab-dreamers-lab">
-        <span>For Dreamers Lab</span>
-        <span class="app-tab-badge">Grades 9&ndash;12</span>
-      </button>
-      <button type="button" class="app-tab-btn" data-track-tab="university" role="tab" aria-selected="false" aria-controls="panel-university" id="tab-university">
-        <span>For University Founders</span>
-        <span class="app-tab-badge">Higher Ed &middot; Startups</span>
-      </button>
-    </div>
-  </div>
+  <!-- ======================================================================
+       SECTION 2: CHOOSE YOUR JOURNEY (FORM)
+       "Let's get started" — Refined interactive layout
+       ====================================================================== -->
+  <section class="ct-section ct-section--alt" id="inquiry-form">
+    <div class="ct-container ct-container--narrow">
+      <div class="ct-head ct-head--center">
+        <span class="ct-eyebrow">02 / CHOOSE YOUR JOURNEY</span>
+        <h2 class="ct-h2">Let&rsquo;s get <em class="ct-serif-em">started.</em></h2>
+        <p class="ct-sub">Choose the option that best describes you.</p>
+      </div>
 
-  <div class="pg-container" style="padding-bottom: clamp(3rem, 6vh, 5rem);">
+      <div class="ct-form-card" id="ct-form-card">
+        <div class="ct-form-header">
+          <div class="ct-form-header-info">
+            <span class="ct-step-tag">Step 1 of 2</span>
+            <h3 class="ct-form-header-title">Select your pathway</h3>
+          </div>
+          <span class="ct-step-indicator-tag">5 Pathways</span>
+        </div>
 
-    <!-- =========================================================
-         TRACK 1: DREAMERS LAB APPLICATION
-         ========================================================= -->
-    <div class="app-track-panel is-active" data-track-panel="dreamers-lab" id="panel-dreamers-lab" role="tabpanel" aria-labelledby="tab-dreamers-lab">
-      <div class="app-card app-form-wrap">
+        <form class="ct-form" id="contact-enquiry-form" novalidate>
+          <!-- Radio Options Group with custom styled tiles -->
+          <div class="ct-radio-group" role="radiogroup" aria-label="Choose your pathway">
+            <label class="ct-radio-tile is-selected" for="journey-school">
+              <div class="ct-radio-left">
+                <input type="radio" id="journey-school" name="journey" value="school-student-or-parent" checked>
+                <span class="ct-radio-label-text">I&rsquo;m a school student or parent</span>
+              </div>
+              <span class="ct-radio-tag">Dreamers Lab</span>
+            </label>
 
-        <!-- Form Node -->
-        <form class="app-form-node pg-form" style="max-width:100%; padding:0; background:transparent; border:none;" novalidate>
-          <div class="app-card-head">
-            <span class="app-card-eyebrow">&#10022; School Student Cohort</span>
-            <h2 class="app-card-title">Dreamers Lab Application</h2>
-            <p class="app-card-sub">Designed for high school students (Grades 9&ndash;12) and their parents or guardians to learn venture-building through hands-on experimentation.</p>
+            <label class="ct-radio-tile" for="journey-university">
+              <div class="ct-radio-left">
+                <input type="radio" id="journey-university" name="journey" value="university-student-or-founder">
+                <span class="ct-radio-label-text">I&rsquo;m a university student or aspiring founder</span>
+              </div>
+              <span class="ct-radio-tag ct-radio-tag--slate">Founders &amp; Students</span>
+            </label>
+
+            <label class="ct-radio-tile" for="journey-institution">
+              <div class="ct-radio-left">
+                <input type="radio" id="journey-institution" name="journey" value="institution-representative">
+                <span class="ct-radio-label-text">I&rsquo;m representing a school, university or institution</span>
+              </div>
+              <span class="ct-radio-tag ct-radio-tag--teal">Institutions</span>
+            </label>
+
+            <label class="ct-radio-tile" for="journey-mentor">
+              <div class="ct-radio-left">
+                <input type="radio" id="journey-mentor" name="journey" value="mentor-or-community-partner">
+                <span class="ct-radio-label-text">I&rsquo;d like to become a mentor or community partner</span>
+              </div>
+              <span class="ct-radio-tag ct-radio-tag--slate">Mentorship</span>
+            </label>
+
+            <label class="ct-radio-tile" for="journey-other">
+              <div class="ct-radio-left">
+                <input type="radio" id="journey-other" name="journey" value="something-else">
+                <span class="ct-radio-label-text">Something else</span>
+              </div>
+              <span class="ct-radio-tag ct-radio-tag--slate">General Inquiry</span>
+            </label>
           </div>
 
-          <div class="pg-form-grid">
-            <!-- Student Information -->
-            <div class="app-fieldset-title">Student Information</div>
+          <!-- Step 2 Divider -->
+          <div class="ct-form-step-divider">
+            <span class="ct-step-divider-line"></span>
+            <span class="ct-step-divider-text">Step 2 &middot; Your details &amp; goals</span>
+            <span class="ct-step-divider-line"></span>
+          </div>
 
-            <div class="pg-field">
-              <label class="pg-label" for="dl-name">Student&rsquo;s Name <span style="color:var(--pg-orange);">*</span></label>
-              <input class="pg-input" type="text" id="dl-name" name="student_name" placeholder="e.g. Aarav Sharma" required>
+          <!-- Input Fields 2-Column Grid -->
+          <div class="ct-fields-grid">
+            <div class="ct-field">
+              <label class="ct-label" for="gs-name">Full name <span class="ct-req" aria-hidden="true">*</span></label>
+              <div class="ct-input-wrap">
+                <svg class="ct-field-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+                <input class="ct-input" type="text" id="gs-name" name="name" placeholder="Your name" required autocomplete="name">
+              </div>
             </div>
 
-            <div class="pg-field">
-              <label class="pg-label" for="dl-grade">Grade <span style="color:var(--pg-orange);">*</span></label>
-              <select class="pg-select" id="dl-grade" name="grade" required>
-                <option value="" disabled selected>Select current grade</option>
-                <option value="Grade 9">Grade 9</option>
-                <option value="Grade 10">Grade 10</option>
-                <option value="Grade 11">Grade 11</option>
-                <option value="Grade 12">Grade 12</option>
-                <option value="Gap Year / Recent Graduate">Gap Year / Recent High School</option>
-              </select>
+            <div class="ct-field">
+              <label class="ct-label" for="gs-email">Email address <span class="ct-req" aria-hidden="true">*</span></label>
+              <div class="ct-input-wrap">
+                <svg class="ct-field-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+                  <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                </svg>
+                <input class="ct-input" type="email" id="gs-email" name="email" placeholder="you@example.com" required autocomplete="email">
+              </div>
             </div>
 
-            <div class="pg-field pg-field--full">
-              <label class="pg-label" for="dl-school">School <span style="color:var(--pg-orange);">*</span></label>
-              <input class="pg-input" type="text" id="dl-school" name="school" placeholder="Current school or institution name" required>
+            <div class="ct-field">
+              <label class="ct-label" for="gs-phone">Phone number</label>
+              <div class="ct-input-wrap">
+                <svg class="ct-field-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                </svg>
+                <input class="ct-input" type="tel" id="gs-phone" name="phone" placeholder="Your contact number" autocomplete="tel">
+              </div>
             </div>
 
-            <!-- Parent / Guardian Information -->
-            <div class="app-fieldset-title">Parent / Guardian Details</div>
-
-            <div class="pg-field">
-              <label class="pg-label" for="dl-parent-name">Parent/Guardian Name <span style="color:var(--pg-orange);">*</span></label>
-              <input class="pg-input" type="text" id="dl-parent-name" name="parent_name" placeholder="e.g. Priya Sharma" required>
+            <div class="ct-field">
+              <label class="ct-label" for="gs-org">School, university or organisation <span class="ct-label-optional">(if applicable)</span></label>
+              <div class="ct-input-wrap">
+                <svg class="ct-field-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M3 21h18"></path>
+                  <path d="M5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16"></path>
+                  <path d="M9 9h1"></path>
+                  <path d="M9 13h1"></path>
+                  <path d="M9 17h1"></path>
+                  <path d="M14 9h1"></path>
+                  <path d="M14 13h1"></path>
+                  <path d="M14 17h1"></path>
+                </svg>
+                <input class="ct-input" type="text" id="gs-org" name="organisation" placeholder="Organisation name" autocomplete="organization">
+              </div>
             </div>
 
-            <div class="pg-field">
-              <label class="pg-label" for="dl-parent-email">Parent/Guardian Email <span style="color:var(--pg-orange);">*</span></label>
-              <input class="pg-input" type="email" id="dl-parent-email" name="parent_email" placeholder="parent@example.com" required>
-            </div>
-
-            <div class="pg-field pg-field--full">
-              <label class="pg-label" for="dl-parent-phone">Parent/Guardian Phone <span style="color:var(--pg-orange);">*</span></label>
-              <input class="pg-input" type="tel" id="dl-parent-phone" name="parent_phone" placeholder="+91 98765 43210" required>
-            </div>
-
-            <!-- Goals & Interests -->
-            <div class="app-fieldset-title">Application Questions</div>
-
-            <div class="pg-field pg-field--full">
-              <label class="pg-label" for="dl-interests">What interests the student? <span style="color:var(--pg-orange);">*</span></label>
-              <textarea class="pg-textarea" id="dl-interests" name="interests" placeholder="Tell us about the hobbies, tech, creative pursuits, or topics that excite you..." required></textarea>
-            </div>
-
-            <div class="pg-field pg-field--full">
-              <label class="pg-label" for="dl-idea">Is there a problem or idea they&rsquo;d like to explore?</label>
-              <textarea class="pg-textarea" id="dl-idea" name="idea" placeholder="Share a problem in your school, neighbourhood, or the world you want to solve (rough ideas are totally welcome!)..."></textarea>
-            </div>
-
-            <div class="pg-field pg-field--full">
-              <label class="pg-label" for="dl-why">Why would they like to join? <span style="color:var(--pg-orange);">*</span></label>
-              <textarea class="pg-textarea" id="dl-why" name="why" placeholder="What are you hoping to learn or achieve through Building Dreams?" required></textarea>
-            </div>
-
-            <div class="pg-field pg-field--full">
-              <label class="pg-label" for="dl-accessibility">Availability and relevant accessibility needs</label>
-              <textarea class="pg-textarea" id="dl-accessibility" name="accessibility" placeholder="Weekend/evening preferences, schedule constraints, or specific accessibility accommodations..."></textarea>
+            <div class="ct-field ct-field--full">
+              <label class="ct-label" for="gs-looking">Tell us what you&rsquo;re looking for <span class="ct-req" aria-hidden="true">*</span></label>
+              <div class="ct-textarea-wrap">
+                <textarea class="ct-textarea" id="gs-looking" name="looking" placeholder="Your idea, program interest, partnership needs or questions..." required></textarea>
+              </div>
             </div>
           </div>
 
-          <div class="pg-form-actions" style="margin-top: 1.75rem;">
-            <button type="submit" class="pg-btn pg-btn--primary" style="padding: 0.95rem 2.2rem; font-size: 1.02rem;">
-              <span>Submit Dreamers Lab Application &rarr;</span>
-            </button>
-            <span class="pg-form-note">Takes ~3 minutes &middot; Cohort admissions on rolling review</span>
+          <!-- Submit Button -->
+          <button type="submit" class="ct-submit-btn" id="ct-submit-btn">
+            <span>Prepare My Enquiry</span>
+            <span class="ct-btn-arrow" aria-hidden="true">&rarr;</span>
+          </button>
+
+          <!-- Disclaimer / Trust Note -->
+          <div class="ct-form-note-box">
+            <svg class="ct-note-lock" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+              <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+            </svg>
+            <p class="ct-form-note">
+              This demo form prepares your enquiry in the conversation. The published website should connect the form to your email, CRM or application system before launch.
+            </p>
+          </div>
+
+          <!-- Success Message -->
+          <div class="ct-form-success" id="ct-form-success" role="status" aria-live="polite">
+            <strong>Thank you.</strong> Your enquiry has been prepared and the Building Dreams team will follow up with the most relevant next step.
           </div>
         </form>
-
-        <!-- Application Confirmation Copy Screen -->
-        <div class="app-confirmation-card" tabindex="-1">
-          <div class="app-confirm-badge" aria-hidden="true">
-            <svg viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
-              <polyline points="20 6 9 17 4 12"></polyline>
-            </svg>
-          </div>
-          <span class="app-confirm-pill">&#10003; Application Recorded &middot; Dreamers Lab</span>
-          <h3 class="app-confirm-title">Thank you for applying to Building Dreams.</h3>
-          <p class="app-confirm-text">Your application has been recorded by the website, and the team will review it according to the published cohort process. Please check your email for any further communication.</p>
-          <div class="app-confirm-actions">
-            <a href="../dreamers-lab/" class="pg-btn pg-btn--primary">Explore Dreamers Lab &rarr;</a>
-            <button type="button" class="pg-btn pg-btn--ghost" data-reset-application>Submit Another Application</button>
-          </div>
-        </div>
-
       </div>
     </div>
+  </section>
 
-    <!-- =========================================================
-         TRACK 2: UNIVERSITY FOUNDERS APPLICATION
-         ========================================================= -->
-    <div class="app-track-panel" data-track-panel="university" id="panel-university" role="tabpanel" aria-labelledby="tab-university">
-      <div class="app-card app-form-wrap">
-
-        <!-- Form Node -->
-        <form class="app-form-node pg-form" style="max-width:100%; padding:0; background:transparent; border:none;" novalidate>
-          <div class="app-card-head">
-            <span class="app-card-eyebrow">&#10022; Higher Ed &amp; Early-Stage Ventures</span>
-            <h2 class="app-card-title">University Founder Application</h2>
-            <p class="app-card-sub">For undergraduate, postgraduate students, and early-stage academic founders building prototypes, testing business models, or seeking pre-seed venture guidance.</p>
-          </div>
-
-          <div class="pg-form-grid">
-            <!-- Founder & Campus Details -->
-            <div class="app-fieldset-title">Founder &amp; University Profile</div>
-
-            <div class="pg-field">
-              <label class="pg-label" for="uf-name">Full Name <span style="color:var(--pg-orange);">*</span></label>
-              <input class="pg-input" type="text" id="uf-name" name="founder_name" placeholder="e.g. Ananya Sen" required>
-            </div>
-
-            <div class="pg-field">
-              <label class="pg-label" for="uf-email">Email Address <span style="color:var(--pg-orange);">*</span></label>
-              <input class="pg-input" type="email" id="uf-email" name="founder_email" placeholder="ananya@university.edu" required>
-            </div>
-
-            <div class="pg-field">
-              <label class="pg-label" for="uf-university">University / College <span style="color:var(--pg-orange);">*</span></label>
-              <input class="pg-input" type="text" id="uf-university" name="university" placeholder="e.g. Delhi University / IIT / BITS" required>
-            </div>
-
-            <div class="pg-field">
-              <label class="pg-label" for="uf-course">Course and Year of Study <span style="color:var(--pg-orange);">*</span></label>
-              <input class="pg-input" type="text" id="uf-course" name="course_year" placeholder="e.g. B.Tech Computer Science, 3rd Year" required>
-            </div>
-
-            <!-- Venture & Problem -->
-            <div class="app-fieldset-title">Venture &amp; Problem Explored</div>
-
-            <div class="pg-field">
-              <label class="pg-label" for="uf-startup">Startup or Idea Name <span>(if applicable)</span></label>
-              <input class="pg-input" type="text" id="uf-startup" name="startup_name" placeholder="Project codename or company name">
-            </div>
-
-            <div class="pg-field">
-              <label class="pg-label" for="uf-stage">Current Stage <span style="color:var(--pg-orange);">*</span></label>
-              <select class="pg-select" id="uf-stage" name="current_stage" required>
-                <option value="" disabled selected>Select current venture milestone</option>
-                <option value="Exploring">Exploring (Problem identification &amp; user research)</option>
-                <option value="Validating">Validating (Surveys, landing page, customer interviews)</option>
-                <option value="Prototype">Prototype (Figma mockups or working wireframes)</option>
-                <option value="MVP">MVP (Functional product with test users)</option>
-                <option value="Early customers">Early customers (Initial revenue or active retention)</option>
-              </select>
-            </div>
-
-            <div class="pg-field pg-field--full">
-              <label class="pg-label" for="uf-problem">Problem Being Explored <span style="color:var(--pg-orange);">*</span></label>
-              <textarea class="pg-textarea" id="uf-problem" name="problem_statement" placeholder="What specific user friction, inefficiency, or pain point does your venture address?" required></textarea>
-            </div>
-
-            <div class="pg-field pg-field--full">
-              <label class="pg-label" for="uf-help">What help is needed? <span style="color:var(--pg-orange);">*</span></label>
-              <textarea class="pg-textarea" id="uf-help" name="help_needed" placeholder="e.g. Technical mentorship, business model validation, pilot testing, team building, or pitch feedback..." required></textarea>
-            </div>
-
-            <!-- Team & Commitment -->
-            <div class="app-fieldset-title">Team &amp; Commitment</div>
-
-            <div class="pg-field">
-              <label class="pg-label" for="uf-team">Team Members <span>(if any)</span></label>
-              <input class="pg-input" type="text" id="uf-team" name="team_members" placeholder="Solo founder or names &amp; roles of co-founders">
-            </div>
-
-            <div class="pg-field">
-              <label class="pg-label" for="uf-commitment">Time Commitment <span style="color:var(--pg-orange);">*</span></label>
-              <input class="pg-input" type="text" id="uf-commitment" name="time_commitment" placeholder="e.g. 10&ndash;15 hrs/week alongside college" required>
-            </div>
-
-            <div class="pg-field pg-field--full">
-              <label class="pg-label" for="uf-links">Relevant Links <span>(optional)</span></label>
-              <input class="pg-input" type="url" id="uf-links" name="links" placeholder="Pitch deck, GitHub repo, LinkedIn, demo link, or portfolio">
-            </div>
-          </div>
-
-          <div class="pg-form-actions" style="margin-top: 1.75rem;">
-            <button type="submit" class="pg-btn pg-btn--primary" style="padding: 0.95rem 2.2rem; font-size: 1.02rem;">
-              <span>Submit Founder Application &rarr;</span>
-            </button>
-            <span class="pg-form-note">Rolling cohort review &middot; Direct mentor evaluation</span>
-          </div>
-        </form>
-
-        <!-- Application Confirmation Copy Screen -->
-        <div class="app-confirmation-card" tabindex="-1">
-          <div class="app-confirm-badge" aria-hidden="true">
-            <svg viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
-              <polyline points="20 6 9 17 4 12"></polyline>
-            </svg>
-          </div>
-          <span class="app-confirm-pill">&#10003; Application Recorded &middot; University Founders</span>
-          <h3 class="app-confirm-title">Thank you for applying to Building Dreams.</h3>
-          <p class="app-confirm-text">Your application has been recorded by the website, and the team will review it according to the published cohort process. Please check your email for any further communication.</p>
-          <div class="app-confirm-actions">
-            <a href="../student-entrepreneurs/" class="pg-btn pg-btn--primary">Explore Founder Programs &rarr;</a>
-            <button type="button" class="pg-btn pg-btn--ghost" data-reset-application>Submit Another Application</button>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-  </div>
-
-  <!-- ── Section: What Happens Next Process ─────────────────────── -->
-  <section class="app-process-section">
-    <div class="pg-container">
-      <div class="pg-head" style="text-align:center;">
-        <span class="pg-kicker">&#10022; Application Roadmap</span>
-        <h2 class="pg-h2">What happens <em>next?</em></h2>
-        <p class="pg-sub" style="margin:0 auto; max-width:54ch;">Here is how our cohort review and onboarding process works from application to launch.</p>
+  <!-- ======================================================================
+       SECTION 3: WHAT HAPPENS NEXT?
+       "01, 02, 03 process"
+       ====================================================================== -->
+  <section class="ct-section ct-section--white" id="process">
+    <div class="ct-container">
+      <div class="ct-head">
+        <span class="ct-eyebrow">03 / THE PROCESS</span>
+        <h2 class="ct-h2">What happens <em class="ct-serif-em">next?</em></h2>
+        <p class="ct-sub">Here is what to expect once you submit your enquiry.</p>
       </div>
 
-      <div class="app-step-grid">
-        <div class="app-step-card">
-          <span class="app-step-num">STEP 01</span>
-          <h3 class="app-step-title">Application Review</h3>
-          <p class="app-step-desc">Our mentorship team reviews your background, curiosity, and starting point against the upcoming cohort milestones.</p>
+      <div class="ct-steps-grid">
+        <!-- Step 01 -->
+        <div class="ct-step-card">
+          <div class="ct-step-header">
+            <span class="ct-step-num">01</span>
+          </div>
+          <h3 class="ct-step-card-title">We understand your goals.</h3>
+          <p class="ct-step-card-desc">We review your enquiry and identify the relevant program or partnership.</p>
         </div>
-        <div class="app-step-card">
-          <span class="app-step-num">STEP 02</span>
-          <h3 class="app-step-title">Exploratory Conversation</h3>
-          <p class="app-step-desc">A brief, informal 15-minute conversation with a mentor to align on goals, schedule, and team fit.</p>
+
+        <!-- Step 02 -->
+        <div class="ct-step-card">
+          <div class="ct-step-header">
+            <span class="ct-step-num">02</span>
+          </div>
+          <h3 class="ct-step-card-title">We discuss your needs.</h3>
+          <p class="ct-step-card-desc">We clarify your interests, starting point and expectations.</p>
         </div>
-        <div class="app-step-card">
-          <span class="app-step-num">STEP 03</span>
-          <h3 class="app-step-title">Cohort Invitation</h3>
-          <p class="app-step-desc">Accepted founders receive their cohort calendar, sprint access, and orientation toolkit to start building.</p>
+
+        <!-- Step 03 -->
+        <div class="ct-step-card">
+          <div class="ct-step-header">
+            <span class="ct-step-num">03</span>
+          </div>
+          <h3 class="ct-step-card-title">We identify the next step.</h3>
+          <p class="ct-step-card-desc">Depending on availability, this could be a cohort application, introductory call, program proposal or mentor enquiry.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ── Section: Questions CTA (Full Width, Matched with Ready to begin your journey) ── -->
-  <section class="app-cta-band" aria-labelledby="app-cta-title">
-    <div class="app-cta-bg" aria-hidden="true">
-      <div class="app-cta-glow-1"></div>
-      <div class="app-cta-glow-2"></div>
+  <!-- ======================================================================
+       SECTION 4: GENERAL CONTACT
+       "Official channels & enquiries"
+       ====================================================================== -->
+  <section class="ct-section ct-section--white" id="general-contact">
+    <div class="ct-container">
+      <div class="ct-head">
+        <span class="ct-eyebrow">04 / GENERAL CONTACT</span>
+        <h2 class="ct-h2">General <em class="ct-serif-em">contact.</em></h2>
+        <p class="ct-sub">Direct channels and operational touchpoints for Building Dreams.</p>
+      </div>
+
+      <!-- Contact Channels Cards -->
+      <div class="ct-contact-channels">
+        <!-- Channel 1: Inquiries -->
+        <div class="ct-channel-card">
+          <div class="ct-channel-icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+              <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+            </svg>
+          </div>
+          <h3 class="ct-channel-title">Official Inquiries</h3>
+          <div class="ct-channel-value">
+            <a href="mailto:hello@buildingdreams.in">hello@buildingdreams.in</a>
+          </div>
+          <p class="ct-channel-desc">Direct inbox monitored by the programs and admissions team.</p>
+        </div>
+
+        <!-- Channel 2: Locations -->
+        <div class="ct-channel-card">
+          <div class="ct-channel-icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+          </div>
+          <h3 class="ct-channel-title">Operating Hubs</h3>
+          <div class="ct-channel-value">Bengaluru &amp; Delhi, India</div>
+          <p class="ct-channel-desc">Partnering with schools, colleges, and innovation centers nationwide.</p>
+        </div>
+
+        <!-- Channel 3: Turnaround -->
+        <div class="ct-channel-card">
+          <div class="ct-channel-icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polyline points="12 6 12 12 16 14"></polyline>
+            </svg>
+          </div>
+          <h3 class="ct-channel-title">Response Window</h3>
+          <div class="ct-channel-value">1&ndash;2 Business Days</div>
+          <p class="ct-channel-desc">Every genuine enquiry receives personalized human guidance.</p>
+        </div>
+      </div>
+
+      <!-- Operational Guidance / Policy Box -->
+      <div class="ct-guidance-box">
+        <svg class="ct-guidance-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="12" y1="8" x2="12" y2="12"></line>
+          <line x1="12" y1="16" x2="12.01" y2="16"></line>
+        </svg>
+        <p class="ct-guidance-text">
+          Use your official Building Dreams email address, business phone number and social media links here once finalised. Do not publish placeholder contact details. Make sure the enquiry form routes to an inbox that is actively monitored.
+        </p>
+      </div>
     </div>
-    <div class="app-cta-container">
-      <h2 class="app-cta-title" id="app-cta-title">
-        Questions before you <em class="app-cta-serif">apply?</em>
-      </h2>
-      <p class="app-cta-desc">
-        Not sure which track fits your current stage? We&rsquo;re here to guide you to the right starting point.
-      </p>
-      <div class="app-cta-actions">
-        <a href="../faq/" class="app-cta-btn app-cta-btn--primary">
-          <span>Read Common Questions</span>
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <line x1="5" y1="12" x2="19" y2="12"></line>
-            <polyline points="12 5 19 12 12 19"></polyline>
-          </svg>
-        </a>
-        <a href="../about/" class="app-cta-btn app-cta-btn--secondary">
-          <span>About Building Dreams</span>
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <line x1="5" y1="12" x2="19" y2="12"></line>
-            <polyline points="12 5 19 12 12 19"></polyline>
-          </svg>
-        </a>
+  </section>
+
+  <!-- ======================================================================
+       SECTION 5: INSTITUTIONAL PARTNERSHIPS
+       "Building an entrepreneurship ecosystem?"
+       Positioned below Section 4 (General Contact) as requested.
+       ====================================================================== -->
+  <section class="ct-section ct-section--alt" id="institutional-partnerships">
+    <div class="ct-container">
+      <div class="ct-institutional-banner">
+        <div class="ct-banner-glow" aria-hidden="true"></div>
+
+        <div class="ct-institutional-layout">
+          <div>
+            <span class="ct-banner-eyebrow">05 / ECOSYSTEM PATHWAYS</span>
+            <h2 class="ct-banner-title">
+              Building an entrepreneurship <em class="ct-serif-em">ecosystem?</em>
+            </h2>
+            <p class="ct-banner-desc">
+              If you are a university leader, incubator manager or school administrator, tell us about your objectives, student community and existing initiatives.
+            </p>
+          </div>
+
+          <div class="ct-banner-action">
+            <a href="../universities/#partnership" class="ct-banner-btn">
+              <span>Discuss an Institutional Partnership</span>
+              <span aria-hidden="true">&rarr;</span>
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -338,8 +374,66 @@
 </main>
 
 <div data-site-footer></div>
-
 <script type="module" src="../main.js"></script>
-<script type="module" src="../apply.js"></script>
+
+<script>
+  (function () {
+    // 1. Radio tile selection highlight
+    var tiles = document.querySelectorAll('.ct-radio-tile');
+    tiles.forEach(function (tile) {
+      tile.addEventListener('click', function () {
+        tiles.forEach(function (t) { t.classList.remove('is-selected'); });
+        tile.classList.add('is-selected');
+        var radio = tile.querySelector('input[type="radio"]');
+        if (radio) radio.checked = true;
+      });
+    });
+
+    // 2. Pre-fill journey from URL query parameter (e.g. ?journey=university or ?journey=institution)
+    try {
+      var params = new URLSearchParams(window.location.search);
+      var journeyParam = params.get('journey') || params.get('audience') || params.get('program');
+      if (journeyParam) {
+        var targetRadio = null;
+        if (/school|parent|dreamer/i.test(journeyParam)) {
+          targetRadio = document.getElementById('journey-school');
+        } else if (/univ|founder|student/i.test(journeyParam)) {
+          targetRadio = document.getElementById('journey-university');
+        } else if (/inst|accelerator|partner/i.test(journeyParam)) {
+          targetRadio = document.getElementById('journey-institution');
+        } else if (/mentor|community/i.test(journeyParam)) {
+          targetRadio = document.getElementById('journey-mentor');
+        } else if (/other|else/i.test(journeyParam)) {
+          targetRadio = document.getElementById('journey-other');
+        }
+
+        if (targetRadio) {
+          targetRadio.checked = true;
+          tiles.forEach(function (t) { t.classList.remove('is-selected'); });
+          var parentTile = targetRadio.closest('.ct-radio-tile');
+          if (parentTile) parentTile.classList.add('is-selected');
+        }
+      }
+    } catch (e) {}
+
+    // 3. Form submission handling
+    var form = document.getElementById('contact-enquiry-form');
+    var card = document.getElementById('ct-form-card');
+    if (form && card) {
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        if (!form.checkValidity()) {
+          form.reportValidity();
+          return;
+        }
+        card.classList.add('is-submitted');
+        var successEl = document.getElementById('ct-form-success');
+        if (successEl) {
+          successEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+      });
+    }
+  })();
+</script>
 </body>
 </html>
