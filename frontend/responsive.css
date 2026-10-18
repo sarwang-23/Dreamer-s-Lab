@@ -8,7 +8,7 @@
     display: none !important;
 }
 
-:is(#journey, #programs, #dreamers-lab, #student-entrepreneurship, #how-it-works, #network, #approach, #outcomes, #faq) {
+:is(#journey, #programs, #dreamers-lab, #student-entrepreneurship, #how-it-works, #network, #approach, #outcomes, #testimonials, #faq) {
     scroll-margin-top: 80px;
 }
 

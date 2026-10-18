@@ -13,6 +13,14 @@
     --font-main: 'Outfit', sans-serif;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
+#how-it-works {
+    scroll-margin-top: 80px;
+}
+
 /* ================================================================
    BD HERO — COMPLETE REDESIGN  (bd-hero-*)
    "Every Dream Deserves a Path."
@@ -7331,8 +7339,8 @@ body {
 }
 
 @keyframes scrollTicker {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(calc(-100% / 3)); }
+    0% { transform: translateX(calc(-100% / 3)); }
+    100% { transform: translateX(0); }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -8209,7 +8217,7 @@ body {
     --bd-close-forest:     #10483D;
 
     position: relative;
-    padding: clamp(6rem, 10vw, 10rem) clamp(1.5rem, 5vw, 4.5rem);
+    padding: clamp(3.2rem, 5vw, 4.8rem) clamp(1.25rem, 4vw, 3.5rem);
     background:
         radial-gradient(ellipse 80% 55% at 18% 20%,  rgba(255,104,53,0.18) 0%, transparent 60%),
         radial-gradient(ellipse 70% 50% at 82% 75%,  rgba(200,240,80,0.14) 0%, transparent 55%),
@@ -8317,8 +8325,8 @@ body {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    margin-bottom: clamp(1.5rem, 3vw, 2.2rem);
-    padding: 0.38rem 1.1rem;
+    margin-bottom: clamp(0.75rem, 1.5vw, 1.1rem);
+    padding: 0.3rem 0.95rem;
     border-radius: 999px;
     border: 1px solid rgba(255,104,53,0.35);
     background: rgba(255,104,53,0.10);
@@ -8343,8 +8351,8 @@ body {
 
 /* ─── Motif (draw-on path) ─────────────────────────── */
 .bd-close-motif {
-    width: min(520px, 92%);
-    margin: 0 auto clamp(1.4rem, 3vw, 2.25rem);
+    width: min(380px, 85%);
+    margin: 0 auto clamp(0.6rem, 1.2vw, 1rem);
     opacity: 0.7;
 }
 .bd-close-motif-svg {
@@ -8366,11 +8374,11 @@ body {
 .bd-close-title {
     font-family: var(--font-main, 'Outfit', system-ui, sans-serif);
     font-weight: 900;
-    font-size: clamp(3rem, 6.5vw, 5.8rem);
-    line-height: 1.0;
-    letter-spacing: -0.04em;
+    font-size: clamp(2.3rem, 4.5vw, 4rem);
+    line-height: 1.05;
+    letter-spacing: -0.035em;
     color: #fff;
-    margin: 0 0 clamp(1.25rem, 2.4vw, 1.75rem);
+    margin: 0 0 clamp(0.6rem, 1.2vw, 0.95rem);
     text-shadow: 0 2px 40px rgba(255,255,255,0.08);
 }
 .bd-close-title-main {
@@ -8403,10 +8411,10 @@ body {
     font-family: 'Outfit', sans-serif;
     font-style: italic;
     font-weight: 300;
-    font-size: clamp(1.1rem, 1.8vw, 1.5rem);
+    font-size: clamp(0.98rem, 1.3vw, 1.2rem);
     color: var(--bd-close-body);
-    margin: 0 0 clamp(2.8rem, 5vw, 4rem);
-    padding-bottom: 1rem;
+    margin: 0 0 clamp(1.4rem, 2.6vw, 2rem);
+    padding-bottom: 0.65rem;
     letter-spacing: 0.01em;
 }
 .bd-close-kicker::after {
@@ -8424,9 +8432,9 @@ body {
 
 .bd-close-copy {
     max-width: 54ch;
-    margin: 0 auto clamp(1.1rem, 2vw, 1.5rem);
-    font-size: clamp(1rem, 1.2vw, 1.15rem);
-    line-height: 1.72;
+    margin: 0 auto clamp(0.8rem, 1.5vw, 1.2rem);
+    font-size: clamp(0.95rem, 1.1vw, 1.05rem);
+    line-height: 1.6;
     color: var(--bd-close-muted);
 }
 
@@ -8434,7 +8442,7 @@ body {
 .bd-close-actions {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: clamp(1rem, 1.8vw, 1.4rem);
+    gap: clamp(0.9rem, 1.5vw, 1.25rem);
     max-width: 980px;
     margin: 0 auto;
     text-align: left;
@@ -8445,10 +8453,10 @@ body {
     display: grid;
     grid-template-columns: 1fr auto;
     grid-template-rows: auto 1fr;
-    gap: 1.1rem 0.75rem;
-    min-height: 220px;
-    padding: clamp(1.6rem, 2.4vw, 2.2rem);
-    border-radius: 24px;
+    gap: 0.75rem 0.6rem;
+    min-height: 140px;
+    padding: clamp(1.1rem, 1.5vw, 1.4rem);
+    border-radius: 18px;
     border: 1px solid var(--bd-close-border);
     background: var(--bd-close-white-glass);
     backdrop-filter: blur(20px) saturate(160%);
@@ -9996,6 +10004,12 @@ h1, h2, h3, h4 {
     text-decoration: none !important;
     margin-top: auto !important;
     transition: transform 0.2s ease !important;
+    background: transparent !important;
+    border: none !important;
+    outline: none !important;
+    padding: 0 !important;
+    cursor: pointer !important;
+    font-family: inherit !important;
 }
 .j-node-cta:hover { transform: translateX(3px) !important; }
 
@@ -10728,3 +10742,332 @@ h1, h2, h3, h4 {
         padding: 0.85rem 1rem !important;
     }
 }
+
+/* ============================================================
+   SECTION 6 — CINEMATIC VIDEO SHOWCASE
+   "On-Ground Action & Student Journeys"
+   ============================================================ */
+
+/* ── Section Shell & Ambient Canvas ── */
+.bd-testimonials {
+    background: #FFFFFF;
+    padding: clamp(5.5rem, 8vw, 8rem) clamp(1.25rem, 4vw, 3rem);
+    position: relative;
+    overflow: hidden;
+}
+
+.bd-test-bg-decor {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.bd-test-container {
+    max-width: 1250px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+/* ── Editorial Header — Centered ── */
+.bd-test-header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto clamp(3rem, 5vw, 4.5rem);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.bd-test-eyebrow-wrap {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(255, 104, 53, 0.09);
+    border: 1px solid rgba(255, 104, 53, 0.26);
+    border-radius: 999px;
+    padding: 0.38rem 1.15rem;
+    color: #D95A28;
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.74rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    margin-bottom: 1.3rem;
+}
+
+.bd-test-eyebrow-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #FF6835;
+    box-shadow: 0 0 8px rgba(255, 104, 53, 0.65);
+    flex-shrink: 0;
+}
+
+.bd-test-title {
+    font-family: 'Outfit', sans-serif;
+    font-size: clamp(2.1rem, 4.6vw, 3.5rem);
+    font-weight: 800;
+    color: #0D3D33;
+    line-height: 1.14;
+    letter-spacing: -0.028em;
+    margin: 0 0 1.15rem;
+}
+
+.bd-test-title-accent {
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-style: italic;
+    color: #FF6835;
+    font-weight: 400;
+}
+
+.bd-test-subtitle {
+    font-family: 'Manrope', sans-serif;
+    font-size: clamp(0.98rem, 1.25vw, 1.12rem);
+    color: #5C4135;
+    line-height: 1.7;
+    max-width: 720px;
+    margin: 0 auto;
+}
+
+/* ── Video Gallery Wrapper ── */
+.bd-test-videos {
+    margin-bottom: 0;
+}
+
+/* ── Gallery Grid — 3 equal columns ── */
+.bd-test-videos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.75rem;
+    align-items: stretch;
+}
+
+/* ── Video Card ── */
+.bd-video-card {
+    background: #FFFFFF;
+    border-radius: 20px;
+    border: 1.5px solid rgba(16, 72, 61, 0.1);
+    overflow: hidden;
+    box-shadow:
+        0 2px 6px rgba(16, 72, 61, 0.04),
+        0 12px 32px rgba(16, 72, 61, 0.06);
+    transition:
+        transform 0.3s cubic-bezier(0.22, 0.68, 0, 1.2),
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    /* Entrance animation */
+    animation: bd-card-in 0.6s both;
+}
+
+.bd-video-card:nth-child(1) { animation-delay: 0ms; }
+.bd-video-card:nth-child(2) { animation-delay: 90ms; }
+.bd-video-card:nth-child(3) { animation-delay: 180ms; }
+
+@keyframes bd-card-in {
+    from {
+        opacity: 0;
+        transform: translateY(22px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .bd-video-card {
+        animation: none;
+    }
+}
+
+.bd-video-card:hover {
+    transform: translateY(-5px);
+    box-shadow:
+        0 4px 10px rgba(16, 72, 61, 0.06),
+        0 24px 56px rgba(16, 72, 61, 0.13);
+    border-color: rgba(16, 72, 61, 0.28);
+}
+
+/* ── Spotlight / Featured Card ── */
+.bd-video-card--spotlight {
+    border-color: rgba(255, 104, 53, 0.35);
+    box-shadow:
+        0 2px 6px rgba(255, 104, 53, 0.05),
+        0 14px 40px rgba(255, 104, 53, 0.1);
+}
+
+.bd-video-card--spotlight:hover {
+    border-color: rgba(255, 104, 53, 0.6);
+    box-shadow:
+        0 4px 10px rgba(255, 104, 53, 0.08),
+        0 26px 60px rgba(255, 104, 53, 0.16);
+}
+
+/* ── Video Media Area ── */
+.bd-video-wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: #081A14;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.bd-video-player {
+    width: 100%;
+    height: 100%;
+    display: block;
+    background: #000;
+    /* Use contain so the full video frame is always visible without distortion */
+    object-fit: contain;
+}
+
+/* ── Featured Spotlight Pill badge on card 2 ── */
+.bd-video-spotlight-pill {
+    position: absolute;
+    top: 0.85rem;
+    right: 0.85rem;
+    background: rgba(255, 104, 53, 0.92);
+    color: #FFF;
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    padding: 0.28rem 0.72rem;
+    border-radius: 999px;
+    backdrop-filter: blur(6px);
+    pointer-events: none;
+    z-index: 3;
+}
+
+/* ── Card Content Area ── */
+.bd-video-info {
+    padding: 1.4rem 1.5rem 1.7rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+    flex: 1;
+}
+
+.bd-video-badge-row {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+/* ── Category Badge ── */
+.bd-video-badge {
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.69rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    padding: 0.24rem 0.7rem;
+    border-radius: 6px;
+    width: fit-content;
+    line-height: 1.4;
+    transition: background 0.25s ease, color 0.25s ease;
+}
+
+.bd-video-badge--orange {
+    background: rgba(255, 104, 53, 0.1);
+    color: #C44E1A;
+}
+
+.bd-video-badge--green {
+    background: rgba(16, 72, 61, 0.09);
+    color: #10483D;
+}
+
+.bd-video-badge--teal {
+    background: rgba(7, 53, 43, 0.09);
+    color: #0A4535;
+}
+
+.bd-video-card:hover .bd-video-badge--orange {
+    background: rgba(255, 104, 53, 0.16);
+}
+.bd-video-card:hover .bd-video-badge--green {
+    background: rgba(16, 72, 61, 0.16);
+}
+.bd-video-card:hover .bd-video-badge--teal {
+    background: rgba(7, 53, 43, 0.16);
+}
+
+/* ── Card Title ── */
+.bd-video-heading {
+    font-family: 'Outfit', sans-serif;
+    font-size: clamp(0.98rem, 1.1vw, 1.08rem);
+    font-weight: 700;
+    color: #0D3D33;
+    line-height: 1.38;
+    margin: 0;
+    letter-spacing: -0.01em;
+}
+
+/* ── Card Description ── */
+.bd-video-caption {
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.84rem;
+    color: #6B5046;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* ═══════════════════════════════════
+   RESPONSIVE BREAKPOINTS
+   ═══════════════════════════════════ */
+
+/* Tablet — 2 columns */
+@media (max-width: 1060px) {
+    .bd-test-videos-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1.5rem;
+    }
+    /* Let the spotlight card span its natural single column */
+}
+
+/* Mobile — single column */
+@media (max-width: 640px) {
+    .bd-testimonials {
+        padding-top: clamp(3.5rem, 7vw, 5rem);
+        padding-bottom: clamp(3.5rem, 7vw, 5rem);
+    }
+
+    .bd-test-header {
+        margin-bottom: 2.5rem;
+    }
+
+    .bd-test-eyebrow-wrap {
+        font-size: 0.68rem;
+        padding: 0.32rem 0.95rem;
+    }
+
+    .bd-test-videos-grid {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+
+    .bd-video-info {
+        padding: 1.15rem 1.2rem 1.4rem;
+    }
+
+    .bd-video-heading {
+        font-size: 1rem;
+    }
+}
+
+
+

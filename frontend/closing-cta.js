@@ -42,10 +42,23 @@
         university: 'Create an ecosystem'
     };
 
+    var BASE = '/';
+    try {
+        if (typeof import.meta !== 'undefined' && import.meta.env && import.meta.env.BASE_URL) {
+            BASE = import.meta.env.BASE_URL;
+        }
+    } catch (e) {}
+
+    function getUrl(path) {
+        var b = (BASE || '/').replace(/\/+$/, '');
+        var p = (path || '').replace(/^\/+/, '');
+        return b ? (b + '/' + p) : ('/' + p);
+    }
+
     var DEFAULT_ACTIONS = [
-        { id: 'student', label: "I'm a Student", href: '#program-dreamers' },
-        { id: 'founder', label: "I'm a Founder", href: '#program-founder' },
-        { id: 'university', label: "I'm a University", href: '#program-venture' }
+        { id: 'student', label: "I'm a Student", href: getUrl('dreamers-lab/') },
+        { id: 'founder', label: "I'm a Founder", href: getUrl('student-entrepreneurs/') },
+        { id: 'university', label: "I'm a University", href: getUrl('universities/') }
     ];
 
     var BG_SVG =
@@ -85,16 +98,17 @@
         '<circle cx="498" cy="44" r="11" stroke="#FF6835" stroke-opacity="0.35" stroke-width="1" stroke-dasharray="2 4"></circle>' +
         '</svg>';
 
-    function buildActions(primary) {
-        return DEFAULT_ACTIONS.map(function (action) {
+    function buildActions(primary, actionsList) {
+        var actions = (Array.isArray(actionsList) && actionsList.length) ? actionsList : DEFAULT_ACTIONS;
+        return actions.map(function (action) {
             var isPrimary = action.id === primary;
             var cls = 'bd-close-card' + (isPrimary ? ' bd-close-card--primary' : '');
             return (
                 '<a class="' + cls + '" href="' + action.href + '" data-audience="' + action.id + '">' +
-                '<span class="bd-close-card-icon" aria-hidden="true">' + ICONS[action.id] + '</span>' +
+                '<span class="bd-close-card-icon" aria-hidden="true">' + (ICONS[action.id] || '') + '</span>' +
                 '<span class="bd-close-card-body">' +
                 '<span class="bd-close-card-label">' + action.label + '</span>' +
-                '<span class="bd-close-card-note">' + PROGRAM_DESCRIPTIONS[action.id] + '</span>' +
+                '<span class="bd-close-card-note">' + (PROGRAM_DESCRIPTIONS[action.id] || '') + '</span>' +
                 '</span>' +
                 '<span class="bd-close-card-arrow" aria-hidden="true">' + ARROW + '</span>' +
                 '</a>'
@@ -124,7 +138,7 @@
             '</h2>' +
             '<p class="bd-close-kicker">Let\'s build it together.</p>' +
             '<nav class="bd-close-actions" aria-label="Choose your starting point">' +
-            buildActions(primary) +
+            buildActions(primary, opts.actions) +
             '</nav>' +
             '</div>';
         return section;
@@ -155,7 +169,21 @@
         host.setAttribute('data-bd-cta-mounted', 'true');
 
         var primary = host.getAttribute('data-cta-primary') || 'student';
-        var section = render({ primary: primary });
+        var studentHref = host.getAttribute('data-href-student');
+        var founderHref = host.getAttribute('data-href-founder');
+        var universityHref = host.getAttribute('data-href-university');
+
+        var customActions = null;
+        if (studentHref || founderHref || universityHref) {
+            customActions = DEFAULT_ACTIONS.map(function (action) {
+                if (action.id === 'student' && studentHref) return Object.assign({}, action, { href: studentHref });
+                if (action.id === 'founder' && founderHref) return Object.assign({}, action, { href: founderHref });
+                if (action.id === 'university' && universityHref) return Object.assign({}, action, { href: universityHref });
+                return action;
+            });
+        }
+
+        var section = render({ primary: primary, actions: customActions });
         host.appendChild(section);
         enhance(section);
     }
