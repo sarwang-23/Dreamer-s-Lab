@@ -303,8 +303,9 @@
       });
     }
 
-    // Set initial active state (Stage 01 Curiosity)
-    setActiveStage('curiosity');
+    // Set initial active state from existing is-active pill or fallback to prototype
+    const initiallyActivePill = stagePills.find(pill => pill.classList.contains('is-active'));
+    setActiveStage(initiallyActivePill ? initiallyActivePill.dataset.stage : 'prototype');
   }
 
   if (document.readyState === 'loading') {

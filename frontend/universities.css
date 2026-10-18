@@ -1,10 +1,10 @@
 /* ==========================================================================
-   Universities & Accelerators — Complete Page Styles
+   Universities & Accelerators â€” Complete Page Styles
    Matching the high-end Dreamers Lab design language:
    Vibrant typography, layered cards, interactive milestones, polished form.
    ========================================================================== */
 
-/* ── Section Structure ─────────────────────────────────────────── */
+/* -- Section Structure ------------------------------------------- */
 .univ-section {
   position: relative;
   padding: clamp(3.2rem, 5vh, 4.8rem) 0;
@@ -12,11 +12,11 @@
 }
 
 .univ-section--tint {
-  background-color: #F5EFE6;
+  background: linear-gradient(180deg, #FFFFFF 0%, #FFFFFF 100%);
 }
 
 .univ-section--white {
-  background-color: #FFFFFF;
+  background: linear-gradient(180deg, #FFFFFF 0%, #FFFFFF 100%);
 }
 
 .univ-section--forest {
@@ -36,10 +36,13 @@
   max-width: 840px;
 }
 
-/* ── Section Headers ────────────────────────────────────────────── */
+/* -- Section Headers ---------------------------------------------- */
 .univ-head {
   margin-bottom: clamp(1.5rem, 3vw, 2.25rem);
   max-width: 760px;
+  text-align: left;
+  margin-left: 0;
+  margin-right: auto;
 }
 
 .univ-head--center {
@@ -73,6 +76,7 @@
   letter-spacing: -0.03em;
   color: var(--univ-espresso);
   margin: 0 0 0.65rem;
+  text-align: inherit;
 }
 
 .univ-h2 em {
@@ -89,11 +93,32 @@
   color: var(--univ-espresso-muted);
   margin: 0;
   max-width: 60ch;
+  text-align: inherit;
 }
 
 .univ-head--center .univ-sub {
   margin-left: auto;
   margin-right: auto;
+  text-align: center;
+}
+
+/* Explicit styles for Section 3: Institutional Offering (Light Cream Background) */
+#offerings.univ-section,
+section#offerings {
+  background-color: #FAF6EF !important;
+}
+
+#offerings .univ-head {
+  text-align: left !important;
+  margin-left: 0 !important;
+  margin-right: auto !important;
+}
+
+#offerings .univ-eyebrow,
+#offerings .univ-h2,
+#offerings .univ-sub {
+  text-align: left !important;
+  margin-left: 0 !important;
 }
 
 /* ==========================================================================
@@ -182,187 +207,981 @@
   flex: 1;
 }
 
-/* ==========================================================================
-   Section 4: The Campus Venture Pipeline (Visual Connected Roadmap)
-   ========================================================================== */
-.univ-pipeline-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: clamp(1rem, 2vw, 1.4rem);
-  position: relative;
-}
 
-.univ-pipeline-step {
+/* ==========================================================================
+   Section 4: Campus Venture Pipeline â€” Premium Redesign (CVP)
+   ========================================================================== */
+
+/* Section master */
+.cvp-section {
   position: relative;
   background: #FFFFFF;
-  border: 1.5px solid rgba(44, 26, 16, 0.1);
-  border-radius: 16px;
-  padding: 1.35rem 1.35rem;
-  box-shadow: 0 4px 12px rgba(31, 22, 16, 0.04);
-  transition: all 0.28s var(--univ-ease);
-  display: flex;
-  flex-direction: column;
-  height: 100%;
+  padding: clamp(4.5rem, 8vh, 6.8rem) 0 clamp(4.5rem, 7.5vh, 6.5rem);
+  border-top: 1px solid rgba(44, 26, 16, 0.08);
+  overflow: hidden;
+}
+
+/* Ambient glow orb behind heading */
+.cvp-glow-orb {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 700px;
+  height: 400px;
+  background: radial-gradient(ellipse at center, rgba(255, 107, 26, 0.065) 0%, transparent 68%);
+  filter: blur(32px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Fine decorative horizontal rule */
+.cvp-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(1200px, 90vw);
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 107, 26, 0.25), transparent);
+  pointer-events: none;
+}
+
+.cvp-container {
+  position: relative;
+  z-index: 1;
+  width: min(1360px, 92vw);
+  margin: 0 auto;
+  padding: 0 clamp(1.25rem, 3.5vw, 2.5rem);
   box-sizing: border-box;
 }
 
-.univ-pipeline-step:hover {
-  transform: translateY(-3px);
-  border-color: var(--univ-orange);
-  box-shadow: 0 10px 24px rgba(255, 107, 26, 0.12);
+/* -- Centered Header ----------------------------------------------- */
+.cvp-header {
+  text-align: center;
+  max-width: 820px;
+  margin: 0 auto clamp(3.2rem, 5.5vh, 4.5rem);
 }
 
-.univ-pipeline-num {
-  font-family: 'Outfit', sans-serif;
-  font-size: 0.68rem;
-  font-weight: 900;
-  letter-spacing: 0.1em;
-  color: var(--univ-orange);
-  margin-bottom: 0.5rem;
-}
-
-.univ-pipeline-title {
-  font-family: 'Outfit', sans-serif;
-  font-size: 1.05rem;
-  font-weight: 800;
-  color: var(--univ-espresso);
-  margin: 0 0 0.35rem;
-  line-height: 1.25;
-}
-
-.univ-pipeline-desc {
-  font-family: 'Manrope', sans-serif;
-  font-size: 0.84rem;
-  line-height: 1.55;
-  color: var(--univ-espresso-muted);
-  margin: 0;
-}
-
-.univ-pipeline-note {
-  margin-top: 1.5rem;
-  padding: 1rem 1.25rem;
-  background: rgba(255, 255, 255, 0.7);
-  border: 1px dashed rgba(44, 26, 16, 0.15);
-  border-radius: 12px;
-  font-family: 'Manrope', sans-serif;
-  font-size: 0.84rem;
-  line-height: 1.55;
-  color: var(--univ-espresso-muted);
-}
-
-/* ==========================================================================
-   Section 5: How We Work with Universities (Structured Operational Phases)
-   ========================================================================== */
-.univ-phases-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: clamp(1rem, 2vw, 1.4rem);
-}
-
-.univ-phase-card {
-  background: #FFFFFF;
-  border: 1.5px solid rgba(44, 26, 16, 0.1);
-  border-radius: 16px;
-  padding: 1.4rem 1.4rem;
-  box-shadow: 0 4px 14px rgba(31, 22, 16, 0.04);
-  transition: all 0.28s var(--univ-ease);
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  box-sizing: border-box;
-}
-
-.univ-phase-card:hover {
-  transform: translateY(-3px);
-  border-color: rgba(7, 61, 51, 0.35);
-  box-shadow: 0 12px 28px rgba(7, 61, 51, 0.1);
-}
-
-.univ-phase-when {
+.cvp-eyebrow-pill {
   display: inline-flex;
-  font-family: 'Outfit', sans-serif;
-  font-size: 0.68rem;
-  font-weight: 900;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--univ-forest);
-  background: rgba(7, 61, 51, 0.08);
-  padding: 0.2rem 0.55rem;
-  border-radius: 6px;
-  margin-bottom: 0.75rem;
-  width: fit-content;
-}
-
-.univ-phase-name {
-  font-family: 'Outfit', sans-serif;
-  font-size: 1.15rem;
-  font-weight: 800;
-  color: var(--univ-espresso);
-  margin: 0 0 0.45rem;
-}
-
-.univ-phase-desc {
-  font-family: 'Manrope', sans-serif;
-  font-size: 0.86rem;
-  line-height: 1.6;
-  color: var(--univ-espresso-muted);
-  margin: 0;
-  flex: 1;
-}
-
-/* ==========================================================================
-   Section 6: Tailored Partnership Models (Matrix Cards)
-   ========================================================================== */
-.univ-models-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: clamp(1rem, 2vw, 1.4rem);
-}
-
-.univ-model-card {
-  background: #FFFFFF;
-  border: 1.5px solid rgba(44, 26, 16, 0.1);
-  border-radius: 16px;
-  padding: 1.4rem 1.35rem;
-  box-shadow: 0 4px 14px rgba(31, 22, 16, 0.04);
-  transition: all 0.28s var(--univ-ease);
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  box-sizing: border-box;
-}
-
-.univ-model-card:hover {
-  transform: translateY(-3px);
-  border-color: var(--univ-orange);
-  box-shadow: 0 12px 28px -6px rgba(255, 107, 26, 0.15);
-}
-
-.univ-model-title {
-  font-family: 'Outfit', sans-serif;
-  font-size: 1.1rem;
-  font-weight: 800;
-  color: var(--univ-espresso);
-  margin: 0 0 0.45rem;
-}
-
-.univ-model-desc {
-  font-family: 'Manrope', sans-serif;
-  font-size: 0.86rem;
-  line-height: 1.55;
-  color: var(--univ-espresso-muted);
-  margin: 0;
-  flex: 1;
-}
-
-.univ-model-deliverable {
-  margin-top: 0.85rem;
-  padding-top: 0.75rem;
-  border-top: 1px dashed rgba(44, 26, 16, 0.1);
-  font-family: 'Outfit', sans-serif;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Manrope', system-ui, sans-serif;
   font-size: 0.7rem;
   font-weight: 800;
-  color: var(--univ-orange);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #FF6B1A;
+  background: rgba(255, 107, 26, 0.07);
+  border: 1px solid rgba(255, 107, 26, 0.22);
+  padding: 0.32rem 0.9rem 0.32rem 0.6rem;
+  border-radius: 999px;
+  margin-bottom: 1.1rem;
+}
+
+.cvp-eyebrow-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #FF6B1A;
+  box-shadow: 0 0 0 3px rgba(255, 107, 26, 0.2);
+  animation: cvpPulse 2.6s ease-in-out infinite;
+  flex-shrink: 0;
+}
+
+@keyframes cvpPulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.3); opacity: 0.7; }
+}
+
+.cvp-headline {
+  font-family: 'Outfit', system-ui, sans-serif;
+  font-size: clamp(1.85rem, 3.2vw, 2.75rem);
+  font-weight: 900;
+  line-height: 1.12;
+  letter-spacing: -0.03em;
+  color: #211F1B;
+  margin: 0 0 0.85rem;
+}
+
+.cvp-headline-accent {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+  color: #FF6B1A;
+  letter-spacing: -0.01em;
+  position: relative;
+  display: inline-block;
+}
+
+.cvp-headline-accent::after {
+  content: '';
+  position: absolute;
+  left: 0.05em;
+  bottom: 0.06em;
+  width: 94%;
+  height: 3px;
+  background: rgba(255, 107, 26, 0.28);
+  border-radius: 4px;
+}
+
+.cvp-subtitle {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: clamp(1rem, 1.3vw, 1.14rem);
+  line-height: 1.68;
+  color: #6B5E52;
+  margin: 0 auto;
+  max-width: 58ch;
+}
+
+/* -- 6-Stage Cards Grid -------------------------------------------- */
+.cvp-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(1rem, 1.8vw, 1.6rem);
+  margin-bottom: clamp(2rem, 3.5vh, 2.8rem);
+  position: relative;
+}
+
+/* Subtle top-row and bottom-row divider connector */
+.cvp-grid::after {
+  content: '';
+  position: absolute;
+  top: calc(50% - 0.5px);
+  left: 4%;
+  right: 4%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, rgba(255, 107, 26, 0.14) 20%, rgba(255, 107, 26, 0.14) 80%, transparent 100%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* -- Individual Card ----------------------------------------------- */
+.cvp-card {
+  position: relative;
+  z-index: 1;
+  background: #FFFFFF;
+  border: 1.5px solid rgba(44, 26, 16, 0.09);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow:
+    0 2px 6px rgba(31, 22, 16, 0.04),
+    0 8px 24px rgba(31, 22, 16, 0.05);
+  transition:
+    transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+  cursor: default;
+}
+
+/* Orange top accent border (unique per card, shared design) */
+.cvp-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #FF6B1A, rgba(255, 107, 26, 0.4));
+  border-radius: 20px 20px 0 0;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+/* Hover lift */
+@media (hover: hover) {
+  .cvp-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(255, 107, 26, 0.35);
+    box-shadow:
+      0 4px 12px rgba(31, 22, 16, 0.06),
+      0 16px 36px rgba(255, 107, 26, 0.12);
+  }
+
+  .cvp-card:hover::before {
+    opacity: 1;
+  }
+
+  .cvp-card:hover .cvp-step-icon {
+    color: #FF6B1A;
+    transform: scale(1.12) rotate(-3deg);
+  }
+
+  .cvp-card:hover .cvp-card-number {
+    opacity: 0.12;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cvp-card,
+  .cvp-card::before,
+  .cvp-step-icon,
+  .cvp-card-number {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+.cvp-card-inner {
+  padding: clamp(1.5rem, 2.2vw, 2rem);
+  display: flex;
+  flex-direction: column;
+  min-height: 220px;
+  position: relative;
+}
+
+/* Card top row: step label + icon */
+.cvp-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.cvp-step-label {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #FF6B1A;
+}
+
+.cvp-step-icon {
+  color: rgba(44, 26, 16, 0.3);
+  flex-shrink: 0;
+  transition: color 0.28s ease, transform 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+  line-height: 0;
+}
+
+.cvp-card-title {
+  font-family: 'Outfit', system-ui, sans-serif;
+  font-size: clamp(1.1rem, 1.55vw, 1.3rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.22;
+  color: #211F1B;
+  margin: 0 0 0.55rem;
+}
+
+.cvp-card-desc {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: 0.875rem;
+  line-height: 1.65;
+  color: #6B5E52;
+  margin: 0;
+  flex: 1;
+}
+
+/* Giant watermark number */
+.cvp-card-number {
+  position: absolute;
+  bottom: 1rem;
+  right: 1.25rem;
+  font-family: 'Outfit', system-ui, sans-serif;
+  font-size: 4rem;
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -0.06em;
+  color: rgba(44, 26, 16, 0.055);
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  user-select: none;
+}
+
+/* -- Institutional Flexibility Note Panel -------------------------- */
+.cvp-flex-note {
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(44, 26, 16, 0.1);
+  border-left: 3.5px solid rgba(255, 107, 26, 0.45);
+  border-radius: 14px;
+  padding: clamp(1.1rem, 1.8vw, 1.5rem) clamp(1.25rem, 2vw, 1.75rem);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+.cvp-flex-note-inner {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.cvp-flex-icon {
+  color: #FF6B1A;
+  flex-shrink: 0;
+  margin-top: 0.15rem;
+  line-height: 0;
+}
+
+.cvp-flex-text {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: 0.875rem;
+  line-height: 1.65;
+  color: #6B5E52;
+  margin: 0;
+}
+
+.cvp-flex-label {
+  font-weight: 800;
+  color: #211F1B;
+  margin-right: 0.3rem;
+}
+
+/* -- Responsive ---------------------------------------------------- */
+@media (max-width: 900px) {
+  .cvp-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .cvp-grid::after {
+    display: none;
+  }
+}
+
+@media (max-width: 580px) {
+  .cvp-grid {
+    grid-template-columns: 1fr;
+  }
+  .cvp-headline {
+    font-size: clamp(1.6rem, 6.5vw, 2.1rem);
+  }
+}
+
+
+
+/* Force White Background for Section 2 when requested */
+.dl-idea-section--white,
+section.dl-idea-section--white,
+#challenge.dl-idea-section--white {
+  background: #FFFFFF !important;
+}
+
+/* ==========================================================================
+   Section 5: How We Work with Universities â€” Premium Redesign (HWW)
+   ========================================================================== */
+
+/* Section master */
+.hww-section {
+  position: relative;
+  background:
+    radial-gradient(ellipse 70% 50% at 50% 0%, rgba(255, 107, 26, 0.04) 0%, transparent 60%),
+    linear-gradient(180deg, #FFFFFF 0%, #FAF8F5 100%);
+  padding: clamp(5rem, 9vh, 7.8rem) 0 clamp(5rem, 8vh, 7rem);
+  border-top: 1px solid rgba(44, 26, 16, 0.08);
+  overflow: hidden;
+}
+
+/* Subtle ambient radial glow behind header */
+.hww-glow-orb {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 720px;
+  height: 400px;
+  background: radial-gradient(ellipse at center, rgba(255, 107, 26, 0.085) 0%, transparent 68%);
+  filter: blur(34px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hww-container {
+  position: relative;
+  z-index: 1;
+  width: min(1360px, 92vw);
+  margin: 0 auto;
+  padding: 0 clamp(1.25rem, 3.5vw, 2.5rem);
+  box-sizing: border-box;
+}
+
+/* -- Centered Header ----------------------------------------------- */
+.hww-header {
+  text-align: center;
+  max-width: 860px;
+  margin: 0 auto clamp(3.5rem, 6vh, 5rem);
+}
+
+.hww-eyebrow-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #FF6B1A;
+  background: rgba(255, 107, 26, 0.07);
+  border: 1px solid rgba(255, 107, 26, 0.22);
+  padding: 0.32rem 0.9rem 0.32rem 0.6rem;
+  border-radius: 999px;
+  margin-bottom: 1.1rem;
+}
+
+.hww-eyebrow-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #FF6B1A;
+  box-shadow: 0 0 0 3px rgba(255, 107, 26, 0.2);
+  animation: hwwPulse 2.6s ease-in-out infinite;
+  flex-shrink: 0;
+}
+
+@keyframes hwwPulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.3); opacity: 0.7; }
+}
+
+.hww-headline {
+  font-family: 'Outfit', system-ui, sans-serif;
+  font-size: clamp(2.3rem, 4.2vw, 3.8rem);
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: -0.035em;
+  color: #211F1B;
+  margin: 0 0 1rem;
+}
+
+.hww-headline-accent {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+  color: #FF6B1A;
+  letter-spacing: -0.01em;
+  position: relative;
+  display: inline-block;
+}
+
+.hww-headline-accent::after {
+  content: '';
+  position: absolute;
+  left: 0.05em;
+  bottom: 0.06em;
+  width: 94%;
+  height: 3px;
+  background: rgba(255, 107, 26, 0.28);
+  border-radius: 4px;
+}
+
+.hww-subtitle {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: clamp(1rem, 1.25vw, 1.12rem);
+  line-height: 1.68;
+  color: #6B5E52;
+  margin: 0 auto;
+  max-width: 62ch;
+}
+
+/* -- 6-Phase Framework Grid ---------------------------------------- */
+.hww-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(1rem, 1.8vw, 1.6rem);
+  position: relative;
+}
+
+/* Subtle connecting rail between row 1 and row 2 */
+.hww-grid::after {
+  content: '';
+  position: absolute;
+  top: calc(50% - 0.5px);
+  left: 4%;
+  right: 4%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, rgba(255, 107, 26, 0.12) 20%, rgba(255, 107, 26, 0.12) 80%, transparent 100%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* -- Individual Phase Card ----------------------------------------- */
+.hww-card {
+  position: relative;
+  z-index: 1;
+  background: #FFFFFF;
+  border: 1.5px solid rgba(44, 26, 16, 0.09);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow:
+    0 2px 6px rgba(31, 22, 16, 0.04),
+    0 8px 24px rgba(31, 22, 16, 0.05);
+  transition:
+    transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+  cursor: default;
+}
+
+/* Top accent orange highlight */
+.hww-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #FF6B1A, rgba(255, 107, 26, 0.4));
+  border-radius: 20px 20px 0 0;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+/* Hover lift */
+@media (hover: hover) {
+  .hww-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(255, 107, 26, 0.35);
+    box-shadow:
+      0 4px 12px rgba(31, 22, 16, 0.06),
+      0 16px 36px rgba(255, 107, 26, 0.12);
+  }
+
+  .hww-card:hover::before {
+    opacity: 1;
+  }
+
+  .hww-card:hover .hww-phase-icon {
+    color: #FF6B1A;
+    transform: scale(1.12) rotate(-3deg);
+  }
+
+  .hww-card:hover .hww-card-number {
+    opacity: 0.12;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hww-card,
+  .hww-card::before,
+  .hww-phase-icon,
+  .hww-card-number {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+.hww-card-inner {
+  padding: clamp(1.5rem, 2.2vw, 2rem);
+  display: flex;
+  flex-direction: column;
+  min-height: 220px;
+  position: relative;
+}
+
+/* Card top: badge + icon */
+.hww-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.hww-phase-badge {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #FF6B1A;
+}
+
+.hww-phase-icon {
+  color: rgba(44, 26, 16, 0.32);
+  flex-shrink: 0;
+  transition: color 0.28s ease, transform 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+  line-height: 0;
+}
+
+.hww-card-title {
+  font-family: 'Outfit', system-ui, sans-serif;
+  font-size: clamp(1.12rem, 1.58vw, 1.32rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.22;
+  color: #211F1B;
+  margin: 0 0 0.55rem;
+}
+
+.hww-card-desc {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: 0.875rem;
+  line-height: 1.65;
+  color: #6B5E52;
+  margin: 0;
+  flex: 1;
+}
+
+/* Giant watermark number */
+.hww-card-number {
+  position: absolute;
+  bottom: 1rem;
+  right: 1.25rem;
+  font-family: 'Outfit', system-ui, sans-serif;
+  font-size: 4rem;
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -0.06em;
+  color: rgba(44, 26, 16, 0.055);
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  user-select: none;
+}
+
+/* -- Responsive ---------------------------------------------------- */
+@media (max-width: 900px) {
+  .hww-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .hww-grid::after {
+    display: none;
+  }
+}
+
+@media (max-width: 580px) {
+  .hww-grid {
+    grid-template-columns: 1fr;
+  }
+  .hww-headline {
+    font-size: clamp(2rem, 8vw, 2.8rem);
+  }
+}
+
+/* ==========================================================================
+   Section 6: Tailored Partnership Models â€” Premium Redesign (TPM)
+   ========================================================================== */
+
+/* Section Master */
+.tpm-section {
+  position: relative;
+  background:
+    radial-gradient(ellipse 70% 50% at 50% 0%, rgba(255, 107, 26, 0.055) 0%, transparent 65%),
+    linear-gradient(180deg, #F8F3EB 0%, #F3ECE0 100%);
+  padding: clamp(5rem, 9vh, 7.8rem) 0 clamp(5rem, 8vh, 7rem);
+  border-top: 1px solid rgba(44, 26, 16, 0.08);
+  overflow: hidden;
+}
+
+/* Subtle ambient radial glow behind header */
+.tpm-glow-orb {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 720px;
+  height: 400px;
+  background: radial-gradient(ellipse at center, rgba(255, 107, 26, 0.085) 0%, transparent 68%);
+  filter: blur(34px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.tpm-container {
+  position: relative;
+  z-index: 1;
+  width: min(1360px, 92vw);
+  margin: 0 auto;
+  padding: 0 clamp(1.25rem, 3.5vw, 2.5rem);
+  box-sizing: border-box;
+}
+
+/* â”€â”€ Centered Header â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+.tpm-header {
+  text-align: center;
+  max-width: 860px;
+  margin: 0 auto clamp(3.5rem, 6vh, 5rem);
+}
+
+.tpm-eyebrow-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #FF6B1A;
+  background: rgba(255, 107, 26, 0.07);
+  border: 1px solid rgba(255, 107, 26, 0.22);
+  padding: 0.32rem 0.9rem 0.32rem 0.6rem;
+  border-radius: 999px;
+  margin-bottom: 1.1rem;
+}
+
+.tpm-eyebrow-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #FF6B1A;
+  box-shadow: 0 0 0 3px rgba(255, 107, 26, 0.2);
+  animation: tpmPulse 2.6s ease-in-out infinite;
+  flex-shrink: 0;
+}
+
+@keyframes tpmPulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.3); opacity: 0.7; }
+}
+
+.tpm-headline {
+  font-family: 'Outfit', system-ui, sans-serif;
+  font-size: clamp(2.3rem, 4.2vw, 3.8rem);
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: -0.035em;
+  color: #211F1B;
+  margin: 0 0 1rem;
+}
+
+.tpm-headline-accent {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+  color: #FF6B1A;
+  letter-spacing: -0.01em;
+  position: relative;
+  display: inline-block;
+}
+
+.tpm-headline-accent::after {
+  content: '';
+  position: absolute;
+  left: 0.05em;
+  bottom: 0.06em;
+  width: 94%;
+  height: 3px;
+  background: rgba(255, 107, 26, 0.28);
+  border-radius: 4px;
+}
+
+.tpm-subtitle {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: clamp(1rem, 1.25vw, 1.12rem);
+  line-height: 1.68;
+  color: #6B5E52;
+  margin: 0 auto;
+  max-width: 64ch;
+}
+
+/* â”€â”€ 6-Card Grid â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+.tpm-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(1rem, 1.8vw, 1.6rem);
+  position: relative;
+}
+
+/* â”€â”€ Individual Card â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+.tpm-card {
+  position: relative;
+  z-index: 1;
+  background: #FFFFFF;
+  border: 1.5px solid rgba(44, 26, 16, 0.09);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow:
+    0 2px 6px rgba(31, 22, 16, 0.04),
+    0 8px 24px rgba(31, 22, 16, 0.05);
+  transition:
+    transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+  cursor: default;
+}
+
+/* Top accent orange highlight */
+.tpm-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #FF6B1A, rgba(255, 107, 26, 0.4));
+  border-radius: 20px 20px 0 0;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+/* Featured Program Delivery Card */
+.tpm-card--featured {
+  border-color: rgba(255, 107, 26, 0.38);
+  background: linear-gradient(180deg, #FFFFFF 0%, #FFFBF7 100%);
+  box-shadow:
+    0 2px 8px rgba(255, 107, 26, 0.06),
+    0 10px 28px rgba(255, 107, 26, 0.08);
+}
+
+.tpm-card--featured::before {
+  opacity: 1;
+  height: 3.5px;
+  background: linear-gradient(90deg, #FF6B1A, #FF8A4C);
+}
+
+/* Hover lift */
+@media (hover: hover) {
+  .tpm-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(255, 107, 26, 0.35);
+    box-shadow:
+      0 4px 12px rgba(31, 22, 16, 0.06),
+      0 16px 36px rgba(255, 107, 26, 0.12);
+  }
+
+  .tpm-card:hover::before {
+    opacity: 1;
+  }
+
+  .tpm-card:hover .tpm-icon-wrap {
+    background: #FF6B1A;
+    color: #FFFFFF;
+    transform: scale(1.08) rotate(-3deg);
+  }
+
+  .tpm-card:hover .tpm-card-number {
+    opacity: 0.12;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tpm-card,
+  .tpm-card::before,
+  .tpm-icon-wrap,
+  .tpm-card-number {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+.tpm-card-inner {
+  padding: clamp(1.5rem, 2.2vw, 2rem);
+  display: flex;
+  flex-direction: column;
+  min-height: 250px;
+  position: relative;
+}
+
+/* Card top bar */
+.tpm-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.15rem;
+}
+
+.tpm-icon-wrap {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: rgba(255, 107, 26, 0.08);
+  color: #FF6B1A;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  line-height: 0;
+}
+
+.tpm-model-tag {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #8A7B6B;
+}
+
+.tpm-model-tag--featured {
+  color: #FF6B1A;
+  background: rgba(255, 107, 26, 0.09);
+  padding: 0.22rem 0.65rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 107, 26, 0.22);
+}
+
+.tpm-card-title {
+  font-family: 'Outfit', system-ui, sans-serif;
+  font-size: clamp(1.15rem, 1.6vw, 1.35rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.22;
+  color: #211F1B;
+  margin: 0 0 0.55rem;
+}
+
+.tpm-card-desc {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: 0.88rem;
+  line-height: 1.65;
+  color: #6B5E52;
+  margin: 0;
+  flex: 1;
+}
+
+/* Elegant separator */
+.tpm-card-divider {
+  height: 1px;
+  background: linear-gradient(90deg, rgba(44, 26, 16, 0.09) 0%, rgba(44, 26, 16, 0.03) 100%);
+  margin: 1.25rem 0 0.85rem;
+}
+
+/* Benefit row */
+.tpm-card-benefit {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  position: relative;
+  z-index: 1;
+}
+
+.tpm-check-icon {
+  color: #FF6B1A;
+  flex-shrink: 0;
+  line-height: 0;
+}
+
+.tpm-benefit-text {
+  font-family: 'Outfit', system-ui, sans-serif;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.01em;
+  color: #211F1B;
+}
+
+/* Giant watermark number */
+.tpm-card-number {
+  position: absolute;
+  bottom: 0.85rem;
+  right: 1.15rem;
+  font-family: 'Outfit', system-ui, sans-serif;
+  font-size: 3.5rem;
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -0.06em;
+  color: rgba(44, 26, 16, 0.05);
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  user-select: none;
+}
+
+/* â”€â”€ Responsive â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+@media (max-width: 900px) {
+  .tpm-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 580px) {
+  .tpm-grid {
+    grid-template-columns: 1fr;
+  }
+  .tpm-headline {
+    font-size: clamp(2rem, 8vw, 2.8rem);
+  }
 }
 
 /* ==========================================================================
@@ -447,39 +1266,274 @@
 }
 
 /* ==========================================================================
-   Section 8: Who We Partner With (Interactive Matrix)
+   Section 8: Who We Partner With â€” Premium Redesign (WWP)
    ========================================================================== */
-.univ-partners-matrix {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.65rem;
-  justify-content: center;
-  max-width: 960px;
-  margin: 0 auto;
+
+/* Section Master */
+.wwp-section {
+  position: relative;
+  background:
+    radial-gradient(ellipse 70% 50% at 50% 0%, rgba(255, 107, 26, 0.055) 0%, transparent 65%),
+    linear-gradient(180deg, #F8F4EC 0%, #F3ECE1 100%);
+  padding: clamp(5rem, 9vh, 7.8rem) 0 clamp(5rem, 8vh, 7rem);
+  border-top: 1px solid rgba(44, 26, 16, 0.08);
+  overflow: hidden;
 }
 
-.univ-partner-pill {
+/* Subtle ambient radial glow behind header */
+.wwp-glow-orb {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 720px;
+  height: 400px;
+  background: radial-gradient(ellipse at center, rgba(255, 107, 26, 0.085) 0%, transparent 68%);
+  filter: blur(34px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.wwp-container {
+  position: relative;
+  z-index: 1;
+  width: min(1360px, 92vw);
+  margin: 0 auto;
+  padding: 0 clamp(1.25rem, 3.5vw, 2.5rem);
+  box-sizing: border-box;
+}
+
+/* â”€â”€ Centered Header â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+.wwp-header {
+  text-align: center;
+  max-width: 860px;
+  margin: 0 auto clamp(3.2rem, 5.5vh, 4.5rem);
+}
+
+.wwp-eyebrow-pill {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background: #FFFFFF;
-  border: 1.5px solid rgba(44, 26, 16, 0.1);
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #FF6B1A;
+  background: rgba(255, 107, 26, 0.07);
+  border: 1px solid rgba(255, 107, 26, 0.22);
+  padding: 0.32rem 0.9rem 0.32rem 0.6rem;
   border-radius: 999px;
-  padding: 0.55rem 1.15rem;
-  font-family: 'Outfit', sans-serif;
-  font-size: 0.86rem;
-  font-weight: 700;
-  color: var(--univ-espresso);
-  box-shadow: 0 2px 8px rgba(31, 22, 16, 0.03);
-  transition: all 0.22s var(--univ-ease);
+  margin-bottom: 1.1rem;
 }
 
-.univ-partner-pill:hover {
-  background: #FAF7F2;
-  border-color: var(--univ-orange);
-  color: var(--univ-orange);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(255, 107, 26, 0.14);
+.wwp-eyebrow-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #FF6B1A;
+  box-shadow: 0 0 0 3px rgba(255, 107, 26, 0.2);
+  animation: wwpPulse 2.6s ease-in-out infinite;
+  flex-shrink: 0;
+}
+
+@keyframes wwpPulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.3); opacity: 0.7; }
+}
+
+.wwp-headline {
+  font-family: 'Outfit', system-ui, sans-serif;
+  font-size: clamp(2.3rem, 4.2vw, 3.8rem);
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: -0.035em;
+  color: #211F1B;
+  margin: 0 0 1rem;
+}
+
+.wwp-headline-accent {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+  color: #FF6B1A;
+  letter-spacing: -0.01em;
+  position: relative;
+  display: inline-block;
+}
+
+.wwp-headline-accent::after {
+  content: '';
+  position: absolute;
+  left: 0.05em;
+  bottom: 0.06em;
+  width: 94%;
+  height: 3px;
+  background: rgba(255, 107, 26, 0.28);
+  border-radius: 4px;
+}
+
+.wwp-subtitle {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: clamp(1rem, 1.25vw, 1.12rem);
+  line-height: 1.68;
+  color: #6B5E52;
+  margin: 0 auto;
+  max-width: 62ch;
+}
+
+/* â”€â”€ 7-Card Grid (3-3-1 composition) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+.wwp-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(1rem, 1.8vw, 1.45rem);
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+/* 7th Card is Centered on its own row */
+.wwp-card--centered,
+.wwp-card:nth-child(7) {
+  grid-column: 2 / 3;
+}
+
+/* â”€â”€ Individual Card â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+.wwp-card {
+  position: relative;
+  background: #FFFFFF;
+  border: 1.5px solid rgba(44, 26, 16, 0.09);
+  border-radius: 18px;
+  padding: clamp(1.2rem, 1.8vw, 1.5rem) clamp(1.25rem, 2vw, 1.6rem);
+  display: flex;
+  align-items: center;
+  gap: 1.05rem;
+  overflow: hidden;
+  box-shadow:
+    0 2px 6px rgba(31, 22, 16, 0.03),
+    0 8px 22px rgba(31, 22, 16, 0.04);
+  transition:
+    transform 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.28s ease,
+    box-shadow 0.28s ease;
+  cursor: default;
+  box-sizing: border-box;
+}
+
+/* Top accent orange highlight */
+.wwp-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #FF6B1A, rgba(255, 107, 26, 0.4));
+  border-radius: 18px 18px 0 0;
+  opacity: 0.55;
+  transition: opacity 0.28s ease;
+}
+
+/* Hover micro-interaction */
+@media (hover: hover) {
+  .wwp-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(255, 107, 26, 0.38);
+    box-shadow:
+      0 4px 12px rgba(31, 22, 16, 0.05),
+      0 14px 32px rgba(255, 107, 26, 0.12);
+  }
+
+  .wwp-card:hover::before {
+    opacity: 1;
+  }
+
+  .wwp-card:hover .wwp-icon-wrap {
+    background: #FF6B1A;
+    color: #FFFFFF;
+    transform: scale(1.08) rotate(-2deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wwp-card,
+  .wwp-card::before,
+  .wwp-icon-wrap {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+/* Icon wrap */
+.wwp-icon-wrap {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: rgba(255, 107, 26, 0.08);
+  color: #FF6B1A;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+  line-height: 0;
+}
+
+/* Content block */
+.wwp-card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  flex: 1;
+  min-width: 0;
+}
+
+.wwp-card-tag {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #8A7B6B;
+}
+
+.wwp-card-title {
+  font-family: 'Outfit', system-ui, sans-serif;
+  font-size: clamp(0.96rem, 1.25vw, 1.05rem);
+  font-weight: 800;
+  letter-spacing: -0.015em;
+  line-height: 1.28;
+  color: #211F1B;
+  margin: 0;
+  word-break: break-word;
+}
+
+/* â”€â”€ Responsive â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+@media (max-width: 960px) {
+  .wwp-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .wwp-card--centered,
+  .wwp-card:nth-child(7) {
+    grid-column: 1 / -1;
+    max-width: 480px;
+    margin: 0 auto;
+    width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .wwp-grid {
+    grid-template-columns: 1fr;
+  }
+  .wwp-card--centered,
+  .wwp-card:nth-child(7) {
+    grid-column: 1;
+    max-width: 100%;
+    margin: 0;
+  }
+  .wwp-headline {
+    font-size: clamp(2rem, 8vw, 2.8rem);
+  }
 }
 
 /* ==========================================================================
@@ -748,8 +1802,11 @@
   .univ-offering-card--featured {
     grid-column: span 1;
   }
-  .univ-pipeline-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+  .univ-pipeline-grid,
+  .cvp-grid,
+  .hww-grid,
+  .tpm-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
   .univ-phases-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -765,6 +1822,9 @@
 @media (max-width: 720px) {
   .univ-offering-grid,
   .univ-pipeline-grid,
+  .cvp-grid,
+  .hww-grid,
+  .tpm-grid,
   .univ-phases-grid,
   .univ-models-grid,
   .univ-form-grid,

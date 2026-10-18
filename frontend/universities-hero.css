@@ -1102,3 +1102,138 @@
     display: none;
   }
 }
+
+/* ==========================================================================
+   UNIVERSITIES HERO — EXACT REFERENCE DESIGN MATCHING
+   ========================================================================== */
+
+/* Top alignment: Stage nav container perfectly center aligned */
+.dl-hero-section .dl-stage-nav-container {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin-bottom: 0.95rem !important;
+  width: 100% !important;
+}
+
+/* Stage selector pills styling */
+.dl-hero-section .dl-stage-pills {
+  background: #FFFFFF !important;
+  border: 1px solid rgba(33, 31, 27, 0.09) !important;
+  box-shadow: 0 4px 18px -4px rgba(33, 31, 27, 0.06) !important;
+  border-radius: 999px !important;
+  padding: 0.3rem 0.35rem !important;
+}
+
+.dl-hero-section .dl-stage-pill {
+  font-family: 'Manrope', system-ui, sans-serif !important;
+  font-size: 0.74rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.04em !important;
+  text-transform: uppercase !important;
+  color: #5C554E !important;
+  padding: 0.46rem 0.92rem !important;
+  border-radius: 999px !important;
+  min-height: 40px !important;
+}
+
+/* Numbers in pills are vibrant burnt orange like the image */
+.dl-hero-section .dl-stage-pill span.pill-num {
+  font-family: 'Manrope', monospace !important;
+  font-size: 0.7rem !important;
+  font-weight: 800 !important;
+  color: #FF5A24 !important;
+  opacity: 1 !important;
+  letter-spacing: normal !important;
+}
+
+/* Active tab: dark background with white text & orange number */
+.dl-hero-section .dl-stage-pill.is-active {
+  background: #211F1B !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 4px 14px rgba(33, 31, 27, 0.2) !important;
+}
+
+.dl-hero-section .dl-stage-pill.is-active span.pill-num {
+  color: #FF5A24 !important;
+  opacity: 1 !important;
+}
+
+.dl-hero-section .dl-stage-pill.is-active span.pill-title {
+  color: #FFFFFF !important;
+}
+
+/* Refined Editorial Stamp to never wrap */
+.dl-hero-section .dl-editorial-stamp {
+  white-space: nowrap !important;
+  font-size: clamp(0.66rem, 0.85vw, 0.74rem) !important;
+  letter-spacing: 0.14em !important;
+  display: inline-flex !important;
+  align-items: center !important;
+}
+
+/* Main Signature Title: Bold Display Sans + Italic Serif Accent (Scale identical to reference) */
+.dl-hero-title.univ-hero-matched-title {
+  font-family: 'Outfit', system-ui, sans-serif !important;
+  font-size: clamp(3rem, 5.2vw, 4.9rem) !important;
+  font-weight: 900 !important;
+  line-height: 0.95 !important;
+  letter-spacing: -0.04em !important;
+  color: #211F1B !important;
+  margin: 0 0 0.95rem !important;
+}
+
+.dl-hero-title.univ-hero-matched-title .dl-hero-title-accent {
+  font-family: 'Instrument Serif', Georgia, serif !important;
+  font-style: italic !important;
+  font-weight: 400 !important;
+  color: #FF5A24 !important;
+  letter-spacing: -0.015em !important;
+  font-size: 1.08em !important;
+  display: inline-block !important;
+  transform: translateY(-0.04em) !important;
+  position: relative !important;
+}
+
+.dl-hero-title.univ-hero-matched-title .dl-hero-title-accent::after {
+  content: '' !important;
+  position: absolute !important;
+  left: 0.08em !important;
+  bottom: 0.08em !important;
+  width: 92% !important;
+  height: 4px !important;
+  background: rgba(255, 90, 36, 0.22) !important;
+  border-radius: 4px !important;
+  z-index: -1 !important;
+}
+
+/* Punchy Editorial Subtitle matching reference */
+.dl-hero-section .dl-hero-headline {
+  font-family: 'Outfit', system-ui, sans-serif !important;
+  font-size: clamp(1.1rem, 1.45vw, 1.38rem) !important;
+  font-weight: 700 !important;
+  line-height: 1.35 !important;
+  letter-spacing: -0.02em !important;
+  color: #211F1B !important;
+  margin: 0 0 0.9rem !important;
+}
+
+.dl-hero-section .dl-hero-headline em {
+  font-family: 'Instrument Serif', Georgia, serif !important;
+  font-style: italic !important;
+  font-weight: 400 !important;
+  color: #FF5A24 !important;
+  font-size: 1.15em !important;
+}
+
+/* Mobile adjustments */
+@media (max-width: 900px) {
+  .dl-hero-section .dl-stage-nav-container {
+    justify-content: center !important;
+  }
+  .dl-hero-section .dl-editorial-stamp {
+    white-space: normal !important;
+    flex-wrap: wrap !important;
+  }
+}
+
