@@ -193,13 +193,47 @@ function handleUniversityPartnership(ss, p, ts, ref) {
 
 // EMAIL HELPERS
 function sendAdminEmail(subject, htmlBody) {
-  MailApp.sendEmail({ to: ADMIN_EMAIL, subject: "[BD Admin] " + subject, htmlBody: wrapAdminEmail(htmlBody) });
+  var sheetLink = 'https://docs.google.com/spreadsheets/d/' + SPREADSHEET_ID + '/edit';
+  var plainText = subject + "\n\nDirect Link to Google Sheet:\n" + sheetLink;
+  try {
+    GmailApp.sendEmail(ADMIN_EMAIL, "[Building Dreams] " + subject, plainText, {
+      name: "Building Dreams Portal",
+      htmlBody: wrapAdminEmail(htmlBody),
+      replyTo: ADMIN_EMAIL
+    });
+  } catch (err) {
+    MailApp.sendEmail({
+      to: ADMIN_EMAIL,
+      subject: "[Building Dreams] " + subject,
+      body: plainText,
+      htmlBody: wrapAdminEmail(htmlBody),
+      name: "Building Dreams Portal"
+    });
+  }
 }
+
 function sendUserEmail(to, subject, htmlBody) {
-  MailApp.sendEmail({ to: to, subject: subject, htmlBody: wrapUserEmail(htmlBody), name: SITE_NAME });
+  var plainText = "Thank you for reaching out to Building Dreams! We have received your submission.";
+  try {
+    GmailApp.sendEmail(to, subject, plainText, {
+      name: SITE_NAME,
+      htmlBody: wrapUserEmail(htmlBody),
+      replyTo: ADMIN_EMAIL
+    });
+  } catch (err) {
+    MailApp.sendEmail({
+      to: to,
+      subject: subject,
+      body: plainText,
+      htmlBody: wrapUserEmail(htmlBody),
+      name: SITE_NAME
+    });
+  }
 }
+
 function buildAdminTable(formLabel, dataObj) {
-  var rows = "";
+  var sheetLink = 'https://docs.google.com/spreadsheets/d/' + SPREADSHEET_ID + '/edit';
+  var rows = '<tr><td style="padding:10px 12px;font-weight:700;background:#fff2ec;color:#c04010;border:1px solid #fed7aa;">📊 Google Sheet Link</td><td style="padding:10px 12px;border:1px solid #fed7aa;background:#fff8f4;"><a href="' + sheetLink + '" target="_blank" style="color:#FF5A24;font-weight:800;text-decoration:underline;font-size:14px;">Open Google Sheet Responses &rarr;</a></td></tr>';
   for (var key in dataObj) {
     var val = dataObj[key] || "—";
     rows += '<tr><td style="padding:8px 12px;font-weight:600;background:#f5f5f5;border:1px solid #e0e0e0;white-space:nowrap;">' + key + '</td><td style="padding:8px 12px;border:1px solid #e0e0e0;">' + val + '</td></tr>';
