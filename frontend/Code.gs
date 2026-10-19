@@ -81,113 +81,134 @@ function getOrCreateSheet(ss, name, headers) {
 
 // 1. STUDENT APPLICATION
 function handleStudentApply(ss, p, ts, ref) {
+  var userEmail = (p.parent_email || p.email || "").trim();
   var headers = ["Timestamp","Source Page","Student Name","Grade","School","Parent Name","Parent Email","Parent Phone","Interests","Idea / Problem","Why Building Dreams","Accessibility Notes"];
   var sheet = getOrCreateSheet(ss, "Student Applications", headers);
-  sheet.appendRow([ts, ref, p.student_name||"", p.grade||"", p.school||"", p.parent_name||"", p.parent_email||"", p.parent_phone||"", p.interests||"", p.idea||"", p.why||"", p.accessibility||""]);
+  sheet.appendRow([ts, ref, p.student_name||"", p.grade||"", p.school||"", p.parent_name||"", userEmail, p.parent_phone||"", p.interests||"", p.idea||"", p.why||"", p.accessibility||""]);
 
   sendAdminEmail("New Student Application – " + (p.student_name||"Unknown"), buildAdminTable("Student Application", {
     "Student Name": p.student_name, "Grade": p.grade, "School": p.school,
-    "Parent Name": p.parent_name, "Parent Email": p.parent_email, "Parent Phone": p.parent_phone,
+    "Parent Name": p.parent_name, "Parent Email": userEmail, "Parent Phone": p.parent_phone,
     "Interests": p.interests, "Idea / Problem": p.idea, "Why Building Dreams": p.why,
     "Notes": p.accessibility, "Source Page": ref, "Timestamp": ts
   }));
 
-  if (p.parent_email) sendUserEmail(p.parent_email, "Your child's Application to Building Dreams – Received!", buildStudentConfirmation(p));
+  if (userEmail) {
+    sendUserEmail(userEmail, "Your child's Application to Building Dreams – Received!", buildStudentConfirmation(p));
+  }
   return { success: true, message: "Application received successfully!" };
 }
 
 // 2. FOUNDER APPLICATION
 function handleFounderApply(ss, p, ts, ref) {
+  var userEmail = (p.founder_email || p.email || "").trim();
   var headers = ["Timestamp","Source Page","Founder Name","Email","University","Course & Year","Startup Name","Current Stage","Problem Statement","Help Needed","Team Members","Time Commitment","Links"];
   var sheet = getOrCreateSheet(ss, "Founder Applications", headers);
-  sheet.appendRow([ts, ref, p.founder_name||"", p.founder_email||"", p.university||"", p.course_year||"", p.startup_name||"", p.current_stage||"", p.problem_statement||"", p.help_needed||"", p.team_members||"", p.time_commitment||"", p.links||""]);
+  sheet.appendRow([ts, ref, p.founder_name||"", userEmail, p.university||"", p.course_year||"", p.startup_name||"", p.current_stage||"", p.problem_statement||"", p.help_needed||"", p.team_members||"", p.time_commitment||"", p.links||""]);
 
   sendAdminEmail("New Founder Application – " + (p.startup_name||p.founder_name||"Unknown"), buildAdminTable("Founder Application", {
-    "Founder Name": p.founder_name, "Email": p.founder_email, "University": p.university,
+    "Founder Name": p.founder_name, "Email": userEmail, "University": p.university,
     "Course & Year": p.course_year, "Startup Name": p.startup_name, "Current Stage": p.current_stage,
     "Problem Statement": p.problem_statement, "Help Needed": p.help_needed,
     "Team Members": p.team_members, "Time Commitment": p.time_commitment, "Links": p.links,
     "Source Page": ref, "Timestamp": ts
   }));
 
-  if (p.founder_email) sendUserEmail(p.founder_email, "Your Founder Application to Building Dreams – Received!", buildFounderConfirmation(p));
+  if (userEmail) {
+    sendUserEmail(userEmail, "Your Founder Application to Building Dreams – Received!", buildFounderConfirmation(p));
+  }
   return { success: true, message: "Founder application received!" };
 }
 
 // 3. SCHOOL ENQUIRY
 function handleSchoolEnquiry(ss, p, ts, ref) {
+  var userEmail = (p.email || p.school_email || "").trim();
   var headers = ["Timestamp","Source Page","Contact Name","Email","Phone","School Name","Grade Levels","Program Type","Message"];
   var sheet = getOrCreateSheet(ss, "School Enquiries", headers);
-  sheet.appendRow([ts, ref, p.name||"", p.email||"", p.phone||"", p.school||p.organisation||"", p.grades||"", p.program_type||"", p.message||""]);
+  sheet.appendRow([ts, ref, p.name||"", userEmail, p.phone||"", p.school||p.organisation||"", p.grades||"", p.program_type||"", p.message||""]);
 
   sendAdminEmail("New School Enquiry – " + (p.school||p.organisation||"Unknown"), buildAdminTable("School Enquiry", {
-    "Contact Name": p.name, "Email": p.email, "Phone": p.phone,
+    "Contact Name": p.name, "Email": userEmail, "Phone": p.phone,
     "School": p.school||p.organisation, "Grade Levels": p.grades, "Program Type": p.program_type,
     "Message": p.message, "Source Page": ref, "Timestamp": ts
   }));
 
-  if (p.email) sendUserEmail(p.email, "Thank you for reaching out – Building Dreams for Schools", buildSchoolConfirmation(p));
+  if (userEmail) {
+    sendUserEmail(userEmail, "Thank you for reaching out – Building Dreams for Schools", buildSchoolConfirmation(p));
+  }
   return { success: true, message: "School enquiry received!" };
 }
 
 // 4. COMMUNITY JOIN
 function handleCommunityJoin(ss, p, ts, ref) {
+  var userEmail = (p.email || "").trim();
   var headers = ["Timestamp","Source Page","Full Name","Email","Role","Interest / Domain","LinkedIn","Message"];
   var sheet = getOrCreateSheet(ss, "Community Members", headers);
-  sheet.appendRow([ts, ref, p.name||"", p.email||"", p.role||"", p.interest||"", p.linkedin||"", p.message||""]);
+  sheet.appendRow([ts, ref, p.name||"", userEmail, p.role||"", p.interest||"", p.linkedin||"", p.message||""]);
 
   sendAdminEmail("New Community Member – " + (p.name||"Unknown"), buildAdminTable("Community Join", {
-    "Name": p.name, "Email": p.email, "Role": p.role, "Interest": p.interest,
+    "Name": p.name, "Email": userEmail, "Role": p.role, "Interest": p.interest,
     "LinkedIn": p.linkedin, "Message": p.message, "Source Page": ref, "Timestamp": ts
   }));
 
-  if (p.email) sendUserEmail(p.email, "Welcome to the Building Dreams Community, " + (p.name||"there") + "!", buildCommunityConfirmation(p));
+  if (userEmail) {
+    sendUserEmail(userEmail, "Welcome to the Building Dreams Community, " + (p.name||"there") + "!", buildCommunityConfirmation(p));
+  }
   return { success: true, message: "Community application received!" };
 }
 
 // 5. CONTACT ENQUIRY
 function handleContactEnquiry(ss, p, ts, ref) {
+  var userEmail = (p.email || "").trim();
   var headers = ["Timestamp","Source Page","Journey / Type","Name","Email","Phone","Organisation","Message"];
   var sheet = getOrCreateSheet(ss, "Contact Enquiries", headers);
-  sheet.appendRow([ts, ref, p.journey||"", p.name||"", p.email||"", p.phone||"", p.organisation||"", p.looking||""]);
+  sheet.appendRow([ts, ref, p.journey||"", p.name||"", userEmail, p.phone||"", p.organisation||"", p.looking||p.message||""]);
 
   sendAdminEmail("New Contact Enquiry – " + (p.name||"Unknown") + " [" + (p.journey||"General") + "]", buildAdminTable("Contact Enquiry", {
-    "Journey Type": p.journey, "Name": p.name, "Email": p.email, "Phone": p.phone,
-    "Organisation": p.organisation, "Message": p.looking, "Source Page": ref, "Timestamp": ts
+    "Journey Type": p.journey, "Name": p.name, "Email": userEmail, "Phone": p.phone,
+    "Organisation": p.organisation, "Message": p.looking||p.message, "Source Page": ref, "Timestamp": ts
   }));
 
-  if (p.email) sendUserEmail(p.email, "We received your message – Building Dreams", buildContactConfirmation(p));
+  if (userEmail) {
+    sendUserEmail(userEmail, "We received your message – Building Dreams", buildContactConfirmation(p));
+  }
   return { success: true, message: "Enquiry received!" };
 }
 
 // 6. NEWSLETTER
 function handleNewsletter(ss, p, ts, ref) {
+  var userEmail = (p.email || "").trim();
   var headers = ["Timestamp","Source Page","Email"];
   var sheet = getOrCreateSheet(ss, "Newsletter Subscribers", headers);
-  sheet.appendRow([ts, ref, p.email||""]);
+  sheet.appendRow([ts, ref, userEmail]);
 
-  sendAdminEmail("New Newsletter Subscriber – " + (p.email||"?"), buildAdminTable("Newsletter Subscription", {
-    "Email": p.email, "Source Page": ref, "Timestamp": ts
+  sendAdminEmail("New Newsletter Subscriber – " + userEmail, buildAdminTable("Newsletter Subscription", {
+    "Email": userEmail, "Source Page": ref, "Timestamp": ts
   }));
 
-  if (p.email) sendUserEmail(p.email, "You're now part of the Building Dreams Insider List!", buildNewsletterConfirmation(p));
+  if (userEmail) {
+    sendUserEmail(userEmail, "You're now part of the Building Dreams Insider List!", buildNewsletterConfirmation(p));
+  }
   return { success: true, message: "Subscribed successfully!" };
 }
 
 // 7. UNIVERSITY PARTNERSHIP
 function handleUniversityPartnership(ss, p, ts, ref) {
+  var userEmail = (p.email || "").trim();
   var headers = ["Timestamp","Source Page","Name","Designation","Institution","Email","Phone","Partnership Type","Existing Initiatives","What to Build","Timeline"];
   var sheet = getOrCreateSheet(ss, "University Partnerships", headers);
-  sheet.appendRow([ts, ref, p.name||"", p.designation||"", p.organisation||"", p.email||"", p.phone||"", p.partnership||"", p.initiatives||"", p.build||"", p.timeline||""]);
+  sheet.appendRow([ts, ref, p.name||"", p.designation||"", p.organisation||"", userEmail, p.phone||"", p.partnership||"", p.initiatives||"", p.build||"", p.timeline||""]);
 
   sendAdminEmail("New University Partnership – " + (p.organisation||"Unknown"), buildAdminTable("University Partnership", {
     "Name": p.name, "Designation": p.designation, "Institution": p.organisation,
-    "Email": p.email, "Phone": p.phone, "Partnership Type": p.partnership,
+    "Email": userEmail, "Phone": p.phone, "Partnership Type": p.partnership,
     "Existing Initiatives": p.initiatives, "What to Build": p.build,
     "Timeline": p.timeline, "Source Page": ref, "Timestamp": ts
   }));
 
-  if (p.email) sendUserEmail(p.email, "Your Partnership Enquiry – Building Dreams for Universities", buildUniversityConfirmation(p));
+  if (userEmail) {
+    sendUserEmail(userEmail, "Your Partnership Enquiry – Building Dreams for Universities", buildUniversityConfirmation(p));
+  }
   return { success: true, message: "Partnership enquiry received!" };
 }
 
@@ -201,18 +222,30 @@ function sendAdminEmail(subject, htmlBody) {
       htmlBody: wrapAdminEmail(htmlBody),
       replyTo: ADMIN_EMAIL
     });
+    Logger.log("Admin email sent via GmailApp to: " + ADMIN_EMAIL);
   } catch (err) {
-    MailApp.sendEmail({
-      to: ADMIN_EMAIL,
-      subject: "[Building Dreams] " + subject,
-      body: plainText,
-      htmlBody: wrapAdminEmail(htmlBody),
-      name: "Building Dreams Portal"
-    });
+    Logger.log("GmailApp failed for admin (" + err + "), trying MailApp...");
+    try {
+      MailApp.sendEmail({
+        to: ADMIN_EMAIL,
+        subject: "[Building Dreams] " + subject,
+        body: plainText,
+        htmlBody: wrapAdminEmail(htmlBody),
+        name: "Building Dreams Portal"
+      });
+      Logger.log("Admin email sent via MailApp to: " + ADMIN_EMAIL);
+    } catch (e2) {
+      Logger.log("MailApp also failed for admin: " + e2);
+    }
   }
 }
 
 function sendUserEmail(to, subject, htmlBody) {
+  if (!to || typeof to !== "string" || to.indexOf("@") === -1) {
+    Logger.log("Invalid user email: " + to);
+    return;
+  }
+  to = to.trim();
   var plainText = "Thank you for reaching out to Building Dreams! We have received your submission.";
   try {
     GmailApp.sendEmail(to, subject, plainText, {
@@ -220,14 +253,21 @@ function sendUserEmail(to, subject, htmlBody) {
       htmlBody: wrapUserEmail(htmlBody),
       replyTo: ADMIN_EMAIL
     });
+    Logger.log("User email sent via GmailApp to: " + to);
   } catch (err) {
-    MailApp.sendEmail({
-      to: to,
-      subject: subject,
-      body: plainText,
-      htmlBody: wrapUserEmail(htmlBody),
-      name: SITE_NAME
-    });
+    Logger.log("GmailApp failed for user (" + err + "), trying MailApp...");
+    try {
+      MailApp.sendEmail({
+        to: to,
+        subject: subject,
+        body: plainText,
+        htmlBody: wrapUserEmail(htmlBody),
+        name: SITE_NAME
+      });
+      Logger.log("User email sent via MailApp to: " + to);
+    } catch (e2) {
+      Logger.log("MailApp also failed for user: " + e2);
+    }
   }
 }
 
