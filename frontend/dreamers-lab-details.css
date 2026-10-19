@@ -762,3 +762,205 @@
     transition: none !important;
   }
 }
+
+/* ── 7. DREAMERS LAB APPLY MODAL ─────────────────────────────────────────── */
+.dl-apply-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(20, 15, 10, 0.65);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem;
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+  transition: opacity 0.28s ease, visibility 0.28s ease;
+}
+
+.dl-apply-modal-backdrop.is-open {
+  opacity: 1;
+  pointer-events: auto;
+  visibility: visible;
+}
+
+.dl-apply-modal-panel {
+  position: relative;
+  width: 100%;
+  max-width: 560px;
+  background: #173B2B;
+  color: #FFFDF8;
+  border-radius: 24px;
+  border: 1px solid rgba(200, 243, 106, 0.25);
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.35);
+  padding: 2.25rem;
+  transform: translateY(20px) scale(0.97);
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.dl-apply-modal-backdrop.is-open .dl-apply-modal-panel {
+  transform: translateY(0) scale(1);
+}
+
+.dl-apply-modal-close {
+  position: absolute;
+  top: 1.2rem;
+  right: 1.2rem;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #FFFDF8;
+  font-size: 1.4rem;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.dl-apply-modal-close:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: rotate(90deg);
+}
+
+.dl-apply-modal-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: #C8F36A;
+  margin-bottom: 0.75rem;
+}
+
+.dl-apply-badge-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #C8F36A;
+  box-shadow: 0 0 8px #C8F36A;
+}
+
+.dl-apply-modal-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 800;
+  color: #FFFDF8;
+  margin: 0 0 0.5rem;
+  line-height: 1.15;
+}
+
+.dl-apply-modal-title em {
+  font-family: 'Instrument Serif', serif;
+  font-style: italic;
+  font-weight: 400;
+  color: #C8F36A;
+}
+
+.dl-apply-modal-subtitle {
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: rgba(255, 253, 248, 0.8);
+  margin: 0 0 1.5rem;
+}
+
+.dl-apply-modal-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  margin-bottom: 1.75rem;
+  background: rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 1rem 1.15rem;
+}
+
+.dl-apply-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+}
+
+.dl-apply-step-num {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 800;
+  color: #C8F36A;
+  background: rgba(200, 243, 106, 0.12);
+  padding: 0.2rem 0.5rem;
+  border-radius: 6px;
+  margin-top: 0.1rem;
+}
+
+.dl-apply-step div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.dl-apply-step strong {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.88rem;
+  color: #FFFDF8;
+}
+
+.dl-apply-step span {
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.78rem;
+  color: rgba(255, 253, 248, 0.7);
+}
+
+.dl-apply-modal-footer {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  flex-wrap: wrap;
+}
+
+.dl-apply-modal-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 700;
+  padding: 0.75rem 1.35rem;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.dl-apply-modal-btn--primary {
+  background: #FF5A24;
+  color: #FFFFFF;
+  box-shadow: 0 4px 14px rgba(255, 90, 36, 0.35);
+  flex: 1;
+}
+
+.dl-apply-modal-btn--primary:hover {
+  background: #E84D19;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(255, 90, 36, 0.45);
+}
+
+.dl-apply-modal-btn--secondary {
+  background: rgba(255, 255, 255, 0.1);
+  color: #FFFDF8;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.dl-apply-modal-btn--secondary:hover {
+  background: rgba(255, 255, 255, 0.18);
+  transform: translateY(-2px);
+}
+

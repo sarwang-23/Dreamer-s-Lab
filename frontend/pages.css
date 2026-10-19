@@ -1,3 +1,8 @@
+@import './student-entrepreneurs-sprints.css';
+@import './student-entrepreneurs-success.css';
+@import './student-entrepreneurs-mentors.css';
+@import './student-entrepreneurs-formats.css';
+
 /* ==========================================================================
    BUILDING DREAMS — INTERIOR PAGES DESIGN SYSTEM  (prefix: pg-)
    Loaded by nav.js on every page. Complements style.css / footer.css.
@@ -881,13 +886,3 @@ html {
   .pg-btn,
   .nd-nav-caret { transition: none !important; }
 }
-
-/* ── Sprints, Success, Mentors & Formats Section Styles Import ──── */
-@import './student-entrepreneurs-sprints.css';
-@import './student-entrepreneurs-success.css';
-@import './student-entrepreneurs-mentors.css';
-@import './student-entrepreneurs-formats.css';
-
-
-
-

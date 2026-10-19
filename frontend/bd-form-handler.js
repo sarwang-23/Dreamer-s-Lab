@@ -128,37 +128,39 @@ function attachBDFormHandler(formEl, formType, extraFields) {
 }
 
 // ── ATTACH TO ALL FORMS ON DOM READY ─────────────────────────────────────────
-document.addEventListener("DOMContentLoaded", function () {
-  const path = window.location.pathname.toLowerCase();
-
+function initBDForms() {
   // ── apply/index.html & get-started/index.html ─────────────────────────────
   // Student form
-  const studentForm = document.getElementById("dl-name") ||
+  const studentForm = document.getElementById("dl-name")?.closest("form") ||
     document.querySelector("form[data-form='student']");
   if (studentForm) attachBDFormHandler(studentForm, "student_apply");
 
   // University founder form
-  const founderForm = document.getElementById("uf-name") ||
+  const founderForm = document.getElementById("uf-name")?.closest("form") ||
     document.querySelector("form[data-form='founder']");
   if (founderForm) attachBDFormHandler(founderForm, "founder_apply");
 
   // ── community/index.html ──────────────────────────────────────────────────
-  const communityForm = document.getElementById("community-name") ||
+  const communityForm = document.getElementById("community-name")?.closest("form") ||
+    document.querySelector("form.comm-form") ||
     document.querySelector("form[data-form='community']");
   if (communityForm) attachBDFormHandler(communityForm, "community_join");
 
   // ── contact/index.html ────────────────────────────────────────────────────
   const contactForm = document.getElementById("contact-enquiry-form") ||
+    document.getElementById("contact-name")?.closest("form") ||
     document.querySelector("form[data-form='contact']");
   if (contactForm) attachBDFormHandler(contactForm, "contact_enquiry");
 
   // ── insights/index.html (newsletter) ─────────────────────────────────────
-  const newsletterForm = document.getElementById("insights-sub-email") ||
+  const newsletterForm = document.getElementById("insights-sub-email")?.closest("form") ||
+    document.querySelector("form.ins-newsletter-form") ||
     document.querySelector("form[data-form='newsletter']");
   if (newsletterForm) attachBDFormHandler(newsletterForm, "newsletter");
 
   // ── universities/index.html ───────────────────────────────────────────────
   const univForm = document.getElementById("institutional-enquiry-form") ||
+    document.getElementById("univ-name")?.closest("form") ||
     document.querySelector("form[data-form='university']");
   if (univForm) attachBDFormHandler(univForm, "university_partnership");
 
@@ -166,4 +168,10 @@ document.addEventListener("DOMContentLoaded", function () {
   const schoolForm = document.querySelector("form[data-form='school']") ||
     document.getElementById("school-enquiry-form");
   if (schoolForm) attachBDFormHandler(schoolForm, "school_enquiry");
-});
+}
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initBDForms);
+} else {
+  initBDForms();
+}
