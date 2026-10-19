@@ -65,11 +65,17 @@ function setBDSubmitLoading(btn, loading) {
 
 // Core submit handler – sends data to Google Apps Script
 async function bdSubmitForm(formData) {
+  const params = new URLSearchParams();
+  for (const [key, value] of formData.entries()) {
+    params.append(key, value);
+  }
+
   const response = await fetch(BD_SCRIPT_URL, {
     method: "POST",
-    body: formData,
-    // Note: no Content-Type header so the browser sets multipart/form-data automatically
-    // Google Apps Script reads e.parameter from this
+    headers: {
+      "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8",
+    },
+    body: params.toString(),
   });
   if (!response.ok) throw new Error("Server error: " + response.status);
   return response.json();

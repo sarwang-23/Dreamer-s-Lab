@@ -1,12 +1,9 @@
 /* ==========================================================================
    Dreamers Lab — Interactive Hero & 3D Workspace Engine
-   Features:
-   • 3D Parallax Mouse Tracking with Inertia / Damping
-   • Magnetic Tactile CTA
-   • Interactive Stage Switcher & Card Linking (Curiosity → Idea → Build → Launch)
-   • Glassmorphic Sticky Header State
-   • Micro-Interactions & Ambient Motion
    ========================================================================== */
+import dreamersStudentsImg from './assets/dreamers-students.jpg';
+import storyExperimentImg from './assets/story-experiment.jpg';
+import storyPrototypeImg from './assets/story-prototype.jpg';
 
 (function () {
   'use strict';
@@ -146,7 +143,7 @@
         phaseTag: 'Stage 01 · Problem Hunting & Inquiry',
         phaseMeta: 'ACTIVE STAGE: 01 CURIOSITY',
         caption: 'Interactive Showcase — Team EcoLoop framed the core inquiry: converting canteen bio-waste into rich community garden soil.',
-        image: '../assets/dreamers-students.jpg',
+        image: dreamersStudentsImg,
         element: elements.curiosity
       },
       'problem': {
@@ -154,7 +151,7 @@
         phaseTag: 'Stage 02 · Field Audit & Community Data',
         phaseMeta: 'ACTIVE STAGE: 02 PROBLEM & IDEA',
         caption: 'Interactive Showcase — 28 field interviews validated that 84% of residents experience irregular waste pickup.',
-        image: '../assets/story-experiment.jpg',
+        image: storyExperimentImg,
         element: elements.problem
       },
       'prototype': {
@@ -162,7 +159,7 @@
         phaseTag: 'Stage 03 · Prototyping V1.2 & Build',
         phaseMeta: 'ACTIVE STAGE: 03 PROTOTYPE & BUILD',
         caption: 'Interactive Showcase — Students construct physical bio-loop prototypes, testing sensor mechanics and learning by doing.',
-        image: '../assets/story-prototype.jpg',
+        image: storyPrototypeImg,
         element: elements.prototype
       },
       'launch': {
@@ -170,7 +167,7 @@
         phaseTag: 'Stage 04 · 12-Week Demo Day Showcase',
         phaseMeta: 'ACTIVE STAGE: 04 DEMO DAY SHOWCASE',
         caption: 'Interactive Showcase — Culmination at Demo Day: pitching the validated prototype to school mentors and ecosystem partners.',
-        image: '../assets/dreamers-students.jpg',
+        image: dreamersStudentsImg,
         element: elements.launch
       }
     };

@@ -232,7 +232,20 @@ function buildUniversityConfirmation(p) {
 
 // EMAIL WRAPPERS
 function wrapAdminEmail(body) {
-  return '<!DOCTYPE html><html><body style="margin:0;padding:0;background:#f0f0f0;font-family:Arial,sans-serif;"><div style="max-width:600px;margin:24px auto;background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.12);"><div style="background:#1a1a2e;padding:20px 24px;"><h1 style="margin:0;color:#fff;font-size:18px;">Building Dreams — Admin Notification</h1></div><div style="padding:24px;">' + body + '</div><div style="background:#f5f5f5;padding:12px 24px;font-size:12px;color:#888;">This is an automated notification from the Building Dreams website.</div></div></body></html>';
+  var sheetLink = 'https://docs.google.com/spreadsheets/d/' + SPREADSHEET_ID + '/edit';
+  return '<!DOCTYPE html><html><body style="margin:0;padding:0;background:#f0f0f0;font-family:Arial,sans-serif;">'
+    + '<div style="max-width:600px;margin:24px auto;background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.12);">'
+    + '<div style="background:#1a1a2e;padding:20px 24px;"><h1 style="margin:0;color:#fff;font-size:18px;">Building Dreams — New Submission</h1></div>'
+    + '<div style="padding:24px;">'
+    + body
+    + '<div style="margin-top:24px;padding:16px;background:#f9fafb;border:1px dashed #d1d5db;border-radius:6px;text-align:center;">'
+    + '<p style="margin:0 0 10px;font-size:13px;color:#6b7280;font-weight:600;">Direct Link to Excel / Google Sheet:</p>'
+    + '<a href="' + sheetLink + '" target="_blank" style="background:#FF5A24;color:#ffffff;text-decoration:none;padding:10px 20px;border-radius:6px;font-weight:bold;font-size:14px;display:inline-block;">📊 Open Google Sheet</a>'
+    + '<p style="margin:8px 0 0;font-size:11px;color:#9ca3af;word-break:break-all;">' + sheetLink + '</p>'
+    + '</div>'
+    + '</div>'
+    + '<div style="background:#f5f5f5;padding:12px 24px;font-size:12px;color:#888;">This is an automated notification from the Building Dreams website.</div>'
+    + '</div></body></html>';
 }
 function wrapUserEmail(body) {
   return '<!DOCTYPE html><html><body style="margin:0;padding:0;background:#f0f0f0;font-family:Arial,sans-serif;"><div style="max-width:600px;margin:24px auto;background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.12);"><div style="background:#1a1a2e;padding:20px 24px;text-align:center;"><h1 style="margin:0;color:#fff;font-size:22px;letter-spacing:1px;">Building Dreams</h1><p style="margin:4px 0 0;color:#aaa;font-size:13px;">Where Dreamers Become Builders</p></div><div style="padding:32px 24px;color:#333;line-height:1.7;font-size:15px;">' + body + '</div><div style="background:#1a1a2e;padding:16px 24px;text-align:center;"><p style="margin:0;color:#aaa;font-size:12px;">© ' + new Date().getFullYear() + ' Building Dreams</p></div></div></body></html>';
@@ -240,3 +253,23 @@ function wrapUserEmail(body) {
 function doGet(e) {
   return ContentService.createTextOutput(JSON.stringify({ status: "ok" })).setMimeType(ContentService.MimeType.JSON);
 }
+
+// TEST FUNCTION — Run this inside Apps Script editor to authorize email & spreadsheet access!
+function testAdminAndUserEmail() {
+  var testEmail = ADMIN_EMAIL;
+  var timestamp = new Date().toLocaleString("en-IN", { timeZone: "Asia/Kolkata" });
+  var ss = SpreadsheetApp.openById(SPREADSHEET_ID);
+  
+  // Test Sheet row append
+  var testSheet = getOrCreateSheet(ss, "Test Submissions", ["Timestamp", "Status", "Note"]);
+  testSheet.appendRow([timestamp, "Success", "Test run from Apps Script editor"]);
+
+  // Test Admin email
+  sendAdminEmail("Test Notification & Sheet Link", "<p>This is a test submission. If you see this, email sending and Google Sheets connectivity are fully functional!</p>");
+
+  // Test User confirmation email
+  sendUserEmail(testEmail, "Welcome to Building Dreams (Test Confirmation)!", "<p>Congratulations! Your email system is working properly.</p>");
+
+  Logger.log("Test completed! Check your inbox for: " + testEmail);
+}
+
