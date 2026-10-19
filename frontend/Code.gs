@@ -81,7 +81,7 @@ function getOrCreateSheet(ss, name, headers) {
 
 // 1. STUDENT APPLICATION
 function handleStudentApply(ss, p, ts, ref) {
-  var userEmail = (p.parent_email || p.email || "").trim();
+  var userEmail = (p.parent_email || p.email || p.student_email || "").trim();
   var headers = ["Timestamp","Source Page","Student Name","Grade","School","Parent Name","Parent Email","Parent Phone","Interests","Idea / Problem","Why Building Dreams","Accessibility Notes"];
   var sheet = getOrCreateSheet(ss, "Student Applications", headers);
   sheet.appendRow([ts, ref, p.student_name||"", p.grade||"", p.school||"", p.parent_name||"", userEmail, p.parent_phone||"", p.interests||"", p.idea||"", p.why||"", p.accessibility||""]);
@@ -93,10 +93,11 @@ function handleStudentApply(ss, p, ts, ref) {
     "Notes": p.accessibility, "Source Page": ref, "Timestamp": ts
   }));
 
+  var emailStatus = { sent: false, note: "No email provided" };
   if (userEmail) {
-    sendUserEmail(userEmail, "Your child's Application to Building Dreams – Received!", buildStudentConfirmation(p));
+    emailStatus = sendUserEmail(userEmail, "Your child's Application to Building Dreams – Received!", buildStudentConfirmation(p));
   }
-  return { success: true, message: "Application received successfully!" };
+  return { success: true, message: "Application received successfully!", userEmailSentTo: userEmail, emailStatus: emailStatus };
 }
 
 // 2. FOUNDER APPLICATION
@@ -114,10 +115,11 @@ function handleFounderApply(ss, p, ts, ref) {
     "Source Page": ref, "Timestamp": ts
   }));
 
+  var emailStatus = { sent: false, note: "No email provided" };
   if (userEmail) {
-    sendUserEmail(userEmail, "Your Founder Application to Building Dreams – Received!", buildFounderConfirmation(p));
+    emailStatus = sendUserEmail(userEmail, "Your Founder Application to Building Dreams – Received!", buildFounderConfirmation(p));
   }
-  return { success: true, message: "Founder application received!" };
+  return { success: true, message: "Founder application received!", userEmailSentTo: userEmail, emailStatus: emailStatus };
 }
 
 // 3. SCHOOL ENQUIRY
@@ -133,10 +135,11 @@ function handleSchoolEnquiry(ss, p, ts, ref) {
     "Message": p.message, "Source Page": ref, "Timestamp": ts
   }));
 
+  var emailStatus = { sent: false, note: "No email provided" };
   if (userEmail) {
-    sendUserEmail(userEmail, "Thank you for reaching out – Building Dreams for Schools", buildSchoolConfirmation(p));
+    emailStatus = sendUserEmail(userEmail, "Thank you for reaching out – Building Dreams for Schools", buildSchoolConfirmation(p));
   }
-  return { success: true, message: "School enquiry received!" };
+  return { success: true, message: "School enquiry received!", userEmailSentTo: userEmail, emailStatus: emailStatus };
 }
 
 // 4. COMMUNITY JOIN
@@ -151,10 +154,11 @@ function handleCommunityJoin(ss, p, ts, ref) {
     "LinkedIn": p.linkedin, "Message": p.message, "Source Page": ref, "Timestamp": ts
   }));
 
+  var emailStatus = { sent: false, note: "No email provided" };
   if (userEmail) {
-    sendUserEmail(userEmail, "Welcome to the Building Dreams Community, " + (p.name||"there") + "!", buildCommunityConfirmation(p));
+    emailStatus = sendUserEmail(userEmail, "Welcome to the Building Dreams Community, " + (p.name||"there") + "!", buildCommunityConfirmation(p));
   }
-  return { success: true, message: "Community application received!" };
+  return { success: true, message: "Community application received!", userEmailSentTo: userEmail, emailStatus: emailStatus };
 }
 
 // 5. CONTACT ENQUIRY
@@ -169,10 +173,11 @@ function handleContactEnquiry(ss, p, ts, ref) {
     "Organisation": p.organisation, "Message": p.looking||p.message, "Source Page": ref, "Timestamp": ts
   }));
 
+  var emailStatus = { sent: false, note: "No email provided" };
   if (userEmail) {
-    sendUserEmail(userEmail, "We received your message – Building Dreams", buildContactConfirmation(p));
+    emailStatus = sendUserEmail(userEmail, "We received your message – Building Dreams", buildContactConfirmation(p));
   }
-  return { success: true, message: "Enquiry received!" };
+  return { success: true, message: "Enquiry received!", userEmailSentTo: userEmail, emailStatus: emailStatus };
 }
 
 // 6. NEWSLETTER
@@ -186,10 +191,11 @@ function handleNewsletter(ss, p, ts, ref) {
     "Email": userEmail, "Source Page": ref, "Timestamp": ts
   }));
 
+  var emailStatus = { sent: false, note: "No email provided" };
   if (userEmail) {
-    sendUserEmail(userEmail, "You're now part of the Building Dreams Insider List!", buildNewsletterConfirmation(p));
+    emailStatus = sendUserEmail(userEmail, "You're now part of the Building Dreams Insider List!", buildNewsletterConfirmation(p));
   }
-  return { success: true, message: "Subscribed successfully!" };
+  return { success: true, message: "Subscribed successfully!", userEmailSentTo: userEmail, emailStatus: emailStatus };
 }
 
 // 7. UNIVERSITY PARTNERSHIP
@@ -206,10 +212,11 @@ function handleUniversityPartnership(ss, p, ts, ref) {
     "Timeline": p.timeline, "Source Page": ref, "Timestamp": ts
   }));
 
+  var emailStatus = { sent: false, note: "No email provided" };
   if (userEmail) {
-    sendUserEmail(userEmail, "Your Partnership Enquiry – Building Dreams for Universities", buildUniversityConfirmation(p));
+    emailStatus = sendUserEmail(userEmail, "Your Partnership Enquiry – Building Dreams for Universities", buildUniversityConfirmation(p));
   }
-  return { success: true, message: "Partnership enquiry received!" };
+  return { success: true, message: "Partnership enquiry received!", userEmailSentTo: userEmail, emailStatus: emailStatus };
 }
 
 // EMAIL HELPERS
@@ -234,7 +241,7 @@ function sendAdminEmail(subject, htmlBody) {
 function sendUserEmail(to, subject, htmlBody) {
   if (!to || typeof to !== "string" || to.indexOf("@") === -1) {
     Logger.log("Invalid user email: " + to);
-    return;
+    return { sent: false, error: "Invalid user email: " + to };
   }
   to = to.trim();
   var plainText = "Thank you for reaching out to Building Dreams! We have received your submission.";
@@ -247,8 +254,10 @@ function sendUserEmail(to, subject, htmlBody) {
       name: "Building Dreams"
     });
     Logger.log("User email successfully sent to: " + to);
+    return { sent: true, recipient: to };
   } catch (err) {
     Logger.log("User email failed: " + err);
+    return { sent: false, error: err.toString() };
   }
 }
 
