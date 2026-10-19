@@ -215,12 +215,12 @@ function handleUniversityPartnership(ss, p, ts, ref) {
 // EMAIL HELPERS
 function sendAdminEmail(subject, htmlBody) {
   var sheetLink = 'https://docs.google.com/spreadsheets/d/' + SPREADSHEET_ID + '/edit';
-  var plainText = subject + "\n\nDirect Link to Google Sheet:\n" + sheetLink;
+  var cleanSubject = "Building Dreams: " + subject.replace(/^\[.*?\]\s*/, "");
+  var plainText = cleanSubject + "\n\nDirect Link to Google Sheet:\n" + sheetLink + "\n\nPlease view details in your spreadsheet or HTML view.";
   try {
-    GmailApp.sendEmail(ADMIN_EMAIL, "[Building Dreams] " + subject, plainText, {
-      name: "Building Dreams Portal",
-      htmlBody: wrapAdminEmail(htmlBody),
-      replyTo: ADMIN_EMAIL
+    GmailApp.sendEmail(ADMIN_EMAIL, cleanSubject, plainText, {
+      name: "Building Dreams",
+      htmlBody: wrapAdminEmail(htmlBody)
     });
     Logger.log("Admin email sent via GmailApp to: " + ADMIN_EMAIL);
   } catch (err) {
@@ -228,10 +228,10 @@ function sendAdminEmail(subject, htmlBody) {
     try {
       MailApp.sendEmail({
         to: ADMIN_EMAIL,
-        subject: "[Building Dreams] " + subject,
+        subject: cleanSubject,
         body: plainText,
         htmlBody: wrapAdminEmail(htmlBody),
-        name: "Building Dreams Portal"
+        name: "Building Dreams"
       });
       Logger.log("Admin email sent via MailApp to: " + ADMIN_EMAIL);
     } catch (e2) {
