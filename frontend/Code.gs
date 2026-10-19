@@ -218,25 +218,16 @@ function sendAdminEmail(subject, htmlBody) {
   var cleanSubject = "Building Dreams: " + subject.replace(/^\[.*?\]\s*/, "");
   var plainText = cleanSubject + "\n\nDirect Link to Google Sheet:\n" + sheetLink + "\n\nPlease view details in your spreadsheet or HTML view.";
   try {
-    GmailApp.sendEmail(ADMIN_EMAIL, cleanSubject, plainText, {
-      name: "Building Dreams",
-      htmlBody: wrapAdminEmail(htmlBody)
+    MailApp.sendEmail({
+      to: ADMIN_EMAIL,
+      subject: cleanSubject,
+      body: plainText,
+      htmlBody: wrapAdminEmail(htmlBody),
+      name: "Building Dreams"
     });
-    Logger.log("Admin email sent via GmailApp to: " + ADMIN_EMAIL);
+    Logger.log("Admin email successfully sent to: " + ADMIN_EMAIL);
   } catch (err) {
-    Logger.log("GmailApp failed for admin (" + err + "), trying MailApp...");
-    try {
-      MailApp.sendEmail({
-        to: ADMIN_EMAIL,
-        subject: cleanSubject,
-        body: plainText,
-        htmlBody: wrapAdminEmail(htmlBody),
-        name: "Building Dreams"
-      });
-      Logger.log("Admin email sent via MailApp to: " + ADMIN_EMAIL);
-    } catch (e2) {
-      Logger.log("MailApp also failed for admin: " + e2);
-    }
+    Logger.log("Admin email failed: " + err);
   }
 }
 
@@ -248,26 +239,16 @@ function sendUserEmail(to, subject, htmlBody) {
   to = to.trim();
   var plainText = "Thank you for reaching out to Building Dreams! We have received your submission.";
   try {
-    GmailApp.sendEmail(to, subject, plainText, {
-      name: SITE_NAME,
+    MailApp.sendEmail({
+      to: to,
+      subject: subject,
+      body: plainText,
       htmlBody: wrapUserEmail(htmlBody),
-      replyTo: ADMIN_EMAIL
+      name: "Building Dreams"
     });
-    Logger.log("User email sent via GmailApp to: " + to);
+    Logger.log("User email successfully sent to: " + to);
   } catch (err) {
-    Logger.log("GmailApp failed for user (" + err + "), trying MailApp...");
-    try {
-      MailApp.sendEmail({
-        to: to,
-        subject: subject,
-        body: plainText,
-        htmlBody: wrapUserEmail(htmlBody),
-        name: SITE_NAME
-      });
-      Logger.log("User email sent via MailApp to: " + to);
-    } catch (e2) {
-      Logger.log("MailApp also failed for user: " + e2);
-    }
+    Logger.log("User email failed: " + err);
   }
 }
 
