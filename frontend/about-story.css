@@ -543,3 +543,352 @@
         animation: none !important;
     }
 }
+
+/* ─── 9. "What You Can Build" Interactive Modal Banner System ─────── */
+.story-closing-link {
+    background: transparent;
+    border: none;
+    border-bottom: 1.5px solid rgba(255, 107, 26, 0.35);
+    cursor: pointer;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: 700;
+    color: #FF6B1A;
+    padding: 0 0 2px 0;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    text-decoration: none;
+    transition: border-color 0.25s ease, color 0.25s ease;
+}
+.story-closing-link:hover {
+    border-color: #FF6B1A;
+    color: #E65A00;
+}
+
+.wycb-modal-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(20, 12, 8, 0.62);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: clamp(1rem, 3vw, 2.5rem);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.32s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.wycb-modal-backdrop.is-open {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.wycb-modal-panel {
+    position: relative;
+    width: 100%;
+    max-width: 1080px;
+    max-height: 90vh;
+    overflow-y: auto;
+    background: #FAF8F5;
+    border: 1px solid rgba(44, 27, 19, 0.12);
+    border-radius: 28px;
+    padding: clamp(2rem, 4vw, 3.2rem);
+    box-shadow:
+        0 24px 64px -12px rgba(20, 12, 8, 0.35),
+        0 4px 16px rgba(20, 12, 8, 0.08);
+    transform: translateY(28px) scale(0.97);
+    transition: transform 0.36s cubic-bezier(0.16, 1, 0.3, 1);
+    font-family: 'Outfit', sans-serif;
+    color: #2C1B13;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(44, 27, 19, 0.2) transparent;
+}
+
+.wycb-modal-backdrop.is-open .wycb-modal-panel {
+    transform: translateY(0) scale(1);
+}
+
+/* Close Button */
+.wycb-modal-close {
+    position: absolute;
+    top: 1.4rem;
+    right: 1.4rem;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid rgba(44, 27, 19, 0.12);
+    background: #FFFFFF;
+    color: #2C1B13;
+    font-size: 1.5rem;
+    line-height: 1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s, transform 0.2s, border-color 0.2s;
+    z-index: 10;
+}
+
+.wycb-modal-close:hover {
+    background: #FF6B1A;
+    color: #FFFFFF;
+    border-color: #FF6B1A;
+    transform: rotate(90deg);
+}
+
+/* Header */
+.wycb-modal-header {
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto clamp(2rem, 3.5vw, 2.75rem);
+}
+
+.wycb-modal-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.35rem 0.85rem;
+    background: rgba(255, 107, 26, 0.1);
+    border: 1px solid rgba(255, 107, 26, 0.25);
+    border-radius: 100px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    color: #FF6B1A;
+    margin-bottom: 0.85rem;
+    text-transform: uppercase;
+}
+
+.wycb-modal-badge-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #FF6B1A;
+    animation: wycbDotPulse 2s ease-in-out infinite;
+}
+
+@keyframes wycbDotPulse {
+    0%, 100% { opacity: 0.5; transform: scale(0.9); }
+    50% { opacity: 1; transform: scale(1.3); }
+}
+
+.wycb-modal-title {
+    font-family: 'Outfit', sans-serif;
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    font-weight: 800;
+    letter-spacing: -0.025em;
+    line-height: 1.15;
+    margin: 0 0 0.75rem;
+    color: #1A0D07;
+}
+
+.wycb-title-accent {
+    color: #FF6B1A;
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-style: italic;
+    font-weight: 400;
+}
+
+.wycb-modal-subtitle {
+    font-family: 'Manrope', sans-serif;
+    font-size: clamp(0.92rem, 1.2vw, 1.05rem);
+    line-height: 1.6;
+    color: rgba(44, 27, 19, 0.75);
+    margin: 0 auto;
+}
+
+/* 3 Cards Grid */
+.wycb-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: clamp(1rem, 1.8vw, 1.5rem);
+    margin-bottom: clamp(1.75rem, 3vw, 2.25rem);
+}
+
+.wycb-card {
+    position: relative;
+    background: #FFFFFF;
+    border: 1.5px solid rgba(44, 27, 19, 0.09);
+    border-radius: 20px;
+    padding: clamp(1.4rem, 2vw, 1.85rem);
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: #2C1B13;
+    transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+    overflow: hidden;
+}
+
+.wycb-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3.5px;
+    background: rgba(44, 27, 19, 0.1);
+    transition: background 0.28s ease, height 0.28s ease;
+}
+
+.wycb-card--dreamers::before { background: #FF9B66; }
+.wycb-card--founders::before { background: #FF6B1A; }
+.wycb-card--univ::before { background: #0A473C; }
+
+.wycb-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 16px 36px -8px rgba(44, 27, 19, 0.14);
+    border-color: rgba(255, 107, 26, 0.35);
+}
+
+.wycb-card:hover::before {
+    height: 5px;
+}
+
+.wycb-card-badge-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    margin-bottom: 1.1rem;
+}
+
+.wycb-pill {
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    padding: 0.25rem 0.6rem;
+    border-radius: 6px;
+    text-transform: uppercase;
+}
+
+.wycb-pill--peach {
+    background: rgba(255, 107, 26, 0.12);
+    color: #D45300;
+}
+.wycb-pill--orange {
+    background: #FF6B1A;
+    color: #FFFFFF;
+}
+.wycb-pill--forest {
+    background: rgba(10, 71, 60, 0.12);
+    color: #0A473C;
+}
+
+.wycb-program-name {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: rgba(44, 27, 19, 0.5);
+}
+
+.wycb-card-title {
+    font-size: clamp(1.05rem, 1.4vw, 1.22rem);
+    font-weight: 700;
+    line-height: 1.3;
+    letter-spacing: -0.015em;
+    margin: 0 0 0.65rem;
+    color: #1A0D07;
+}
+
+.wycb-card-desc {
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.88rem;
+    line-height: 1.55;
+    color: rgba(44, 27, 19, 0.72);
+    margin: 0 0 1.25rem;
+    flex-grow: 1;
+}
+
+.wycb-highlights {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+}
+
+.wycb-highlights li {
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.82rem;
+    color: rgba(44, 27, 19, 0.85);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.wycb-highlights li::before {
+    content: '';
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #FF6B1A;
+    flex-shrink: 0;
+}
+
+.wycb-card-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #FF6B1A;
+    transition: color 0.2s, gap 0.2s;
+    margin-top: auto;
+}
+
+.wycb-card:hover .wycb-card-cta {
+    color: #D45300;
+    gap: 0.7rem;
+}
+
+.wycb-arrow {
+    display: inline-block;
+    transition: transform 0.2s ease;
+}
+
+.wycb-card:hover .wycb-arrow {
+    transform: translateX(3px);
+}
+
+/* Modal Footer */
+.wycb-modal-footer {
+    text-align: center;
+    padding-top: 1.25rem;
+    border-top: 1px solid rgba(44, 27, 19, 0.08);
+}
+
+.wycb-footer-hint {
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.92rem;
+    color: rgba(44, 27, 19, 0.7);
+    margin: 0;
+}
+
+.wycb-footer-link {
+    color: #FF6B1A;
+    font-weight: 700;
+    text-decoration: none;
+    margin-left: 0.35rem;
+    transition: color 0.2s;
+}
+
+.wycb-footer-link:hover {
+    color: #D45300;
+    text-decoration: underline;
+}
+
+/* Responsive Modal */
+@media (max-width: 900px) {
+    .wycb-grid {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+    .wycb-modal-panel {
+        padding: 2rem 1.4rem;
+        border-radius: 22px;
+    }
+}

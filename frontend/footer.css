@@ -127,9 +127,10 @@
 .bd-footer__inner {
   position: relative;
   z-index: 2;
-  width: min(calc(100% - 96px), 1320px);
+  width: min(calc(100% - 96px), 1280px);
   margin-inline: auto;
-  padding-top: clamp(48px, 6vw, 76px);
+  padding-top: clamp(32px, 4.5vw, 48px);
+  padding-bottom: clamp(16px, 3vw, 24px);
 }
 
 .bd-footer a {
@@ -144,7 +145,7 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding-bottom: clamp(44px, 5.5vw, 68px);
+  padding-bottom: clamp(24px, 3.5vw, 32px);
 }
 
 /* Brand Header: Logo + Eyebrow Tagline */
@@ -152,8 +153,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 16px;
-  margin-bottom: clamp(24px, 3.2vw, 36px);
+  gap: clamp(8px, 1.4vw, 14px);
+  margin-bottom: clamp(16px, 2.2vw, 24px);
 }
 
 .bd-footer__brand {
@@ -211,14 +212,15 @@
 /* Main Centered Headline */
 .bd-footer__statement {
   margin: 0 auto;
-  max-width: 960px;
+  max-width: 880px;
   font-family: var(--f-sans);
-  font-size: clamp(32px, 5.2vw, 66px);
+  font-size: clamp(28px, 4.2vw, 56px);
   font-weight: 800;
-  line-height: 1.12;
-  letter-spacing: -0.035em;
-  color: var(--f-ivory);
+  line-height: 1.14;
+  letter-spacing: -0.03em;
+  color: #FDF7ED;
   text-align: center;
+  margin-bottom: clamp(16px, 2.2vw, 24px);
 }
 .bd-footer__statement-line {
   display: block;
@@ -266,10 +268,11 @@
 .bd-footer__navigation {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  column-gap: clamp(32px, 4.5vw, 64px);
-  row-gap: 36px;
+  column-gap: clamp(24px, 3.5vw, 48px);
+  row-gap: 24px;
   border-top: 1px solid var(--f-rule);
-  padding-block: clamp(40px, 5vw, 56px);
+  border-bottom: 1px solid var(--f-rule);
+  padding: clamp(20px, 3vw, 28px) 0;
   position: relative;
 }
 
@@ -289,14 +292,15 @@
   min-width: 0;
 }
 .bd-footer__label {
-  margin: 0 0 20px;
-  color: var(--f-mint);
+  margin: 0 0 12px;
+  font-family: var(--f-sans);
   font-size: 11px;
   font-weight: 700;
   line-height: 1.4;
   letter-spacing: 2px;
   text-transform: uppercase;
   opacity: 0.72;
+  color: var(--f-mint);
 }
 
 .bd-footer__list {
@@ -307,16 +311,17 @@
 .bd-footer__item {
   margin: 0;
   padding: 0;
+  line-height: 1.6;
 }
 
 .bd-footer__link {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  min-height: 38px;
+  min-height: 28px;
   max-width: 100%;
-  padding-block: 6px;
-  font-size: 15px;
+  padding-block: 4px;
+  font-size: 14px;
   font-weight: 400;
   line-height: 1.5;
   color: rgba(247, 244, 234, 0.72);
@@ -375,9 +380,8 @@
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  gap: 20px;
-  border-top: 1px solid var(--f-rule);
-  padding-block: 24px 34px;
+  gap: 16px;
+  padding: clamp(12px, 2vw, 18px) 0;
 }
 
 .bd-footer__connect-label-group {
@@ -470,7 +474,7 @@
 .bd-footer__signature-section {
   position: relative;
   border-top: 1px solid var(--f-rule);
-  padding-block: clamp(48px, 6.5vw, 84px) clamp(44px, 6vw, 76px);
+  padding-block: clamp(20px, 3.5vw, 28px) clamp(16px, 3vw, 22px);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -504,9 +508,9 @@
   justify-content: center;
   gap: clamp(12px, 3.5vw, 42px);
   font-family: var(--f-serif);
-  font-size: clamp(58px, 10.8vw, 160px);
+  font-size: clamp(42px, 7.5vw, 120px);
   font-weight: 400;
-  line-height: 1;
+  line-height: 1.02;
   letter-spacing: -0.03em;
   text-align: center;
 }
@@ -536,14 +540,14 @@
 
 /* ── 5. COLOPHON & UTILITY BAR ────────────────────────────── */
 .bd-footer__colophon {
-  min-height: 72px;
+  min-height: auto;
   border-top: 1px solid var(--f-rule);
-  padding-block: 22px 28px;
+  padding-block: 10px 12px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 16px;
   color: rgba(185, 220, 208, 0.6);
   font-size: 13px;
   line-height: 1.6;
@@ -569,7 +573,7 @@
   color: rgba(185, 220, 208, 0.68);
   font-size: 13px;
   transition: color 0.2s ease;
-  min-height: 36px;
+  min-height: 28px;
   display: inline-flex;
   align-items: center;
 }

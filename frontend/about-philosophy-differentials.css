@@ -130,8 +130,8 @@
                 box-shadow 0.3s ease,
                 background 0.3s ease,
                 border-color 0.3s ease;
-    cursor: default;
-    user-select: text;
+    cursor: pointer;
+    user-select: none;
 }
 
 .phil-card-top-accent {
@@ -319,7 +319,8 @@
                 border-color 0.3s ease;
     text-decoration: none;
     color: inherit;
-    cursor: default;
+    cursor: pointer;
+    user-select: none;
 }
 
 .diff-card-accent {

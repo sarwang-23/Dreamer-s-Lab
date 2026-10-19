@@ -28,4 +28,58 @@
   );
 
   observer.observe(section);
+
+  // ── "What You Can Build" Modal Banner Controller ──
+  var modal = document.getElementById('wycb-modal');
+  var openBtn = document.getElementById('open-what-you-can-build');
+  var closeBtn = document.getElementById('wycb-modal-close');
+
+  if (modal) {
+    function openModal(e) {
+      if (e) e.preventDefault();
+      modal.setAttribute('aria-hidden', 'false');
+      modal.classList.add('is-open');
+      document.body.style.overflow = 'hidden';
+      if (closeBtn) closeBtn.focus();
+    }
+
+    function closeModal() {
+      modal.classList.remove('is-open');
+      modal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+      if (openBtn) openBtn.focus();
+    }
+
+    if (openBtn) {
+      openBtn.addEventListener('click', openModal);
+    }
+
+    // Also support any element with [data-open-wycb]
+    var extraTriggers = document.querySelectorAll('[data-open-wycb]');
+    Array.prototype.forEach.call(extraTriggers, function (btn) {
+      btn.addEventListener('click', openModal);
+      btn.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          openModal(e);
+        }
+      });
+    });
+
+    if (closeBtn) {
+      closeBtn.addEventListener('click', closeModal);
+    }
+
+    modal.addEventListener('click', function (e) {
+      if (e.target === modal) {
+        closeModal();
+      }
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && modal.classList.contains('is-open')) {
+        closeModal();
+      }
+    });
+  }
 })();

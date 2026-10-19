@@ -61,14 +61,14 @@
                         We work with school students, university students, aspiring founders and institutions to make entrepreneurship more practical, accessible and outcome-driven &mdash; so entrepreneurial capability is built by solving problems, experimenting and creating things that matter.
                     </p>
                     <div class="ab-actions">
-                        <a href="../dreamers-lab/" class="ab-btn ab-btn--primary" data-magnetic>
+                        <a href="../#programs" class="ab-btn ab-btn--primary" data-magnetic>
                             <span class="ab-btn-content">
                                 <span>Explore our programs</span>
                                 <svg class="ab-btn-arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h13M12 5l7 7-7 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
                             </span>
                             <span class="ab-btn-glow" aria-hidden="true"></span>
                         </a>
-                        <a href="../get-started/" class="ab-btn ab-btn--ghost">
+                        <a href="../contact/" class="ab-btn ab-btn--ghost">
                             <span>Get in touch</span>
                         </a>
                     </div>
@@ -306,14 +306,103 @@
             <div class="story-closing">
                 <span class="story-closing-quote">&ldquo;Every big idea starts with a first step.&rdquo;</span>
                 <span class="story-closing-sep" aria-hidden="true">&middot;</span>
-                <a href="../dreamers-lab/" class="story-closing-link">
+                <button type="button" class="story-closing-link" id="open-what-you-can-build" aria-haspopup="dialog" aria-controls="wycb-modal">
                     <span>Explore what you can build</span>
                     <span class="story-closing-arrow" aria-hidden="true">&rarr;</span>
-                </a>
+                </button>
             </div>
 
         </div>
     </section>
+
+    <!-- ===== "WHAT YOU CAN BUILD" INTERACTIVE MODAL BANNER ===== -->
+    <div class="wycb-modal-backdrop" id="wycb-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="wycb-modal-title">
+        <div class="wycb-modal-panel">
+            <button type="button" class="wycb-modal-close" id="wycb-modal-close" aria-label="Close dialog">&times;</button>
+            
+            <!-- Header -->
+            <div class="wycb-modal-header">
+                <div class="wycb-modal-badge">
+                    <span class="wycb-modal-badge-dot" aria-hidden="true"></span>
+                    <span>PATHWAYS &amp; VENTURES</span>
+                </div>
+                <h2 class="wycb-modal-title" id="wycb-modal-title">
+                    What You Can Build With <span class="wycb-title-accent">Building Dreams</span>
+                </h2>
+                <p class="wycb-modal-subtitle">
+                    From high-school curiosity to university ventures and institutional ecosystems, explore the structured pathways designed to take you from early ideas to validated reality.
+                </p>
+            </div>
+
+            <!-- 3 Pathways Grid -->
+            <div class="wycb-grid" role="list">
+                <!-- Track 01: Dreamers Lab -->
+                <a href="../dreamers-lab/" class="wycb-card wycb-card--dreamers" role="listitem">
+                    <div class="wycb-card-badge-row">
+                        <span class="wycb-pill wycb-pill--peach">GRADES 9&ndash;12</span>
+                        <span class="wycb-program-name">Dreamers Lab</span>
+                    </div>
+                    <h3 class="wycb-card-title">Turn curiosity into your first validated prototype</h3>
+                    <p class="wycb-card-desc">Discover community problems, develop creative ideas, work in collaborative cohorts, and build functional MVPs.</p>
+                    <ul class="wycb-highlights">
+                        <li>Identify real-world problems worth solving</li>
+                        <li>Hands-on prototype &amp; MVP building sprints</li>
+                        <li>Showcase at the student cohort Demo Day</li>
+                    </ul>
+                    <div class="wycb-card-cta">
+                        <span>Explore Dreamers Lab</span>
+                        <span class="wycb-arrow" aria-hidden="true">&rarr;</span>
+                    </div>
+                </a>
+
+                <!-- Track 02: Student Entrepreneurs -->
+                <a href="../student-entrepreneurs/" class="wycb-card wycb-card--founders" role="listitem">
+                    <div class="wycb-card-badge-row">
+                        <span class="wycb-pill wycb-pill--orange">UNIVERSITY FOUNDERS</span>
+                        <span class="wycb-program-name">Student Entrepreneurs</span>
+                    </div>
+                    <h3 class="wycb-card-title">Transform student ambition into scalable startups</h3>
+                    <p class="wycb-card-desc">Move from early ideas to validated problems, customer interviews, repeatable traction loops, and pitch readiness.</p>
+                    <ul class="wycb-highlights">
+                        <li>15+ customer discovery interviews</li>
+                        <li>Dedicated 1:1 founder mentorship</li>
+                        <li>Direct access to angel investors &amp; pilots</li>
+                    </ul>
+                    <div class="wycb-card-cta">
+                        <span>Explore Founder Track</span>
+                        <span class="wycb-arrow" aria-hidden="true">&rarr;</span>
+                    </div>
+                </a>
+
+                <!-- Track 03: Universities & Accelerators -->
+                <a href="../universities/" class="wycb-card wycb-card--univ" role="listitem">
+                    <div class="wycb-card-badge-row">
+                        <span class="wycb-pill wycb-pill--forest">INSTITUTIONS &amp; ACCELERATORS</span>
+                        <span class="wycb-program-name">Campus Pipeline</span>
+                    </div>
+                    <h3 class="wycb-card-title">Build a campus ecosystem that produces real ventures</h3>
+                    <p class="wycb-card-desc">Partner with Building Dreams to deliver pre-incubation, founder cohorts, incubation programs, and venture creation pipelines.</p>
+                    <ul class="wycb-highlights">
+                        <li>End-to-end cohort curriculum &amp; delivery</li>
+                        <li>Innovation cell &amp; faculty cohort support</li>
+                        <li>Measurable ecosystem impact &amp; metrics</li>
+                    </ul>
+                    <div class="wycb-card-cta">
+                        <span>Partner With Us</span>
+                        <span class="wycb-arrow" aria-hidden="true">&rarr;</span>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Modal Footer -->
+            <div class="wycb-modal-footer">
+                <p class="wycb-footer-hint">
+                    Not sure which pathway is right for you?
+                    <a href="../contact/" class="wycb-footer-link">Talk to our team &rarr;</a>
+                </p>
+            </div>
+        </div>
+    </div>
 
     <!-- Section 3 & 4: Mission & Vision — Premium Editorial Dual Brand Cards -->
     <section class="mv-section" id="mission-vision" aria-label="Mission and Vision">
@@ -403,7 +492,7 @@
 
             <div class="phil-grid">
                 <!-- Principle 01: Start with curiosity -->
-                <article class="phil-card" tabindex="0">
+                <article class="phil-card" tabindex="0" role="button" data-open-wycb aria-haspopup="dialog" aria-controls="wycb-modal" aria-label="Start with curiosity — Click to explore what you can build">
                     <div class="phil-card-top-accent" aria-hidden="true"></div>
                     <div>
                         <div class="phil-card-head">
@@ -429,7 +518,7 @@
                 </article>
 
                 <!-- Principle 02: Build to learn -->
-                <article class="phil-card" tabindex="0">
+                <article class="phil-card" tabindex="0" role="button" data-open-wycb aria-haspopup="dialog" aria-controls="wycb-modal" aria-label="Build to learn — Click to explore what you can build">
                     <div class="phil-card-top-accent" aria-hidden="true"></div>
                     <div>
                         <div class="phil-card-head">
@@ -455,7 +544,7 @@
                 </article>
 
                 <!-- Principle 03: Progress over perfection -->
-                <article class="phil-card" tabindex="0">
+                <article class="phil-card" tabindex="0" role="button" data-open-wycb aria-haspopup="dialog" aria-controls="wycb-modal" aria-label="Progress over perfection — Click to explore what you can build">
                     <div class="phil-card-top-accent" aria-hidden="true"></div>
                     <div>
                         <div class="phil-card-head">
@@ -483,7 +572,7 @@
                 </article>
 
                 <!-- Principle 04: No one builds alone -->
-                <article class="phil-card" tabindex="0">
+                <article class="phil-card" tabindex="0" role="button" data-open-wycb aria-haspopup="dialog" aria-controls="wycb-modal" aria-label="No one builds alone — Click to explore what you can build">
                     <div class="phil-card-top-accent" aria-hidden="true"></div>
                     <div>
                         <div class="phil-card-head">
@@ -532,7 +621,7 @@
 
                 <div class="diff-grid">
                     <!-- Pillar 01: Education -->
-                    <article class="diff-card" tabindex="0">
+                    <article class="diff-card" tabindex="0" role="button" data-open-wycb aria-haspopup="dialog" aria-controls="wycb-modal" aria-label="Education — Click to explore what you can build">
                         <div class="diff-card-accent" aria-hidden="true"></div>
                         <div>
                             <div class="diff-card-head">
@@ -559,7 +648,7 @@
                     </article>
 
                     <!-- Pillar 02: Execution -->
-                    <article class="diff-card" tabindex="0">
+                    <article class="diff-card" tabindex="0" role="button" data-open-wycb aria-haspopup="dialog" aria-controls="wycb-modal" aria-label="Execution — Click to explore what you can build">
                         <div class="diff-card-accent" aria-hidden="true"></div>
                         <div>
                             <div class="diff-card-head">
@@ -586,7 +675,7 @@
                     </article>
 
                     <!-- Pillar 03: Ecosystem -->
-                    <article class="diff-card" tabindex="0">
+                    <article class="diff-card" tabindex="0" role="button" data-open-wycb aria-haspopup="dialog" aria-controls="wycb-modal" aria-label="Ecosystem — Click to explore what you can build">
                         <div class="diff-card-accent" aria-hidden="true"></div>
                         <div>
                             <div class="diff-card-head">
@@ -737,14 +826,14 @@
                 Explore our programs or connect with us to discuss how Building Dreams can support your goals.
             </p>
             <div class="about-cta-actions">
-                <a href="../dreamers-lab/" class="about-cta-btn about-cta-btn--primary">
+                <a href="../#programs" class="about-cta-btn about-cta-btn--primary">
                     <span>Explore Programs</span>
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                         <line x1="5" y1="12" x2="19" y2="12"></line>
                         <polyline points="12 5 19 12 12 19"></polyline>
                     </svg>
                 </a>
-                <a href="../get-started/" class="about-cta-btn about-cta-btn--secondary">
+                <a href="../contact/" class="about-cta-btn about-cta-btn--secondary">
                     <span>Get in Touch</span>
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                         <line x1="5" y1="12" x2="19" y2="12"></line>
