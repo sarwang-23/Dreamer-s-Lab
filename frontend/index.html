@@ -6,7 +6,11 @@
     <title>Building Dreams - From Curious Minds to Confident Builders</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,600;1,400&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,600;1,400&display=swap" media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,600;1,400&display=swap">
+    </noscript>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="responsive.css">
     <link rel="stylesheet" href="footer.css">
@@ -669,7 +673,7 @@
                 <!-- Tilted Campus Polaroid Photo with attached lime sticky tape -->
                 <div class="se-polaroid" aria-hidden="true">
                     <div class="se-polaroid-inner">
-                        <img src="./campus-polaroid.jpg" alt="University Campus" class="se-polaroid-img" />
+                        <img src="./campus-polaroid.jpg" alt="University Campus" class="se-polaroid-img" loading="lazy" decoding="async" width="500" height="420" />
                     </div>
                     <!-- Neon lime tape sticker on Polaroid corner -->
                     <div class="se-tape-sticker">
@@ -1656,7 +1660,7 @@
                 <!-- Video Card 01 — Dreamers Lab · High School -->
                 <article class="bd-video-card">
                     <div class="bd-video-wrapper">
-                        <video class="bd-video-player" playsinline controls preload="metadata" src="./videos/testimonial-1.mp4">
+                        <video class="bd-video-player" playsinline controls preload="none" src="./videos/testimonial-1.mp4">
                             Your browser does not support the video tag.
                         </video>
                     </div>
@@ -1672,7 +1676,7 @@
                 <!-- Video Card 02 (Featured Spotlight) — Campus to Venture · Cohort -->
                 <article class="bd-video-card bd-video-card--spotlight">
                     <div class="bd-video-wrapper">
-                        <video class="bd-video-player" playsinline controls preload="metadata" src="./videos/testimonial-2.mp4">
+                        <video class="bd-video-player" playsinline controls preload="none" src="./videos/testimonial-2.mp4">
                             Your browser does not support the video tag.
                         </video>
                         <span class="bd-video-spotlight-pill">★ Featured Story</span>
@@ -1689,7 +1693,7 @@
                 <!-- Video Card 03 — Prototype & Pitch -->
                 <article class="bd-video-card">
                     <div class="bd-video-wrapper">
-                        <video class="bd-video-player" playsinline controls preload="metadata" src="./videos/testimonial-3.mp4">
+                        <video class="bd-video-player" playsinline controls preload="none" src="./videos/testimonial-3.mp4">
                             Your browser does not support the video tag.
                         </video>
                     </div>

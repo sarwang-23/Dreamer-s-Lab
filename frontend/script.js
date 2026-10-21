@@ -65,10 +65,13 @@ document.addEventListener("DOMContentLoaded", () => {
     // Horizontal Journey Animation
     const jPath = document.getElementById('jPath');
     const jParticle = document.querySelector('.j-particle');
+    const jSvg = document.querySelector('.journey-path-svg');
     
-    if (jPath && jParticle) {
+    if (jPath && jParticle && jSvg) {
         const pathLength = jPath.getTotalLength();
         let progress = 0;
+        let rafId = null;
+        let isRunning = false;
         
         function animateJParticle() {
             progress += 0.2;
@@ -78,10 +81,28 @@ document.addEventListener("DOMContentLoaded", () => {
             jParticle.setAttribute('cx', point.x);
             jParticle.setAttribute('cy', point.y);
             
-            requestAnimationFrame(animateJParticle);
+            rafId = requestAnimationFrame(animateJParticle);
         }
         
-        animateJParticle();
+        if ('IntersectionObserver' in window) {
+            const jObserver = new IntersectionObserver(([entry]) => {
+                const isVisible = entry.isIntersecting && window.getComputedStyle(jSvg).display !== 'none';
+                if (isVisible) {
+                    if (!isRunning) {
+                        isRunning = true;
+                        animateJParticle();
+                    }
+                } else {
+                    if (isRunning) {
+                        isRunning = false;
+                        cancelAnimationFrame(rafId);
+                    }
+                }
+            }, { threshold: 0.05 });
+            jObserver.observe(jSvg);
+        } else {
+            animateJParticle();
+        }
     }
     
     const jNodes = document.querySelectorAll('.j-node');
@@ -155,7 +176,8 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     }
 
-    let raf;
+    let raf = null;
+    let isCanvasRunning = false;
     function loop(t) {
       drawStars(t);
       raf = requestAnimationFrame(loop);
@@ -163,7 +185,26 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const ro = new ResizeObserver(() => { resize(); initStars(); });
     ro.observe(canvas);
-    resize(); initStars(); loop(0);
+    resize(); initStars();
+
+    if ('IntersectionObserver' in window) {
+      const canvasObserver = new IntersectionObserver(([entry]) => {
+        if (entry.isIntersecting) {
+          if (!isCanvasRunning) {
+            isCanvasRunning = true;
+            loop(0);
+          }
+        } else {
+          if (isCanvasRunning) {
+            isCanvasRunning = false;
+            if (raf) cancelAnimationFrame(raf);
+          }
+        }
+      }, { threshold: 0.05 });
+      canvasObserver.observe(canvas);
+    } else {
+      loop(0);
+    }
   }
 
   /* -- Entrance animation -- */
@@ -572,17 +613,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 });
             });
 
-            /* Entrance animation (skipped when reduced motion is preferred) */
-            if (!reduce) {
-                root.classList.add('bd-faq--animate');
-                const io = new IntersectionObserver(([entry]) => {
-                    if (entry.isIntersecting) {
-                        root.classList.add('is-visible');
-                        io.disconnect();
-                    }
-                }, { threshold: 0.12 });
-                io.observe(root);
-            }
+            /* Instant visibility for FAQ items — no delayed entrance blocking */
+            root.classList.add('is-visible');
 
             /* Functional CTA — smooth scroll to the existing contact CTA section */
             const cta = root.querySelector('.bd-faq-cta');
