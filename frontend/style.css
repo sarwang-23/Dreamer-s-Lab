@@ -59,14 +59,9 @@ html {
 }
 
 .bd-hero-star {
-    position: absolute;
-    top: 6%;
-    right: 3%;
-    width: clamp(80px, 10vw, 140px);
-    height: auto;
-    opacity: 0.9;
-    animation: bdStarPulse 4s ease-in-out infinite;
+    display: none;
 }
+
 
 @keyframes bdStarPulse {
     0%, 100% { transform: scale(1); opacity: 0.9; }
@@ -5943,8 +5938,11 @@ body {
 /* RIGHT column: Journey Card */
 .se-right {
     position: sticky;
-    top: 100px;
+    top: 80px;
+    align-self: flex-start;
+    margin-top: -3rem;
 }
+
 
 .se-journey-card {
     background: linear-gradient(155deg, #073A32 0%, #10483D 65%, #052620 100%);
@@ -6492,8 +6490,9 @@ body {
 /* RIGHT column */
 .se-right {
     position: relative;
-    padding-top: 50px;
+    padding-top: 0;
 }
+
 
 /* Tilted Campus Polaroid Photo */
 /* Tilted Campus Photo (White border removed) */
