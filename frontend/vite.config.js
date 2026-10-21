@@ -17,6 +17,7 @@ const pages = [
   'get-started',
   'contact',
   'apply',
+  'pricing',
   'faq',
   'privacy-policy',
   'terms',

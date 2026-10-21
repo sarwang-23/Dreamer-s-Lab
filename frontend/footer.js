@@ -9,6 +9,7 @@ const NAVIGATION = [
   {
     title: 'Programs',
     links: [
+      ['Program Pricing & Overview', url('pricing/')],
       ['Dreamers Lab', url('dreamers-lab/')],
       ['Student Entrepreneurs', url('student-entrepreneurs/')],
       ['University Programs', url('universities/')],
