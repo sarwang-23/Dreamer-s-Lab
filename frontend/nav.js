@@ -10,9 +10,11 @@ const TOGGLE_ICON = `<svg viewBox="0 0 24 24" width="20" height="20" fill="none"
 function navMarkup() {
   return `
     <div class="nd-logo">
-      <a class="nd-logo-link" href="${url('')}" aria-label="Building Dreams home">
-        <span class="nd-logo-mark" aria-hidden="true">&#10022;</span>
-        <span class="nd-logo-text">Building Dreams</span>
+      <a class="nd-logo-link nd-logo-link--new" href="${url('')}" aria-label="Building Dreams home">
+        <span class="nd-logo-wordmark">
+          <span class="nd-logo-building">Building</span><span class="nd-logo-dreams"> Dreams</span>
+        </span>
+        <span class="nd-logo-subtitle">Converting Ideas into Successful Ventures</span>
       </a>
     </div>
     <button class="nd-menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation primary-navigation-actions" hidden>

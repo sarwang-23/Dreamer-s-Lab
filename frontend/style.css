@@ -4284,7 +4284,7 @@ body {
   background-color: #F7F5ED !important;
   background-image: none !important;
   overflow: hidden;
-  padding: 7rem 4rem 6rem;
+  padding: 3rem 4rem 6rem;
   font-family: var(--dl-sans);
   color: #12483D;
 }
@@ -10015,7 +10015,7 @@ h1, h2, h3, h4 {
 
 /* ── 5. "THREE PROGRAMS. ONE JOURNEY." (#programs) — LARGE DESKTOP SCALE ── */
 .programs-clean {
-    padding: 96px 0 !important;
+    padding: 64px 0 24px !important;
     background: #e4ddc8 !important;
     background-image: 
         radial-gradient(circle at 15% 20%, rgba(255, 107, 0, 0.08) 0%, transparent 50%),
@@ -10120,7 +10120,7 @@ h1, h2, h3, h4 {
 
 /* ── 6. DREAMERS LAB SECTION (#dreamers-lab) ── */
 .dl-section {
-    padding: 96px 0 !important;
+    padding: 24px 0 64px !important;
     background: #F7F5ED !important;
     position: relative !important;
 }
@@ -10170,7 +10170,7 @@ h1, h2, h3, h4 {
 
 /* ── 7. STUDENT ENTREPRENEURSHIP SECTION (#student-entrepreneurship) ── */
 .se-section {
-    padding: 96px 0 !important;
+    padding: 36px 0 64px !important;
     background: #F7F4EA !important;
     position: relative !important;
 }
@@ -10185,7 +10185,16 @@ h1, h2, h3, h4 {
     display: grid !important;
     grid-template-columns: 1fr 1fr !important;
     gap: 70px !important;
-    align-items: center !important;
+    align-items: flex-start !important;
+}
+
+.se-right {
+    position: relative !important;
+    padding-top: 50px !important;
+}
+
+.se-polaroid {
+    top: -20px !important;
 }
 
 .se-left {
@@ -10504,7 +10513,7 @@ h1, h2, h3, h4 {
 /* ── 14. FOOTER (.bd-footer) ── */
 .bd-footer__inner {
     max-width: 1200px !important;
-    padding: 64px var(--bd-pad-desktop) 48px !important;
+    padding: 48px var(--bd-pad-desktop) 0 !important;
     margin: 0 auto !important;
 }
 

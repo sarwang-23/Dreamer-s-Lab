@@ -230,18 +230,13 @@ export function mountFooter() {
         <!-- Brand Header (Centered) -->
         <div class="bd-footer__brand-wrap">
           <a class="bd-footer__brand" href="${HOME}" aria-label="Building Dreams home">
-            <svg class="bd-footer__brand-icon" viewBox="0 0 28 28" width="30" height="30" fill="none" aria-hidden="true" focusable="false">
-              <path d="M4 22C4 12 15 23 15 12S24 9 24 3" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
-              <circle cx="4" cy="22" r="2.5" fill="currentColor"/>
-              <path d="m24 0 1.2 2.4 2.4 1.2-2.4 1.2-1.2 2.4-1.2-2.4-2.4-1.2 2.4-1.2Z" fill="currentColor"/>
-            </svg>
-            <span class="bd-footer__brand-name">Building Dreams<span class="bd-footer__brand-dot">.</span></span>
+            <span class="bd-footer__brand-wordmark">
+              <span class="bd-footer__brand-building">Building</span><span class="bd-footer__brand-dreams"> Dreams</span><span class="bd-footer__brand-dot">.</span>
+            </span>
+            <span class="bd-footer__brand-subtitle">Converting Ideas into Successful Ventures</span>
           </a>
 
-          <div class="bd-footer__tagline-badge">
-            <span class="bd-footer__tagline-dot" aria-hidden="true"></span>
-            <span class="bd-footer__eyebrow">A WORLD OF POSSIBILITY.</span>
-          </div>
+
         </div>
 
         <!-- Centered Primary Headline with controlled breaks & orange accents -->

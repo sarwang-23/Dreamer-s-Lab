@@ -130,7 +130,7 @@
   width: min(calc(100% - 96px), 1280px);
   margin-inline: auto;
   padding-top: clamp(32px, 4.5vw, 48px);
-  padding-bottom: clamp(16px, 3vw, 24px);
+  padding-bottom: 0;
 }
 
 .bd-footer a {
@@ -159,8 +159,9 @@
 
 .bd-footer__brand {
   display: inline-flex;
+  flex-direction: column;
   align-items: center;
-  gap: 12px;
+  gap: 4px;
   font-size: clamp(22px, 2.4vw, 26px);
   font-weight: 700;
   letter-spacing: -0.02em;
@@ -173,12 +174,40 @@
 }
 
 .bd-footer__brand-icon {
-  flex-shrink: 0;
-  color: var(--f-orange);
-  filter: drop-shadow(0 2px 8px rgba(255, 104, 53, 0.35));
+  display: none;
 }
 .bd-footer__brand-dot {
-  color: var(--f-orange);
+  color: var(--f-orange) !important;
+}
+
+/* New footer brand wordmark styles */
+.bd-footer__brand-wordmark {
+  display: inline-flex;
+  align-items: baseline;
+  line-height: 1;
+  gap: 0;
+  white-space: nowrap;
+}
+.bd-footer__brand-building {
+  color: #fdfcf8 !important;
+  font-size: clamp(22px, 2.4vw, 28px);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+.bd-footer__brand-dreams {
+  color: #f07300 !important;
+  font-size: clamp(22px, 2.4vw, 28px);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+.bd-footer__brand-subtitle {
+  display: block;
+  font-size: 11px;
+  font-weight: 400;
+  color: rgba(253, 252, 248, 0.45);
+  letter-spacing: 0.04em;
+  line-height: 1;
+  white-space: nowrap;
 }
 
 /* Tagline pill badge */
@@ -542,7 +571,9 @@
 .bd-footer__colophon {
   min-height: auto;
   border-top: 1px solid var(--f-rule);
-  padding-block: 10px 12px;
+  padding-top: 12px;
+  padding-bottom: 8px;
+  margin-bottom: 0;
   display: flex;
   align-items: center;
   justify-content: space-between;

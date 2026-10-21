@@ -52,6 +52,44 @@ html {
   text-decoration: none;
 }
 
+/* New logo styles */
+.nd-logo-link--new {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.1rem;
+  text-decoration: none;
+  line-height: 1;
+}
+
+.nd-logo-wordmark {
+  display: block;
+  font-size: 1.35rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  line-height: 1;
+}
+
+.nd-logo-building {
+  color: #1a1a1a;
+}
+
+.nd-logo-dreams {
+  color: #f07300;
+}
+
+.nd-logo-subtitle {
+  display: block;
+  font-size: 0.6rem;
+  font-weight: 500;
+  color: #777;
+  letter-spacing: 0.01em;
+  line-height: 1;
+  margin-top: 2px;
+  white-space: nowrap;
+}
+
+/* Legacy - keep for any old references */
 .nd-logo-mark {
   color: var(--pg-orange);
   font-size: 1.05rem;
