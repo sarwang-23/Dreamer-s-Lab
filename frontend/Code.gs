@@ -45,6 +45,8 @@ function doPost(e) {
     switch (formType) {
       case "student_apply":        result = handleStudentApply(ss, params, timestamp, refPage);        break;
       case "founder_apply":        result = handleFounderApply(ss, params, timestamp, refPage);        break;
+      case "pricing_enrol":
+      case "enrol_apply":          result = handlePricingEnrol(ss, params, timestamp, refPage);        break;
       case "school_enquiry":       result = handleSchoolEnquiry(ss, params, timestamp, refPage);       break;
       case "community_join":       result = handleCommunityJoin(ss, params, timestamp, refPage);       break;
       case "contact_enquiry":      result = handleContactEnquiry(ss, params, timestamp, refPage);      break;
@@ -95,7 +97,7 @@ function handleStudentApply(ss, p, ts, ref) {
 
   var emailStatus = { sent: false, note: "No email provided" };
   if (userEmail) {
-    emailStatus = sendUserEmail(userEmail, "Your child's Application to Building Dreams – Received!", buildStudentConfirmation(p));
+    emailStatus = sendUserEmail(userEmail, "Congratulations! Application to Building Dreams Received – Dreamers Lab", buildStudentConfirmation(p));
   }
   return { success: true, message: "Application received successfully!", userEmailSentTo: userEmail, emailStatus: emailStatus };
 }
@@ -117,9 +119,28 @@ function handleFounderApply(ss, p, ts, ref) {
 
   var emailStatus = { sent: false, note: "No email provided" };
   if (userEmail) {
-    emailStatus = sendUserEmail(userEmail, "Your Founder Application to Building Dreams – Received!", buildFounderConfirmation(p));
+    emailStatus = sendUserEmail(userEmail, "Congratulations! Your Founder Application to Building Dreams is Received", buildFounderConfirmation(p));
   }
   return { success: true, message: "Founder application received!", userEmailSentTo: userEmail, emailStatus: emailStatus };
+}
+
+// 2b. PRICING / ENROLMENT
+function handlePricingEnrol(ss, p, ts, ref) {
+  var userEmail = (p.email || "").trim();
+  var headers = ["Timestamp","Source Page","Program","Name","Email","Phone","Notes"];
+  var sheet = getOrCreateSheet(ss, "Program Enrolments", headers);
+  sheet.appendRow([ts, ref, p.program||"", p.name||"", userEmail, p.phone||"", p.notes||""]);
+
+  sendAdminEmail("New Program Enrolment – " + (p.name||"Unknown") + " [" + (p.program||"Program") + "]", buildAdminTable("Program Enrolment", {
+    "Program": p.program, "Name": p.name, "Email": userEmail, "Phone": p.phone,
+    "Notes": p.notes, "Source Page": ref, "Timestamp": ts
+  }));
+
+  var emailStatus = { sent: false, note: "No email provided" };
+  if (userEmail) {
+    emailStatus = sendUserEmail(userEmail, "Congratulations! Welcome to Building Dreams – Enrolment Received", buildPricingEnrolConfirmation(p));
+  }
+  return { success: true, message: "Enrolment received successfully!", userEmailSentTo: userEmail, emailStatus: emailStatus };
 }
 
 // 3. SCHOOL ENQUIRY
@@ -232,9 +253,18 @@ function sendAdminEmail(subject, htmlBody) {
       htmlBody: wrapAdminEmail(htmlBody),
       name: "Building Dreams"
     });
-    Logger.log("Admin email successfully sent to: " + ADMIN_EMAIL);
-  } catch (err) {
-    Logger.log("Admin email failed: " + err);
+    Logger.log("Admin email successfully sent via MailApp to: " + ADMIN_EMAIL);
+  } catch (err1) {
+    Logger.log("Admin email MailApp failed (" + err1 + "). Trying GmailApp...");
+    try {
+      GmailApp.sendEmail(ADMIN_EMAIL, cleanSubject, plainText, {
+        htmlBody: wrapAdminEmail(htmlBody),
+        name: "Building Dreams"
+      });
+      Logger.log("Admin email successfully sent via GmailApp to: " + ADMIN_EMAIL);
+    } catch (err2) {
+      Logger.log("Admin email failed both MailApp and GmailApp: " + err2);
+    }
   }
 }
 
@@ -244,7 +274,9 @@ function sendUserEmail(to, subject, htmlBody) {
     return { sent: false, error: "Invalid user email: " + to };
   }
   to = to.trim();
-  var plainText = "Thank you for reaching out to Building Dreams! We have received your submission.";
+  var plainText = "Congratulations and thank you for reaching out to Building Dreams! We have received your application/enquiry.";
+  
+  // Try MailApp first
   try {
     MailApp.sendEmail({
       to: to,
@@ -253,11 +285,21 @@ function sendUserEmail(to, subject, htmlBody) {
       htmlBody: wrapUserEmail(htmlBody),
       name: "Building Dreams"
     });
-    Logger.log("User email successfully sent to: " + to);
-    return { sent: true, recipient: to };
-  } catch (err) {
-    Logger.log("User email failed: " + err);
-    return { sent: false, error: err.toString() };
+    Logger.log("User email successfully sent via MailApp to: " + to);
+    return { sent: true, recipient: to, method: "MailApp" };
+  } catch (err1) {
+    Logger.log("MailApp failed (" + err1 + "). Trying GmailApp fallback...");
+    try {
+      GmailApp.sendEmail(to, subject, plainText, {
+        htmlBody: wrapUserEmail(htmlBody),
+        name: "Building Dreams"
+      });
+      Logger.log("User email successfully sent via GmailApp fallback to: " + to);
+      return { sent: true, recipient: to, method: "GmailApp" };
+    } catch (err2) {
+      Logger.log("Both MailApp and GmailApp failed: " + err2);
+      return { sent: false, error: "MailApp: " + err1.toString() + " | GmailApp: " + err2.toString() };
+    }
   }
 }
 
@@ -273,22 +315,57 @@ function buildAdminTable(formLabel, dataObj) {
 
 // USER EMAIL BODIES
 function buildStudentConfirmation(p) {
-  return '<h2>Hi ' + (p.parent_name||"there") + ',</h2><p>We\'ve received <strong>' + (p.student_name||"your child") + '</strong>\'s application for <strong>Dreamers Lab 2026</strong>.</p><p>Our team will review it and reach out to <strong>' + p.parent_email + '</strong> within a few business days.</p><p><strong>Idea they want to build:</strong><br><em>' + (p.idea||"—") + '</em></p><p>Looking forward to building together,<br><strong>The Building Dreams Team</strong></p>';
+  return '<div style="background:#10483D;color:#ffffff;padding:16px 20px;border-radius:8px;margin-bottom:20px;text-align:center;">'
+    + '<h2 style="margin:0;color:#F6C845;font-size:20px;">🎉 Congratulations on Taking the First Step!</h2>'
+    + '<p style="margin:6px 0 0;color:#e8f4f1;font-size:14px;">Your application for Dreamers Lab 2026 has been received.</p>'
+    + '</div>'
+    + '<p>Hi <strong>' + (p.parent_name||"there") + '</strong> & <strong>' + (p.student_name||"Student") + '</strong>,</p>'
+    + '<p>Thank you for applying to <strong>Dreamers Lab 2026</strong>. We are thrilled to see young minds enthusiastic about building real solutions!</p>'
+    + '<p>Our admissions committee will carefully review the application and reach out to <strong>' + (p.parent_email || p.email || "") + '</strong> within 2–3 business days with the next steps.</p>'
+    + '<div style="background:#F7F5ED;border-left:4px solid #10483D;padding:14px 16px;margin:18px 0;border-radius:4px;">'
+    + '<strong style="color:#10483D;">Idea / Problem Submitted:</strong><br>'
+    + '<em style="color:#333;">' + (p.idea || "To be explored during the cohort") + '</em>'
+    + '</div>'
+    + '<p>Looking forward to building dreams together,<br><br>Warm regards,<br><strong>The Building Dreams Team</strong></p>';
 }
+
 function buildFounderConfirmation(p) {
-  return '<h2>Hi ' + (p.founder_name||"there") + ',</h2><p>Your application for <strong>' + (p.startup_name||"your venture") + '</strong> is in! We\'ll review it and get back to you at <strong>' + p.founder_email + '</strong> shortly.</p><p><strong>Problem you\'re solving:</strong><br><em>' + (p.problem_statement||"—") + '</em></p><p>Keep building,<br><strong>The Building Dreams Team</strong></p>';
+  return '<div style="background:#10483D;color:#ffffff;padding:16px 20px;border-radius:8px;margin-bottom:20px;text-align:center;">'
+    + '<h2 style="margin:0;color:#F6C845;font-size:20px;">🚀 Congratulations, Founder!</h2>'
+    + '<p style="margin:6px 0 0;color:#e8f4f1;font-size:14px;">Your Founder Application has been received.</p>'
+    + '</div>'
+    + '<p>Hi <strong>' + (p.founder_name||"there") + '</strong>,</p>'
+    + '<p>Your application for <strong>' + (p.startup_name||"your venture") + '</strong> is officially in! We are excited to review what you\'re building at <strong>' + (p.university||"your university") + '</strong>.</p>'
+    + '<p>Our venture team will review your application and get back to you at <strong>' + (p.founder_email || p.email || "") + '</strong> shortly with scheduling details for an introductory call.</p>'
+    + '<div style="background:#F7F5ED;border-left:4px solid #FF5A24;padding:14px 16px;margin:18px 0;border-radius:4px;">'
+    + '<strong style="color:#10483D;">Problem You\'re Solving:</strong><br>'
+    + '<em style="color:#333;">' + (p.problem_statement || "—") + '</em>'
+    + '</div>'
+    + '<p>Keep building and stay bold,<br><br>Warm regards,<br><strong>The Building Dreams Team</strong></p>';
 }
+
+function buildPricingEnrolConfirmation(p) {
+  return '<div style="background:#10483D;color:#ffffff;padding:16px 20px;border-radius:8px;margin-bottom:20px;text-align:center;">'
+    + '<h2 style="margin:0;color:#F6C845;font-size:20px;">🎉 Congratulations & Welcome!</h2>'
+    + '<p style="margin:6px 0 0;color:#e8f4f1;font-size:14px;">Your enrolment enquiry has been recorded.</p>'
+    + '</div>'
+    + '<p>Hi <strong>' + (p.name||"Founder") + '</strong>,</p>'
+    + '<p>We have successfully received your enrolment application for <strong>' + (p.program||"Building Dreams") + '</strong>.</p>'
+    + '<p>Our cohort team will review your submission and contact you at <strong>' + (p.email||"") + '</strong> within 24 hours to guide you through onboarding and next steps.</p>'
+    + '<p>Keep dreaming, keep building,<br><br>Warm regards,<br><strong>The Building Dreams Team</strong></p>';
+}
+
 function buildSchoolConfirmation(p) {
   return '<h2>Hi ' + (p.name||"there") + ',</h2><p>Thank you for your interest in bringing Building Dreams to <strong>' + (p.school||p.organisation||"your school") + '</strong>!</p><p>We\'ll reach out to <strong>' + p.email + '</strong> within 2-3 business days.</p><p>Warm regards,<br><strong>The Building Dreams Team</strong></p>';
 }
 function buildCommunityConfirmation(p) {
-  return '<h2>Welcome, ' + (p.name||"there") + '!</h2><p>You\'ve successfully joined the <strong>Building Dreams Community</strong>. We\'re thrilled to have you.</p><p>Watch your inbox — updates, events, and opportunities are coming soon.</p><p>See you on the inside,<br><strong>The Building Dreams Team</strong></p>';
+  return '<div style="background:#10483D;color:#ffffff;padding:16px 20px;border-radius:8px;margin-bottom:20px;text-align:center;"><h2 style="margin:0;color:#F6C845;font-size:20px;">🎉 Welcome to the Community!</h2></div><p>Hi <strong>' + (p.name||"there") + '</strong>,</p><p>You\'ve successfully joined the <strong>Building Dreams Community</strong>. We\'re thrilled to have you.</p><p>Watch your inbox — cohort updates, events, and opportunities are coming soon.</p><p>See you on the inside,<br><strong>The Building Dreams Team</strong></p>';
 }
 function buildContactConfirmation(p) {
   return '<h2>Hi ' + (p.name||"there") + ',</h2><p>We\'ve received your message and our team will get back to you at <strong>' + p.email + '</strong> within 1-2 business days.</p><p>Speak soon,<br><strong>The Building Dreams Team</strong></p>';
 }
 function buildNewsletterConfirmation(p) {
-  return '<h2>You\'re in!</h2><p>Welcome to the <strong>Building Dreams Insider List</strong>. You\'ll be among the first to hear about new cohorts, events, and stories from our builder community.</p><p>Stay curious,<br><strong>The Building Dreams Team</strong></p>';
+  return '<div style="background:#10483D;color:#ffffff;padding:16px 20px;border-radius:8px;margin-bottom:20px;text-align:center;"><h2 style="margin:0;color:#F6C845;font-size:20px;">🎉 You\'re In!</h2></div><p>Welcome to the <strong>Building Dreams Insider List</strong>. You\'ll be among the first to hear about new cohorts, events, and builder stories.</p><p>Stay curious,<br><strong>The Building Dreams Team</strong></p>';
 }
 function buildUniversityConfirmation(p) {
   return '<h2>Hi ' + (p.name||"there") + ',</h2><p>Thank you for your interest in partnering with Building Dreams at <strong>' + (p.organisation||"your institution") + '</strong>!</p><p>We\'ll review your enquiry and reach out at <strong>' + p.email + '</strong> to schedule a call.</p><p>Looking forward to collaborating,<br><strong>The Building Dreams Team</strong></p>';
@@ -312,10 +389,20 @@ function wrapAdminEmail(body) {
     + '</div></body></html>';
 }
 function wrapUserEmail(body) {
-  return '<!DOCTYPE html><html><body style="margin:0;padding:0;background:#f0f0f0;font-family:Arial,sans-serif;"><div style="max-width:600px;margin:24px auto;background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.12);"><div style="background:#1a1a2e;padding:20px 24px;text-align:center;"><h1 style="margin:0;color:#fff;font-size:22px;letter-spacing:1px;">Building Dreams</h1><p style="margin:4px 0 0;color:#aaa;font-size:13px;">Where Dreamers Become Builders</p></div><div style="padding:32px 24px;color:#333;line-height:1.7;font-size:15px;">' + body + '</div><div style="background:#1a1a2e;padding:16px 24px;text-align:center;"><p style="margin:0;color:#aaa;font-size:12px;">© ' + new Date().getFullYear() + ' Building Dreams</p></div></div></body></html>';
+  return '<!DOCTYPE html><html><body style="margin:0;padding:0;background:#f0f0f0;font-family:Arial,sans-serif;"><div style="max-width:600px;margin:24px auto;background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.12);"><div style="background:#10483D;padding:24px;text-align:center;"><h1 style="margin:0;color:#fff;font-size:24px;letter-spacing:1px;font-weight:700;">Building Dreams</h1><p style="margin:6px 0 0;color:#A9DFD1;font-size:13px;letter-spacing:0.5px;">Where Dreamers Become Builders</p></div><div style="padding:32px 26px;color:#222;line-height:1.7;font-size:15px;background:#ffffff;">' + body + '</div><div style="background:#0c362e;padding:16px 24px;text-align:center;"><p style="margin:0;color:#A9DFD1;font-size:12px;">© ' + new Date().getFullYear() + ' Building Dreams &middot; All rights reserved</p></div></div></body></html>';
 }
+
 function doGet(e) {
-  return ContentService.createTextOutput(JSON.stringify({ status: "ok" })).setMimeType(ContentService.MimeType.JSON);
+  var quota = -1;
+  try { quota = MailApp.getRemainingDailyQuota(); } catch (err) { quota = "error: " + err; }
+  return ContentService.createTextOutput(JSON.stringify({
+    status: "ok",
+    app: "Building Dreams Web App Backend",
+    version: "2026-10-22-v3",
+    spreadsheetId: SPREADSHEET_ID,
+    adminEmail: ADMIN_EMAIL,
+    remainingDailyEmailQuota: quota
+  })).setMimeType(ContentService.MimeType.JSON);
 }
 
 // TEST FUNCTION — Run this inside Apps Script editor to authorize email & spreadsheet access!

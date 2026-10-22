@@ -174,6 +174,11 @@ function initBDForms() {
   const schoolForm = document.querySelector("form[data-form='school']") ||
     document.getElementById("school-enquiry-form");
   if (schoolForm) attachBDFormHandler(schoolForm, "school_enquiry");
+
+  // ── pricing/index.html (modal enrolment form) ─────────────────────────────
+  const pricingForm = document.getElementById("pr-enrol-form") ||
+    document.querySelector("form.pr-form-node");
+  if (pricingForm) attachBDFormHandler(pricingForm, "pricing_enrol");
 }
 
 if (document.readyState === "loading") {
