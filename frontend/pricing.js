@@ -99,28 +99,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Handle modal form submission
-  const enrolForm = document.getElementById('pr-enrol-form');
-  if (enrolForm) {
-    enrolForm.addEventListener('submit', (e) => {
-      // Allow bd-form-handler.js or standard validation
-      const name = enrolForm.querySelector('[name="name"]')?.value;
-      const email = enrolForm.querySelector('[name="email"]')?.value;
-      const prog = programSelect?.options[programSelect.selectedIndex]?.text || 'Entrepreneurship Program';
-
-      // If form doesn't prevent default, provide smooth UX
-      const statusBox = document.getElementById('pr-modal-status');
-      if (statusBox) {
-        statusBox.style.display = 'block';
-        statusBox.style.color = '#10483D';
-        statusBox.style.background = 'rgba(16,72,61,0.08)';
-        statusBox.style.padding = '0.75rem';
-        statusBox.style.borderRadius = '8px';
-        statusBox.style.marginBottom = '1rem';
-        statusBox.textContent = `Thank you, ${name || 'Founder'}! Your enrolment inquiry for ${prog} has been received. Our venture team will reach out to ${email} within 24 hours.`;
-        enrolForm.reset();
-        setTimeout(closeModal, 3500);
-      }
-    });
-  }
+  // Form submission is handled by bd-form-handler.js which securely sends
+  // all enrolment entries to Google Sheets and sends confirmation notifications.
 });

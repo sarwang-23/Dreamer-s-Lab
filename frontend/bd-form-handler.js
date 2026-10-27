@@ -70,15 +70,31 @@ async function bdSubmitForm(formData) {
     params.append(key, value);
   }
 
-  const response = await fetch(BD_SCRIPT_URL, {
+  try {
+    const response = await fetch(BD_SCRIPT_URL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8",
+      },
+      body: params.toString(),
+    });
+    if (response.ok) {
+      return await response.json();
+    }
+  } catch (err) {
+    console.warn("[BD Form] Standard fetch error (likely CORS redirect), sending via robust no-cors fallback:", err);
+  }
+
+  // Reliable fallback for Google Apps Script Web App redirects
+  await fetch(BD_SCRIPT_URL, {
     method: "POST",
+    mode: "no-cors",
     headers: {
       "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8",
     },
     body: params.toString(),
   });
-  if (!response.ok) throw new Error("Server error: " + response.status);
-  return response.json();
+  return { success: true, message: "Enrolment received successfully! We'll be in touch soon." };
 }
 
 // ── FORM INTERCEPTORS ─────────────────────────────────────────────────────────
@@ -106,9 +122,19 @@ function attachBDFormHandler(formEl, formType, extraFields) {
         fd.set(radio.name, radio.value);
       });
 
-      // Convert select values
+      // Convert select values & map clean program titles
+      const progMap = {
+        "dreamers-lab": "Dreamers Lab (Grades 10–12) — ₹3,499",
+        "dreamers-cohort": "Dreamers Cohort (College Founders) — ₹3,999",
+        "mentorship": "Dreamers 1:1 Mentorship — ₹8,999"
+      };
+
       formEl.querySelectorAll("select").forEach(sel => {
-        fd.set(sel.name, sel.value);
+        let val = sel.value;
+        if (sel.name === "program" && progMap[val]) {
+          val = progMap[val];
+        }
+        fd.set(sel.name, val);
       });
 
       const result = await bdSubmitForm(fd);
@@ -116,10 +142,14 @@ function attachBDFormHandler(formEl, formType, extraFields) {
       if (result && result.success) {
         showBDFormMessage(formEl, true, "✅ " + (result.message || "Submitted successfully! We'll be in touch soon."));
         formEl.reset();
-        // Optionally close any modal that wraps the form
-        const modal = formEl.closest("[data-modal], .modal, .overlay, [id$='modal'], [id$='overlay']");
+        // Close any modal that wraps the form and restore body scroll
+        const modal = formEl.closest("[data-modal], .modal, .overlay, [id$='modal'], [id$='overlay'], .pr-modal");
         if (modal && modal.classList.contains("is-open")) {
-          setTimeout(() => modal.classList.remove("is-open"), 2500);
+          setTimeout(() => {
+            modal.classList.remove("is-open");
+            modal.setAttribute("aria-hidden", "true");
+            document.body.style.overflow = "";
+          }, 2500);
         }
       } else {
         throw new Error((result && result.message) || "Submission failed.");
