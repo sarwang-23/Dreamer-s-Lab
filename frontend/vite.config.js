@@ -18,6 +18,7 @@ const pages = [
   'contact',
   'apply',
   'pricing',
+  'testimonials',
   'faq',
   'privacy-policy',
   'terms',

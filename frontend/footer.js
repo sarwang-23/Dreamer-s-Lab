@@ -19,6 +19,7 @@ const NAVIGATION = [
     title: 'Explore',
     links: [
       ['About Us', url('about/')],
+      ['Testimonials & Stories', url('testimonials/')],
       ['Mentors & Community', url('community/')],
       ['Insights & Resources', url('insights/')],
       ['For Parents', url('parents/')],

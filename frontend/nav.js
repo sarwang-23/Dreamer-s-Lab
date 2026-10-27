@@ -34,6 +34,7 @@ function navMarkup() {
         </div>
       </details>
       <a href="${url('pricing/')}">Pricing</a>
+      <a href="${url('testimonials/')}">Testimonials</a>
       <a href="${url('community/')}">Mentors &amp; Community</a>
       <a href="${url('insights/')}">Insights</a>
       <a href="${url('contact/')}">Contact</a>
