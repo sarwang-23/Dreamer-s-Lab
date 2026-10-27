@@ -34,9 +34,14 @@ function navMarkup() {
         </div>
       </details>
       <a href="${url('pricing/')}">Pricing</a>
-      <a href="${url('testimonials/')}">Testimonials</a>
-      <a href="${url('community/')}">Mentors &amp; Community</a>
-      <a href="${url('insights/')}">Insights</a>
+      <details class="nd-nav-dd">
+        <summary>Community<span class="nd-nav-caret" aria-hidden="true"></span></summary>
+        <div class="nd-nav-dd-menu">
+          <a href="${url('community/')}">Mentors &amp; Community<span class="nd-nav-dd-note">Network &amp; founder ecosystem</span></a>
+          <a href="${url('insights/')}">Insights<span class="nd-nav-dd-note">Guides, frameworks &amp; resources</span></a>
+          <a href="${url('testimonials/')}">Testimonials<span class="nd-nav-dd-note">On-ground student journeys &amp; videos</span></a>
+        </div>
+      </details>
       <a href="${url('contact/')}">Contact</a>
     </div>
     <div class="nd-nav-actions" id="primary-navigation-actions">
@@ -44,10 +49,21 @@ function navMarkup() {
     </div>`;
 }
 
-// Collapse the Programs menu after following a link or clicking elsewhere.
+// Collapse the dropdown menus after following a link or clicking elsewhere.
 function wireNav(nav) {
   if (nav.dataset.navReady === 'true') return;
   nav.dataset.navReady = 'true';
+
+  // Ensure only one dropdown stays open at a time
+  nav.querySelectorAll('.nd-nav-dd').forEach((dd) => {
+    dd.addEventListener('toggle', () => {
+      if (dd.open) {
+        nav.querySelectorAll('.nd-nav-dd').forEach((other) => {
+          if (other !== dd && other.open) other.open = false;
+        });
+      }
+    });
+  });
 
   nav.addEventListener('click', (event) => {
     if (event.target.closest('a')) {
