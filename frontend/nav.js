@@ -22,10 +22,10 @@ function navMarkup() {
       ${TOGGLE_ICON}
     </button>
     <div class="nd-nav-links" id="primary-navigation">
-      <a href="${url('about/')}">About</a>
+      <a href="${url('')}">Home</a>
       <a href="${url('dreamers-lab/')}">Schools</a>
-      <a href="${url('student-entrepreneurs/')}">Entrepreneurs</a>
       <a href="${url('universities/')}">Universities</a>
+      <a href="${url('student-entrepreneurs/')}">Entrepreneurship</a>
       <a href="${url('pricing/')}">Pricing</a>
       <details class="nd-nav-dd">
         <summary>Community<span class="nd-nav-caret" aria-hidden="true"></span></summary>
@@ -35,6 +35,7 @@ function navMarkup() {
           <a href="${url('testimonials/')}">Testimonials<span class="nd-nav-dd-note">On-ground student journeys &amp; videos</span></a>
         </div>
       </details>
+      <a href="${url('about/')}">About</a>
       <a href="${url('contact/')}">Contact</a>
     </div>
     <div class="nd-nav-actions" id="primary-navigation-actions">
