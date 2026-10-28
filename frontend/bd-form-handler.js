@@ -6,7 +6,7 @@
  * replace the placeholder below with your actual deployment URL.
  */
 
-const BD_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyZILY56QhC-uQ-YffB7pv8edZu_5MPEWpWt-yClf542Pg8vgxsQ3lksKk8N2B38aG2QA/exec";
+const BD_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyyN73oLeLIcyNwR5bPQH5jIn8VnFbnArImlGoIpu0i_ubl0nY-Q-Dfcb-uXh8LIxCyJQ/exec"; // ✅ Updated 2026-10-28
 
 // Track which page referred the user to this form
 function getBDRefPage() {
