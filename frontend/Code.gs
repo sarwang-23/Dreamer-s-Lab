@@ -12,7 +12,7 @@
  *
  * On each submission:
  *   1. Appends a row to the matching sheet tab in the spreadsheet
- *   2. Emails admin (Rachit@hinovi.me)
+ *   2. Emails admin (rachit@thebuildingdreams.com)
  *   3. Sends a warm congratulations/confirmation email to the user
  *
  * SETUP INSTRUCTIONS
@@ -28,7 +28,7 @@
 
 // CONFIG
 var SPREADSHEET_ID = "1g0iW9lHwv_Yx-3wtyopaU5D8OWm8s8JRSoHPPY_of9g"; // ← replace this
-var ADMIN_EMAIL    = "Rachit@hinovi.me";
+var ADMIN_EMAIL    = "rachit@thebuildingdreams.com";
 var SITE_NAME      = "Building Dreams";
 
 // MAIN ENTRY POINT
