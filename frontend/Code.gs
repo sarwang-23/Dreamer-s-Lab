@@ -37,6 +37,9 @@ function doPost(e) {
     var params   = e.parameter || {};
     var formType = params.form_type || "unknown";
     var refPage  = params.ref_page  || "Direct";
+    Logger.log("=== FORM SUBMISSION ===");
+    Logger.log("Form Type: " + formType);
+    Logger.log("All params: " + JSON.stringify(params));
     var timestamp = new Date().toLocaleString("en-IN", { timeZone: "Asia/Kolkata" });
 
     var ss = SpreadsheetApp.openById(SPREADSHEET_ID);
@@ -84,6 +87,8 @@ function getOrCreateSheet(ss, name, headers) {
 // 1. STUDENT APPLICATION
 function handleStudentApply(ss, p, ts, ref) {
   var userEmail = (p.parent_email || p.email || p.student_email || "").trim();
+  Logger.log("[Student] parent_email=" + p.parent_email + " | email=" + p.email + " | student_email=" + p.student_email);
+  Logger.log("[Student] Resolved userEmail=" + userEmail);
   var headers = ["Timestamp","Source Page","Student Name","Grade","School","Parent Name","Parent Email","Parent Phone","Interests","Idea / Problem","Why Building Dreams","Accessibility Notes"];
   var sheet = getOrCreateSheet(ss, "Student Applications", headers);
   sheet.appendRow([ts, ref, p.student_name||"", p.grade||"", p.school||"", p.parent_name||"", userEmail, p.parent_phone||"", p.interests||"", p.idea||"", p.why||"", p.accessibility||""]);
@@ -98,6 +103,9 @@ function handleStudentApply(ss, p, ts, ref) {
   var emailStatus = { sent: false, note: "No email provided" };
   if (userEmail) {
     emailStatus = sendUserEmail(userEmail, "Congratulations! Application to Building Dreams Received – Dreamers Lab", buildStudentConfirmation(p));
+    Logger.log("[Student] emailStatus=" + JSON.stringify(emailStatus));
+  } else {
+    Logger.log("[Student] WARNING: userEmail is EMPTY — no confirmation email sent!");
   }
   return { success: true, message: "Application received successfully!", userEmailSentTo: userEmail, emailStatus: emailStatus };
 }
@@ -274,31 +282,33 @@ function sendUserEmail(to, subject, htmlBody) {
     return { sent: false, error: "Invalid user email: " + to };
   }
   to = to.trim();
-  var plainText = "Congratulations and thank you for reaching out to Building Dreams! We have received your application/enquiry.";
+  var plainText = "Thank you for reaching out to Building Dreams! We have received your application/enquiry.";
   
-  // Try MailApp first
+  // Try GmailApp first — sends directly from your Google Workspace account with full DKIM/SPF
   try {
-    MailApp.sendEmail({
-      to: to,
-      subject: subject,
-      body: plainText,
+    GmailApp.sendEmail(to, subject, plainText, {
       htmlBody: wrapUserEmail(htmlBody),
-      name: "Building Dreams"
+      name: "Building Dreams",
+      replyTo: ADMIN_EMAIL
     });
-    Logger.log("User email successfully sent via MailApp to: " + to);
-    return { sent: true, recipient: to, method: "MailApp" };
+    Logger.log("User email successfully sent via GmailApp to: " + to);
+    return { sent: true, recipient: to, method: "GmailApp" };
   } catch (err1) {
-    Logger.log("MailApp failed (" + err1 + "). Trying GmailApp fallback...");
+    Logger.log("GmailApp failed (" + err1 + "). Trying MailApp fallback...");
     try {
-      GmailApp.sendEmail(to, subject, plainText, {
+      MailApp.sendEmail({
+        to: to,
+        subject: subject,
+        body: plainText,
         htmlBody: wrapUserEmail(htmlBody),
-        name: "Building Dreams"
+        name: "Building Dreams",
+        replyTo: ADMIN_EMAIL
       });
-      Logger.log("User email successfully sent via GmailApp fallback to: " + to);
-      return { sent: true, recipient: to, method: "GmailApp" };
+      Logger.log("User email successfully sent via MailApp fallback to: " + to);
+      return { sent: true, recipient: to, method: "MailApp" };
     } catch (err2) {
-      Logger.log("Both MailApp and GmailApp failed: " + err2);
-      return { sent: false, error: "MailApp: " + err1.toString() + " | GmailApp: " + err2.toString() };
+      Logger.log("Both GmailApp and MailApp failed: " + err2);
+      return { sent: false, error: "GmailApp: " + err1.toString() + " | MailApp: " + err2.toString() };
     }
   }
 }
@@ -423,4 +433,35 @@ function testAdminAndUserEmail() {
 
   Logger.log("Test completed! Check your inbox for: " + testEmail);
 }
+
+// DEBUG: Test user congratulation email to ANY email address
+// 1. Change testTargetEmail to the user's email
+// 2. Run this function in Apps Script editor
+// 3. Check inbox + SPAM of that email
+function testUserCongratulationEmail() {
+  var testTargetEmail = "rachit@thebuildingdreams.com"; // YAHAN user ka email daalo
+
+  Logger.log("Sending test congratulation email to: " + testTargetEmail);
+
+  var result = sendUserEmail(
+    testTargetEmail,
+    "Congratulations! Application to Building Dreams Received",
+    buildStudentConfirmation({
+      parent_name: "Test Parent",
+      student_name: "Test Student",
+      parent_email: testTargetEmail,
+      idea: "Test idea",
+      grade: "Grade 9",
+      school: "Test School"
+    })
+  );
+
+  Logger.log("Result: " + JSON.stringify(result));
+  if (result.sent) {
+    Logger.log("SUCCESS — sent to: " + testTargetEmail + " via " + result.method);
+  } else {
+    Logger.log("FAILED — Error: " + result.error);
+  }
+}
+
 
