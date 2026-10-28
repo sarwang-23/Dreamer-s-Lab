@@ -458,7 +458,7 @@ function testAdminAndUserEmail() {
 // 2. Run this function in Apps Script editor
 // 3. Check inbox + SPAM of that email
 function testUserCongratulationEmail() {
-  var testTargetEmail = "rachit@thebuildingdreams.com"; // YAHAN user ka email daalo
+  var testTargetEmail = "sarwangagarwal240@gmail.com"; // User email for quick verification
 
   Logger.log("Sending test congratulation email to: " + testTargetEmail);
 
