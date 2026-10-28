@@ -22,17 +22,10 @@ function navMarkup() {
       ${TOGGLE_ICON}
     </button>
     <div class="nd-nav-links" id="primary-navigation">
-      <a href="${url('')}">Home</a>
       <a href="${url('about/')}">About</a>
-      <details class="nd-nav-dd">
-        <summary>Programs<span class="nd-nav-caret" aria-hidden="true"></span></summary>
-        <div class="nd-nav-dd-menu">
-          <a href="${url('pricing/')}">Programs &amp; Pricing<span class="nd-nav-dd-note">All tracks &amp; fees</span></a>
-          <a href="${url('dreamers-lab/')}">Dreamers Lab<span class="nd-nav-dd-note">Grades 9&ndash;12</span></a>
-          <a href="${url('student-entrepreneurs/')}">Student Entrepreneurs<span class="nd-nav-dd-note">University founders</span></a>
-          <a href="${url('universities/')}">Universities &amp; Accelerators<span class="nd-nav-dd-note">Institutional programs</span></a>
-        </div>
-      </details>
+      <a href="${url('dreamers-lab/')}">Schools</a>
+      <a href="${url('student-entrepreneurs/')}">Entrepreneurs</a>
+      <a href="${url('universities/')}">Universities</a>
       <a href="${url('pricing/')}">Pricing</a>
       <details class="nd-nav-dd">
         <summary>Community<span class="nd-nav-caret" aria-hidden="true"></span></summary>
@@ -85,25 +78,6 @@ function wireNav(nav) {
 export function mountNav() {
   const existing = document.querySelector('.nd-navbar');
   if (existing) {
-    const navLinks = existing.querySelector('.nd-nav-links');
-    if (navLinks && !navLinks.querySelector('a[href*="pricing"]')) {
-      const pricingLink = document.createElement('a');
-      pricingLink.href = url('pricing/');
-      pricingLink.textContent = 'Pricing';
-      const dd = navLinks.querySelector('.nd-nav-dd');
-      if (dd && dd.nextSibling) {
-        navLinks.insertBefore(pricingLink, dd.nextSibling);
-      } else {
-        navLinks.appendChild(pricingLink);
-      }
-    }
-    const ddMenu = existing.querySelector('.nd-nav-dd-menu');
-    if (ddMenu && !ddMenu.querySelector('a[href*="pricing"]')) {
-      const ddPricingLink = document.createElement('a');
-      ddPricingLink.href = url('pricing/');
-      ddPricingLink.innerHTML = `Programs &amp; Pricing<span class="nd-nav-dd-note">All tracks &amp; fees</span>`;
-      ddMenu.prepend(ddPricingLink);
-    }
     wireNav(existing);
     return existing;
   }
