@@ -325,9 +325,10 @@ function buildAdminTable(formLabel, dataObj) {
 
 // USER EMAIL BODIES
 function buildStudentConfirmation(p) {
-  return '<div style="background:#10483D;color:#ffffff;padding:16px 20px;border-radius:8px;margin-bottom:20px;text-align:center;">'
-    + '<h2 style="margin:0;color:#F6C845;font-size:20px;">🎉 Congratulations on Taking the First Step!</h2>'
-    + '<p style="margin:6px 0 0;color:#e8f4f1;font-size:14px;">Your application for Dreamers Lab 2026 has been received.</p>'
+  return '<div style="background:#10483D;color:#ffffff;padding:20px 24px;border-radius:10px;margin-bottom:24px;text-align:center;">'
+    + '<div style="display:inline-block;background:#FF5A24;color:#ffffff;font-size:11px;font-weight:700;letter-spacing:1px;padding:3px 12px;border-radius:12px;margin-bottom:10px;text-transform:uppercase;">Dreamers Lab 2026</div>'
+    + '<h2 style="margin:0;color:#F6C845;font-size:22px;font-weight:700;">Congratulations on Taking the First Step!</h2>'
+    + '<p style="margin:8px 0 0;color:#e8f4f1;font-size:14px;">Your application for Dreamers Lab 2026 has been received.</p>'
     + '</div>'
     + '<p>Hi <strong>' + (p.parent_name||"there") + '</strong> & <strong>' + (p.student_name||"Student") + '</strong>,</p>'
     + '<p>Thank you for applying to <strong>Dreamers Lab 2026</strong>. We are thrilled to see young minds enthusiastic about building real solutions!</p>'
@@ -340,9 +341,10 @@ function buildStudentConfirmation(p) {
 }
 
 function buildFounderConfirmation(p) {
-  return '<div style="background:#10483D;color:#ffffff;padding:16px 20px;border-radius:8px;margin-bottom:20px;text-align:center;">'
-    + '<h2 style="margin:0;color:#F6C845;font-size:20px;">🚀 Congratulations, Founder!</h2>'
-    + '<p style="margin:6px 0 0;color:#e8f4f1;font-size:14px;">Your Founder Application has been received.</p>'
+  return '<div style="background:#10483D;color:#ffffff;padding:20px 24px;border-radius:10px;margin-bottom:24px;text-align:center;">'
+    + '<div style="display:inline-block;background:#FF5A24;color:#ffffff;font-size:11px;font-weight:700;letter-spacing:1px;padding:3px 12px;border-radius:12px;margin-bottom:10px;text-transform:uppercase;">Founder Application</div>'
+    + '<h2 style="margin:0;color:#F6C845;font-size:22px;font-weight:700;">Congratulations, Founder!</h2>'
+    + '<p style="margin:8px 0 0;color:#e8f4f1;font-size:14px;">Your Founder Application has been received.</p>'
     + '</div>'
     + '<p>Hi <strong>' + (p.founder_name||"there") + '</strong>,</p>'
     + '<p>Your application for <strong>' + (p.startup_name||"your venture") + '</strong> is officially in! We are excited to review what you\'re building at <strong>' + (p.university||"your university") + '</strong>.</p>'
@@ -355,9 +357,10 @@ function buildFounderConfirmation(p) {
 }
 
 function buildPricingEnrolConfirmation(p) {
-  return '<div style="background:#10483D;color:#ffffff;padding:16px 20px;border-radius:8px;margin-bottom:20px;text-align:center;">'
-    + '<h2 style="margin:0;color:#F6C845;font-size:20px;">🎉 Congratulations & Welcome!</h2>'
-    + '<p style="margin:6px 0 0;color:#e8f4f1;font-size:14px;">Your enrolment enquiry has been recorded.</p>'
+  return '<div style="background:#10483D;color:#ffffff;padding:20px 24px;border-radius:10px;margin-bottom:24px;text-align:center;">'
+    + '<div style="display:inline-block;background:#FF5A24;color:#ffffff;font-size:11px;font-weight:700;letter-spacing:1px;padding:3px 12px;border-radius:12px;margin-bottom:10px;text-transform:uppercase;">Welcome to Cohort</div>'
+    + '<h2 style="margin:0;color:#F6C845;font-size:22px;font-weight:700;">Congratulations & Welcome!</h2>'
+    + '<p style="margin:8px 0 0;color:#e8f4f1;font-size:14px;">Your enrolment enquiry has been recorded.</p>'
     + '</div>'
     + '<p>Hi <strong>' + (p.name||"Founder") + '</strong>,</p>'
     + '<p>We have successfully received your enrolment application for <strong>' + (p.program||"Building Dreams") + '</strong>.</p>'
@@ -369,13 +372,13 @@ function buildSchoolConfirmation(p) {
   return '<h2>Hi ' + (p.name||"there") + ',</h2><p>Thank you for your interest in bringing Building Dreams to <strong>' + (p.school||p.organisation||"your school") + '</strong>!</p><p>We\'ll reach out to <strong>' + p.email + '</strong> within 2-3 business days.</p><p>Warm regards,<br><strong>The Building Dreams Team</strong></p>';
 }
 function buildCommunityConfirmation(p) {
-  return '<div style="background:#10483D;color:#ffffff;padding:16px 20px;border-radius:8px;margin-bottom:20px;text-align:center;"><h2 style="margin:0;color:#F6C845;font-size:20px;">🎉 Welcome to the Community!</h2></div><p>Hi <strong>' + (p.name||"there") + '</strong>,</p><p>You\'ve successfully joined the <strong>Building Dreams Community</strong>. We\'re thrilled to have you.</p><p>Watch your inbox — cohort updates, events, and opportunities are coming soon.</p><p>See you on the inside,<br><strong>The Building Dreams Team</strong></p>';
+  return '<div style="background:#10483D;color:#ffffff;padding:20px 24px;border-radius:10px;margin-bottom:24px;text-align:center;"><div style="display:inline-block;background:#FF5A24;color:#ffffff;font-size:11px;font-weight:700;letter-spacing:1px;padding:3px 12px;border-radius:12px;margin-bottom:10px;text-transform:uppercase;">Community</div><h2 style="margin:0;color:#F6C845;font-size:22px;font-weight:700;">Welcome to the Community!</h2></div><p>Hi <strong>' + (p.name||"there") + '</strong>,</p><p>You\'ve successfully joined the <strong>Building Dreams Community</strong>. We\'re thrilled to have you.</p><p>Watch your inbox — cohort updates, events, and opportunities are coming soon.</p><p>See you on the inside,<br><strong>The Building Dreams Team</strong></p>';
 }
 function buildContactConfirmation(p) {
   return '<h2>Hi ' + (p.name||"there") + ',</h2><p>We\'ve received your message and our team will get back to you at <strong>' + p.email + '</strong> within 1-2 business days.</p><p>Speak soon,<br><strong>The Building Dreams Team</strong></p>';
 }
 function buildNewsletterConfirmation(p) {
-  return '<div style="background:#10483D;color:#ffffff;padding:16px 20px;border-radius:8px;margin-bottom:20px;text-align:center;"><h2 style="margin:0;color:#F6C845;font-size:20px;">🎉 You\'re In!</h2></div><p>Welcome to the <strong>Building Dreams Insider List</strong>. You\'ll be among the first to hear about new cohorts, events, and builder stories.</p><p>Stay curious,<br><strong>The Building Dreams Team</strong></p>';
+  return '<div style="background:#10483D;color:#ffffff;padding:20px 24px;border-radius:10px;margin-bottom:24px;text-align:center;"><div style="display:inline-block;background:#FF5A24;color:#ffffff;font-size:11px;font-weight:700;letter-spacing:1px;padding:3px 12px;border-radius:12px;margin-bottom:10px;text-transform:uppercase;">Insider List</div><h2 style="margin:0;color:#F6C845;font-size:22px;font-weight:700;">You\'re In!</h2></div><p>Welcome to the <strong>Building Dreams Insider List</strong>. You\'ll be among the first to hear about new cohorts, events, and builder stories.</p><p>Stay curious,<br><strong>The Building Dreams Team</strong></p>';
 }
 function buildUniversityConfirmation(p) {
   return '<h2>Hi ' + (p.name||"there") + ',</h2><p>Thank you for your interest in partnering with Building Dreams at <strong>' + (p.organisation||"your institution") + '</strong>!</p><p>We\'ll review your enquiry and reach out at <strong>' + p.email + '</strong> to schedule a call.</p><p>Looking forward to collaborating,<br><strong>The Building Dreams Team</strong></p>';
@@ -399,7 +402,23 @@ function wrapAdminEmail(body) {
     + '</div></body></html>';
 }
 function wrapUserEmail(body) {
-  return '<!DOCTYPE html><html><body style="margin:0;padding:0;background:#f0f0f0;font-family:Arial,sans-serif;"><div style="max-width:600px;margin:24px auto;background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.12);"><div style="background:#10483D;padding:24px;text-align:center;"><h1 style="margin:0;color:#fff;font-size:24px;letter-spacing:1px;font-weight:700;">Building Dreams</h1><p style="margin:6px 0 0;color:#A9DFD1;font-size:13px;letter-spacing:0.5px;">Where Dreamers Become Builders</p></div><div style="padding:32px 26px;color:#222;line-height:1.7;font-size:15px;background:#ffffff;">' + body + '</div><div style="background:#0c362e;padding:16px 24px;text-align:center;"><p style="margin:0;color:#A9DFD1;font-size:12px;">© ' + new Date().getFullYear() + ' Building Dreams &middot; All rights reserved</p></div></div></body></html>';
+  var logoUrl = "https://raw.githubusercontent.com/sarwang-23/Dreamer-s-Lab/main/frontend/public/assets/building-dreams-logo.jpg";
+  return '<!DOCTYPE html><html><body style="margin:0;padding:0;background:#f4f5f7;font-family:-apple-system,BlinkMacSystemFont,\'Segoe UI\',Roboto,Helvetica,Arial,sans-serif;">'
+    + '<div style="max-width:600px;margin:24px auto;background:#ffffff;border-radius:12px;overflow:hidden;box-shadow:0 4px 18px rgba(0,0,0,0.06);border:1px solid #e5e7eb;">'
+    + '<div style="background:#ffffff;padding:26px 24px 20px 24px;text-align:center;border-bottom:1px solid #f0f0f0;">'
+    + '<a href="https://thebuildingdreams.com" target="_blank" style="text-decoration:none;display:inline-block;">'
+    + '<img src="' + logoUrl + '" alt="Building Dreams — Converting Ideas into Successful Ventures" width="260" style="display:block;margin:0 auto;max-width:260px;width:100%;height:auto;border:0;outline:none;" />'
+    + '</a>'
+    + '</div>'
+    + '<div style="padding:32px 28px;color:#222222;line-height:1.75;font-size:15px;background:#ffffff;">'
+    + body
+    + '</div>'
+    + '<div style="background:#10483D;padding:22px 24px;text-align:center;color:#ffffff;">'
+    + '<p style="margin:0 0 6px 0;font-size:14px;font-weight:700;letter-spacing:0.5px;color:#F6C845;">Building Dreams</p>'
+    + '<p style="margin:0 0 10px 0;color:#A9DFD1;font-size:12px;">Where Dreamers Become Builders &middot; Converting Ideas into Successful Ventures</p>'
+    + '<p style="margin:0;color:#7aa89e;font-size:11px;">&copy; ' + new Date().getFullYear() + ' Building Dreams. All rights reserved.</p>'
+    + '</div>'
+    + '</div></body></html>';
 }
 
 function doGet(e) {
