@@ -405,7 +405,8 @@
   border-radius: 10px;
   overflow: hidden;
   position: relative;
-  height: 105px;
+  height: 135px;
+  margin-top: 0.65rem;
   margin-bottom: 0.95rem;
   border: 1px solid rgba(44, 26, 16, 0.08);
   background: #201812;
@@ -415,8 +416,21 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center 16%;
   filter: contrast(104%) saturate(104%);
   transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.dl-stage-card--question .dl-artefact-visual img {
+  object-position: center 20%;
+}
+
+.dl-stage-card--explore .dl-artefact-visual img {
+  object-position: center 12%;
+}
+
+.dl-stage-card--build .dl-artefact-visual img {
+  object-position: center 22%;
 }
 
 .dl-stage-card:hover .dl-artefact-visual img {
