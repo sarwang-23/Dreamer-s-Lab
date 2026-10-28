@@ -1,9 +1,10 @@
 /* ==========================================================================
    Dreamers Lab — Interactive Hero & 3D Workspace Engine
    ========================================================================== */
-import dreamersStudentsImg from './assets/dreamers-students.jpg';
-import storyExperimentImg from './assets/story-experiment.jpg';
+import curiosityInquiryImg from './assets/curiosity-inquiry.jpg';
+import fieldResearchImg from './assets/field-research.jpg';
 import storyPrototypeImg from './assets/story-prototype.jpg';
+import demoDayShowcaseImg from './assets/demo-day-showcase.jpg';
 
 (function () {
   'use strict';
@@ -143,7 +144,7 @@ import storyPrototypeImg from './assets/story-prototype.jpg';
         phaseTag: 'Stage 01 · Problem Hunting & Inquiry',
         phaseMeta: 'ACTIVE STAGE: 01 CURIOSITY',
         caption: 'Interactive Showcase — Team EcoLoop framed the core inquiry: converting canteen bio-waste into rich community garden soil.',
-        image: dreamersStudentsImg,
+        image: curiosityInquiryImg,
         element: elements.curiosity
       },
       'problem': {
@@ -151,7 +152,7 @@ import storyPrototypeImg from './assets/story-prototype.jpg';
         phaseTag: 'Stage 02 · Field Audit & Community Data',
         phaseMeta: 'ACTIVE STAGE: 02 PROBLEM & IDEA',
         caption: 'Interactive Showcase — 28 field interviews validated that 84% of residents experience irregular waste pickup.',
-        image: storyExperimentImg,
+        image: fieldResearchImg,
         element: elements.problem
       },
       'prototype': {
@@ -167,7 +168,7 @@ import storyPrototypeImg from './assets/story-prototype.jpg';
         phaseTag: 'Stage 04 · 12-Week Demo Day Showcase',
         phaseMeta: 'ACTIVE STAGE: 04 DEMO DAY SHOWCASE',
         caption: 'Interactive Showcase — Culmination at Demo Day: pitching the validated prototype to school mentors and ecosystem partners.',
-        image: dreamersStudentsImg,
+        image: demoDayShowcaseImg,
         element: elements.launch
       }
     };
