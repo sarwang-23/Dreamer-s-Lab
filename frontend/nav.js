@@ -22,7 +22,6 @@ function navMarkup() {
       ${TOGGLE_ICON}
     </button>
     <div class="nd-nav-links" id="primary-navigation">
-      <a href="${url('')}">Home</a>
       <a href="${url('dreamers-lab/')}">Schools</a>
       <a href="${url('universities/')}">Universities</a>
       <a href="${url('student-entrepreneurs/')}">Entrepreneurship</a>
